@@ -1,0 +1,78 @@
+# Matriz de capacidades: qué respuesta de la entrevista activa qué módulo.
+# Estado: inicial (Oleada 0). Los módulos se materializan en oleadas posteriores (ver modules-map.yaml).
+version: 1
+questions:
+  - id: multi_tenant
+    prompt: "¿El sistema es multi-tenant?"
+    type: boolean
+    default: false
+    activates_when_true: [multi-tenant]
+  - id: search
+    prompt: "¿Necesita búsqueda de texto/facetas?"
+    type: boolean
+    default: false
+    activates_when_true: [search]
+  - id: analytics
+    prompt: "¿Requiere analítica/BI?"
+    type: boolean
+    default: false
+    activates_when_true: [data-platform]
+  - id: documents_ocr
+    prompt: "¿Procesa documentos u OCR?"
+    type: boolean
+    default: false
+    activates_when_true: [idp-documents]
+  - id: chatbot_rag
+    prompt: "¿Incluye chatbot o RAG?"
+    type: boolean
+    default: false
+    activates_when_true: [rag, agents]
+  - id: workflow_bpm
+    prompt: "¿Hay workflows/BPM?"
+    type: boolean
+    default: false
+    activates_when_true: [workflow]
+  - id: payments
+    prompt: "¿Gestiona pagos o facturación?"
+    type: boolean
+    default: false
+    activates_when_true: [payments]
+  - id: notifications
+    prompt: "¿Envía notificaciones?"
+    type: boolean
+    default: false
+    activates_when_true: [notifications]
+  - id: realtime
+    prompt: "¿Necesita tiempo real (SSE/WebSocket)?"
+    type: boolean
+    default: false
+    activates_when_true: [realtime]
+  - id: back_office
+    prompt: "¿Necesita consola de back-office?"
+    type: boolean
+    default: false
+    activates_when_true: [back-office]
+  - id: full_history
+    prompt: "¿Necesita historial completo de cambios como parte del negocio (event sourcing)?"
+    type: boolean
+    default: false
+    help: "Para auditar basta un audit trail inmutable; usar skill audit-trail-without-event-sourcing antes de elegir."
+    activates_when_true: [event-sourcing]
+    activates_when_false: [outbox]
+  - id: resilience_tier
+    prompt: "¿Qué tier de resiliencia?"
+    type: enum
+    values: [0, 1, 2, 3]
+    default: 1
+    help: "Tier 0 (activo-activo) solo por petición explícita; defecto Tier 1 warm standby (D7)."
+  - id: frontend
+    prompt: "¿Incluye frontend?"
+    type: boolean
+    default: true
+    activates_when_true: [frontend-react]
+  - id: special_category_data
+    prompt: "¿Trata datos de categorías especiales?"
+    type: boolean
+    default: false
+    triggers: [compliance-review]
+always_on: [backend-java-spring, local-k8s, observability, ci-cd, security, testing, claude-config, devcontainer, docs]

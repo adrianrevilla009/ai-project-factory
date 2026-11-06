@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Assumptions register
+type: array
+items:
+  type: object
+  required: [id, statement, impact, status, owner]
+  additionalProperties: false
+  properties:
+    id: { type: string, pattern: '^A-[0-9]+$' }
+    statement: { type: string, minLength: 1 }
+    impact: { enum: [low, medium, high] }
+    status: { enum: [open, confirmed, rejected] }
+    owner: { type: string }
+    confirmed_by: { type: string }
+    confirmed_at: { type: string, format: date }

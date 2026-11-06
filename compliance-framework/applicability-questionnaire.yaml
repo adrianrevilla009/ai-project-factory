@@ -1,0 +1,12 @@
+# Cuestionario de aplicabilidad. Prepara; no dictamina. Lo valida legal/cumplimiento en el Gate 0.
+version: 1
+questions:
+  - { id: jurisdictions, prompt: "¿En qué jurisdicciones opera y están sus usuarios?", type: list }
+  - { id: sector, prompt: "¿Sector regulado (financiero, salud, sector público, infraestructuras críticas…)?", type: text }
+  - { id: personal_data, prompt: "¿Trata datos personales? ¿De quién?", type: boolean }
+  - { id: special_categories, prompt: "¿Datos de categorías especiales o de menores?", type: boolean }
+  - { id: payments, prompt: "¿Procesa datos de tarjetas o pagos?", type: boolean }
+  - { id: ai_usage, prompt: "¿Usa sistemas de IA que afecten a personas?", type: boolean }
+  - { id: data_residency, prompt: "¿Existen requisitos de residencia de datos?", type: text }
+  - { id: third_countries, prompt: "¿Transferencias fuera de la UE/EEE?", type: boolean }
+  - { id: critical_service, prompt: "¿Servicio esencial o crítico con requisitos de resiliencia?", type: boolean }

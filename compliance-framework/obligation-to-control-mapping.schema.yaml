@@ -1,0 +1,21 @@
+# Mapeo obligación -> control -> skill/policy/test -> evidencia
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Obligation to control mapping
+type: array
+items:
+  type: object
+  additionalProperties: false
+  required: [obligation_id, regulation_id, control_id, mechanisms, evidence]
+  properties:
+    obligation_id: { type: string }
+    regulation_id: { type: string }
+    control_id: { type: string }
+    mechanisms:
+      type: array
+      minItems: 1
+      items:
+        type: object
+        required: [kind, ref]
+        properties: { kind: { enum: [skill, policy, test, hook, process] }, ref: { type: string } }
+    evidence: { type: array, minItems: 1, items: { type: string } }
+    activates: { type: array, items: { type: string }, description: "Capacidades/policies que activa (p. ej. SCP de regiones)." }

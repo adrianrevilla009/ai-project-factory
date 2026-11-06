@@ -1,0 +1,23 @@
+# Ficha de norma. Creada bajo demanda como BORRADOR POR CONFIRMAR.
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Regulation entry
+type: object
+additionalProperties: false
+required: [id, name, jurisdiction, triggers, obligations, official_source, verified_at, owner, status]
+properties:
+  id: { type: string }
+  name: { type: string }
+  jurisdiction: { type: string }
+  triggers: { type: array, items: { type: string }, minItems: 1 }
+  obligations:
+    type: array
+    minItems: 1
+    items:
+      type: object
+      required: [id, summary]
+      properties: { id: { type: string }, summary: { type: string }, article_ref: { type: string } }
+  official_source: { type: string, pattern: '^https?://' }
+  verified_at: { type: string, format: date }
+  owner: { type: string, description: Responsable humano de cumplimiento }
+  status: { enum: [draft-to-confirm, confirmed] }
+  confirmed_by: { type: string }

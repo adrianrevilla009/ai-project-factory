@@ -1,0 +1,44 @@
+# Esquema del perfil de dominio (JSON Schema en YAML). Ver discovery-protocol.md.
+$schema: https://json-schema.org/draft/2020-12/schema
+title: Domain profile
+type: object
+required: [domain, glossary, actors, processes, bounded_contexts, business_events, rules, integrations, risks, kpis, candidate_regulations, validation]
+additionalProperties: false
+$defs:
+  sourced:
+    description: Toda afirmación lleva fuente o se marca como supuesto.
+    type: object
+    required: [text]
+    properties:
+      text: { type: string, minLength: 1 }
+      source: { type: string }
+      assumption: { type: boolean }
+      assumption_id: { type: string }
+    anyOf:
+      - required: [source]
+      - properties: { assumption: { const: true } }
+        required: [assumption]
+properties:
+  domain: { type: object, required: [name, summary], properties: { name: { type: string }, summary: { type: string } } }
+  glossary:
+    type: array
+    items: { type: object, required: [term, definition], properties: { term: { type: string }, definition: { $ref: '#/$defs/sourced' } } }
+  actors: { type: array, items: { type: object, required: [name, description], properties: { name: { type: string }, description: { $ref: '#/$defs/sourced' } } } }
+  processes: { type: array, items: { type: object, required: [name, description], properties: { name: { type: string }, description: { $ref: '#/$defs/sourced' } } } }
+  bounded_contexts: { type: array, items: { type: object, required: [name, responsibility], properties: { name: { type: string }, responsibility: { $ref: '#/$defs/sourced' } } } }
+  business_events: { type: array, items: { type: object, required: [name, description], properties: { name: { type: string }, description: { $ref: '#/$defs/sourced' } } } }
+  rules: { type: array, items: { type: object, required: [id, statement], properties: { id: { type: string }, statement: { $ref: '#/$defs/sourced' } } } }
+  integrations: { type: array, items: { type: object, required: [system, description], properties: { system: { type: string }, description: { $ref: '#/$defs/sourced' } } } }
+  risks: { type: array, items: { type: object, required: [id, description], properties: { id: { type: string }, description: { $ref: '#/$defs/sourced' } } } }
+  kpis: { type: array, items: { type: object, required: [name, definition], properties: { name: { type: string }, definition: { $ref: '#/$defs/sourced' } } } }
+  candidate_regulations:
+    description: Candidatas; la ficha completa vive en compliance-framework. Nunca dictamen.
+    type: array
+    items: { type: object, required: [name, reason, status], properties: { name: { type: string }, reason: { type: string }, status: { const: draft-to-confirm } } }
+  validation:
+    type: object
+    required: [status]
+    properties:
+      status: { enum: [draft, validated] }
+      validated_by: { type: string }
+      validated_at: { type: string, format: date }
