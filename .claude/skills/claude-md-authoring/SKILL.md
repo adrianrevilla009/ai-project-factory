@@ -28,9 +28,13 @@ CLAUDE.md se carga siempre: cada línea cuesta contexto en cada sesión. Lo que 
 
 ## Ejemplos
 ### Mal
+```text
 Un CLAUDE.md de 600 líneas con guía completa de JPA.
+```
 ### Bien
+```text
 Diez reglas, tabla de comandos y enlaces a `.claude/skills/`.
+```
 
 ## Checklist de revisión
 - [ ] < 80 líneas.

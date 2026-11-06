@@ -28,9 +28,13 @@ Sin despliegue real (D4), Terraform puede validar y fallar al aplicar. La honest
 
 ## Ejemplos
 ### Mal
-> "El módulo EKS está listo para producción en AWS."
+```text
+"El módulo EKS está listo para producción en AWS.  # honest-claims: ignore"
+```
 ### Bien
-> "El módulo EKS está definido y validado estáticamente (nivel 2). Preparado para AWS, no verificado en real."
+```text
+"El módulo EKS está definido y validado estáticamente (nivel 2). Preparado para AWS, no verificado en real."
+```
 
 ## Checklist de revisión
 - [ ] Cada versión/flag tiene fuente o `TODO-VERIFY`.

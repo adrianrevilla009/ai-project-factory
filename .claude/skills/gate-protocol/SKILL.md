@@ -28,9 +28,13 @@ Los agentes aceleran pero no asumen responsabilidad. Si la aprobación es un pá
 
 ## Ejemplos
 ### Mal
-> "He terminado el plan y empiezo a implementar."
+```text
+"He terminado el plan y empiezo a implementar."
+```
 ### Bien
-> "Plan listo. Evidencia vs `gate-1.md`: 5/6 cumplidos; falta estimación de recursos (riesgo: perfil completo > 16 GB). Necesito el registro `approvals/gate-1.json` para continuar."
+```text
+"Plan listo. Evidencia vs `gate-1.md`: 5/6 cumplidos; falta estimación de recursos (riesgo: perfil completo > 16 GB). Necesito el registro `approvals/gate-1.json` para continuar."
+```
 
 ## Checklist de revisión
 - [ ] El agente se detuvo y no continuó.

@@ -1,0 +1,23 @@
+# Instalar: pip install pre-commit && pre-commit install
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0   # verificado 2026-11-06 (última release)
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: check-added-large-files
+      - id: detect-private-key
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1  # verificado 2026-11-06 (última release)
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: factory-validate
+        name: factory validators
+        entry: python3 factory/validators/run_all.py
+        language: system
+        pass_filenames: false
+        always_run: true
