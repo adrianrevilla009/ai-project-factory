@@ -1,0 +1,76 @@
+# Baseline de workloads (skill: workload-baseline).
+# TODO-VERIFY: apiVersion/campos contra la version de Kyverno elegida
+# (validationFailureAction vs failureAction por regla cambia entre versiones).
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: workload-baseline
+  annotations:
+    policies.kyverno.io/title: Workload baseline
+    policies.kyverno.io/category: Best Practices
+    policies.kyverno.io/description: >-
+      Exige requests/limits, probes, seccomp RuntimeDefault y tag no mutable
+      en Deployments y StatefulSets.
+spec:
+  validationFailureAction: Audit   # pasar a Enforce tras limpiar el backlog
+  background: true
+  rules:
+    - name: require-resources
+      match:
+        any:
+          - resources:
+              kinds: [Deployment, StatefulSet]
+      validate:
+        message: "Todos los contenedores deben definir resources.requests (cpu, memory) y limits.memory."
+        pattern:
+          spec:
+            template:
+              spec:
+                containers:
+                  - resources:
+                      requests:
+                        cpu: "?*"
+                        memory: "?*"
+                      limits:
+                        memory: "?*"
+    - name: require-probes
+      match:
+        any:
+          - resources:
+              kinds: [Deployment, StatefulSet]
+      validate:
+        message: "Todos los contenedores deben definir readinessProbe y livenessProbe (o startupProbe)."
+        pattern:
+          spec:
+            template:
+              spec:
+                containers:
+                  - readinessProbe: {}
+                    livenessProbe: {}
+    - name: require-seccomp-runtime-default
+      match:
+        any:
+          - resources:
+              kinds: [Deployment, StatefulSet]
+      validate:
+        message: "spec.template.spec.securityContext.seccompProfile.type debe ser RuntimeDefault."
+        pattern:
+          spec:
+            template:
+              spec:
+                securityContext:
+                  seccompProfile:
+                    type: RuntimeDefault
+    - name: disallow-latest-tag
+      match:
+        any:
+          - resources:
+              kinds: [Deployment, StatefulSet]
+      validate:
+        message: "Prohibido el tag :latest o imagen sin tag; fijar version o digest."
+        pattern:
+          spec:
+            template:
+              spec:
+                containers:
+                  - image: "!*:latest & *:*"

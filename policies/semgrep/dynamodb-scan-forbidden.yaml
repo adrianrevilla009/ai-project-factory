@@ -1,0 +1,11 @@
+rules:
+  - id: dynamodb-scan-forbidden
+    languages: [java]
+    severity: WARNING
+    message: "Scan lee toda la tabla y consume capacidad proporcional a su tamano. Disenar un patron de acceso con Query (skill dynamodb-data-modeling)."
+    pattern-either:
+      - pattern: (DynamoDbClient $C).scan(...)
+      - pattern: (DynamoDbTable $T).scan(...)
+    metadata:
+      skill: dynamodb-data-modeling
+      note: "TODO-VERIFY: probar la regla con semgrep; no ejecutada. Excepciones (migraciones, backfills) con nosemgrep y justificacion."

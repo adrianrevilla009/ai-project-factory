@@ -1,0 +1,11 @@
+rules:
+  - id: dynamodb-put-without-condition
+    languages: [java]
+    severity: WARNING
+    message: "PutItemRequest sin conditionExpression: en un event store o agregado versionado el append debe ser condicional (attribute_not_exists / version esperada). Skill dynamodb-event-store."
+    patterns:
+      - pattern: PutItemRequest.builder() ... .build()
+      - pattern-not: PutItemRequest.builder() ... .conditionExpression(...) ... .build()
+    metadata:
+      skill: dynamodb-event-store
+      note: "TODO-VERIFY: probar la regla con semgrep; no ejecutada. Heuristica: marcar tambien puts legitimos sin condicion (revisar)."

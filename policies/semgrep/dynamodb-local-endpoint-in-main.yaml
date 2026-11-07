@@ -1,0 +1,14 @@
+rules:
+  - id: dynamodb-endpoint-override-in-main-code
+    languages: [generic]
+    severity: WARNING
+    message: "endpointOverride en codigo de produccion: el endpoint del emulador debe venir de configuracion de perfil (local/test), no estar fijo (skill local-vs-aws-dynamodb-testing)."
+    paths:
+      include:
+        - "**/src/main/**/*.java"
+      exclude:
+        - "**/src/main/**/*Local*Config*.java"
+    pattern-regex: 'DynamoDbClient[\s\S]{0,200}\.endpointOverride\(\s*URI\.create\(\s*"http://(localhost|127\.0\.0\.1)'
+    metadata:
+      skill: local-vs-aws-dynamodb-testing
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

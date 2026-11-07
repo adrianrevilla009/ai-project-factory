@@ -1,0 +1,47 @@
+# Tiers de resiliencia. Valores de PARTIDA a validar con negocio (brief §9). Diseño solamente: nada se despliega (ADR-0004).
+version: 1
+default_tier: 1
+regions: { primary: eu-west-1, secondary: eu-central-1 }   # D6; TODO-VERIFY disponibilidad de servicios en ambas
+principle: "Estabilidad estática: la capacidad secundaria ya está aprovisionada; la conmutación solo requiere acciones de plano de datos."
+tiers:
+  0:
+    name: "Activo-activo / warm standby con replicación continua"
+    strategy: active-active
+    rpo: "segundos"
+    rto: "minutos"
+    use: "Núcleo transaccional crítico; solo por petición explícita (D7)"
+    cost: "muy alto (≈2x)"
+  1:
+    name: "Warm standby (defecto)"
+    strategy: warm-standby
+    rpo: "~minutos"
+    rto: "< 1 h"
+    use: "Servicios de cara a cliente"
+    cost: "alto"
+  2:
+    name: "Pilot light"
+    strategy: pilot-light
+    rpo: "< 1 h"
+    rto: "horas"
+    use: "Back-office"
+    cost: "medio"
+  3:
+    name: "Backup y restauración"
+    strategy: backup-restore
+    rpo: "24 h"
+    rto: "24 h+"
+    use: "No críticos"
+    cost: "bajo"
+components:
+  EKS: { multi_az: "Nodos en 3 AZ, topology spread, PDB", multi_region: "Clúster gemelo en secundaria (Terraform + Argo CD)" }
+  Postgres: { multi_az: "Aurora Multi-AZ", multi_region: "Aurora Global Database, promoción de la secundaria" }
+  event_store: { multi_az: "DynamoDB", multi_region: "Global Tables, región de escritura por agregado" }
+  Kafka: { multi_az: "MSK 3 AZ", multi_region: "Replicación entre regiones, traducción de offsets" }
+  objects: { multi_az: "S3", multi_region: "Replicación cross-region, versionado, Object Lock" }
+  cache: { multi_az: "ElastiCache Multi-AZ", multi_region: "Reconstruible o Global Datastore" }
+  secrets_keys: { multi_az: "Vault Raft 3 AZ", multi_region: "Un clúster Vault independiente por región; KMS multi-región" }
+  images: { multi_az: "Harbor HA", multi_region: "ECR con replicación cross-region nativa; el runtime despliega desde ECR" }
+  identity: { multi_az: "Keycloak HA", multi_region: "BD en Aurora Global; reinicio de sesión asumido en failover" }
+  entry: { multi_az: "Route 53, CloudFront, Global Accelerator", multi_region: "Application Recovery Controller" }
+  observability: { multi_az: "Backends HA", multi_region: "Almacenamiento fuera del dominio de fallo" }
+  cicd_iac_state: { multi_az: "Accesibles", multi_region: "Que la región caída no impida desplegar la recuperación" }

@@ -1,0 +1,12 @@
+rules:
+  - id: airflow-dag-catchup-true
+    languages: [generic]
+    severity: WARNING
+    message: "DAG con catchup=True: un despliegue o reactivacion puede lanzar cientos de ejecuciones historicas. Usar catchup=False salvo backfill deliberado (skill batch-orchestration)."
+    paths:
+      include:
+        - "*.py"
+    pattern-regex: 'catchup\s*=\s*True'
+    metadata:
+      skill: batch-orchestration
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

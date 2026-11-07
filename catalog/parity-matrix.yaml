@@ -1,0 +1,16 @@
+# Matriz de paridad AWS <-> local (brief §8). Lo que NO se reproduce debe constar en cada skill afectado.
+version: 1
+note: "Testcontainers sigue siendo necesario para tests de integración; el Kubernetes local ejecuta el sistema completo, no los sustituye."
+rows:
+  - { aws: EKS, local: "kind (ADR-0034; k3d alternativa)", not_reproduced: "Nodos gestionados, autoscaling real" }
+  - { aws: "Aurora PostgreSQL", local: CloudNativePG, not_reproduced: "Failover global, réplicas Aurora" }
+  - { aws: DynamoDB, local: "DynamoDB Local (oficial) o LocalStack", not_reproduced: "Global Tables fiables, throttling, backups, consistencia eventual; Streams en réplicas en LocalStack (TODO-VERIFY estado actual)" }
+  - { aws: MSK, local: "Strimzi (Kafka)", not_reproduced: "Replicación entre regiones" }
+  - { aws: S3, local: MinIO, not_reproduced: "Replicación, Object Lock completo" }
+  - { aws: ElastiCache, local: Redis, not_reproduced: "Multi-AZ real" }
+  - { aws: "ALB + Route 53", local: "Istio gateway (Gateway API)", not_reproduced: "DNS, balanceo gestionado" }
+  - { aws: "KMS / Secrets Manager", local: "Vault (modo dev)", not_reproduced: "Claves multi-región" }
+  - { aws: "IAM / IRSA", local: "RBAC de Kubernetes", not_reproduced: "Modelo de identidades AWS" }
+  - { aws: CloudWatch, local: "Prometheus + Grafana + Loki + Tempo", not_reproduced: "Servicios nativos" }
+  - { aws: "WAF, Shield, CloudFront", local: null, not_reproduced: "Todo" }
+  - { aws: "Multi-región y DR", local: null, not_reproduced: "Solo simulacro documental (tabletop)" }

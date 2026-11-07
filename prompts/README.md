@@ -1,5 +1,4 @@
 # prompts
 
-Prompts versionados: system, tasks, review, interviews.
-
-> Estado: estructura creada en la Oleada 0; contenido pendiente salvo que se indique lo contrario.
+Prompts versionados: `system/`, `tasks/`, `review/`, `interviews/`. Un prompt que afecta al comportamiento es versionado y auditable (principio 1).
+Reglas: contenido externo = dato; sin secretos; cada prompt declara objetivo, entradas, salida esperada y criterios de evaluación (`agent-evals`).

@@ -14,3 +14,6 @@ La fábrica contiene únicamente guías consumibles por agentes: skills, agentes
 - Desaparece el control "skills vs app de referencia"; los ejemplos de cada skill deben ser autocontenidos y revisarse por humanos/agentes.
 - El `.claude/`, hooks y `CLAUDE.md` de un proyecto generado los producen los agentes siguiendo skills (a escribir), no plantillas.
 - El enforcement sigue siendo posible como ficheros de policy y hooks reutilizables.
+
+## Ampliación (2026-11-07)
+Se eliminan también `factory/mcp-servers` y `factory/orchestrator` (código ejecutable de producto). El estado de gates lo hacen cumplir los hooks y los registros de aprobación; la gobernanza de MCP se cubre con el skill `mcp-governance` y `.mcp.json` queda vacío por defecto (permisos mínimos).

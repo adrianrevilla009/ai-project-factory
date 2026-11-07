@@ -1,0 +1,23 @@
+# Radar tecnológico. Anillos: adopt | trial | assess | hold. Versiones: NO se fijan aquí (las fija el BOM tras verificar en fuente oficial).
+version: 1
+reviewed: "2026-11-07"
+entries:
+  - { name: "Java LTS + Spring Boot", ring: adopt, ref: "ADR-0001" }
+  - { name: "Maven multi-módulo + BOM", ring: adopt, ref: "ADR-0002" }
+  - { name: Terraform, ring: adopt, ref: "ADR-0008", note: "TODO-VERIFY licencia vigente; OpenTofu como alternativa a evaluar" }
+  - { name: Istio, ring: adopt, ref: "ADR-0009" }
+  - { name: "Vault OSS", ring: trial, ref: "ADR-0010/0031", note: "licencia BUSL; OpenBao en assess" }
+  - { name: OpenBao, ring: assess }
+  - { name: Keycloak, ring: adopt, ref: "ADR-0012" }
+  - { name: "Argo CD + Rollouts", ring: adopt, ref: "ADR-0021" }
+  - { name: "OTel + Prometheus + Grafana + Loki + Tempo", ring: adopt, ref: "ADR-0022" }
+  - { name: "Trivy + Grype + Dependency-Check", ring: adopt, ref: "ADR-0017" }
+  - { name: "CycloneDX + Dependency-Track", ring: adopt }
+  - { name: Harbor, ring: adopt, ref: "ADR-0016" }
+  - { name: "Nexus Community / Reposilite", ring: trial, ref: "ADR-0035" }
+  - { name: Flux, ring: assess, note: "T3" }
+  - { name: Spinnaker, ring: hold, note: "T3" }
+  - { name: Lombok, ring: hold, ref: "ADR-0027" }
+  - { name: "Artifactory / Xray", ring: hold, note: "solo adaptador opcional (D16)" }
+  - { name: "Istio ambient", ring: assess, ref: "ADR-0032" }
+  - { name: Cilium, ring: assess, ref: "ADR-0033" }

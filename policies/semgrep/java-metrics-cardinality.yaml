@@ -1,0 +1,16 @@
+rules:
+  - id: java-metric-tag-high-cardinality
+    languages: [java]
+    severity: WARNING
+    message: "No usar identificadores (id, email, userId, url) como valor de tag de metrica: cardinalidad ilimitada (skill metrics-micrometer)."
+    patterns:
+      - pattern-either:
+          - pattern: $B.tag($K, $V)
+          - pattern: $R.counter($N, $K, $V)
+          - pattern: $R.timer($N, $K, $V)
+      - metavariable-regex:
+          metavariable: $K
+          regex: '(?i)"(.*id|email|user.*|url|uri|path|message)"'
+    metadata:
+      skill: metrics-micrometer
+      note: "TODO-VERIFY: heuristica, no ejecutada con semgrep en Oleada 0."

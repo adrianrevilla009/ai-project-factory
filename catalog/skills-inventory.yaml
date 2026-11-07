@@ -663,3 +663,5 @@ blocks:
   - name: parallel-work-and-worktrees
   - name: verify-before-asserting
   - name: handoff-artifacts-between-agents
+  - name: bootstrap-generated-project-claude-config
+    note: 'añadido en Oleada 0 (ADR-0038): sustituye a las plantillas claude-config'

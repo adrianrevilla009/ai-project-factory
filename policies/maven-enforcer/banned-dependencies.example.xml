@@ -1,0 +1,55 @@
+<!--
+  Ejemplo de configuracion de maven-enforcer-plugin para el parent POM de un proyecto generado.
+  Deriva de catalog/forbidden-libraries.yaml (fuente de verdad: si cambia el catalogo, cambia esto).
+  Skill: .claude/skills/enforcer-rules/SKILL.md  y  no-lombok (D27).
+  Estado: ejemplo NO ejecutado en la fabrica (TODO-VERIFY version del plugin y sintaxis con la version elegida).
+-->
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-enforcer-plugin</artifactId>
+  <version><!-- TODO-VERIFY version vigente --></version>
+  <executions>
+    <execution>
+      <id>enforce-factory-rules</id>
+      <phase>validate</phase>
+      <goals><goal>enforce</goal></goals>
+      <configuration>
+        <fail>true</fail>
+        <rules>
+          <requireMavenVersion><version>[3.9,)</version></requireMavenVersion> <!-- TODO-VERIFY minimo -->
+          <requireJavaVersion><version>[21,)</version></requireJavaVersion>   <!-- TODO-VERIFY LTS -->
+          <requirePluginVersions/>
+          <banDuplicatePomDependencyVersions/>
+          <dependencyConvergence/>
+          <bannedDependencies>
+            <searchTransitive>true</searchTransitive>
+            <excludes>
+              <!-- ids de catalog/forbidden-libraries.yaml -->
+              <exclude>org.projectlombok:lombok</exclude>              <!-- lombok (D27) -->
+              <exclude>log4j:log4j</exclude>                           <!-- log4j-1x -->
+              <exclude>commons-collections:commons-collections</exclude> <!-- commons-collections-3 -->
+              <exclude>joda-time:joda-time</exclude>                   <!-- joda-time -->
+            </excludes>
+            <message>Libreria prohibida por catalog/forbidden-libraries.yaml. Ver skill enforcer-rules.</message>
+          </bannedDependencies>
+        </rules>
+      </configuration>
+    </execution>
+    <!-- Solo en el perfil release: sin SNAPSHOT -->
+    <execution>
+      <id>enforce-release</id>
+      <phase>validate</phase>
+      <goals><goal>enforce</goal></goals>
+      <configuration>
+        <rules><requireReleaseDeps/><requireReleaseVersion/></rules>
+      </configuration>
+    </execution>
+  </executions>
+</plugin>
+<!--
+  En modulos *-domain (arquitectura hexagonal) anadir ademas:
+  <bannedDependencies><excludes>
+    <exclude>org.springframework:*</exclude>
+    <exclude>jakarta.persistence:*</exclude>
+  </excludes></bannedDependencies>
+-->

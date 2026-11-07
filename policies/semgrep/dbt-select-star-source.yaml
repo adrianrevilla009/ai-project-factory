@@ -1,0 +1,12 @@
+rules:
+  - id: dbt-model-select-star-from-source
+    languages: [generic]
+    severity: WARNING
+    message: "select * directo desde source() en un modelo dbt: una columna nueva upstream rompe el contrato aguas abajo. Enumerar columnas (skill etl-vs-elt-and-dbt)."
+    paths:
+      include:
+        - "*.sql"
+    pattern-regex: '(?is)select\s+\*\s+from\s+\{\{\s*source\('
+    metadata:
+      skill: etl-vs-elt-and-dbt
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."
