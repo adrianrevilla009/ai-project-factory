@@ -1,0 +1,23 @@
+# Librerías prohibidas. El hook post-tool-use/forbidden_deps.py y el enforcer de Maven (skill enforcer-rules) las usan.
+version: 1
+forbidden:
+  - id: lombok
+    match: ["org.projectlombok", "lombok"]
+    reason: "Lombok prohibido (D27, skill no-lombok)."
+    alternative: "records, builders explícitos, IDE/MapStruct."
+  - id: log4j-1x
+    match: ["<artifactid>log4j</artifactid>", "log4j:log4j"]
+    reason: "Log4j 1.x sin soporte y con vulnerabilidades conocidas."
+    alternative: "SLF4J + Logback."
+  - id: commons-collections-3
+    match: ["commons-collections:commons-collections", "<artifactid>commons-collections</artifactid>"]
+    reason: "Versión 3.x con cadenas de deserialización conocidas (TODO-VERIFY CVEs vigentes)."
+    alternative: "java.util.* o commons-collections4."
+  - id: joda-time
+    match: ["joda-time"]
+    reason: "Obsoleta desde java.time (skill time-and-money)."
+    alternative: "java.time."
+  - id: moment-js
+    match: ["\"moment\":"]
+    reason: "En modo mantenimiento (TODO-VERIFY estado vigente)."
+    alternative: "date-fns o Temporal/Intl."

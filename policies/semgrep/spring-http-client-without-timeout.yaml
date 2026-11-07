@@ -1,0 +1,11 @@
+rules:
+  - id: spring-http-client-without-timeout
+    languages: [java]
+    severity: ERROR
+    message: "Cliente HTTP sin timeouts explicitos. Usar RestClient.Builder con timeouts configurados (skill http-clients-and-timeouts)."
+    pattern-either:
+      - pattern: new RestTemplate()
+      - pattern: java.net.http.HttpClient.newHttpClient()
+    metadata:
+      skill: http-clients-and-timeouts
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

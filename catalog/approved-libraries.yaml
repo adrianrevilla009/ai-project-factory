@@ -1,0 +1,16 @@
+# Librerías aprobadas por categoría (puntos de partida; las VERSIONES las fija el BOM corporativo y se verifican en fuente oficial).
+version: 1
+status: "borrador; versiones TODO-VERIFY"
+java:
+  web: [spring-boot-starter-web]
+  persistence: [spring-boot-starter-data-jpa, flyway-core, jooq]
+  mapping: [mapstruct]
+  resilience: [resilience4j]
+  observability: [micrometer, opentelemetry-java]
+  testing: [junit-jupiter, assertj, mockito, testcontainers, wiremock, pact-jvm, archunit, jqwik, pitest]
+  security: [spring-boot-starter-security, spring-security-oauth2-resource-server]
+frontend:
+  core: [react, typescript, vite]
+  state: ["@tanstack/react-query", zustand]
+  forms: [react-hook-form, zod]
+  testing: [vitest, "@testing-library/react", msw, playwright]

@@ -4,15 +4,99 @@
       {
         "matcher": "Write|Edit|MultiEdit|NotebookEdit",
         "hooks": [
-          { "type": "command", "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/block_secrets.py\"" },
-          { "type": "command", "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/enforce_gate_approval.py\"" }
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/block_forbidden_paths.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/block_secrets.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/enforce_gate_approval.py\""
+          }
         ]
       },
       {
         "matcher": "Bash",
         "hooks": [
-          { "type": "command", "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/block_dangerous_commands.py\"" },
-          { "type": "command", "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/enforce_gate_approval.py\"" }
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/block_dangerous_commands.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/pre-tool-use/enforce_gate_approval.py\""
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/session-start/load_context.py\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/format_and_lint.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/forbidden_deps.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/architecture_guard.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/maturity_label_check.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/update_docs.py\""
+          }
+        ]
+      },
+      {
+        "matcher": "WebFetch|WebSearch|Read|Bash|Grep",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/post-tool-use/prompt_injection_guard.py\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/audit/log_actions.py\""
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/stop/require_green_tests.py\""
+          },
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PROJECT_DIR}/.claude/hooks/stop/require_docs_updated.py\""
+          }
         ]
       }
     ]

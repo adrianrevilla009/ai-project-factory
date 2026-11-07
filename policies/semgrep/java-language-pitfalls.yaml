@@ -1,0 +1,58 @@
+rules:
+  - id: java-money-as-double
+    languages: [java]
+    severity: WARNING
+    message: "No usar double/float para dinero; usar BigDecimal o un tipo Money (skill time-and-money)."
+    pattern-regex: '\b(double|float|Double|Float)\s+\w*([Pp]rice|[Aa]mount|[Tt]otal|[Bb]alance|[Cc]ost)\w*\b'
+    metadata:
+      skill: time-and-money
+      note: "TODO-VERIFY: heuristica por nombre; no ejecutada con semgrep."
+  - id: java-bigdecimal-double-ctor
+    languages: [java]
+    severity: ERROR
+    message: "new BigDecimal(double) arrastra error binario; usar BigDecimal.valueOf o el constructor String (skill time-and-money)."
+    pattern: new BigDecimal(<... $D ...>)
+    metadata:
+      skill: time-and-money
+      note: "TODO-VERIFY: patron demasiado amplio (tambien salta con String); revisar antes de activar."
+  - id: java-legacy-date-api
+    languages: [java]
+    severity: WARNING
+    message: "Evitar SimpleDateFormat/Date/Calendar; usar java.time (skill time-and-money)."
+    pattern-either:
+      - pattern: new SimpleDateFormat(...)
+      - pattern: Calendar.getInstance(...)
+    metadata:
+      skill: time-and-money
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: java-default-charset-string
+    languages: [java]
+    severity: WARNING
+    message: "Indicar charset explicito (StandardCharsets.UTF_8) en getBytes/new String (skill strings-encoding-locale)."
+    pattern-either:
+      - pattern: $S.getBytes()
+      - pattern: $S.toLowerCase()
+      - pattern: $S.toUpperCase()
+    metadata:
+      skill: strings-encoding-locale
+      note: "TODO-VERIFY: toLowerCase()/toUpperCase() sin Locale; no ejecutada con semgrep."
+  - id: java-catch-throwable-or-swallow
+    languages: [java]
+    severity: ERROR
+    message: "No capturar Throwable ni tragar excepciones con catch vacio (skill exceptions-and-error-handling)."
+    pattern-either:
+      - pattern: |
+          try { ... } catch (Throwable $E) { ... }
+      - pattern: |
+          try { ... } catch (Exception $E) { }
+    metadata:
+      skill: exceptions-and-error-handling
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: java-optional-get
+    languages: [java]
+    severity: WARNING
+    message: "Evitar Optional.get() sin comprobar; usar orElseThrow con excepcion de dominio (skill null-safety)."
+    pattern: $O.get()
+    metadata:
+      skill: null-safety
+      note: "TODO-VERIFY: patron muy amplio (cualquier get()); requiere tipo Optional; no activar tal cual."

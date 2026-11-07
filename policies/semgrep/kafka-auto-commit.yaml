@@ -1,0 +1,15 @@
+rules:
+  - id: kafka-consumer-auto-commit-enabled
+    languages: [generic]
+    severity: ERROR
+    message: "Auto-commit de offsets activado. Usar enable.auto.commit=false y confirmar tras procesar (skill kafka-producers-consumers)."
+    paths:
+      include:
+        - "*.properties"
+        - "*.yml"
+        - "*.yaml"
+        - "*.java"
+    pattern-regex: 'enable[.-]auto[.-]commit\s*[:=]\s*"?true'
+    metadata:
+      skill: kafka-producers-consumers
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

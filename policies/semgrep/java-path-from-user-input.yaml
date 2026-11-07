@@ -1,0 +1,12 @@
+rules:
+  - id: java-path-traversal-resolve-request-param
+    languages: [java]
+    severity: WARNING
+    message: "Ruta construida con entrada del usuario. Normalizar y comprobar que sigue dentro del directorio base (skill file-upload-security)."
+    pattern-either:
+      - pattern: new java.io.File($BASE, $REQ.getParameter(...))
+      - pattern: java.nio.file.Paths.get($BASE, $REQ.getParameter(...))
+      - pattern: $FILE.getOriginalFilename()
+    metadata:
+      skill: file-upload-security
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0. getOriginalFilename() solo es seguro como etiqueta, nunca como ruta."

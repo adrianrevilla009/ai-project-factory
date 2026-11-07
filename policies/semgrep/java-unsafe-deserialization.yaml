@@ -1,0 +1,12 @@
+rules:
+  - id: java-object-input-stream-untrusted
+    languages: [java]
+    severity: ERROR
+    message: "ObjectInputStream sobre datos externos. Usar JSON/Protobuf o un filtro ObjectInputFilter (skill deserialization-xxe-ssrf-traversal)."
+    pattern-either:
+      - pattern: new ObjectInputStream(...)
+      - pattern: $M.enableDefaultTyping(...)
+      - pattern: $M.activateDefaultTyping(...)
+    metadata:
+      skill: deserialization-xxe-ssrf-traversal
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."

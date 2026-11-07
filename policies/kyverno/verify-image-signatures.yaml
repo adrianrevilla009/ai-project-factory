@@ -1,0 +1,31 @@
+# Verifies cosign keyless signatures for project images before admission.
+# Placeholders (example.*) MUST be replaced per project. Statically written, not verified on a real cluster.
+# Source: https://kyverno.io/docs/policy-types/cluster-policy/verify-images/sigstore/ (checked 2026-11-07)
+apiVersion: kyverno.io/v1
+kind: ClusterPolicy
+metadata:
+  name: verify-image-signatures
+spec:
+  webhookConfiguration:
+    timeoutSeconds: 30
+  rules:
+    - name: verify-keyless-signature
+      match:
+        any:
+          - resources:
+              kinds:
+                - Pod
+      verifyImages:
+        - imageReferences:
+            - "registry.example.com/*"
+          failureAction: Enforce
+          mutateDigest: true
+          verifyDigest: true
+          required: true
+          attestors:
+            - entries:
+                - keyless:
+                    issuer: "https://token.actions.githubusercontent.com"
+                    subject: "https://github.com/example-org/*"
+                    rekor:
+                      url: https://rekor.sigstore.dev

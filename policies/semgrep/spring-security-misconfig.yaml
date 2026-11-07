@@ -1,0 +1,31 @@
+rules:
+  - id: spring-csrf-disabled-globally
+    languages: [java]
+    severity: WARNING
+    message: "CSRF desactivado. Solo aceptable en APIs stateless con token Bearer; documentarlo (skill security-headers-cors-csrf)."
+    pattern-either:
+      - pattern: $HTTP.csrf($C -> $C.disable())
+      - pattern: $HTTP.csrf().disable()
+    metadata:
+      skill: security-headers-cors-csrf
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: spring-cors-wildcard-with-credentials
+    languages: [java]
+    severity: ERROR
+    message: "CORS con origen '*' no debe combinarse con credenciales (skill security-headers-cors-csrf)."
+    pattern-either:
+      - pattern: $C.addAllowedOrigin("*")
+      - pattern: $R.allowedOrigins("*")
+    metadata:
+      skill: security-headers-cors-csrf
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: spring-jwt-none-or-unverified-parse
+    languages: [java]
+    severity: ERROR
+    message: "Parseo de JWT sin verificar firma. Usar el resource server de Spring Security (skill jwt-and-sessions)."
+    pattern-either:
+      - pattern: JWT.decode($T)
+      - pattern: $P.parseClaimsJwt($T)
+    metadata:
+      skill: jwt-and-sessions
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0; JWT.decode es de java-jwt (auth0)."

@@ -1,0 +1,30 @@
+rules:
+  - id: java-print-stack-trace
+    languages: [java]
+    severity: ERROR
+    message: "No usar printStackTrace(); registrar con el logger pasando la excepcion como ultimo argumento (skill logging-rules)."
+    pattern: $E.printStackTrace()
+    metadata:
+      skill: logging-rules
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: java-system-out
+    languages: [java]
+    severity: ERROR
+    message: "No usar System.out/System.err en codigo de produccion; usar SLF4J (skill logging-rules)."
+    pattern-either:
+      - pattern: System.out.$M(...)
+      - pattern: System.err.$M(...)
+    paths:
+      exclude: ["**/src/test/**"]
+    metadata:
+      skill: logging-rules
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+  - id: java-log-string-concat
+    languages: [java]
+    severity: WARNING
+    message: "No concatenar en mensajes de log; usar placeholders {} (skill logging-rules)."
+    pattern-either:
+      - pattern: $LOG.$LEVEL("..." + $X, ...)
+    metadata:
+      skill: logging-rules
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."

@@ -1,0 +1,23 @@
+rules:
+  - id: sql-migration-drop-or-rename-column
+    languages: [generic]
+    severity: WARNING
+    message: "DROP/RENAME COLUMN en una migracion rompe el rolling deploy. Usar expand/contract (skill schema-migrations)."
+    paths:
+      include:
+        - "**/db/migration/*.sql"
+    pattern-regex: '(?i)ALTER\s+TABLE\s+\S+\s+(DROP\s+COLUMN|RENAME\s+COLUMN)'
+    metadata:
+      skill: schema-migrations
+      note: "TODO-VERIFY: probar con semgrep antes de darla por buena; no ejecutada."
+  - id: sql-migration-index-without-concurrently
+    languages: [generic]
+    severity: WARNING
+    message: "CREATE INDEX sin CONCURRENTLY bloquea escrituras en PostgreSQL (skill schema-migrations)."
+    paths:
+      include:
+        - "**/db/migration/*.sql"
+    pattern-regex: '(?i)CREATE\s+(UNIQUE\s+)?INDEX\s+(?!CONCURRENTLY)'
+    metadata:
+      skill: schema-migrations
+      note: "TODO-VERIFY: probar con semgrep antes de darla por buena; no ejecutada. Excepcion: tablas recien creadas en la misma migracion."

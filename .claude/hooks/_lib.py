@@ -62,3 +62,22 @@ def written_text(event: dict) -> str:
         if isinstance(e, dict):
             parts.append(e.get("new_string"))
     return "\n".join(p for p in parts if isinstance(p, str))
+
+
+def load_config(root: Path) -> dict:
+    """Optional per-project hook config: .claude/hooks/hooks-config.json (see docs/operating-model)."""
+    p = root / ".claude" / "hooks" / "hooks-config.json"
+    try:
+        return json.loads(p.read_text())
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+def emit_context(event_name: str, text: str) -> None:
+    """Add context for the model (SessionStart / PostToolUse additionalContext). TODO-VERIFY field names yearly."""
+    print(json.dumps({"hookSpecificOutput": {"hookEventName": event_name, "additionalContext": text}}))
+
+
+def glob_match(rel: str, globs) -> bool:
+    from fnmatch import fnmatch
+    return any(fnmatch(rel, g) or fnmatch(rel, g.replace("**/", "")) for g in globs)

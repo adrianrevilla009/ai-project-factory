@@ -1,0 +1,13 @@
+rules:
+  - id: webhook-signature-non-constant-compare
+    languages: [java]
+    severity: ERROR
+    message: "Comparar firmas/HMAC con equals() no es en tiempo constante. Usar MessageDigest.isEqual (skill webhooks)."
+    patterns:
+      - pattern: $SIG.equals($EXPECTED)
+      - metavariable-regex:
+          metavariable: $SIG
+          regex: '(?i).*(sig|hmac|signature).*'
+    metadata:
+      skill: webhooks
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

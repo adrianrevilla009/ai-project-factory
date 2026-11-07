@@ -1,0 +1,15 @@
+rules:
+  - id: xml-document-builder-without-xxe-hardening
+    languages: [java]
+    severity: ERROR
+    message: "DocumentBuilderFactory sin deshabilitar DTD/entidades externas (XXE). Ver skill soap-legacy-integration."
+    patterns:
+      - pattern: $F = DocumentBuilderFactory.newInstance();
+      - pattern-not-inside: |
+          $F = DocumentBuilderFactory.newInstance();
+          ...
+          $F.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+          ...
+    metadata:
+      skill: soap-legacy-integration
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

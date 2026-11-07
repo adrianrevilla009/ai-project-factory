@@ -1,0 +1,9 @@
+rules:
+  - id: java-no-lombok-import
+    languages: [java]
+    severity: ERROR
+    message: "Lombok prohibido (ADR-0027). Usar records y builders explicitos (skill no-lombok)."
+    pattern-regex: 'import\s+lombok\.'
+    metadata:
+      skill: no-lombok
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."

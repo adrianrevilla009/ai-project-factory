@@ -1,0 +1,12 @@
+rules:
+  - id: java-unbounded-executors
+    languages: [java]
+    severity: ERROR
+    message: "Executor sin cota o hilo manual. Usar ThreadPoolExecutor/ThreadPoolTaskExecutor con cola acotada (skill threads-executors-and-pools)."
+    pattern-either:
+      - pattern: Executors.newCachedThreadPool(...)
+      - pattern: Executors.newFixedThreadPool(...)
+      - pattern: new Thread(...)
+    metadata:
+      skill: threads-executors-and-pools
+      note: "TODO-VERIFY: regla no ejecutada con semgrep."

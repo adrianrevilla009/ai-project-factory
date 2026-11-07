@@ -1,0 +1,11 @@
+rules:
+  - id: java-sleep-in-tests
+    languages: [java]
+    severity: WARNING
+    paths:
+      include: ["**/src/test/**"]
+    message: "Thread.sleep en tests: usar latches o Awaitility (skill concurrency-testing)."
+    pattern: Thread.sleep(...)
+    metadata:
+      skill: concurrency-testing
+      note: "TODO-VERIFY: regla no ejecutada con semgrep."

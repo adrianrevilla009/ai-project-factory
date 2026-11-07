@@ -1,0 +1,15 @@
+rules:
+  - id: sql-string-concatenation
+    languages: [java]
+    severity: ERROR
+    message: "Consulta SQL/JPQL construida por concatenacion. Usar parametros nombrados o bind (skill sql-injection-prevention)."
+    pattern-either:
+      - pattern: $EM.createQuery($A + $B, ...)
+      - pattern: $EM.createNativeQuery($A + $B, ...)
+      - pattern: $JDBC.query($A + $B, ...)
+      - pattern: $JDBC.queryForObject($A + $B, ...)
+      - pattern: $JDBC.update($A + $B, ...)
+      - pattern: $STMT.executeQuery($A + $B)
+    metadata:
+      skill: sql-injection-prevention
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada en Oleada 0."

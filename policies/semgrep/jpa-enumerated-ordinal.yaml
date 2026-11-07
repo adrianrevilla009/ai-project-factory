@@ -1,0 +1,15 @@
+rules:
+  - id: jpa-enumerated-ordinal
+    languages: [java]
+    severity: ERROR
+    message: "@Enumerated(ORDINAL) (o sin @Enumerated) rompe datos al reordenar el enum. Usar EnumType.STRING (skill jpa-entity-design)."
+    pattern-either:
+      - pattern: |
+          @Enumerated(EnumType.ORDINAL)
+          $T $F;
+      - pattern: |
+          @Enumerated
+          $T $F;
+    metadata:
+      skill: jpa-entity-design
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada en Oleada 0."

@@ -1,0 +1,7 @@
+{
+  "test_command": "python3 -m pytest tests/hooks tests/validators -q -x",
+  "test_trigger_globs": [".claude/hooks/*", ".claude/hooks/**", "factory/*", "factory/**", "tests/*", "tests/**"],
+  "format": {},
+  "lint": {},
+  "source_globs": ["*.py"]
+}

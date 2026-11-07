@@ -1,0 +1,14 @@
+rules:
+  - id: java-check-then-act-map
+    languages: [java]
+    severity: WARNING
+    message: "containsKey seguido de put no es atómico. Usar computeIfAbsent/putIfAbsent/merge (skill concurrent-collections)."
+    pattern: |
+      if (!$M.containsKey($K)) {
+        ...
+        $M.put($K, $V);
+        ...
+      }
+    metadata:
+      skill: concurrent-collections
+      note: "TODO-VERIFY: regla no ejecutada con semgrep."

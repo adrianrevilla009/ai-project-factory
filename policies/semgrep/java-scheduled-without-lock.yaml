@@ -1,0 +1,20 @@
+rules:
+  - id: java-scheduled-without-lock
+    languages: [java]
+    severity: WARNING
+    message: "@Scheduled sin @SchedulerLock: con varias réplicas se ejecuta N veces (skill scheduling-and-batch)."
+    patterns:
+      - pattern: |
+          @Scheduled(...)
+          $RET $M(...) { ... }
+      - pattern-not: |
+          @SchedulerLock(...)
+          @Scheduled(...)
+          $RET $M(...) { ... }
+      - pattern-not: |
+          @Scheduled(...)
+          @SchedulerLock(...)
+          $RET $M(...) { ... }
+    metadata:
+      skill: scheduling-and-batch
+      note: "TODO-VERIFY: regla no ejecutada con semgrep; excepciones si el job corre fuera del servicio."

@@ -25,7 +25,7 @@ SCOPED = re.compile(r"(?i)\b(aws|terraform|eks|infra(estructura)?|cloud|nube)\b"
 COMPILED = [re.compile(p, re.I) for p in FORBIDDEN]
 # A mention directly preceded by a negation/prohibition ("no está listo...", "Prohibido afirmar '...'") is honest.
 NEGATION_BEFORE = re.compile(
-    r"(?i)(\bno\b|\bnunca\b|\bnot\b|\bnever\b|\bjam[aá]s\b|prohibid[oa]\b[^.]*|must not\b[^.]*|rechaza\b[^.]*|reject\w*\b[^.]*)"
+    r"(?i)(\bno\b|\bnunca\b|\bnot\b|\bnever\b|\bjam[aá]s\b|proh[ií]b\w+\b[^.]*|nada\b[^.]*|must not\b[^.]*|rechaza\b[^.]*|reject\w*\b[^.]*)"
     r"\W*(\b(est[aá]n?|es|son|is|are|estar|ser|be)\b\W*)?$"
 )
 IGNORE = "honest-claims: ignore"

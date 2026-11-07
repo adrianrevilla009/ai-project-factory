@@ -1,0 +1,11 @@
+rules:
+  - id: java-completablefuture-default-pool
+    languages: [java]
+    severity: ERROR
+    message: "supplyAsync/runAsync sin Executor usa ForkJoinPool.commonPool. Pasar un executor propio (skill completablefuture-patterns)."
+    pattern-either:
+      - pattern: CompletableFuture.supplyAsync($F)
+      - pattern: CompletableFuture.runAsync($F)
+    metadata:
+      skill: completablefuture-patterns
+      note: "TODO-VERIFY: regla no ejecutada con semgrep."

@@ -1,0 +1,15 @@
+rules:
+  - id: java-weak-crypto-algorithm
+    languages: [java]
+    severity: ERROR
+    message: "Algoritmo o modo debil. Usar AES-GCM, SHA-256+ y SecureRandom (skill crypto-tls-mtls-key-rotation)."
+    pattern-either:
+      - pattern: MessageDigest.getInstance("MD5")
+      - pattern: MessageDigest.getInstance("SHA-1")
+      - pattern: Cipher.getInstance("DES...")
+      - pattern: Cipher.getInstance("AES/ECB/...")
+      - pattern: Cipher.getInstance("AES")
+      - pattern: new java.util.Random(...)
+    metadata:
+      skill: crypto-tls-mtls-key-rotation
+      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0; java.util.Random solo es problema en contexto de seguridad."
