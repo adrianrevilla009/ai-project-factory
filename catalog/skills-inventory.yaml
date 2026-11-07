@@ -1,0 +1,665 @@
+version: 1
+source: docs/FACTORY_BRIEF.md §7
+blocks:
+- block: 01-java-language
+  tier: T1
+  skills:
+  - name: modern-java-idioms
+  - name: immutability-and-value-objects
+  - name: null-safety
+  - name: exceptions-and-error-handling
+  - name: collections-and-streams
+  - name: equals-hashcode-tostring
+  - name: time-and-money
+  - name: strings-encoding-locale
+  - name: generics-and-api-design
+  - name: no-lombok
+  - name: logging-rules
+  - name: jvm-in-containers
+  - name: profiling-and-leaks
+  - name: code-style-and-naming
+- block: 02-concurrency
+  tier: T1
+  skills:
+  - name: threads-executors-and-pools
+  - name: virtual-threads
+  - name: structured-concurrency-and-scoped-values
+  - name: completablefuture-patterns
+  - name: java-memory-model
+  - name: locks-and-synchronization
+  - name: concurrent-collections
+  - name: distributed-locking
+  - name: idempotency-and-deduplication
+  - name: backpressure-and-bulkheads
+  - name: scheduling-and-batch
+  - name: async-and-context-propagation
+  - name: concurrency-testing
+- block: 03-persistence-sql
+  tier: T1
+  skills:
+  - name: jpa-entity-design
+  - name: id-generation
+  - name: lazy-vs-eager
+  - name: n-plus-one
+  - name: joins-and-fetch-joins
+  - name: projections-and-dtos
+  - name: query-strategy
+  - name: sql-injection-prevention
+  - name: pagination
+  - name: transactions
+  - name: isolation-levels-and-anomalies
+  - name: optimistic-locking
+  - name: pessimistic-locking
+  - name: persistence-context-and-flush
+  - name: batching-and-bulk-ops
+  - name: caching
+  - name: connection-pooling
+  - name: multi-tenancy
+    note: discriminador/@TenantId, schema, BD por tenant, RLS, tests de fugas, pools por tenant
+  - name: auditing-soft-delete-history
+  - name: schema-migrations
+    note: Flyway, expand/contract
+  - name: indexing-and-query-plans
+  - name: db-design-conventions
+  - name: read-replicas-and-routing
+  - name: partitioning-and-archival
+  - name: jdbc-and-jooq
+  - name: db-testing
+  - name: data-privacy-in-db
+- block: 04-spring-platform
+  tier: T1
+  skills:
+  - name: project-layout
+    note: Spring Modulith
+  - name: dependency-injection-rules
+  - name: configuration-properties
+  - name: controllers-and-validation
+  - name: error-handling-problem-details
+    note: RFC 9457
+  - name: mapping-mapstruct
+  - name: spring-data-rules
+  - name: actuator-and-health
+  - name: graceful-shutdown-lifecycle
+  - name: http-clients-and-timeouts
+  - name: resilience
+    note: Resilience4j
+  - name: domain-events-in-spring
+  - name: reactive-vs-blocking
+  - name: startup-and-native
+  - name: testing-slices
+  - name: file-upload-and-streaming
+  - name: upgrade-policy
+- block: 05-architecture
+  tier: T1
+  skills:
+  - name: hexagonal
+  - name: clean-architecture
+  - name: layering-rules-archunit
+  - name: modular-monolith
+  - name: microservices-decision-guide
+  - name: anti-corruption-layer
+  - name: strangler-fig-migration
+  - name: bff-and-api-gateway
+  - name: cell-based-architecture
+  - name: solid
+  - name: gof-patterns-in-practice
+  - name: code-smells-and-refactoring
+  - name: quality-attributes-atam
+  - name: ddd-strategic
+  - name: ddd-tactical
+  - name: cqrs
+  - name: event-sourcing
+  - name: event-driven
+  - name: sagas-and-process-managers
+  - name: consistency-and-cap-tradeoffs
+  - name: scalability-patterns
+  - name: multi-tenant-architecture
+  - name: twelve-factor
+  - name: connascence-and-coupling
+  - name: evolutionary-architecture-fitness-functions
+  - name: tech-debt-management
+- block: 06-api-and-integration
+  tier: T1
+  skills:
+  - name: rest-design-guidelines
+  - name: openapi-contract-first
+  - name: api-versioning-deprecation
+  - name: pagination-filter-sort
+  - name: idempotency-keys
+  - name: rate-limiting-quotas
+  - name: grpc-protobuf
+  - name: graphql
+  - name: asyncapi-event-contracts
+  - name: backward-compatibility-rules
+  - name: kafka-producers-consumers
+  - name: schema-registry-and-evolution
+  - name: dlq-retries-poison-messages
+  - name: delivery-semantics
+  - name: rabbitmq-sqs
+  - name: webhooks
+  - name: batch-file-sftp-integration
+  - name: soap-legacy-integration
+  - name: contract-testing-pact
+  - name: sdk-generation
+- block: 07-appsec
+  tier: T1
+  skills:
+  - name: secure-sdlc-nist-ssdf
+  - name: asvs-mapping
+  - name: owasp-top10-and-api-top10
+  - name: threat-modeling-stride
+  - name: authn-oidc-oauth2
+  - name: authz-rbac-abac-rebac
+  - name: jwt-and-sessions
+  - name: method-and-endpoint-security
+  - name: input-validation-output-encoding
+  - name: security-headers-cors-csrf
+  - name: dos-and-rate-limiting
+  - name: zero-trust
+  - name: security-testing-sast-dast
+  - name: injection-families
+  - name: deserialization-xxe-ssrf-traversal
+  - name: file-upload-security
+  - name: secrets-management
+  - name: crypto-tls-mtls-key-rotation
+  - name: pii-and-data-classification
+  - name: audit-trail-and-security-logging
+  - name: dependency-security
+  - name: supply-chain
+    note: SBOM, SLSA, cosign
+  - name: container-and-k8s-security
+  - name: cloud-iam-least-privilege
+  - name: llm-security
+  - name: vulnerability-sla-and-incident-response
+- block: 08-testing-quality
+  tier: T1
+  skills:
+  - name: test-strategy
+  - name: tdd
+  - name: bdd
+  - name: unit-testing-java
+  - name: integration-testing-testcontainers
+  - name: localstack-aws
+  - name: wiremock-and-stubbing
+  - name: api-testing
+  - name: architecture-testing-archunit
+  - name: contract-testing
+  - name: static-analysis
+    note: Checkstyle, PMD, SpotBugs, Error Prone, quality gates
+  - name: code-review-guidelines
+  - name: mutation-testing
+    note: PIT
+  - name: property-based-testing
+    note: jqwik
+  - name: flaky-test-management
+  - name: test-data-management
+  - name: coverage-policy
+  - name: performance-testing
+    note: 'JMeter: baseline, soak, spike'
+  - name: chaos-engineering
+    note: Chaos Monkey for Spring Boot, Chaos Mesh, Toxiproxy, game days
+  - name: resilience-testing
+  - name: e2e-testing
+  - name: canary-analysis-and-synthetic-monitoring
+- block: 09-build-supply-chain
+  tier: T1
+  skills:
+  - name: maven-multimodule-layout
+  - name: parent-pom
+  - name: bom-management
+  - name: versioning-semver-snapshots
+  - name: enforcer-rules
+  - name: dependency-hygiene
+  - name: renovate-dependabot-policy
+  - name: reproducible-builds
+  - name: license-compliance
+  - name: sbom-generation
+    note: CycloneDX
+  - name: maven-wrapper-and-toolchains
+  - name: build-caching-and-speed
+  - name: container-images
+  - name: jdk-distribution-and-upgrade-cadence
+  - name: release-automation
+- block: 10-observability-app
+  tier: T1
+  skills:
+  - name: otel-fundamentals-and-semconv
+  - name: otel-java-agent-vs-sdk
+  - name: metrics-micrometer
+  - name: structured-logging
+  - name: tracing
+  - name: jvm-observability
+  - name: db-and-kafka-observability
+  - name: golden-signals-red-use
+  - name: alerting-symptom-based
+  - name: slo-sli-error-budgets
+  - name: llm-observability
+  - name: on-call-and-runbook-links
+- block: 11-aws-governance
+  tier: T1
+  skills:
+  - name: organization-and-ou-design
+  - name: control-tower-and-account-factory
+  - name: identity-center-sso
+  - name: scp-guardrails
+  - name: org-cloudtrail-config-securityhub-guardduty
+  - name: log-archive-and-audit-account
+  - name: kms-multi-region-keys
+  - name: tagging-cost-allocation-budgets
+  - name: break-glass-and-jit-access
+  - name: compliance-as-code
+  - name: regions-and-data-residency
+- block: 12-aws-networking
+  tier: T1
+  skills:
+  - name: cidr-planning-and-ipam
+  - name: vpc-multi-az-layers
+  - name: transit-gateway-hub-and-spoke
+  - name: private-endpoints-and-egress-control
+  - name: dns-route53-private-and-hybrid
+  - name: alb-nlb-and-tls-termination
+  - name: waf-shield-and-cloudfront
+  - name: global-accelerator-and-failover-routing
+  - name: eks-networking
+  - name: flow-logs-and-network-observability
+  - name: cross-region-connectivity-and-cost
+- block: 13-kubernetes-and-istio
+  tier: T1
+  skills:
+  - name: cluster-topology
+  - name: node-pools-and-capacity
+  - name: workload-baseline
+    note: requests/limits, probes, PDB, topology spread, seccomp
+  - name: namespaces-quotas-multitenancy
+  - name: rbac-and-service-accounts
+  - name: pod-security-and-admission
+  - name: helm-standards
+  - name: kustomize-overlays
+  - name: operators
+    note: CloudNativePG, Strimzi
+  - name: autoscaling
+    note: HPA, VPA, KEDA
+  - name: cluster-addons-baseline
+    note: cert-manager, external-dns, external-secrets
+  - name: cluster-upgrades-and-drift
+  - name: backup-and-restore
+    note: Velero
+  - name: multi-cluster-and-dr
+  - name: runtime-security
+    note: Falco
+  - name: cost-visibility
+    note: OpenCost
+  - name: gateway-api
+  - name: sidecar-vs-ambient-decision
+  - name: mtls-strict-and-peer-auth
+  - name: authorization-policies
+  - name: traffic-management
+  - name: ingress-and-egress-gateways
+  - name: canary-and-traffic-splitting
+  - name: multi-cluster-mesh
+  - name: mesh-observability
+    note: Kiali
+  - name: mesh-vs-app-resilience
+    note: no duplicar reintentos
+  - name: istio-upgrades-and-ops
+- block: 14-secrets-and-config
+  tier: T1
+  skills:
+  - name: deployment-ha
+    note: Raft, auto-unseal, un clúster por región
+  - name: auth-methods
+  - name: policies
+  - name: dynamic-database-credentials
+  - name: pki-and-cert-issuance
+  - name: transit-encryption
+  - name: injection-patterns
+    note: VSO/agent/CSI
+  - name: rotation-and-leases
+  - name: audit-and-break-glass
+  - name: vault-and-keycloak-dr
+  - name: config-by-environment
+  - name: spring-cloud-config-module
+    note: opcional
+  - name: feature-flags-openfeature
+  - name: envelope-encryption-and-kms
+  - name: secret-scanning-and-leak-response
+- block: 15-artifacts-and-registry
+  tier: T1
+  skills:
+  - name: artifact-repository-port
+    note: 'contrato: promoción, retención, trazabilidad; adaptadores Harbor/Nexus/Reposilite/Artifactory'
+  - name: promotion-between-environments
+  - name: retention-and-cleanup
+  - name: remote-repos-and-dependency-confusion-protection
+  - name: sbom
+    note: CycloneDX, Dependency-Track, VEX
+  - name: image-scanning
+    note: Trivy/Grype
+  - name: image-signing-and-provenance
+    note: cosign, SLSA
+  - name: admission-verification
+  - name: docker-multistage
+    note: stage-layout, minimal-runtime-images, non-root-readonly-fs, layer-cache, labels, multi-arch
+  - name: license-policy
+  - name: third-party-risk
+- block: 16-ci-cd
+  tier: T1
+  skills:
+  - name: pipeline-architecture
+  - name: github-actions
+    note: reusable-workflows, oidc-to-cloud, actions-pinning, ephemeral-runners, caching-and-matrices, environments-and-approvals
+  - name: quality-gates
+  - name: security-gates
+  - name: contract-gate
+    note: Pact can-i-deploy
+  - name: performance-gate
+  - name: database-migration-step
+  - name: ephemeral-preview-environments
+  - name: release-versioning-changelog
+  - name: deployment-verification-and-smoke
+  - name: rollback-strategy
+  - name: pipeline-observability-and-dora
+  - name: alternatives
+    note: GitLab CI, Jenkins — T3
+- block: 17-gitops-progressive-delivery
+  tier: T1
+  skills:
+  - name: repo-strategy
+  - name: argo-cd
+    note: ApplicationSets, proyectos y RBAC, sync waves, notificaciones
+  - name: argo-rollouts
+    note: canary/blue-green con análisis
+  - name: argo-workflows-and-events
+  - name: drift-and-self-heal-policy
+  - name: secrets-in-gitops
+  - name: environment-promotion
+  - name: flux-comparison
+    note: T3
+  - name: spinnaker-comparison
+    note: T3
+- block: 18-observability-platform
+  tier: T1
+  skills:
+  - name: collector-pipelines
+  - name: metrics-store-ha-retention
+  - name: logs-and-traces-stores
+  - name: multi-tenant-observability
+  - name: alert-routing-and-oncall
+  - name: dashboards-and-slos-as-code
+  - name: status-page-and-comms
+  - name: cardinality-and-cost-governance
+  - name: observability-of-the-platform-itself
+  - name: tempo-and-service-graphs
+- block: 19-resilience-dr-finops
+  tier: T1
+  skills:
+  - name: tier-model-and-rpo-rto
+  - name: multi-az-patterns
+  - name: multi-region-patterns
+  - name: data-replication-matrix
+  - name: failover-and-failback-runbooks
+  - name: application-recovery-controller-and-health-checks
+  - name: static-stability-and-cell-architecture
+  - name: backup-vault-immutability-and-restore-tests
+  - name: fault-injection-and-game-days
+    note: en papel/tabletop
+  - name: resilience-hub-assessments
+  - name: eks-multi-region-and-argo-cd-multicluster
+  - name: istio-multicluster-tradeoffs
+  - name: dependency-mapping-and-blast-radius
+  - name: finops-of-resilience
+  - name: slo-error-budget-policy
+  - name: capacity-and-load-modeling
+  - name: incident-management-and-postmortems
+  - name: change-and-release-management
+  - name: load-shedding-and-degradation
+  - name: finops
+    note: presupuestos, anomalías, rightsizing, coste unitario
+- block: 20-internal-developer-platform
+  tier: T2
+  skills:
+  - name: backstage
+    note: catálogo, scorecards, TechDocs
+  - name: software-templates
+  - name: golden-paths-governance
+  - name: ephemeral-environments
+  - name: developer-experience-metrics
+- block: 21-on-prem-hybrid
+  tier: T3
+  skills:
+  - name: kubernetes-on-prem
+  - name: storage-and-load-balancing
+  - name: private-registry
+  - name: hybrid-identity-and-networking
+- block: 22-polyglot-persistence
+  tier: T1
+  skills:
+  - name: datastore-selection-guide
+  - name: polyglot-operations-cost
+  - name: dynamodb-data-modeling
+  - name: dynamodb-event-store
+  - name: global-tables-and-write-region-rules
+  - name: mongodb-alternative
+    note: T3
+  - name: when-to-use-and-when-not
+    note: subskill of event-sourcing
+  - name: aggregates-and-event-design
+    note: subskill of event-sourcing
+  - name: event-versioning-and-upcasting
+    note: subskill of event-sourcing
+  - name: snapshots
+    note: subskill of event-sourcing
+  - name: projections-and-read-models
+    note: subskill of event-sourcing
+  - name: rebuilds-and-replays
+    note: subskill of event-sourcing
+  - name: gdpr-and-immutable-events
+    note: subskill of event-sourcing
+  - name: testing-event-sourced-systems
+    note: subskill of event-sourcing
+  - name: outbox-and-cdc
+  - name: audit-trail-without-event-sourcing
+  - name: cqrs-read-models-and-search
+    note: OpenSearch
+  - name: consistency-and-sagas
+  - name: cache-strategies
+    note: Redis
+  - name: data-sync-pitfalls
+  - name: local-vs-aws-dynamodb-testing
+    note: emulador + límites
+- block: 23-data-platform
+  tier: T2
+  skills:
+  - name: cdc-and-streaming
+  - name: batch-orchestration
+    note: Airflow/Dagster
+  - name: etl-vs-elt-and-dbt
+  - name: data-lake-and-lakehouse
+  - name: warehouse-options
+  - name: data-modeling
+  - name: data-quality
+  - name: data-contracts-and-lineage
+  - name: data-governance-and-classification
+  - name: access-control-masking-and-retention
+  - name: gdpr-in-the-lake
+  - name: bi-and-reporting
+  - name: feature-store-and-ml-data
+  - name: data-observability
+  - name: data-platform-cost
+- block: 24-ai-engineering
+  tier: T2
+  skills:
+  - name: spring-ai-and-langchain4j
+  - name: rag-architecture
+  - name: rag-over-enterprise-docs
+  - name: prompt-management
+  - name: agents-and-tool-calling
+  - name: mcp-servers-in-java
+  - name: llm-gateway
+  - name: guardrails-and-pii-redaction
+  - name: llm-evals
+  - name: token-and-cost-budgets
+  - name: structured-outputs-and-streaming
+  - name: human-in-the-loop
+  - name: model-risk-and-ai-act-mapping
+  - name: chatbot-design
+  - name: intelligent-document-processing
+    note: ingesta, OCR, clasificación, extracción, revisión humana
+  - name: ocr-options
+  - name: document-management
+  - name: vector-store-selection
+  - name: classical-mlops
+  - name: ai-safety-and-red-teaming
+  - name: training-data-licensing-and-provenance
+- block: 25-security-operations
+  tier: T2
+  skills:
+  - name: vulnerability-management-program
+  - name: penetration-testing-program
+    note: solo sobre sistemas propios, con alcance y reglas de compromiso por escrito
+  - name: dast-and-attack-simulation
+    note: ZAP
+  - name: bug-bounty-and-disclosure
+  - name: siem-and-detection-engineering
+  - name: ids-ips-waf-edr
+  - name: encryption-standards
+  - name: pki-and-certificate-lifecycle
+  - name: iam-governance-and-pam
+  - name: cspm-and-posture
+    note: Kubescape, Prowler
+  - name: hardening-baselines
+    note: CIS
+  - name: incident-response-playbooks-and-forensics
+  - name: ransomware-resilience
+  - name: threat-intel-and-risk-register
+  - name: third-party-and-supply-chain-risk
+  - name: security-champions-and-training
+- block: 26-enterprise-capabilities
+  tier: T2
+  skills:
+  - name: identity-and-customer-management
+  - name: workflow-bpm
+    note: Camunda/Flowable
+  - name: rules-engines
+  - name: notifications
+  - name: document-and-report-generation
+  - name: search-and-discovery
+  - name: scheduling-and-batch-jobs
+  - name: import-export-and-bulk-data
+  - name: payments-and-billing
+  - name: audit-trail-and-activity-log
+  - name: back-office-admin-console
+  - name: consent-and-dsar-management
+  - name: i18n-and-localization
+  - name: multi-tenancy-saas-features
+  - name: integrations-erp-crm
+  - name: api-productization-and-developer-portal
+- block: 27-frontend-react
+  tier: T1
+  skills:
+  - name: architecture
+    note: por feature, límites de módulos
+  - name: typescript-strict-rules
+  - name: rendering-strategy-decision
+    note: SPA/Vite vs SSR/Next
+  - name: state-management
+    note: server-state con TanStack Query, client-state Zustand/Redux Toolkit, url-and-form-state
+  - name: routing-and-code-splitting
+  - name: forms-and-validation
+    note: React Hook Form + Zod
+  - name: api-client-from-openapi
+  - name: auth-and-session
+    note: OIDC PKCE + patrón BFF con sesión por cookie, tokens fuera de localStorage; la UI oculta, nunca protege
+  - name: design-system-and-tokens
+    note: Storybook
+  - name: component-patterns
+    note: composición, compound components, hooks, render props
+  - name: error-handling-and-boundaries
+  - name: accessibility
+    note: WCAG 2.2, axe
+  - name: i18n-and-formatting
+  - name: performance
+    note: Core Web Vitals, bundle budgets
+  - name: security-frontend
+    note: XSS, CSP, dependencias npm
+  - name: testing
+    note: Vitest + Testing Library, MSW, Playwright, visual regression, accesibilidad
+  - name: observability-frontend
+    note: OTel navegador, RUM
+  - name: build-and-deploy
+    note: pnpm, S3 + CloudFront, multi-región, invalidación
+  - name: supply-chain-npm
+  - name: feature-flags-ui
+  - name: realtime
+    note: SSE/WebSocket
+  - name: micro-frontends
+    note: T3
+  - name: pwa-and-offline
+    note: T3
+- block: 28-local-kubernetes
+  tier: T1
+  skills:
+  - name: cluster-tooling
+  - name: dev-loop
+    note: Tilt/Skaffold
+  - name: local-profiles
+    note: 'mínimo: servicio + Postgres + DynamoDB Local; completo: + Kafka, Vault, Istio, observabilidad'
+  - name: aws-emulation
+    note: LocalStack, límites
+  - name: local-parity-matrix
+  - name: data-seeding-and-demo-data
+  - name: local-gitops
+    note: opcional
+  - name: resource-budgets
+  - name: devcontainer-integration
+- block: 29-cloud-readiness
+  tier: T1
+  skills:
+  - name: static-verification-ladder
+    note: validate, tflint, Checkov/Trivy, OPA sobre plan, mock providers
+  - name: maturity-labels
+  - name: cost-estimation
+    note: Infracost o equivalente
+  - name: dr-tabletop-exercises
+  - name: parity-matrix-maintenance
+  - name: honest-claims-policy
+- block: 30-engineering-process
+  tier: T1
+  skills:
+  - name: git-workflow
+    note: trunk-based
+  - name: conventional-commits
+  - name: pr-rules
+  - name: definition-of-ready-and-done
+  - name: requirements-engineering
+    note: INVEST, Gherkin, NFRs, criterios de aceptación
+  - name: domain-discovery
+    note: event storming
+  - name: adr
+  - name: rfc-process
+  - name: c4-and-arc42
+  - name: diagrams-as-code
+  - name: living-readme
+  - name: api-docs
+  - name: runbooks
+  - name: changelog-release-notes
+  - name: production-readiness-review
+  - name: risk-register
+  - name: tech-debt-register
+  - name: lessons-learned-and-retro
+  - name: library-selection-and-tech-radar-process
+- block: 31-agentic-engineering
+  tier: T1
+  skills:
+  - name: skill-authoring-guide
+  - name: claude-md-authoring
+  - name: subagent-design
+  - name: context-budgeting
+  - name: gate-protocol
+  - name: prompt-injection-defense-for-agents
+  - name: mcp-governance
+  - name: agent-evals
+  - name: cost-control
+  - name: parallel-work-and-worktrees
+  - name: verify-before-asserting
+  - name: handoff-artifacts-between-agents
