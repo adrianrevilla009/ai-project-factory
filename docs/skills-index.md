@@ -2,7 +2,7 @@
 
 > Generado por `factory/tools/build_index.py`. No editar a mano.
 
-Skills: **327** de 487 previstos en `catalog/skills-inventory.yaml`.
+Skills: **366** de 487 previstos en `catalog/skills-inventory.yaml`.
 
 ## 01-java-language (T1) — 14/14
 
@@ -240,9 +240,12 @@ Skills: **327** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `scp-guardrails` (T1) — Usar al escribir o revisar Service Control Policies de AWS Organizations: denegación de regiones, protección de trails, KMS y root.
 - `tagging-cost-allocation-budgets` (T1) — Usar al definir tags obligatorios, asignación de costes y AWS Budgets en cuentas AWS; también al revisar Terraform sin default_tags.
 
-## 12-aws-networking (T1) — 3/11
+## 12-aws-networking (T1) — 6/11
 
+- `alb-nlb-and-tls-termination` (T1) — Usar al elegir y configurar balanceadores AWS (ALB vs NLB), listeners, certificados ACM y dónde terminar TLS (borde, balanceador o malla).
 - `cidr-planning-and-ipam` (T1) — Usar al diseñar rangos CIDR de VPC, subredes o EKS, o al introducir VPCs nuevas que deban conectarse por TGW, peering o VPN sin solapamientos.
+- `dns-route53-private-and-hybrid` (T1) — Usar al diseñar DNS en AWS: zonas privadas de Route 53, Resolver inbound/outbound para híbrido, asociación entre VPC/cuentas y registros de failover.
+- `private-endpoints-and-egress-control` (T1) — Usar al diseñar el acceso privado a servicios AWS (VPC endpoints) y la salida a Internet (NAT, egress centralizado, allowlist de dominios) desde subredes privadas.
 - `transit-gateway-hub-and-spoke` (T1) — Usar al conectar varias VPC o cuentas con Transit Gateway: tablas de rutas segmentadas, inspección centralizada y peering entre eu-west-1 y eu-central-1.
 - `vpc-multi-az-layers` (T1) — Usar al diseñar la topología de una VPC: capas de subredes (pública, privada, datos), reparto en AZ, NAT, tablas de rutas y security groups.
 
@@ -294,25 +297,34 @@ Skills: **327** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `transit-encryption` (T1) — Usar al cifrar datos con el motor Transit de Vault y al decidir si un dato puede leerse desde varias regiones (Transit no comparte claves entre clústeres).
 - `vault-and-keycloak-dr` (T1) — Usar al diseñar backup, restauración y recuperación ante desastres de Vault OSS (un clúster por región) y de Keycloak, incluidos RPO/RTO y ensayos.
 
-## 15-artifacts-and-registry (T1) — 6/11
+## 15-artifacts-and-registry (T1) — 11/11
 
+- `admission-verification` (T1) — Usar al definir qué imágenes admite el clúster: Kyverno verifyImages (firma, digest, atestaciones) y registros permitidos antes de ejecutar pods.
 - `artifact-repository-port` (T1) — Usar al diseñar o cambiar cómo el pipeline publica, promueve, retiene y traza artefactos (imágenes OCI, JAR, npm) tras un puerto agnóstico del repositorio.
+- `docker-multistage` (T1) — Usar al escribir o revisar un Dockerfile de Java o React: multi-stage, imagen mínima, usuario no root, FS de solo lectura, caché de capas, labels y multi-arch.
 - `image-scanning` (T1) — Usar al configurar el escaneo de vulnerabilidades de imágenes y dependencias con Trivy o Grype: umbrales, exclusiones con caducidad y gate de CI.
+- `image-signing-and-provenance` (T1) — Usar al firmar imágenes con cosign (keyless OIDC) y emitir atestaciones de procedencia SLSA y SBOM en el pipeline de release.
+- `license-policy` (T1) — Usar al decidir qué licencias de dependencias se permiten, cómo se comprueban a partir del SBOM y cómo se gestionan excepciones (copyleft, no comerciales).
 - `promotion-between-environments` (T1) — Usar al definir cómo un artefacto avanza de dev a staging y prod: misma imagen por digest, sin rebuild, con gates y evidencias.
 - `remote-repos-and-dependency-confusion-protection` (T1) — Usar al configurar proxies de Maven/npm/OCI y repos virtuales para evitar dependency confusion, typosquatting y descargas directas de internet.
 - `retention-and-cleanup` (T1) — Usar al definir políticas de retención y limpieza de imágenes y paquetes (Harbor, Nexus, ECR) sin romper rollback ni trazabilidad.
 - `sbom` (T1) — Usar al generar, almacenar y consumir SBOM (CycloneDX), cargarlos en Dependency-Track y gestionar VEX para priorizar vulnerabilidades.
+- `third-party-risk` (T1) — Usar al incorporar o revisar una dependencia, imagen base o servicio de terceros: criterios de salud, mantenimiento, alternativas y registro de decisión.
 
-## 16-ci-cd (T1) — 9/13
+## 16-ci-cd (T1) — 13/13
 
+- `alternatives` (T3) — Usar solo si el proyecto no puede usar GitHub Actions: equivalencias y cautelas de GitLab CI y Jenkins respecto a las reglas de CI/CD de la fábrica.
 - `contract-gate` (T1) — Usar al integrar Pact en el pipeline: publicar contratos, verificar proveedor y bloquear el despliegue con can-i-deploy.
 - `database-migration-step` (T1) — Usar al decidir cómo y cuándo se ejecutan las migraciones de base de datos dentro del pipeline de despliegue.
+- `deployment-verification-and-smoke` (T1) — Usar al definir cómo el pipeline verifica un despliegue: readiness, smoke tests, comprobación de versión y criterios para continuar o revertir.
 - `ephemeral-preview-environments` (T1) — Usar al crear entornos efímeros por PR (namespace en Kubernetes) para pruebas de integración, contrato y rendimiento, con limpieza y coste acotado.
 - `github-actions` (T1) — Usar al escribir o revisar workflows de GitHub Actions: reutilizables, OIDC a la nube, pinning por SHA, runners efímeros, cachés, matrices y environments.
 - `performance-gate` (T1) — Usar al añadir pruebas de rendimiento con JMeter al pipeline: umbrales, entorno comparable y detección de regresiones.
 - `pipeline-architecture` (T1) — Usar al diseñar el pipeline CI/CD de un proyecto generado: etapas, orden de gates, separación CI/CD y artefactos inmutables.
+- `pipeline-observability-and-dora` (T1) — Usar al medir el pipeline: métricas DORA, duración, tasa de fallos y flakiness, y cómo emitirlas sin datos sensibles.
 - `quality-gates` (T1) — Usar al definir los gates de calidad bloqueantes del pipeline: tests, cobertura, mutación, arquitectura, estilo y análisis estático.
 - `release-versioning-changelog` (T1) — Usar al definir versionado semántico, tags, changelog y notas de release automatizadas desde Conventional Commits.
+- `rollback-strategy` (T1) — Usar al diseñar cómo revertir un despliegue desde el pipeline: rollback de aplicación, compatibilidad de esquema, feature flags y roll-forward.
 - `security-gates` (T1) — Usar al añadir gates de seguridad al pipeline: SAST, secretos, SCA, escaneo de imagen, IaC, SBOM y firma, con umbrales y excepciones VEX.
 
 ## 17-gitops-progressive-delivery (T1) — 9/9
@@ -378,31 +390,58 @@ Skills: **327** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `private-registry` (T3) — Usar al montar un registro privado de imágenes (Harbor) on-prem: proyectos, replicación, escaneo, caché proxy y firma.
 - `storage-and-load-balancing` (T3) — Usar al elegir almacenamiento persistente (CSI) y balanceo de carga (LoadBalancer, ingress) en clústeres Kubernetes on-prem sin servicios del proveedor cloud.
 
-## 22-polyglot-persistence (T1) — 11/21
+## 22-polyglot-persistence (T1) — 21/21
 
+- `aggregates-and-event-design` (T1) — Usar al diseñar agregados y eventos de un sistema con event sourcing: límites del stream, nombres, contenido, metadatos y comandos; subskill de event-sourcing.
 - `audit-trail-without-event-sourcing` (T1) — Usar cuando se necesita historial de cambios o auditoría de negocio y se duda entre event sourcing y alternativas más simples (tabla de auditoría, Envers, CDC, temporal tables).
+- `cache-strategies` (T1) — Usar al introducir Redis como caché (cache-aside, TTL, invalidación, evicción, stampede) delante de Postgres o DynamoDB.
+- `consistency-and-sagas` (T1) — Usar al coordinar cambios que abarcan varios datastores o servicios (Postgres, DynamoDB, mensajería) y hay que elegir transacción local, saga o compensación.
+- `cqrs-read-models-and-search` (T1) — Usar al construir un read model o índice de búsqueda (OpenSearch) derivado de la base de datos de escritura, con consistencia eventual y sin doble escritura.
+- `data-sync-pitfalls` (T1) — Usar al sincronizar datos entre datastores (SQL, DynamoDB, OpenSearch, Redis) por eventos, CDC o jobs, para evitar divergencias, pérdidas, duplicados y desorden.
 - `datastore-selection-guide` (T1) — Usar al elegir el almacén de datos de un agregado o caso de uso (Postgres, DynamoDB, OpenSearch, Redis) y al decidir si hace falta persistencia políglota.
 - `dynamodb-data-modeling` (T1) — Usar al diseñar tablas, claves e índices de DynamoDB a partir de patrones de acceso (single-table vs multi-table, GSI, hot partitions).
 - `dynamodb-event-store` (T1) — Usar al implementar un event store sobre DynamoDB: esquema de streams, append condicional, publicación desde DynamoDB Streams y límites.
+- `event-versioning-and-upcasting` (T1) — Usar al cambiar la forma de un evento almacenado: versionado de esquema, upcasters, cambios compatibles y qué no hacer con eventos inmutables; subskill de event-sourcing.
 - `gdpr-and-immutable-events` (T1) — Usar al diseñar eventos inmutables (event sourcing, logs, outbox) que contienen datos personales y hay que atender supresión o rectificación.
 - `global-tables-and-write-region-rules` (T1) — Usar al replicar DynamoDB entre regiones (Global Tables): modo de consistencia, conflictos last-writer-wins y región de escritura por agregado o tenant.
+- `local-vs-aws-dynamodb-testing` (T1) — Usar al probar código DynamoDB con DynamoDB Local o Testcontainers: qué cubre el emulador, qué NO reproduce y cómo declarar ese límite.
 - `mongodb-alternative` (T3) — Usar solo si se propone MongoDB (o compatible) en lugar de DynamoDB como almacén documental; referencia T3 con criterios y límites.
 - `outbox-and-cdc` (T1) — Usar al publicar eventos tras un cambio en la base de datos sin doble escritura: patrón transactional outbox, relay por polling o CDC (Debezium, DynamoDB Streams).
 - `polyglot-operations-cost` (T1) — Usar antes de añadir un almacén (DynamoDB, OpenSearch, Redis) a un proyecto, para estimar y aceptar su coste operativo y de equipo.
+- `projections-and-read-models` (T1) — Usar al construir proyecciones o read models (Postgres, OpenSearch) a partir de eventos: idempotencia, orden, checkpoints y consistencia eventual; subskill de event-sourcing.
 - `rebuilds-and-replays` (T1) — Usar al reconstruir proyecciones o read models de un sistema event-sourced desde el log de eventos (rebuild, replay, blue/green de proyecciones).
+- `snapshots` (T1) — Usar cuando reconstruir un agregado event-sourced desde sus eventos es lento y se plantean snapshots; subskill de event-sourcing.
 - `testing-event-sourced-systems` (T1) — Usar al escribir tests de aggregates, upcasters y proyecciones en sistemas event-sourced (given-when-then sobre eventos, replay, concurrencia).
+- `when-to-use-and-when-not` (T1) — Usar para decidir si un agregado necesita event sourcing, outbox o solo un audit trail; subskill de event-sourcing con árbol de decisión.
 
-## 23-data-platform (T2) — 0/15
+## 23-data-platform (T2) — 10/15
 
+- `access-control-masking-and-retention` (T2) — Usar al definir quién lee qué en el lago o warehouse: roles, enmascarado de columnas, seguridad por fila y políticas de retención/borrado de datasets.
+- `batch-orchestration` (T2) — Usar al diseñar pipelines batch orquestados con Airflow o Dagster: DAGs idempotentes, reintentos, backfills, particiones por intervalo, alertas y secretos.
+- `bi-and-reporting` (T2) — Usar al elegir herramienta BI, diseñar capa semántica, dashboards y reportes sobre el warehouse, incluyendo permisos, rendimiento y definiciones únicas de métricas.
+- `cdc-and-streaming` (T2) — Usar al alimentar la plataforma de datos desde BD transaccionales con CDC (Debezium/Kafka Connect) o streaming: slots, snapshots, orden, esquemas y reprocesado.
+- `data-governance-and-classification` (T2) — Usar al definir dueños, catálogo, niveles de clasificación y etiquetas de datos en una plataforma analítica (lago, warehouse, marts) antes de abrir acceso a consumidores.
+- `data-observability` (T2) — Usar al monitorizar pipelines y datasets en producción: frescura, volumen, esquema, distribución, linaje y alertas con SLO, para detectar datos rotos antes que el negocio.
+- `data-platform-cost` (T2) — Usar al dimensionar o revisar el coste de una plataforma de datos: almacenamiento, cómputo de consultas, ingesta, egress, particionado y formatos, con presupuestos y atribución por dominio.
+- `etl-vs-elt-and-dbt` (T2) — Usar al elegir entre ETL y ELT y al modelar transformaciones SQL con dbt: capas staging/intermediate/marts, materializaciones incrementales, tests y documentación.
+- `feature-store-and-ml-data` (T2) — Usar al preparar datos de entrenamiento y features para ML: feature store, joins point-in-time, consistencia offline/online, versionado de datasets y datos personales.
+- `gdpr-in-the-lake` (T2) — Usar al diseñar borrado, rectificación, minimización y bases legales sobre datos personales en lago/warehouse (formatos append-only, backups, copias derivadas). Borrador legal.
 
 ## 24-ai-engineering (T2) — 0/21
 
 
-## 25-security-operations (T2) — 0/16
+## 25-security-operations (T2) — 3/16
 
+- `dast-and-attack-simulation` (T2) — Usar al integrar DAST (OWASP ZAP) o simulación de ataques en CI o staging propios, con alcance acotado y autorizado; nunca contra terceros.
+- `penetration-testing-program` (T2) — Usar al planificar o revisar pruebas de penetración sobre sistemas propios: alcance y reglas de compromiso por escrito, metodología, informe y seguimiento.
+- `vulnerability-management-program` (T2) — Usar al definir o revisar el programa de gestión de vulnerabilidades: inventario, priorización, SLAs de remediación, excepciones y métricas.
 
-## 26-enterprise-capabilities (T2) — 0/16
+## 26-enterprise-capabilities (T2) — 4/16
 
+- `identity-and-customer-management` (T2) — Usar al diseñar identidad de usuarios/clientes (registro, perfil, federación, roles) sobre Keycloak y su separación del modelo de cliente de negocio.
+- `notifications` (T2) — Usar al diseñar envío de notificaciones (email, SMS, push, in-app): plantillas, preferencias, reintentos, idempotencia y proveedores.
+- `rules-engines` (T2) — Usar al decidir si reglas de negocio cambiantes (precios, elegibilidad, scoring) van en código, tablas de decisión o un motor de reglas (Drools/DMN).
+- `workflow-bpm` (T2) — Usar al introducir procesos de larga duración, aprobaciones humanas o BPMN (Camunda/Flowable) en lugar de máquinas de estado ad hoc.
 
 ## 27-frontend-react (T1) — 0/23
 

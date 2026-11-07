@@ -140,3 +140,10 @@ def test_missing_adr_detected(tmp_path):
     shutil.copytree(ROOT / "catalog" / "adr", tmp_path / "catalog" / "adr")
     next((tmp_path / "catalog" / "adr").glob("0005-*.md")).unlink()
     assert any("D5" in f.message for f in schemas_and_adrs.validate_adrs(tmp_path))
+
+
+# ------------------------------------------------------------------ build_index
+def test_generated_index_and_standards_are_fresh():
+    import subprocess
+    r = subprocess.run([sys.executable, str(ROOT / "factory" / "tools" / "build_index.py"), "--check"], capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout

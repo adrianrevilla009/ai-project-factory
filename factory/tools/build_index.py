@@ -48,15 +48,44 @@ def build() -> tuple[str, list[str]]:
     return "\n".join(lines), missing
 
 
+def rules_of(name: str) -> str:
+    body = (ROOT / ".claude" / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
+    m = re.search(r"^##\s+Reglas\s*$(.*?)(?=^##\s)", body, re.M | re.S)
+    return m.group(1).strip() if m else ""
+
+
+def build_standards() -> dict[str, str]:
+    """One human-readable standards page per block, aggregated from each skill's Reglas section."""
+    skills = load_skills()
+    out = {}
+    by_block = {}
+    for name, fm in skills.items():
+        by_block.setdefault((fm.get("metadata") or {}).get("block", "sin-bloque"), []).append(name)
+    for block, names in sorted(by_block.items()):
+        lines = [f"# Estándares · {block}", "", "> Generado desde los skills por `factory/tools/build_index.py`. La fuente de verdad es cada `SKILL.md`; no editar a mano.", ""]
+        for n in sorted(names):
+            lines += [f"## {n}", "", rules_of(n), ""]
+        out[f"standards/{block}.md"] = "\n".join(lines)
+    return out
+
+
 def main() -> int:
     text, missing = build()
     out = ROOT / "docs" / "skills-index.md"
+    standards = build_standards()
     if "--check" in sys.argv:
-        if not out.exists() or out.read_text(encoding="utf-8") != text:
-            print("docs/skills-index.md is stale: run python3 factory/tools/build_index.py")
+        stale = [] if out.exists() and out.read_text(encoding="utf-8") == text else ["docs/skills-index.md"]
+        for rel, content in standards.items():
+            f = ROOT / rel
+            if not f.exists() or f.read_text(encoding="utf-8") != content:
+                stale.append(rel)
+        if stale:
+            print("stale generated files (run python3 factory/tools/build_index.py):", *stale, sep="\n  ")
             return 1
         return 0
     out.write_text(text, encoding="utf-8")
+    for rel, content in standards.items():
+        (ROOT / rel).write_text(content, encoding="utf-8")
     print(f"index written; missing skills: {len(missing)}")
     for m in missing:
         print("  missing:", m)

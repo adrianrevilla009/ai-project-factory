@@ -2,4 +2,4 @@
 
 ESLint y dependency-cruiser para fronteras del frontend.
 
-> Estado: estructura creada en la Oleada 0; contenido pendiente salvo que se indique lo contrario.
+> Estado: `dependency-cruiser.example.cjs` y `eslint.boundaries.example.mjs` (Oleada 2, skill `architecture`). Son ejemplos para copiar al proyecto generado; no se ejecutan en la fábrica.
