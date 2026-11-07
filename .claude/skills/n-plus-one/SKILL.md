@@ -79,11 +79,11 @@ Requiere `hibernate.generate_statistics=true` en el perfil de test.
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
 | Regla Semgrep: `@ManyToOne`/`@OneToOne` sin `fetch = LAZY` | 1 | `policies/semgrep/jpa-eager-toone.yaml` |
-| Test base que cuenta queries | 1 | `templates/backend-java-spring` (base de tests de repositorio, Oleada 1) |
+| Test que cuenta queries (patrón del ejemplo de arriba, que el proyecto generado debe incluir) | 1 | tests del proyecto generado |
 | Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/` (Oleada 1) |
 | Revisión de consultas de listado | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep existe; la plantilla de test y el hook `require-green-tests` se entregan en la Oleada 1.
+> Estado: la regla Semgrep existe; el hook `require-green-tests` se entregan en la Oleada 1.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `lazy-vs-eager`, `projections-and-dtos`, `joins-and-fetch-joins`, `testing-slices`.

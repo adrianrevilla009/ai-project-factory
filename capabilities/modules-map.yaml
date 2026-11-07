@@ -1,16 +1,76 @@
-# módulo -> plantilla + skills + policies + tests + dashboards
-# Esqueleto de Oleada 0: se completa por oleada. Las rutas aún no existen salvo las indicadas.
+# módulo -> skills + policies + tests + dashboards que guían su implementación
+# Esta fábrica solo contiene guías; no hay plantillas (ADR-0038). Se rellena por oleada.
 version: 1
 modules:
-  backend-java-spring: { template: templates/backend-java-spring, skills: [], policies: [], tests: [], dashboards: [], wave: 1 }
-  frontend-react:      { template: templates/frontend-react, skills: [], policies: [], tests: [], dashboards: [], wave: 4 }
-  event-sourcing:      { template: templates/modules/event-sourcing, skills: [], policies: [], tests: [], dashboards: [], wave: 4 }
-  outbox:              { template: templates/modules/outbox, skills: [], policies: [], tests: [], dashboards: [], wave: 4 }
-  multi-tenant:        { template: templates/modules/multi-tenant, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  search:              { template: templates/modules/search, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  rag:                 { template: templates/modules/rag, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  agents:              { template: templates/modules/agents, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  idp-documents:       { template: templates/modules/idp-documents, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  workflow:            { template: templates/modules/workflow, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  notifications:       { template: templates/modules/notifications, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
-  data-platform:       { template: templates/modules/data-platform, skills: [], policies: [], tests: [], dashboards: [], wave: 5 }
+  backend-java-spring:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 1
+  frontend-react:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 4
+  event-sourcing:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 4
+  outbox:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 4
+  multi-tenant:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  search:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  rag:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  agents:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  idp-documents:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  workflow:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  notifications:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5
+  data-platform:
+    skills: []
+    policies: []
+    tests: []
+    dashboards: []
+    wave: 5

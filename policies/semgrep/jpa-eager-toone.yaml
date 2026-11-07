@@ -19,4 +19,4 @@ rules:
               $T $F;
     metadata:
       skill: n-plus-one
-      note: "TODO-VERIFY: probar la regla con semgrep en la Oleada 1 (reference-app); no ejecutada en Oleada 0."
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada en Oleada 0."

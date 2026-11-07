@@ -1,6 +1,6 @@
 # AI Project Factory
 
-Fábrica de proyectos corporativos asistida por IA: estándares (skills), agentes, hooks, plantillas, validadores y **gates humanos** que, a partir de un dominio y unos requisitos, generan proyectos Java/Spring + React de calidad profesional, con su propia configuración de agentes.
+Repositorio de **guías** para crear proyectos corporativos con IA: estándares (skills), agentes, comandos, hooks, policies, validadores y **gates humanos**. No contiene plantillas ni aplicación de referencia (ADR-0038): los agentes construyen el proyecto siguiendo las guías.
 
 - Brief y decisiones: [`docs/FACTORY_BRIEF.md`](docs/FACTORY_BRIEF.md) · ADRs: [`catalog/adr/`](catalog/adr/README.md)
 - Reglas permanentes: [`CLAUDE.md`](CLAUDE.md)
@@ -14,7 +14,7 @@ Fábrica de proyectos corporativos asistida por IA: estándares (skills), agente
 | Hooks `block-secrets`, `block-dangerous-commands`, `enforce-gate-approval` | Creado y testeado |
 | Validadores (skills, afirmaciones honestas, esquemas, ADRs) | Creado y testeado |
 | Dev container con firewall de salida | Creado, **no probado en un contenedor real** |
-| Resto de skills, plantillas, agentes, comandos, `reference-app` | Pendiente (Oleadas 1–5) |
+| Resto de skills, agentes, comandos, policies | Pendiente (Oleadas 1–5) |
 
 ## Uso
 ```bash
@@ -35,4 +35,4 @@ Esta fábrica **nunca despliega en AWS** (ADR-0004). La infraestructura AWS que 
 Gate 0 Intake → 1 Plan → 2 Implementación → 3 PR → 4 Release → 5 Cloud readiness → cierre. Cada gate exige un registro de aprobación humano ([`gates/`](gates/)); el hook `enforce-gate-approval` lo hace cumplir.
 
 ## Hoja de ruta
-Oleada 1 núcleo Java/calidad + app de referencia · 2 arquitectura/observabilidad · 3 plataforma/entrega · 4 persistencia políglota/frontend · 5 módulos T2.
+Oleada 1 núcleo Java/calidad (guías, policies, hooks) · 2 arquitectura/observabilidad · 3 plataforma/entrega · 4 persistencia políglota/frontend · 5 módulos T2.

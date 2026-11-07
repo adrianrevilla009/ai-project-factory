@@ -1,6 +1,6 @@
 # AI Project Factory — constitución
 
-Repositorio "fábrica": estándares, skills, agentes, hooks, plantillas y validadores que generan proyectos corporativos Java/React. Contexto completo: `docs/FACTORY_BRIEF.md`. Decisiones: `catalog/adr/`.
+Repositorio "fábrica" de **guías**: estándares, skills, agentes, comandos, hooks, policies y validadores con los que los agentes construyen proyectos corporativos Java/React. **No contiene plantillas ni código de proyectos** (ADR-0038). Contexto completo: `docs/FACTORY_BRIEF.md`. Decisiones: `catalog/adr/`.
 
 ## Reglas que nunca se olvidan
 1. **Dos capas:** la fábrica (este repo) y los proyectos generados. No mezclarlas.

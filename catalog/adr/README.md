@@ -41,3 +41,4 @@ ADR-0001…0027 = decisiones D1–D27 del brief. 0028+ = decisiones adicionales 
 | [0035](0035-repositorio-maven-npm-gratuito.md) | Repositorio Maven/npm gratuito | propuesto |
 | [0036](0036-react-por-defecto-spa-vite-vs-ssr-next-js.md) | React por defecto: SPA (Vite) vs SSR (Next.js) | propuesto |
 | [0037](0037-terraform-plan-contra-una-cuenta-aws-vacia.md) | `terraform plan` contra una cuenta AWS vacía | propuesto |
+| [0038](0038-alcance-solo-guias-sin-plantillas.md) | Alcance del repositorio: solo guías, sin plantillas ni app de referencia | aceptado |

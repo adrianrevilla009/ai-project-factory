@@ -75,4 +75,4 @@ questions:
     type: boolean
     default: false
     triggers: [compliance-review]
-always_on: [backend-java-spring, local-k8s, observability, ci-cd, security, testing, claude-config, devcontainer, docs]
+always_on: [backend-java-spring, local-k8s, observability, ci-cd, security, testing, claude-config, devcontainer, docs]  # skills/guías siempre activos, no plantillas

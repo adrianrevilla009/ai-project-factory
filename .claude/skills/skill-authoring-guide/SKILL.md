@@ -22,7 +22,7 @@ metadata:
 - **MUST** indicar en *Enforcement* un mecanismo real (artefacto con ruta) o declarar "revisión humana".
 - **MUST** citar fuentes oficiales con fecha; lo no verificable lleva `TODO-VERIFY`.
 - **MUST NOT** afirmar que algo funciona en AWS real (ver `verify-before-asserting`).
-- **SHOULD** usar código real de `reference-app/` en los ejemplos cuando exista.
+- **SHOULD** escribir ejemplos autocontenidos y realistas (sin depender de una app de referencia, ADR-0038).
 - **SHOULD** mantener `SKILL.md` < 400 líneas; el detalle va a `references/` y `examples/`.
 - **MUST NOT** copiar contenido de repositorios externos sin revisar su licencia.
 
