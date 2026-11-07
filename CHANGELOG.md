@@ -2,6 +2,12 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versionado SemVer.
 
+## [0.2.0] - 2026-11-07
+### Añadido
+- 489 skills (31 bloques) con anatomía validada; 25 agentes; 27 comandos; hooks completos con 87+ tests; catálogo (librerías, tier, paridad, radar); policies de ejemplo; índice y estándares generados.
+### Cambiado
+- Alcance: solo guías, sin plantillas ni app de referencia (ADR-0038).
+
 ## [0.1.0-wave0] - 2026-11-06
 ### Añadido
 - Estructura de carpetas de la fábrica con README por directorio.

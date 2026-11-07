@@ -24,6 +24,18 @@
 - **MUST NOT** usar la VPC por defecto ni rangos 172.31.0.0/16 de la VPC por defecto.
 - **MUST** documentar el plan en una tabla (región, entorno, CIDR, propietario, estado).
 
+## cross-region-connectivity-and-cost
+
+- **MUST** conectar regiones con peering de TGW (rutas estáticas, ver `transit-gateway-hub-and-spoke`) o VPC peering inter-región para casos simples; el tráfico viaja por la red de AWS, no por Internet.
+- **MUST** mantener las llamadas síncronas dentro de una región; entre regiones solo replicación asíncrona y tráfico de control (ver `consistency-and-cap-tradeoffs`, `cell-based-architecture`).
+- **MUST** respetar la residencia de datos: ningún dato personal se replica a una región no autorizada (ver `regions-and-data-residency`; normativa = borrador por confirmar con fuente oficial).
+- **MUST** estimar el coste antes de añadir un flujo: transferencia entre regiones, entre AZ, procesamiento de NAT/TGW/endpoints y salida a Internet se cobran por GB (TODO-VERIFY tarifas vigentes; no copiar cifras de memoria).
+- **MUST NOT** construir arquitecturas con tráfico entre AZ innecesario: usar enrutado consciente de topología (topology aware routing) y NAT por AZ.
+- **SHOULD** comprimir y agrupar la replicación; preferir réplicas de lectura locales a lecturas remotas.
+- **SHOULD** reducir salida por NAT con endpoints de gateway/interfaz (ver `private-endpoints-and-egress-control`) y CloudFront para servir caché.
+- **SHOULD** etiquetar y presupuestar el coste de red por producto (ver `tagging-cost-allocation-budgets`).
+- **SHOULD** revisar mensualmente los mayores emisores de transferencia con flow logs.
+
 ## dns-route53-private-and-hybrid
 
 - **MUST** usar un esquema de nombres por entorno y región (p. ej. `orders.prod.euw1.internal.example.com`) y no reutilizar el mismo nombre privado con IP distinta entre regiones.
@@ -34,6 +46,40 @@
 - **SHOULD** activar DNSSEC en zonas públicas y query logging de Resolver/zonas hacia el archivo de logs (ver `flow-logs-and-network-observability`).
 - **SHOULD** usar TTL bajos (<= 60 s) solo en registros de failover; el resto con TTL moderado.
 - **SHOULD** gestionar los registros de los balanceadores como alias, no CNAME, en el ápice.
+
+## eks-networking
+
+- **MUST** dimensionar IPs de pods: con VPC CNI cada pod consume una IP de VPC; planificar CIDR secundario (p. ej. 100.64.0.0/10) con custom networking o prefix delegation (TODO-VERIFY variables de entorno y versión del add-on).
+- **MUST** desplegar nodos en subredes privadas de todas las AZ y balanceadores en subredes etiquetadas `kubernetes.io/role/elb` (públicas) y `kubernetes.io/role/internal-elb` (privadas).
+- **MUST** configurar el endpoint del API con acceso privado; si hay acceso público, limitar `public_access_cidrs` y nunca 0.0.0.0/0.
+- **MUST** exponer servicios con AWS Load Balancer Controller y `target-type: ip` (ver `alb-nlb-and-tls-termination`), con el rol IRSA/Pod Identity de mínimo privilegio.
+- **MUST** aplicar NetworkPolicy por defecto-denegar entre namespaces, complementando (no sustituyendo) a los SG.
+- **SHOULD** usar security groups for pods solo para cargas que necesiten acceso a datos con SG propios; tiene límites por tipo de instancia (TODO-VERIFY).
+- **SHOULD** vigilar IP libres por subred y ENI por nodo con alertas.
+- **SHOULD** mantener CoreDNS dimensionado y NodeLocal DNSCache si el volumen de DNS lo justifica.
+
+## flow-logs-and-network-observability
+
+- **MUST** activar `aws_flow_log` en cada VPC (idealmente a nivel de VPC, no de ENI) con `traffic_type = "ALL"` en producción.
+- **MUST** enviar los logs a un bucket S3 del archivo de logs (cuenta separada, ver `log-archive-and-audit-account`), cifrado con KMS y con ciclo de vida de retención definido.
+- **MUST** usar formato personalizado con campos útiles (`vpc-id`, `subnet-id`, `srcaddr`, `dstaddr`, `pkt-srcaddr`, `pkt-dstaddr`, `action`, `flow-direction`, `tcp-flags`); `pkt-*` es necesario para ver el origen real tras NAT o balanceador.
+- **MUST** activar también logs de ALB/NLB, WAF, consultas del Resolver y del TGW cuando existan.
+- **MUST NOT** dejar logs de red en una cuenta de carga con permisos de borrado para el equipo de aplicación.
+- **SHOULD** usar intervalo de agregación de 60 s en VPC críticas y 600 s en el resto para controlar coste.
+- **SHOULD** consultar con Athena (tabla particionada) y definir alertas: rechazos masivos, tráfico a puertos de administración, destinos inesperados, picos de egress.
+- **SHOULD** usar Reachability Analyzer para validar rutas antes de culpar a la aplicación.
+
+## global-accelerator-and-failover-routing
+
+- **MUST** decidir y documentar el modo: activa-pasiva (RTO mayor, más simple) o activa-activa (requiere datos replicables, sin doble escritura Postgres+NoSQL).
+- **MUST** elegir la herramienta: Route 53 (failover o latencia con health checks) cuando basta DNS; Global Accelerator (IP anycast estáticas, conmutación sin esperar caché DNS) cuando el RTO o las IP fijas lo exigen.
+- **MUST** respaldar el failover con health checks que prueben la dependencia crítica (endpoint `/health/ready`), no solo que el balanceador responda.
+- **MUST** definir un TTL bajo (<= 60 s) en registros de failover de Route 53 y asumir que algunos resolvers lo ignoran.
+- **MUST** ensayar el failover (game day) y el failback; un camino de failover no probado no cuenta.
+- **MUST NOT** conmutar tráfico a una región cuyos datos no estén replicados o cuya capacidad no esté dimensionada; documentar RPO/RTO.
+- **SHOULD** usar `traffic_dial_percentage` de los endpoint groups de Global Accelerator para drenar o hacer canary regional.
+- **SHOULD** activar flow logs del acelerador hacia el archivo de logs.
+- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (TODO-VERIFY tarifas).
 
 ## private-endpoints-and-egress-control
 
@@ -68,3 +114,15 @@
 - **SHOULD** usar NACL solo como red de seguridad gruesa (denegar rangos conocidos); la lógica fina va en SG.
 - **SHOULD** activar `enable_dns_support` y `enable_dns_hostnames` (requisito de endpoints y zonas privadas).
 - **SHOULD** etiquetar subredes con rol y entorno (ver `tagging-cost-allocation-budgets`).
+
+## waf-shield-and-cloudfront
+
+- **MUST** poner CloudFront delante de frontends y APIs públicas, o como mínimo un WAF regional en el ALB.
+- **MUST** asociar un `aws_wafv2_web_acl`: scope `CLOUDFRONT` (se crea en us-east-1) o `REGIONAL` (misma región que el ALB).
+- **MUST** incluir grupos gestionados básicos (p. ej. `AWSManagedRulesCommonRuleSet`) y una regla de tasa; desplegar reglas nuevas primero en modo `count` y pasar a `block` tras revisar logs.
+- **MUST** activar logging del WAF hacia el archivo de logs (ver `flow-logs-and-network-observability`) con redacción de cabeceras sensibles.
+- **MUST** impedir el acceso directo al origen: el SG del ALB solo admite la prefix list gestionada de CloudFront y se exige una cabecera secreta rotada, o se usa VPC origin si está disponible (TODO-VERIFY).
+- **MUST** usar Origin Access Control (OAC) para orígenes S3, con el bucket privado.
+- **MUST NOT** depender del WAF como única defensa: validación de entrada y authz siguen en la aplicación.
+- **SHOULD** usar Shield Standard (incluido); Shield Advanced es de pago y solo se adopta con decisión explícita (D16).
+- **SHOULD** forzar HTTPS al viewer, TLS 1.2 como mínimo y cabeceras de seguridad (ver `security-headers-cors-csrf`).

@@ -2,7 +2,7 @@
 
 > Generado por `factory/tools/build_index.py`. No editar a mano.
 
-Skills: **366** de 487 previstos en `catalog/skills-inventory.yaml`.
+Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 
 ## 01-java-language (T1) — 14/14
 
@@ -240,14 +240,19 @@ Skills: **366** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `scp-guardrails` (T1) — Usar al escribir o revisar Service Control Policies de AWS Organizations: denegación de regiones, protección de trails, KMS y root.
 - `tagging-cost-allocation-budgets` (T1) — Usar al definir tags obligatorios, asignación de costes y AWS Budgets en cuentas AWS; también al revisar Terraform sin default_tags.
 
-## 12-aws-networking (T1) — 6/11
+## 12-aws-networking (T1) — 11/11
 
 - `alb-nlb-and-tls-termination` (T1) — Usar al elegir y configurar balanceadores AWS (ALB vs NLB), listeners, certificados ACM y dónde terminar TLS (borde, balanceador o malla).
 - `cidr-planning-and-ipam` (T1) — Usar al diseñar rangos CIDR de VPC, subredes o EKS, o al introducir VPCs nuevas que deban conectarse por TGW, peering o VPN sin solapamientos.
+- `cross-region-connectivity-and-cost` (T1) — Usar al conectar eu-west-1 con eu-central-1 o estimar costes de red: peering TGW, transferencia entre AZ/regiones, NAT, endpoints y replicación.
 - `dns-route53-private-and-hybrid` (T1) — Usar al diseñar DNS en AWS: zonas privadas de Route 53, Resolver inbound/outbound para híbrido, asociación entre VPC/cuentas y registros de failover.
+- `eks-networking` (T1) — Usar al diseñar la red de EKS: VPC CNI, agotamiento de IPs de pods, security groups, AWS Load Balancer Controller, endpoint del API y etiquetas de subredes.
+- `flow-logs-and-network-observability` (T1) — Usar al activar o revisar VPC Flow Logs, logs de DNS/ALB/WAF y diagnóstico de red en AWS: destino, formato, retención, coste y alertas.
+- `global-accelerator-and-failover-routing` (T1) — Usar al diseñar la entrada multirregión eu-west-1/eu-central-1: elegir entre Route 53 (failover, latencia) y Global Accelerator, health checks y reparto de tráfico.
 - `private-endpoints-and-egress-control` (T1) — Usar al diseñar el acceso privado a servicios AWS (VPC endpoints) y la salida a Internet (NAT, egress centralizado, allowlist de dominios) desde subredes privadas.
 - `transit-gateway-hub-and-spoke` (T1) — Usar al conectar varias VPC o cuentas con Transit Gateway: tablas de rutas segmentadas, inspección centralizada y peering entre eu-west-1 y eu-central-1.
 - `vpc-multi-az-layers` (T1) — Usar al diseñar la topología de una VPC: capas de subredes (pública, privada, datos), reparto en AZ, NAT, tablas de rutas y security groups.
+- `waf-shield-and-cloudfront` (T1) — Usar al proteger endpoints públicos en AWS: AWS WAF, Shield, CloudFront delante de ALB/S3, bloqueo de acceso directo al origen y reglas de tasa.
 
 ## 13-kubernetes-and-istio (T1) — 27/27
 
@@ -414,51 +419,167 @@ Skills: **366** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `testing-event-sourced-systems` (T1) — Usar al escribir tests de aggregates, upcasters y proyecciones en sistemas event-sourced (given-when-then sobre eventos, replay, concurrencia).
 - `when-to-use-and-when-not` (T1) — Usar para decidir si un agregado necesita event sourcing, outbox o solo un audit trail; subskill de event-sourcing con árbol de decisión.
 
-## 23-data-platform (T2) — 10/15
+## 23-data-platform (T2) — 15/15
 
 - `access-control-masking-and-retention` (T2) — Usar al definir quién lee qué en el lago o warehouse: roles, enmascarado de columnas, seguridad por fila y políticas de retención/borrado de datasets.
 - `batch-orchestration` (T2) — Usar al diseñar pipelines batch orquestados con Airflow o Dagster: DAGs idempotentes, reintentos, backfills, particiones por intervalo, alertas y secretos.
 - `bi-and-reporting` (T2) — Usar al elegir herramienta BI, diseñar capa semántica, dashboards y reportes sobre el warehouse, incluyendo permisos, rendimiento y definiciones únicas de métricas.
 - `cdc-and-streaming` (T2) — Usar al alimentar la plataforma de datos desde BD transaccionales con CDC (Debezium/Kafka Connect) o streaming: slots, snapshots, orden, esquemas y reprocesado.
+- `data-contracts-and-lineage` (T2) — Usar al acordar el esquema y SLAs de un dataset entre productor y consumidores (data contract) y al capturar linaje con OpenLineage/Marquez.
 - `data-governance-and-classification` (T2) — Usar al definir dueños, catálogo, niveles de clasificación y etiquetas de datos en una plataforma analítica (lago, warehouse, marts) antes de abrir acceso a consumidores.
+- `data-lake-and-lakehouse` (T2) — Usar al diseñar un data lake o lakehouse: zonas raw/curated, formatos de tabla abiertos (Iceberg/Delta/Parquet), particionado, compactación, catálogo y evolución de esquema.
+- `data-modeling` (T2) — Usar al modelar tablas analíticas: esquema en estrella (hechos y dimensiones), granularidad, claves surrogate, SCD tipo 2, medidas aditivas y alternativas como Data Vault u OBT.
 - `data-observability` (T2) — Usar al monitorizar pipelines y datasets en producción: frescura, volumen, esquema, distribución, linaje y alertas con SLO, para detectar datos rotos antes que el negocio.
 - `data-platform-cost` (T2) — Usar al dimensionar o revisar el coste de una plataforma de datos: almacenamiento, cómputo de consultas, ingesta, egress, particionado y formatos, con presupuestos y atribución por dominio.
+- `data-quality` (T2) — Usar al definir o revisar controles de calidad de datos en pipelines: dimensiones de calidad, tests dbt/Great Expectations, umbrales, cuarentena y qué hacer cuando fallan.
 - `etl-vs-elt-and-dbt` (T2) — Usar al elegir entre ETL y ELT y al modelar transformaciones SQL con dbt: capas staging/intermediate/marts, materializaciones incrementales, tests y documentación.
 - `feature-store-and-ml-data` (T2) — Usar al preparar datos de entrenamiento y features para ML: feature store, joins point-in-time, consistencia offline/online, versionado de datasets y datos personales.
 - `gdpr-in-the-lake` (T2) — Usar al diseñar borrado, rectificación, minimización y bases legales sobre datos personales en lago/warehouse (formatos append-only, backups, copias derivadas). Borrador legal.
+- `warehouse-options` (T2) — Usar al elegir el motor analítico/warehouse (PostgreSQL, ClickHouse, DuckDB, Trino, Redshift, Athena...) según volumen, concurrencia, latencia, coste y licencia.
 
-## 24-ai-engineering (T2) — 0/21
+## 24-ai-engineering (T2) — 21/21
 
+- `agents-and-tool-calling` (T2) — Usar al dar herramientas a un LLM o construir un agente en Java: diseño de tools, permisos mínimos, límites de bucle, idempotencia y confirmación humana de acciones.
+- `ai-safety-and-red-teaming` (T2) — Usar al planificar pruebas adversarias (red teaming) de un sistema con LLM propio: alcance escrito, categorías de riesgo, casos de prueba, severidad y remediación.
+- `chatbot-design` (T2) — Usar al diseñar un chatbot o asistente conversacional corporativo: alcance, memoria, escalado a humano, transparencia y manejo de fallos.
+- `classical-mlops` (T2) — Usar al llevar un modelo de ML clásico (scikit-learn, XGBoost, series temporales) a un servicio: reproducibilidad, registro de modelos, validación, despliegue y monitorización de deriva.
+- `document-management` (T2) — Usar al diseñar el almacenamiento de documentos de usuario (PDF, contratos, adjuntos): objeto en S3 más metadatos en BD, versionado, retención, hash y control de acceso.
+- `guardrails-and-pii-redaction` (T2) — Usar al proteger entradas y salidas de un LLM: redacción de PII antes de enviar o registrar, filtros de contenido, validación de salida y comportamiento ante bloqueo.
+- `human-in-the-loop` (T2) — Usar al diseñar flujos donde un LLM o agente propone acciones o decisiones que una persona debe aprobar, corregir o revisar antes de que tengan efecto.
+- `intelligent-document-processing` (T2) — Usar al diseñar un pipeline de procesamiento inteligente de documentos: ingesta, OCR, clasificación, extracción y revisión humana de facturas, contratos o formularios.
+- `llm-evals` (T2) — Usar al añadir o cambiar un prompt, modelo, RAG o agente: define datasets de evaluación, métricas, jueces LLM y umbrales que bloquean regresiones en CI.
+- `llm-gateway` (T2) — Usar al decidir cómo acceden los servicios a proveedores LLM: pasarela central vs cliente directo, enrutado de modelos, claves, cuotas, caché, fallback y auditoría.
+- `mcp-servers-in-java` (T2) — Usar al exponer capacidades propias como servidor MCP (Model Context Protocol) en Java/Spring Boot: transporte, autenticación, herramientas mínimas y seguridad.
+- `model-risk-and-ai-act-mapping` (T2) — Usar al clasificar un sistema de IA por riesgo, mapearlo al Reglamento UE de IA (AI Act) y documentar riesgos de modelo; borrador por confirmar legalmente.
+- `ocr-options` (T2) — Usar al elegir el motor OCR de un pipeline de documentos: Tesseract local frente a servicios gestionados o modelos de visión, con criterios de calidad, coste y privacidad.
+- `prompt-management` (T2) — Usar al escribir, versionar o desplegar prompts de LLM en un servicio: plantillas, versionado, revisión, pruebas de regresión y separación de datos no confiables.
+- `rag-architecture` (T2) — Usar al diseñar un sistema RAG (ingesta, chunking, embeddings, recuperación, reranking, generación con citas): decisiones de arquitectura y fallos típicos.
+- `rag-over-enterprise-docs` (T2) — Usar al montar RAG sobre documentos corporativos (PDF, Office, wikis): conectores, parsing, permisos heredados, frescura, borrado y datos personales.
+- `spring-ai-and-langchain4j` (T2) — Usar al elegir o integrar un framework LLM en Java/Spring Boot (Spring AI o LangChain4j): criterios de elección, abstracciones, aislamiento del proveedor y pruebas.
+- `structured-outputs-and-streaming` (T2) — Usar cuando una respuesta de LLM alimenta código (JSON/esquema) o se envía al cliente en streaming (SSE): esquemas, validación, reintentos y cancelación.
+- `token-and-cost-budgets` (T2) — Usar al integrar un LLM en un servicio: límites de tokens, presupuesto de coste por petición/tenant, caché, enrutado de modelos y alertas de gasto.
+- `training-data-licensing-and-provenance` (T2) — Usar al reunir datos o documentos para entrenar, afinar o alimentar un RAG: licencias, base legal, procedencia, consentimiento y registro de origen.
+- `vector-store-selection` (T2) — Usar al elegir dónde guardar embeddings para búsqueda semántica o RAG: pgvector, OpenSearch u otros, con criterios de escala, filtrado, consistencia y coste.
 
-## 25-security-operations (T2) — 3/16
+## 25-security-operations (T2) — 16/16
 
+- `bug-bounty-and-disclosure` (T2) — Usar al definir política de divulgación de vulnerabilidades (security.txt, VDP) o un programa de bug bounty, incluyendo triaje, safe harbor y plazos.
+- `cspm-and-posture` (T2) — Usar al montar o revisar la vigilancia de postura de seguridad cloud y Kubernetes (CSPM) con herramientas abiertas como Prowler y Kubescape, y su gestión de hallazgos.
 - `dast-and-attack-simulation` (T2) — Usar al integrar DAST (OWASP ZAP) o simulación de ataques en CI o staging propios, con alcance acotado y autorizado; nunca contra terceros.
+- `encryption-standards` (T2) — Usar al elegir algoritmos, longitudes de clave, TLS y cifrado en reposo; define el estándar de cifrado y la migración a criptografía post-cuántica.
+- `hardening-baselines` (T2) — Usar al definir o revisar líneas base de endurecimiento (CIS Benchmarks) para imágenes, nodos, clústeres y servicios, con desviaciones documentadas.
+- `iam-governance-and-pam` (T2) — Usar al diseñar o revisar el gobierno de identidades: ciclo joiner-mover-leaver, recertificación de accesos, cuentas privilegiadas (PAM) y separación de funciones.
+- `ids-ips-waf-edr` (T2) — Usar al elegir y desplegar controles de detección y bloqueo: IDS/IPS de red, WAF, EDR y detección en runtime de contenedores, y cómo se ajustan sin romper tráfico legítimo.
+- `incident-response-playbooks-and-forensics` (T2) — Usar al escribir playbooks de respuesta a incidentes de seguridad y al definir preservación de evidencia y cadena de custodia forense.
 - `penetration-testing-program` (T2) — Usar al planificar o revisar pruebas de penetración sobre sistemas propios: alcance y reglas de compromiso por escrito, metodología, informe y seguimiento.
+- `pki-and-certificate-lifecycle` (T2) — Usar al diseñar la PKI interna o el ciclo de vida de certificados TLS (emisión, renovación automática, revocación, inventario) con cert-manager u otra CA.
+- `ransomware-resilience` (T2) — Usar al diseñar defensas y recuperación frente a ransomware: copias inmutables aisladas, segmentación, privilegios mínimos y pruebas de restauración.
+- `security-champions-and-training` (T2) — Usar al montar un programa de security champions y formación de seguridad para equipos de desarrollo, con roles, cadencia y métricas útiles.
+- `siem-and-detection-engineering` (T2) — Usar al diseñar la recogida de logs de seguridad, un SIEM (p. ej. Wazuh) o reglas de detección como código con pruebas y ajuste de falsos positivos.
+- `third-party-and-supply-chain-risk` (T2) — Usar al evaluar proveedores y componentes externos como riesgo de negocio: due diligence, cláusulas contractuales, monitorización continua y plan de salida.
+- `threat-intel-and-risk-register` (T2) — Usar al incorporar inteligencia de amenazas (CISA KEV, avisos de proveedores) y al mantener el registro de riesgos de seguridad con propietarios, tratamiento y revisión.
 - `vulnerability-management-program` (T2) — Usar al definir o revisar el programa de gestión de vulnerabilidades: inventario, priorización, SLAs de remediación, excepciones y métricas.
 
-## 26-enterprise-capabilities (T2) — 4/16
+## 26-enterprise-capabilities (T2) — 16/16
 
+- `api-productization-and-developer-portal` (T2) — Usar al convertir una API en producto para terceros: claves y planes, portal de desarrolladores, sandbox, documentación, SDKs, cuotas, versionado y soporte.
+- `audit-trail-and-activity-log` (T2) — Usar al diseñar el registro de auditoria de negocio (quien hizo que y cuando) y el historial de actividad visible al usuario en una aplicacion empresarial.
+- `back-office-admin-console` (T2) — Usar al diseñar o revisar una consola de administración / back-office (soporte, operaciones, impersonación, acciones masivas) con permisos, auditoría y aprobación de acciones sensibles.
+- `consent-and-dsar-management` (T2) — Usar al implementar registro de consentimientos, preferencias y solicitudes de derechos de interesados (acceso, rectificación, supresión, portabilidad) con plazos y trazabilidad. Borrador legal.
+- `document-and-report-generation` (T2) — Usar al generar PDF, Excel/CSV o informes desde el backend: plantillas, asincronía, almacenamiento, límites de memoria y datos sensibles.
+- `i18n-and-localization` (T2) — Usar al preparar el backend para varios idiomas y regiones: mensajes, locale, zonas horarias, formatos, moneda y contenido traducible almacenado. Complementa frontend-i18n-and-formatting.
 - `identity-and-customer-management` (T2) — Usar al diseñar identidad de usuarios/clientes (registro, perfil, federación, roles) sobre Keycloak y su separación del modelo de cliente de negocio.
+- `import-export-and-bulk-data` (T2) — Usar al implementar importación/exportación masiva (CSV/Excel/JSON) por usuarios o integraciones: validación, staging, errores por fila e idempotencia.
+- `integrations-erp-crm` (T2) — Usar al integrar con ERP o CRM externos (SAP, Odoo, Salesforce, HubSpot u otros): sincronización, mapeo, idempotencia, límites de API, conciliación y fallos del sistema externo.
+- `multi-tenancy-saas-features` (T2) — Usar al construir funciones SaaS multi-tenant sobre el modelo ya elegido: onboarding de tenants, planes y límites, configuración por tenant, dominios propios y offboarding.
 - `notifications` (T2) — Usar al diseñar envío de notificaciones (email, SMS, push, in-app): plantillas, preferencias, reintentos, idempotencia y proveedores.
+- `payments-and-billing` (T2) — Usar al integrar pasarelas de pago, modelar importes, cobros recurrentes, facturacion o conciliacion; cubre dinero, idempotencia y webhooks.
 - `rules-engines` (T2) — Usar al decidir si reglas de negocio cambiantes (precios, elegibilidad, scoring) van en código, tablas de decisión o un motor de reglas (Drools/DMN).
+- `scheduling-and-batch-jobs` (T2) — Usar al crear tareas programadas o jobs batch (Spring @Scheduled, ShedLock, Quartz, Spring Batch) en servicios con varias réplicas.
+- `search-and-discovery` (T2) — Usar al añadir búsqueda de texto, filtros/facetas o autocompletado: PostgreSQL FTS vs OpenSearch, indexación derivada y consistencia.
 - `workflow-bpm` (T2) — Usar al introducir procesos de larga duración, aprobaciones humanas o BPMN (Camunda/Flowable) en lugar de máquinas de estado ad hoc.
 
-## 27-frontend-react (T1) — 0/23
+## 27-frontend-react (T1) — 23/23
 
+- `accessibility` (T1) — Usar al construir o revisar componentes, formularios y flujos React para cumplir WCAG 2.2 AA: semántica, teclado, foco, contraste y pruebas con axe.
+- `api-client-from-openapi` (T1) — Usar al consumir una API desde React: generar tipos/cliente desde el OpenAPI del backend, regenerar en CI y no escribir llamadas HTTP a mano.
+- `auth-and-session` (T1) — Usar al implementar login, sesión y rutas protegidas en React: OIDC con PKCE, patrón BFF con cookie de sesión, sin tokens en localStorage.
+- `build-and-deploy` (T1) — Usar al configurar el build con pnpm/Vite y el despliegue estático de la SPA (S3 + CloudFront): caché, invalidación, fallback SPA y multi-región.
+- `component-patterns` (T1) — Usar al diseñar o revisar componentes y hooks React: composición, compound components, hooks propios, render props y cuándo memoizar.
+- `design-system-and-tokens` (T1) — Usar al crear o mantener el sistema de diseño: tokens (color, espaciado, tipografía), componentes base documentados en Storybook y temas.
+- `error-handling-and-boundaries` (T1) — Usar al gestionar errores en React: error boundaries por zona, errores de red/Problem Details, estados de fallo en UI y reporte sin datos sensibles.
+- `feature-flags-ui` (T1) — Usar al condicionar UI o rutas React con feature flags (OpenFeature): evaluación, carga inicial, flicker, limpieza y por qué un flag no protege.
+- `forms-and-validation` (T1) — Usar al construir formularios React: React Hook Form con esquemas Zod, mensajes de error accesibles, errores del servidor y envío seguro.
+- `frontend-architecture` (T1) — Usar al estructurar un proyecto React: carpetas por feature, límites entre módulos, API pública de cada feature y dirección de dependencias.
+- `frontend-i18n-and-formatting` (T1) — Usar al añadir textos, fechas, números, monedas o idiomas a la UI React: catálogos de mensajes, formato con Intl y RTL.
+- `frontend-performance` (T1) — Usar al optimizar o revisar rendimiento de la SPA React: Core Web Vitals, presupuestos de bundle, imágenes, renders y medición.
+- `micro-frontends` (T3) — Usar solo si se plantea dividir el frontend en micro-frontends (Module Federation u otros): cuándo no hacerlo, contratos, dependencias compartidas y gobierno.
+- `observability-frontend` (T1) — Usar al instrumentar la SPA con OpenTelemetry del navegador, RUM, Web Vitals y reporte de errores, correlacionando con trazas del backend.
+- `pwa-and-offline` (T3) — Usar solo si la SPA necesita instalarse o funcionar sin conexión (PWA, service worker): estrategias de caché, actualizaciones, datos sensibles y cola de escrituras.
+- `realtime` (T1) — Usar al añadir actualizaciones en tiempo real a la SPA con SSE o WebSocket: elección, autenticación, reconexión, integración con TanStack Query y límites.
+- `rendering-strategy-decision` (T1) — Usar al decidir cómo renderiza una app React: SPA con Vite (defecto, ADR-0036) frente a SSR/Next.js, y qué evidencia justifica cambiar.
+- `routing-and-code-splitting` (T1) — Usar al definir rutas en React Router, guards de navegación y carga diferida (lazy) de rutas para dividir el bundle.
+- `security-frontend` (T1) — Usar al escribir o revisar código React que renderiza HTML, carga scripts, define CSP/cabeceras o maneja datos sensibles en el navegador (XSS).
+- `state-management` (T1) — Usar al decidir dónde vive el estado en React: server-state (TanStack Query), client-state (Zustand/Redux Toolkit), URL y formularios.
+- `supply-chain-npm` (T1) — Usar al añadir, actualizar o auditar dependencias npm/pnpm del frontend: lockfile, scripts de instalación, typosquatting, auditoría y SBOM.
+- `testing` (T1) — Usar al escribir o revisar tests del frontend React: Vitest, Testing Library, MSW, Playwright, regresión visual y accesibilidad.
+- `typescript-strict-rules` (T1) — Usar al configurar tsconfig/ESLint o escribir tipos en TypeScript/React: modo strict, sin any, validación en los bordes y uniones discriminadas.
 
-## 28-local-kubernetes (T1) — 0/9
+## 28-local-kubernetes (T1) — 9/9
 
+- `aws-emulation` (T1) — Usar al decidir cómo emular servicios AWS en local (DynamoDB Local, MinIO, LocalStack) y al documentar sus límites; no sustituye a AWS.
+- `cluster-tooling` (T1) — Usar al crear o documentar el Kubernetes local de un proyecto: kind por defecto (ADR-0034), k3d alternativa, registro local y config reproducible.
+- `data-seeding-and-demo-data` (T1) — Usar al cargar datos de demo o de desarrollo en el clúster local: seeds idempotentes, sintéticos y sin PII, aplicados por Job de Kubernetes.
+- `dev-loop` (T1) — Usar al configurar el bucle de desarrollo inner-loop en Kubernetes local con Tilt o Skaffold: rebuild, sync, port-forward y límites del hot reload en Java.
+- `devcontainer-integration` (T1) — Usar al preparar un devcontainer que traiga kind, kubectl, Helm, Tilt y el resto del tooling local para que el clúster arranque igual en cualquier máquina.
+- `local-gitops` (T1) — Usar al probar GitOps con Argo CD en el clúster local (opcional): app-of-apps contra un repositorio git local, sin tocar entornos reales.
+- `local-parity-matrix` (T1) — Usar al documentar o revisar la equivalencia AWS-local de un proyecto y lo que el Kubernetes local no reproduce; fuente: catalog/parity-matrix.yaml.
+- `local-profiles` (T1) — Usar al definir qué se levanta en local: perfil mínimo (servicio + Postgres + DynamoDB Local) y completo (Kafka, Vault, Istio, observabilidad).
+- `resource-budgets` (T1) — Usar al fijar CPU/RAM del clúster local y los requests/limits por perfil (minimal/full), para que el portátil del desarrollador aguante.
 
-## 29-cloud-readiness (T1) — 0/6
+## 29-cloud-readiness (T1) — 6/6
 
+- `cost-estimation` (T1) — Usar al estimar el coste de la infraestructura AWS diseñada (Infracost o equivalente) sin desplegar; incluye el sobrecoste por tier de resiliencia.
+- `dr-tabletop-exercises` (T1) — Usar al planificar o documentar un simulacro de DR sobre papel (tabletop): escenarios, tiers RPO/RTO, roles y registro; sustituye lo que local no puede probar.
+- `honest-claims-policy` (T1) — Usar al redactar cualquier texto sobre AWS, infraestructura o madurez: qué se puede afirmar y qué no, con la fórmula obligatoria de honestidad.
+- `maturity-labels` (T1) — Usar al escribir un README, informe o ADR sobre infraestructura: qué etiqueta de madurez poner (validada estáticamente, no verificada en real) y dónde.
+- `parity-matrix-maintenance` (T1) — Usar al añadir, cambiar o retirar un servicio AWS o su equivalente local y mantener catalog/parity-matrix.yaml coherente con los skills afectados.
+- `static-verification-ladder` (T1) — Usar al verificar Terraform/IaC sin desplegar: validate, tflint, Checkov/Trivy, OPA sobre HCL o plan, mock providers. Define el techo de madurez.
 
-## 30-engineering-process (T1) — 0/19
+## 30-engineering-process (T1) — 19/19
 
+- `adr` (T1) — Usar al tomar, cambiar o revertir una decisión arquitectónica: cómo redactar, numerar, versionar y sustituir Architecture Decision Records en catalog/adr o docs/adr.
+- `api-docs` (T1) — Usar al documentar APIs REST o de eventos de un proyecto: OpenAPI/AsyncAPI como fuente única, ejemplos, errores y portal de consumo.
+- `c4-and-arc42` (T1) — Usar al documentar la arquitectura de un proyecto: diagramas C4 (contexto, contenedores, componentes) y estructura arc42 para la documentación completa.
+- `changelog-release-notes` (T1) — Usar al redactar el CHANGELOG y las notas de release de un proyecto: formato, audiencia, cambios incompatibles y avisos de migración.
+- `conventional-commits` (T1) — Usar al redactar mensajes de commit o títulos de PR/squash, o al configurar la validación de commits y la generación automática de changelog.
+- `definition-of-ready-and-done` (T1) — Usar al planificar o cerrar una historia/tarea: criterios para empezar (Definition of Ready) y para darla por terminada (Definition of Done) con evidencia.
+- `diagrams-as-code` (T1) — Usar al crear o actualizar diagramas de arquitectura, secuencia o flujo: definirlos como texto versionado (Mermaid, PlantUML, Structurizr DSL) revisable en PR.
+- `domain-discovery` (T1) — Usar al arrancar un dominio nuevo o poco claro: sesiones de event storming para descubrir eventos, agregados, contextos delimitados y lenguaje ubicuo.
+- `git-workflow` (T1) — Usar al crear ramas, integrar cambios o decidir cómo versionar trabajo en un proyecto generado: trunk-based development con ramas cortas y feature flags.
+- `lessons-learned-and-retro` (T1) — Usar tras un incidente, hito o iteración para hacer retrospectivas y postmortems sin culpables, con acciones con dueño y seguimiento.
+- `library-selection-and-tech-radar-process` (T1) — Usar al incorporar, sustituir o retirar una librería o tecnología: criterios de selección, licencia, ADR y mantenimiento de un radar tecnológico.
+- `living-readme` (T1) — Usar al crear o actualizar el README de un proyecto generado o un módulo, para que siga siendo verdadero, ejecutable y corto.
+- `pr-rules` (T1) — Usar al abrir, describir o revisar un pull request: tamaño, plantilla de descripción, checks requeridos, aprobaciones y cuándo no se puede hacer merge.
+- `production-readiness-review` (T1) — Usar antes de dar un servicio por apto para operar (PRR): checklist de observabilidad, resiliencia, seguridad, datos y operación, con honestidad sobre AWS.
+- `requirements-engineering` (T1) — Usar al redactar o refinar historias, criterios de aceptación y requisitos no funcionales: INVEST, Gherkin y NFR medibles antes de implementar.
+- `rfc-process` (T1) — Usar cuando un cambio amplio o controvertido necesita debate escrito y consenso antes de decidir (impacto en varios equipos): proceso RFC previo al ADR.
+- `risk-register` (T1) — Usar al identificar, puntuar y dar seguimiento a riesgos de proyecto o técnicos: registro versionado con dueño, mitigación y revisión periódica.
+- `runbooks` (T1) — Usar al escribir o revisar runbooks operativos: estructura, verificación, pasos seguros y enlace desde alertas.
+- `tech-debt-register` (T1) — Usar al registrar, priorizar y pagar deuda técnica: entradas con coste, interés, dueño y fecha, enlazadas a TODOs del código.
 
-## 31-agentic-engineering (T1) — 5/13
+## 31-agentic-engineering (T1) — 13/13
 
+- `agent-evals` (T1) — Usar al diseñar o ejecutar evaluaciones que comprueben que los agentes y hooks respetan reglas y gates (tests/agent-evals, tests/hooks).
 - `bootstrap-generated-project-claude-config` (T1) — Usar en /project-init para crear el .claude/, CLAUDE.md y hooks de un proyecto generado a partir de las guías de la fábrica (sin plantillas).
 - `claude-md-authoring` (T1) — Usar al escribir o editar un CLAUDE.md (de la fábrica o de un proyecto generado) para que sea corto y efectivo.
+- `context-budgeting` (T1) — Usar cuando una sesión se alarga, el contexto se llena o al decidir qué cargar (CLAUDE.md, skills, MCP, ficheros): presupuesto de contexto y compactación.
+- `cost-control` (T1) — Usar al planificar sesiones largas, subagentes en paralelo o cargas masivas de contexto para acotar el consumo de tokens y el coste del uso de agentes.
 - `gate-protocol` (T1) — Usar al terminar una fase del flujo o antes de avanzar de gate; define cómo parar, pedir aprobación humana y registrarla.
+- `handoff-artifacts-between-agents` (T1) — Usar cuando un agente entrega trabajo a otro (analista a arquitecto, tech-lead a ingeniería) para definir qué artefacto, formato y evidencias se pasan.
+- `mcp-governance` (T1) — Usar al añadir, aprobar o revisar servidores MCP (.mcp.json, permisos mcp__*) en la fábrica o en un proyecto generado.
+- `parallel-work-and-worktrees` (T1) — Usar al repartir trabajo entre varias sesiones o agentes a la vez, para aislar ediciones con git worktree y evitar colisiones y merges rotos.
+- `prompt-injection-defense-for-agents` (T1) — Usar cuando un agente lee webs, ficheros, resultados de herramientas o MCP no confiables, o al revisar permisos de agentes expuestos a contenido externo.
 - `skill-authoring-guide` (T1) — Usar al crear o revisar un skill de la fábrica; define anatomía obligatoria, niveles T1/T2/T3 y reglas de enforcement.
+- `subagent-design` (T1) — Usar al crear o revisar un subagente en .claude/agents/ o al decidir si delegar una tarea: alcance, herramientas mínimas, modelo y contrato de salida.
 - `verify-before-asserting` (T1) — Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar TODO-VERIFY.

@@ -1,0 +1,13 @@
+rules:
+  - id: frontend-token-in-web-storage
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: >-
+      No guardes tokens ni credenciales en localStorage/sessionStorage; usa sesion por cookie
+      HttpOnly via BFF (skill auth-and-session).
+    pattern-either:
+      - pattern: localStorage.setItem("$K", ...)
+      - pattern: sessionStorage.setItem("$K", ...)
+    metavariable-regex:
+      metavariable: $K
+      regex: (?i).*(token|jwt|secret|password|credential).*

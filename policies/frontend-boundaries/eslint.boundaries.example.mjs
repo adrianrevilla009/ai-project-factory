@@ -1,4 +1,5 @@
 // Example ESLint flat-config fragment for a generated React project (ESLint 9 flat config; TODO-VERIFY version).
+// Inside a feature use relative imports (./x); the alias is for crossing boundaries.
 // Complements dependency-cruiser.example.cjs: ESLint gives feedback in the editor, depcruise gates CI.
 export default [
   {
@@ -13,10 +14,5 @@ export default [
         ],
       }],
     },
-  },
-  {
-    // Inside a feature, its own internals are free to import each other.
-    files: ['src/features/**/*.{ts,tsx}'],
-    rules: { 'no-restricted-imports': 'off' },
   },
 ];

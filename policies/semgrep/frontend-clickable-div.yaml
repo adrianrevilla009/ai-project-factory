@@ -1,0 +1,9 @@
+rules:
+  - id: frontend-clickable-div
+    languages: [typescript, javascript]
+    severity: WARNING
+    message: >-
+      Un div/span con onClick no es accesible por teclado ni lector de pantalla. Usa <button> o <a> (skill accessibility).
+    pattern-either:
+      - pattern: <div onClick={...} ...>...</div>
+      - pattern: <span onClick={...} ...>...</span>

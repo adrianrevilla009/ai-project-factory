@@ -49,6 +49,17 @@
 - **SHOULD** usar el patrón outbox cuando el evento deba ser semántico y no un espejo de tablas (ver `domain-events-in-spring`).
 - **SHOULD** enmascarar o excluir columnas PII en el propio conector (`column.exclude.list`) antes de que lleguen al topic.
 
+## data-contracts-and-lineage
+
+- **MUST** versionar un contrato por dataset publicado: esquema (nombres, tipos, nulabilidad), semántica, propietario, frescura/SLA, clasificación de datos y política de retención.
+- **MUST** guardar el contrato en el repositorio del productor (YAML) y validarlo en CI contra el esquema real.
+- **MUST** tratar cambios incompatibles (borrar/renombrar/cambiar tipo) como versión mayor con periodo de convivencia.
+- **MUST** validar datos contra el contrato en el pipeline (no solo el esquema: también reglas de calidad, ver `data-quality`).
+- **MUST** emitir linaje por ejecución (job, run, datasets de entrada/salida) con OpenLineage desde orquestador y dbt/Spark.
+- **MUST NOT** incluir valores de PII en los eventos de linaje ni en facets.
+- **SHOULD** usar un estándar abierto para el contrato (Open Data Contract Standard u otro; TODO-VERIFY: la web datacontract.com no devolvió contenido verificable el 2026-11-07).
+- **SHOULD** usar Marquez (OSS) como backend de linaje de referencia en local.
+
 ## data-governance-and-classification
 
 - **MUST** asignar a cada dataset un dueño de negocio (data owner) y un custodio técnico (steward) registrados en el catálogo.
@@ -58,6 +69,30 @@
 - **MUST NOT** publicar en una zona de consumo (gold/marts) datos sin clasificar.
 - **SHOULD** usar un catálogo OSS (p. ej. DataHub u OpenMetadata, TODO-VERIFY licencia y versión) en lugar de un producto de pago (D16).
 - **SHOULD** revisar la clasificación cada trimestre y al cambiar el esquema.
+
+## data-lake-and-lakehouse
+
+- **MUST** separar zonas por prefijo/bucket: `raw` (inmutable), `curated` (limpio, tipado), `consumption` (marts); permisos distintos por zona.
+- **MUST** usar un formato de tabla abierto con transacciones (Apache Iceberg por defecto; Delta Lake como alternativa OSS) sobre Parquet, no ficheros sueltos CSV/JSON en curated.
+- **MUST** particionar por una columna de baja cardinalidad y filtro frecuente (fecha); **MUST NOT** particionar por ID o timestamp con milisegundos.
+- **MUST** planificar compactación de ficheros pequeños y expiración de snapshots; documentar la frecuencia.
+- **MUST** registrar las tablas en un catálogo (REST, JDBC o Glue) y no depender de rutas hardcodeadas.
+- **MUST** cifrar en reposo y bloquear acceso público a los buckets.
+- **MUST NOT** permitir escrituras concurrentes de varios motores sin catálogo común que arbitre commits.
+- **SHOULD** gestionar evolución de esquema con las operaciones del formato (añadir/renombrar columnas), no reescribiendo ficheros.
+- **SHOULD** definir retención por zona (ver `access-control-masking-and-retention`).
+
+## data-modeling
+
+- **MUST** declarar la granularidad de cada tabla de hechos en una frase ("una fila por línea de pedido") antes de añadir columnas.
+- **MUST** separar hechos (medidas numéricas, eventos) de dimensiones (contexto descriptivo).
+- **MUST** usar claves surrogate en dimensiones y conservar la clave natural como atributo.
+- **MUST** tratar dimensiones que cambian con SCD tipo 2 (`valid_from`, `valid_to`, `is_current`) cuando la historia importa.
+- **MUST** usar una dimensión de fecha compartida (conformada) y unidades/monedas explícitas.
+- **MUST NOT** mezclar granularidades en una misma tabla de hechos.
+- **MUST NOT** sumar medidas no aditivas (ratios, saldos) entre dimensiones; guardar numerador y denominador.
+- **SHOULD** empezar con estrella; usar Data Vault solo con muchas fuentes cambiantes y necesidad de auditoría, y OBT (tabla ancha) solo como capa de consumo derivada.
+- **SHOULD** marcar columnas PII/clasificación como metadato (ver `data-governance-and-classification`).
 
 ## data-observability
 
@@ -81,6 +116,18 @@
 - **SHOULD** vigilar egress entre regiones y servicios; mantener cómputo y datos en la misma región.
 - **MUST NOT** afirmar cifras de precio sin fuente y fecha: los precios del proveedor son TODO-VERIFY en la página oficial en el momento de decidir.
 - **MUST NOT** introducir un servicio de pago por defecto (D16); comparar primero con alternativas OSS.
+
+## data-quality
+
+- **MUST** definir por dataset las dimensiones relevantes: unicidad, completitud, validez, integridad referencial, frescura, consistencia.
+- **MUST** ejecutar tests en el pipeline, entre capas, y bloquear la publicación al mart si fallan los de severidad `error`.
+- **MUST** distinguir severidad: `error` (bloquea) y `warn` (alerta); **MUST** documentar el umbral (p. ej. nulos < 0,5 %).
+- **MUST** poner en cuarentena las filas inválidas (tabla `_rejects` con motivo), no descartarlas en silencio.
+- **MUST** asignar un propietario por dataset que reciba las alertas.
+- **MUST NOT** "arreglar" datos corruptos en el mart; corregir en origen o en una capa intermedia trazable.
+- **SHOULD** empezar por PK única/no nula, FKs y valores aceptados (los cuatro tests genéricos de dbt) y añadir reglas de negocio después.
+- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, TODO-VERIFY licencia y versión vigentes).
+- **SHOULD** versionar las expectativas junto al código del pipeline.
 
 ## etl-vs-elt-and-dbt
 
@@ -116,3 +163,14 @@
 - **SHOULD** usar tablas con borrado a nivel de fila (Apache Iceberg/Delta) y compactar y expirar snapshots para eliminar físicamente los ficheros.
 - **MUST NOT** dar por cumplida una supresión solo con `DELETE` lógico mientras sigan snapshots, ficheros huérfanos o time travel con el dato.
 - **MUST NOT** afirmar cumplimiento RGPD completo: solo "diseñado para facilitar", pendiente de revisión legal.
+
+## warehouse-options
+
+- **MUST** decidir con un ADR que registre volumen (GB/TB), concurrencia de consultas, latencia objetivo, frescura, coste y licencia.
+- **MUST** empezar por la opción más simple que cumpla: PostgreSQL (hasta cientos de GB, pocos usuarios) o DuckDB (analítica embebida, un nodo) antes de un clúster.
+- **MUST** descartar por defecto soluciones con licencia de pago o cloud-only no justificadas (D16); registrar la excepción si se elige una.
+- **MUST** mantener el SQL portable en marts (ANSI + dbt) para poder migrar de motor.
+- **MUST NOT** ejecutar cargas analíticas pesadas contra la réplica/primaria transaccional sin aislamiento.
+- **MUST NOT** copiar datos al warehouse y mantenerlos en paralelo con escritura desde la aplicación (4.5): una sola fuente de verdad, el warehouse se alimenta por carga/CDC.
+- **SHOULD** separar almacenamiento y cómputo si la carga es variable (motor sobre Iceberg: Trino, Athena, Spark).
+- **SHOULD** medir con una consulta representativa (benchmark propio) antes de decidir.

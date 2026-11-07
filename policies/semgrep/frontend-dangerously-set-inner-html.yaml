@@ -1,0 +1,14 @@
+rules:
+  - id: frontend-dangerously-set-inner-html-unsanitized
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: >-
+      dangerouslySetInnerHTML con un valor no saneado. Sanea con DOMPurify.sanitize(...)
+      y justifica la excepcion en la revision (skill security-frontend).
+    patterns:
+      - pattern: <$EL dangerouslySetInnerHTML={{ __html: $X }} />
+      - pattern-not: <$EL dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(...) }} />
+    paths:
+      include:
+        - "*.tsx"
+        - "*.jsx"

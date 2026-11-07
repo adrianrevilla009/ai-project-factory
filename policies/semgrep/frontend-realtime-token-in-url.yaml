@@ -1,0 +1,8 @@
+rules:
+  - id: frontend-realtime-token-in-url
+    languages: [typescript, javascript]
+    severity: ERROR
+    message: >-
+      No pases tokens en la URL de WebSocket/EventSource (acaban en logs y proxies). Usa sesion por cookie
+      HttpOnly o un ticket de un solo uso (skill realtime).
+    pattern-regex: new\s+(WebSocket|EventSource)\(.*(?i:token|jwt|access_token|apikey)

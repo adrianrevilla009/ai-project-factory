@@ -557,7 +557,7 @@ blocks:
 - block: 27-frontend-react
   tier: T1
   skills:
-  - name: architecture
+  - name: frontend-architecture
     note: por feature, límites de módulos
   - name: typescript-strict-rules
   - name: rendering-strategy-decision
@@ -577,8 +577,8 @@ blocks:
   - name: error-handling-and-boundaries
   - name: accessibility
     note: WCAG 2.2, axe
-  - name: i18n-and-formatting
-  - name: performance
+  - name: frontend-i18n-and-formatting
+  - name: frontend-performance
     note: Core Web Vitals, bundle budgets
   - name: security-frontend
     note: XSS, CSP, dependencias npm

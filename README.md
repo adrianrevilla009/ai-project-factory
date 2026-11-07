@@ -5,16 +5,16 @@ Repositorio de **guías** para crear proyectos corporativos con IA: estándares 
 - Brief y decisiones: [`docs/FACTORY_BRIEF.md`](docs/FACTORY_BRIEF.md) · ADRs: [`catalog/adr/`](catalog/adr/README.md)
 - Reglas permanentes: [`CLAUDE.md`](CLAUDE.md)
 
-## Estado: Oleada 0 (fundaciones)
+## Estado
 | Pieza | Estado |
 |---|---|
-| Estructura de carpetas, gates, esquemas de dominio/normativa | Creado |
-| Skills: plantilla + 4 de agentic-engineering + `n-plus-one` (ejemplo completo) | Creado |
-| ADRs D1–D27 + decisiones abiertas (propuestas) | Creado |
-| Hooks `block-secrets`, `block-dangerous-commands`, `enforce-gate-approval` | Creado y testeado |
-| Validadores (skills, afirmaciones honestas, esquemas, ADRs) | Creado y testeado |
-| Dev container con firewall de salida | Creado, **no probado en un contenedor real** |
-| Resto de skills, agentes, comandos, policies | Pendiente (Oleadas 1–5) |
+| Estructura, `CLAUDE.md`, gates 0–5, esquemas de dominio/normativa, `capabilities.yaml` | Creado |
+| Skills: ver [`docs/skills-index.md`](docs/skills-index.md) (inventario en `catalog/skills-inventory.yaml`) | Redactados por bloques; contenido con muchos `TODO-VERIFY` pendientes de verificación en fuente oficial |
+| 25 agentes (`.claude/agents/`) y 27 comandos (`.claude/commands/`) | Creado |
+| Hooks (secretos, comandos peligrosos, gates, rutas, post-edición, stop, auditoría) | Creado y testeado |
+| Policies (Semgrep, OPA/Conftest, Kyverno, ArchUnit, Enforcer) | Ejemplos iniciales **no ejecutados** (marcados `TODO-VERIFY`); muchas filas de enforcement figuran como "pendiente" |
+| Validadores y generador de índice/estándares | Creado y testeado |
+| Dev container con firewall | Creado, **no probado en un contenedor real** |
 
 ## Uso
 ```bash

@@ -1,0 +1,17 @@
+rules:
+  - id: java-money-floating-point
+    languages: [java]
+    severity: ERROR
+    message: "Importes monetarios en double/float pierden precision. Usar BigDecimal o minor units (long) con moneda explicita (skill payments-and-billing)."
+    patterns:
+      - pattern-either:
+          - pattern: double $AMOUNT;
+          - pattern: float $AMOUNT;
+          - pattern: double $AMOUNT = ...;
+          - pattern: float $AMOUNT = ...;
+      - metavariable-regex:
+          metavariable: $AMOUNT
+          regex: (?i).*(amount|price|total|balance|fee|tax|charge).*
+    metadata:
+      skill: payments-and-billing
+      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."

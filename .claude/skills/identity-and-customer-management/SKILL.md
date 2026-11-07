@@ -16,7 +16,7 @@ metadata:
 - No aplica a la validación de tokens en el resource server (ver `authn-oidc-oauth2`) ni a permisos finos por recurso (autorización de dominio).
 
 ## Reglas
-- **MUST** delegar autenticación y almacén de credenciales en Keycloak (D-closed); el servicio de negocio NUNCA guarda contraseñas ni hashes.
+- **MUST** delegar autenticación y almacén de credenciales en Keycloak; el servicio de negocio NUNCA guarda contraseñas ni hashes.
 - **MUST** separar identidad (Keycloak: `sub`, credenciales, MFA) de cliente de negocio (tabla `customer` propia) enlazados por `sub` inmutable, no por email.
 - **MUST** crear el registro `customer` de forma idempotente en el primer login o por evento, con clave única sobre `identity_subject`.
 - **MUST** tratar el email como atributo mutable y verificado, nunca como clave primaria.

@@ -1,0 +1,12 @@
+rules:
+  - id: llm-prompt-string-concatenation
+    languages: [java]
+    severity: WARNING
+    message: "Prompt construido por concatenacion. Usar plantilla con variables nombradas y delimitar datos (skill prompt-management)."
+    patterns:
+      - pattern-either:
+          - pattern: $X.user($A + $B)
+          - pattern: $X.system($A + $B)
+    metadata:
+      skill: prompt-management
+      note: "TODO-VERIFY: no ejecutada con semgrep; no detecta String.format ni StringBuilder."

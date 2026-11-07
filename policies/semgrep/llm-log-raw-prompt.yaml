@@ -1,0 +1,9 @@
+rules:
+  - id: llm-log-raw-prompt
+    languages: [java]
+    severity: WARNING
+    message: "Registro de prompt/entrada de usuario sin redactar. Registrar solo metadatos o texto redactado (skill guardrails-and-pii-redaction)."
+    pattern-regex: 'log(ger)?\.(info|debug|trace|warn)\([^;]*\b(prompt|userText|userInput|userMessage)\b'
+    metadata:
+      skill: guardrails-and-pii-redaction
+      note: "TODO-VERIFY: no ejecutada con semgrep; heuristica por nombre de variable."
