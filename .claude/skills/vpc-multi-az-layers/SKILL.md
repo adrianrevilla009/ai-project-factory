@@ -40,8 +40,12 @@ resource "aws_subnet" "app" {
   map_public_ip_on_launch = true # cómputo con IP pública
 }
 resource "aws_security_group_rule" "db" {
-  type = "ingress" from_port = 5432 to_port = 5432 protocol = "tcp"
-  cidr_blocks = ["0.0.0.0/0"] security_group_id = aws_security_group.db.id
+  type              = "ingress"
+  from_port         = 5432
+  to_port           = 5432
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.db.id
 }
 ```
 ### Bien
@@ -62,8 +66,10 @@ resource "aws_route" "private_nat" {
 resource "aws_vpc_security_group_ingress_rule" "db_from_app" {
   security_group_id            = aws_security_group.db.id
   referenced_security_group_id = aws_security_group.app.id
-  from_port = 5432 to_port = 5432 ip_protocol = "tcp"
-  description = "PostgreSQL from app tier"
+  from_port                    = 5432
+  to_port                      = 5432
+  ip_protocol                  = "tcp"
+  description                  = "PostgreSQL from app tier"
 }
 ```
 

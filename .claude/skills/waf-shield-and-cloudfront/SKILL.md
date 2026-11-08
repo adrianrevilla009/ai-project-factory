@@ -35,7 +35,10 @@ Un ALB público sin CloudFront ni WAF expone directamente la aplicación a escan
 ### Mal
 ```hcl
 resource "aws_security_group_rule" "alb_in" {
-  type = "ingress" from_port = 443 to_port = 443 protocol = "tcp"
+  type              = "ingress"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0"] # el origen se puede atacar sin pasar por el WAF
   security_group_id = aws_security_group.alb.id
 }
@@ -49,19 +52,25 @@ data "aws_ec2_managed_prefix_list" "cloudfront" {
 resource "aws_vpc_security_group_ingress_rule" "alb_from_cloudfront" {
   security_group_id = aws_security_group.alb.id
   prefix_list_id    = data.aws_ec2_managed_prefix_list.cloudfront.id
-  from_port = 443 to_port = 443 ip_protocol = "tcp"
-  description = "HTTPS from CloudFront only"
+  from_port         = 443
+  to_port           = 443
+  ip_protocol       = "tcp"
+  description       = "HTTPS from CloudFront only"
 }
 
 resource "aws_wafv2_web_acl" "edge" {
   provider = aws.us_east_1 # scope CLOUDFRONT exige us-east-1
   name     = "edge"
   scope    = "CLOUDFRONT"
-  default_action { allow {} }
+  default_action {
+    allow {}
+  }
   rule {
     name     = "rate"
     priority = 1
-    action { block {} }
+    action {
+      block {}
+    }
     statement {
       rate_based_statement {
         limit              = 1000

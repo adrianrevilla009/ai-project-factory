@@ -34,13 +34,22 @@ Una región secundaria que depende de la primaria (registro, secretos, state, DN
 ### Mal
 ```hcl
 # Un solo Vault y una sola ruta de imágenes, ambos en la primaria
-provider "aws" { region = "eu-west-1" }
-resource "helm_release" "vault" { name = "vault" chart = "vault" }
+provider "aws" {
+  region = "eu-west-1"
+}
+
+resource "helm_release" "vault" {
+  name  = "vault"
+  chart = "vault"
+}
 # la secundaria lee imágenes de harbor.example.internal (eu-west-1)
 ```
 ### Bien
 ```hcl
-provider "aws" { alias = "secondary" region = "eu-central-1" }
+provider "aws" {
+  alias  = "secondary"
+  region = "eu-central-1"
+}
 
 module "vault_secondary" {
   source    = "./modules/vault-raft"   # Vault OSS, 3 nodos en 3 AZ
@@ -49,7 +58,12 @@ module "vault_secondary" {
 
 resource "aws_ecr_replication_configuration" "this" {
   replication_configuration {
-    rule { destination { region = "eu-central-1" registry_id = var.account_id } }
+    rule {
+      destination {
+        region      = "eu-central-1"
+        registry_id = var.account_id
+      }
+    }
   }
 }
 

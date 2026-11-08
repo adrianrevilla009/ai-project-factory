@@ -34,9 +34,11 @@ Productores y consumidores se despliegan en momentos distintos: el esquema es el
 ```json
 {"type":"record","name":"OrderCreated","fields":[
   {"name":"id","type":"string"},
-  {"name":"total","type":"string"}   // antes era "double": cambio de tipo
+  {"name":"total","type":"string"}
 ]}
 ```
+El campo `total` pasa de `double` a `string`: cambio de tipo incompatible.
+
 ### Bien (campo nuevo opcional con default)
 ```json
 {"type":"record","name":"OrderCreated","namespace":"com.example.orders","fields":[

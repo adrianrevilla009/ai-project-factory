@@ -45,8 +45,14 @@ Pipeline del proveedor bloquea el merge si rompe algún pact publicado.
 ```yaml
 # Ejemplo de decisión en la ficha del servicio
 interfaces:
-  - name: orders-api       { style: rest,  contract: openapi,  verification: pact-provider }
-  - name: order-events     { style: async, contract: asyncapi, verification: schema-compat }
+  - name: orders-api
+    style: rest
+    contract: openapi
+    verification: pact-provider
+  - name: order-events
+    style: async
+    contract: asyncapi
+    verification: schema-compat
 ```
 
 ## Checklist de revisión

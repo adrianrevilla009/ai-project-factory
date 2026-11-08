@@ -8,6 +8,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "factory" / "validators"))
 
+import code_blocks  # noqa: E402
 import honest_claims  # noqa: E402
 import schemas_and_adrs  # noqa: E402
 import skill_structure  # noqa: E402
@@ -147,3 +148,27 @@ def test_generated_index_and_standards_are_fresh():
     import subprocess
     r = subprocess.run([sys.executable, str(ROOT / "factory" / "tools" / "build_index.py"), "--check"], capture_output=True, text=True)
     assert r.returncode == 0, r.stdout
+
+
+# ----------------------------------------------------------------- code_blocks
+def test_repo_code_blocks_are_valid():
+    assert code_blocks.validate_all(ROOT) == []
+
+
+@pytest.mark.parametrize(
+    "lang,code",
+    [("yaml", "a: b: c\n"), ("json", "{\"a\": 1, }"), ("bash", "if then\n")],
+)
+def test_invalid_blocks_detected(lang, code):
+    assert code_blocks.check_block(lang, code)
+
+
+@pytest.mark.parametrize("lang,code", [("yaml", "a: 1\n"), ("json", "{}"), ("bash", "echo hi\n"), ("python", "x = (")])
+def test_valid_or_unchecked_blocks_pass(lang, code):
+    assert code_blocks.check_block(lang, code) is None
+
+
+def test_block_can_opt_out():
+    text = "<!-- code-block: ignore -->\n```json\n{bad\n```\n"
+    assert code_blocks.validate_text(text, "x.md") == []
+    assert code_blocks.validate_text(text.replace("<!-- code-block: ignore -->", "texto"), "x.md")

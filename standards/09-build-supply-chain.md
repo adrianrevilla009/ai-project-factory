@@ -151,7 +151,7 @@
 - **MUST** usar `project.build.sourceEncoding=UTF-8` y `maven.compiler.release` fijo.
 - **MUST NOT** incrustar fecha/hora actual, hostname o usuario en el artefacto (`${maven.build.timestamp}` en recursos filtrados, `git.build.time` sin normalizar).
 - **MUST NOT** usar rangos de versión, `LATEST` ni dependencias SNAPSHOT en release (ver `versioning-semver-snapshots`).
-- **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `compare`; comprobar disponibilidad en la versión elegida).
+- **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `artifact:compare`, que figura en la página del plugin; verificado el 2026-11-08).
 - **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas; comprobar con `SOURCE_DATE_EPOCH`/opciones del builder (ver `container-images`, comprobar según herramienta).
 - **MUST** conservar la salida de la verificación como evidencia, sin afirmar nada sobre despliegues reales.
 
