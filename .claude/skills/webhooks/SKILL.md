@@ -74,7 +74,7 @@ webhook.secret=changeme-example-secret
 | Tests de firma inválida, replay y duplicado | 1 | tests del proyecto generado (pendiente) |
 | Revisión de seguridad de endpoints | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep existe pero no se ha ejecutado (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `idempotency-keys`, `deserialization-xxe-ssrf-traversal`, `secrets-management`.

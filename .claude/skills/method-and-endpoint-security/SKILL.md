@@ -71,7 +71,7 @@ void anonymousCannotListOrders() throws Exception {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: CSRF desactivado sin justificación | 1 | `policies/semgrep/spring-security-misconfig.yaml` (TODO-VERIFY) |
+| Regla Semgrep: CSRF desactivado sin justificación | 1 | `policies/semgrep/spring-security-misconfig.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Regla Semgrep para `anyRequest().permitAll()` | 1 | pendiente (`policies/semgrep/`) |
 | Test anónimo por controlador | 2 | tests del proyecto generado |
 | Revisión de la configuración de seguridad | 3 | agente `code-reviewer` |

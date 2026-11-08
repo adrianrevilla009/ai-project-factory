@@ -84,7 +84,7 @@ class Invoice {
 | Regla ArchUnit: entidades no usadas en controllers | 1 | pendiente (`policies/archunit/`) |
 | Revisión de modelo de dominio | 3 | agente `code-reviewer` |
 
-> Estado: las reglas Semgrep no se han ejecutado en real (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `id-generation`, `lazy-vs-eager`, `optimistic-locking`, `equals-hashcode-tostring`, `ddd-tactical`.

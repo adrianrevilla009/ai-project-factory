@@ -74,7 +74,7 @@ En local Keycloak se ejecuta en contenedor; en AWS no se reproduce el IdP gestio
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: JWT parseado sin verificación | 1 | `policies/semgrep/spring-security-misconfig.yaml` (TODO-VERIFY) |
+| Regla Semgrep: JWT parseado sin verificación | 1 | `policies/semgrep/spring-security-misconfig.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test: token con `aud` incorrecto -> 401 | 2 | tests del proyecto generado |
 | Linter de realm export (redirect URIs sin `*`) | 2 | pendiente (`policies/opa-conftest/`) |
 | Revisión de flujos | 3 | agente `code-reviewer` |

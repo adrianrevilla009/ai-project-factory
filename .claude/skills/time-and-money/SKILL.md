@@ -70,7 +70,7 @@ class TokenService {
 | Reglas Semgrep: dinero como double, `new BigDecimal(...)`, API de fechas legada (heurísticas sin ejecutar) | 1 | `policies/semgrep/java-language-pitfalls.yaml` |
 | Revisión del modelo de dinero | 3 | agente `code-reviewer` (pendiente de definir) |
 
-> Estado: reglas escritas con `TODO-VERIFY` (no ejecutadas con semgrep); la de `new BigDecimal` es demasiado amplia y debe afinarse.
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos. La regla de `new BigDecimal` solo marca argumentos tipados `double`/`float` o literales con decimales.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `immutability-and-value-objects`, `strings-encoding-locale`, `concurrency-testing`.

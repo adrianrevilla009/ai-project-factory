@@ -58,7 +58,7 @@ es.addEventListener("order-updated", (e) => {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: token en URL de WebSocket/EventSource | 1 | `policies/semgrep/frontend-realtime-token-in-url.yaml` (sin ejecutar en la fábrica) |
+| Regla Semgrep: token en URL de WebSocket/EventSource | 1 | `policies/semgrep/frontend-realtime-token-in-url.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test de reconexión con servidor simulado | 2 | tests del proyecto generado (pendiente) |
 | Revisión de límites de timeout en LB/CDN | 3 | revisión humana |
 

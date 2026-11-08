@@ -17,4 +17,4 @@ rules:
           $RET $M(...) { ... }
     metadata:
       skill: scheduling-and-batch
-      note: "TODO-VERIFY: regla no ejecutada con semgrep; excepciones si el job corre fuera del servicio."
+      note: "excepciones si el job corre fuera del servicio. Probada con semgrep 1.184.0 (tests/semgrep)."

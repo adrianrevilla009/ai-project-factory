@@ -77,7 +77,7 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 | ArchUnit: dominio no depende de paquetes generados | 1 | `policies/archunit/` (pendiente) |
 | Revisión del adaptador | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep existe pero no se ha ejecutado (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `wiremock-and-stubbing`, `contract-testing-pact`, `connascence-and-coupling`.

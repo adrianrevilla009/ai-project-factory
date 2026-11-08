@@ -3,7 +3,7 @@ rules:
     languages: [java]
     severity: WARNING
     message: "Registro de prompt/entrada de usuario sin redactar. Registrar solo metadatos o texto redactado (skill guardrails-and-pii-redaction)."
-    pattern-regex: 'log(ger)?\.(info|debug|trace|warn)\([^;]*\b(prompt|userText|userInput|userMessage)\b'
+    pattern-regex: 'log(ger)?\.(info|debug|trace|warn)\((?:[^;"]|"(?:[^"\\]|\\.)*")*(?:,\s*|\+\s*)(prompt|userText|userInput|userMessage)\s*[,)+]'
     metadata:
       skill: guardrails-and-pii-redaction
-      note: "TODO-VERIFY: no ejecutada con semgrep; heuristica por nombre de variable."
+      note: "Heuristica por nombre de variable (prompt, userText, userInput, userMessage) pasada como argumento o concatenada; no ve el contenido real."

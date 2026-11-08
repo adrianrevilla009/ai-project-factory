@@ -9,4 +9,4 @@ rules:
       - pattern: $M.activateDefaultTyping(...)
     metadata:
       skill: deserialization-xxe-ssrf-traversal
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

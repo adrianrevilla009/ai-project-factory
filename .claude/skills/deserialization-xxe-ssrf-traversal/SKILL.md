@@ -70,7 +70,7 @@ Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar
 | Regla XXE y SSRF (parsers/clientes) | 1 | pendiente (`policies/semgrep/`) |
 | Revisión humana de clientes HTTP con URL dinámica | 4 | PR |
 
-> Reglas Semgrep sin ejecutar aún en la fábrica (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `injection-families`, `file-upload-security`, `cloud-iam-least-privilege`, `owasp-top10-and-api-top10`.

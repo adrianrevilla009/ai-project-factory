@@ -62,7 +62,7 @@ public class OrderService {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep contra `import lombok.` (sin ejecutar, TODO-VERIFY) | 1 | `policies/semgrep/java-no-lombok.yaml` |
+| Regla Semgrep contra `import lombok.` | 1 | `policies/semgrep/java-no-lombok.yaml` |
 | Hook `forbidden-deps` sobre `pom.xml` (ADR-0027) | 2 | `.claude/hooks/` (pendiente: aún no existe) |
 | Regla Enforcer `bannedDependencies` en el proyecto generado | 1 | `pom.xml` del proyecto generado (pendiente) |
 

@@ -61,7 +61,7 @@ boolean submit(Job j) { return queue.offer(j); }       // false = rechazar, no b
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep: `containsKey` seguido de `put` | 1 | `policies/semgrep/java-check-then-act-map.yaml` (no ejecutada, TODO-VERIFY) |
+| Regla Semgrep: `containsKey` seguido de `put` | 1 | `policies/semgrep/java-check-then-act-map.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Revisión de acotación de colas | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

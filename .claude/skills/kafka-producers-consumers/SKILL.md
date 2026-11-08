@@ -88,7 +88,7 @@ void onOrder(OrderCreated event) {
 | Test de duplicado en el proyecto generado | 1 | tests del proyecto generado (pendiente) |
 | Revisión de configuración Kafka | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep existe pero no se ha ejecutado (TODO-VERIFY). En local se usa un broker Kafka OSS; no se reproducen ACLs ni cifrado de un clúster gestionado.
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos. En local se usa un broker Kafka OSS; no se reproducen ACLs ni cifrado de un clúster gestionado.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `dlq-retries-poison-messages`, `schema-registry-and-evolution`, `asyncapi-event-contracts`.

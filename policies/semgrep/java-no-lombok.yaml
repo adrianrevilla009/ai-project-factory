@@ -6,4 +6,4 @@ rules:
     pattern-regex: 'import\s+lombok\.'
     metadata:
       skill: no-lombok
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

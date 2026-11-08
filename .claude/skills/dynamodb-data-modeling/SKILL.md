@@ -61,7 +61,7 @@ QueryRequest q = QueryRequest.builder()
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: uso de `scan` (aviso; no ejecutada aún, TODO-VERIFY) | 1 | `policies/semgrep/dynamodb-scan-forbidden.yaml` |
+| Regla Semgrep: uso de `scan` (aviso) | 1 | `policies/semgrep/dynamodb-scan-forbidden.yaml` |
 | Revisión de patrones de acceso y claves | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

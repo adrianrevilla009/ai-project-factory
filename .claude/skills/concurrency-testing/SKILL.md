@@ -72,7 +72,7 @@ await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(outbox.pend
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep: `Thread.sleep` en tests | 1 | `policies/semgrep/java-sleep-in-tests.yaml` (no ejecutada, TODO-VERIFY) |
+| Regla Semgrep: `Thread.sleep` en tests | 1 | `policies/semgrep/java-sleep-in-tests.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/` (pendiente, Oleada 1) |
 | Revisión de tests de carrera | 3 | agente `code-reviewer` |
 

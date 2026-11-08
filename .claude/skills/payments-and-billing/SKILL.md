@@ -69,7 +69,7 @@ El nombre de cabecera `Stripe-Signature` es de Stripe; adaptarlo al PSP elegido.
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Semgrep: importes en `double`/`float` (heurística por nombre) | 1 | `policies/semgrep/java-money-floating-point.yaml` (no probada con semgrep) |
+| Semgrep: importes en `double`/`float` (heurística por nombre) | 1 | `policies/semgrep/java-money-floating-point.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Semgrep: firma de webhook comparada con `equals` | 1 | `policies/semgrep/webhook-signature-equals.yaml` |
 | Revisión de flujo de pago y PCI | 4 | revisión humana |
 

@@ -9,4 +9,4 @@ rules:
       - pattern: $FILE.getOriginalFilename()
     metadata:
       skill: file-upload-security
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0. getOriginalFilename() solo es seguro como etiqueta, nunca como ruta."
+      note: "getOriginalFilename() solo es seguro como etiqueta, nunca como ruta. Probada con semgrep 1.184.0 (tests/semgrep)."

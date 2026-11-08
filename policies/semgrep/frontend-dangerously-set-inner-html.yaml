@@ -6,8 +6,8 @@ rules:
       dangerouslySetInnerHTML con un valor no saneado. Sanea con DOMPurify.sanitize(...)
       y justifica la excepcion en la revision (skill security-frontend).
     patterns:
-      - pattern: <$EL dangerouslySetInnerHTML={{ __html: $X }} />
-      - pattern-not: <$EL dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(...) }} />
+      - pattern: '<$EL dangerouslySetInnerHTML={{ __html: $X }} />'
+      - pattern-not: '<$EL dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(...) }} />'
     paths:
       include:
         - "*.tsx"

@@ -68,7 +68,7 @@ server:
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: parseo de JWT sin verificar | 1 | `policies/semgrep/spring-security-misconfig.yaml` (TODO-VERIFY) |
+| Regla Semgrep: parseo de JWT sin verificar | 1 | `policies/semgrep/spring-security-misconfig.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | ESLint: prohibir `localStorage.setItem` con claves `token` | 1 | pendiente (`policies/frontend-boundaries/`) |
 | Test: token expirado / `aud` incorrecto -> 401 | 2 | tests del proyecto generado |
 | Revisión de gestión de sesión | 3 | agente `code-reviewer` |

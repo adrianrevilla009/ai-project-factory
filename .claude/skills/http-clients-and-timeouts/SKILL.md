@@ -78,7 +78,7 @@ clients:
 | Test de configuración que verifica timeouts en properties | 1 | tests del proyecto generado (pendiente) |
 | Revisión de clientes nuevos | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep existe sin ejecutar (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `configuration-properties`, `graceful-shutdown-lifecycle`, `reactive-vs-blocking`.

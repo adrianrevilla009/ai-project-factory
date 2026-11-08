@@ -70,7 +70,7 @@ spec: { mtls: { mode: STRICT } }
 | Conftest: `PeerAuthentication` STRICT | 1 | pendiente (`policies/opa-conftest/`) |
 | Revisión humana de diseño criptográfico | 4 | PR |
 
-> Regla Semgrep sin ejecutar aún (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `jwt-and-sessions`, `zero-trust`, `pii-and-data-classification`.

@@ -62,7 +62,7 @@ El único fragmento concatenado procede de constantes propias, nunca de la entra
 | Escáner SAST en CI | 2 | pendiente (pipeline del proyecto generado) |
 | Revisión de seguridad | 3 | agente `security-reviewer` |
 
-> Estado: la regla Semgrep no se ha ejecutado en real (TODO-VERIFY). Solo detecta concatenación directa en el argumento, no flujos indirectos.
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos. Solo detecta concatenación directa en el argumento, no flujos indirectos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `query-strategy`, `owasp-top10-and-api-top10`, `jdbc-and-jooq`, `secure-sdlc-nist-ssdf`.

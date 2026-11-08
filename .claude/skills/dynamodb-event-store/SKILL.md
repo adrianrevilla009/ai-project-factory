@@ -64,7 +64,7 @@ try {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: `PutItemRequest` sin `conditionExpression` (heurística; TODO-VERIFY) | 1 | `policies/semgrep/dynamodb-put-without-condition.yaml` |
+| Regla Semgrep: `PutItemRequest` sin `conditionExpression` (heurística) | 1 | `policies/semgrep/dynamodb-put-without-condition.yaml` |
 | Test de concurrencia (dos appends con misma versión) contra DynamoDB Local | 1 | tests del proyecto generado (`local-vs-aws-dynamodb-testing`) |
 | Revisión de políticas IAM (sin update/delete) | 3 | agente `code-reviewer` |
 

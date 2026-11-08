@@ -9,4 +9,4 @@ rules:
     pattern-regex: '(?is)select\s+\*\s+from\s+\{\{\s*source\('
     metadata:
       skill: etl-vs-elt-and-dbt
-      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

@@ -11,4 +11,4 @@ rules:
       }
     metadata:
       skill: concurrent-collections
-      note: "TODO-VERIFY: regla no ejecutada con semgrep."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

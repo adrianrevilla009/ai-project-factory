@@ -1,6 +1,6 @@
 rules:
   - id: llm-direct-provider-url
-    languages: [java, yaml, generic]
+    languages: [regex]
     severity: WARNING
     message: "URL directa de proveedor LLM. Usar la URL de la pasarela interna (skill llm-gateway)."
     pattern-regex: 'https://api\.(openai\.com|anthropic\.com|mistral\.ai|cohere\.com)'
@@ -9,4 +9,4 @@ rules:
         - "**/src/test/**"
     metadata:
       skill: llm-gateway
-      note: "TODO-VERIFY: no ejecutada con semgrep. Falsos positivos posibles en docs; ajustar paths."
+      note: "Falsos positivos posibles en docs. ajustar paths. Probada con semgrep 1.184.0 (tests/semgrep)."

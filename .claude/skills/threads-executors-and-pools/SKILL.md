@@ -62,7 +62,7 @@ ThreadPoolTaskExecutor emailExecutor() {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep contra `new Thread` y executors sin cota | 1 | `policies/semgrep/java-unbounded-executors.yaml` (no ejecutada, TODO-VERIFY) |
+| Regla Semgrep contra `new Thread` y executors sin cota | 1 | `policies/semgrep/java-unbounded-executors.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Revisión de dimensionado | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

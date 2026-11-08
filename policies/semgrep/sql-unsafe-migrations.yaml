@@ -9,7 +9,7 @@ rules:
     pattern-regex: '(?i)ALTER\s+TABLE\s+\S+\s+(DROP\s+COLUMN|RENAME\s+COLUMN)'
     metadata:
       skill: schema-migrations
-      note: "TODO-VERIFY: probar con semgrep antes de darla por buena; no ejecutada."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: sql-migration-index-without-concurrently
     languages: [generic]
     severity: WARNING
@@ -20,4 +20,4 @@ rules:
     pattern-regex: '(?i)CREATE\s+(UNIQUE\s+)?INDEX\s+(?!CONCURRENTLY)'
     metadata:
       skill: schema-migrations
-      note: "TODO-VERIFY: probar con semgrep antes de darla por buena; no ejecutada. Excepcion: tablas recien creadas en la misma migracion."
+      note: "Excepcion: tablas recien creadas en la misma migracion. Probada con semgrep 1.184.0 (tests/semgrep)."

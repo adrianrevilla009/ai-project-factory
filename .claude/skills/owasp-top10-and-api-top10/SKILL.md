@@ -67,7 +67,7 @@ SSRF                        -> deserialization-xxe-ssrf-traversal
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep de misconfiguración Spring (CSRF, CORS, JWT sin verificar) | 1 | `policies/semgrep/spring-security-misconfig.yaml` (sin ejecutar, TODO-VERIFY) |
+| Regla Semgrep de misconfiguración Spring (CSRF, CORS, JWT sin verificar) | 1 | `policies/semgrep/spring-security-misconfig.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test de integración "otro tenant -> 404" por recurso | 2 | tests del proyecto generado |
 | Regla ArchUnit: controladores no devuelven `@Entity` | 2 | pendiente (`policies/archunit/`) |
 | Revisión humana con el mapa de arriba | 3 | agente `code-reviewer` |

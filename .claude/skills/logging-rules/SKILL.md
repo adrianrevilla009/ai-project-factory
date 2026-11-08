@@ -64,7 +64,7 @@ log.info("login succeeded for user {}", user.id());
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Reglas Semgrep: `printStackTrace`, `System.out/err`, concatenación en log (sin ejecutar, TODO-VERIFY) | 1 | `policies/semgrep/java-logging.yaml` |
+| Reglas Semgrep: `printStackTrace`, `System.out/err`, concatenación en log | 1 | `policies/semgrep/java-logging.yaml` |
 | Hook de bloqueo de secretos en edición de ficheros | 2 | `.claude/hooks/pre-tool-use/block_secrets.py` |
 | Revisión de datos personales en logs | 3 | agente `code-reviewer` (pendiente de definir) |
 

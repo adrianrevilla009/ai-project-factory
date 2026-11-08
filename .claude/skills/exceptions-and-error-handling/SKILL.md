@@ -64,7 +64,7 @@ try (var in = Files.newInputStream(path)) {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep `java-catch-throwable-or-swallow` (sin ejecutar, TODO-VERIFY) | 1 | `policies/semgrep/java-language-pitfalls.yaml` |
+| Regla Semgrep `java-catch-throwable-or-swallow` | 1 | `policies/semgrep/java-language-pitfalls.yaml` |
 | Revisión de jerarquía y límites de captura | 3 | agente `code-reviewer` (pendiente de definir) |
 
 ## Relacionados, fuentes y mantenimiento

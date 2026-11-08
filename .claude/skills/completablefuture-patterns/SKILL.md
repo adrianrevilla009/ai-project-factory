@@ -58,7 +58,7 @@ return price.thenCombine(stock, Offer::new).join();
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep: `supplyAsync`/`runAsync` con un solo argumento | 1 | `policies/semgrep/java-completablefuture-default-pool.yaml` (no ejecutada, TODO-VERIFY) |
+| Regla Semgrep: `supplyAsync`/`runAsync` con un solo argumento | 1 | `policies/semgrep/java-completablefuture-default-pool.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Revisión de timeouts y errores | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

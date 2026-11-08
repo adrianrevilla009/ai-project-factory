@@ -1,7 +1,7 @@
 # AI Project Factory — Makefile (Oleada 0)
 PY ?= python3
 
-.PHONY: help setup validate test check index
+.PHONY: help setup validate test check index policy-test
 
 help: ## Lista de objetivos
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN{FS=":.*?## "}{printf "  %-14s %s\n",$$1,$$2}'
@@ -18,5 +18,8 @@ index: ## Regenera docs/skills-index.md y standards/*.md desde los skills
 
 test: ## Tests de hooks y validadores
 	$(PY) -m pytest tests -q
+
+policy-test: ## Prueba las reglas Semgrep con los casos de tests/semgrep (requiere semgrep)
+	semgrep --test --config policies/semgrep tests/semgrep --metrics=off
 
 check: validate test ## validate + test

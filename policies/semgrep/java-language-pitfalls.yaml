@@ -6,15 +6,22 @@ rules:
     pattern-regex: '\b(double|float|Double|Float)\s+\w*([Pp]rice|[Aa]mount|[Tt]otal|[Bb]alance|[Cc]ost)\w*\b'
     metadata:
       skill: time-and-money
-      note: "TODO-VERIFY: heuristica por nombre; no ejecutada con semgrep."
+      note: "heuristica por nombre. Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-bigdecimal-double-ctor
     languages: [java]
     severity: ERROR
     message: "new BigDecimal(double) arrastra error binario; usar BigDecimal.valueOf o el constructor String (skill time-and-money)."
-    pattern: new BigDecimal(<... $D ...>)
+    pattern-either:
+      - pattern: new BigDecimal((double $X))
+      - pattern: new BigDecimal((float $X))
+      - patterns:
+          - pattern: new BigDecimal($LIT)
+          - metavariable-regex:
+              metavariable: $LIT
+              regex: '^-?\d*\.\d+([eE][+-]?\d+)?[dDfF]?$'
     metadata:
       skill: time-and-money
-      note: "TODO-VERIFY: patron demasiado amplio (tambien salta con String); revisar antes de activar."
+      note: "Cubre argumentos tipados double/float y literales con decimales; no detecta un double devuelto por un metodo sin tipo inferible."
   - id: java-legacy-date-api
     languages: [java]
     severity: WARNING
@@ -24,7 +31,7 @@ rules:
       - pattern: Calendar.getInstance(...)
     metadata:
       skill: time-and-money
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-default-charset-string
     languages: [java]
     severity: WARNING
@@ -35,7 +42,7 @@ rules:
       - pattern: $S.toUpperCase()
     metadata:
       skill: strings-encoding-locale
-      note: "TODO-VERIFY: toLowerCase()/toUpperCase() sin Locale; no ejecutada con semgrep."
+      note: "toLowerCase()/toUpperCase() sin Locale. Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-catch-throwable-or-swallow
     languages: [java]
     severity: ERROR
@@ -47,12 +54,12 @@ rules:
           try { ... } catch (Exception $E) { }
     metadata:
       skill: exceptions-and-error-handling
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-optional-get
     languages: [java]
     severity: WARNING
     message: "Evitar Optional.get() sin comprobar; usar orElseThrow con excepcion de dominio (skill null-safety)."
-    pattern: $O.get()
+    pattern: (Optional<$T> $O).get()
     metadata:
       skill: null-safety
-      note: "TODO-VERIFY: patron muy amplio (cualquier get()); requiere tipo Optional; no activar tal cual."
+      note: "Solo marca get() sobre variables tipadas como Optional. Probada con semgrep 1.184.0 (tests/semgrep)."

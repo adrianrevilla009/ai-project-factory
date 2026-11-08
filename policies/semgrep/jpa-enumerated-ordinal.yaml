@@ -12,4 +12,4 @@ rules:
           $T $F;
     metadata:
       skill: jpa-entity-design
-      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

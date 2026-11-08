@@ -9,4 +9,4 @@ rules:
           - pattern: $X.system($A + $B)
     metadata:
       skill: prompt-management
-      note: "TODO-VERIFY: no ejecutada con semgrep; no detecta String.format ni StringBuilder."
+      note: "no detecta String.format ni StringBuilder. Probada con semgrep 1.184.0 (tests/semgrep)."

@@ -67,7 +67,7 @@ spring:
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Regla Semgrep (SQL): `DROP COLUMN`/`RENAME COLUMN`/`CREATE INDEX` sin `CONCURRENTLY` en `db/migration` | 1 | `policies/semgrep/sql-unsafe-migrations.yaml` (sin probar con semgrep, TODO-VERIFY) |
+| Regla Semgrep (SQL): `DROP COLUMN`/`RENAME COLUMN`/`CREATE INDEX` sin `CONCURRENTLY` en `db/migration` | 1 | `policies/semgrep/sql-unsafe-migrations.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test de migración con Testcontainers (lo incluye el proyecto generado) | 1 | tests del proyecto generado |
 | Revisión de migraciones | 3 | agente `code-reviewer` |
 

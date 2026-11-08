@@ -1,3 +1,6 @@
 pytest>=8
 pyyaml>=6
 jsonschema>=4.20
+
+# Solo para `make policy-test` (no se instala por defecto; puede chocar con otras herramientas por la version de packaging)
+# semgrep>=1.184

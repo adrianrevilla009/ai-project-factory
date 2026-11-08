@@ -72,7 +72,7 @@ UploadResponse upload(@RequestParam MultipartFile file) throws IOException {
 | Test con ficheros maliciosos (doble extensión, MIME falso, zip slip) | 1 | tests del proyecto generado (pendiente de plantilla) |
 | Revisión humana del flujo de subida | 4 | PR |
 
-> Regla Semgrep sin ejecutar aún en la fábrica (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `authz-rbac-abac-rebac`.

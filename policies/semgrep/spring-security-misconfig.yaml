@@ -8,7 +8,7 @@ rules:
       - pattern: $HTTP.csrf().disable()
     metadata:
       skill: security-headers-cors-csrf
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: spring-cors-wildcard-with-credentials
     languages: [java]
     severity: ERROR
@@ -18,7 +18,7 @@ rules:
       - pattern: $R.allowedOrigins("*")
     metadata:
       skill: security-headers-cors-csrf
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: spring-jwt-none-or-unverified-parse
     languages: [java]
     severity: ERROR
@@ -28,4 +28,4 @@ rules:
       - pattern: $P.parseClaimsJwt($T)
     metadata:
       skill: jwt-and-sessions
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0; JWT.decode es de java-jwt (auth0)."
+      note: "JWT.decode es de java-jwt (auth0). Probada con semgrep 1.184.0 (tests/semgrep)."

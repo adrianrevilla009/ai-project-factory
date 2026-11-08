@@ -63,7 +63,7 @@ El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Regla Semgrep: `endpointOverride` a localhost en `src/main` | 1 | `policies/semgrep/dynamodb-local-endpoint-in-main.yaml` (sin ejecutar, TODO-VERIFY) |
+| Regla Semgrep: `endpointOverride` a localhost en `src/main` | 1 | `policies/semgrep/dynamodb-local-endpoint-in-main.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Revisión de cobertura de errores no emulados | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

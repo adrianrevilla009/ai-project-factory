@@ -70,7 +70,7 @@ var service = new InvoiceService(fakeRepository, fakeMailer);
 | Regla Semgrep: `@Autowired` sobre campo | 1 | `policies/semgrep/spring-field-injection.yaml` |
 | Revisión de cohesión (nº de dependencias) | 3 | agente `code-reviewer` |
 
-> Estado: la regla Semgrep está escrita pero no ejecutada en Oleada 0 (TODO-VERIFY).
+> Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `project-layout`, `domain-events-in-spring`, `solid`, `testing-slices`.

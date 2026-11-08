@@ -67,7 +67,7 @@ String partnerFallback(String id, BulkheadFullException e) {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Regla Semgrep contra executors sin cota | 1 | `policies/semgrep/java-unbounded-executors.yaml` (no ejecutada, TODO-VERIFY) |
+| Regla Semgrep contra executors sin cota | 1 | `policies/semgrep/java-unbounded-executors.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test de carga/saturación | pendiente | tests del proyecto generado |
 | Revisión de dependencias salientes | 3 | agente `code-reviewer` |
 

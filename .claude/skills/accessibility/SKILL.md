@@ -62,7 +62,7 @@ it("form has no a11y violations", async () => {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: `div`/`span` con `onClick` | 1 | `policies/semgrep/frontend-clickable-div.yaml` (sin ejecutar en la fábrica) |
+| Regla Semgrep: `div`/`span` con `onClick` | 1 | `policies/semgrep/frontend-clickable-div.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | `eslint-plugin-jsx-a11y` en el lint del proyecto | 1 | configuración del proyecto generado (pendiente) |
 | axe en Vitest y Playwright | 2 | tests del proyecto generado (pendiente) |
 | Revisión manual con teclado/lector de pantalla | 3 | revisión humana |

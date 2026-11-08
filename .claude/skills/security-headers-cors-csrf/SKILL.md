@@ -77,7 +77,7 @@ Referrer-Policy: strict-origin-when-cross-origin
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Regla Semgrep: CORS con `*` y CSRF desactivado | 1 | `policies/semgrep/spring-security-misconfig.yaml` (TODO-VERIFY) |
+| Regla Semgrep: CORS con `*` y CSRF desactivado | 1 | `policies/semgrep/spring-security-misconfig.yaml` (probada con `semgrep --test`, ver `tests/semgrep/`) |
 | Test de integración que comprueba cabeceras | 2 | tests del proyecto generado |
 | Política Conftest sobre ingress/gateway (cabeceras) | 2 | pendiente (`policies/opa-conftest/`) |
 | Escáner DAST de cabeceras | 3 | `security-testing-sast-dast` |

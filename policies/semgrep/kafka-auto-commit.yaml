@@ -12,4 +12,4 @@ rules:
     pattern-regex: 'enable[.-]auto[.-]commit\s*[:=]\s*"?true'
     metadata:
       skill: kafka-producers-consumers
-      note: "TODO-VERIFY: probar la regla con semgrep antes de darla por buena; no ejecutada."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."

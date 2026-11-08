@@ -6,7 +6,7 @@ rules:
     pattern: $E.printStackTrace()
     metadata:
       skill: logging-rules
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-system-out
     languages: [java]
     severity: ERROR
@@ -18,7 +18,7 @@ rules:
       exclude: ["**/src/test/**"]
     metadata:
       skill: logging-rules
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
   - id: java-log-string-concat
     languages: [java]
     severity: WARNING
@@ -27,4 +27,4 @@ rules:
       - pattern: $LOG.$LEVEL("..." + $X, ...)
     metadata:
       skill: logging-rules
-      note: "TODO-VERIFY: no ejecutada con semgrep en Oleada 0."
+      note: "Probada con semgrep 1.184.0 (tests/semgrep)."
