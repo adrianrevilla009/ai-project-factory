@@ -114,7 +114,7 @@
 - **MUST** definir TTL (p. ej. 24 h, a confirmar con negocio) y limpieza programada.
 - **MUST NOT** derivar la clave en servidor del contenido para operaciones que legítimamente pueden repetirse.
 - **SHOULD** aplicar el mismo patrón en consumidores: tabla de `processed_message_id` (ver `delivery-semantics`).
-- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (comprobar estado actual).
+- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (`draft-ietf-httpapi-idempotency-key-header-08`, en la cola del RFC Editor el 2026-11-08).
 
 ## kafka-producers-consumers
 
@@ -171,7 +171,7 @@
 - **MUST** distinguir tasa (req/s, ráfaga) de cuota (volumen por día/mes) y documentar ambas en el contrato y en la guía del consumidor.
 - **MUST** aplicar el límite de forma compartida entre réplicas (contador en gateway o almacén compartido), no en memoria por instancia.
 - **MUST** definir el comportamiento si el almacén del contador falla (fail-open o fail-closed) y registrarlo como decisión.
-- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (comprobar al fijar la versión), documentar el que se use.
+- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (`draft-ietf-httpapi-ratelimit-headers-11`, mayo de 2026, camino de estándar; verificado el 2026-11-08), documentar el que se use.
 - **SHOULD** hacer que los clientes propios reintenten con backoff exponencial + jitter y respeten `Retry-After`.
 - **MUST NOT** devolver 503 ni 403 para un límite de tasa.
 
@@ -197,7 +197,7 @@
 - **MUST** desactivar el registro automático de esquemas en producción (`auto.register.schemas=false`); los esquemas se publican desde CI.
 - **SHOULD** una estrategia de subject coherente (`TopicNameStrategy` por defecto) y un solo tipo de evento por topic salvo decisión explícita.
 - **SHOULD** romper con un topic nuevo versionado (`orders.v2`) cuando el cambio es incompatible, con doble publicación temporal.
-- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); la licencia de Confluent Schema Registry no es OSS permisiva (D16): comprobar licencia vigente antes de adoptarlo.
+- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); Confluent Schema Registry se publica bajo la Confluent Community License, salvo las librerías cliente (Apache 2.0), y no es una licencia de código abierto permisiva (D16; verificado el 2026-11-08).
 
 ## sdk-generation
 

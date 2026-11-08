@@ -45,7 +45,7 @@ k8s_resource('shop-api', port_forwards=8080, resource_deps=['postgres'])
 ```
 ```yaml
 # skaffold.yaml (alternativa)
-apiVersion: skaffold/v4beta11   # comprobar apiVersion vigente
+apiVersion: skaffold/v4beta14   # vigente el 2026-11-08 según skaffold.dev; `skaffold fix` migra configuraciones antiguas
 kind: Config
 build:
   artifacts:

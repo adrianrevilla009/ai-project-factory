@@ -7,7 +7,7 @@
 - **MUST** auditar con mecanismo central (`@EntityListeners(AuditingEntityListener.class)` + `@CreatedDate`, `@LastModifiedDate`, `@CreatedBy`, `@LastModifiedBy`), no a mano en cada servicio.
 - **MUST** guardar instantes en UTC (`Instant`, `timestamptz`) y el autor como identificador estable del sujeto (claim `sub`), no nombre visible.
 - **MUST** decidir por entidad entre borrado físico, lógico o archivado; el borrado lógico no es el defecto.
-- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate, comprobar nombre según versión), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
+- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate 6.3+, que sustituye a `@Where`, retirado en Hibernate 7.0; verificado el 2026-11-08), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
 - **MUST** tratar el derecho de supresión: un borrado lógico NO cumple una petición de supresión de datos personales (ver `data-privacy-in-db`).
 - **MUST NOT** usar historial como sustituto de backup ni como bus de eventos.
 - **SHOULD** para historial completo preferir Hibernate Envers o tablas `_history` mediante trigger; elegir una y documentarla. Envers duplica escrituras y crece: definir retención.
@@ -129,8 +129,8 @@
 - **MUST** mantener una sola vía de escritura por agregado; no mezclar JPA y SQL directo sobre la misma tabla dentro de una transacción sin hacer `flush()` antes y `clear()` después.
 - **MUST** que JDBC/jOOQ usen el mismo `DataSource` y transacción de Spring (`DataSourceTransactionManager`/`JpaTransactionManager` con el mismo `DataSource`) para participar de `@Transactional`.
 - **MUST NOT** devolver `ResultSet` ni tipos de jOOQ (`Record`) fuera de la capa de persistencia; mapear a DTOs/records.
-- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (comprobar disponibilidad de `JdbcClient` según versión de Spring).
-- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar que el dialecto necesario está en la edición Open Source (comprobar licencia).
+- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (`JdbcClient` existe desde Spring Framework 6.1; verificado el 2026-11-08).
+- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar en la página de licencias de jOOQ que el dialecto necesario está en la edición Open Source.
 - **SHOULD** usar `batchUpdate` para escrituras masivas (ver `batching-and-bulk-ops`).
 
 ## joins-and-fetch-joins

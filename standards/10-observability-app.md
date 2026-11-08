@@ -17,7 +17,7 @@
 ## db-and-kafka-observability
 
 - **MUST** exponer métricas del pool (`hikaricp.connections.active/pending/timeout`) y alertar por espera de conexión, que es síntoma de saturación.
-- **MUST** tener spans de BD con `db.system.name` (o el atributo vigente en tu semconv: comprobar al fijar la versión) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
+- **MUST** tener spans de BD con `db.system.name` (estable en las convenciones semánticas de OpenTelemetry para spans de cliente de base de datos; verificado el 2026-11-08) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
 - **SHOULD** habilitar logs de queries lentas con umbral configurable, sin parámetros; **SHOULD** contar sentencias por petición en tests (ver `n-plus-one`).
 - **MUST** medir consumo Kafka con: lag por grupo/partición, tasa de procesamiento, tiempo de procesamiento por registro, errores y reintentos.
 - **MUST** exponer métricas del cliente Kafka a Micrometer y propagar `traceparent` en cabeceras (ver `tracing`).
@@ -50,7 +50,7 @@
 
 ## llm-observability
 
-- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (aún en evolución: comprobar nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens`).
+- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (estado Development en OpenTelemetry a 2026-11-08, así que los nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens` pueden cambiar).
 - **MUST** exponer métricas: latencia (histograma) incluyendo tiempo hasta el primer token si hay streaming, tokens consumidos, errores por tipo, reintentos y rate limits.
 - **MUST** estimar coste por petición a partir de tokens y tarifa configurable; el coste es una métrica, no un cálculo manual.
 - **MUST NOT** registrar prompts ni respuestas completos por defecto: pueden contener PII o secretos. Si se capturan para depuración, deben ser opt-in, muestreados, enmascarados y con retención corta.

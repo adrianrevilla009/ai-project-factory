@@ -76,7 +76,7 @@
 ## idempotency-and-deduplication
 
 - **MUST** asumir entrega *at-least-once*: todo consumidor y todo endpoint con reintento debe tolerar duplicados.
-- **MUST** exigir en `POST` con efecto una clave de cliente (cabecera `Idempotency-Key`; el estándar IETF es borrador, comprobar al fijar la versión) y guardarla con el resultado.
+- **MUST** exigir en `POST` con efecto una clave de cliente (cabecera `Idempotency-Key`; el estándar IETF sigue siendo un borrador, `draft-ietf-httpapi-idempotency-key-header-08`, ya en la cola del RFC Editor; verificado el 2026-11-08) y guardarla con el resultado.
 - **MUST** hacer la reserva de la clave atómica con una restricción `UNIQUE` en la misma transacción que el efecto; no "consultar y luego insertar".
 - **MUST** que la misma clave con cuerpo distinto devuelva error (422/409), y con el mismo cuerpo devuelva la respuesta original.
 - **MUST** deduplicar mensajes por id de evento (tabla `processed_message` con `UNIQUE(message_id, consumer)`) en la misma transacción que el efecto.

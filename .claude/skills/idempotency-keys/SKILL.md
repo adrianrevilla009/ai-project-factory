@@ -23,7 +23,7 @@ metadata:
 - **MUST** definir TTL (p. ej. 24 h, a confirmar con negocio) y limpieza programada.
 - **MUST NOT** derivar la clave en servidor del contenido para operaciones que legítimamente pueden repetirse.
 - **SHOULD** aplicar el mismo patrón en consumidores: tabla de `processed_message_id` (ver `delivery-semantics`).
-- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (comprobar estado actual).
+- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (`draft-ietf-httpapi-idempotency-key-header-08`, en la cola del RFC Editor el 2026-11-08).
 
 ## Por qué
 Los timeouts hacen que el cliente no sepa si la petición se ejecutó; reintentar sin clave genera pedidos o cobros duplicados. La clave convierte "al menos una vez" en efecto "exactamente una vez" observable.
@@ -65,5 +65,5 @@ public PaymentResponse pay(String tenant, String key, PayRequest r) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `rest-design-guidelines`, `dlq-retries-poison-messages`, `rate-limiting-quotas`.
-- Fuentes: borrador IETF HTTPAPI "The Idempotency-Key HTTP Header Field" — comprobar estado y número, no consultado el 2026-11-07.
+- Fuentes: borrador IETF HTTPAPI "The Idempotency-Key HTTP Header Field" — estado y número verificados el 2026-11-08 en datatracker.ietf.org.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -16,7 +16,7 @@ metadata:
 - No aplica a la seguridad frente a inyección de prompts (ver `llm-security`) ni a observabilidad de los agentes de la fábrica.
 
 ## Reglas
-- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (aún en evolución: comprobar nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens`).
+- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (estado Development en OpenTelemetry a 2026-11-08, así que los nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens` pueden cambiar).
 - **MUST** exponer métricas: latencia (histograma) incluyendo tiempo hasta el primer token si hay streaming, tokens consumidos, errores por tipo, reintentos y rate limits.
 - **MUST** estimar coste por petición a partir de tokens y tarifa configurable; el coste es una métrica, no un cálculo manual.
 - **MUST NOT** registrar prompts ni respuestas completos por defecto: pueden contener PII o secretos. Si se capturan para depuración, deben ser opt-in, muestreados, enmascarados y con retención corta.
@@ -39,9 +39,9 @@ registry.counter("llm.calls", "user", userId).increment();
 var span = tracer.spanBuilder("chat " + model).startSpan();   // nombre acotado
 try (var scope = span.makeCurrent()) {
     var result = client.chat(request);
-    span.setAttribute("gen_ai.request.model", model);                       // comprobar al fijar la versión
-    span.setAttribute("gen_ai.usage.input_tokens", result.inputTokens);   // comprobar al fijar la versión
-    span.setAttribute("gen_ai.usage.output_tokens", result.outputTokens); // comprobar al fijar la versión
+    span.setAttribute("gen_ai.request.model", model);                       // gen_ai.*: estado Development
+    span.setAttribute("gen_ai.usage.input_tokens", result.inputTokens);   // gen_ai.*: estado Development
+    span.setAttribute("gen_ai.usage.output_tokens", result.outputTokens); // gen_ai.*: estado Development
     registry.counter("llm.tokens", "model", model, "direction", "input").increment(result.inputTokens());
     registry.counter("llm.tokens", "model", model, "direction", "output").increment(result.outputTokens());
 } catch (RuntimeException e) {
@@ -67,5 +67,5 @@ try (var scope = span.makeCurrent()) {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-security`, `pii-and-data-classification`, `tracing`, `metrics-micrometer`, `http-clients-and-timeouts`.
-- Fuentes: OpenTelemetry (semantic conventions for GenAI, estado experimental), consultado 2026-11-07; comprobar estabilidad y nombres.
+- Fuentes: OpenTelemetry (semantic conventions for GenAI, estado Development en el registro de atributos de opentelemetry.io, verificado el 2026-11-08); fijar la versión de semconv y revisar los nombres al actualizar.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
