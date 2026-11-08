@@ -5,7 +5,7 @@
 ## aws-emulation
 
 - **MUST** preferir el emulador oficial o de código abierto sin cuenta: DynamoDB Local (`amazon/dynamodb-local`) para DynamoDB, MinIO para S3, Redis para ElastiCache, Strimzi para MSK.
-- **MUST** tratar LocalStack como opcional: hoy exige Auth Token (https://docs.localstack.cloud/aws/getting-started/auth-token/, 2026-11-07), lo que choca con D16. Comprobar el plan gratuito vigente antes de adoptarlo.
+- **MUST** tratar LocalStack como opcional y no apoyar el entorno local en él: desde el 2026-03-23 LocalStack ya no publica la edición Community; solo hay una imagen única que exige cuenta y auth token, y el plan gratuito (Hobby) es para uso no comercial (https://blog.localstack.cloud/the-road-ahead-for-localstack/, verificado el 2026-11-08). En un proyecto corporativo choca con D16: usarlo exige un plan de pago y una decisión explícita en un ADR.
 - **MUST** acceder a los emuladores por configuración de endpoint (`endpoint-override`), nunca con ramas `if (local)` en el código de dominio.
 - **MUST** que las credenciales del emulador sean de ejemplo (`example`/`changeme`) y vivan solo en el perfil local.
 - **MUST** listar en el README del perfil qué NO se reproduce (ver `local-parity-matrix`): Global Tables fiables, throttling, backups y consistencia eventual en DynamoDB; replicación y Object Lock completo en S3; Multi-AZ en Redis.

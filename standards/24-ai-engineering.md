@@ -27,7 +27,7 @@
 - **MUST** tratar los resultados (que pueden contener contenido dañino o datos) como confidenciales y almacenarlos con acceso restringido.
 - **SHOULD** repetir ante cada cambio de modelo, prompt, herramienta o fuente de datos, y al menos una vez por trimestre.
 - **SHOULD** combinar casos manuales con generación automática de variantes, revisando los resultados a mano.
-- **SHOULD** revisar el sistema frente a OWASP Top 10 for LLM Applications (comprobar edición vigente) y frente a los requisitos de `model-risk-and-ai-act-mapping`.
+- **SHOULD** revisar el sistema frente a OWASP Top 10 for LLM Applications (edición 2025, publicada en noviembre de 2024) y frente a los requisitos de `model-risk-and-ai-act-mapping`.
 - **MUST NOT** usar los resultados para atacar sistemas ajenos ni publicar técnicas de elusión contra un proveedor sin seguir su divulgación responsable.
 - **MUST NOT** desactivar los controles de producción para "facilitar" la prueba y olvidar reactivarlos.
 

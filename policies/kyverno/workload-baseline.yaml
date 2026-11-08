@@ -1,7 +1,6 @@
 # Baseline de workloads (skill: workload-baseline).
-# Sin ejecutar: contrastar apiVersion y campos con la version de Kyverno elegida
-# (validationFailureAction vs failureAction por regla cambia entre versiones).
-# (validationFailureAction vs failureAction por regla cambia entre versiones).
+# Sin ejecutar con Kyverno. Usa failureAction por regla: spec.validationFailureAction esta
+# deprecado segun la documentacion de Kyverno (verificado 2026-11-08).
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -13,7 +12,6 @@ metadata:
       Exige requests/limits, probes, seccomp RuntimeDefault y tag no mutable
       en Deployments y StatefulSets.
 spec:
-  validationFailureAction: Audit   # pasar a Enforce tras limpiar el backlog
   background: true
   rules:
     - name: require-resources
@@ -22,6 +20,7 @@ spec:
           - resources:
               kinds: [Deployment, StatefulSet]
       validate:
+        failureAction: Audit   # pasar a Enforce tras limpiar el backlog
         message: "Todos los contenedores deben definir resources.requests (cpu, memory) y limits.memory."
         pattern:
           spec:
@@ -40,6 +39,7 @@ spec:
           - resources:
               kinds: [Deployment, StatefulSet]
       validate:
+        failureAction: Audit   # pasar a Enforce tras limpiar el backlog
         message: "Todos los contenedores deben definir readinessProbe y livenessProbe (o startupProbe)."
         pattern:
           spec:
@@ -54,6 +54,7 @@ spec:
           - resources:
               kinds: [Deployment, StatefulSet]
       validate:
+        failureAction: Audit   # pasar a Enforce tras limpiar el backlog
         message: "spec.template.spec.securityContext.seccompProfile.type debe ser RuntimeDefault."
         pattern:
           spec:
@@ -68,6 +69,7 @@ spec:
           - resources:
               kinds: [Deployment, StatefulSet]
       validate:
+        failureAction: Audit   # pasar a Enforce tras limpiar el backlog
         message: "Prohibido el tag :latest o imagen sin tag; fijar version o digest."
         pattern:
           spec:

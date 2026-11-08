@@ -140,6 +140,7 @@
 - **SHOULD** levantar LocalStack con Testcontainers (módulo LocalStack) y fijar la imagen con tag explícito.
 - **SHOULD** limitar los servicios habilitados a los necesarios para acelerar el arranque.
 - **MUST NOT** afirmar "probado en AWS" ni "listo para producción en AWS" por pasar tests en LocalStack; la fórmula es "preparado para AWS, no verificado en real" (ADR-0004).
+- **MUST** tener en cuenta que desde el 2026-03-23 no existe la edición Community: la imagen requiere cuenta y auth token, y el plan gratuito es solo para uso no comercial (verificado el 2026-11-08, ver `aws-emulation`). En un proyecto corporativo su uso exige plan de pago y un ADR; preferir emuladores sin cuenta (DynamoDB Local, ElasticMQ, MinIO) cuando basten.
 - **MUST NOT** depender de funcionalidades de pago de LocalStack por defecto (D16); si un test las requiere, es una decisión explícita y documentada.
 
 ## mutation-testing

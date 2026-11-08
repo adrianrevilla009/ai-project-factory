@@ -23,6 +23,7 @@ metadata:
 - **SHOULD** levantar LocalStack con Testcontainers (módulo LocalStack) y fijar la imagen con tag explícito.
 - **SHOULD** limitar los servicios habilitados a los necesarios para acelerar el arranque.
 - **MUST NOT** afirmar "probado en AWS" ni "listo para producción en AWS" por pasar tests en LocalStack; la fórmula es "preparado para AWS, no verificado en real" (ADR-0004).
+- **MUST** tener en cuenta que desde el 2026-03-23 no existe la edición Community: la imagen requiere cuenta y auth token, y el plan gratuito es solo para uso no comercial (verificado el 2026-11-08, ver `aws-emulation`). En un proyecto corporativo su uso exige plan de pago y un ADR; preferir emuladores sin cuenta (DynamoDB Local, ElasticMQ, MinIO) cuando basten.
 - **MUST NOT** depender de funcionalidades de pago de LocalStack por defecto (D16); si un test las requiere, es una decisión explícita y documentada.
 
 ## Por qué
@@ -41,7 +42,7 @@ S3Client s3 = S3Client.builder().endpointOverride(URI.create("http://localhost:4
 class DocumentStorageIT {
     @Container
     static LocalStackContainer localstack =
-        new LocalStackContainer(DockerImageName.parse("localstack/localstack:<tag-fijo>")) // comprobar tag
+        new LocalStackContainer(DockerImageName.parse("localstack/localstack:<tag-fijo>")) // fijar un tag concreto; requiere auth token
             .withServices(LocalStackContainer.Service.S3);
 
     S3Client s3 = S3Client.builder()
@@ -71,5 +72,5 @@ Limitaciones documentadas: sin IAM real, sin KMS real, sin VPC; verificación pe
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `integration-testing-testcontainers`, `cloud-iam-least-privilege`, `verify-before-asserting`.
-- Fuentes: documentación de LocalStack y AWS SDK for Java v2 — comprobar URL, versión y cobertura de servicios en la edición comunitaria.
+- Fuentes: documentación de LocalStack y AWS SDK for Java v2 — https://blog.localstack.cloud/the-road-ahead-for-localstack/ (fin de la edición Community, 2026-03-23); la cobertura de servicios se comprueba en la documentación de la edición contratada.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

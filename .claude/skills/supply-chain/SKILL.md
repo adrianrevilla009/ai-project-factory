@@ -46,15 +46,15 @@ apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata: { name: verify-image-signatures }
 spec:
-  validationFailureAction: Enforce
   rules:
     - name: require-cosign-signature
       match: { any: [ { resources: { kinds: [Pod] } } ] }
       verifyImages:
-        - imageReferences: ["registry.example.com/*"]
+        - failureAction: Enforce
+          imageReferences: ["registry.example.com/*"]
           attestors: [ { entries: [ { keyless: { issuer: "https://token.actions.githubusercontent.com", subject: "https://github.com/example-org/*" } } ] } ]
 ```
-Campos de Kyverno (`validationFailureAction`, `verifyImages`) comprobar contra la versión elegida.
+En Kyverno, `spec.validationFailureAction` está deprecado: la acción va por regla (`validate.failureAction`, `verifyImages[].failureAction`). Verificado el 2026-11-08 en la documentación de Kyverno.
 
 ## Checklist de revisión
 - [ ] SBOM generado y almacenado por release.

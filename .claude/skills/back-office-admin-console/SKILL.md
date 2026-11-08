@@ -73,5 +73,5 @@ auditLog.record(AuditEvent.of("REFUND_APPROVED", approverId, refund.id(), reason
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `authz-rbac-abac-rebac`, `audit-trail-and-activity-log`, `audit-and-break-glass`, `access-control-masking-and-retention`, `rbac-and-service-accounts`.
-- Fuentes: RFC 8693 (claim `act`, token exchange) y OWASP ASVS, verificadas 2026-11-07 solo a nivel de concepto; comprobar versión ASVS.
+- Fuentes: RFC 8693 (claim `act`, token exchange) y OWASP ASVS, verificadas 2026-11-07 solo a nivel de concepto; ASVS vigente: 5.0.0.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

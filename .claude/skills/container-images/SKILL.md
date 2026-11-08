@@ -22,7 +22,7 @@ metadata:
 - **MUST** ejecutar como usuario no root (`USER` numérico) y sin privilegios añadidos.
 - **MUST NOT** incluir secretos, `.git`, claves ni `settings.xml` con credenciales en la imagen ni en capas intermedias; usar `.dockerignore`.
 - **MUST** usar una base de distribución OpenJDK libre y soportada (`jdk-distribution-and-upgrade-cadence`); sin runtimes de pago por defecto (D16).
-- **SHOULD** usar el JAR en capas de Spring Boot (layertools) para cachear dependencias frente a código.
+- **SHOULD** usar el JAR en capas de Spring Boot (`-Djarmode=tools … extract --layers`, el modo vigente según la documentación de Spring Boot, comprobado el 2026-11-08; `layertools` es el nombre antiguo) para cachear dependencias frente a código.
 - **SHOULD** declarar `HEALTHCHECK` solo si el orquestador no lo cubre; en Kubernetes se usan probes.
 - **MUST** escanear la imagen y generar su SBOM (`sbom-generation`) en CI; fallar con vulnerabilidades críticas según `vulnerability-sla-and-incident-response`.
 - **SHOULD** firmar la imagen y verificar la firma en admisión (Kyverno, pendiente en `policies/kyverno/`). Preparado para AWS, no verificado en real: publicar en ECR queda fuera de la fábrica (D4).
@@ -49,16 +49,17 @@ COPY .mvn .mvn
 RUN ./mvnw -B dependency:go-offline
 COPY src src
 RUN ./mvnw -B package -DskipTests \
- && java -Djarmode=layertools -jar target/app.jar extract   # comprobar opción según versión de Spring Boot
+ && java -Djarmode=tools -jar target/app.jar extract --layers --destination /workspace/extracted
 
 FROM eclipse-temurin:21-jre@sha256:<digest-example> AS runtime
 RUN useradd --system --uid 10001 app
 USER 10001
 WORKDIR /app
-COPY --from=build /workspace/dependencies/ ./
-COPY --from=build /workspace/spring-boot-loader/ ./
-COPY --from=build /workspace/application/ ./
-ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
+COPY --from=build /workspace/extracted/dependencies/ ./
+COPY --from=build /workspace/extracted/spring-boot-loader/ ./
+COPY --from=build /workspace/extracted/snapshot-dependencies/ ./
+COPY --from=build /workspace/extracted/application/ ./
+ENTRYPOINT ["java", "-jar", "application.jar"]
 ```
 
 ## Checklist de revisión
@@ -78,5 +79,5 @@ ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `build-caching-and-speed`, `jdk-distribution-and-upgrade-cadence`, `supply-chain`, `renovate-dependabot-policy`.
-- Fuentes: docs.docker.com (best practices for Dockerfile, multi-stage), documentación de Spring Boot (container images); consultadas 2026-11-07, comprobar detalles de `JarLauncher` y layertools.
+- Fuentes: docs.docker.com (best practices for Dockerfile, multi-stage), documentación de Spring Boot (container images); consultadas 2026-11-07; el comando `-Djarmode=tools extract --layers` se verificó el 2026-11-08 en https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

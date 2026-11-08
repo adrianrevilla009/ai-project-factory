@@ -162,7 +162,7 @@
 - **MUST** consumidores idempotentes: SQS estándar es at-least-once y sin orden estricto; RabbitMQ reentrega tras desconexión.
 - **SHOULD** SQS FIFO solo si se necesita orden/deduplicación; usar `MessageGroupId` con cardinalidad suficiente.
 - **SHOULD** cifrado en reposo (SSE) y política de cola con mínimo privilegio en SQS.
-- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Límite de tamaño de SQS: comprobar valor vigente.
+- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Tamaño máximo de mensaje en SQS: 1 MiB (1.048.576 bytes; verificado el 2026-11-08); para más, la Extended Client Library guarda el payload en S3 y envía la referencia.
 
 ## rate-limiting-quotas
 

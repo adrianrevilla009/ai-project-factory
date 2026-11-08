@@ -33,7 +33,7 @@
 - **MUST** ejecutar como usuario no root (`USER` numérico) y sin privilegios añadidos.
 - **MUST NOT** incluir secretos, `.git`, claves ni `settings.xml` con credenciales en la imagen ni en capas intermedias; usar `.dockerignore`.
 - **MUST** usar una base de distribución OpenJDK libre y soportada (`jdk-distribution-and-upgrade-cadence`); sin runtimes de pago por defecto (D16).
-- **SHOULD** usar el JAR en capas de Spring Boot (layertools) para cachear dependencias frente a código.
+- **SHOULD** usar el JAR en capas de Spring Boot (`-Djarmode=tools … extract --layers`, el modo vigente según la documentación de Spring Boot, comprobado el 2026-11-08; `layertools` es el nombre antiguo) para cachear dependencias frente a código.
 - **SHOULD** declarar `HEALTHCHECK` solo si el orquestador no lo cubre; en Kubernetes se usan probes.
 - **MUST** escanear la imagen y generar su SBOM (`sbom-generation`) en CI; fallar con vulnerabilidades críticas según `vulnerability-sla-and-incident-response`.
 - **SHOULD** firmar la imagen y verificar la firma en admisión (Kyverno, pendiente en `policies/kyverno/`). Preparado para AWS, no verificado en real: publicar en ECR queda fuera de la fábrica (D4).

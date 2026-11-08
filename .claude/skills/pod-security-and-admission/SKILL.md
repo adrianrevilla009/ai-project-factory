@@ -45,7 +45,7 @@ metadata:
     pod-security.kubernetes.io/audit: restricted
     pod-security.kubernetes.io/warn: restricted
 ```
-Política Kyverno en Audit primero (`validationFailureAction: Audit`), ver `policies/kyverno/workload-baseline.yaml`. Revisar con `kubectl get policyreport -A` (comprobar nombre del recurso en la versión instalada).
+Política Kyverno en Audit primero (`failureAction: Audit` en cada regla `validate`; `spec.validationFailureAction` está deprecado), ver `policies/kyverno/workload-baseline.yaml`. Revisar con `kubectl get policyreport -A` (comprobar nombre del recurso en la versión instalada).
 
 ## Checklist de revisión
 - [ ] Namespaces con etiquetas PSA (enforce, audit, warn).

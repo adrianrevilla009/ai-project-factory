@@ -112,7 +112,7 @@
 - **MUST** denegar uso del usuario root en cuentas miembro y la creación de access keys.
 - **MUST** denegar `kms:ScheduleKeyDeletion` y `kms:DisableKey` salvo rol de plataforma.
 - **MUST** probar cada SCP en una OU `Sandbox` antes de adjuntarla a `Workloads`.
-- **SHOULD** versionar SCP en ficheros JSON con `Sid` descriptivo y tamaño < límite de 5120 caracteres (comprobar al fijar la versión).
+- **SHOULD** versionar SCP en ficheros JSON con `Sid` descriptivo y tamaño < 10.240 caracteres por SCP y como máximo 10 SCP directamente asociadas a cada raíz, OU o cuenta (verificado el 2026-11-08 en la guía de cuotas de AWS Organizations; los 5.120 caracteres son el límite de las RCP, no de las SCP).
 - **MUST NOT** adjuntar SCP experimentales a la raíz de la organización.
 - **MUST NOT** olvidar que las SCP no afectan a la cuenta de management.
 

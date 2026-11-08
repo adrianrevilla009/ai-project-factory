@@ -70,5 +70,5 @@ resources:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cluster-tooling`, `aws-emulation`, `local-parity-matrix`, `resource-budgets`, `data-seeding-and-demo-data`.
-- Fuentes: `catalog/parity-matrix.yaml`; ADR-0034; LocalStack Auth Token (URL arriba, 2026-11-07).
+- Fuentes: `catalog/parity-matrix.yaml`; ADR-0034; fin de la edición Community de LocalStack (2026-03-23, ver `aws-emulation`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
