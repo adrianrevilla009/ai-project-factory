@@ -60,5 +60,5 @@ Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 91
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vulnerability-management-program`, `incident-management-and-postmortems`, `penetration-testing-program`.
-- Fuentes: RFC 9116 (rfc-editor.org/rfc/rfc9116); ISO/IEC 29147 y 30111 — TODO-VERIFY; fecha de consulta 2026-11-07.
+- Fuentes: RFC 9116 (rfc-editor.org/rfc/rfc9116); ISO/IEC 29147 y 30111 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

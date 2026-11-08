@@ -64,5 +64,5 @@ export async function loadMessages(locale: string) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `i18n-and-localization`, `strings-encoding-locale`, `time-and-money`, `accessibility`, `routing-and-code-splitting`.
-- Fuentes: MDN `Intl` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl), consultado 2026-11-07 solo a nivel de existencia de API; librerías TODO-VERIFY.
+- Fuentes: MDN `Intl` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) solo a nivel de existencia de API; librerías (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

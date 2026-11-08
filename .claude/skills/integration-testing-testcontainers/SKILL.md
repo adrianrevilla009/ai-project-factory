@@ -74,5 +74,5 @@ El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `db-testing`, `testing-slices`, `schema-migrations`, `kafka-producers-consumers`, `test-data-management`.
-- Fuentes: documentación de Testcontainers for Java y de Spring Boot (Testcontainers support) — TODO-VERIFY versión y URL.
+- Fuentes: documentación de Testcontainers for Java y de Spring Boot (Testcontainers support) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

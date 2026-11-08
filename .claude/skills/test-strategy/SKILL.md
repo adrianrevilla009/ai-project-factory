@@ -63,5 +63,5 @@ E2E          -> 5-10 recorridos críticos, solo en release
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `testing-slices`, `unit-testing-java`, `integration-testing-testcontainers`, `contract-testing`, `e2e-testing`, `coverage-policy`.
-- Fuentes: documentación de Maven Surefire/Failsafe y Spring Boot Testing — TODO-VERIFY URL y versión.
+- Fuentes: documentación de Maven Surefire/Failsafe y Spring Boot Testing (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

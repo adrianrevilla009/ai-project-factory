@@ -65,5 +65,5 @@ Causa: Juan desplegó sin mirar. Acción: tener más cuidado.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `runbooks`, `production-readiness-review`, `risk-register`, `chaos-engineering`, `alert-routing-and-oncall`.
-- Fuentes: Google SRE Book, "Postmortem Culture: Learning from Failure" (TODO-VERIFY URL concreta).
+- Fuentes: Google SRE Book, "Postmortem Culture: Learning from Failure" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

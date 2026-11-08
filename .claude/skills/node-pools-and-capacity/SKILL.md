@@ -63,5 +63,5 @@ Checks automáticos de IaC: pendiente (`policies/iac-checks/`).
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `cluster-topology`, `autoscaling`, `workload-baseline`, `eks-networking`, `cost-visibility`.
-- Fuentes: documentación EKS (managed node groups) y Karpenter — TODO-VERIFY versiones y URLs, 2026-11-07.
+- Fuentes: documentación EKS (managed node groups) y Karpenter (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

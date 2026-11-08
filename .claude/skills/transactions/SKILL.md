@@ -76,5 +76,5 @@ class CheckoutService {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `isolation-levels-and-anomalies`, `persistence-context-and-flush`, `domain-events-in-spring`, `connection-pooling`.
-- Fuentes: Spring Framework reference (Transaction Management, declarative) — TODO-VERIFY versión y URL; no consultada en vivo el 2026-11-07.
+- Fuentes: Spring Framework reference (Transaction Management, declarative) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

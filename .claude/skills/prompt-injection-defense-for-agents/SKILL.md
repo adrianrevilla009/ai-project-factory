@@ -67,5 +67,5 @@ Inyecta un aviso de seguridad en el contexto tras `WebFetch|WebSearch|Read|Bash|
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `gate-protocol`, `mcp-governance`, `subagent-design`, `agent-evals`, `llm-security`.
-- Fuentes: https://code.claude.com/docs/en/mcp (2026-11-07); OWASP Top 10 for LLM Applications (TODO-VERIFY edición y URL).
+- Fuentes: https://code.claude.com/docs/en/mcp (2026-11-07); OWASP Top 10 for LLM Applications (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

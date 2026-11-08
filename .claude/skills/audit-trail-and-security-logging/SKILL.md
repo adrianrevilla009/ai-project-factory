@@ -54,7 +54,7 @@ class AuditLogger {
 ```json
 {"ts":"2026-11-07T10:15:30Z","event":"AUTHZ_DENIED","actor":"u-123","resource":"order/987","action":"READ","result":"DENIED","traceId":"4bf92f3577b34da6"}
 ```
-Usar `logger` con `addKeyValue` requiere SLF4J 2.x (TODO-VERIFY versión del proyecto).
+Usar `logger` con `addKeyValue` requiere SLF4J 2.x.
 
 ## Checklist de revisión
 - [ ] Los eventos mínimos de la regla están cubiertos y probados.
@@ -71,5 +71,5 @@ Usar `logger` con `addKeyValue` requiere SLF4J 2.x (TODO-VERIFY versión del pro
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `structured-logging`, `pii-and-data-classification`, `org-cloudtrail-config-securityhub-guardduty`, `vulnerability-sla-and-incident-response`.
-- Fuentes: OWASP Logging Cheat Sheet y Logging Vocabulary, consultados 2026-11-07, TODO-VERIFY URLs.
+- Fuentes: OWASP Logging Cheat Sheet y Logging Vocabulary (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

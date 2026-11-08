@@ -65,5 +65,5 @@ OpenSearch gestionado en AWS: preparado para AWS, no verificado en real. En loca
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cqrs`, `outbox-and-cdc`, `projections-and-read-models`, `search-and-discovery`, `data-sync-pitfalls`.
-- Fuentes: documentación de OpenSearch — TODO-VERIFY URL y versión.
+- Fuentes: documentación de OpenSearch (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

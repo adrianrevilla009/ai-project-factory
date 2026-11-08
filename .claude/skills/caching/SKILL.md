@@ -68,5 +68,5 @@ Caffeine.newBuilder().maximumSize(10_000).expireAfterWrite(Duration.ofMinutes(10
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-tenancy`, `n-plus-one`, `data-privacy-in-db`, `read-replicas-and-routing`.
-- Fuentes: Spring Framework Reference (Cache Abstraction), Hibernate ORM User Guide (caching) — TODO-VERIFY versión y URL; no verificado 2026-11-07.
+- Fuentes: Spring Framework Reference (Cache Abstraction), Hibernate ORM User Guide (caching) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

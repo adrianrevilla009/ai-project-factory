@@ -70,5 +70,5 @@ resource "aws_flow_log" "main" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `log-archive-and-audit-account`, `transit-gateway-hub-and-spoke`, `waf-shield-and-cloudfront`, `audit-trail-and-security-logging`, `pii-and-data-classification`.
-- Fuentes: documentación oficial de VPC Flow Logs (campos y formato personalizado) y Reachability Analyzer, consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: documentación oficial de VPC Flow Logs (campos y formato personalizado) y Reachability Analyzer (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

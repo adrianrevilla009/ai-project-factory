@@ -64,5 +64,5 @@ UPDATE ledger SET balance = :b, last_token = :token
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `idempotency-and-deduplication`, `scheduling-and-batch`, `optimistic-locking`, `pessimistic-locking`.
-- Fuentes: documentación de ShedLock y de Postgres (advisory locks); crítica de Kleppmann a Redlock — TODO-VERIFY URLs (2026-11-07).
+- Fuentes: documentación de ShedLock y de Postgres (advisory locks); crítica de Kleppmann a Redlock (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

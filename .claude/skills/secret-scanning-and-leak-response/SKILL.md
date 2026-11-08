@@ -39,7 +39,7 @@ SKIP=gitleaks git commit -m "wip"
 ```
 ### Bien
 ```yaml
-# .pre-commit-config.yaml (rev: TODO-VERIFY, fijar la versión vigente)
+#.pre-commit-config.yaml (rev: TODO-VERIFY, fijar la versión vigente)
 repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2

@@ -61,5 +61,5 @@ vault operator raft snapshot restore /backup/raft-example.snap   # solo en el en
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deployment-ha`, `audit-and-break-glass`, `tier-model-and-rpo-rto`, `failover-and-failback-runbooks`, `envelope-encryption-and-kms`.
-- Fuentes: ADR-0010 y ADR-0031; documentación de Vault (operator raft snapshot) y de Keycloak (export/import), TODO-VERIFY URLs y versiones. Diseño preparado para AWS, no verificado en real.
+- Fuentes: ADR-0010 y ADR-0031; documentación de Vault (operator raft snapshot) y de Keycloak (export/import) (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Diseño preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

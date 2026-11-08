@@ -70,5 +70,5 @@ try {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `aggregates-and-event-design`, `snapshots`, `projections-and-read-models`, `dynamodb-data-modeling`, `delivery-semantics`.
-- Fuentes: documentación de DynamoDB Streams y de transacciones (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) — límites y retención TODO-VERIFY. Preparado para AWS, no verificado en real.
+- Fuentes: documentación de DynamoDB Streams y de transacciones (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) — límites y retención (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

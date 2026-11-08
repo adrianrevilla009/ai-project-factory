@@ -72,5 +72,5 @@ El nombre `traces_service_graph_request_total` es el habitual, TODO-VERIFY en la
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `logs-and-traces-stores`, `collector-pipelines`, `cardinality-and-cost-governance`, `dashboards-and-slos-as-code`.
-- Fuentes oficiales: https://grafana.com/docs/tempo/latest/metrics-from-traces/metrics-generator/ (verificado 2026-11-07: procesadores service graphs, span metrics y host info; los nombres de métricas y la sintaxis de overrides no aparecieron en esa página, TODO-VERIFY). https://prometheus.io/docs/prometheus/latest/storage/ (receptor de remote write).
+- Fuentes oficiales: https://grafana.com/docs/tempo/latest/metrics-from-traces/metrics-generator/ (verificado 2026-11-07: procesadores service graphs, span metrics y host info; los nombres de métricas y la sintaxis de overrides no aparecieron en esa página (por nombre; URL y versión se fijan al adoptarlas en el proyecto). https://prometheus.io/docs/prometheus/latest/storage/ (receptor de remote write).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

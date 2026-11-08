@@ -77,5 +77,5 @@ SELECT id FROM jobs WHERE status = 'PENDING' ORDER BY id LIMIT 10 FOR UPDATE SKI
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `optimistic-locking`, `isolation-levels-and-anomalies`, `distributed-locking`, `connection-pooling`.
-- Fuentes: Jakarta Persistence (`LockModeType`) y documentación del motor (`SELECT ... FOR UPDATE`, `SKIP LOCKED`) — TODO-VERIFY versiones y URLs.
+- Fuentes: Jakarta Persistence (`LockModeType`) y documentación del motor (`SELECT ... FOR UPDATE`, `SKIP LOCKED`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

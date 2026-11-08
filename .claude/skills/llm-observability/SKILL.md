@@ -40,8 +40,8 @@ var span = tracer.spanBuilder("chat " + model).startSpan();   // nombre acotado
 try (var scope = span.makeCurrent()) {
     var result = client.chat(request);
     span.setAttribute("gen_ai.request.model", model);                       // TODO-VERIFY
-    span.setAttribute("gen_ai.usage.input_tokens", result.inputTokens());   // TODO-VERIFY
-    span.setAttribute("gen_ai.usage.output_tokens", result.outputTokens()); // TODO-VERIFY
+    span.setAttribute("gen_ai.usage.input_tokens", result.inputTokens);   // TODO-VERIFY
+    span.setAttribute("gen_ai.usage.output_tokens", result.outputTokens); // TODO-VERIFY
     registry.counter("llm.tokens", "model", model, "direction", "input").increment(result.inputTokens());
     registry.counter("llm.tokens", "model", model, "direction", "output").increment(result.outputTokens());
 } catch (RuntimeException e) {

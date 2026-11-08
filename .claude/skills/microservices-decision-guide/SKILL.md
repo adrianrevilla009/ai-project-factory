@@ -57,5 +57,5 @@ Alternativas descartadas: caché en el monolito; réplica de lectura.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `modular-monolith`, `strangler-fig-migration`, `bff-and-api-gateway`, `consistency-and-cap-tradeoffs`, `sagas-and-process-managers`.
-- Fuentes: Martin Fowler, "MonolithFirst" y "Microservice Premium" (martinfowler.com) — TODO-VERIFY URL y fecha.
+- Fuentes: Martin Fowler, "MonolithFirst" y "Microservice Premium" (martinfowler.com) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

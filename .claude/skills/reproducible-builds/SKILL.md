@@ -63,5 +63,5 @@ En release, `outputTimestamp` se fija al timestamp del commit de la etiqueta.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `maven-wrapper-and-toolchains`, `versioning-semver-snapshots`, `sbom-generation`, `container-images`.
-- Fuentes: Apache Maven, "Configuring for Reproducible Builds" y reproducible-builds.org — TODO-VERIFY URLs; fecha de referencia 2026-11-07.
+- Fuentes: Apache Maven, "Configuring for Reproducible Builds" y reproducible-builds.org (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

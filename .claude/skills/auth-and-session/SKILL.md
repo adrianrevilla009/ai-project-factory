@@ -65,5 +65,5 @@ function RequireAuth({ children }: { children: ReactNode }) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `security-frontend`, `authn-oidc-oauth2`, `jwt-and-sessions`, `bff-and-api-gateway`, `authz-rbac-abac-rebac`.
-- Fuentes: RFC 7636 (PKCE); IETF OAuth 2.0 for Browser-Based Apps (estado del borrador: TODO-VERIFY, 2026-11-07).
+- Fuentes: RFC 7636 (PKCE); IETF OAuth 2.0 for Browser-Based Apps (estado del borrador (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

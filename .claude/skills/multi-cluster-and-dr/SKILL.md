@@ -65,5 +65,5 @@ Validador automático de documento DR: pendiente.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `cluster-topology`, `backup-and-restore`, `multi-cluster-mesh`, `istio-multicluster-tradeoffs`, `eks-multi-region-and-argo-cd-multicluster`.
-- Fuentes: documentación de Kubernetes y guías de resiliencia/DR de AWS (Well-Architected, Reliability Pillar) — TODO-VERIFY URLs, 2026-11-07.
+- Fuentes: documentación de Kubernetes y guías de resiliencia/DR de AWS (Well-Architected, Reliability Pillar) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

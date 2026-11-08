@@ -62,5 +62,5 @@ Local: se puede probar con un límite en el gateway local o un filtro con almac�
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dos-and-rate-limiting`, `idempotency-keys`, `rest-design-guidelines`, `webhooks`.
-- Fuentes: RFC 6585 (429), RFC 9110 (`Retry-After`); borrador IETF RateLimit header fields — TODO-VERIFY, no consultado el 2026-11-07.
+- Fuentes: RFC 6585 (429), RFC 9110 (`Retry-After`); borrador IETF RateLimit header fields (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

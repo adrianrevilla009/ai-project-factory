@@ -58,5 +58,5 @@ local: kind (1 clúster, sin AZ; no reproduce LB, IAM ni multi-AZ)
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `multi-cluster-and-dr`, `multi-cluster-mesh`, `cell-based-architecture`, `eks-networking`.
-- Fuentes: documentación de Kubernetes (cluster architecture) y guías de EKS best practices — TODO-VERIFY URL concreta, 2026-11-07.
+- Fuentes: documentación de Kubernetes (cluster architecture) y guías de EKS best practices (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

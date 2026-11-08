@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** medir con el conteo de sentencias/batches, no a ojo.
 
 ## Por qué
-Cada `save()` en un bucle puede ser un viaje de red; con `IDENTITY` Hibernate debe ejecutar el INSERT inmediatamente para conocer el id. El contexto de persistencia crece sin límite y el dirty checking se vuelve cuadrático. Un bulk update evita cargar entidades pero deja obsoletas las que ya estaban en memoria. Los valores de `batch_size` son punto de partida: medir (TODO-VERIFY propiedades contra la guía de usuario de Hibernate de la versión usada).
+Cada `save` en un bucle puede ser un viaje de red; con `IDENTITY` Hibernate debe ejecutar el INSERT inmediatamente para conocer el id. El contexto de persistencia crece sin límite y el dirty checking se vuelve cuadrático. Un bulk update evita cargar entidades pero deja obsoletas las que ya estaban en memoria. Los valores de `batch_size` son punto de partida: medir (TODO-VERIFY propiedades contra la guía de usuario de Hibernate de la versión usada).
 
 ## Ejemplos
 ### Mal
@@ -80,5 +80,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `id-generation`, `persistence-context-and-flush`, `transactions`, `scheduling-and-batch`.
-- Fuentes: guía de usuario de Hibernate ORM, capítulo de batching (TODO-VERIFY versión y URL; no verificado 2026-11-07).
+- Fuentes: guía de usuario de Hibernate ORM, capítulo de batching (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

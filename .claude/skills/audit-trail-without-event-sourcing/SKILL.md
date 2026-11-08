@@ -69,5 +69,5 @@ public void changeStatus(UUID id, OrderStatus next, String actor) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `when-to-use-and-when-not`, `auditing-soft-delete-history`, `audit-trail-and-security-logging`, `outbox-and-cdc`.
-- Fuentes: documentación de Hibernate Envers — TODO-VERIFY versión y URL.
+- Fuentes: documentación de Hibernate Envers (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

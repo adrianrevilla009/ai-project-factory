@@ -73,5 +73,5 @@ policies:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-fundamentals-and-semconv`, `otel-java-agent-vs-sdk`, `async-and-context-propagation`, `db-and-kafka-observability`, `virtual-threads`.
-- Fuentes: OpenTelemetry (context propagation, sampling), W3C Trace Context, consultados 2026-11-07; TODO-VERIFY.
+- Fuentes: OpenTelemetry (context propagation, sampling), W3C Trace Context (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -73,6 +73,6 @@ groups:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `metrics-store-ha-retention`, `collector-pipelines`, `logs-and-traces-stores`.
-- Fuentes oficiales: https://prometheus.io/docs/alerting/latest/configuration/ (verificado 2026-11-07, estructura de Alertmanager); nombres de métricas internas de Collector y Alertmanager: TODO-VERIFY.
+- Fuentes oficiales: https://prometheus.io/docs/alerting/latest/configuration/ (verificado 2026-11-07, estructura de Alertmanager); nombres de métricas internas de Collector y Alertmanager (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Preparado para AWS, no verificado en real; el monitor externo debe vivir fuera de la cuenta/clúster y no se reproduce en local.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

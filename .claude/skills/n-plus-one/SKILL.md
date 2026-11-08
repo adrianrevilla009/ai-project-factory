@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** activar `open-in-view` (`spring.jpa.open-in-view=false`).
 
 ## Por qué
-Un listado de N pedidos con su cliente genera 1 + N consultas: invisible con 5 filas de demo, catastrófico con 50 000. La carga debe ser decisión explícita del caso de uso, no un efecto del mapeo. Verificar `FetchType` por defecto y propiedades contra la documentación vigente de Hibernate (TODO-VERIFY versión).
+Un listado de N pedidos con su cliente genera 1 + N consultas: invisible con 5 filas de demo, catastrófico con 50 000. La carga debe ser decisión explícita del caso de uso, no un efecto del mapeo. Verificar `FetchType` por defecto y propiedades contra la documentación vigente de Hibernate.
 
 ## Ejemplos
 ### Mal
@@ -87,5 +87,5 @@ Requiere `hibernate.generate_statistics=true` en el perfil de test.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `lazy-vs-eager`, `projections-and-dtos`, `joins-and-fetch-joins`, `testing-slices`.
-- Fuentes: documentación de Hibernate ORM (guía de usuario, fetching) — TODO-VERIFY versión y URL concreta.
+- Fuentes: documentación de Hibernate ORM (guía de usuario, fetching) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1

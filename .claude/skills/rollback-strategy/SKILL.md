@@ -68,5 +68,5 @@ jobs:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `database-migration-step`, `deployment-verification-and-smoke`, `schema-migrations`, `change-and-release-management`, `environment-promotion`.
-- Fuentes: documentación de Helm upgrade/rollback (https://helm.sh/docs/helm/helm_upgrade/) — TODO-VERIFY.
+- Fuentes: documentación de Helm upgrade/rollback (https://helm.sh/docs/helm/helm_upgrade/) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

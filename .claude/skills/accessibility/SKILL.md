@@ -69,5 +69,5 @@ it("form has no a11y violations", async () => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `design-system-and-tokens`, `forms-and-validation`, `testing`, `component-patterns`.
-- Fuentes: W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/ (consultado 2026-11-07); WAI-ARIA Authoring Practices https://www.w3.org/WAI/ARIA/apg/ ; documentación de axe-core (TODO-VERIFY URL).
+- Fuentes: W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/; WAI-ARIA Authoring Practices https://www.w3.org/WAI/ARIA/apg/ ; documentación de axe-core (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

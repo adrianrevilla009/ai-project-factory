@@ -70,5 +70,5 @@ Requiere la dependencia `spring-modulith-core` (TODO-VERIFY artefacto y versión
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `modular-monolith`, `layering-rules-archunit`, `domain-events-in-spring`, `dependency-injection-rules`.
-- Fuentes oficiales: documentación de Spring Modulith (docs.spring.io/spring-modulith), consultada 2026-11-07; TODO-VERIFY versión concreta.
+- Fuentes oficiales: documentación de Spring Modulith (docs.spring.io/spring-modulith) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

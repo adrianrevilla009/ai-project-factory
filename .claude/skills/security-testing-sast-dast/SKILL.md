@@ -81,5 +81,5 @@ void tamperedToken_isRejected() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secure-sdlc-nist-ssdf`, `dependency-security`, `secrets-management`, `static-analysis`, `injection-families`.
-- Fuentes: documentación de Semgrep OSS y OWASP ZAP; OWASP Web Security Testing Guide — TODO-VERIFY flags y URLs concretas.
+- Fuentes: documentación de Semgrep OSS y OWASP ZAP; OWASP Web Security Testing Guide (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

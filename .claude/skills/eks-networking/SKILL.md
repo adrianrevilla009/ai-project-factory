@@ -91,5 +91,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cidr-planning-and-ipam`, `alb-nlb-and-tls-termination`, `container-and-k8s-security`, `cluster-topology`, `mtls-strict-and-peer-auth`.
-- Fuentes: guía oficial de buenas prácticas de redes de Amazon EKS y documentación del VPC CNI, consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: guía oficial de buenas prácticas de redes de Amazon EKS y documentación del VPC CNI (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

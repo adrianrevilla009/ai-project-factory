@@ -65,5 +65,5 @@ Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts: TODO-VERI
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cluster-upgrades-and-drift`, `sidecar-vs-ambient-decision`, `multi-cluster-mesh`, `upgrade-policy`.
-- Fuentes: istio.io/latest/docs/setup/upgrade/canary/ y tabla de soporte de versiones — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/setup/upgrade/canary/ y tabla de soporte de versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

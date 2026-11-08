@@ -67,6 +67,6 @@ approved_by: security-lead
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `org-cloudtrail-config-securityhub-guardduty`, `static-verification-ladder`, `container-and-k8s-security`, `compliance-as-code`, `drift-and-self-heal-policy`.
-- Fuentes (verificadas 2026-11-07): https://github.com/prowler-cloud/prowler (Apache-2.0, `prowler <provider>`, `--list-compliance`); https://github.com/kubescape/kubescape (Apache-2.0, CNCF incubating, `kubescape scan`, frameworks NSA/MITRE/CIS). Nombres exactos de frameworks: TODO-VERIFY.
+- Fuentes (verificadas 2026-11-07): https://github.com/prowler-cloud/prowler (Apache-2.0, `prowler <provider>`, `--list-compliance`); https://github.com/kubescape/kubescape (Apache-2.0, CNCF incubating, `kubescape scan`, frameworks NSA/MITRE/CIS). Nombres exactos de frameworks (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Cloud: preparado para AWS, no verificado en real; la fábrica nunca despliega ni escanea cuentas reales (ADR-0004). En local solo Kubescape sobre el clúster local; no se reproduce Security Hub.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

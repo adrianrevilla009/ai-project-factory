@@ -75,5 +75,5 @@ Las etiquetas `21-jdk`/`21-jre` son ejemplo; fijar versión y digest reales por 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `image-scanning`, `jvm-in-containers`, `container-and-k8s-security`, `startup-and-native`.
-- Fuentes: Docker multi-stage https://docs.docker.com/build/building/multi-stage/ ; OCI annotations https://github.com/opencontainers/image-spec/blob/main/annotations.md (TODO-VERIFY, 2026-11-07).
+- Fuentes: Docker multi-stage https://docs.docker.com/build/building/multi-stage/ ; OCI annotations https://github.com/opencontainers/image-spec/blob/main/annotations.md (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -61,5 +61,5 @@ var query = bool().filter(term("tenantId", ctx.tenantId())).must(match("name", t
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `outbox-and-cdc`, `multi-tenancy`, `pii-and-data-classification`.
-- Fuentes: PostgreSQL docs (Full Text Search): TODO-VERIFY URL. OpenSearch docs (https://docs.opensearch.org/docs/latest/, 2026-11-07; no confirma licencia en la página).
+- Fuentes: PostgreSQL docs (Full Text Search) (por nombre; URL y versión se fijan al adoptarlas en el proyecto). OpenSearch docs (https://docs.opensearch.org/docs/latest/, 2026-11-07; no confirma licencia en la página).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

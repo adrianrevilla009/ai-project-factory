@@ -64,5 +64,5 @@ spring.jpa.open-in-view=false
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `joins-and-fetch-joins`, `projections-and-dtos`, `persistence-context-and-flush`.
-- Fuentes: guía de usuario de Hibernate ORM (fetching) y referencia de Spring Boot (`spring.jpa.open-in-view`) — TODO-VERIFY versión y URL.
+- Fuentes: guía de usuario de Hibernate ORM (fetching) y referencia de Spring Boot (`spring.jpa.open-in-view`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -66,5 +66,5 @@ buf breaking --against '.git#branch=main'   # Protobuf
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `api-versioning-deprecation`, `openapi-contract-first`, `grpc-protobuf`, `asyncapi-event-contracts`, `schema-registry-and-evolution`, `contract-testing-pact`.
-- Fuentes: patrón Tolerant Reader (Fowler), documentación de buf y de herramientas de diff OpenAPI — TODO-VERIFY, no consultadas en vivo el 2026-11-07.
+- Fuentes: patrón Tolerant Reader (Fowler), documentación de buf y de herramientas de diff OpenAPI (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

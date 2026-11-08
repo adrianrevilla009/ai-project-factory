@@ -64,5 +64,5 @@ El endpoint `test-support` solo existe en el perfil de test, nunca en producció
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `test-strategy`, `api-testing`, `flaky-test-management`, `test-data-management`, `wiremock-and-stubbing`.
-- Fuentes: práctica de la pirámide de tests (Fowler, https://martinfowler.com/articles/practical-test-pyramid.html, consultada 2026-11-07); Playwright (https://playwright.dev/docs/best-practices, TODO-VERIFY).
+- Fuentes: práctica de la pirámide de tests (Fowler, https://martinfowler.com/articles/practical-test-pyramid.html; Playwright (https://playwright.dev/docs/best-practices (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -63,5 +63,5 @@ return price.thenCombine(stock, Offer::new).join();
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threads-executors-and-pools`, `async-and-context-propagation`, `backpressure-and-bulkheads`.
-- Fuentes: Javadoc de `java.util.concurrent.CompletableFuture` — TODO-VERIFY URL y versión (2026-11-07).
+- Fuentes: Javadoc de `java.util.concurrent.CompletableFuture` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

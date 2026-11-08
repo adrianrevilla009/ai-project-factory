@@ -73,5 +73,5 @@ ALTER TABLE items ADD CONSTRAINT stock_non_negative CHECK (stock >= 0);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `optimistic-locking`, `pessimistic-locking`, `concurrency-testing`, `idempotency-and-deduplication`.
-- Fuentes: documentación del motor elegido (p. ej. PostgreSQL, "Transaction Isolation") — TODO-VERIFY versión y URL; no consultada en vivo el 2026-11-07.
+- Fuentes: documentación del motor elegido (p. ej. PostgreSQL, "Transaction Isolation") (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

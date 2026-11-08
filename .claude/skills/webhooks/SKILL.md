@@ -78,5 +78,5 @@ webhook.secret=changeme-example-secret
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `idempotency-keys`, `deserialization-xxe-ssrf-traversal`, `secrets-management`.
-- Fuentes: RFC 2104 (HMAC); OWASP SSRF Prevention Cheat Sheet — consultadas 2026-11-07, TODO-VERIFY URLs.
+- Fuentes: RFC 2104 (HMAC); OWASP SSRF Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -66,5 +66,5 @@ load_test:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `scalability-patterns`, `multi-az-patterns`, `finops-of-resilience`, `load-shedding-and-degradation`.
-- Fuentes: Well-Architected Reliability Pillar (cuotas y escalado) — TODO-VERIFY URL concreta.
+- Fuentes: Well-Architected Reliability Pillar (cuotas y escalado) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

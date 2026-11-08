@@ -76,5 +76,5 @@ Plan de subida (en el PR):
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `bom-management`, `parent-pom`, `renovate-dependabot-policy`, `startup-and-native`.
-- Fuentes: Spring Boot: página de versiones soportadas y Migration Guide (wiki oficial) — TODO-VERIFY URL, consulta 2026-11-07.
+- Fuentes: Spring Boot: página de versiones soportadas y Migration Guide (wiki oficial) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

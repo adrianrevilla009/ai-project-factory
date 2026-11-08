@@ -66,5 +66,5 @@ GRANT SELECT ON ALL TABLES IN SCHEMA gold TO bi_reader;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-modeling`, `warehouse-options`, `data-governance-and-classification`, `access-control-masking-and-retention`.
-- Fuentes: documentación oficial de Superset/Metabase — TODO-VERIFY URL, licencia y versión.
+- Fuentes: documentación oficial de Superset/Metabase (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

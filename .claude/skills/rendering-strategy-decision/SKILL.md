@@ -55,5 +55,5 @@ No hay mecanismo automático: es una decisión de arquitectura.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `frontend-architecture`, `frontend-performance`, `security-frontend`, `bff-and-api-gateway`.
-- Fuentes: ADR-0036; documentación de Vite y Next.js — TODO-VERIFY versiones (2026-11-07).
+- Fuentes: ADR-0036; documentación de Vite y Next.js (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

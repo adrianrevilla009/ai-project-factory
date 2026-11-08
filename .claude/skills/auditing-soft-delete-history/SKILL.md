@@ -76,5 +76,5 @@ Requiere `@EnableJpaAuditing` y un `AuditorAware<String>` que lea el sujeto aute
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-privacy-in-db`, `schema-migrations`, `audit-trail-and-security-logging`, `jpa-entity-design`.
-- Fuentes: Spring Data JPA Reference (Auditing), Hibernate ORM / Envers User Guide — TODO-VERIFY versión y URL; no verificado 2026-11-07.
+- Fuentes: Spring Data JPA Reference (Auditing), Hibernate ORM / Envers User Guide (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

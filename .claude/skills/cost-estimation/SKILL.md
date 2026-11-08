@@ -60,5 +60,5 @@ infracost breakdown --path infra/   # TODO-VERIFY flags y necesidad de API key
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `static-verification-ladder`, `cost-visibility`, `dr-tabletop-exercises`, `maturity-labels`.
-- Fuentes: `catalog/resilience-tiers.yaml`; documentación de Infracost y precios de AWS (TODO-VERIFY URL y fecha).
+- Fuentes: `catalog/resilience-tiers.yaml`; documentación de Infracost y precios de AWS (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

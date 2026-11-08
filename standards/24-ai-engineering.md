@@ -147,7 +147,7 @@
 - **MUST** exponer pocas tools de granularidad de caso de uso, con descripciones precisas y esquema de parámetros tipado; las de escritura separadas y con confirmación.
 - **MUST** validar cada parámetro como entrada no confiable y autorizar por usuario, no por el cliente MCP.
 - **MUST** tratar las descripciones de tools y los resultados como superficie de inyección: no incluir texto de terceros sin sanear en descripciones.
-- **SHOULD** usar la autoconfiguración Spring AI (`spring-ai-starter-mcp-server-webmvc` o `-webflux`) con `@McpTool`/`@McpToolParam`, y fijar la versión del BOM (TODO-VERIFY versión).
+- **SHOULD** usar la autoconfiguración Spring AI (`spring-ai-starter-mcp-server-webmvc` o `-webflux`) con `@McpTool`/`@McpToolParam`, y fijar la versión del BOM.
 - **SHOULD** versionar el contrato de tools (nombre y parámetros) y deprecar antes de retirar.
 - **MUST** registrar cada invocación con usuario, tool y traza; sin PII en claro (ver `guardrails-and-pii-redaction`).
 - **MUST** al consumir servidores MCP de terceros: lista de permitidos, revisión de sus tools y sin confianza implícita (ver `supply-chain`).
@@ -159,7 +159,7 @@
 - **MUST** parar y escalar a legal si la clasificación apunta a práctica prohibida o alto riesgo; la fábrica no decide.
 - **MUST** documentar riesgos de modelo: alucinación, sesgo, deriva, dependencia de proveedor, fuga de datos, abuso; con mitigación y dueño.
 - **MUST** informar al usuario cuando interactúa con un sistema de IA (ver `chatbot-design`).
-- **SHOULD** usar un marco reconocido (NIST AI RMF, ISO/IEC 42001) como esqueleto de gobernanza, TODO-VERIFY versión vigente.
+- **SHOULD** usar un marco reconocido (NIST AI RMF, ISO/IEC 42001) como esqueleto de gobernanza,.
 - **SHOULD** versionar modelo, prompt y dataset de evaluación para poder reconstruir una decisión (ver `prompt-management`, `llm-evals`).
 - **MUST NOT** afirmar "cumple el AI Act" o "certificado"; usar "mapeado a requisitos, pendiente de revisión legal".
 

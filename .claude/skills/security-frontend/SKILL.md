@@ -16,7 +16,7 @@ metadata:
 - No aplica a seguridad del API (ver `security-headers-cors-csrf`, `input-validation-output-encoding`). Dependencias npm: `supply-chain-npm`. Tokens y sesión: `auth-and-session`.
 
 ## Reglas
-- **MUST NOT** usar `dangerouslySetInnerHTML`, `innerHTML` ni `eval`/`new Function` con datos no confiables; si es inevitable, sanear con una librería de sanitización mantenida (p. ej. DOMPurify, TODO-VERIFY versión) y revisión explícita.
+- **MUST NOT** usar `dangerouslySetInnerHTML`, `innerHTML` ni `eval`/`new Function` con datos no confiables; si es inevitable, sanear con una librería de sanitización mantenida (p. ej. DOMPurify,) y revisión explícita.
 - **MUST NOT** construir URLs desde entrada de usuario sin validar el esquema (`javascript:`); permitir solo `https:`/`mailto:` en enlaces dinámicos.
 - **MUST** publicar una CSP estricta basada en nonce o hash, `object-src 'none'`, `base-uri 'none'`, `frame-ancestors 'none'` (salvo necesidad), sin `unsafe-inline` ni `unsafe-eval` (MDN CSP, 2026-11-07).
 - **MUST** desplegar la CSP primero en `Content-Security-Policy-Report-Only` con endpoint de informes y pasar a enforce tras revisar.
@@ -66,5 +66,5 @@ Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `auth-and-session`, `supply-chain-npm`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `build-and-deploy`.
-- Fuentes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP (2026-11-07); OWASP XSS Prevention Cheat Sheet (TODO-VERIFY URL).
+- Fuentes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP (2026-11-07); OWASP XSS Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

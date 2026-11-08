@@ -73,5 +73,5 @@ dynamo.putItem(r -> r.tableName("events")
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `global-tables-and-write-region-rules`, `multi-region-patterns`, `failover-and-failback-runbooks`, `backup-vault-immutability-and-restore-tests`.
-- Fuentes: DynamoDB global tables, https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html (2026-11-07); Aurora Global Database, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). MSK y S3: TODO-VERIFY.
+- Fuentes: DynamoDB global tables, https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html (2026-11-07); Aurora Global Database, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). MSK y S3 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

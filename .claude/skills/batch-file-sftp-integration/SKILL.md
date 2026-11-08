@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** carpetas `inbox/`, `processing/`, `done/`, `error/` y ventana de proceso documentada.
 
 ## Por qué
-Un fichero leído mientras aún se escribe produce cargas parciales silenciosas. Sin idempotencia, un reintento del emisor duplica datos. Aceptar cualquier host key permite un ataque de intermediario. Las APIs de Spring Batch 5 y de la librería SFTP elegida deben verificarse en su documentación (TODO-VERIFY versiones).
+Un fichero leído mientras aún se escribe produce cargas parciales silenciosas. Sin idempotencia, un reintento del emisor duplica datos. Aceptar cualquier host key permite un ataque de intermediario. Las APIs de Spring Batch 5 y de la librería SFTP elegida deben verificarse en su documentación.
 
 ## Ejemplos
 ### Mal
@@ -82,5 +82,5 @@ sftp.password=changeme-example
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `file-upload-security`, `pii-and-data-classification`, `secrets-management`.
-- Fuentes: documentación de Spring Batch (chunk, restart, skip) y de Spring Integration SFTP, consultadas 2026-11-07 — TODO-VERIFY URLs y versión.
+- Fuentes: documentación de Spring Batch (chunk, restart, skip) y de Spring Integration SFTP (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

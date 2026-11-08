@@ -79,5 +79,5 @@ class BillingOnOrderPlaced {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `project-layout`, `event-driven`, `transactional-outbox`, `spring-data-rules`.
-- Fuentes: Spring Framework (eventos de aplicación) y Spring Modulith reference — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Framework (eventos de aplicación) y Spring Modulith reference (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

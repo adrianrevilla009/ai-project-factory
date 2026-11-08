@@ -79,5 +79,5 @@ Versión de API y valores numéricos: TODO-VERIFY y ajustar con pruebas de carga
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mesh-vs-app-resilience`, `resilience`, `http-clients-and-timeouts`, `canary-and-traffic-splitting`.
-- Fuentes: istio.io/latest/docs/concepts/traffic-management/ — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/concepts/traffic-management/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

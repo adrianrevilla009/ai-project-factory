@@ -65,5 +65,5 @@ Un SNAPSHOT cambia bajo los pies: el mismo `1.2.0-SNAPSHOT` compilado hoy y mañ
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `release-automation`, `reproducible-builds`, `bom-management`, `api-versioning-deprecation`.
-- Fuentes: Semantic Versioning 2.0.0 (semver.org); Apache Maven, "Maven CI Friendly Versions" — TODO-VERIFY URL; fecha de referencia 2026-11-07.
+- Fuentes: Semantic Versioning 2.0.0 (semver.org); Apache Maven, "Maven CI Friendly Versions" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

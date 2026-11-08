@@ -69,5 +69,5 @@ customer.nationalId: { level: RESTRICTED,  retention: "per legal basis, TBD", lo
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `audit-trail-and-security-logging`, `crypto-tls-mtls-key-rotation`, `llm-security`, `structured-logging`.
-- Fuentes: OWASP Logging Cheat Sheet; texto legal aplicable (RGPD) por confirmar en fuente oficial EUR-Lex, TODO-VERIFY fecha 2026-11-07.
+- Fuentes: OWASP Logging Cheat Sheet; texto legal aplicable (RGPD) por confirmar en fuente oficial EUR-Lex (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

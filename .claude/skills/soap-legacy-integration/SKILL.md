@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** documentar la fecha de retirada o plan de sustitución del sistema heredado.
 
 ## Por qué
-El XML con entidades externas permite leer ficheros locales o hacer SSRF. Los tipos generados acoplan el dominio al formato del proveedor y cualquier cambio del WSDL rompe todo el código. Sin timeouts, un SOAP lento agota hilos. Las APIs de JAXB/Jakarta XML y de Spring-WS deben verificarse en su documentación (TODO-VERIFY versiones).
+El XML con entidades externas permite leer ficheros locales o hacer SSRF. Los tipos generados acoplan el dominio al formato del proveedor y cualquier cambio del WSDL rompe todo el código. Sin timeouts, un SOAP lento agota hilos. Las APIs de JAXB/Jakarta XML y de Spring-WS deben verificarse en su documentación.
 
 ## Ejemplos
 ### Mal
@@ -81,5 +81,5 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `wiremock-and-stubbing`, `contract-testing-pact`, `connascence-and-coupling`.
-- Fuentes: OWASP XML External Entity Prevention Cheat Sheet; documentación de Spring Web Services — consultadas 2026-11-07, TODO-VERIFY URLs.
+- Fuentes: OWASP XML External Entity Prevention Cheat Sheet; documentación de Spring Web Services (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

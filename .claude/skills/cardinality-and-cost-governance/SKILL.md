@@ -71,5 +71,5 @@ La consulta anterior es costosa: ejecutarla bajo demanda, no en un dashboard.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `metrics-store-ha-retention`, `logs-and-traces-stores`, `multi-tenant-observability`, `collector-pipelines`, `finops` (bloque 19).
-- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/configuration/configuration/ (límites de scrape y `metric_relabel_configs`; no verificada en esta sesión, TODO-VERIFY).
+- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/configuration/configuration/ (límites de scrape y `metric_relabel_configs`; no verificada en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

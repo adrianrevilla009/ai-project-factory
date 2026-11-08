@@ -70,5 +70,5 @@ jobs:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `performance-gate`, `contract-gate`, `finops`, `container-and-k8s-security`.
-- Fuentes: ADR-0034, ADR-0005; Kubernetes ResourceQuota (https://kubernetes.io/docs/concepts/policy/resource-quotas/) — TODO-VERIFY.
+- Fuentes: ADR-0034, ADR-0005; Kubernetes ResourceQuota (https://kubernetes.io/docs/concepts/policy/resource-quotas/) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

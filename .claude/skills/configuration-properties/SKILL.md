@@ -67,5 +67,5 @@ payments:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `project-layout`, `actuator-and-health`, `http-clients-and-timeouts`, `twelve-factor`.
-- Fuentes oficiales: Spring Boot Reference, "Externalized Configuration" (docs.spring.io/spring-boot), consultada 2026-11-07; TODO-VERIFY versión.
+- Fuentes oficiales: Spring Boot Reference, "Externalized Configuration" (docs.spring.io/spring-boot) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

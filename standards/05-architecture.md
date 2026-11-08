@@ -179,7 +179,7 @@
 - **SHOULD** usar `consideringOnlyDependenciesInLayers()` para no ahogar la regla en dependencias de librerías.
 - **SHOULD** nombrar cada regla por la intención (`domain_does_not_depend_on_frameworks`).
 - **SHOULD** usar `FreezingArchRule` solo para adoptar reglas en código heredado, con plan de descongelado.
-- **MUST** fijar la versión de `archunit-junit5` en el BOM del proyecto (TODO-VERIFY versión vigente).
+- **MUST** fijar la versión de `archunit-junit5` en el BOM del proyecto.
 
 ## microservices-decision-guide
 
@@ -201,7 +201,7 @@
 - **MUST** que no haya ciclos entre módulos.
 - **SHOULD** un esquema (o prefijo de tablas) por módulo en la misma base de datos, con propiedad clara.
 - **SHOULD** comunicar efectos secundarios entre módulos con eventos internos (ver `domain-events-in-spring`).
-- **MAY** usar Spring Modulith para verificar y documentar módulos (TODO-VERIFY versión y API).
+- **MAY** usar Spring Modulith para verificar y documentar módulos.
 
 ## multi-tenant-architecture
 

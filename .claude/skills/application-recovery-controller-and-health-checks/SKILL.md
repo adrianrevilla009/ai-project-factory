@@ -66,5 +66,5 @@ Argumentos del recurso `aws_route53_health_check` con `RECOVERY_CONTROL`: TODO-V
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `failover-and-failback-runbooks`, `multi-az-patterns`, `static-stability-and-cell-architecture`.
-- Fuentes: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html y whitepaper DR (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), 2026-11-07. Regiones de los endpoints del clúster ARC: TODO-VERIFY.
+- Fuentes: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html y whitepaper DR (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), 2026-11-07. Regiones de los endpoints del clúster ARC (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

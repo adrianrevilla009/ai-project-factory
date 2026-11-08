@@ -66,7 +66,7 @@ spring:
     openai:
       api-key: ${LLM_API_KEY}   # inyectada desde el gestor de secretos
 ```
-Nombres de API (`ChatClient`, `defaultSystem`, `prompt().user(...)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor: TODO-VERIFY.
+Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(...)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor: TODO-VERIFY.
 
 ## Checklist de revisión
 - [ ] Un solo framework y ADR de la decisión.

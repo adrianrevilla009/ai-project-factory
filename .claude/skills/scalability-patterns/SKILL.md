@@ -69,5 +69,5 @@ Objetivo: 300 RPS pico, p95 < 300 ms, 50 GB de datos a 12 meses -> réplicas sta
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `consistency-and-cap-tradeoffs`, `twelve-factor`, `cell-based-architecture`, `n-plus-one`.
-- Fuentes: Kleppmann, "Designing Data-Intensive Applications" (2017); Google SRE Book, cap. "Handling Overload". TODO-VERIFY: URLs.
+- Fuentes: Kleppmann, "Designing Data-Intensive Applications" (2017); Google SRE Book, cap. "Handling Overload". (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -81,5 +81,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `file-upload-security`, `controllers-and-validation`, `spring-data-rules`.
-- Fuentes: Spring Framework Reference (Multipart, Asynchronous Requests / StreamingResponseBody) y Spring Boot Reference (propiedades multipart) — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Framework Reference (Multipart, Asynchronous Requests / StreamingResponseBody) y Spring Boot Reference (propiedades multipart) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

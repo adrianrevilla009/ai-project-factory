@@ -55,7 +55,7 @@ if (!bulkhead.tryAcquire()) {
     return ResponseEntity.status(503).header("Retry-After", "5").build();
 }
 ```
-`bulkhead` y `degradation` son componentes propios del proyecto (por ejemplo con Resilience4j; TODO-VERIFY versión).
+`bulkhead` y `degradation` son componentes propios del proyecto (por ejemplo con Resilience4j).
 
 ## Checklist de revisión
 - [ ] Clases de tráfico por criticidad definidas.
@@ -73,5 +73,5 @@ if (!bulkhead.tryAcquire()) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backpressure-and-bulkheads`, `resilience`, `capacity-and-load-modeling`, `dependency-mapping-and-blast-radius`, `static-stability-and-cell-architecture`.
-- Fuentes: Amazon Builders' Library "Using load shedding to avoid overload" — TODO-VERIFY URL (no consultada 2026-11-07).
+- Fuentes: Amazon Builders' Library "Using load shedding to avoid overload" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

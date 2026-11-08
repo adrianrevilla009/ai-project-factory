@@ -36,7 +36,7 @@ Los paquetes npm ejecutan código en instalación y con frecuencia son objetivo 
 ```
 ### Bien
 ```ini
-# .npmrc (ejemplo; TODO-VERIFY claves)
+#.npmrc (ejemplo; TODO-VERIFY claves)
 registry=https://npm.example.internal/
 @acme:registry=https://npm.example.internal/
 ```
@@ -69,5 +69,5 @@ pnpm install --frozen-lockfile && pnpm audit --prod
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `security-frontend`, `sbom`, `license-policy`, `dependency-hygiene`, `private-registry`.
-- Fuentes: documentación de pnpm (settings) y npm (audit) — TODO-VERIFY URLs y versiones; no consultadas 2026-11-07.
+- Fuentes: documentación de pnpm (settings) y npm (audit) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -41,7 +41,7 @@ CREATE INDEX idx_orders_customer ON orders (customer_id);   -- bloquea escritura
 -- V7__add_phone_number.sql (expand)
 ALTER TABLE customer ADD COLUMN phone_number text;
 
--- V8__idx_orders_customer.sql   (con flyway: executeInTransaction=false en su .conf, TODO-VERIFY)
+-- V8__idx_orders_customer.sql   (con flyway: executeInTransaction=false en su.conf, TODO-VERIFY)
 CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_orders_customer ON orders (customer_id);
 
 -- V9__phone_not_null.sql (tras backfill y release que escribe la nueva columna)
@@ -73,5 +73,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `db-design-conventions`, `indexing-and-query-plans`, `db-testing`, `partitioning-and-archival`.
-- Fuentes: documentación de Flyway y de PostgreSQL (CREATE INDEX, ALTER TABLE) — TODO-VERIFY URL y versión; no verificado 2026-11-07.
+- Fuentes: documentación de Flyway y de PostgreSQL (CREATE INDEX, ALTER TABLE) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

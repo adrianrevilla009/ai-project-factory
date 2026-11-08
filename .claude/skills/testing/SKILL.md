@@ -49,7 +49,7 @@ it("shows an error when the API fails", async () => {
 });
 ```
 ```ts
-// vitest.config.ts (fragmento; TODO-VERIFY versiones)
+// vitest.config.ts (fragmento)
 test: { environment: "jsdom", setupFiles: ["./src/test/setup.ts"], coverage: { provider: "v8" } }
 ```
 

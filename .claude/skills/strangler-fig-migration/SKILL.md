@@ -58,5 +58,5 @@ exit_criteria: "0 peticiones al legado durante 30 días -> apagar"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `anti-corruption-layer`, `microservices-decision-guide`, `bff-and-api-gateway`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: Martin Fowler, "StranglerFigApplication" (martinfowler.com) — TODO-VERIFY URL y fecha.
+- Fuentes: Martin Fowler, "StranglerFigApplication" (martinfowler.com) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -78,5 +78,5 @@ slos:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `tempo-and-service-graphs`, `cardinality-and-cost-governance`, `slo-error-budget-policy` (bloque 19).
-- Fuentes oficiales: Grafana, provisioning de dashboards (https://grafana.com/docs/grafana/latest/administration/provisioning/ ; no verificada en esta sesión, TODO-VERIFY). Herramientas SLO: documentación de Sloth/Pyrra, TODO-VERIFY.
+- Fuentes oficiales: Grafana, provisioning de dashboards (https://grafana.com/docs/grafana/latest/administration/provisioning/ ; no verificada en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Herramientas SLO: documentación de Sloth/Pyrra, TODO-VERIFY.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

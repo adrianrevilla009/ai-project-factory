@@ -66,5 +66,5 @@ Sintaxis de `exceptions` y `append`: TODO-VERIFY contra la documentación de Fal
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `container-and-k8s-security`, `pod-security-and-admission`, `audit-trail-and-security-logging`.
-- Fuentes: documentación oficial de Falco (falco.org/docs) — TODO-VERIFY versión y URL concreta; consultada 2026-11-07 sin verificación en vivo.
+- Fuentes: documentación oficial de Falco (falco.org/docs) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

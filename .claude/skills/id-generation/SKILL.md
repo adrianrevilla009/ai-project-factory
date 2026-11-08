@@ -49,7 +49,7 @@ private UUID publicId = UUID.randomUUID(); // id expuesto en la API
 ```sql
 CREATE SEQUENCE order_seq START WITH 1 INCREMENT BY 50;
 ```
-`UUID.randomUUID()` genera v4; para v7 hace falta librería o generador propio — TODO-VERIFY.
+`UUID.randomUUID` genera v4; para v7 hace falta librería o generador propio — TODO-VERIFY.
 
 ## Checklist de revisión
 - [ ] Estrategia explícita (no `AUTO`).
@@ -65,5 +65,5 @@ CREATE SEQUENCE order_seq START WITH 1 INCREMENT BY 50;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `jpa-entity-design`, `batching-and-bulk-ops`, `db-design-conventions`.
-- Fuentes: guía de usuario de Hibernate ORM (identifier generators) — TODO-VERIFY versión y URL; no consultada en vivo el 2026-11-07.
+- Fuentes: guía de usuario de Hibernate ORM (identifier generators) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

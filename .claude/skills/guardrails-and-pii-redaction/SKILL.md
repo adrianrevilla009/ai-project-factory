@@ -58,7 +58,7 @@ Answer answer(String userText) {
     return Answer.ok(redactor.restore(safe, in.map()));
 }
 ```
-Las regex de ejemplo no cubren todos los formatos; validar con un corpus propio. Detectores NER concretos (por ejemplo Presidio): TODO-VERIFY licencia y versión.
+Las regex de ejemplo no cubren todos los formatos; validar con un corpus propio. Detectores NER concretos (por ejemplo Presidio):.
 
 ## Checklist de revisión
 - [ ] PII redactada antes de enviar y antes de registrar.

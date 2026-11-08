@@ -80,5 +80,5 @@ resource "aws_vpc_endpoint" "sts" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vpc-multi-az-layers`, `dns-route53-private-and-hybrid`, `cloud-iam-least-privilege`, `zero-trust`, `ssrf` (ver `deserialization-xxe-ssrf-traversal`).
-- Fuentes: documentación oficial de AWS PrivateLink / VPC endpoints y de AWS Network Firewall, consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: documentación oficial de AWS PrivateLink / VPC endpoints y de AWS Network Firewall (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

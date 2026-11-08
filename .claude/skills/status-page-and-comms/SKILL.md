@@ -57,5 +57,5 @@ Seguimos monitorizando. Publicaremos un resumen en 5 dias laborables.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `incident-management-and-postmortems`, `tier-model-and-rpo-rto`.
-- Fuentes: buenas prácticas de gestión de incidentes (Atlassian/Google SRE), no verificadas en esta sesión, TODO-VERIFY URL.
+- Fuentes: buenas prácticas de gestión de incidentes (Atlassian/Google SRE), no verificadas en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

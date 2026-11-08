@@ -77,5 +77,5 @@ message OrderCreated {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `asyncapi-event-contracts`, `backward-compatibility-rules`, `kafka-producers-consumers`.
-- Fuentes: documentación de Apicurio Registry y de Confluent Schema Registry (compatibilidad), Avro y Protobuf (reglas de evolución), consultadas 2026-11-07 — TODO-VERIFY URLs.
+- Fuentes: documentación de Apicurio Registry y de Confluent Schema Registry (compatibilidad), Avro y Protobuf (reglas de evolución) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

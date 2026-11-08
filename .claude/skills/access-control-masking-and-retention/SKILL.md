@@ -73,5 +73,5 @@ Nota: `md5` sin sal es reversible por diccionario; usar HMAC con secreto de Vaul
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-governance-and-classification`, `gdpr-in-the-lake`, `retention-and-cleanup`, `data-privacy-in-db`, `secrets-management`.
-- Fuentes: documentación de Trino (control de acceso) — TODO-VERIFY URL y versión.
+- Fuentes: documentación de Trino (control de acceso) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

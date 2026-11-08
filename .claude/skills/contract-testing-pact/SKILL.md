@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** el proveedor ejecute la verificación con el servicio real levantado en el slice de test (Spring Boot test), con dependencias externas simuladas.
 
 ## Por qué
-Los tests de integración en entorno compartido son lentos y frágiles. El contrato dirigido por el consumidor detecta roturas antes de desplegar y documenta qué campos se usan realmente, lo que permite evolucionar el proveedor con seguridad. Coordenadas y anotaciones de Pact JVM deben contrastarse con su documentación (TODO-VERIFY versión).
+Los tests de integración en entorno compartido son lentos y frágiles. El contrato dirigido por el consumidor detecta roturas antes de desplegar y documenta qué campos se usan realmente, lo que permite evolucionar el proveedor con seguridad. Coordenadas y anotaciones de Pact JVM deben contrastarse con su documentación.
 
 ## Ejemplos
 ### Mal

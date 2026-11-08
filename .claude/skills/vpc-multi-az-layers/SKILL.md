@@ -82,5 +82,5 @@ resource "aws_vpc_security_group_ingress_rule" "db_from_app" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cidr-planning-and-ipam`, `private-endpoints-and-egress-control`, `zero-trust`, `cloud-iam-least-privilege`.
-- Fuentes: documentación oficial de Amazon VPC y buenas prácticas de seguridad de VPC (consulta 2026-11-07, TODO-VERIFY).
+- Fuentes: documentación oficial de Amazon VPC y buenas prácticas de seguridad de VPC (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

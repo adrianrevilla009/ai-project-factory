@@ -65,5 +65,5 @@ public void on(OrderPlaced e) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `outbox-and-cdc`, `idempotency-keys`, `dlq-retries-poison-messages`, `consent-and-dsar-management`, `i18n-and-localization`.
-- Fuentes: documentación del proveedor elegido: TODO-VERIFY. Preparado para AWS, no verificado en real.
+- Fuentes: documentación del proveedor elegido (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

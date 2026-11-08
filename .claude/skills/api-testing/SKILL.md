@@ -78,5 +78,5 @@ class OrderControllerTest {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `controllers-and-validation`, `error-handling-problem-details`, `testing-slices`, `openapi-contract-first`, `method-and-endpoint-security`.
-- Fuentes: documentación de Spring Framework (MockMvc) y Spring Security Test — TODO-VERIFY versión.
+- Fuentes: documentación de Spring Framework (MockMvc) y Spring Security Test (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

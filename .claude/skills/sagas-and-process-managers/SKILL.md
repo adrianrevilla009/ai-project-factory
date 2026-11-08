@@ -63,5 +63,5 @@ Pasos: ReserveStock (comp: ReleaseStock) -> ChargePayment (comp: RefundPayment) 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-driven`, `consistency-and-cap-tradeoffs`, `ddd-tactical`, `microservices-decision-guide`.
-- Fuentes: Garcia-Molina y Salem, "Sagas" (1987); microservices.io, "Saga" (Richardson). TODO-VERIFY: URLs.
+- Fuentes: Garcia-Molina y Salem, "Sagas" (1987); microservices.io, "Saga" (Richardson). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

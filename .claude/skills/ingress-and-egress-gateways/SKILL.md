@@ -66,5 +66,5 @@ Ubicación exacta de `meshConfig` según método de instalación: TODO-VERIFY.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `gateway-api`, `authorization-policies`, `zero-trust`, `dos-and-rate-limiting`.
-- Fuentes: istio.io/latest/docs/tasks/traffic-management/egress/ — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/tasks/traffic-management/egress/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

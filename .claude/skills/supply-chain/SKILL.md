@@ -71,5 +71,5 @@ Campos de Kyverno (`validationFailureAction`, `verifyImages`) TODO-VERIFY contra
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `reproducible-builds`, `container-images`, `container-and-k8s-security`, `dependency-security`.
-- Fuentes: slsa.dev, documentación de Sigstore/cosign, CycloneDX y Kyverno, consultadas 2026-11-07, TODO-VERIFY versiones.
+- Fuentes: slsa.dev, documentación de Sigstore/cosign, CycloneDX y Kyverno (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

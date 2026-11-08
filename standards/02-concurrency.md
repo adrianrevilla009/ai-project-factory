@@ -40,7 +40,7 @@
 ## concurrency-testing
 
 - **MUST** que los tests sean deterministas en su resultado: probar invariantes ("se creó un único pago"), no tiempos.
-- **MUST NOT** usar `Thread.sleep` para esperar; usar `CountDownLatch`/`CyclicBarrier`/`Phaser` para sincronizar y Awaitility (`await().atMost(...)`) para esperar condiciones (TODO-VERIFY versión).
+- **MUST NOT** usar `Thread.sleep` para esperar; usar `CountDownLatch`/`CyclicBarrier`/`Phaser` para sincronizar y Awaitility (`await.atMost(...)`) para esperar condiciones.
 - **MUST** arrancar los hilos a la vez con un latch de salida para maximizar la contención.
 - **MUST** recoger y propagar las excepciones de los hilos de prueba (`Future.get()`); un fallo en otro hilo no falla el test por sí solo.
 - **MUST** poner timeout a cada test concurrente (`@Timeout`, JUnit 5) para que un deadlock no cuelgue el pipeline.
@@ -59,7 +59,7 @@
 - **MUST** usar colas acotadas (`ArrayBlockingQueue`, `LinkedBlockingQueue(capacity)`) para productor/consumidor; nunca sin cota.
 - **MUST NOT** asumir que `size()` o una iteración son instantáneas consistentes; son débilmente consistentes.
 - **SHOULD** usar `LongAdder` para contadores con mucha contención.
-- **MUST** definir expulsión/tamaño máximo en caches en memoria; preferir Caffeine a un mapa propio (TODO-VERIFY licencia y versión).
+- **MUST** definir expulsión/tamaño máximo en caches en memoria; preferir Caffeine a un mapa propio.
 
 ## distributed-locking
 

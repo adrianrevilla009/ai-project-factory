@@ -72,5 +72,5 @@ function useDebouncedValue<T>(value: T, ms: number): T { /* hook reutilizable */
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `design-system-and-tokens`, `state-management`, `frontend-architecture`, `frontend-performance`.
-- Fuentes: documentación de React (react.dev: "You Might Not Need an Effect", Rules of Hooks) — TODO-VERIFY URL (2026-11-07).
+- Fuentes: documentación de React (react.dev: "You Might Not Need an Effect", Rules of Hooks) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

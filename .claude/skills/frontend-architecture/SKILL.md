@@ -70,5 +70,5 @@ Son ejemplos para copiar al proyecto generado; la fábrica no los ejecuta. Versi
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `typescript-strict-rules`, `component-patterns`, `state-management`, `routing-and-code-splitting`, `connascence-and-coupling`.
-- Fuentes: ADR-0036; documentación de dependency-cruiser y ESLint `no-restricted-imports` (TODO-VERIFY URL y versión, 2026-11-07).
+- Fuentes: ADR-0036; documentación de dependency-cruiser y ESLint `no-restricted-imports` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

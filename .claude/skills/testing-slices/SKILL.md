@@ -85,5 +85,5 @@ class OrderRepositoryTest {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `controllers-and-validation`, `integration-testing-testcontainers`, `unit-testing-java`.
-- Fuentes: Spring Boot Reference (Testing, test slices, Testcontainers) — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Boot Reference (Testing, test slices, Testcontainers) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

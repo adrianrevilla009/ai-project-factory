@@ -68,5 +68,5 @@ SELECT event_id, customer_id FROM gold.events WHERE event_date = DATE '2026-11-0
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cost-visibility`, `data-lake-and-lakehouse`, `warehouse-options`, `partitioning-and-archival`, `finops-of-resilience`.
-- Fuentes: calculadora de precios oficial del proveedor — TODO-VERIFY URL y fecha.
+- Fuentes: calculadora de precios oficial del proveedor (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -64,5 +64,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `traffic-management`, `gateway-api`, `mesh-observability`, `backward-compatibility-rules`.
-- Fuentes: istio.io/latest/docs/tasks/traffic-management/traffic-shifting/ y gateway-api.sigs.k8s.io — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/tasks/traffic-management/traffic-shifting/ y gateway-api.sigs.k8s.io (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

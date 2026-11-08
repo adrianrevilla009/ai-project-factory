@@ -66,5 +66,5 @@ Resultado: peldaños 1-5 superados. Madurez: validada estáticamente; preparado 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maturity-labels`, `cost-estimation`, `honest-claims-policy`, `compliance-as-code`.
-- Fuentes: `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`; documentación de Terraform, tflint, Checkov, Trivy y Conftest (TODO-VERIFY flags).
+- Fuentes: `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`; documentación de Terraform, tflint, Checkov, Trivy y Conftest (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

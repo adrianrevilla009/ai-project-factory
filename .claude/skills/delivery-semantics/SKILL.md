@@ -78,5 +78,5 @@ CREATE TABLE processed_event (
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `kafka-producers-consumers`, `idempotency-keys`, `dlq-retries-poison-messages`, `webhooks`.
-- Fuentes: documentación de Apache Kafka (semántica de entrega, transacciones); patrón Transactional Outbox (microservices.io) — consultadas 2026-11-07, TODO-VERIFY URLs.
+- Fuentes: documentación de Apache Kafka (semántica de entrega, transacciones); patrón Transactional Outbox (microservices.io) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

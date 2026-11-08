@@ -63,5 +63,5 @@ Política Kyverno en Audit primero (`validationFailureAction: Audit`), ver `poli
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `container-and-k8s-security`, `workload-baseline`, `namespaces-quotas-multitenancy`, `admission-verification`.
-- Fuentes: Kubernetes (Pod Security Admission, ValidatingAdmissionPolicy) y Kyverno docs — TODO-VERIFY versiones, 2026-11-07.
+- Fuentes: Kubernetes (Pod Security Admission, ValidatingAdmissionPolicy) y Kyverno docs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -75,5 +75,5 @@ const onSubmit = handleSubmit(async (values) => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `state-management`, `typescript-strict-rules`, `error-handling-and-boundaries`, `error-handling-problem-details`, `input-validation-output-encoding`.
-- Fuentes: documentación de React Hook Form, Zod y @hookform/resolvers — TODO-VERIFY versiones (2026-11-07).
+- Fuentes: documentación de React Hook Form, Zod y @hookform/resolvers (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -71,5 +71,5 @@ RUN ./mvnw -B package -DskipTests
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `reproducible-builds`, `container-images`, `maven-wrapper-and-toolchains`, `enforcer-rules`.
-- Fuentes: maven.apache.org (Parallel builds in Maven 3, Build Cache extension); consultadas 2026-11-07, TODO-VERIFY.
+- Fuentes: maven.apache.org (Parallel builds in Maven 3, Build Cache extension) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

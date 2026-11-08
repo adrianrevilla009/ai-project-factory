@@ -73,5 +73,5 @@ new ProcessBuilder("/usr/bin/convert", safeFile.toString(), "out.png").start();
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `input-validation-output-encoding`, `owasp-top10-and-api-top10`, `deserialization-xxe-ssrf-traversal`, `n-plus-one`.
-- Fuentes: OWASP Cheat Sheet Series (Injection Prevention, Query Parameterization, OS Command Injection) consultado 2026-11-07, TODO-VERIFY URL exacta.
+- Fuentes: OWASP Cheat Sheet Series (Injection Prevention, Query Parameterization, OS Command Injection) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

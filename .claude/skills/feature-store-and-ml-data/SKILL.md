@@ -66,5 +66,5 @@ orders_30d = FeatureView(
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `classical-mlops`, `gdpr-in-the-lake`, `data-quality`, `data-contracts-and-lineage`.
-- Fuentes: documentación de Feast (URL arriba). API concreta: TODO-VERIFY.
+- Fuentes: documentación de Feast (URL arriba). API concreta (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

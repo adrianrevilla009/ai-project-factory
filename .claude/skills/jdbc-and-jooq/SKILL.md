@@ -70,5 +70,5 @@ return dsl.select(CUSTOMER.ID, CUSTOMER.NAME)
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `query-strategy`, `sql-injection-prevention`, `projections-and-dtos`, `batching-and-bulk-ops`.
-- Fuentes: Spring Framework Reference (Data Access, JDBC) y manual de jOOQ — TODO-VERIFY versión, URL y licencia; no verificado 2026-11-07.
+- Fuentes: Spring Framework Reference (Data Access, JDBC) y manual de jOOQ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

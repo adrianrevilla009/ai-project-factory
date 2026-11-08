@@ -76,5 +76,5 @@ int cancelExpired(Instant now);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `batching-and-bulk-ops`, `lazy-vs-eager`, `spring-data-rules`.
-- Fuentes: guía de usuario de Hibernate ORM (persistence context, flushing) y Spring Data JPA reference (`@Modifying`) — TODO-VERIFY versión y URL; no consultadas en vivo el 2026-11-07.
+- Fuentes: guía de usuario de Hibernate ORM (persistence context, flushing) y Spring Data JPA reference (`@Modifying`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

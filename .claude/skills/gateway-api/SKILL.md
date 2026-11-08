@@ -80,5 +80,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ingress-and-egress-gateways`, `traffic-management`, `canary-and-traffic-splitting`, `bff-and-api-gateway`.
-- Fuentes: gateway-api.sigs.k8s.io y istio.io/latest/docs/tasks/traffic-management/ingress/gateway-api/ — TODO-VERIFY versiones; 2026-11-07 sin verificación en vivo.
+- Fuentes: gateway-api.sigs.k8s.io y istio.io/latest/docs/tasks/traffic-management/ingress/gateway-api/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -65,5 +65,5 @@ terraform plan -detailed-exitcode   # exit 2 = drift -> abrir issue
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `istio-upgrades-and-ops`, `cluster-addons-baseline`, `drift-and-self-heal-policy`, `change-and-release-management`.
-- Fuentes: Kubernetes (version skew policy, deprecation guide) y EKS (versiones y upgrades) — TODO-VERIFY URLs, 2026-11-07.
+- Fuentes: Kubernetes (version skew policy, deprecation guide) y EKS (versiones y upgrades) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

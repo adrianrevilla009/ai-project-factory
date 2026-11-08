@@ -63,5 +63,5 @@ ENV JAVA_TOOL_OPTIONS="-javaagent:/opt/otel/agent.jar" \
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-fundamentals-and-semconv`, `tracing`, `metrics-micrometer`, `container-images`, `jvm-in-containers`.
-- Fuentes: documentación oficial de OpenTelemetry Java y de Spring Boot (observability), consultadas 2026-11-07; versiones TODO-VERIFY.
+- Fuentes: documentación oficial de OpenTelemetry Java y de Spring Boot (observability); versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

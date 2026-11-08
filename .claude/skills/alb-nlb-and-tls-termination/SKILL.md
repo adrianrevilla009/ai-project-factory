@@ -99,5 +99,5 @@ resource "aws_lb_listener" "https" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `waf-shield-and-cloudfront`, `eks-networking`, `crypto-tls-mtls-key-rotation`, `ingress-and-egress-gateways`.
-- Fuentes: documentación oficial de Elastic Load Balancing (listeners, políticas de seguridad) y ACM, consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: documentación oficial de Elastic Load Balancing (listeners, políticas de seguridad) y ACM (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

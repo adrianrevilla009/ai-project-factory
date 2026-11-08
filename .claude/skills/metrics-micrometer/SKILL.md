@@ -80,5 +80,5 @@ management:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-fundamentals-and-semconv`, `golden-signals-red-use`, `slo-sli-error-budgets`, `actuator-and-health`.
-- Fuentes: documentación oficial de Micrometer y Spring Boot Actuator, consultada 2026-11-07; TODO-VERIFY versiones.
+- Fuentes: documentación oficial de Micrometer y Spring Boot Actuator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -78,5 +78,5 @@ public CompletableFuture<Void> notifyCustomer(Long orderId) { /* carga por id */
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threads-executors-and-pools`, `completablefuture-patterns`, `multi-tenancy`, `logging-rules`.
-- Fuentes: referencia de Spring Framework (`@Async`, `TaskDecorator`), Spring Security (concurrency) y Micrometer Context Propagation — TODO-VERIFY URLs (2026-11-07).
+- Fuentes: referencia de Spring Framework (`@Async`, `TaskDecorator`), Spring Security (concurrency) y Micrometer Context Propagation (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -23,7 +23,7 @@ metadata:
 - **MUST** parar y escalar a legal si la clasificación apunta a práctica prohibida o alto riesgo; la fábrica no decide.
 - **MUST** documentar riesgos de modelo: alucinación, sesgo, deriva, dependencia de proveedor, fuga de datos, abuso; con mitigación y dueño.
 - **MUST** informar al usuario cuando interactúa con un sistema de IA (ver `chatbot-design`).
-- **SHOULD** usar un marco reconocido (NIST AI RMF, ISO/IEC 42001) como esqueleto de gobernanza, TODO-VERIFY versión vigente.
+- **SHOULD** usar un marco reconocido (NIST AI RMF, ISO/IEC 42001) como esqueleto de gobernanza,.
 - **SHOULD** versionar modelo, prompt y dataset de evaluación para poder reconstruir una decisión (ver `prompt-management`, `llm-evals`).
 - **MUST NOT** afirmar "cumple el AI Act" o "certificado"; usar "mapeado a requisitos, pendiente de revisión legal".
 

@@ -72,7 +72,7 @@
 - **MUST** separar tokens primitivos (paleta) de semánticos (uso); los temas (claro/oscuro) redefinen solo los semánticos.
 - **MUST** que los componentes base (`Button`, `Input`, `Dialog`...) vivan en `src/shared/ui`, sin lógica de negocio ni llamadas a API.
 - **SHOULD** documentar cada componente base en Storybook con sus variantes y estados (foco, deshabilitado, error).
-- **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria; TODO-VERIFY licencia y versión) antes que reimplementar diálogos o menús.
+- **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria) antes que reimplementar diálogos o menús.
 - **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens (TODO-VERIFY ratios) y verificarlo en Storybook.
 - **MUST NOT** copiar componentes entre features: si se repite dos veces con intención común, sube a `shared/ui`.
 - **SHOULD** versionar cambios de tokens con nota de migración si hay varios consumidores.
@@ -171,7 +171,7 @@
 ## pwa-and-offline
 
 - **MUST** documentar el requisito offline: qué funciona sin red, qué datos se guardan, cuánto tiempo y quién los borra.
-- **MUST** precachear solo el app shell con hash (generado por Workbox/`vite-plugin-pwa`; TODO-VERIFY versión y API) y usar estrategia explícita por tipo de recurso (cache-first para assets con hash, network-first o stale-while-revalidate para datos).
+- **MUST** precachear solo el app shell con hash (generado por Workbox/`vite-plugin-pwa`) y usar estrategia explícita por tipo de recurso (cache-first para assets con hash, network-first o stale-while-revalidate para datos).
 - **MUST NOT** cachear respuestas autenticadas, con datos personales o con `Cache-Control: no-store`, ni peticiones de auth/sesión; **MUST** vaciar cachés y almacenamiento local al cerrar sesión.
 - **MUST** tener flujo de actualización: detectar nuevo service worker, avisar al usuario y recargar de forma controlada; servir `sw.js` con `no-cache` (ver `build-and-deploy`).
 - **MUST** tener un "kill switch": un service worker de reemplazo que se desregistra y limpia cachés, probado antes de lanzar.
@@ -218,7 +218,7 @@
 
 ## security-frontend
 
-- **MUST NOT** usar `dangerouslySetInnerHTML`, `innerHTML` ni `eval`/`new Function` con datos no confiables; si es inevitable, sanear con una librería de sanitización mantenida (p. ej. DOMPurify, TODO-VERIFY versión) y revisión explícita.
+- **MUST NOT** usar `dangerouslySetInnerHTML`, `innerHTML` ni `eval`/`new Function` con datos no confiables; si es inevitable, sanear con una librería de sanitización mantenida (p. ej. DOMPurify,) y revisión explícita.
 - **MUST NOT** construir URLs desde entrada de usuario sin validar el esquema (`javascript:`); permitir solo `https:`/`mailto:` en enlaces dinámicos.
 - **MUST** publicar una CSP estricta basada en nonce o hash, `object-src 'none'`, `base-uri 'none'`, `frame-ancestors 'none'` (salvo necesidad), sin `unsafe-inline` ni `unsafe-eval` (MDN CSP, 2026-11-07).
 - **MUST** desplegar la CSP primero en `Content-Security-Policy-Report-Only` con endpoint de informes y pasar a enforce tras revisar.

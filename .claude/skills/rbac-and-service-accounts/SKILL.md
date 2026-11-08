@@ -68,5 +68,5 @@ rules:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `container-and-k8s-security`, `cloud-iam-least-privilege`, `namespaces-quotas-multitenancy`, `authn-oidc-oauth2`.
-- Fuentes: documentación de Kubernetes (RBAC good practices) y EKS (IRSA/Pod Identity) — TODO-VERIFY URLs, 2026-11-07.
+- Fuentes: documentación de Kubernetes (RBAC good practices) y EKS (IRSA/Pod Identity) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

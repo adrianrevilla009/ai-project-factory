@@ -21,7 +21,7 @@ metadata:
 - **MUST** heredar la clasificación aguas abajo: una tabla derivada tiene como mínimo la clasificación más alta de sus entradas, salvo anonimización documentada.
 - **MUST** mantener la clasificación como metadatos versionados en Git (YAML junto al modelo), no solo en una UI.
 - **MUST NOT** publicar en una zona de consumo (gold/marts) datos sin clasificar.
-- **SHOULD** usar un catálogo OSS (p. ej. DataHub u OpenMetadata, TODO-VERIFY licencia y versión) en lugar de un producto de pago (D16).
+- **SHOULD** usar un catálogo OSS (p. ej. DataHub u OpenMetadata,) en lugar de un producto de pago (D16).
 - **SHOULD** revisar la clasificación cada trimestre y al cambiar el esquema.
 
 ## Por qué
@@ -70,5 +70,5 @@ models:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pii-and-data-classification`, `data-contracts-and-lineage`, `access-control-masking-and-retention`, `gdpr-in-the-lake`.
-- Fuentes: documentación de DataHub/OpenMetadata — TODO-VERIFY URL y versión. Normativa: borrador por confirmar con fuente oficial.
+- Fuentes: documentación de DataHub/OpenMetadata (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Normativa: borrador por confirmar con fuente oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

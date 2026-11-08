@@ -70,5 +70,5 @@ public class OrderService {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `modern-java-idioms`, `immutability-and-value-objects`, `logging-rules`, `dependency-injection-rules`.
-- Fuentes: `catalog/adr/0027-lombok-prohibido.md`; Maven Enforcer Plugin (maven.apache.org) — TODO-VERIFY versión.
+- Fuentes: `catalog/adr/0027-lombok-prohibido.md`; Maven Enforcer Plugin (maven.apache.org) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

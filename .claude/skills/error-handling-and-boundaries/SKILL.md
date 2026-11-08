@@ -72,5 +72,5 @@ if (data.length === 0) return <EmptyState />;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `error-handling-problem-details`, `routing-and-code-splitting`, `forms-and-validation`, `logging-rules`, `security-frontend`.
-- Fuentes: documentación de React (Error Boundaries), RFC 9457 — TODO-VERIFY URL (2026-11-07).
+- Fuentes: documentación de React (Error Boundaries), RFC 9457 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

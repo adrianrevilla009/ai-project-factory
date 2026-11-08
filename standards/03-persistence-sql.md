@@ -169,7 +169,7 @@
 
 - **MUST** elegir y documentar (ADR) el modelo: discriminador en columna, schema por tenant o BD por tenant. Criterio: aislamiento exigido, nº de tenants, coste operativo, migraciones.
 - **MUST** resolver el tenant una sola vez en el borde (token/claim validado), propagarlo por un contexto explícito y NO aceptarlo de parámetros del cliente.
-- **MUST** con discriminador: columna `tenant_id NOT NULL` en cada tabla de negocio, incluida en índices únicos y claves foráneas compuestas; aplicar el filtro de forma centralizada (`@TenantId` de Hibernate 6.x, TODO-VERIFY versión mínima) y no query a query.
+- **MUST** con discriminador: columna `tenant_id NOT NULL` en cada tabla de negocio, incluida en índices únicos y claves foráneas compuestas; aplicar el filtro de forma centralizada (`@TenantId` de Hibernate 6.x,) y no query a query.
 - **MUST** añadir Row Level Security de PostgreSQL como segunda barrera cuando el modelo sea por discriminador: política `USING (tenant_id = current_setting('app.tenant_id')::uuid)` y rol de aplicación sin `BYPASSRLS` ni ownership de las tablas.
 - **MUST** fijar `app.tenant_id` con `SET LOCAL` dentro de la transacción (no `SET` de sesión) para que no se filtre al reutilizar la conexión del pool.
 - **MUST** escribir tests de fuga entre tenants: datos del tenant A invisibles e inmodificables desde B, incluyendo queries nativas, jobs asíncronos y caché.

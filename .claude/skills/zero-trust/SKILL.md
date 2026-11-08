@@ -77,5 +77,5 @@ Versión de API de Istio y campos: TODO-VERIFY contra la documentación vigente.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authn-oidc-oauth2`, `container-and-k8s-security`, `cloud-iam-least-privilege`, `crypto-tls-mtls-key-rotation`, `threat-modeling-stride`.
-- Fuentes: NIST SP 800-207 (Zero Trust Architecture); documentación de Istio (PeerAuthentication, AuthorizationPolicy) — TODO-VERIFY versiones y URLs.
+- Fuentes: NIST SP 800-207 (Zero Trust Architecture); documentación de Istio (PeerAuthentication, AuthorizationPolicy) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

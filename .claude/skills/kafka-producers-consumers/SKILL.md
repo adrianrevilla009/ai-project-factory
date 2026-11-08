@@ -29,7 +29,7 @@ metadata:
 - **SHOULD** cabeceras estándar: `eventId`, `eventType`, `traceparent`.
 
 ## Por qué
-Con `acks=1` un fallo de líder pierde mensajes ya "confirmados". Con auto-commit, el offset avanza antes de terminar el trabajo y un fallo pierde el mensaje en silencio. Un mensaje no deserializable sin manejador provoca un bucle infinito en la misma partición. Los nombres y valores por defecto de propiedades deben contrastarse con la documentación vigente de Kafka y Spring Kafka (TODO-VERIFY versión).
+Con `acks=1` un fallo de líder pierde mensajes ya "confirmados". Con auto-commit, el offset avanza antes de terminar el trabajo y un fallo pierde el mensaje en silencio. Un mensaje no deserializable sin manejador provoca un bucle infinito en la misma partición. Los nombres y valores por defecto de propiedades deben contrastarse con la documentación vigente de Kafka y Spring Kafka.
 
 ## Ejemplos
 ### Mal
@@ -92,5 +92,5 @@ void onOrder(OrderCreated event) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `dlq-retries-poison-messages`, `schema-registry-and-evolution`, `asyncapi-event-contracts`.
-- Fuentes: documentación de Apache Kafka (configuración de producer/consumer) y de Spring for Apache Kafka, consultar 2026-11-07 — TODO-VERIFY URLs y versión.
+- Fuentes: documentación de Apache Kafka (configuración de producer/consumer) y de Spring for Apache Kafka (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -67,5 +67,5 @@ Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `code-style-and-naming`, `coverage-policy`, `security-testing-sast-dast`, `no-lombok`.
-- Fuentes: documentación oficial de Checkstyle, PMD, SpotBugs y Error Prone — TODO-VERIFY URLs y versiones.
+- Fuentes: documentación oficial de Checkstyle, PMD, SpotBugs y Error Prone (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

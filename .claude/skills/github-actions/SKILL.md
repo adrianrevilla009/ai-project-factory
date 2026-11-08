@@ -102,5 +102,5 @@ El rol y la región son ejemplo; preparado para AWS, no verificado en real. En l
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pipeline-architecture`, `supply-chain`, `cloud-iam-least-privilege`, `secrets-management`.
-- Fuentes (2026-11-07): https://docs.github.com/en/actions/reference/workflows-and-actions/reusable-workflows ; https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect (nota: GitHub anuncia un formato de `sub` inmutable con IDs, TODO-VERIFY fecha y sintaxis).
+- Fuentes (2026-11-07): https://docs.github.com/en/actions/reference/workflows-and-actions/reusable-workflows ; https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect (nota: GitHub anuncia un formato de `sub` inmutable con IDs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -48,7 +48,7 @@ release:
   steps:
     - uses: actions/checkout@<SHA-40-HEX> # vX TODO-VERIFY
       with: { fetch-depth: 0 }
-    - run: ./scripts/release.sh   # calcula versión (herramienta a elegir: TODO-VERIFY), tag anotado y notas
+    - run:./scripts/release.sh   # calcula versión (herramienta a elegir: TODO-VERIFY), tag anotado y notas
 ```
 
 ## Checklist de revisión

@@ -64,5 +64,5 @@ Revisión humana: decisión arquitectónica con coste operativo. Verificaciones 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-cluster-and-dr`, `sidecar-vs-ambient-decision`, `istio-upgrades-and-ops`, `crypto-tls-mtls-key-rotation`.
-- Fuentes: istio.io/latest/docs/setup/install/multicluster/ — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/setup/install/multicluster/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

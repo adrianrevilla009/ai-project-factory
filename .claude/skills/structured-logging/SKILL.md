@@ -67,5 +67,5 @@ labels: { service: orders-api, namespace: shop }
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `logging-rules`, `tracing`, `pii-and-data-classification`, `async-and-context-propagation`.
-- Fuentes: documentación oficial de Spring Boot (logging) y Grafana Loki (labels), consultadas 2026-11-07; TODO-VERIFY versiones.
+- Fuentes: documentación oficial de Spring Boot (logging) y Grafana Loki (labels) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

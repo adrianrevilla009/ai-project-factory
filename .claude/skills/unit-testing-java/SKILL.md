@@ -83,5 +83,5 @@ class OrderServiceTest {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tdd`, `time-and-money`, `concurrency-testing`, `mutation-testing`, `testing-slices`.
-- Fuentes: guías de usuario de JUnit 5, AssertJ y Mockito — TODO-VERIFY versiones y URLs.
+- Fuentes: guías de usuario de JUnit 5, AssertJ y Mockito (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -67,6 +67,6 @@ limits_config:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `logging-rules`, `cardinality-and-cost-governance`, `tempo-and-service-graphs`, `multi-tenant-observability`.
-- Fuentes oficiales: https://grafana.com/docs/loki/latest/operations/storage/retention/ (verificado 2026-11-07: claves del compactor, índice 24h, `retention_stream`). Config de retención de Tempo: TODO-VERIFY.
+- Fuentes oficiales: https://grafana.com/docs/loki/latest/operations/storage/retention/ (verificado 2026-11-07: claves del compactor, índice 24h, `retention_stream`). Config de retención de Tempo (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Preparado para AWS, no verificado en real. En local MinIO sustituye a S3: no se reproducen políticas de bucket, KMS ni lifecycle de S3.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

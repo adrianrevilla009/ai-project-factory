@@ -78,5 +78,5 @@ private final LongAdder requests = new LongAdder();   // en vez de volatile long
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `locks-and-synchronization`, `concurrent-collections`, `concurrency-testing`.
-- Fuentes: JLS capítulo 17 (docs.oracle.com/javase/specs) — TODO-VERIFY edición, consultar 2026-11-07.
+- Fuentes: JLS capítulo 17 (docs.oracle.com/javase/specs) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

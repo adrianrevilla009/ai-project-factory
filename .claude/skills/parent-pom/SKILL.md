@@ -74,5 +74,5 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maven-multimodule-layout`, `bom-management`, `enforcer-rules`, `reproducible-builds`, `maven-wrapper-and-toolchains`.
-- Fuentes: Apache Maven POM Reference y documentación de Spring Boot (using the Maven plugin / parent) — TODO-VERIFY versiones y URLs; fecha de referencia 2026-11-07.
+- Fuentes: Apache Maven POM Reference y documentación de Spring Boot (using the Maven plugin / parent) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

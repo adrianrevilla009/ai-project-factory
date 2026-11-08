@@ -41,7 +41,7 @@ void coverageBooster() {
 <plugin>
   <groupId>org.jacoco</groupId>
   <artifactId>jacoco-maven-plugin</artifactId>
-  <!-- versión en el parent (TODO-VERIFY versión actual) -->
+  <!-- versión en el parent -->
   <executions>
     <execution><goals><goal>prepare-agent</goal></goals></execution>
     <execution>

@@ -77,5 +77,5 @@ ARN de ejemplo (`example`); la política es configuración preparada para AWS, n
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `kafka-producers-consumers`, `rabbitmq-sqs`, `delivery-semantics`, `alerting-symptom-based`.
-- Fuentes: documentación de Spring for Apache Kafka (manejo de errores y DLT) y de Amazon SQS (dead-letter queues), consultadas 2026-11-07 — TODO-VERIFY URLs y versión.
+- Fuentes: documentación de Spring for Apache Kafka (manejo de errores y DLT) y de Amazon SQS (dead-letter queues) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

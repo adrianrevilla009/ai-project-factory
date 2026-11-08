@@ -63,5 +63,5 @@ actions_due: 2026-12-15
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `failover-and-failback-runbooks`, `resilience-hub-assessments`, `incident-management-and-postmortems`, `tier-model-and-rpo-rto`.
-- Fuentes: DynamoDB global tables y FIS (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html, 2026-11-07); resto: TODO-VERIFY.
+- Fuentes: DynamoDB global tables y FIS (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html, 2026-11-07); resto (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -77,5 +77,5 @@ if __name__ == "__main__":
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-observability`, `llm-security`, `intelligent-document-processing`, `token-and-cost-budgets`, `human-in-the-loop`.
-- Fuentes: guías de evaluación de proveedores de modelos (p. ej. https://platform.claude.com/docs/en/test-and-evaluate/develop-tests, consultada 2026-11-07, TODO-VERIFY URL exacta).
+- Fuentes: guías de evaluación de proveedores de modelos (p. ej. https://platform.claude.com/docs/en/test-and-evaluate/develop-tests (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

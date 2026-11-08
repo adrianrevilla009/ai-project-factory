@@ -16,7 +16,7 @@
 ## asyncapi-event-contracts
 
 - **MUST** documentar cada canal, mensaje y esquema en un documento AsyncAPI versionado junto al servicio productor (`src/main/resources/asyncapi/<service>.yaml`).
-- **MUST** usar un envelope común con: `id` (UUID, único por evento), `type`, `source`, `time` (UTC), `specversion`/`schemaVersion` y `correlationId`; se recomienda alinear con CloudEvents (TODO-VERIFY versión).
+- **MUST** usar un envelope común con: `id` (UUID, único por evento), `type`, `source`, `time` (UTC), `specversion`/`schemaVersion` y `correlationId`; se recomienda alinear con CloudEvents.
 - **MUST** nombrar eventos en pasado de dominio (`order.placed.v1`) y comandos en imperativo; **MUST NOT** nombrarlos por la tecnología.
 - **MUST** definir la clave de partición/orden (p. ej. `orderId`) en el contrato.
 - **MUST** publicar el esquema (JSON Schema/Avro/Protobuf) y validarlo en CI con compatibilidad (`schema-registry-and-evolution`, `backward-compatibility-rules`).

@@ -70,5 +70,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `encryption-standards`, `crypto-tls-mtls-key-rotation`, `mtls-strict-and-peer-auth`, `ingress-and-egress-gateways`.
-- Fuentes (2026-11-07): calendario SC-081v3 según fuentes secundarias (encryptionconsulting.com, sslinsights.com), pendiente de confirmar en cabforum.org; documentación de cert-manager — TODO-VERIFY.
+- Fuentes (2026-11-07): calendario SC-081v3 según fuentes secundarias (encryptionconsulting.com, sslinsights.com), pendiente de confirmar en cabforum.org; documentación de cert-manager (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -71,5 +71,5 @@ feat(api)!: remove v1 order payload          -> major
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `versioning-semver-snapshots`, `sbom-generation`, `reproducible-builds`, `container-images`, `license-compliance`.
-- Fuentes: conventionalcommits.org, semver.org, documentación de maven-release-plugin y flatten-maven-plugin; consultadas 2026-11-07, TODO-VERIFY.
+- Fuentes: conventionalcommits.org, semver.org, documentación de maven-release-plugin y flatten-maven-plugin (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

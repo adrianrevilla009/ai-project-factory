@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** monitorizar por dataset crítico cinco señales: frescura, volumen, esquema, distribución/valores nulos y fallos de tests de calidad.
 - **MUST** declarar un SLO por dataset crítico (p. ej. "gold.fct_orders actualizado antes de las 07:00") con dueño y canal de aviso.
-- **MUST** emitir métricas del pipeline (duración, filas leídas/escritas, reintentos) con identificador de ejecución, y enlazarlas al linaje (OpenLineage, TODO-VERIFY versión).
+- **MUST** emitir métricas del pipeline (duración, filas leídas/escritas, reintentos) con identificador de ejecución, y enlazarlas al linaje (OpenLineage,).
 - **MUST** enrutar alertas al dueño del dataset, no a un canal genérico; cada alerta enlaza un runbook.
 - **SHOULD** usar umbrales basados en histórico (estacionalidad) en lugar de valores fijos para volumen.
 - **SHOULD** exponer el estado de datos como metadatos consultables (tabla `dataset_health`).
@@ -68,5 +68,5 @@ def run(ctx):
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-quality`, `data-contracts-and-lineage`, `batch-orchestration`, `alert-routing-and-oncall`, `slo-error-budget-policy`.
-- Fuentes: especificación OpenLineage (openlineage.io) — TODO-VERIFY versión y URL concreta.
+- Fuentes: especificación OpenLineage (openlineage.io) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -73,5 +73,5 @@ updates:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `bom-management`, `dependency-hygiene`, `dependency-security`, `container-images`, `release-automation`.
-- Fuentes: documentación de GitHub Dependabot y de Renovate (docs.renovatebot.com) — TODO-VERIFY versión, sintaxis y licencia; fecha de referencia 2026-11-07.
+- Fuentes: documentación de GitHub Dependabot y de Renovate (docs.renovatebot.com) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

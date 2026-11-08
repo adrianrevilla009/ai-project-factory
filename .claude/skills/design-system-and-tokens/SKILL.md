@@ -21,7 +21,7 @@ metadata:
 - **MUST** separar tokens primitivos (paleta) de semánticos (uso); los temas (claro/oscuro) redefinen solo los semánticos.
 - **MUST** que los componentes base (`Button`, `Input`, `Dialog`...) vivan en `src/shared/ui`, sin lógica de negocio ni llamadas a API.
 - **SHOULD** documentar cada componente base en Storybook con sus variantes y estados (foco, deshabilitado, error).
-- **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria; TODO-VERIFY licencia y versión) antes que reimplementar diálogos o menús.
+- **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria) antes que reimplementar diálogos o menús.
 - **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens (TODO-VERIFY ratios) y verificarlo en Storybook.
 - **MUST NOT** copiar componentes entre features: si se repite dos veces con intención común, sube a `shared/ui`.
 - **SHOULD** versionar cambios de tokens con nota de migración si hay varios consumidores.
@@ -46,7 +46,7 @@ Los tokens convierten decisiones de diseño en datos: cambiar la marca o añadir
 .orderCard { background: var(--surface-subtle); color: var(--text-primary); padding: var(--space-3); }
 ```
 ```tsx
-// Button.stories.tsx (Storybook, formato CSF; TODO-VERIFY versión)
+// Button.stories.tsx (Storybook, formato CSF)
 export default { title: 'shared/Button', component: Button };
 export const Disabled = { args: { children: 'Guardar', disabled: true } };
 ```

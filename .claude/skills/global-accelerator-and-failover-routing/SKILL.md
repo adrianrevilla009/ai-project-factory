@@ -89,5 +89,5 @@ resource "aws_route53_record" "api_secondary" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dns-route53-private-and-hybrid`, `alb-nlb-and-tls-termination`, `cross-region-connectivity-and-cost`, `regions-and-data-residency`, `multi-cluster-and-dr`.
-- Fuentes: documentación oficial de Route 53 (failover, health checks) y AWS Global Accelerator, consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: documentación oficial de Route 53 (failover, health checks) y AWS Global Accelerator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

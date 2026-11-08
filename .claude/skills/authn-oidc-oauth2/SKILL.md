@@ -81,5 +81,5 @@ En local Keycloak se ejecuta en contenedor; en AWS no se reproduce el IdP gestio
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `jwt-and-sessions`, `authz-rbac-abac-rebac`, `secrets-management`, `zero-trust`.
-- Fuentes: RFC 6749, RFC 7636 (PKCE), OpenID Connect Core; documentación de Spring Security (OAuth2 Resource Server) y de Keycloak — TODO-VERIFY versiones y URLs.
+- Fuentes: RFC 6749, RFC 7636 (PKCE), OpenID Connect Core; documentación de Spring Security (OAuth2 Resource Server) y de Keycloak (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

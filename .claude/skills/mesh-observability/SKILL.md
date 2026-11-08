@@ -68,5 +68,5 @@ Campos de `Telemetry` y proveedores: TODO-VERIFY en la versión elegida.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `logging-rules`, `traffic-management`, `canary-and-traffic-splitting`, `ingress-and-egress-gateways`.
-- Fuentes: istio.io/latest/docs/tasks/observability/ y kiali.io/docs — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/tasks/observability/ y kiali.io/docs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

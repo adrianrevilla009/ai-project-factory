@@ -65,5 +65,5 @@ exit_plan: "replace with in-house StringEscaper if abandoned"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `license-policy`, `supply-chain`, `dependency-security`, `remote-repos-and-dependency-confusion-protection`, `upgrade-policy`.
-- Fuentes: OpenSSF Scorecard https://scorecard.dev/ (TODO-VERIFY, 2026-11-07).
+- Fuentes: OpenSSF Scorecard https://scorecard.dev/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

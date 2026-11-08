@@ -65,5 +65,5 @@ Cálculo documentado en el servicio: 6 instancias x 10 = 60 conexiones, de un `m
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `read-replicas-and-routing`, `multi-tenancy`, `actuator-and-health`.
-- Fuentes: documentación de HikariCP (About Pool Sizing) y Spring Boot (Data Access) — TODO-VERIFY URL y versión; no verificado 2026-11-07.
+- Fuentes: documentación de HikariCP (About Pool Sizing) y Spring Boot (Data Access) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

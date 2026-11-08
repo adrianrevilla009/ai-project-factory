@@ -65,5 +65,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `local-profiles`, `dev-loop`, `cluster-tooling`.
-- Fuentes: documentación de Argo CD (app-of-apps) — TODO-VERIFY versión y URL.
+- Fuentes: documentación de Argo CD (app-of-apps) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

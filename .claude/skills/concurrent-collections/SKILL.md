@@ -24,7 +24,7 @@ metadata:
 - **MUST** usar colas acotadas (`ArrayBlockingQueue`, `LinkedBlockingQueue(capacity)`) para productor/consumidor; nunca sin cota.
 - **MUST NOT** asumir que `size()` o una iteración son instantáneas consistentes; son débilmente consistentes.
 - **SHOULD** usar `LongAdder` para contadores con mucha contención.
-- **MUST** definir expulsión/tamaño máximo en caches en memoria; preferir Caffeine a un mapa propio (TODO-VERIFY licencia y versión).
+- **MUST** definir expulsión/tamaño máximo en caches en memoria; preferir Caffeine a un mapa propio.
 
 ## Por qué
 `HashMap` mal usado puede perder datos o, según la versión, bloquear el hilo. El patrón check-then-act sobre un mapa concurrente sigue siendo una carrera aunque cada llamada sea segura. Una cola sin cota esconde el problema hasta el OOM.
@@ -66,5 +66,5 @@ boolean submit(Job j) { return queue.offer(j); }       // false = rechazar, no b
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `locks-and-synchronization`, `backpressure-and-bulkheads`, `caching`.
-- Fuentes: Javadoc de `java.util.concurrent` — TODO-VERIFY URL (2026-11-07).
+- Fuentes: Javadoc de `java.util.concurrent` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -20,7 +20,7 @@ metadata:
 - **MUST** documentar en el test o README qué servicios se emulan y qué NO se reproduce (políticas IAM reales, SCP, cifrado KMS con claves reales, límites y throttling, eventual consistency real).
 - **MUST** configurar el endpoint por propiedades (`endpointOverride`) solo en el perfil de test; el código de producción no conoce LocalStack.
 - **MUST** usar credenciales falsas obvias (`example`/`changeme`) en el contenedor; nunca credenciales reales.
-- **SHOULD** levantar LocalStack con Testcontainers (módulo LocalStack) y fijar la imagen con tag explícito (TODO-VERIFY versión).
+- **SHOULD** levantar LocalStack con Testcontainers (módulo LocalStack) y fijar la imagen con tag explícito.
 - **SHOULD** limitar los servicios habilitados a los necesarios para acelerar el arranque.
 - **MUST NOT** afirmar "probado en AWS" ni "listo para producción en AWS" por pasar tests en LocalStack; la fórmula es "preparado para AWS, no verificado en real" (ADR-0004).
 - **MUST NOT** depender de funcionalidades de pago de LocalStack por defecto (D16); si un test las requiere, es una decisión explícita y documentada.

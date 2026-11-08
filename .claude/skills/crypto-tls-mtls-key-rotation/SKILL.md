@@ -74,5 +74,5 @@ spec: { mtls: { mode: STRICT } }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `jwt-and-sessions`, `zero-trust`, `pii-and-data-classification`.
-- Fuentes: OWASP Cryptographic Storage, Password Storage y TLS Cheat Sheets; documentación Istio (PeerAuthentication), consultadas 2026-11-07, TODO-VERIFY versiones.
+- Fuentes: OWASP Cryptographic Storage, Password Storage y TLS Cheat Sheets; documentación Istio (PeerAuthentication) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

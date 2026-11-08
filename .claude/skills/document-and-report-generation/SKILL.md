@@ -67,5 +67,5 @@ void write(OutputStream out, Principal owner) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `import-export-and-bulk-data`, `scheduling-and-batch-jobs`, `pii-and-data-classification`.
-- Fuentes: OWASP CSV Injection: TODO-VERIFY URL. Preparado para AWS (S3 + URL firmada), no verificado en real; en local se usa un emulador/MinIO.
+- Fuentes: OWASP CSV Injection (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS (S3 + URL firmada), no verificado en real; en local se usa un emulador/MinIO.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -38,7 +38,7 @@ Un gate que se puede saltar o relajar sin revisión deja de ser gate. El código
 ```yaml
 - run: ./mvnw -B verify
 - run: ./mvnw -B spotless:check checkstyle:check
-- run: ./mvnw -B org.pitest:pitest-maven:mutationCoverage   # TODO-VERIFY versión del plugin
+- run:./mvnw -B org.pitest:pitest-maven:mutationCoverage   # TODO-VERIFY versión del plugin
 - uses: actions/upload-artifact@<SHA-40-HEX> # vX TODO-VERIFY
   if: always()
   with: { name: reports, path: "**/target/site/jacoco/**" }
@@ -61,5 +61,5 @@ Un gate que se puede saltar o relajar sin revisión deja de ser gate. El código
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pipeline-architecture`, `security-gates`, `contract-gate`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: ADR-0019 (`catalog/adr/0019-testing.md`); PIT/JaCoCo docs oficiales — TODO-VERIFY URL y versiones.
+- Fuentes: ADR-0019 (`catalog/adr/0019-testing.md`); PIT/JaCoCo docs oficiales (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

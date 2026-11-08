@@ -68,5 +68,5 @@ El `DROP` va solo en migraciones/jobs revisados, nunca ejecutado desde un agente
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `indexing-and-query-plans`, `schema-migrations`, `data-privacy-in-db`, `auditing-soft-delete-history`.
-- Fuentes: documentación de PostgreSQL (Table Partitioning) — TODO-VERIFY URL y versión; no verificado 2026-11-07.
+- Fuentes: documentación de PostgreSQL (Table Partitioning) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

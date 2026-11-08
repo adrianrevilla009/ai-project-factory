@@ -80,5 +80,5 @@ Los valores son ilustrativos; calibrar con métricas reales. Nombres de propieda
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `actuator-and-health`, `idempotency-keys`, `resilience-testing`.
-- Fuentes: documentación oficial de Resilience4j y de Spring Cloud Circuit Breaker — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: documentación oficial de Resilience4j y de Spring Cloud Circuit Breaker (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

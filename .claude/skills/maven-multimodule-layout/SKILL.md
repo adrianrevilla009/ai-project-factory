@@ -77,5 +77,5 @@ Build parcial: `./mvnw -pl orders-boot -am verify` compila el módulo y lo que n
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `bom-management`, `enforcer-rules`, `clean-architecture`, `connascence-and-coupling`.
-- Fuentes: Apache Maven, "Guide to Working with Multiple Modules" (maven.apache.org) — consultar vigente, TODO-VERIFY URL exacta; fecha de referencia 2026-11-07.
+- Fuentes: Apache Maven, "Guide to Working with Multiple Modules" (maven.apache.org) — consultar vigente (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

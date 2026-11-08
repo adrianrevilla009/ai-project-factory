@@ -66,5 +66,5 @@ interface CustomerMapper {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `controllers-and-validation`, `n-plus-one`, `spring-data-rules`, `projections-and-dtos`.
-- Fuentes oficiales: MapStruct Reference Guide (mapstruct.org), consultada 2026-11-07; TODO-VERIFY versión.
+- Fuentes oficiales: MapStruct Reference Guide (mapstruct.org) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

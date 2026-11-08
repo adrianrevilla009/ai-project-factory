@@ -65,5 +65,5 @@ public void sendReminders() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `distributed-locking`, `idempotency-and-deduplication`, `batching-and-bulk-ops`, `graceful-shutdown-lifecycle`.
-- Fuentes: documentación de Spring (Task Execution and Scheduling), Spring Batch y ShedLock — TODO-VERIFY URLs y versiones (2026-11-07).
+- Fuentes: documentación de Spring (Task Execution and Scheduling), Spring Batch y ShedLock (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

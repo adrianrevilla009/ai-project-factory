@@ -68,5 +68,5 @@ Reglas reales reutilizables: `policies/archunit/DomainIsolationRules.java`, `Hex
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `layering-rules-archunit`, `hexagonal`, `clean-architecture`, `modular-monolith`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: guía de usuario de ArchUnit (https://www.archunit.org/userguide/html/000_Index.html) — TODO-VERIFY versión.
+- Fuentes: guía de usuario de ArchUnit (https://www.archunit.org/userguide/html/000_Index.html) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

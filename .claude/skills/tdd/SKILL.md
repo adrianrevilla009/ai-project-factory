@@ -70,5 +70,5 @@ El orden test-primero no es comprobable por script de forma fiable: es revisión
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `unit-testing-java`, `bdd`, `mutation-testing`, `code-smells-and-refactoring`.
-- Fuentes: Kent Beck, *Test-Driven Development: By Example* (libro; sin URL verificada) — TODO-VERIFY referencia.
+- Fuentes: Kent Beck, *Test-Driven Development: By Example* (libro; sin URL verificada) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -80,5 +80,5 @@ Nombres de atributos Terraform a contrastar con el provider (TODO-VERIFY).
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dlq-retries-poison-messages`, `delivery-semantics`, `kafka-producers-consumers`.
-- Fuentes: documentación de RabbitMQ (quorum queues, confirms, consumer acks) y de Amazon SQS (visibility timeout, DLQ, FIFO), consultadas 2026-11-07 — TODO-VERIFY URLs.
+- Fuentes: documentación de RabbitMQ (quorum queues, confirms, consumer acks) y de Amazon SQS (visibility timeout, DLQ, FIFO) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

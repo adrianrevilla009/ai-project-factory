@@ -68,5 +68,5 @@ service:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-java-agent-vs-sdk`, `metrics-micrometer`, `tracing`, `structured-logging`, `pii-and-data-classification`.
-- Fuentes: documentación oficial de OpenTelemetry (opentelemetry.io: semantic conventions, Collector), consultada 2026-11-07; versiones TODO-VERIFY. En local se reproduce el stack OSS; no se reproducen servicios gestionados de AWS.
+- Fuentes: documentación oficial de OpenTelemetry (opentelemetry.io: semantic conventions, Collector); versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto). En local se reproduce el stack OSS; no se reproducen servicios gestionados de AWS.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

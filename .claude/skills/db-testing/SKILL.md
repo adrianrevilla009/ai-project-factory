@@ -84,5 +84,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `integration-testing-testcontainers`, `schema-migrations`, `n-plus-one`, `test-data-management`, `testing-slices`.
-- Fuentes: documentación de Testcontainers y de Spring Boot (Testing) — TODO-VERIFY URL y versión; no verificado 2026-11-07.
+- Fuentes: documentación de Testcontainers y de Spring Boot (Testing) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

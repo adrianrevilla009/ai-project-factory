@@ -23,7 +23,7 @@ metadata:
 - **MUST** que no haya ciclos entre módulos.
 - **SHOULD** un esquema (o prefijo de tablas) por módulo en la misma base de datos, con propiedad clara.
 - **SHOULD** comunicar efectos secundarios entre módulos con eventos internos (ver `domain-events-in-spring`).
-- **MAY** usar Spring Modulith para verificar y documentar módulos (TODO-VERIFY versión y API).
+- **MAY** usar Spring Modulith para verificar y documentar módulos.
 
 ## Por qué
 Se obtienen fronteras evolutivas sin el coste operativo de la red: transacciones locales, un solo pipeline, depuración sencilla. Si las fronteras son reales, extraer un módulo a servicio es mecánico; si no, un microservicio solo reparte el barro.
@@ -65,5 +65,5 @@ class InvoiceService {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `microservices-decision-guide`, `layering-rules-archunit`, `domain-events-in-spring`, `ddd-strategic`.
-- Fuentes: documentación de Spring Modulith (spring.io/projects/spring-modulith) — TODO-VERIFY versión.
+- Fuentes: documentación de Spring Modulith (spring.io/projects/spring-modulith) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

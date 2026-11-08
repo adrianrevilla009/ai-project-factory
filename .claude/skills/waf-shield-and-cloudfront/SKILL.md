@@ -96,5 +96,5 @@ resource "aws_wafv2_web_acl" "edge" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `alb-nlb-and-tls-termination`, `dos-and-rate-limiting`, `security-headers-cors-csrf`, `owasp-top10-and-api-top10`.
-- Fuentes: documentación oficial de AWS WAF, AWS Shield y CloudFront (origin access control, prefix list gestionada), consulta 2026-11-07, TODO-VERIFY.
+- Fuentes: documentación oficial de AWS WAF, AWS Shield y CloudFront (origin access control, prefix list gestionada) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

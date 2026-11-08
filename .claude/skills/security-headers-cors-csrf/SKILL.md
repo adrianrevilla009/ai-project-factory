@@ -84,5 +84,5 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `jwt-and-sessions`, `input-validation-output-encoding`, `method-and-endpoint-security`.
-- Fuentes: OWASP HTTP Headers Cheat Sheet, CSRF Prevention Cheat Sheet; MDN sobre CSP y CORS; Spring Security (CORS, CSRF) — TODO-VERIFY URLs.
+- Fuentes: OWASP HTTP Headers Cheat Sheet, CSRF Prevention Cheat Sheet; MDN sobre CSP y CORS; Spring Security (CORS, CSRF) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

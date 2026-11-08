@@ -67,5 +67,5 @@ Comandos y API de las librerías: TODO-VERIFY contra su documentación.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `contract-testing`, `state-management`, `typescript-strict-rules`, `error-handling-problem-details`.
-- Fuentes: documentación de openapi-typescript/openapi-fetch/Orval y de Vite (variables de entorno) — TODO-VERIFY (2026-11-07).
+- Fuentes: documentación de openapi-typescript/openapi-fetch/Orval y de Vite (variables de entorno) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

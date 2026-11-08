@@ -28,7 +28,7 @@ metadata:
 - **SHOULD** separar orquestación de transformación: el orquestador llama a dbt/Spark, no contiene la lógica SQL.
 
 ## Por qué
-Los reintentos y backfills solo son seguros si las tareas son idempotentes; una tarea basada en `now()` duplica o pierde datos al reintentar. Airflow y Dagster son OSS (Apache-2.0), sin licencia de pago. Conceptos DAG, `@dag`, `catchup` y `default_args`: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (consultado 2026-11-07). Dagster: TODO-VERIFY (la URL de documentación redirige a dagster.io/docs; no verificado el detalle del modelo de activos).
+Los reintentos y backfills solo son seguros si las tareas son idempotentes; una tarea basada en `now` duplica o pierde datos al reintentar. Airflow y Dagster son OSS (Apache-2.0), sin licencia de pago. Conceptos DAG, `@dag`, `catchup` y `default_args`: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (consultado 2026-11-07). Dagster: TODO-VERIFY (la URL de documentación redirige a dagster.io/docs; no verificado el detalle del modelo de activos).
 
 ## Ejemplos
 ### Mal

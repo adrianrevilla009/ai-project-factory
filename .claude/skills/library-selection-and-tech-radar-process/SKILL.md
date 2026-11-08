@@ -71,5 +71,5 @@ Radar:  Adopt  | Trial       | Assess | Hold
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `adr`, `dependency-hygiene`, `bom-management`, `rfc-process`, `risk-register`.
-- Fuentes: concepto de Technology Radar (Thoughtworks; TODO-VERIFY URL concreta).
+- Fuentes: concepto de Technology Radar (Thoughtworks (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

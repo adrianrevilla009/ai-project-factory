@@ -76,5 +76,5 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `dependency-hygiene`, `renovate-dependabot-policy`, `license-compliance`, `vulnerability-sla-and-incident-response`.
-- Fuentes: documentación de OWASP Dependency-Check y OSV-Scanner, consultada 2026-11-07; versiones y parámetros TODO-VERIFY.
+- Fuentes: documentación de OWASP Dependency-Check y OSV-Scanner; versiones y parámetros (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

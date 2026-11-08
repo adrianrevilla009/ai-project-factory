@@ -76,5 +76,5 @@ Versión de API (`security.istio.io/v1`): TODO-VERIFY contra la versión de Isti
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authorization-policies`, `zero-trust`, `crypto-tls-mtls-key-rotation`, `sidecar-vs-ambient-decision`.
-- Fuentes: istio.io/latest/docs/concepts/security/ y reference de PeerAuthentication — TODO-VERIFY; 2026-11-07 sin verificación en vivo.
+- Fuentes: istio.io/latest/docs/concepts/security/ y reference de PeerAuthentication (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

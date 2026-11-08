@@ -65,5 +65,5 @@ ORDER BY created_at DESC LIMIT 20;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `schema-migrations`, `query-strategy`, `pagination`, `partitioning-and-archival`, `db-design-conventions`.
-- Fuentes: documentación de PostgreSQL (Indexes, Using EXPLAIN) — TODO-VERIFY URL y versión; no verificado 2026-11-07.
+- Fuentes: documentación de PostgreSQL (Indexes, Using EXPLAIN) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -66,5 +66,5 @@ El único fragmento concatenado procede de constantes propias, nunca de la entra
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `query-strategy`, `owasp-top10-and-api-top10`, `jdbc-and-jooq`, `secure-sdlc-nist-ssdf`.
-- Fuentes: OWASP SQL Injection Prevention Cheat Sheet — TODO-VERIFY URL; no consultada en vivo el 2026-11-07.
+- Fuentes: OWASP SQL Injection Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

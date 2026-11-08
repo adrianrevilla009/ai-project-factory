@@ -70,5 +70,5 @@ log.info("login succeeded for user {}", user.id());
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `exceptions-and-error-handling`, `no-lombok`, `equals-hashcode-tostring`, `data-privacy-in-db`.
-- Fuentes: documentación de SLF4J (slf4j.org, API de logging parametrizado) — no verificado en línea, TODO-VERIFY.
+- Fuentes: documentación de SLF4J (slf4j.org, API de logging parametrizado) — no verificado en línea (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

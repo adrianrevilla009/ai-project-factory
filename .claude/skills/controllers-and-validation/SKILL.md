@@ -78,5 +78,5 @@ class CustomerController {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `error-handling-problem-details`, `mapping-mapstruct`, `testing-slices`, `rest-design-guidelines`.
-- Fuentes oficiales: Spring Framework Reference (Web MVC, Validation) y Jakarta Bean Validation, consultadas 2026-11-07; TODO-VERIFY versión.
+- Fuentes oficiales: Spring Framework Reference (Web MVC, Validation) y Jakarta Bean Validation (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

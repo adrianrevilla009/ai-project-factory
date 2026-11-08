@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** registrar cuerpos, cabeceras `Authorization` ni tokens en logs de cliente.
 
 ## Por qué
-Sin timeout, un proveedor lento agota los hilos del servicio llamante y la caída se propaga en cascada. Un timeout explícito convierte un fallo de otro en un error rápido y manejable. Las propiedades genéricas `spring.http.client.*` dependen de la versión de Spring Boot (TODO-VERIFY versión mínima); la configuración por código es estable.
+Sin timeout, un proveedor lento agota los hilos del servicio llamante y la caída se propaga en cascada. Un timeout explícito convierte un fallo de otro en un error rápido y manejable. Las propiedades genéricas `spring.http.client.*` dependen de la versión de Spring Boot; la configuración por código es estable.
 
 ## Ejemplos
 ### Mal
@@ -82,5 +82,5 @@ clients:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `configuration-properties`, `graceful-shutdown-lifecycle`, `reactive-vs-blocking`.
-- Fuentes: Spring Framework Reference (REST Clients) y Spring Boot Reference (HTTP clients) — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Framework Reference (REST Clients) y Spring Boot Reference (HTTP clients) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

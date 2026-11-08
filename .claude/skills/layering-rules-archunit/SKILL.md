@@ -23,7 +23,7 @@ metadata:
 - **SHOULD** usar `consideringOnlyDependenciesInLayers()` para no ahogar la regla en dependencias de librerías.
 - **SHOULD** nombrar cada regla por la intención (`domain_does_not_depend_on_frameworks`).
 - **SHOULD** usar `FreezingArchRule` solo para adoptar reglas en código heredado, con plan de descongelado.
-- **MUST** fijar la versión de `archunit-junit5` en el BOM del proyecto (TODO-VERIFY versión vigente).
+- **MUST** fijar la versión de `archunit-junit5` en el BOM del proyecto.
 
 ## Por qué
 Los diagramas y la documentación no impiden un `import` indebido; un test sí. Una regla ejecutable convierte la arquitectura en contrato y hace visible la erosión en el PR que la causa.
@@ -70,5 +70,5 @@ class LayeringRules {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `modular-monolith`, `architecture-testing-archunit`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: ArchUnit User Guide, https://www.archunit.org/userguide/html/000_Index.html (a verificar, TODO-VERIFY; consulta 2026-11-07 no realizada).
+- Fuentes: ArchUnit User Guide, https://www.archunit.org/userguide/html/000_Index.html (a verificar (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

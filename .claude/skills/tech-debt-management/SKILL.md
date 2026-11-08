@@ -61,5 +61,5 @@ Criterio de decisión: interés alto + zona que cambia a menudo = pagar ya; inte
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `code-smells-and-refactoring`, `evolutionary-architecture-fitness-functions`, `quality-attributes-atam`.
-- Fuentes: Cunningham, "The WyCash Portfolio Management System" (1992); Fowler, "Technical Debt Quadrant" (martinfowler.com). TODO-VERIFY: URLs.
+- Fuentes: Cunningham, "The WyCash Portfolio Management System" (1992); Fowler, "Technical Debt Quadrant" (martinfowler.com). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -70,5 +70,5 @@ class CacheWarmer {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `graceful-shutdown-lifecycle`, `actuator-and-health`, `upgrade-policy`.
-- Fuentes: Spring Boot Reference (GraalVM Native Image, AOT, CDS) y documentación de GraalVM — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Boot Reference (GraalVM Native Image, AOT, CDS) y documentación de GraalVM (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

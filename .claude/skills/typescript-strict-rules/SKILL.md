@@ -72,5 +72,5 @@ if (first === undefined) return null;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `forms-and-validation`, `api-client-from-openapi`, `frontend-architecture`, `null-safety`.
-- Fuentes: TypeScript handbook (tsconfig reference) y typescript-eslint (strict-type-checked) — TODO-VERIFY URL y versión, 2026-11-07.
+- Fuentes: TypeScript handbook (tsconfig reference) y typescript-eslint (strict-type-checked) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

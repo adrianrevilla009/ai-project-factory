@@ -64,5 +64,5 @@ window.dispatchEvent(new CustomEvent<CartChangedV1>("cart.changed.v1", { detail:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `architecture`, `adr`, `design-system-and-tokens`, `build-and-deploy`, `contract-testing`.
-- Fuentes: documentación de Module Federation y de la herramienta de build elegida — TODO-VERIFY; no consultadas 2026-11-07.
+- Fuentes: documentación de Module Federation y de la herramienta de build elegida (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

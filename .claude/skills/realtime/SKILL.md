@@ -64,5 +64,5 @@ es.addEventListener("order-updated", (e) => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `state-management`, `auth-and-session`, `security-frontend`, `notifications`, `idempotency-and-deduplication`, `alb-nlb-and-tls-termination`.
-- Fuentes: MDN (Server-sent events, WebSocket API) y RFC 6455 — TODO-VERIFY URLs; no consultadas 2026-11-07.
+- Fuentes: MDN (Server-sent events, WebSocket API) y RFC 6455 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

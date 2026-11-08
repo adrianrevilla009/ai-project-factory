@@ -55,5 +55,5 @@ Si JSONB no basta (medido): ADR con comparación, fuente de verdad única (Mongo
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `datastore-selection-guide`, `polyglot-operations-cost`, `dynamodb-data-modeling`, `license-policy`.
-- Fuentes: documentación oficial de MongoDB y de Amazon DocumentDB — no consultadas en esta revisión, TODO-VERIFY.
+- Fuentes: documentación oficial de MongoDB y de Amazon DocumentDB — no consultadas en esta revisión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

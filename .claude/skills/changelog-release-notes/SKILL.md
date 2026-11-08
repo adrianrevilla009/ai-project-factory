@@ -70,5 +70,5 @@ Fuente de las categorías y del formato de fecha: https://keepachangelog.com/en/
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `release-versioning-changelog`, `versioning-semver-snapshots`, `api-versioning-deprecation`, `conventional-commits`.
-- Fuentes: https://keepachangelog.com/en/1.1.0/ (2026-11-07); SemVer en https://semver.org/ (TODO-VERIFY).
+- Fuentes: https://keepachangelog.com/en/1.1.0/ (2026-11-07); SemVer en https://semver.org/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

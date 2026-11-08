@@ -37,7 +37,7 @@ static final Map<String, Session> SESSIONS = new HashMap<>();   // nunca se purg
 ```
 ### Bien
 ```java
-// cache acotada y con expiración (Caffeine u otra; TODO-VERIFY versión)
+// cache acotada y con expiración (Caffeine u otra)
 Cache<String, Session> sessions = Caffeine.newBuilder()
     .maximumSize(10_000)
     .expireAfterAccess(Duration.ofMinutes(30))

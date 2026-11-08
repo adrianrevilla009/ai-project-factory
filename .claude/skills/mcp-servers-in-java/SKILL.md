@@ -22,7 +22,7 @@ metadata:
 - **MUST** exponer pocas tools de granularidad de caso de uso, con descripciones precisas y esquema de parámetros tipado; las de escritura separadas y con confirmación.
 - **MUST** validar cada parámetro como entrada no confiable y autorizar por usuario, no por el cliente MCP.
 - **MUST** tratar las descripciones de tools y los resultados como superficie de inyección: no incluir texto de terceros sin sanear en descripciones.
-- **SHOULD** usar la autoconfiguración Spring AI (`spring-ai-starter-mcp-server-webmvc` o `-webflux`) con `@McpTool`/`@McpToolParam`, y fijar la versión del BOM (TODO-VERIFY versión).
+- **SHOULD** usar la autoconfiguración Spring AI (`spring-ai-starter-mcp-server-webmvc` o `-webflux`) con `@McpTool`/`@McpToolParam`, y fijar la versión del BOM.
 - **SHOULD** versionar el contrato de tools (nombre y parámetros) y deprecar antes de retirar.
 - **MUST** registrar cada invocación con usuario, tool y traza; sin PII en claro (ver `guardrails-and-pii-redaction`).
 - **MUST** al consumir servidores MCP de terceros: lista de permitidos, revisión de sus tools y sin confianza implícita (ver `supply-chain`).

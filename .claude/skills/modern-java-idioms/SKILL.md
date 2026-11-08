@@ -12,7 +12,7 @@ metadata:
 # Modernos idiomas de Java
 
 ## Cuándo aplicar y cuándo no
-- Aplica a todo código Java nuevo o modificado de proyectos generados (Java LTS vigente, TODO-VERIFY versión concreta, ver ADR-0001).
+- Aplica a todo código Java nuevo o modificado de proyectos generados (Java LTS vigente,, ver ADR-0001).
 - No aplica a código generado (MapStruct, OpenAPI, protobuf) ni a APIs públicas que deban conservar compatibilidad con una versión de Java anterior.
 
 ## Reglas

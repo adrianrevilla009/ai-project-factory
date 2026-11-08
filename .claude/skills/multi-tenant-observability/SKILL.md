@@ -71,6 +71,6 @@ exporters:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `collector-pipelines`, `logs-and-traces-stores`, `cardinality-and-cost-governance`.
-- Fuentes oficiales: Grafana Loki y Tempo, secciones de multi-tenancy (https://grafana.com/docs/loki/latest/operations/multi-tenancy/ ; no verificada la redacción, TODO-VERIFY).
+- Fuentes oficiales: Grafana Loki y Tempo, secciones de multi-tenancy (https://grafana.com/docs/loki/latest/operations/multi-tenancy/ ; no verificada la redacción (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Preparado para AWS, no verificado en real. En local suele usarse un único tenant; el aislamiento real no se reproduce.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

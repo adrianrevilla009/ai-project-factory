@@ -65,5 +65,5 @@ public void execute(String businessKey) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sagas`, `rules-engines`, `idempotency-keys`, `pii-and-data-classification`.
-- Fuentes: Camunda licencias (2026-11-07). Flowable: TODO-VERIFY. Local: el motor corre en contenedor; sin HA de AWS.
+- Fuentes: Camunda licencias (2026-11-07). Flowable (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Local: el motor corre en contenedor; sin HA de AWS.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

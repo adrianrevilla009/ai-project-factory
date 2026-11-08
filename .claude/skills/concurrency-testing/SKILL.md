@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** que los tests sean deterministas en su resultado: probar invariantes ("se creó un único pago"), no tiempos.
-- **MUST NOT** usar `Thread.sleep` para esperar; usar `CountDownLatch`/`CyclicBarrier`/`Phaser` para sincronizar y Awaitility (`await().atMost(...)`) para esperar condiciones (TODO-VERIFY versión).
+- **MUST NOT** usar `Thread.sleep` para esperar; usar `CountDownLatch`/`CyclicBarrier`/`Phaser` para sincronizar y Awaitility (`await.atMost(...)`) para esperar condiciones.
 - **MUST** arrancar los hilos a la vez con un latch de salida para maximizar la contención.
 - **MUST** recoger y propagar las excepciones de los hilos de prueba (`Future.get()`); un fallo en otro hilo no falla el test por sí solo.
 - **MUST** poner timeout a cada test concurrente (`@Timeout`, JUnit 5) para que un deadlock no cuelgue el pipeline.
@@ -78,5 +78,5 @@ await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(outbox.pend
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `locks-and-synchronization`, `idempotency-and-deduplication`, `db-testing`.
-- Fuentes: documentación de JUnit 5, Awaitility y jcstress (openjdk) — TODO-VERIFY URLs y versiones (2026-11-07).
+- Fuentes: documentación de JUnit 5, Awaitility y jcstress (openjdk) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

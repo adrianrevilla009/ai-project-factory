@@ -72,5 +72,5 @@ ci_matrix: ["21", "next-lts-early-access"]
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maven-wrapper-and-toolchains`, `container-images`, `renovate-dependabot-policy`, `enforcer-rules`.
-- Fuentes: openjdk.org (releases), adoptium.net (soporte de Temurin), documentación de Spring Boot (requisitos del sistema); consultadas 2026-11-07, TODO-VERIFY fechas y versiones.
+- Fuentes: openjdk.org (releases), adoptium.net (soporte de Temurin), documentación de Spring Boot (requisitos del sistema) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

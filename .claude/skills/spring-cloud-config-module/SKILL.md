@@ -69,5 +69,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `config-by-environment`, `feature-flags-openfeature`, `secrets-management`, `actuator-and-health`.
-- Fuentes: ADR-0011; documentación de Spring Cloud Config — TODO-VERIFY URL y versión. Diseño preparado para AWS, no verificado en real.
+- Fuentes: ADR-0011; documentación de Spring Cloud Config (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Diseño preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

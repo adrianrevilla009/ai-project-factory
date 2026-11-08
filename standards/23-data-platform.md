@@ -67,7 +67,7 @@
 - **MUST** heredar la clasificación aguas abajo: una tabla derivada tiene como mínimo la clasificación más alta de sus entradas, salvo anonimización documentada.
 - **MUST** mantener la clasificación como metadatos versionados en Git (YAML junto al modelo), no solo en una UI.
 - **MUST NOT** publicar en una zona de consumo (gold/marts) datos sin clasificar.
-- **SHOULD** usar un catálogo OSS (p. ej. DataHub u OpenMetadata, TODO-VERIFY licencia y versión) en lugar de un producto de pago (D16).
+- **SHOULD** usar un catálogo OSS (p. ej. DataHub u OpenMetadata,) en lugar de un producto de pago (D16).
 - **SHOULD** revisar la clasificación cada trimestre y al cambiar el esquema.
 
 ## data-lake-and-lakehouse
@@ -98,7 +98,7 @@
 
 - **MUST** monitorizar por dataset crítico cinco señales: frescura, volumen, esquema, distribución/valores nulos y fallos de tests de calidad.
 - **MUST** declarar un SLO por dataset crítico (p. ej. "gold.fct_orders actualizado antes de las 07:00") con dueño y canal de aviso.
-- **MUST** emitir métricas del pipeline (duración, filas leídas/escritas, reintentos) con identificador de ejecución, y enlazarlas al linaje (OpenLineage, TODO-VERIFY versión).
+- **MUST** emitir métricas del pipeline (duración, filas leídas/escritas, reintentos) con identificador de ejecución, y enlazarlas al linaje (OpenLineage,).
 - **MUST** enrutar alertas al dueño del dataset, no a un canal genérico; cada alerta enlaza un runbook.
 - **SHOULD** usar umbrales basados en histórico (estacionalidad) en lugar de valores fijos para volumen.
 - **SHOULD** exponer el estado de datos como metadatos consultables (tabla `dataset_health`).

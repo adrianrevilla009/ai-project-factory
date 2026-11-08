@@ -78,5 +78,5 @@ env:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `scalability-patterns`, `cell-based-architecture`, `microservices-decision-guide`.
-- Fuentes: 12factor.net (Wiggins, consultado 2026-11-07); documentación de Spring Boot sobre graceful shutdown y externalized configuration. TODO-VERIFY: versiones.
+- Fuentes: 12factor.net (Wiggins; documentación de Spring Boot sobre graceful shutdown y externalized configuration. (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

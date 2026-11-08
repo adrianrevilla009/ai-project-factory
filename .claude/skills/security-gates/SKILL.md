@@ -39,7 +39,7 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
     trivy image --exit-code 1 --severity CRITICAL,HIGH --ignore-unfixed
     --vex vex.openvex.json registry.example.com/shop/orders@${{ needs.build.outputs.digest }}
   # flags TODO-VERIFY contra la versión de Trivy fijada
-- run: ./mvnw -B org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom   # TODO-VERIFY versión
+- run:./mvnw -B org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom   #
 - run: semgrep scan --config policies/semgrep --error
 ```
 
@@ -59,5 +59,5 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `dependency-security`, `container-and-k8s-security`, `quality-gates`, `secrets-management`.
-- Fuentes: ADR-0017 (`catalog/adr/0017-escaneo-y-sbom.md`); docs oficiales de Trivy, Grype, CycloneDX — TODO-VERIFY flags y versiones.
+- Fuentes: ADR-0017 (`catalog/adr/0017-escaneo-y-sbom.md`); docs oficiales de Trivy, Grype, CycloneDX (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

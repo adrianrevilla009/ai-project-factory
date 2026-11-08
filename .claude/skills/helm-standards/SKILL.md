@@ -72,5 +72,5 @@ helm template orders charts/service | kubeconform -strict -summary
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `kustomize-overlays`, `workload-baseline`, `cluster-addons-baseline`, `container-and-k8s-security`.
-- Fuentes: documentación de Helm (chart best practices, schema) — TODO-VERIFY versión, 2026-11-07.
+- Fuentes: documentación de Helm (chart best practices, schema) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

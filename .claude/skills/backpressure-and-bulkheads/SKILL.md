@@ -73,5 +73,5 @@ String partnerFallback(String id, BulkheadFullException e) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threads-executors-and-pools`, `resilience`, `http-clients-and-timeouts`, `virtual-threads`.
-- Fuentes: documentación de Resilience4j (Bulkhead, RateLimiter) — TODO-VERIFY URL y versión (2026-11-07).
+- Fuentes: documentación de Resilience4j (Bulkhead, RateLimiter) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

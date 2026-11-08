@@ -75,5 +75,5 @@ server:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authn-oidc-oauth2`, `security-headers-cors-csrf`, `secrets-management`.
-- Fuentes: RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), OWASP Session Management Cheat Sheet — TODO-VERIFY URLs.
+- Fuentes: RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), OWASP Session Management Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

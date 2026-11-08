@@ -78,5 +78,5 @@ void anonymousCannotListOrders() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authz-rbac-abac-rebac`, `authn-oidc-oauth2`, `security-headers-cors-csrf`, `audit-trail-and-security-logging`.
-- Fuentes: documentación de Spring Security (authorize HTTP requests, method security) y de Spring Boot Actuator — TODO-VERIFY versión y URL.
+- Fuentes: documentación de Spring Security (authorize HTTP requests, method security) y de Spring Boot Actuator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

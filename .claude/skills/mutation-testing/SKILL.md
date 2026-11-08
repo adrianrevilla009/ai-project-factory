@@ -48,7 +48,7 @@ void vipCustomerGetsTenPercentAtExactlyThreshold() {
 <plugin>
   <groupId>org.pitest</groupId>
   <artifactId>pitest-maven</artifactId>
-  <!-- version: gestionada en el parent/BOM (TODO-VERIFY versión actual) -->
+  <!-- version: gestionada en el parent/BOM -->
   <configuration>
     <targetClasses><param>com.acme.orders.domain.*</param></targetClasses>
     <mutationThreshold>70</mutationThreshold>

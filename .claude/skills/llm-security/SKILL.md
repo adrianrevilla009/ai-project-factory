@@ -66,5 +66,5 @@ Prohibido: shell, acceso a red libre, lectura de ficheros fuera del workspace.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `llm-observability`, `pii-and-data-classification`, `authz-rbac-abac-rebac`, `injection-families`, `dos-and-rate-limiting`.
-- Fuentes: OWASP Top 10 for LLM Applications y OWASP LLM Prompt Injection Prevention Cheat Sheet, consultados 2026-11-07, TODO-VERIFY.
+- Fuentes: OWASP Top 10 for LLM Applications y OWASP LLM Prompt Injection Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

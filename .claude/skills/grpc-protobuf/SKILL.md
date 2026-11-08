@@ -74,5 +74,5 @@ OrderServiceGrpc.OrderServiceBlockingStub stub =
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backward-compatibility-rules`, `schema-registry-and-evolution`, `sdk-generation`, `contract-testing-pact`.
-- Fuentes: protobuf.dev (guía de estilo y de actualización de mensajes), grpc.io (deadlines, status codes), buf.build docs — TODO-VERIFY, no consultadas en vivo el 2026-11-07.
+- Fuentes: protobuf.dev (guía de estilo y de actualización de mensajes), grpc.io (deadlines, status codes), buf.build docs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

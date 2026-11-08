@@ -67,5 +67,5 @@ OrderDto get(@PathVariable UUID id) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `spring-data-rules`, `testing-slices`.
-- Fuentes: Spring Framework Reference (Web MVC / WebFlux), Spring Boot Reference (hilos virtuales) — TODO-VERIFY URL y versión, consulta 2026-11-07.
+- Fuentes: Spring Framework Reference (Web MVC / WebFlux), Spring Boot Reference (hilos virtuales) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

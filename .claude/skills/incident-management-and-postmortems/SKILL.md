@@ -62,5 +62,5 @@ Postmortem: "Error humano de Juan al desplegar. Acción: tener más cuidado."
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `slo-error-budget-policy`, `alert-routing-and-oncall`, `status-page-and-comms`, `fault-injection-and-game-days`, `failover-and-failback-runbooks`.
-- Fuentes: Google SRE Book/Workbook (postmortem culture e incident response) — TODO-VERIFY URL concreta (no consultada 2026-11-07).
+- Fuentes: Google SRE Book/Workbook (postmortem culture e incident response) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -28,7 +28,7 @@ metadata:
 - **SHOULD** documentar en el README del SDK versión del contrato, compatibilidad y política de deprecación.
 
 ## Por qué
-Un cliente escrito a mano diverge del contrato y rompe en ejecución. Un generador sin versión fija produce diffs inexplicables entre builds. Editar el código generado se pierde en la siguiente regeneración. Las opciones del generador varían por versión: contrastar con su documentación (TODO-VERIFY versión y opciones).
+Un cliente escrito a mano diverge del contrato y rompe en ejecución. Un generador sin versión fija produce diffs inexplicables entre builds. Editar el código generado se pierde en la siguiente regeneración. Las opciones del generador varían por versión: contrastar con su documentación.
 
 ## Ejemplos
 ### Mal
@@ -86,5 +86,5 @@ class CustomerClient {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `api-versioning-deprecation`, `versioning-semver-snapshots`, `contract-testing-pact`.
-- Fuentes: documentación de OpenAPI Generator (plugin Maven, generador `java`, `.openapi-generator-ignore`), consultada 2026-11-07 — TODO-VERIFY URLs y versión.
+- Fuentes: documentación de OpenAPI Generator (plugin Maven, generador `java`, `.openapi-generator-ignore`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

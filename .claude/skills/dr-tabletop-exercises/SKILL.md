@@ -56,5 +56,5 @@ Hallazgo H2: runbook de promoción de Aurora sin responsable de decisión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backup-and-restore`, `application-recovery-controller-and-health-checks`, `chaos-engineering`, `local-parity-matrix`.
-- Fuentes: `catalog/resilience-tiers.yaml`, `catalog/parity-matrix.yaml`; disponibilidad de servicios en ambas regiones TODO-VERIFY.
+- Fuentes: `catalog/resilience-tiers.yaml`, `catalog/parity-matrix.yaml`; disponibilidad de servicios en ambas regiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

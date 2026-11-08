@@ -74,5 +74,5 @@ Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `injection-families`, `file-upload-security`, `cloud-iam-least-privilege`, `owasp-top10-and-api-top10`.
-- Fuentes: OWASP Cheat Sheet Series (Deserialization, XXE Prevention, SSRF Prevention, Input Validation) consultado 2026-11-07, TODO-VERIFY URLs.
+- Fuentes: OWASP Cheat Sheet Series (Deserialization, XXE Prevention, SSRF Prevention, Input Validation) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
