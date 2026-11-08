@@ -66,7 +66,7 @@ resource "aws_s3_bucket_public_access_block" "org_logs" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov: S3 sin versionado/BPA/KMS (checks nativos, comprobar ids) | 1 | pendiente: `policies/iac-checks/` |
+| Checkov: S3 sin versionado/BPA/KMS (checks nativos; los IDs de Checkov usados en estas skills se verificaron con Checkov 3.3.13 el 2026-11-08) | 1 | pendiente: `policies/iac-checks/` |
 | Conftest: bucket de logs sin `object_lock_enabled` | 1 | pendiente: `policies/opa-conftest/` |
 | Plazos de retención | 4 | revisión humana (normativa por confirmar) |
 

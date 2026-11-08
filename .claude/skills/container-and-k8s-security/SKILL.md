@@ -41,11 +41,11 @@ containers:
 ```
 ### Bien
 ```dockerfile
-FROM maven:3-eclipse-temurin-21 AS build   # comprobar tag, fijar por digest
+FROM maven:3-eclipse-temurin-21 AS build   # tag verificado en Docker Hub el 2026-11-08; fijar por digest en el proyecto
 WORKDIR /src
 COPY . .
 RUN mvn -B -q package -DskipTests
-FROM gcr.io/distroless/java21-debian12:nonroot   # comprobar imagen y tag vigentes
+FROM gcr.io/distroless/java21-debian12:nonroot   # imagen y tag verificados en gcr.io el 2026-11-08; fijar por digest
 COPY --from=build /src/target/app.jar /app/app.jar
 USER 65532:65532
 ENTRYPOINT ["java","-jar","/app/app.jar"]

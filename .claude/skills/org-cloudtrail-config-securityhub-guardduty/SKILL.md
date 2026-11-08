@@ -66,7 +66,7 @@ resource "aws_guardduty_organization_admin_account" "this" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov: `aws_cloudtrail` con `is_multi_region_trail`, validación y KMS (checks nativos CKV_AWS_35/36/67, comprobar ids) | 1 | pendiente: configuración en `policies/iac-checks/` |
+| Checkov: `aws_cloudtrail` con `is_multi_region_trail`, validación y KMS (checks nativos CKV_AWS_35/36/67, IDs verificados en Checkov 3.3.13 el 2026-11-08) | 1 | pendiente: configuración en `policies/iac-checks/` |
 | Revisión de excepciones de Security Hub | 4 | revisión humana |
 
 ## Relacionados, fuentes y mantenimiento

@@ -42,7 +42,7 @@ CMD ["java", "-jar", "target/app.jar"]
 ```
 ### Bien
 ```dockerfile
-FROM eclipse-temurin:21-jdk@sha256:<digest-example> AS build   # comprobar tag y digest vigentes
+FROM eclipse-temurin:21-jdk@sha256:<digest-example> AS build   # tag verificado en Docker Hub el 2026-11-08; fijar el digest real en el proyecto
 WORKDIR /workspace
 COPY mvnw pom.xml ./
 COPY .mvn .mvn

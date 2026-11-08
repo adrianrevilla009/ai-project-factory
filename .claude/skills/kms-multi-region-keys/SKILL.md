@@ -65,7 +65,7 @@ resource "aws_kms_replica_key" "orders_data_dr" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov nativo: rotación KMS (CKV_AWS_7, comprobar id) y política sin comodín (CKV_AWS_33) | 1 | pendiente: configuración en `policies/iac-checks/` |
+| Checkov nativo: rotación KMS (CKV_AWS_7, IDs verificados en Checkov 3.3.13 el 2026-11-08) y política sin comodín (CKV_AWS_33) | 1 | pendiente: configuración en `policies/iac-checks/` |
 | Conftest: `multi_region = true` sin comentario de justificación | 1 | pendiente: `policies/opa-conftest/` |
 | Revisión de key policies | 3 | revisión humana |
 
