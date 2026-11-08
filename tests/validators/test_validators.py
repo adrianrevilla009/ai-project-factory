@@ -157,13 +157,13 @@ def test_repo_code_blocks_are_valid():
 
 @pytest.mark.parametrize(
     "lang,code",
-    [("yaml", "a: b: c\n"), ("json", "{\"a\": 1, }"), ("bash", "if then\n")],
+    [("yaml", "a: b: c\n"), ("json", "{\"a\": 1, }"), ("bash", "if then\n"), ("xml", "<a><b></a>"), ("python", "x = (")],
 )
 def test_invalid_blocks_detected(lang, code):
     assert code_blocks.check_block(lang, code)
 
 
-@pytest.mark.parametrize("lang,code", [("yaml", "a: 1\n"), ("json", "{}"), ("bash", "echo hi\n"), ("python", "x = (")])
+@pytest.mark.parametrize("lang,code", [("yaml", "a: 1\n"), ("json", "{}"), ("bash", "echo hi\n"), ("xml", "<a/><b/>"), ("python", "x = 1"), ("java", "class {")])
 def test_valid_or_unchecked_blocks_pass(lang, code):
     assert code_blocks.check_block(lang, code) is None
 

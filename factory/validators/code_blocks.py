@@ -1,7 +1,8 @@
 """Check that fenced code blocks in skills are syntactically valid.
 
-Covers yaml, json, hcl/terraform (via `terraform fmt`, skipped if terraform is absent) and
-bash (`bash -n`). A block opts out when the line before its opening fence contains
+Covers yaml, json, xml, python (compile), hcl/terraform (via `terraform fmt`, skipped if
+terraform is absent) and bash (`bash -n`). Java and TypeScript are not checked: the skills
+use them as illustrative fragments with `...` placeholders. A block opts out when the line before its opening fence contains
 `code-block: ignore`.
 """
 import json
@@ -10,6 +11,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 import yaml
@@ -32,6 +34,16 @@ def check_block(lang: str, code: str) -> str | None:
             json.loads(code)
         except ValueError as e:
             return f"invalid json: {e}"
+    elif lang == "xml":
+        try:
+            ET.fromstring("<r>" + re.sub(r"<\?xml[^>]*\?>", "", code) + "</r>")
+        except ET.ParseError as e:
+            return f"invalid xml: {e}"
+    elif lang == "python":
+        try:
+            compile(code, "<block>", "exec")
+        except SyntaxError as e:
+            return f"invalid python: {e}"
     elif lang in ("hcl", "terraform") and shutil.which("terraform"):
         with tempfile.TemporaryDirectory() as d:
             Path(d, "a.tf").write_text(code)

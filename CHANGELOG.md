@@ -2,6 +2,17 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versionado SemVer.
 
+## [0.3.0] - 2026-11-08
+### Añadido
+- `make policy-test`: 46 reglas Semgrep validadas y probadas con casos positivos y negativos (`tests/semgrep/`).
+- Validador `code_blocks.py`: sintaxis de los bloques yaml, json, xml, python, hcl y bash de las skills.
+### Cambiado
+- README reescritos con contenido concreto; eliminadas las carpetas vacías con README de relleno.
+- Verificación contra fuentes oficiales y herramientas reales (propiedades de Spring Boot 4.x, recursos de Terraform AWS, CRD de Istio, IDs de Checkov, etiquetas de imágenes, URLs).
+### Corregido
+- Límite de tamaño de SCP (10.240), tamaño máximo de SQS (1 MiB), `-Djarmode=tools`, `failureAction` de Kyverno, ESO `v1`, fin de LocalStack Community, nombres con ámbito de subagentes, Istio ambient GA, propiedades renombradas de Spring Boot 4.
+- 3 reglas Semgrep inválidas, 4 imprecisas y 8 ejemplos de código con sintaxis incorrecta.
+
 ## [0.2.0] - 2026-11-07
 ### Añadido
 - 489 skills (31 bloques) con anatomía validada; 25 agentes; 27 comandos; hooks completos con 87+ tests; catálogo (librerías, tier, paridad, radar); policies de ejemplo; índice y estándares generados.
