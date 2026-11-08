@@ -59,7 +59,7 @@ spec:
             methods: ["GET", "POST"]
             paths: ["/orders/*"]
 ```
-Versión de API y semántica de `spec: {}`: comprobar en la documentación de la versión elegida.
+`security.istio.io/v1` es la versión servida y almacenada del CRD (verificado el 2026-11-08); la semántica de `spec: {}` se contrasta con la documentación de la versión elegida.
 
 ## Checklist de revisión
 - [ ] Deny-all en cada namespace de negocio.

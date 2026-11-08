@@ -56,7 +56,7 @@ public ResponseEntity<Void> create(@Valid @RequestBody CreateUserRequest req) {
 ```jsx
 <p>{comment.text}</p>   {/* React escapa por defecto */}
 ```
-Límites de tamaño (propiedad de Spring Boot; comprobar nombre según versión):
+Límites de tamaño (propiedades `spring.servlet.multipart.max-file-size` y `max-request-size`; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08):
 ```yaml
 server:
   tomcat:

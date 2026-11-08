@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** por defecto usar Spring MVC bloqueante (Java + Spring Boot + Maven); justificar WebFlux con un ADR del proyecto.
-- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; comprobar al fijar la versión) antes de plantear reactivo por escalabilidad de I/O.
+- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08) antes de plantear reactivo por escalabilidad de I/O.
 - **MUST** elegir WebFlux solo con necesidad real: streaming/backpressure (SSE, WebSocket), fan-out masivo, o stack reactivo completo.
 - **MUST NOT** mezclar JDBC/JPA bloqueante dentro de un pipeline reactivo; si hay JPA, el servicio es bloqueante.
 - **MUST NOT** llamar a `.block()` en hilos del event loop.

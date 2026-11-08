@@ -149,7 +149,7 @@
 
 ## mesh-observability
 
-- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres a confirmar (comprobar según versión).
+- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres verificados en la referencia de métricas de istio.io el 2026-11-08.
 - **MUST** instalar Kiali (OSS) solo como herramienta interna; acceso autenticado y fuera del gateway público.
 - **MUST** propagar cabeceras de trazado (W3C `traceparent`/B3) desde la aplicación: la malla no puede unir spans si la app no las reenvía.
 - **SHOULD** configurar muestreo de trazas bajo por defecto (p. ej. 1 %) y subirlo temporalmente al depurar.
@@ -280,7 +280,7 @@
 
 ## traffic-management
 
-- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (comprobar defecto vigente).
+- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (en Istio el timeout HTTP de una ruta está desactivado por defecto, según la referencia de `VirtualService`, verificado el 2026-11-08).
 - **MUST** definir en `DestinationRule` `connectionPool` y `outlierDetection` para servicios críticos.
 - **MUST** nombrar `subsets` por etiqueta de versión (`version`), no por IP.
 - **MUST NOT** declarar el mismo host en varios `VirtualService` sin `gateways`/`hosts` coordinados: el resultado es indeterminado.

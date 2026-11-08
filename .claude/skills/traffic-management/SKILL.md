@@ -16,7 +16,7 @@ metadata:
 - No aplica a la lógica de reintentos de negocio (ver `mesh-vs-app-resilience`) ni a la entrada externa (ver `gateway-api`).
 
 ## Reglas
-- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (comprobar defecto vigente).
+- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (en Istio el timeout HTTP de una ruta está desactivado por defecto, según la referencia de `VirtualService`, verificado el 2026-11-08).
 - **MUST** definir en `DestinationRule` `connectionPool` y `outlierDetection` para servicios críticos.
 - **MUST** nombrar `subsets` por etiqueta de versión (`version`), no por IP.
 - **MUST NOT** declarar el mismo host en varios `VirtualService` sin `gateways`/`hosts` coordinados: el resultado es indeterminado.
@@ -63,7 +63,7 @@ spec:
       interval: 10s
       baseEjectionTime: 30s
 ```
-Versión de API y valores numéricos: comprobar y ajustar con pruebas de carga.
+`networking.istio.io/v1` es la versión servida y almacenada (verificado el 2026-11-08); los valores numéricos se ajustan con pruebas de carga.
 
 ## Checklist de revisión
 - [ ] Timeout en cada ruta.

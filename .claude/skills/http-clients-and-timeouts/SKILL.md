@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** registrar cuerpos, cabeceras `Authorization` ni tokens en logs de cliente.
 
 ## Por qué
-Sin timeout, un proveedor lento agota los hilos del servicio llamante y la caída se propaga en cascada. Un timeout explícito convierte un fallo de otro en un error rápido y manejable. Las propiedades genéricas `spring.http.client.*` dependen de la versión de Spring Boot; la configuración por código es estable.
+Sin timeout, un proveedor lento agota los hilos del servicio llamante y la caída se propaga en cascada. Un timeout explícito convierte un fallo de otro en un error rápido y manejable. Las propiedades genéricas `spring.http.clients.*` (p. ej. `spring.http.clients.connect-timeout` y `read-timeout`, presentes en el apéndice de propiedades de Spring Boot 4.x, verificado el 2026-11-08) dependen de la versión de Spring Boot; la configuración por código es estable.
 
 ## Ejemplos
 ### Mal

@@ -16,7 +16,7 @@ metadata:
 - No aplica a trabajo CPU-bound (no aceleran) ni a código que depende de pools para limitar un recurso escaso sin otro límite.
 
 ## Reglas
-- **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (comprobar versión mínima de Boot).
+- **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (Boot 3.2+; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - **MUST NOT** hacer pool de virtual threads: crear uno por tarea (`Executors.newVirtualThreadPerTaskExecutor()`).
 - **MUST** limitar el recurso, no los hilos: usar `Semaphore`, pool de conexiones o bulkhead (ver `backpressure-and-bulkheads`).
 - **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491, comprobar al fijar la versión).

@@ -60,7 +60,7 @@ resource "aws_budgets_budget" "orders_monthly" {
   }
 }
 ```
-Atributos del recurso: validar con `terraform validate`/docs del provider (comprobar al fijar la versión); no se ha aplicado en AWS.
+Atributos del recurso: validar con `terraform validate`/docs del provider (los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08); no se ha aplicado en AWS.
 
 ## Checklist de revisión
 - [ ] Etiquetas obligatorias y de asignación de costes.

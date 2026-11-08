@@ -23,7 +23,7 @@ metadata:
 - **MUST** registrar el error completo en el log con el mismo identificador de correlación (nivel ERROR solo para 5xx).
 - **MUST** mapear errores de validación a 400 con la lista de campos inválidos; conflictos de negocio a 409; no encontrado a 404.
 - **SHOULD** definir excepciones de dominio sin dependencia de Spring y traducirlas en el advice.
-- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (comprobar propiedad en la versión vigente).
+- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 
 ## Por qué
 Un formato de error estándar permite a los clientes tratar fallos de forma uniforme y evita que cada endpoint invente el suyo. Filtrar trazas ayuda a un atacante a conocer librerías y estructura interna.

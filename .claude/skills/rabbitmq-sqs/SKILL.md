@@ -61,7 +61,7 @@ resource "aws_sqs_queue" "invoices" {
   })
 }
 ```
-Nombres de atributos Terraform a contrastar con el provider (comprobar al fijar la versión).
+Nombres de atributos Terraform: los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08.
 
 ## Checklist de revisión
 - [ ] Justificada cola frente a Kafka.

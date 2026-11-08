@@ -39,7 +39,7 @@ Los logs en texto libre obligan a regex frágiles; el JSON permite consultas y p
 ```
 ### Bien
 ```yaml
-# application.yml (propiedad sujeta a la versión de Spring Boot: comprobar al fijar la versión)
+# application.yml (`logging.structured.format.console`; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08)
 logging:
   structured:
     format:

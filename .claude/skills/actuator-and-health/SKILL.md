@@ -83,5 +83,5 @@ Local: las sondas se pueden probar con Docker Compose o kind; no se reproduce ni
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `graceful-shutdown-lifecycle`, `resilience`, `configuration-properties`, `startup-and-native`.
-- Fuentes oficiales: Spring Boot Reference "Actuator" y "Kubernetes Probes", consultadas 2026-11-07; comprobar nombres de propiedades en la versión vigente.
+- Fuentes oficiales: Spring Boot Reference "Actuator" y "Kubernetes Probes", consultadas 2026-11-07; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08; las propiedades citadas existen.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

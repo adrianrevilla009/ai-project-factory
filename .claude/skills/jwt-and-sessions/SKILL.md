@@ -48,7 +48,7 @@ decoder.setJwtValidator(new DelegatingOAuth2TokenValidator<>(
         JwtValidators.createDefaultWithIssuer(issuer), audienceValidator));
 ```
 ```yaml
-# Cookie de sesión (propiedades Spring Boot; comprobar según versión)
+# Cookie de sesión (propiedades `server.servlet.session.cookie.*`; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08)
 server:
   servlet:
     session:

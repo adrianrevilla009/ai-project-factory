@@ -76,5 +76,5 @@ UploadResponse upload(@RequestParam MultipartFile file) throws IOException {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `authz-rbac-abac-rebac`.
-- Fuentes: OWASP File Upload Cheat Sheet, consultado 2026-11-07; propiedades `spring.servlet.multipart.*` comprobar en la versión de Spring Boot del proyecto.
+- Fuentes: OWASP File Upload Cheat Sheet, consultado 2026-11-07; propiedades `spring.servlet.multipart.*` (verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -50,7 +50,7 @@ resource "aws_route53_record" "api_primary" {
   health_check_id = aws_route53_health_check.primary_switch.id
 }
 ```
-Argumentos del recurso `aws_route53_health_check` con `RECOVERY_CONTROL`: comprobar contra el proveedor Terraform.
+Argumentos del recurso `aws_route53_health_check` con `RECOVERY_CONTROL`: los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08.
 
 ## Checklist de revisión
 - [ ] Conmutación regional por routing control, no por edición de DNS.

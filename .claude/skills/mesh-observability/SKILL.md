@@ -16,7 +16,7 @@ metadata:
 - No sustituye la observabilidad de aplicación (logs estructurados, métricas de negocio, trazas con contexto): la complementa.
 
 ## Reglas
-- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres a confirmar (comprobar según versión).
+- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres verificados en la referencia de métricas de istio.io el 2026-11-08.
 - **MUST** instalar Kiali (OSS) solo como herramienta interna; acceso autenticado y fuera del gateway público.
 - **MUST** propagar cabeceras de trazado (W3C `traceparent`/B3) desde la aplicación: la malla no puede unir spans si la app no las reenvía.
 - **SHOULD** configurar muestreo de trazas bajo por defecto (p. ej. 1 %) y subirlo temporalmente al depurar.
@@ -51,7 +51,7 @@ spec:
       filter:
         expression: "response.code >= 400"
 ```
-Campos de `Telemetry` y proveedores: comprobar en la versión elegida.
+`telemetry.istio.io/v1` se sirve en el CRD de Istio (verificado el 2026-11-08); los proveedores concretos dependen de la configuración de la malla.
 
 ## Checklist de revisión
 - [ ] Prometheus recoge métricas de Envoy/Istio.

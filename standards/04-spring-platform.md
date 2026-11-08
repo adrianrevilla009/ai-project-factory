@@ -66,7 +66,7 @@
 - **MUST** registrar el error completo en el log con el mismo identificador de correlación (nivel ERROR solo para 5xx).
 - **MUST** mapear errores de validación a 400 con la lista de campos inválidos; conflictos de negocio a 409; no encontrado a 404.
 - **SHOULD** definir excepciones de dominio sin dependencia de Spring y traducirlas en el advice.
-- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (comprobar propiedad en la versión vigente).
+- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 
 ## file-upload-and-streaming
 
@@ -127,7 +127,7 @@
 ## reactive-vs-blocking
 
 - **MUST** por defecto usar Spring MVC bloqueante (Java + Spring Boot + Maven); justificar WebFlux con un ADR del proyecto.
-- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; comprobar al fijar la versión) antes de plantear reactivo por escalabilidad de I/O.
+- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08) antes de plantear reactivo por escalabilidad de I/O.
 - **MUST** elegir WebFlux solo con necesidad real: streaming/backpressure (SSE, WebSocket), fan-out masivo, o stack reactivo completo.
 - **MUST NOT** mezclar JDBC/JPA bloqueante dentro de un pipeline reactivo; si hay JPA, el servicio es bloqueante.
 - **MUST NOT** llamar a `.block()` en hilos del event loop.
