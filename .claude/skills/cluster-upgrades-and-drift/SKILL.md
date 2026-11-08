@@ -16,7 +16,7 @@ metadata:
 - No aplica a upgrades de Istio (ver `istio-upgrades-and-ops`) ni al despliegue de aplicaciones.
 
 ## Reglas
-- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (comprobar ventanas de soporte de EKS).
+- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (EKS ofrece 14 meses de soporte estándar más 12 de soporte extendido, 26 en total, y el soporte extendido se cobra aparte; verificado el 2026-11-08 en la guía de EKS; las fechas concretas salen del calendario oficial).
 - **MUST** actualizar de una versión menor cada vez, en este orden: plano de control, addons, nodos; probar antes en dev y staging.
 - **MUST** revisar APIs deprecadas/eliminadas antes de cada upgrade con una herramienta de detección (p. ej. pluto o kubent, OSS; comprobar al fijar la versión) en CI.
 - **MUST** tener PDB y topology spread (ver `workload-baseline`) para que el drain de nodos no corte servicio.

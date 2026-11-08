@@ -71,7 +71,7 @@ maxmemory-policy allkeys-lru
 | Revisión de TTL, timeouts y degradación | 3 | agente `code-reviewer` |
 | Regla Semgrep: `opsForValue().set(` sin `Duration` | pendiente | `policies/semgrep/` (no existe aún) |
 
-ElastiCache en AWS: preparado para AWS, no verificado en real; en local se usa Redis/Valkey OSS en contenedor y no se reproducen failover ni cifrado gestionado. Licencia: comprobar la del motor elegido (D16) — comprobar al fijar la versión.
+ElastiCache en AWS: preparado para AWS, no verificado en real; en local se usa Redis/Valkey OSS en contenedor y no se reproducen failover ni cifrado gestionado. Licencia: Redis 8 se publica con AGPLv3 además de RSALv2 y SSPLv1 (desde mayo de 2025; verificado el 2026-11-08); Valkey es el fork con licencia permisiva; elegir por ADR (D16).
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `caching`, `resilience`, `data-sync-pitfalls`, `read-replicas-and-routing`, `multi-tenancy`.

@@ -4,7 +4,7 @@ reviewed: "2026-11-07"
 entries:
   - { name: "Java LTS + Spring Boot", ring: adopt, ref: "ADR-0001" }
   - { name: "Maven multi-módulo + BOM", ring: adopt, ref: "ADR-0002" }
-  - { name: Terraform, ring: adopt, ref: "ADR-0008", note: "comprobar licencia vigente; OpenTofu como alternativa a evaluar" }
+  - { name: Terraform, ring: adopt, ref: "ADR-0008", note: "BUSL 1.1 (verificado 2026-11-08); OpenTofu (MPL 2.0) como alternativa a evaluar" }
   - { name: Istio, ring: adopt, ref: "ADR-0009" }
   - { name: "Vault OSS", ring: trial, ref: "ADR-0010/0031", note: "licencia BUSL; OpenBao en assess" }
   - { name: OpenBao, ring: assess }

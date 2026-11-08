@@ -21,8 +21,8 @@ metadata:
 - **MUST** mantener una sola vía de escritura por agregado; no mezclar JPA y SQL directo sobre la misma tabla dentro de una transacción sin hacer `flush()` antes y `clear()` después.
 - **MUST** que JDBC/jOOQ usen el mismo `DataSource` y transacción de Spring (`DataSourceTransactionManager`/`JpaTransactionManager` con el mismo `DataSource`) para participar de `@Transactional`.
 - **MUST NOT** devolver `ResultSet` ni tipos de jOOQ (`Record`) fuera de la capa de persistencia; mapear a DTOs/records.
-- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (comprobar disponibilidad de `JdbcClient` según versión de Spring).
-- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar que el dialecto necesario está en la edición Open Source (comprobar licencia).
+- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (`JdbcClient` existe desde Spring Framework 6.1; verificado el 2026-11-08).
+- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar en la página de licencias de jOOQ que el dialecto necesario está en la edición Open Source.
 - **SHOULD** usar `batchUpdate` para escrituras masivas (ver `batching-and-bulk-ops`).
 
 ## Por qué

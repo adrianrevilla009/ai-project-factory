@@ -26,7 +26,7 @@ metadata:
 - **MUST** programar snapshots Raft (`vault operator raft snapshot save`) a un bucket de la misma región con cifrado, y ensayar la restauración.
 - **SHOULD** usar Raft Autopilot para limpieza de nodos muertos y actualizaciones controladas.
 - **SHOULD** fijar `topologySpreadConstraints` por zona y `PodDisruptionBudget` `maxUnavailable: 1`.
-- **SHOULD** registrar la licencia: Vault es BUSL, OpenBao es la alternativa abierta (ADR-0031); comprobar licencia de la versión fijada con revisión legal.
+- **SHOULD** registrar la licencia: Vault es BUSL, OpenBao es la alternativa abierta (ADR-0031); Vault se distribuye bajo BUSL 1.1 y el licenciante es IBM desde el 2025-02-27; OpenBao es un fork bajo MPL 2.0 (verificado el 2026-11-08); la revisión legal valida el uso previsto.
 
 ## Por qué
 Raft necesita mayoría viva; con 3 AZ se tolera una caída de zona. Sin auto-unseal, cada reinicio de pod deja el clúster sellado hasta intervención humana. Los clústeres por región fallan de forma independiente, a costa de no compartir estado: lo que deba cruzar regiones se resuelve fuera de Vault (ver `transit-encryption`, `envelope-encryption-and-kms`).

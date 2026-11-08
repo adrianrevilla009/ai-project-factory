@@ -37,7 +37,7 @@ velero backup create manual-backup   # una vez, sin retencion ni prueba de resto
 ```
 ### Bien
 ```yaml
-# comprobar campos segun version de Velero instalada
+# Velero (apiVersion velero.io/v1, verificado 2026-11-08)
 apiVersion: velero.io/v1
 kind: Schedule
 metadata: { name: daily-apps, namespace: velero }

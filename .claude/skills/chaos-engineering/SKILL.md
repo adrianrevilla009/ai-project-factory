@@ -50,7 +50,7 @@ chaos:
       latencyRangeEnd: 1500
 ```
 ```yaml
-# Chaos Mesh (comprobar apiVersion/campos): matar un pod del servicio en el namespace de pruebas
+# Chaos Mesh (apiVersion chaos-mesh.org/v1alpha1, verificado 2026-11-08): matar un pod del servicio en el namespace de pruebas
 apiVersion: chaos-mesh.org/v1alpha1
 kind: PodChaos
 metadata: { name: orders-pod-kill, namespace: orders-test }

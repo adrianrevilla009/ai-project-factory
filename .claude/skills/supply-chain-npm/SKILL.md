@@ -22,7 +22,7 @@ metadata:
 - **MUST** revisar cada dependencia nueva: mantenimiento, licencia, tamaño, dependencias transitivas, nombre exacto (typosquatting) y si hay alternativa nativa.
 - **MUST** ejecutar auditoría (`pnpm audit`) y SCA en CI con SLA de corrección (`vulnerability-sla-and-incident-response`); **MUST** generar SBOM CycloneDX del build (`sbom-generation`).
 - **MUST NOT** usar rangos abiertos (`*`, `latest`) ni dependencias desde URL/git sin commit fijo; **MUST NOT** hacer `curl | sh` en el build.
-- **SHOULD** aplicar un periodo de espera para versiones recién publicadas (pnpm `minimumReleaseAge`; comprobar disponibilidad) y actualizar con Renovate/Dependabot según `renovate-dependabot-policy`.
+- **SHOULD** aplicar un periodo de espera para versiones recién publicadas (pnpm `minimumReleaseAge`, disponible desde pnpm 10.16 y activado por defecto con 1 día en pnpm 11; verificado el 2026-11-08 en pnpm.io) y actualizar con Renovate/Dependabot según `renovate-dependabot-policy`.
 - **SHOULD** verificar firmas/procedencia cuando el registro las ofrezca (`npm audit signatures`; comprobar alcance con pnpm).
 - **SHOULD** separar `dependencies` de `devDependencies` y mantener el árbol pequeño.
 

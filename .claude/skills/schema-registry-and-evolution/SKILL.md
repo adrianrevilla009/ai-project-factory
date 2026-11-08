@@ -24,7 +24,7 @@ metadata:
 - **MUST** desactivar el registro automático de esquemas en producción (`auto.register.schemas=false`); los esquemas se publican desde CI.
 - **SHOULD** una estrategia de subject coherente (`TopicNameStrategy` por defecto) y un solo tipo de evento por topic salvo decisión explícita.
 - **SHOULD** romper con un topic nuevo versionado (`orders.v2`) cuando el cambio es incompatible, con doble publicación temporal.
-- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); la licencia de Confluent Schema Registry no es OSS permisiva (D16): comprobar licencia vigente antes de adoptarlo.
+- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); Confluent Schema Registry se publica bajo la Confluent Community License, salvo las librerías cliente (Apache 2.0), y no es una licencia de código abierto permisiva (D16; verificado el 2026-11-08).
 
 ## Por qué
 Productores y consumidores se despliegan en momentos distintos: el esquema es el contrato. Una compatibilidad no transitiva permite romper consumidores que aún leen versiones antiguas. El registro automático desde la aplicación deja que un despliegue erróneo cambie el contrato sin revisión. Modos de compatibilidad y propiedades deben contrastarse con la documentación del registry elegido (comprobar al fijar la versión).

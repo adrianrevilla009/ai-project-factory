@@ -13,4 +13,4 @@ Terraform con módulos y entornos por cuenta.
 Estándar de facto, ecosistema de escaneo (Checkov/Trivy/OPA) y validación estática.
 
 ## Consecuencias
-Versiones de proveedores fijadas; comprobar versión de Terraform y licencia vigente.
+Versiones de proveedores fijadas; Terraform se publica bajo BUSL 1.1 (licenciante: IBM desde el 2025-02-27; verificado el 2026-11-08); no es de pago para este uso, pero un revisor legal debe confirmarlo. OpenTofu (MPL 2.0) queda como alternativa.
