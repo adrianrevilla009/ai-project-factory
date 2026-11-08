@@ -1,3 +1,5 @@
 # standards
 
-Normativa interna **legible por personas**, un fichero por bloque (`NN-bloque.md`), **generada** desde la sección *Reglas* de cada skill con `python3 factory/tools/build_index.py`. La versión ejecutable vive en `policies/` y `.claude/hooks/`. Índice general: [`docs/skills-index.md`](../docs/skills-index.md).
+Una página por bloque (`NN-bloque.md`) con las reglas **MUST / SHOULD / MUST NOT** de todas sus skills juntas, para leerlas sin abrir cada `SKILL.md`.
+
+Están **generadas** por `make index` a partir de las skills; la fuente de verdad es cada `SKILL.md`. No las edites: `make validate` falla si están desactualizadas.

@@ -1,6 +1,8 @@
 # ADRs de la fábrica
 
-ADR-0001…0027 = decisiones D1–D27 del brief. 0028+ = decisiones adicionales y abiertas (estado *propuesto*).
+ADR-0001…0027 son las decisiones D1–D27 del brief. 0028–0031 y 0038 son decisiones tomadas durante la construcción de la fábrica. 0032–0037 eran decisiones abiertas del brief: se aceptaron con la opción por defecto indicada en cada ADR, sin revisión humana todavía; cámbialas si no te convencen.
+
+Un ADR nuevo copia la estructura de los existentes (Estado, Fecha, Contexto, Opciones, Decisión, Consecuencias) y se añade a esta tabla. `make validate` comprueba que existan 0001–0027.
 
 | ADR | Título | Estado |
 |---|---|---|
