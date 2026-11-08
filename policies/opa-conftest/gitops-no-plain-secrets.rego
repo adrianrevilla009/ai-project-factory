@@ -1,5 +1,5 @@
 # Conftest policy: no plain Kubernetes Secret with data in a GitOps repo.
-# Status: written, NOT executed locally (opa/conftest not installed). TODO-VERIFY.
+# Status: written, NOT executed locally (opa/conftest not installed). Pin and test the OPA/Conftest version in the generated project.
 package gitops_no_plain_secrets
 
 import rego.v1

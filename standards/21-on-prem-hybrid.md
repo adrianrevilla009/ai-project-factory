@@ -34,6 +34,6 @@
 - **MUST** usar un driver CSI con `StorageClass` explícita; declarar `reclaimPolicy` y `volumeBindingMode: WaitForFirstConsumer` para respetar topología.
 - **MUST** documentar el modelo de replicación y durabilidad del almacenamiento elegido (p. ej. Ceph/Rook, Longhorn) y probar la pérdida de un nodo.
 - **MUST** respaldar volúmenes con VolumeSnapshots y copia externa; la réplica no es backup.
-- **MUST** una solución de LoadBalancer bare-metal (p. ej. MetalLB) con rangos de IP reservados y documentados. TODO-VERIFY modo (L2/BGP) según la red.
+- **MUST** una solución de LoadBalancer bare-metal (p. ej. MetalLB) con rangos de IP reservados y documentados. Comprobar modo (L2/BGP) según la red.
 - **SHOULD** usar Gateway API (`gateway-api`) para entrada de tráfico.
 - **MUST NOT** usar `hostPath` para datos de aplicación.

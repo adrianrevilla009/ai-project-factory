@@ -44,7 +44,7 @@ Los tests de contrato solo previenen roturas si se consulta la matriz de compati
     pact-broker record-deployment --pacticipant orders
     --version "$GITHUB_SHA" --environment staging
 ```
-Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); `--retry-*` TODO-VERIFY. Variables `PACT_BROKER_BASE_URL`/token vía secret del entorno, nunca en claro.
+Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); `--retry-*` comprobar al fijar la versión. Variables `PACT_BROKER_BASE_URL`/token vía secret del entorno, nunca en claro.
 
 ## Checklist de revisión
 - [ ] Pacts publicados con versión = commit.

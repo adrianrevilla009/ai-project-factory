@@ -7,7 +7,7 @@
 - **MUST** usar versión mayor en la ruta para APIs REST (`/v1/orders`); minor/patch solo en `info.version` del contrato.
 - **MUST** preferir evolución compatible dentro de la misma versión mayor; una versión nueva solo para cambios rompientes inevitables.
 - **MUST** mantener como máximo dos versiones mayores vivas por API.
-- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses, TODO-VERIFY con negocio) y marcar `deprecated: true` en OpenAPI.
+- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses, comprobar con negocio) y marcar `deprecated: true` en OpenAPI.
 - **MUST** emitir cabeceras `Deprecation` (RFC 9745) y `Sunset` (RFC 8594) en respuestas de recursos deprecados, con enlace `Link: rel="deprecation"` a la guía de migración.
 - **MUST** medir el uso por versión y consumidor (métrica con etiqueta `api_version`) antes de retirar.
 - **MUST NOT** retirar una versión con tráfico de consumidores conocidos sin acuerdo explícito.
@@ -28,7 +28,7 @@
 
 - **MUST** tratar como compatible: añadir campo opcional en respuesta, añadir endpoint, añadir valor opcional de petición, añadir RPC o campo Protobuf nuevo (número nuevo).
 - **MUST** tratar como rompiente: quitar/renombrar campo o ruta, cambiar tipo o formato, volver obligatorio un campo, estrechar un enum de petición, cambiar semántica, cambiar código de estado de éxito.
-- **MUST** exigir a los consumidores tolerar campos desconocidos (tolerant reader): `FAIL_ON_UNKNOWN_PROPERTIES=false` en Jackson (`spring.jackson.deserialization.fail-on-unknown-properties=false`, TODO-VERIFY).
+- **MUST** exigir a los consumidores tolerar campos desconocidos (tolerant reader): `FAIL_ON_UNKNOWN_PROPERTIES=false` en Jackson (`spring.jackson.deserialization.fail-on-unknown-properties=false`, comprobar al fijar la versión).
 - **MUST** ampliar un enum de respuesta solo si el contrato documenta que los clientes deben manejar valores desconocidos.
 - **MUST** migrar con expand/contract: añadir lo nuevo, migrar consumidores, retirar lo viejo en una versión posterior (`api-versioning-deprecation`).
 - **MUST** ejecutar un diff automático del contrato contra la rama principal en CI y bloquear rompientes sin versión mayor nueva.
@@ -114,7 +114,7 @@
 - **MUST** definir TTL (p. ej. 24 h, a confirmar con negocio) y limpieza programada.
 - **MUST NOT** derivar la clave en servidor del contenido para operaciones que legítimamente pueden repetirse.
 - **SHOULD** aplicar el mismo patrón en consumidores: tabla de `processed_message_id` (ver `delivery-semantics`).
-- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (TODO-VERIFY estado actual).
+- **SHOULD** alinear la cabecera con el borrador IETF `Idempotency-Key` (comprobar estado actual).
 
 ## kafka-producers-consumers
 
@@ -162,7 +162,7 @@
 - **MUST** consumidores idempotentes: SQS estándar es at-least-once y sin orden estricto; RabbitMQ reentrega tras desconexión.
 - **SHOULD** SQS FIFO solo si se necesita orden/deduplicación; usar `MessageGroupId` con cardinalidad suficiente.
 - **SHOULD** cifrado en reposo (SSE) y política de cola con mínimo privilegio en SQS.
-- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Límite de tamaño de SQS: TODO-VERIFY valor vigente.
+- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Límite de tamaño de SQS: comprobar valor vigente.
 
 ## rate-limiting-quotas
 
@@ -171,7 +171,7 @@
 - **MUST** distinguir tasa (req/s, ráfaga) de cuota (volumen por día/mes) y documentar ambas en el contrato y en la guía del consumidor.
 - **MUST** aplicar el límite de forma compartida entre réplicas (contador en gateway o almacén compartido), no en memoria por instancia.
 - **MUST** definir el comportamiento si el almacén del contador falla (fail-open o fail-closed) y registrarlo como decisión.
-- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (TODO-VERIFY), documentar el que se use.
+- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (comprobar al fijar la versión), documentar el que se use.
 - **SHOULD** hacer que los clientes propios reintenten con backoff exponencial + jitter y respeten `Retry-After`.
 - **MUST NOT** devolver 503 ni 403 para un límite de tasa.
 
@@ -197,7 +197,7 @@
 - **MUST** desactivar el registro automático de esquemas en producción (`auto.register.schemas=false`); los esquemas se publican desde CI.
 - **SHOULD** una estrategia de subject coherente (`TopicNameStrategy` por defecto) y un solo tipo de evento por topic salvo decisión explícita.
 - **SHOULD** romper con un topic nuevo versionado (`orders.v2`) cuando el cambio es incompatible, con doble publicación temporal.
-- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); la licencia de Confluent Schema Registry no es OSS permisiva (D16): TODO-VERIFY licencia vigente antes de adoptarlo.
+- **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); la licencia de Confluent Schema Registry no es OSS permisiva (D16): comprobar licencia vigente antes de adoptarlo.
 
 ## sdk-generation
 

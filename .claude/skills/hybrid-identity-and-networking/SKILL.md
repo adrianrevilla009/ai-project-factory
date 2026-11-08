@@ -52,5 +52,5 @@ allow tcp/443 from 10.10.5.0/24 to 10.20.8.0/24
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `zero-trust`, `authn-oidc-oauth2`, `identity-center-sso`, `kubernetes-on-prem`.
-- Fuentes: TODO-VERIFY documentación oficial de Keycloak (https://www.keycloak.org/documentation) y del proveedor de VPN.
+- Fuentes: comprobar documentación oficial de Keycloak (https://www.keycloak.org/documentation) y del proveedor de VPN.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

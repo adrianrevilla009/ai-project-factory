@@ -41,7 +41,7 @@ S3Client s3 = S3Client.builder().endpointOverride(URI.create("http://localhost:4
 class DocumentStorageIT {
     @Container
     static LocalStackContainer localstack =
-        new LocalStackContainer(DockerImageName.parse("localstack/localstack:<tag-fijo>")) // TODO-VERIFY tag
+        new LocalStackContainer(DockerImageName.parse("localstack/localstack:<tag-fijo>")) // comprobar tag
             .withServices(LocalStackContainer.Service.S3);
 
     S3Client s3 = S3Client.builder()
@@ -71,5 +71,5 @@ Limitaciones documentadas: sin IAM real, sin KMS real, sin VPC; verificación pe
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `integration-testing-testcontainers`, `cloud-iam-least-privilege`, `verify-before-asserting`.
-- Fuentes: documentación de LocalStack y AWS SDK for Java v2 — TODO-VERIFY URL, versión y cobertura de servicios en la edición comunitaria.
+- Fuentes: documentación de LocalStack y AWS SDK for Java v2 — comprobar URL, versión y cobertura de servicios en la edición comunitaria.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

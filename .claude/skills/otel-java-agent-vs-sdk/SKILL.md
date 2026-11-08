@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** activar instrumentaciones que no se usan (reduce overhead y superficie).
 
 ## Por qué
-El agente da cobertura amplia con coste mínimo, pero oculta qué se instrumenta y añade overhead de arranque; Micrometer Tracing encaja si el equipo ya vive en la Observation API de Spring y quiere control en código. Mezclarlos es el error habitual. El detalle de versiones y compatibilidad con Spring Boot debe verificarse en la documentación oficial (TODO-VERIFY).
+El agente da cobertura amplia con coste mínimo, pero oculta qué se instrumenta y añade overhead de arranque; Micrometer Tracing encaja si el equipo ya vive en la Observation API de Spring y quiere control en código. Mezclarlos es el error habitual. El detalle de versiones y compatibilidad con Spring Boot debe verificarse en la documentación oficial (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal
@@ -37,7 +37,7 @@ ENTRYPOINT ["java","-javaagent:/agent.jar","-jar","app.jar"]
 ```
 ### Bien
 ```dockerfile
-# Versión y checksum fijados por ARG (valores de ejemplo: TODO-VERIFY)
+# Versión y checksum fijados por ARG (valores de ejemplo: comprobar al fijar la versión)
 ARG OTEL_AGENT_VERSION=changeme
 ARG OTEL_AGENT_SHA256=changeme
 ADD https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v${OTEL_AGENT_VERSION}/opentelemetry-javaagent.jar /opt/otel/agent.jar

@@ -56,7 +56,7 @@ void upcastsLegacyOrderPlacedV1() throws Exception {
     assertThat(upcaster.upcast(v1)).isEqualTo(new OrderPlacedV2("o1", "c1", 100L, "EUR"));
 }
 ```
-`AggregateFixture` es un helper del proyecto generado (no una librería concreta); si se usa Axon u otra, ver su documentación (TODO-VERIFY).
+`AggregateFixture` es un helper del proyecto generado (no una librería concreta); si se usa Axon u otra, ver su documentación (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Tests given-when-then sin base de datos.
@@ -74,5 +74,5 @@ void upcastsLegacyOrderPlacedV1() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `event-versioning-and-upcasting`, `optimistic-locking`, `property-based-testing`, `db-testing`.
-- Fuentes: sin fuente oficial única; patrón given-when-then estándar. TODO-VERIFY si se adopta un framework concreto.
+- Fuentes: sin fuente oficial única; patrón given-when-then estándar. Comprobar si se adopta un framework concreto.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

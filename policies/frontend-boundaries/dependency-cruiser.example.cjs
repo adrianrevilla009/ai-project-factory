@@ -1,6 +1,6 @@
 /* Example dependency-cruiser config for a generated React project (layout: src/app, src/features, src/shared).
  * Copy to the project root as .dependency-cruiser.cjs. Run: npx depcruise src --config .dependency-cruiser.cjs
- * Rule syntax: https://github.com/sverweij/dependency-cruiser/blob/main/doc/rules-reference.md (TODO-VERIFY version) */
+ * Rule syntax: https://github.com/sverweij/dependency-cruiser/blob/main/doc/rules-reference.md (check the version before use) */
 module.exports = {
   forbidden: [
     {

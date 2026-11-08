@@ -1,6 +1,6 @@
 ---
 name: verify-before-asserting
-description: Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar TODO-VERIFY.
+description: Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar comprobar al fijar la versión.
 metadata:
   block: "31-agentic-engineering"
   tier: T1

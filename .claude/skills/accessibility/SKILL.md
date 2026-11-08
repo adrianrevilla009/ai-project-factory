@@ -43,7 +43,7 @@ La accesibilidad barata es la que nace en el HTML semántico; añadirla al final
 <input id="email" type="email" aria-describedby="email-err" aria-invalid={!!error} />
 {error && <p id="email-err" role="alert">{error}</p>}
 ```
-### Prueba axe en Vitest (TODO-VERIFY paquete vitest-axe/jest-axe y versión)
+### Prueba axe en Vitest (comprobar paquete vitest-axe/jest-axe y versión)
 ```tsx
 import { axe } from "vitest-axe";
 it("form has no a11y violations", async () => {

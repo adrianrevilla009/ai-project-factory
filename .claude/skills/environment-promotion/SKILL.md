@@ -60,5 +60,5 @@ rollback: git revert <sha-del-PR-de-promoción>   # Argo CD sincroniza el estado
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `repo-strategy`, `argo-rollouts`, `promotion-between-environments`, `change-and-release-management`, `drift-and-self-heal-policy`.
-- Fuentes: ADR-0021 · https://argo-cd.readthedocs.io/en/stable/ (2026-11-07). Herramientas de promoción automática (p. ej. Kargo): TODO-VERIFY, no adoptadas.
+- Fuentes: ADR-0021 · https://argo-cd.readthedocs.io/en/stable/ (2026-11-07). Herramientas de promoción automática (p. ej. Kargo): comprobar al fijar la versión, no adoptadas.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

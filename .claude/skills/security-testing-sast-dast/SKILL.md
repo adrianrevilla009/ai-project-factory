@@ -37,7 +37,7 @@ Cada técnica cubre una clase distinta: SAST ve patrones en el código, DAST ve 
 ```
 ### Bien
 ```yaml
-# Fragmento de CI (sintaxis de ejemplo; TODO-VERIFY flags contra la versión instalada)
+# Fragmento de CI (sintaxis de ejemplo; comprobar flags contra la versión instalada)
 sast:
   script:
     - semgrep scan --config policies/semgrep/ --sarif --output semgrep.sarif --error

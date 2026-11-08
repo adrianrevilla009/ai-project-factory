@@ -50,7 +50,7 @@ spec:
   resolution: DNS
   ports: [{ number: 443, name: https, protocol: TLS }]
 ```
-Ubicación exacta de `meshConfig` según método de instalación: TODO-VERIFY.
+Ubicación exacta de `meshConfig` según método de instalación: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Ingress en namespace propio con PDB y HPA.

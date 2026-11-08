@@ -1,5 +1,5 @@
 // Example ESLint flat-config fragment (typescript-eslint, type-aware) for a generated React project.
-// Skill: typescript-strict-rules. Not run in the factory. TODO-VERIFY: typescript-eslint version and rule names.
+// Skill: typescript-strict-rules. Not run in the factory. Check the typescript-eslint version and rule names before use.
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(

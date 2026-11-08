@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** partir de GitOps + Vault y documentar por escrito en un ADR del proyecto por qué no basta antes de añadir Config Server.
 - **MUST** justificar con al menos uno de: cambio de configuración en caliente sin redespliegue (con `/actuator/refresh` o bus), muchos servicios no Kubernetes, o equipos que ya operan Config Server.
-- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault (TODO-VERIFY backend y propiedades en la versión de Spring Cloud fijada).
+- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault (comprobar backend y propiedades en la versión de Spring Cloud fijada).
 - **MUST** proteger el servidor: autenticación entre servicios (mTLS o OAuth2), sin endpoints abiertos, y cifrado de transporte.
 - **MUST** tratarlo como componente de plataforma crítico: al menos 2 réplicas, healthchecks y alerta, porque su caída bloquea arranques.
 - **MUST** configurar los clientes con fallo rápido y reintentos acotados (`spring.config.import` con `configserver:`), y valores por defecto seguros.
@@ -45,7 +45,7 @@ spring.cloud.config.server.git.password: changeme-real-token
 ```
 ### Bien
 ```yaml
-# Cliente (propiedades: TODO-VERIFY en la versión de Spring Cloud fijada)
+# Cliente (propiedades: comprobar en la versión de Spring Cloud fijada)
 spring:
   config:
     import: "configserver:https://config.example.internal"

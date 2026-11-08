@@ -22,7 +22,7 @@ metadata:
 - **MUST** verificar la firma del webhook sobre el cuerpo crudo, con comparación en tiempo constante, y rechazar marcas de tiempo antiguas.
 - **MUST** deduplicar webhooks por `event.id` (los PSP reintentan y entregan desordenado) y procesarlos de forma idempotente.
 - **MUST** modelar el pago como máquina de estados explícita (`PENDING -> AUTHORIZED -> CAPTURED -> REFUNDED/FAILED`) con transiciones validadas.
-- **MUST NOT** almacenar PAN, CVV ni datos de tarjeta; usar tokenización/hosted fields del PSP para quedar fuera del alcance PCI en lo posible (TODO-VERIFY alcance PCI DSS con la fuente oficial).
+- **MUST NOT** almacenar PAN, CVV ni datos de tarjeta; usar tokenización/hosted fields del PSP para quedar fuera del alcance PCI en lo posible (comprobar alcance PCI DSS con la fuente oficial).
 - **MUST NOT** hacer dual-write entre la BD y el PSP sin outbox o reconciliación (ver `outbox-and-cdc`).
 - **SHOULD** ejecutar una conciliación periódica (job) entre registros propios y el informe del PSP.
 - **SHOULD** emitir facturas como documentos inmutables numerados; las correcciones son notas de abono, no ediciones.
@@ -75,5 +75,5 @@ El nombre de cabecera `Stripe-Signature` es de Stripe; adaptarlo al PSP elegido.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `time-and-money`, `idempotency-keys`, `webhooks`, `sagas-and-process-managers`, `outbox-and-cdc`, `pii-and-data-classification`.
-- Fuentes: Stripe, Idempotent requests, https://docs.stripe.com/api/idempotent_requests y Webhooks, https://docs.stripe.com/webhooks (verificado 2026-11-07). PCI DSS y facturación electrónica: TODO-VERIFY con fuente oficial.
+- Fuentes: Stripe, Idempotent requests, https://docs.stripe.com/api/idempotent_requests y Webhooks, https://docs.stripe.com/webhooks (verificado 2026-11-07). PCI DSS y facturación electrónica: comprobar con fuente oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -21,7 +21,7 @@ metadata:
 - **MUST** distinguir tasa (req/s, ráfaga) de cuota (volumen por día/mes) y documentar ambas en el contrato y en la guía del consumidor.
 - **MUST** aplicar el límite de forma compartida entre réplicas (contador en gateway o almacén compartido), no en memoria por instancia.
 - **MUST** definir el comportamiento si el almacén del contador falla (fail-open o fail-closed) y registrarlo como decisión.
-- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (TODO-VERIFY), documentar el que se use.
+- **SHOULD** exponer cabeceras informativas de límite restante; el formato `RateLimit-*` es un borrador IETF (comprobar al fijar la versión), documentar el que se use.
 - **SHOULD** hacer que los clientes propios reintenten con backoff exponencial + jitter y respeten `Retry-After`.
 - **MUST NOT** devolver 503 ni 403 para un límite de tasa.
 

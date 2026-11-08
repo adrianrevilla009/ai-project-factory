@@ -11,7 +11,7 @@
 - **MUST** enrutar los reportes válidos al registro de `vulnerability-management-program` con SLA, y cerrar el ciclo con el reportero.
 - **MUST** canalizar reportes por un buzón/herramienta dedicada con acceso restringido; los detalles son confidenciales hasta la corrección.
 - **SHOULD** empezar con VDP sin recompensas y pasar a bounty (privado, luego público) cuando haya capacidad de triaje.
-- **SHOULD** coordinar divulgación pública con un plazo acordado (referencia: ISO/IEC 29147 y 30111; TODO-VERIFY contenido).
+- **SHOULD** coordinar divulgación pública con un plazo acordado (referencia: ISO/IEC 29147 y 30111; comprobar contenido).
 - **MUST NOT** emprender acciones legales contra investigadores que actúen de buena fe dentro de la política.
 - **MUST NOT** prometer recompensas sin presupuesto y baremo publicados.
 
@@ -43,12 +43,12 @@
 
 - **MUST** mantener un catálogo corto de algoritmos aprobados y prohibir el resto: AES-GCM (128/256) o ChaCha20-Poly1305 para cifrado autenticado; SHA-256 o superior para hash; RSA >= 3072 o curvas P-256/Ed25519 para firma e intercambio; Argon2id, scrypt o bcrypt para contraseñas.
 - **MUST NOT** usar MD5, SHA-1 para seguridad, DES/3DES, RC4, ECB, RSA < 2048 ni PKCS#1 v1.5 para cifrado nuevo.
-- **MUST** exigir TLS 1.2 como mínimo y preferir 1.3 en todo tráfico externo e interno (referencia: NIST SP 800-52 Rev. 2, TODO-VERIFY).
+- **MUST** exigir TLS 1.2 como mínimo y preferir 1.3 en todo tráfico externo e interno (referencia: NIST SP 800-52 Rev. 2, comprobar al fijar la versión).
 - **MUST** cifrar en reposo todos los datos con clasificación sensible, con claves gestionadas por KMS/Vault, nunca en el repositorio ni en la imagen.
 - **MUST** usar librerías estándar (JCA/Bouncy Castle revisado) y APIs de alto nivel; MUST NOT implementar primitivas propias ni reutilizar IV/nonce.
-- **SHOULD** preferir módulos con validación FIPS 140-3 si lo exige el cliente o la normativa (TODO-VERIFY requisito concreto).
+- **SHOULD** preferir módulos con validación FIPS 140-3 si lo exige el cliente o la normativa (comprobar requisito concreto).
 - **SHOULD** inventariar el uso de criptografía (CBOM simple) para poder migrar; planificar agilidad criptográfica: algoritmo configurable, no cableado.
-- **SHOULD** preparar la migración post-cuántica: los estándares FIPS 203 (ML-KEM), 204 (ML-DSA) y 205 (SLH-DSA) se publicaron en 2024; adoptar en modo híbrido cuando el ecosistema (TLS, JDK) lo soporte (TODO-VERIFY soporte en el JDK usado).
+- **SHOULD** preparar la migración post-cuántica: los estándares FIPS 203 (ML-KEM), 204 (ML-DSA) y 205 (SLH-DSA) se publicaron en 2024; adoptar en modo híbrido cuando el ecosistema (TLS, JDK) lo soporte (comprobar soporte en el JDK usado).
 - **MUST** revisar el catálogo al menos una vez al año.
 
 ## hardening-baselines
@@ -95,7 +95,7 @@
 - **MUST** definir quién declara el incidente, quién lidera, quién comunica y quién decide contención; incluir contactos fuera de banda.
 - **MUST** preservar evidencia antes de erradicar: copiar logs, snapshots y memoria cuando sea viable, con hash y registro de quién la manejó (cadena de custodia).
 - **MUST** guardar la evidencia en almacenamiento de solo escritura y acceso restringido.
-- **MUST** consultar a legales/DPO desde el inicio si hay datos personales: los plazos de notificación son un borrador por confirmar con fuente oficial (p. ej. RGPD, 72 h a la autoridad; TODO-VERIFY texto vigente).
+- **MUST** consultar a legales/DPO desde el inicio si hay datos personales: los plazos de notificación son un borrador por confirmar con fuente oficial (p. ej. RGPD, 72 h a la autoridad; comprobar texto vigente).
 - **SHOULD** ejecutar simulacros (tabletop) al menos una vez al año y actualizar los playbooks con lo aprendido.
 - **SHOULD** sincronizar relojes (NTP) y conservar logs suficientes para reconstruir la línea temporal.
 - **MUST NOT** apagar o reconstruir un sistema afectado sin haber decidido qué evidencia se pierde.
@@ -105,7 +105,7 @@
 
 - **MUST** disponer de un documento de autorización firmado antes de cualquier prueba: alcance (dominios, IPs, cuentas, entornos), exclusiones, ventana horaria, contactos de emergencia, tipo de prueba (caja negra/gris/blanca) y reglas de compromiso (RoE).
 - **MUST** preferir un entorno de staging con datos sintéticos; si se prueba producción, acordar límites (sin denegación de servicio, sin exfiltración real de datos, sin ingeniería social salvo autorización expresa).
-- **MUST** confirmar la titularidad: si el sistema está en un proveedor cloud, comprobar su política vigente de pruebas de seguridad (TODO-VERIFY por proveedor).
+- **MUST** confirmar la titularidad: si el sistema está en un proveedor cloud, comprobar su política vigente de pruebas de seguridad (comprobar por proveedor).
 - **MUST** definir un canal de parada inmediata y un contacto del SOC/on-call informado de la ventana.
 - **MUST** exigir informe con hallazgo, evidencia reproducible, impacto, severidad y recomendación, más un resumen ejecutivo.
 - **MUST** abrir cada hallazgo en el registro de `vulnerability-management-program` con SLA y programar un retest.
@@ -117,7 +117,7 @@
 ## pki-and-certificate-lifecycle
 
 - **MUST** automatizar emisión y renovación (ACME con cert-manager en Kubernetes, o la CA gestionada del proveedor); la renovación manual no escala.
-- **MUST** asumir validez cada vez más corta: la CA/Browser Forum aprobó (ballot SC-081v3, 2025-04-11) máximos de 200 días desde 2026-03-15, 100 días desde 2027-03-15 y 47 días desde 2029-03-15 para certificados TLS públicos (fuente secundaria; TODO-VERIFY en cabforum.org).
+- **MUST** asumir validez cada vez más corta: la CA/Browser Forum aprobó (ballot SC-081v3, 2025-04-11) máximos de 200 días desde 2026-03-15, 100 días desde 2027-03-15 y 47 días desde 2029-03-15 para certificados TLS públicos (fuente secundaria; comprobar en cabforum.org).
 - **MUST** mantener un inventario de certificados con dueño, entorno, fecha de caducidad y método de renovación, y alertar con antelación (p. ej. 30/14/7 días) sobre cualquier certificado sin renovar.
 - **MUST** proteger la clave privada de la CA raíz fuera de línea; emitir con CA intermedias de ámbito limitado (por entorno o dominio).
 - **MUST** generar claves en el sistema que las usa (CSR) y no copiarlas por correo ni tickets; claves privadas nunca en Git.

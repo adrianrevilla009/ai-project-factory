@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** vigilar el lag de indexación y exponerlo como métrica.
 
 ## Por qué
-La búsqueda y los listados complejos escalan y se modelan distinto que las escrituras. Separar permite optimizar cada lado, a costa de consistencia eventual y de operar otro sistema (ver `polyglot-operations-cost`). Si el índice se puede reconstruir, un fallo es una incomodidad, no una pérdida. Parámetros del motor (p. ej. intervalo de refresh del índice) TODO-VERIFY contra documentación vigente de OpenSearch.
+La búsqueda y los listados complejos escalan y se modelan distinto que las escrituras. Separar permite optimizar cada lado, a costa de consistencia eventual y de operar otro sistema (ver `polyglot-operations-cost`). Si el índice se puede reconstruir, un fallo es una incomodidad, no una pérdida. Parámetros del motor (p. ej. intervalo de refresh del índice) comprobar contra documentación vigente de OpenSearch.
 
 ## Ejemplos
 ### Mal
@@ -46,7 +46,7 @@ public void on(ProductRenamed e) {
         .document(new ProductDoc(e.productId(), e.name())));
 }
 ```
-Los métodos exactos del cliente Java de OpenSearch son TODO-VERIFY contra la versión usada.
+Los métodos exactos del cliente Java de OpenSearch se comprueban contra la versión usada.
 
 ## Checklist de revisión
 - [ ] Una sola fuente de verdad; el índice se alimenta de eventos/CDC.

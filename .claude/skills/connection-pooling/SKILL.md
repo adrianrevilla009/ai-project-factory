@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** usar pools separados para cargas distintas (online vs. batch) para que una no deje sin conexiones a la otra.
 
 ## Por qué
-Un pool grande no da más rendimiento: la BD tiene un número limitado de núcleos y discos, y más conexiones activas solo aumentan la contención. Un pool pequeño con transacciones cortas rinde más. Cuando un servicio escala horizontalmente, el pool multiplicado puede agotar la BD completa. Los valores concretos dependen de la carga: medir (TODO-VERIFY nombres y defectos de propiedades en la documentación de Spring Boot y HikariCP de la versión usada).
+Un pool grande no da más rendimiento: la BD tiene un número limitado de núcleos y discos, y más conexiones activas solo aumentan la contención. Un pool pequeño con transacciones cortas rinde más. Cuando un servicio escala horizontalmente, el pool multiplicado puede agotar la BD completa. Los valores concretos dependen de la carga: medir (comprobar nombres y defectos de propiedades en la documentación de Spring Boot y HikariCP de la versión usada).
 
 ## Ejemplos
 ### Mal

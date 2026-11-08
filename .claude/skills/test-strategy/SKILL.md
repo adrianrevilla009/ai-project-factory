@@ -43,7 +43,7 @@ integraciones-> contract tests (Pact) + WireMock
 E2E          -> 5-10 recorridos críticos, solo en release
 ```
 ```xml
-<!-- Surefire corre *Test; Failsafe corre *IT en la fase verify (versiones: TODO-VERIFY) -->
+<!-- Surefire corre *Test; Failsafe corre *IT en la fase verify (versiones: comprobar al fijar la versión) -->
 <plugin><artifactId>maven-surefire-plugin</artifactId></plugin>
 <plugin><artifactId>maven-failsafe-plugin</artifactId></plugin>
 ```

@@ -19,7 +19,7 @@ metadata:
 - **MUST** que ninguna etiqueta de métrica tome valores no acotados (ID de usuario, pedido, email, URL con parámetros, traceId).
 - **MUST** usar la plantilla de ruta (`/orders/{id}`) y no la URL cruda como etiqueta `uri`.
 - **MUST** presupuesto de series activas por servicio y tenant; superarlo bloquea el despliegue o dispara alerta.
-- **MUST** límites duros en el scrape: `sample_limit`, `label_limit` y `label_value_length_limit` por job (confirmar nombres: TODO-VERIFY).
+- **MUST** límites duros en el scrape: `sample_limit`, `label_limit` y `label_value_length_limit` por job (confirmar nombres: comprobar al fijar la versión).
 - **MUST** eliminar en origen lo no usado con `metric_relabel_configs` (`action: drop`) o en el Collector, antes de almacenar.
 - **MUST** vigilar `prometheus_tsdb_head_series` y las top-N métricas por series con un dashboard y alerta de crecimiento.
 - **SHOULD** buckets de histograma justificados; cada bucket multiplica series por las demás etiquetas.

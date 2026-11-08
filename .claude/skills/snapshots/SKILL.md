@@ -22,7 +22,7 @@ metadata:
 - **MUST** cargar: último snapshot válido + eventos con `version` posterior; si el esquema del snapshot no coincide, ignorarlo y reconstruir desde los eventos.
 - **MUST** escribir el snapshot de forma asíncrona o fuera de la ruta del comando, y tolerar que falle.
 - **MUST NOT** actualizar el snapshot en la misma operación que decide el estado como si fuera un segundo estado (sería una segunda fuente de verdad).
-- **SHOULD** crear snapshots cada N eventos (N medido, p. ej. múltiplo de 100: TODO-VERIFY con datos del proyecto) o por tiempo.
+- **SHOULD** crear snapshots cada N eventos (N medido, p. ej. múltiplo de 100: comprobar con datos del proyecto) o por tiempo.
 - **SHOULD** guardarlos con clave separada del stream (`pk = SNAPSHOT#ORDER#<id>`) para no mezclarlos con eventos.
 - **MUST** probar que `fold(eventos)` y `snapshot + eventos posteriores` dan el mismo estado.
 

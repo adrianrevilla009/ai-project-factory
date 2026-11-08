@@ -23,7 +23,7 @@ metadata:
 - **MUST** limitar tamaño, frecuencia y paginación (`dos-and-rate-limiting`).
 - **MUST** mantener inventario de APIs y versiones expuestas; desactivar las obsoletas.
 - **MUST** validar toda URL aportada por el usuario antes de consumirla (`deserialization-xxe-ssrf-traversal`).
-- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones (TODO-VERIFY ediciones actuales de ambos Top 10).
+- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones (comprobar ediciones actuales de ambos Top 10).
 
 ## Por qué
 La mayoría de brechas de API no son sofisticadas: faltan comprobaciones de propiedad, se devuelven campos de más o no hay límites. Un mapa riesgo -> skill -> control evita revisar de memoria.
@@ -74,5 +74,5 @@ SSRF                        -> deserialization-xxe-ssrf-traversal
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `asvs-mapping`, `authz-rbac-abac-rebac`, `injection-families`, `dos-and-rate-limiting`.
-- Fuentes: OWASP Top 10 y OWASP API Security Top 10 (owasp.org) — TODO-VERIFY edición y numeración vigentes.
+- Fuentes: OWASP Top 10 y OWASP API Security Top 10 (owasp.org) — comprobar edición y numeración vigentes.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

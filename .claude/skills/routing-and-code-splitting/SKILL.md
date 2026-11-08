@@ -27,7 +27,7 @@ metadata:
 - **MUST** que los parámetros de ruta se validen (son `string | undefined`).
 
 ## Por qué
-Sin división, el usuario descarga todo el código en la primera visita. Dividir por ruta es el corte natural: coincide con la navegación y con los límites de feature. Los guards del cliente se saltan con las DevTools; solo informan a la UI. Verificar la API exacta de la versión de React Router (data routers, `lazy`) — TODO-VERIFY.
+Sin división, el usuario descarga todo el código en la primera visita. Dividir por ruta es el corte natural: coincide con la navegación y con los límites de feature. Los guards del cliente se saltan con las DevTools; solo informan a la UI. Verificar la API exacta de la versión de React Router (data routers, `lazy`) — comprobar al fijar la versión.
 
 ## Ejemplos
 ### Mal

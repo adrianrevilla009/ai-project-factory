@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** elegir UN framework por servicio y registrar la decisión en un ADR del proyecto (criterios: integración Spring Boot, madurez de la API, cobertura de proveedores y vector stores necesarios).
 - **SHOULD** preferir Spring AI en servicios Spring Boot (autoconfiguración, `ChatClient`, advisors, observabilidad Micrometer); LangChain4j si se necesita `AiServices` declarativo o cobertura que Spring AI no tenga.
-- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores (TODO-VERIFY versión vigente al arrancar el proyecto).
+- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores (comprobar versión vigente al arrancar el proyecto).
 - **MUST** encapsular el framework tras un puerto propio (`interface AnswerGenerator`) en la capa de aplicación; el dominio no importa `org.springframework.ai` ni `dev.langchain4j`.
 - **MUST** configurar timeouts, reintentos acotados y modelo/temperatura por propiedades, no en código.
 - **MUST** leer claves del proveedor desde el gestor de secretos (ver `secrets-management`), nunca de `application.yml`.
@@ -66,7 +66,7 @@ spring:
     openai:
       api-key: ${LLM_API_KEY}   # inyectada desde el gestor de secretos
 ```
-Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(...)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor: TODO-VERIFY.
+Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(...)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Un solo framework y ADR de la decisión.

@@ -39,10 +39,10 @@ Las regresiones de rendimiento llegan por acumulación de cambios pequeños. Run
     -Jhost=$PREVIEW_HOST -Jthreads=50 -Jduration=300
 - name: assert thresholds
   run: python3 perf/assert_thresholds.py results.jtl --p95-ms 300 --error-rate 0.01
-- uses: actions/upload-artifact@<SHA-40-HEX> # vX TODO-VERIFY
+- uses: actions/upload-artifact@<SHA-40-HEX> # vX comprobar al fijar la versión
   with: { name: perf-report, path: report }
 ```
-`assert_thresholds.py` es un script del proyecto generado (pendiente en la fábrica). Flags de JMeter: TODO-VERIFY contra la versión fijada.
+`assert_thresholds.py` es un script del proyecto generado (pendiente en la fábrica). Flags de JMeter: comprobar contra la versión fijada.
 
 ## Checklist de revisión
 - [ ] Umbrales derivados del SLO y versionados.
@@ -58,5 +58,5 @@ Las regresiones de rendimiento llegan por acumulación de cambios pequeños. Run
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ephemeral-preview-environments`, `capacity-and-load-modeling`, `slo-error-budget-policy`, `quality-gates`.
-- Fuentes: ADR-0019; manual de JMeter (https://jmeter.apache.org/usermanual/) — TODO-VERIFY opciones.
+- Fuentes: ADR-0019; manual de JMeter (https://jmeter.apache.org/usermanual/) — comprobar opciones.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

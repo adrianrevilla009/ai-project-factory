@@ -48,7 +48,7 @@ interface CustomerMapper {
 ```
 ```xml
 <!-- maven-compiler-plugin: annotationProcessorPaths con mapstruct-processor -->
-<!-- TODO-VERIFY: versión de mapstruct y mapstruct-processor vigente -->
+<!-- comprobar versión de mapstruct y mapstruct-processor vigente -->
 ```
 
 ## Checklist de revisión

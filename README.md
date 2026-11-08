@@ -33,8 +33,8 @@ Nada de lo que produce esta fábrica se despliega en AWS (ADR-0004). La infraest
 
 ## Estado
 - **Estructura y mecanismos:** completos y con tests (`make check` en verde).
-- **Contenido de las skills:** borrador. Los datos que no se han contrastado con documentación oficial llevan `TODO-VERIFY`; se van resolviendo por bloques y cada resolución cita la fuente consultada.
-- **Policies:** escritas, no ejecutadas aún con sus herramientas ([detalle](policies/README.md)).
+- **Contenido de las skills:** borrador. Las versiones, flags, licencias, precios y URLs concretas no están fijadas: cada skill dice qué comprobar al adoptar la herramienta. Solo algunos datos se contrastaron con documentación oficial (por ejemplo, la salida estructurada de la API de Claude y el estado de Istio ambient). `TODO-VERIFY` se reserva como marcador para lo que un agente no pueda comprobar en un proyecto.
+- **Policies:** Semgrep probado (`make policy-test`); Rego, Kyverno, ArchUnit y frontend escritos pero sin ejecutar ([detalle](policies/README.md)).
 - **Dev container y firewall:** sin probar en un contenedor real.
 - **Texto legal y de cumplimiento:** borrador que debe confirmar una persona.
 - **Decisiones 0032–0037:** aceptadas por defecto, pendientes de tu revisión.

@@ -19,7 +19,7 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 
 ## Reglas
 - **MUST** separar `log-archive` (solo almacenamiento) de `audit` (herramientas de seguridad y consulta de solo lectura).
-- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política (TODO-VERIFY requisitos legales).
+- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política (comprobar requisitos legales).
 - **MUST** definir retención explícita (p. ej. 365 días en caliente y archivado después; plazo legal por confirmar con fuente oficial) con lifecycle.
 - **MUST** replicar a un bucket en eu-central-1 (secundaria, D6) si el log es evidencia.
 - **MUST** restringir con política de bucket: escritura solo desde servicios de la organización (`aws:PrincipalOrgID`), borrado denegado.
@@ -66,11 +66,11 @@ resource "aws_s3_bucket_public_access_block" "org_logs" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov: S3 sin versionado/BPA/KMS (checks nativos, TODO-VERIFY ids) | 1 | pendiente: `policies/iac-checks/` |
+| Checkov: S3 sin versionado/BPA/KMS (checks nativos, comprobar ids) | 1 | pendiente: `policies/iac-checks/` |
 | Conftest: bucket de logs sin `object_lock_enabled` | 1 | pendiente: `policies/opa-conftest/` |
 | Plazos de retención | 4 | revisión humana (normativa por confirmar) |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `org-cloudtrail-config-securityhub-guardduty`, `kms-multi-region-keys`, `regions-and-data-residency`.
-- Fuentes: S3 User Guide (Object Lock) y CloudTrail User Guide (2026-11-07) — TODO-VERIFY URLs; retención legal: borrador por confirmar.
+- Fuentes: S3 User Guide (Object Lock) y CloudTrail User Guide (2026-11-07) — comprobar URLs; retención legal: borrador por confirmar.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

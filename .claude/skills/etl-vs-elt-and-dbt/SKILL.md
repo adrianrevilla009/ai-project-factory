@@ -57,7 +57,7 @@ models:
           - relationships:
               arguments: { to: ref('dim_customers'), field: customer_id }
 ```
-La forma `arguments:` depende de la versión de dbt (TODO-VERIFY en la versión fijada).
+La forma `arguments:` depende de la versión de dbt (comprobar en la versión fijada).
 
 ## Checklist de revisión
 - [ ] Capas respetadas; marts sin `source()` directo.

@@ -21,8 +21,8 @@ metadata:
 - **MUST** que el registro permitido en runtime sea ECR (réplica cross-region); **MUST NOT** permitir pull desde Harbor ni registros públicos en prod.
 - **MUST** definir excepciones por namespace con lista explícita (p. ej. `kube-system`) y revisión periódica; **MUST NOT** excluir un namespace de aplicación.
 - **SHOULD** verificar atestaciones (SBOM/procedencia) con `attestations` para prod.
-- **MUST** configurar `webhookConfiguration.timeoutSeconds` y asegurar disponibilidad HA de Kyverno; decidir de forma explícita fail-open o fail-closed y documentarla (TODO-VERIFY `failurePolicy` por versión).
-- **MUST** gestionar la política como código (GitOps) y probarla estáticamente (`kyverno test`, TODO-VERIFY).
+- **MUST** configurar `webhookConfiguration.timeoutSeconds` y asegurar disponibilidad HA de Kyverno; decidir de forma explícita fail-open o fail-closed y documentarla (comprobar `failurePolicy` por versión).
+- **MUST** gestionar la política como código (GitOps) y probarla estáticamente (`kyverno test`, comprobar al fijar la versión).
 - **MUST NOT** afirmar que la política está validada en un clúster real: queda "preparada para AWS, no verificada en real".
 
 ## Por qué

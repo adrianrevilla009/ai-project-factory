@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** definir objetivos en el percentil 75 por móvil y escritorio: LCP <= 2,5 s, INP <= 200 ms, CLS <= 0,1 (https://web.dev/articles/vitals, consultado 2026-11-07).
-- **MUST** fijar un presupuesto de bundle (JS inicial gzip/brotli por ruta) y hacer fallar el CI si se supera; el valor numérico lo decide el proyecto (TODO-VERIFY con datos reales).
+- **MUST** fijar un presupuesto de bundle (JS inicial gzip/brotli por ruta) y hacer fallar el CI si se supera; el valor numérico lo decide el proyecto (comprobar con datos reales).
 - **MUST** medir con datos de campo (RUM, ver `observability-frontend`) además de laboratorio (Lighthouse).
 - **MUST** reservar espacio para imágenes y medios (`width`/`height` o `aspect-ratio`) para evitar CLS; **SHOULD** usar `loading="lazy"` salvo en la imagen LCP.
 - **MUST NOT** importar librerías enteras para una función (usar imports por módulo o alternativas ligeras); revisar el análisis de bundle ante cada dependencia nueva.
@@ -47,7 +47,7 @@ const Chart = lazy(() => import("./Chart")); // solo en la ruta que lo usa
 ```
 ### Presupuesto en CI (ejemplo, comando del proyecto)
 ```text
-pnpm build && pnpm exec size-limit   # size-limit: TODO-VERIFY herramienta elegida
+pnpm build && pnpm exec size-limit   # size-limit: comprobar herramienta elegida
 ```
 
 ## Checklist de revisión

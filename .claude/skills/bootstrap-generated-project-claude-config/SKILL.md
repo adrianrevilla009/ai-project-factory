@@ -66,5 +66,5 @@ Un proyecto generado debe ser tan seguro como la fábrica: sin los mismos hooks,
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `claude-md-authoring`, `gate-protocol`, `mcp-governance`, `skill-authoring-guide`.
-- Fuentes: `docs/architecture/claude-code-formats.md` (verificado 2026-11-06), hooks y permisos en https://code.claude.com/docs/en/ (TODO-VERIFY al revisar).
+- Fuentes: `docs/architecture/claude-code-formats.md` (verificado 2026-11-06), hooks y permisos en https://code.claude.com/docs/en/ (comprobar al revisar).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

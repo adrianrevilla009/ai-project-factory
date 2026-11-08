@@ -24,13 +24,13 @@ metadata:
 - **MUST** consumidores idempotentes: SQS estándar es at-least-once y sin orden estricto; RabbitMQ reentrega tras desconexión.
 - **SHOULD** SQS FIFO solo si se necesita orden/deduplicación; usar `MessageGroupId` con cardinalidad suficiente.
 - **SHOULD** cifrado en reposo (SSE) y política de cola con mínimo privilegio en SQS.
-- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Límite de tamaño de SQS: TODO-VERIFY valor vigente.
+- **MUST NOT** enviar payloads grandes por cola; guardar el objeto aparte y enviar la referencia. Límite de tamaño de SQS: comprobar valor vigente.
 
 ## Por qué
 Un `ack` previo al proceso pierde trabajo; un visibility timeout corto provoca procesamiento doble concurrente; una cola sin DLQ acumula mensajes venenosos eternamente. RabbitMQ y SQS tienen modelos distintos: no asumir equivalencia 1:1.
 
 ## Matriz AWS y local
-- Local: RabbitMQ OSS, y LocalStack o ElasticMQ para SQS (TODO-VERIFY licencia/edición vigente de LocalStack).
+- Local: RabbitMQ OSS, y LocalStack o ElasticMQ para SQS (comprobar licencia/edición vigente de LocalStack).
 - Preparado para AWS, no verificado en real. **No se reproduce en local:** IAM/políticas de cola reales, cifrado KMS, límites de cuota y throughput reales de FIFO, métricas CloudWatch.
 
 ## Ejemplos
@@ -61,7 +61,7 @@ resource "aws_sqs_queue" "invoices" {
   })
 }
 ```
-Nombres de atributos Terraform a contrastar con el provider (TODO-VERIFY).
+Nombres de atributos Terraform a contrastar con el provider (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Justificada cola frente a Kafka.

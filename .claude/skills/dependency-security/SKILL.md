@@ -45,7 +45,7 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 <plugin>
   <groupId>org.owasp</groupId>
   <artifactId>dependency-check-maven</artifactId>
-  <version><!-- TODO-VERIFY version vigente --></version>
+  <version><!-- comprobar version vigente --></version>
   <configuration>
     <failBuildOnCVSS>7</failBuildOnCVSS>
     <suppressionFiles><suppressionFile>dc-suppressions.xml</suppressionFile></suppressionFiles>

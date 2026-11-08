@@ -69,5 +69,5 @@ order.notFound=El pedido {0} no existe
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `frontend-i18n-and-formatting`, `api-docs`, `openapi-contract-first`, `document-and-report-generation`.
-- Fuentes: documentación de Spring Framework (MessageSource, LocaleResolver, ProblemDetail) — TODO-VERIFY versión; BCP 47 (RFC 5646); ISO 4217.
+- Fuentes: documentación de Spring Framework (MessageSource, LocaleResolver, ProblemDetail) — comprobar versión; BCP 47 (RFC 5646); ISO 4217.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

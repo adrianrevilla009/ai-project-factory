@@ -16,7 +16,7 @@ metadata:
 - No aplica a flujos cortos y síncronos, ni a coreografía simple entre servicios (usar eventos/sagas, ver `sagas`).
 
 ## Reglas
-- **MUST** decidir el motor por licencia antes de adoptarlo (D16, sin licencias de pago por defecto). Camunda 8 self-managed usa licencia propietaria y exige Enterprise para producción según https://docs.camunda.io/docs/reference/licenses/ (2026-11-07). Camunda 7 CE y Flowable OSS: licencia y estado de mantenimiento TODO-VERIFY.
+- **MUST** decidir el motor por licencia antes de adoptarlo (D16, sin licencias de pago por defecto). Camunda 8 self-managed usa licencia propietaria y exige Enterprise para producción según https://docs.camunda.io/docs/reference/licenses/ (2026-11-07). Camunda 7 CE y Flowable OSS: licencia y estado de mantenimiento: comprobar al adoptarlos.
 - **MUST** mantener el motor tras una interfaz propia (`ApprovalProcessPort`); el dominio no importa clases del motor.
 - **MUST** versionar los `.bpmn` en el repo y migrar instancias en vuelo de forma explícita.
 - **MUST** hacer idempotentes los service tasks (pueden reejecutarse tras fallo).

@@ -36,7 +36,7 @@ const user = (window as any).__appState.user;
 ```
 ### Bien
 ```ts
-// host: carga perezosa con fallback (TODO-VERIFY configuracion de Module Federation del bundler elegido)
+// host: carga perezosa con fallback (comprobar configuracion de Module Federation del bundler elegido)
 const Billing = lazy(() => import("billing/Routes"));
 <ErrorBoundary fallback={<BillingUnavailable />}>
   <Suspense fallback={<Spinner />}><Billing /></Suspense>

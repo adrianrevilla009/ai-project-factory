@@ -65,11 +65,11 @@ resource "aws_kms_replica_key" "orders_data_dr" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov nativo: rotación KMS (CKV_AWS_7, TODO-VERIFY id) y política sin comodín (CKV_AWS_33) | 1 | pendiente: configuración en `policies/iac-checks/` |
+| Checkov nativo: rotación KMS (CKV_AWS_7, comprobar id) y política sin comodín (CKV_AWS_33) | 1 | pendiente: configuración en `policies/iac-checks/` |
 | Conftest: `multi_region = true` sin comentario de justificación | 1 | pendiente: `policies/opa-conftest/` |
 | Revisión de key policies | 3 | revisión humana |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `envelope-encryption-and-kms`, `scp-guardrails`, `log-archive-and-audit-account`, `regions-and-data-residency`.
-- Fuentes: AWS KMS Developer Guide, multi-Region keys (2026-11-07) — TODO-VERIFY URL y servicios compatibles.
+- Fuentes: AWS KMS Developer Guide, multi-Region keys (2026-11-07) — comprobar URL y servicios compatibles.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

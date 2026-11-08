@@ -16,7 +16,7 @@ metadata:
 - No aplica si el proyecto no admite APIs en preview, o a tareas fire-and-forget de larga vida.
 
 ## Reglas
-- **MUST** comprobar el estado del JEP en la versión de JDK del proyecto: `StructuredTaskScope` ha sido API en preview en varias versiones y su forma ha cambiado; `ScopedValue` pasó a definitivo más tarde (TODO-VERIFY JEP 505/506 y versión de JDK).
+- **MUST** comprobar el estado del JEP en la versión de JDK del proyecto: `StructuredTaskScope` ha sido API en preview en varias versiones y su forma ha cambiado; `ScopedValue` pasó a definitivo más tarde (comprobar JEP 505/506 y versión de JDK).
 - **MUST NOT** usar APIs en preview en código de producción sin decisión explícita (ADR) y `--enable-preview` documentado en el build.
 - **MUST** si no hay preview: lograr el mismo efecto con `ExecutorService` + `close()` en try-with-resources, y cancelar hermanas ante fallo.
 - **MUST** que el ámbito de la tarea cierre antes que el método que la abrió (try-with-resources); nada de subtareas que sobrevivan al llamante.
@@ -69,5 +69,5 @@ ScopedValue.where(TRACE_ID, traceId).run(() -> handler.handle(req));
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `virtual-threads`, `completablefuture-patterns`, `async-and-context-propagation`.
-- Fuentes: JEPs de Structured Concurrency y Scoped Values en openjdk.org/jeps — TODO-VERIFY número, estado y fecha (2026-11-07).
+- Fuentes: JEPs de Structured Concurrency y Scoped Values en openjdk.org/jeps — comprobar número, estado y fecha (2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

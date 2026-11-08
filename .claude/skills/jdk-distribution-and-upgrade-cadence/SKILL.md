@@ -19,10 +19,10 @@ metadata:
 - **MUST** usar una versión LTS de JDK como objetivo; usar versiones no LTS solo en experimentos, nunca en producción.
 - **MUST** elegir una distribución OpenJDK de licencia libre con actualizaciones de seguridad (p. ej. Eclipse Temurin); sin licencias de pago por defecto (D16). Cambiar de distribución requiere ADR.
 - **MUST** usar la misma distribución y versión mayor en desarrollo, CI e imagen de runtime (`maven-wrapper-and-toolchains`, `container-images`).
-- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Fechas: TODO-VERIFY en la hoja de ruta oficial de la distribución.
+- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Fechas: comprobar en la hoja de ruta oficial de la distribución.
 - **MUST** aplicar parches de seguridad (actualizaciones trimestrales del JDK) mediante PR automatizado de Renovate y pasar toda la suite.
 - **SHOULD** planificar la subida al siguiente LTS cuando la versión actual entre en el último año de soporte, no cuando termine.
-- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation (TODO-VERIFY en cada documentación).
+- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation (comprobar en cada documentación).
 - **SHOULD** compilar con `release` al nivel del JDK objetivo y ejecutar CI en la matriz [actual, siguiente LTS] como aviso temprano.
 - **MUST NOT** activar `--enable-preview` en código de producción.
 
@@ -42,14 +42,14 @@ FROM openjdk:latest
 ### Bien
 ```xml
 <properties>
-  <maven.compiler.release>21</maven.compiler.release> <!-- LTS; TODO-VERIFY LTS vigente a la fecha -->
+  <maven.compiler.release>21</maven.compiler.release> <!-- LTS; comprobar LTS vigente a la fecha -->
 </properties>
 ```
 ```yaml
 # docs/jdk-policy.yaml (ejemplo)
 target: 21
 distribution: temurin
-eol_review_date: "TODO-VERIFY"
+eol_review_date: "comprobar al fijar la versión"
 next_lts_evaluation: "12 meses antes del fin de soporte"
 ci_matrix: ["21", "next-lts-early-access"]
 ```

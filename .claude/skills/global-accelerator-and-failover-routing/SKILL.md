@@ -26,7 +26,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST NOT** conmutar tráfico a una región cuyos datos no estén replicados o cuya capacidad no esté dimensionada; documentar RPO/RTO.
 - **SHOULD** usar `traffic_dial_percentage` de los endpoint groups de Global Accelerator para drenar o hacer canary regional.
 - **SHOULD** activar flow logs del acelerador hacia el archivo de logs.
-- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (TODO-VERIFY tarifas).
+- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (comprobar tarifas).
 
 ## Por qué
 DNS-failover depende de cachés fuera de nuestro control; un acelerador conmuta en la red de AWS pero añade coste y un servicio más. Un health check superficial mantiene tráfico en una región rota. El valor del diseño está en el ensayo y en los datos replicados, no en el recurso Terraform.

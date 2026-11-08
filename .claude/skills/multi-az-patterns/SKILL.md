@@ -79,5 +79,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `static-stability-and-cell-architecture`, `tier-model-and-rpo-rto`, `multi-region-patterns`.
-- Fuentes: Kubernetes, Pod Topology Spread Constraints y PDB (kubernetes.io/docs) — TODO-VERIFY versión; AWS Aurora/MSK Multi-AZ — TODO-VERIFY URL concreta.
+- Fuentes: Kubernetes, Pod Topology Spread Constraints y PDB (kubernetes.io/docs) — comprobar versión; AWS Aurora/MSK Multi-AZ — comprobar URL concreta.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

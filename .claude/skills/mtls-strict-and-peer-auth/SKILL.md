@@ -59,7 +59,7 @@ spec:
   portLevelMtls:
     9100: { mode: PERMISSIVE }
 ```
-Versión de API (`security.istio.io/v1`): TODO-VERIFY contra la versión de Istio elegida.
+Versión de API (`security.istio.io/v1`): comprobar contra la versión de Istio elegida.
 
 ## Checklist de revisión
 - [ ] Existe PeerAuthentication STRICT a nivel de malla.

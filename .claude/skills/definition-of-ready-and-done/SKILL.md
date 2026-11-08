@@ -65,5 +65,5 @@ DoD: [x] tests verdes  [x] PR aprobado  [x] OpenAPI actualizado  [x] runbook rev
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `requirements-engineering`, `pr-rules`, `quality-gates`, `coverage-policy`, `tech-debt-register`, `living-readme`.
-- Fuentes: The Scrum Guide define "Definition of Done" (scrumguides.org, TODO-VERIFY redacción actual); DoR es práctica común, no parte del Scrum Guide.
+- Fuentes: The Scrum Guide define "Definition of Done" (scrumguides.org, comprobar redacción actual); DoR es práctica común, no parte del Scrum Guide.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

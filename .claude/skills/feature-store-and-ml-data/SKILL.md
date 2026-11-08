@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** fijar TTL y frescura esperada por feature y monitorizarlas.
 
 ## Por qué
-La fuga temporal produce modelos excelentes en validación y malos en producción. Feast documenta los joins point-in-time y la separación offline (entrenamiento) / online (baja latencia). Versión y soporte de stores concretos: TODO-VERIFY. En local se usan stores de ejemplo (fichero/SQLite/Redis); no se reproduce DynamoDB ni servicios gestionados de AWS: preparado para AWS, no verificado en real.
+La fuga temporal produce modelos excelentes en validación y malos en producción. Feast documenta los joins point-in-time y la separación offline (entrenamiento) / online (baja latencia). Versión y soporte de stores concretos: comprobar al fijar la versión. En local se usan stores de ejemplo (fichero/SQLite/Redis); no se reproduce DynamoDB ni servicios gestionados de AWS: preparado para AWS, no verificado en real.
 
 ## Ejemplos
 ### Mal
@@ -36,7 +36,7 @@ df = events.merge(customers_current, on="customer_id")
 ```
 ### Bien
 ```python
-# definición única (Feast; TODO-VERIFY API exacta de la versión usada)
+# definición única (Feast; comprobar API exacta de la versión usada)
 from feast import FeatureView, Field, Entity
 from feast.types import Float32
 

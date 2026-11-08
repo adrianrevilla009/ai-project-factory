@@ -83,7 +83,7 @@ spec:
       - title: Repositorio
         url: '${{ steps.publish.output.remoteUrl }}'
 ```
-Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acción concreta (`publish:github`, `publish:gitlab`...) depende del SCM. TODO-VERIFY ids de acción `catalog:register` y `publish:*` en la versión instalada.
+Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acción concreta (`publish:github`, `publish:gitlab`...) depende del SCM. Comprobar ids de acción `catalog:register` y `publish:*` en la versión instalada.
 
 ## Checklist de revisión
 - [ ] La plantilla genera catalog-info, CI, Dockerfile, docs y seguridad.

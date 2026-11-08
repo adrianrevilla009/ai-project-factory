@@ -66,5 +66,5 @@ Fragmento de context map (documento `docs/architecture/context-map.md` del proye
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ddd-tactical`, `anti-corruption-layer`, `modular-monolith`, `microservices-decision-guide`, `connascence-and-coupling`.
-- Fuentes: Evans, "Domain-Driven Design" (2003); Vernon, "Implementing Domain-Driven Design" (2013). TODO-VERIFY: enlace oficial de referencia del context map.
+- Fuentes: Evans, "Domain-Driven Design" (2003); Vernon, "Implementing Domain-Driven Design" (2013). Comprobar enlace oficial de referencia del context map.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

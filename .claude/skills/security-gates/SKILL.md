@@ -38,7 +38,7 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
 - run: >
     trivy image --exit-code 1 --severity CRITICAL,HIGH --ignore-unfixed
     --vex vex.openvex.json registry.example.com/shop/orders@${{ needs.build.outputs.digest }}
-  # flags TODO-VERIFY contra la versión de Trivy fijada
+  # flags comprobar contra la versión de Trivy fijada
 - run:./mvnw -B org.cyclonedx:cyclonedx-maven-plugin:makeAggregateBom   #
 - run: semgrep scan --config policies/semgrep --error
 ```

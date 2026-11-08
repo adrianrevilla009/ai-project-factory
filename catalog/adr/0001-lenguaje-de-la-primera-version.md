@@ -7,7 +7,7 @@
 Decisión D1 del brief de la fábrica (`docs/FACTORY_BRIEF.md` §3).
 
 ## Decisión
-Java (LTS vigente, TODO-VERIFY versión) con Spring Boot (TODO-VERIFY versión).
+Java (LTS vigente, comprobar versión) con Spring Boot (comprobar versión).
 
 ## Por qué
 Ecosistema empresarial maduro, tipado fuerte y amplia disponibilidad de talento; permite estandarizar skills, ArchUnit y BOM.

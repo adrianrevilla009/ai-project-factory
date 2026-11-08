@@ -1,6 +1,6 @@
 // Ejemplo de reglas ArchUnit para arquitectura hexagonal / capas.
 // Se copia al proyecto generado (test scope); ajustar BASE_PACKAGE.
-// TODO-VERIFY: versión de com.tngtech.archunit:archunit-junit5 contra Maven Central.
+// Comprobar versión de com.tngtech.archunit:archunit-junit5 contra Maven Central.
 package com.example.architecture;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;

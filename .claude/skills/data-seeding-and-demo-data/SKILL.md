@@ -70,5 +70,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `local-profiles`, `resource-budgets`, `dev-loop`, `cluster-tooling`.
-- Fuentes: documentación de Kubernetes sobre Jobs (TODO-VERIFY URL y campos vigentes).
+- Fuentes: documentación de Kubernetes sobre Jobs (comprobar URL y campos vigentes).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

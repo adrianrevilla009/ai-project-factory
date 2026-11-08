@@ -57,7 +57,7 @@ class OrderTools {
 
 var answer = chat.prompt().user(question).tools(new OrderTools(queries, pending)).call().content();
 ```
-El límite de iteraciones y la confirmación se implementan en el bucle del framework o en un wrapper propio: la propiedad concreta es TODO-VERIFY según versión.
+El límite de iteraciones y la confirmación se implementan en el bucle del framework o en un wrapper propio: la propiedad concreta se comprueba según versión.
 
 ## Checklist de revisión
 - [ ] Justificado por qué no basta un workflow.

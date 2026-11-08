@@ -21,7 +21,7 @@ metadata:
 - **MUST NOT** devolver `null` desde métodos que devuelven colecciones o arrays: devolver colección vacía.
 - **MUST NOT** usar `Optional` como campo, parámetro de método ni elemento de colección.
 - **MUST NOT** llamar `Optional.get()` sin comprobación; usar `orElseThrow(() -> new NotFoundException(...))`, `map`, `ifPresent` u `orElse`.
-- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring) — TODO-VERIFY soporte en la versión de Spring Boot elegida.
+- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring) — comprobar soporte en la versión de Spring Boot elegida.
 - **SHOULD** usar `Objects.requireNonNullElse` / `Map.getOrDefault` antes que comprobaciones manuales repetidas.
 - **MUST NOT** devolver `Boolean` nulo como tercer estado; usar un enum.
 
@@ -67,5 +67,5 @@ public User load(String id) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `exceptions-and-error-handling`, `immutability-and-value-objects`, `generics-and-api-design`.
-- Fuentes: Javadoc de `java.util.Optional` y `java.util.Objects` (oracle/openjdk); JSpecify (jspecify.dev) — TODO-VERIFY versión y soporte; no verificado en línea.
+- Fuentes: Javadoc de `java.util.Optional` y `java.util.Objects` (oracle/openjdk); JSpecify (jspecify.dev) — comprobar versión y soporte; no verificado en línea.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

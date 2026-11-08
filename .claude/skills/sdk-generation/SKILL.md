@@ -47,7 +47,7 @@ Un cliente escrito a mano diverge del contrato y rompe en ejecución. Un generad
 <plugin>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-generator-maven-plugin</artifactId>
-  <version><!-- TODO-VERIFY: fijar versión exacta vigente --></version>
+  <version><!-- comprobar fijar versión exacta vigente --></version>
   <executions><execution>
     <goals><goal>generate</goal></goals>
     <configuration>

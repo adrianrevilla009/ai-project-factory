@@ -61,7 +61,7 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 <!-- generación en build desde el WSDL del proveedor -->
 <wsdlLocation>src/main/resources/wsdl/customer.wsdl</wsdlLocation>
 ```
-(configuración del plugin Maven JAXB/CXF: TODO-VERIFY coordenadas y versión).
+(configuración del plugin Maven JAXB/CXF: comprobar coordenadas y versión).
 
 ## Checklist de revisión
 - [ ] WSDL/XSD versionado; clases generadas en build, no a mano.

@@ -8,10 +8,10 @@ Decisión abierta del brief (§3). No se inventa una respuesta; requiere confirm
 
 ## Opciones
 - Sidecar: maduro, más recursos por pod.
-- Ambient: menos sobrecarga, TODO-VERIFY madurez y compatibilidad con la versión elegida.
+- Ambient: menos sobrecarga; GA desde Istio 1.24 (ztunnel, waypoint y APIs estables); su multicluster multi-red es beta desde 1.29. Fuente: istio.io (anuncio de GA en 1.24 y feature stages).
 
 ## Decisión
-Sidecar (por defecto, más maduro); ambient como alternativa documentada en el skill sidecar-vs-ambient-decision (TODO-VERIFY madurez vigente).
+Sidecar (por defecto, más maduro); ambient como alternativa documentada en el skill sidecar-vs-ambient-decision (ambient ya es GA; se mantiene sidecar por defecto por madurez operativa y menor riesgo en multicluster).
 
 ## Consecuencias
 Por determinar al decidir.

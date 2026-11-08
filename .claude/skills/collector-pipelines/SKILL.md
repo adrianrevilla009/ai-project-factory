@@ -20,7 +20,7 @@ metadata:
 - **MUST** separar dos capas: agente (DaemonSet, receivers OTLP locales, enriquecimiento k8s) y gateway (Deployment, muestreo, enrutado por tenant, exportación).
 - **MUST** definir un pipeline por señal (`traces`, `metrics`, `logs`) y variantes con `type/name` (`traces/errors`) en lugar de un único pipeline con condiciones.
 - **MUST** habilitar la extensión `health_check` y usarla en liveness/readiness.
-- **MUST NOT** hacer tail sampling en el agente: necesita todos los spans de una traza en la misma réplica; usar gateway con balanceo por `traceID` (TODO-VERIFY exporter `loadbalancing` en la distribución contrib usada).
+- **MUST NOT** hacer tail sampling en el agente: necesita todos los spans de una traza en la misma réplica; usar gateway con balanceo por `traceID` (comprobar exporter `loadbalancing` en la distribución contrib usada).
 - **MUST NOT** exportar sin cola/reintentos configurados ni sin límite de memoria (el Collector es un punto único de pérdida de telemetría).
 - **SHOULD** usar la distribución contrib solo si hacen falta componentes contrib; mejor construir una distribución mínima con `ocb` (OpenTelemetry Collector Builder) fijando versiones.
 - **SHOULD** exportar a Tempo y Loki por OTLP y a Prometheus por remote write o scrape del endpoint del Collector.
@@ -64,7 +64,7 @@ service:
     metrics: { receivers: [otlp], processors: [memory_limiter, batch], exporters: [prometheusremotewrite] }
     logs:    { receivers: [otlp], processors: [memory_limiter, batch], exporters: [otlphttp/loki] }
 ```
-(Los exporters `prometheusremotewrite` y `otlphttp/loki` se omiten por brevedad; nombres de componentes: TODO-VERIFY contra el registro de componentes.)
+(Los exporters `prometheusremotewrite` y `otlphttp/loki` se omiten por brevedad; nombres de componentes: comprobar contra el registro de componentes.)
 
 ## Checklist de revisión
 - [ ] `memory_limiter` primero y `batch` último en todos los pipelines.
@@ -81,6 +81,6 @@ service:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `metrics-store-ha-retention`, `logs-and-traces-stores`, `multi-tenant-observability`, `cardinality-and-cost-governance`.
-- Fuentes oficiales: https://opentelemetry.io/docs/collector/configuration/ (verificado 2026-11-07; confirma pipelines en `service.pipelines`, orden de processors y extensiones). Valores de `memory_limiter`: TODO-VERIFY en docs del componente.
+- Fuentes oficiales: https://opentelemetry.io/docs/collector/configuration/ (verificado 2026-11-07; confirma pipelines en `service.pipelines`, orden de processors y extensiones). Valores de `memory_limiter`: comprobar en docs del componente.
 - Preparado para AWS, no verificado en real; en local se usa un único Collector sin la capa agente/gateway completa.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

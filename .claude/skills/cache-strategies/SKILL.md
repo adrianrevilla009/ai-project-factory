@@ -71,7 +71,7 @@ maxmemory-policy allkeys-lru
 | Revisión de TTL, timeouts y degradación | 3 | agente `code-reviewer` |
 | Regla Semgrep: `opsForValue().set(` sin `Duration` | pendiente | `policies/semgrep/` (no existe aún) |
 
-ElastiCache en AWS: preparado para AWS, no verificado en real; en local se usa Redis/Valkey OSS en contenedor y no se reproducen failover ni cifrado gestionado. Licencia: comprobar la del motor elegido (D16) — TODO-VERIFY.
+ElastiCache en AWS: preparado para AWS, no verificado en real; en local se usa Redis/Valkey OSS en contenedor y no se reproducen failover ni cifrado gestionado. Licencia: comprobar la del motor elegido (D16) — comprobar al fijar la versión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `caching`, `resilience`, `data-sync-pitfalls`, `read-replicas-and-routing`, `multi-tenancy`.

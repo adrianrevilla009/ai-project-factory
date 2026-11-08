@@ -31,7 +31,7 @@ metadata:
 
 - **MUST** en event sourcing con Global Tables fijar **una región de escritura por agregado/tenant**. En modo MREC los conflictos se resuelven por "last writer wins" y las condiciones evalúan contra la versión local, así que el control de concurrencia por versión solo protege dentro de una región.
 - **MUST NOT** escribir el mismo agregado en ambas regiones a la vez en MREC.
-- **SHOULD** valorar MRSC (consistencia fuerte multi-región, RPO cero) solo si el caso lo exige: exactamente 3 regiones (o 2 + testigo), sin TTL ni transacciones, mayor latencia de escritura. TODO-VERIFY disponibilidad con eu-west-1 y eu-central-1 en uso real.
+- **SHOULD** valorar MRSC (consistencia fuerte multi-región, RPO cero) solo si el caso lo exige: exactamente 3 regiones (o 2 + testigo), sin TTL ni transacciones, mayor latencia de escritura. Comprobar disponibilidad con eu-west-1 y eu-central-1 en uso real.
 - **MUST NOT** hacer doble escritura Postgres + NoSQL para "replicar" (4.5): cada agregado tiene una única fuente de verdad.
 - **MUST** monitorizar el retraso (ReplicationLatency en MREC, AuroraGlobalDBRPOLag) y alertar frente al RPO del tier.
 - **MUST** que los backups con Vault Lock cubran también corrupción lógica, que la replicación propaga.

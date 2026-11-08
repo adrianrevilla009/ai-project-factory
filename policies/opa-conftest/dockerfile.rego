@@ -1,5 +1,5 @@
 # Conftest policy for Dockerfiles: `conftest test --parser dockerfile -p policies/opa-conftest Dockerfile`
-# TODO-VERIFY: Rego v1 syntax requires a recent OPA/Conftest; check the version pinned by the project.
+# Rego v1 syntax requires a recent OPA/Conftest; check the version pinned by the project.
 package dockerfile
 
 import rego.v1

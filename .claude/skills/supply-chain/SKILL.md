@@ -37,7 +37,7 @@ docker push registry.example.com/app:latest     # desde el portatil, sin firma, 
 ```
 ### Bien
 ```text
-# En CI, tras construir (TODO-VERIFY sintaxis con la version de cosign adoptada)
+# En CI, tras construir (comprobar sintaxis con la version de cosign adoptada)
 cosign sign registry.example.com/app@sha256:<digest>
 cosign attest --predicate sbom.cdx.json --type cyclonedx registry.example.com/app@sha256:<digest>
 ```
@@ -54,7 +54,7 @@ spec:
         - imageReferences: ["registry.example.com/*"]
           attestors: [ { entries: [ { keyless: { issuer: "https://token.actions.githubusercontent.com", subject: "https://github.com/example-org/*" } } ] } ]
 ```
-Campos de Kyverno (`validationFailureAction`, `verifyImages`) TODO-VERIFY contra la versión elegida.
+Campos de Kyverno (`validationFailureAction`, `verifyImages`) comprobar contra la versión elegida.
 
 ## Checklist de revisión
 - [ ] SBOM generado y almacenado por release.

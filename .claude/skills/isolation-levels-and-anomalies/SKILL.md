@@ -16,7 +16,7 @@ metadata:
 - No aplica a escrituras independientes sin lectura previa ni a lecturas aproximadas (informes).
 
 ## Reglas
-- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos — TODO-VERIFY contra la documentación del motor y versión elegidos.
+- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos — comprobar contra la documentación del motor y versión elegidos.
 - **MUST** identificar las anomalías posibles de cada caso de uso: lost update, non-repeatable read, phantom, write skew.
 - **MUST** proteger el patrón "leer y luego escribir según lo leído" con bloqueo (`optimistic-locking`/`pessimistic-locking`), una restricción de BD o un `UPDATE` atómico condicional; no confiar en el aislamiento por defecto.
 - **SHOULD** preferir restricciones declarativas (`UNIQUE`, `CHECK`, FK) como última defensa de invariantes.

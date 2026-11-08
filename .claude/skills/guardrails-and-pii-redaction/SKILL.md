@@ -76,5 +76,5 @@ Las regex de ejemplo no cubren todos los formatos; validar con un corpus propio.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pii-and-data-classification`, `llm-security`, `llm-gateway`, `structured-logging`, `model-risk-and-ai-act-mapping`, `prompt-injection-defense-for-agents`.
-- Fuentes: OWASP Top 10 for LLM Applications (sensitive information disclosure, improper output handling) — TODO-VERIFY edición; RGPD en EUR-Lex — borrador por confirmar.
+- Fuentes: OWASP Top 10 for LLM Applications (sensitive information disclosure, improper output handling) — comprobar edición; RGPD en EUR-Lex — borrador por confirmar.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

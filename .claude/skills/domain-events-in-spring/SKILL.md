@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** que el evento cruce el límite del módulo solo si está en su API pública (`project-layout`).
 
 ## Por qué
-Los eventos en proceso reducen el acoplamiento entre módulos, pero comparten el hilo y la transacción por defecto: un listener lento o que falla puede romper al publicador. Separar fase y asincronía hace explícito qué garantías hay. Con Modulith, el registro de eventos da at-least-once dentro del proceso (TODO-VERIFY detalles de la versión).
+Los eventos en proceso reducen el acoplamiento entre módulos, pero comparten el hilo y la transacción por defecto: un listener lento o que falla puede romper al publicador. Separar fase y asincronía hace explícito qué garantías hay. Con Modulith, el registro de eventos da at-least-once dentro del proceso (comprobar detalles de la versión).
 
 ## Ejemplos
 ### Mal

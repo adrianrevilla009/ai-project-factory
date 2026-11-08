@@ -21,7 +21,7 @@ metadata:
 - **MUST** empezar por tabletop: leer el runbook de `failover-and-failback-runbooks` con el equipo, cronometrar decisiones y anotar huecos.
 - **SHOULD** progresar: local (Toxiproxy/Chaos Mesh) -> preproducción -> producción acotada, solo cuando exista entorno real.
 - **MUST** incluir escenarios: pérdida de AZ, latencia/caída de dependencia, región primaria no disponible, lag de replicación alto, credenciales de BD caducadas tras failover (orden Aurora-Vault), registro de imágenes inaccesible.
-- **MUST** tratar los experimentos AWS FIS (p. ej. aislar una réplica de Global Tables) como diseño documentado "no ejecutado"; el servicio es una opción de AWS, cuyas acciones concretas son TODO-VERIFY.
+- **MUST** tratar los experimentos AWS FIS (p. ej. aislar una réplica de Global Tables) como diseño documentado "no ejecutado"; el servicio es una opción de AWS, cuyas acciones concretas se comprueban.
 - **MUST** cerrar cada ejercicio con acciones asignadas y fecha; **MUST NOT** repetir el mismo ejercicio sin revisar las acciones previas.
 - **SHOULD** ejercicios sin culpa; el resultado alimenta `incident-management-and-postmortems`.
 - **MUST NOT** ejecutar chaos sin observabilidad ni plan de retorno.

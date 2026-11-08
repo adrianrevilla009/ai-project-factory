@@ -19,7 +19,7 @@ metadata:
 - **MUST** usar proyección (record/interfaz/constructor expression) para lecturas que no modifican datos.
 - **MUST NOT** cargar entidades completas para devolver 3 columnas.
 - **SHOULD** usar `record` como DTO de proyección con constructor expression en JPQL: `select new ...`.
-- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa (TODO-VERIFY según versión de Spring Data).
+- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa (comprobar según versión de Spring Data).
 - **MUST NOT** devolver entidades JPA desde controladores.
 - **MUST** nombrar el DTO por caso de uso (`OrderSummary`), no por tabla.
 - **SHOULD** usar proyecciones también para evitar N+1 en listados con datos de varias tablas.

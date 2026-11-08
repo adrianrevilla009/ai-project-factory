@@ -1,5 +1,6 @@
 # Baseline de workloads (skill: workload-baseline).
-# TODO-VERIFY: apiVersion/campos contra la version de Kyverno elegida
+# Sin ejecutar: contrastar apiVersion y campos con la version de Kyverno elegida
+# (validationFailureAction vs failureAction por regla cambia entre versiones).
 # (validationFailureAction vs failureAction por regla cambia entre versiones).
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy

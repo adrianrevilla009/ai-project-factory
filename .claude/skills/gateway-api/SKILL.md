@@ -13,14 +13,14 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica a toda entrada nueva de tráfico norte-sur y a reglas de enrutado HTTP entre servicios.
-- No aplica a clústeres que aún no tengan los CRDs de Gateway API instalados: instalarlos es un paso previo explícito (TODO-VERIFY canal estándar y versión).
+- No aplica a clústeres que aún no tengan los CRDs de Gateway API instalados: instalarlos es un paso previo explícito (comprobar canal estándar y versión).
 
 ## Reglas
 - **MUST** preferir `Gateway` + `HTTPRoute` (API estándar) sobre `Ingress` en proyectos nuevos; Istio la implementa con `gatewayClassName: istio`.
 - **MUST** separar roles: el equipo de plataforma posee `Gateway`; los equipos de servicio poseen sus `HTTPRoute`.
 - **MUST** restringir qué namespaces pueden adjuntar rutas con `allowedRoutes`.
 - **MUST** terminar TLS en el `Gateway` con un `Secret` gestionado por cert-manager; nunca certificados en el repo.
-- **SHOULD** usar `VirtualService`/`DestinationRule` de Istio solo para lo que Gateway API no cubra todavía (TODO-VERIFY cobertura vigente).
+- **SHOULD** usar `VirtualService`/`DestinationRule` de Istio solo para lo que Gateway API no cubra todavía (comprobar cobertura vigente).
 - **MUST NOT** mezclar `Ingress` y `Gateway` para el mismo host.
 
 ## Por qué

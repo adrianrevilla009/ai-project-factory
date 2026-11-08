@@ -16,9 +16,9 @@ metadata:
 - No aplica a flujos disparados por eventos o peticiones; ni a orquestación de larga vida con estado (ver `sagas-and-process-managers`).
 
 ## Reglas
-- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock, TODO-VERIFY; o un `CronJob` de Kubernetes fuera del servicio).
+- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock, comprobar al fijar la versión; o un `CronJob` de Kubernetes fuera del servicio).
 - **MUST** que el job sea idempotente y reanudable: procesa por lotes con marca de progreso; relanzarlo no duplica efectos (ver `idempotency-and-deduplication`).
-- **MUST** configurar el scheduler de Spring con pool propio: por defecto `@Scheduled` usa un solo hilo y un job lento bloquea a los demás (`spring.task.scheduling.pool.size`, TODO-VERIFY).
+- **MUST** configurar el scheduler de Spring con pool propio: por defecto `@Scheduled` usa un solo hilo y un job lento bloquea a los demás (`spring.task.scheduling.pool.size`, comprobar al fijar la versión).
 - **MUST** capturar y registrar excepciones; un job que falla en silencio no se repara.
 - **MUST** fijar zona horaria explícita en cron (`zone = "UTC"` o la de negocio).
 - **MUST** procesar en trozos (chunks) con transacción por trozo; **MUST NOT** cargar todo el conjunto en memoria (ver `pagination`, `batching-and-bulk-ops`).

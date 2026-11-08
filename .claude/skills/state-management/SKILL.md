@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** usar selectores en el store para evitar renders innecesarios.
 
 ## Por qué
-Copiar datos del servidor a un store crea una segunda fuente de verdad que caduca. Una librería de server-state ya resuelve caché, deduplicación y reintento. La URL como estado da enlaces compartibles y botón "atrás" correcto. Nombres de API (`useQuery`, `invalidateQueries`, `queryKey`) a verificar contra la versión instalada (TODO-VERIFY v5).
+Copiar datos del servidor a un store crea una segunda fuente de verdad que caduca. Una librería de server-state ya resuelve caché, deduplicación y reintento. La URL como estado da enlaces compartibles y botón "atrás" correcto. Nombres de API (`useQuery`, `invalidateQueries`, `queryKey`) a verificar contra la versión instalada (comprobar v5).
 
 ## Ejemplos
 ### Mal
@@ -65,7 +65,7 @@ const create = useMutation({
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Plugin ESLint de TanStack Query / `react-hooks/exhaustive-deps` | 1 | pendiente (configuración del proyecto generado; TODO-VERIFY nombres) |
+| Plugin ESLint de TanStack Query / `react-hooks/exhaustive-deps` | 1 | pendiente (configuración del proyecto generado; comprobar nombres) |
 | Revisión de clasificación del estado | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

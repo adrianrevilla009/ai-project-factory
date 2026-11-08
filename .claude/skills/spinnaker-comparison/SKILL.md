@@ -27,7 +27,7 @@ Spinnaker es una plataforma de entrega orientada a pipelines (Application, Clust
 | Aspecto | Argo CD + Rollouts (D21) | Spinnaker |
 |---|---|---|
 | Modelo | Estado deseado en Git, pull | Pipelines con stages |
-| Canary | AnalysisTemplate en el clúster | Estrategias nativas; análisis automatizado de canary (TODO-VERIFY componente y versión) |
+| Canary | AnalysisTemplate en el clúster | Estrategias nativas; análisis automatizado de canary (comprobar componente y versión) |
 | Operación | Pocos controladores | Varios servicios propios |
 
 ## Ejemplos

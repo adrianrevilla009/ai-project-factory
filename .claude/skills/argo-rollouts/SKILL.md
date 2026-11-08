@@ -98,5 +98,5 @@ Local: kind/k3d (ADR-0034) permite probar Rollouts; la integración con Istio y 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `environment-promotion`, `drift-and-self-heal-policy`, `slo-error-budget-policy`.
-- Fuentes (verificadas 2026-11-07): https://argo-rollouts.readthedocs.io/en/stable/features/canary/ · .../features/analysis/. Sintaxis exacta de `trafficRouting.istio` y `prePromotionAnalysis`: TODO-VERIFY contra la versión instalada.
+- Fuentes (verificadas 2026-11-07): https://argo-rollouts.readthedocs.io/en/stable/features/canary/ · .../features/analysis/. Sintaxis exacta de `trafficRouting.istio` y `prePromotionAnalysis`: comprobar contra la versión instalada.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

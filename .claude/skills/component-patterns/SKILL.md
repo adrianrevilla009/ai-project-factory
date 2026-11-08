@@ -67,7 +67,7 @@ function useDebouncedValue<T>(value: T, ms: number): T { /* hook reutilizable */
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
 | `eslint-plugin-react-hooks` (rules-of-hooks, exhaustive-deps) | 1 | pendiente (configuración del proyecto generado) |
-| `react/no-unstable-nested-components`, `react/no-array-index-key` | 1 | pendiente (eslint-plugin-react; TODO-VERIFY nombres) |
+| `react/no-unstable-nested-components`, `react/no-array-index-key` | 1 | pendiente (eslint-plugin-react; comprobar nombres) |
 | Revisión de API de componentes | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

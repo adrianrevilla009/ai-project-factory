@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** verificar con un escáner de cabeceras en CI.
 
 ## Por qué
-Las cabeceras reducen el impacto de XSS y clickjacking; CORS permisivo permite que sitios ajenos lean respuestas autenticadas; CSRF explota cookies que el navegador envía solo. Valores concretos de cabeceras y API de Spring deben contrastarse con documentación vigente (TODO-VERIFY).
+Las cabeceras reducen el impacto de XSS y clickjacking; CORS permisivo permite que sitios ajenos lean respuestas autenticadas; CSRF explota cookies que el navegador envía solo. Valores concretos de cabeceras y API de Spring deben contrastarse con documentación vigente (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal

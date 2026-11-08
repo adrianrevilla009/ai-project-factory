@@ -68,5 +68,5 @@ Map<String, User> byEmail = users.stream()
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `immutability-and-value-objects`, `concurrent-collections`, `modern-java-idioms`, `projections-and-dtos`.
-- Fuentes: Javadoc de `java.util.stream` y `java.util.Collections` — TODO-VERIFY versión; no consultado en línea.
+- Fuentes: Javadoc de `java.util.stream` y `java.util.Collections` — comprobar versión; no consultado en línea.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

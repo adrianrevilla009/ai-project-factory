@@ -48,7 +48,7 @@ resource "aws_backup_vault_lock_configuration" "main" {
   changeable_for_days = 7    # cumplimiento tras 7 días; revisar antes
 }
 ```
-Nombres de argumentos de Terraform: TODO-VERIFY contra el proveedor. Prueba:
+Nombres de argumentos de Terraform: comprobar contra el proveedor. Prueba:
 ```text
 Trimestral: restaurar último recovery point de Aurora en eu-central-1 a un clúster de prueba,
 ejecutar consulta de negocio de control, anotar duración, destruir el clúster.

@@ -49,7 +49,7 @@ private UUID publicId = UUID.randomUUID(); // id expuesto en la API
 ```sql
 CREATE SEQUENCE order_seq START WITH 1 INCREMENT BY 50;
 ```
-`UUID.randomUUID` genera v4; para v7 hace falta librería o generador propio — TODO-VERIFY.
+`UUID.randomUUID` genera v4; para v7 hace falta librería o generador propio — comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Estrategia explícita (no `AUTO`).

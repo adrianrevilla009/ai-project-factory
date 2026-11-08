@@ -40,7 +40,7 @@ spec: { instances: 1 }   # sin backup, sin resources, sin spread
 ```
 ### Bien
 ```yaml
-# TODO-VERIFY: campos segun la version de CloudNativePG instalada
+# comprobar campos segun la version de CloudNativePG instalada
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata: { name: orders-db, namespace: shop-orders-prod }

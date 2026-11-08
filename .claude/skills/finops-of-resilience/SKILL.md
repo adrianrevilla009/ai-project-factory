@@ -14,7 +14,7 @@ metadata:
 ## Cuándo aplicar y cuándo no
 - Aplica al elegir patrón de DR por tier, justificar un presupuesto de resiliencia o revisar un ADR multi-región.
 - No aplica al control general de gasto cloud (ver `finops`).
-- Las cifras son estimaciones de diseño; ningún precio se ha verificado en una cuenta real. Precios: consultar la calculadora oficial (TODO-VERIFY).
+- Las cifras son estimaciones de diseño; ningún precio se ha verificado en una cuenta real. Precios: consultar la calculadora oficial (comprobar al fijar la versión).
 
 ## Reglas
 - **MUST** calcular, para cada tier, el coste de la estrategia (cómputo en espera, réplicas de datos, transferencia entre regiones, backups, herramientas) frente al coste de indisponibilidad (ingresos perdidos por hora x RTO esperado + penalizaciones).
@@ -68,5 +68,5 @@ review: "2027-02-07"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `multi-region-patterns`, `data-replication-matrix`, `finops`, `capacity-and-load-modeling`.
-- Fuentes: AWS Well-Architected Reliability Pillar y calculadora de precios de AWS — TODO-VERIFY URL y precios (no consultados 2026-11-07).
+- Fuentes: AWS Well-Architected Reliability Pillar y calculadora de precios de AWS — comprobar URL y precios (no consultados 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

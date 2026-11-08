@@ -21,12 +21,12 @@ metadata:
 - **MUST** pedir artefactos concretos (ruta + resumen), no volcar ficheros enteros entre agentes.
 - **MUST NOT** lanzar subagentes en paralelo sin necesidad: cada uno consume contexto propio.
 - **SHOULD** mantener `CLAUDE.md` y las `description` de skills cortas; la descripción se paga en cada sesión.
-- **SHOULD** elegir el modelo según la tarea (campo `model` del agente): tareas mecánicas con modelo menor. TODO-VERIFY nombres y precios vigentes; no se fijan aquí.
+- **SHOULD** elegir el modelo según la tarea (campo `model` del agente): tareas mecánicas con modelo menor. Comprobar nombres y precios vigentes; no se fijan aquí.
 - **SHOULD** limitar la salida de herramientas (`head`, filtros) antes de que entre al contexto.
 - **SHOULD** revisar el consumo tras cada oleada de trabajo y anotar las causas de picos.
 
 ## Por qué
-El coste crece con el contexto acumulado y con el número de turnos, no con el valor entregado. Un bucle sin tope o un `cat` de un log de 20 000 líneas cuestan igual que trabajo útil. Los límites deben ser explícitos y estar fuera del criterio del propio agente. Cifras y planes de precios cambian: consultar la documentación oficial vigente (TODO-VERIFY, no se citan importes).
+El coste crece con el contexto acumulado y con el número de turnos, no con el valor entregado. Un bucle sin tope o un `cat` de un log de 20 000 líneas cuestan igual que trabajo útil. Los límites deben ser explícitos y estar fuera del criterio del propio agente. Cifras y planes de precios cambian: consultar la documentación oficial vigente (comprobar al fijar la versión, no se citan importes).
 
 ## Ejemplos
 ### Mal

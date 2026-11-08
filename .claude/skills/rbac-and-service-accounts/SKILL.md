@@ -22,7 +22,7 @@ metadata:
 - **MUST NOT** conceder `cluster-admin`, wildcards (`*`) en verbs/resources ni `secrets` get/list global a aplicaciones.
 - **MUST** vincular a humanos mediante grupos del IdP (Keycloak/OIDC), no usuarios individuales.
 - **MUST** revisar permisos peligrosos: `escalate`, `bind`, `impersonate`, `create pods/exec`, `create rolebindings`.
-- **SHOULD** enlazar identidad de nube con IRSA o EKS Pod Identity (TODO-VERIFY cuál usa el proyecto) con un rol por ServiceAccount y condición de namespace/SA en la trust policy.
+- **SHOULD** enlazar identidad de nube con IRSA o EKS Pod Identity (comprobar cuál usa el proyecto) con un rol por ServiceAccount y condición de namespace/SA en la trust policy.
 - **SHOULD** usar tokens proyectados con audiencia y expiración corta; **MUST NOT** crear tokens de larga duración en Secrets.
 - Local: kind no reproduce IRSA/Pod Identity; se simula con credenciales example o un emulador.
 

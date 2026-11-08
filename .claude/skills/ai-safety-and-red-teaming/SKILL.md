@@ -26,7 +26,7 @@ metadata:
 - **MUST** tratar los resultados (que pueden contener contenido dañino o datos) como confidenciales y almacenarlos con acceso restringido.
 - **SHOULD** repetir ante cada cambio de modelo, prompt, herramienta o fuente de datos, y al menos una vez por trimestre.
 - **SHOULD** combinar casos manuales con generación automática de variantes, revisando los resultados a mano.
-- **SHOULD** revisar el sistema frente a OWASP Top 10 for LLM Applications (TODO-VERIFY edición vigente) y frente a los requisitos de `model-risk-and-ai-act-mapping`.
+- **SHOULD** revisar el sistema frente a OWASP Top 10 for LLM Applications (comprobar edición vigente) y frente a los requisitos de `model-risk-and-ai-act-mapping`.
 - **MUST NOT** usar los resultados para atacar sistemas ajenos ni publicar técnicas de elusión contra un proveedor sin seguir su divulgación responsable.
 - **MUST NOT** desactivar los controles de producción para "facilitar" la prueba y olvidar reactivarlos.
 
@@ -69,5 +69,5 @@ report_to: security-lead@example.com
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-security`, `llm-evals`, `guardrails-and-pii-redaction`, `model-risk-and-ai-act-mapping`, `human-in-the-loop`.
-- Fuentes: OWASP Top 10 for LLM Applications (https://genai.owasp.org, TODO-VERIFY edición); NIST AI RMF (TODO-VERIFY URL). Normativa aplicable: borrador por confirmar con fuente oficial.
+- Fuentes: OWASP Top 10 for LLM Applications (https://genai.owasp.org, comprobar edición); NIST AI RMF (comprobar URL). Normativa aplicable: borrador por confirmar con fuente oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

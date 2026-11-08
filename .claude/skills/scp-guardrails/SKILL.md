@@ -19,12 +19,12 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 
 ## Reglas
 - **MUST** usar estrategia "deny list": mantener `FullAWSAccess` y añadir denegaciones concretas.
-- **MUST** denegar acciones fuera de eu-west-1 y eu-central-1 (D6) con `aws:RequestedRegion`, exceptuando servicios globales (IAM, Organizations, Route 53, CloudFront, etc.; lista por validar, TODO-VERIFY).
+- **MUST** denegar acciones fuera de eu-west-1 y eu-central-1 (D6) con `aws:RequestedRegion`, exceptuando servicios globales (IAM, Organizations, Route 53, CloudFront, etc.; lista por validar, comprobar al fijar la versión).
 - **MUST** denegar desactivar o borrar CloudTrail, Config, GuardDuty y Security Hub de la organización.
 - **MUST** denegar uso del usuario root en cuentas miembro y la creación de access keys.
 - **MUST** denegar `kms:ScheduleKeyDeletion` y `kms:DisableKey` salvo rol de plataforma.
 - **MUST** probar cada SCP en una OU `Sandbox` antes de adjuntarla a `Workloads`.
-- **SHOULD** versionar SCP en ficheros JSON con `Sid` descriptivo y tamaño < límite de 5120 caracteres (TODO-VERIFY).
+- **SHOULD** versionar SCP en ficheros JSON con `Sid` descriptivo y tamaño < límite de 5120 caracteres (comprobar al fijar la versión).
 - **MUST NOT** adjuntar SCP experimentales a la raíz de la organización.
 - **MUST NOT** olvidar que las SCP no afectan a la cuenta de management.
 
@@ -68,5 +68,5 @@ Una SCP errónea en la raíz puede dejar a toda la organización sin acceso. El 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `organization-and-ou-design`, `regions-and-data-residency`, `kms-multi-region-keys`, `org-cloudtrail-config-securityhub-guardduty`.
-- Fuentes: AWS Organizations User Guide, sección SCP (2026-11-07) — TODO-VERIFY lista de acciones globales y límites.
+- Fuentes: AWS Organizations User Guide, sección SCP (2026-11-07) — comprobar lista de acciones globales y límites.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

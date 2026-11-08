@@ -24,7 +24,7 @@ metadata:
 - **MUST** commitear el lockfile de frontend (`package-lock.json` o `pnpm-lock.yaml`) e instalar en CI con `npm ci` / `pnpm install --frozen-lockfile`.
 - **SHOULD** preferir `starter` de Spring Boot sobre listas manuales de artefactos.
 - **SHOULD** revisar el árbol (`dependency:tree`) cuando una dependencia añade más de ~10 transitivas.
-- **MUST NOT** añadir librerías abandonadas (sin release en >2 años, TODO-VERIFY umbral) sin ADR.
+- **MUST NOT** añadir librerías abandonadas (sin release en >2 años, comprobar umbral) sin ADR.
 
 ## Por qué
 Cada dependencia es superficie de ataque, de licencia y de mantenimiento. Las transitivas implícitas rompen cuando el proveedor las retira. Un lockfile ausente convierte `npm install` en una lotería diaria.
@@ -59,7 +59,7 @@ npm install   # en CI, ignora el lockfile
 ```text
 npm ci
 ```
-(versión del plugin: TODO-VERIFY.)
+(versión del plugin: comprobar al fijar la versión.)
 
 ## Checklist de revisión
 - [ ] Dependencia nueva justificada y en el catálogo.
@@ -78,5 +78,5 @@ npm ci
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `enforcer-rules`, `bom-management`, `dependency-security`, `license-compliance`, `sbom-generation`.
-- Fuentes: Apache Maven Dependency Plugin (analyze goals) — TODO-VERIFY URL; documentación de npm (`npm ci`); fecha de referencia 2026-11-07.
+- Fuentes: Apache Maven Dependency Plugin (analyze goals) — comprobar URL; documentación de npm (`npm ci`); fecha de referencia 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

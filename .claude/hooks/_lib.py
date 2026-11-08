@@ -74,7 +74,7 @@ def load_config(root: Path) -> dict:
 
 
 def emit_context(event_name: str, text: str) -> None:
-    """Add context for the model (SessionStart / PostToolUse additionalContext). TODO-VERIFY field names yearly."""
+    """Add context for the model (SessionStart / PostToolUse additionalContext). Re-check field names against the Claude Code docs periodically."""
     print(json.dumps({"hookSpecificOutput": {"hookEventName": event_name, "additionalContext": text}}))
 
 

@@ -13,4 +13,4 @@ Ambos son patrones de primera clase, con reglas de oro en brief §4.5.
 Atomicidad dentro de una BD (outbox) o eventos como fuente de verdad (ES).
 
 ## Consecuencias
-Event sourcing ≠ auditoría; skill de decisión obligatorio. DynamoDB Global Tables: región de escritura por agregado (TODO-VERIFY consistencia fuerte multi-región).
+Event sourcing ≠ auditoría; skill de decisión obligatorio. DynamoDB Global Tables: región de escritura por agregado (comprobar consistencia fuerte multi-región).

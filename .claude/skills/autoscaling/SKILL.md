@@ -55,7 +55,7 @@ spec:
     scaleDown: { stabilizationWindowSeconds: 300 }
 ```
 ```yaml
-# KEDA (TODO-VERIFY apiVersion y campos segun version instalada)
+# KEDA (comprobar apiVersion y campos segun version instalada)
 apiVersion: keda.sh/v1alpha1
 kind: ScaledObject
 spec:

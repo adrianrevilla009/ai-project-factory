@@ -23,7 +23,7 @@ metadata:
 - **MUST** paginar con límite máximo; `search_after`/keyset en vez de offset profundo.
 - **MUST NOT** exponer el motor de búsqueda directamente al navegador.
 - **MUST NOT** indexar campos sensibles que no se vayan a buscar.
-- **SHOULD** preferir OpenSearch (código abierto, Apache 2.0 según su repositorio: licencia TODO-VERIFY) sobre soluciones con licencia restrictiva (D16). Preparado para AWS (Amazon OpenSearch Service), no verificado en real; local con contenedor OpenSearch, sin reproducir dimensionado, multi-AZ ni cifrado del servicio gestionado.
+- **SHOULD** preferir OpenSearch (código abierto, Apache 2.0 según su repositorio: licencia comprobar al fijar la versión) sobre soluciones con licencia restrictiva (D16). Preparado para AWS (Amazon OpenSearch Service), no verificado en real; local con contenedor OpenSearch, sin reproducir dimensionado, multi-AZ ni cifrado del servicio gestionado.
 
 ## Por qué
 Un índice como fuente de verdad pierde datos al reconstruirse; una doble escritura diverge ante fallos parciales. Sin filtro de tenant obligatorio, la búsqueda filtra datos entre clientes.

@@ -66,5 +66,5 @@ Billing API [Spring Boot] --"publica PaymentCaptured (Kafka)"--> Orders Service 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `diagrams-as-code`, `adr`, `living-readme`, `architecture-testing-archunit`, `parity-matrix-maintenance`.
-- Fuentes: https://c4model.com/ , https://arc42.org/ (2026-11-07). Lista exacta de secciones arc42: TODO-VERIFY contra la versión vigente.
+- Fuentes: https://c4model.com/ , https://arc42.org/ (2026-11-07). Lista exacta de secciones arc42: comprobar contra la versión vigente.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

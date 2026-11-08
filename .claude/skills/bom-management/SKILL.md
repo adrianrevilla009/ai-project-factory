@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** importar los BOM por `<scope>import</scope>` con `<type>pom</type>` dentro de `dependencyManagement`; orden: BOM corporativo primero, resto después (el primero que declara gana).
 - **MUST** que los módulos declaren dependencias SIN `<version>` cuando el BOM la gestiona.
-- **MUST** que el BOM corporativo importe `spring-boot-dependencies` y fije versiones de librerías aprobadas (`catalog/approved-libraries.yaml`); las versiones concretas son TODO-VERIFY hasta confirmarlas en fuente oficial.
+- **MUST** que el BOM corporativo importe `spring-boot-dependencies` y fije versiones de librerías aprobadas (`catalog/approved-libraries.yaml`); las versiones concretas se comprueban hasta confirmarlas en fuente oficial.
 - **MUST** documentar cada override de versión con comentario, motivo (CVE, bug), ticket y fecha de retirada.
 - **SHOULD** versionar el BOM con semver y publicarlo como artefacto propio (`com.example:platform-bom`).
 - **SHOULD** que el BOM sea solo `dependencyManagement`: sin `<dependencies>`.

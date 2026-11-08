@@ -52,7 +52,7 @@ groups:
         for: 10m
         labels: { severity: critical }
       - alert: CollectorExporterDropping
-        expr: rate(otelcol_exporter_send_failed_spans[5m]) > 0   # TODO-VERIFY nombre exacto de la metrica
+        expr: rate(otelcol_exporter_send_failed_spans[5m]) > 0   # comprobar nombre exacto de la metrica
         for: 5m
         labels: { severity: warning }
 ```

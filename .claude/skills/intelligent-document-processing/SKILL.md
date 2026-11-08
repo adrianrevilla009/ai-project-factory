@@ -74,5 +74,5 @@ ValidationResult validate(InvoiceExtraction e) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ocr-options`, `document-management`, `human-in-the-loop`, `file-upload-security`, `llm-security`, `pii-and-data-classification`.
-- Fuentes: sin fuente normativa; criterios de ingeniería. Umbrales concretos TODO-VERIFY con datos reales del proyecto.
+- Fuentes: sin fuente normativa; criterios de ingeniería. Umbrales concretos comprobar con datos reales del proyecto.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

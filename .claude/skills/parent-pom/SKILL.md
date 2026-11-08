@@ -42,7 +42,7 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
 ### Bien
 ```xml
 <properties>
-  <maven.compiler.release>21</maven.compiler.release> <!-- TODO-VERIFY LTS vigente, ver jdk-distribution-and-upgrade-cadence -->
+  <maven.compiler.release>21</maven.compiler.release> <!-- comprobar LTS vigente, ver jdk-distribution-and-upgrade-cadence -->
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   <project.build.outputTimestamp>2026-01-01T00:00:00Z</project.build.outputTimestamp>
 </properties>
@@ -51,7 +51,7 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version><!-- TODO-VERIFY versión vigente --></version>
+        <version><!-- comprobar versión vigente --></version>
       </plugin>
     </plugins>
   </pluginManagement>

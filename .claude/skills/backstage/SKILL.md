@@ -77,5 +77,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `software-templates`, `golden-paths-governance`, `developer-experience-metrics`, `sbom`.
-- Fuentes (verificado 2026-11-07): https://backstage.io/docs/features/software-catalog/descriptor-format (apiVersion `backstage.io/v1alpha1`, spec.type/lifecycle/owner). TODO-VERIFY: anotación `backstage.io/techdocs-ref: dir:.` en la página de TechDocs (https://backstage.io/docs/features/techdocs/).
+- Fuentes (verificado 2026-11-07): https://backstage.io/docs/features/software-catalog/descriptor-format (apiVersion `backstage.io/v1alpha1`, spec.type/lifecycle/owner). Comprobar anotación `backstage.io/techdocs-ref: dir:.` en la página de TechDocs (https://backstage.io/docs/features/techdocs/).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -22,7 +22,7 @@
 - **MUST NOT** guardar secretos en `application*.yml` ni en el repositorio; se inyectan por entorno o gestor de secretos. Los ejemplos usan valores `changeme`.
 - **SHOULD** usar `Duration` y `DataSize` en vez de números sin unidad.
 - **SHOULD** dar valores por defecto seguros con `@DefaultValue` y diferenciar entornos con perfiles o variables, no con ramas `if` en código.
-- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE (TODO-VERIFY configuración Maven).
+- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE (comprobar configuración Maven).
 
 ## controllers-and-validation
 
@@ -66,7 +66,7 @@
 - **MUST** registrar el error completo en el log con el mismo identificador de correlación (nivel ERROR solo para 5xx).
 - **MUST** mapear errores de validación a 400 con la lista de campos inválidos; conflictos de negocio a 409; no encontrado a 404.
 - **SHOULD** definir excepciones de dominio sin dependencia de Spring y traducirlas en el advice.
-- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (TODO-VERIFY propiedad en la versión vigente).
+- **SHOULD** valorar `spring.mvc.problemdetails.enabled=true` para errores estándar de Spring MVC (comprobar propiedad en la versión vigente).
 
 ## file-upload-and-streaming
 
@@ -127,7 +127,7 @@
 ## reactive-vs-blocking
 
 - **MUST** por defecto usar Spring MVC bloqueante (Java + Spring Boot + Maven); justificar WebFlux con un ADR del proyecto.
-- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; TODO-VERIFY) antes de plantear reactivo por escalabilidad de I/O.
+- **SHOULD** activar hilos virtuales (`spring.threads.virtual.enabled=true`, Boot 3.2+, requiere Java 21+; comprobar al fijar la versión) antes de plantear reactivo por escalabilidad de I/O.
 - **MUST** elegir WebFlux solo con necesidad real: streaming/backpressure (SSE, WebSocket), fan-out masivo, o stack reactivo completo.
 - **MUST NOT** mezclar JDBC/JPA bloqueante dentro de un pipeline reactivo; si hay JPA, el servicio es bloqueante.
 - **MUST NOT** llamar a `.block()` en hilos del event loop.
@@ -142,7 +142,7 @@
 - **MUST** definir `fallback` explícito y de significado de negocio claro, o dejar propagar el error; **MUST NOT** devolver listas vacías o `null` que oculten el fallo.
 - **MUST** configurar instancias por nombre en `application.yml`, una por dependencia, no valores en anotaciones.
 - **MUST** usar `Bulkhead` (semáforo) para limitar concurrencia hacia dependencias lentas.
-- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead (comprobar el orden real de aspectos, TODO-VERIFY).
+- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead (comprobar el orden real de aspectos, comprobar al fijar la versión).
 - **SHOULD** exponer métricas y estado de los breakers vía Actuator (`actuator-and-health`).
 - **MUST NOT** hacer retry anidado en varias capas (multiplica la carga: 3x3x3).
 
@@ -164,7 +164,7 @@
 - **MUST** medir antes de optimizar: registrar tiempo de arranque (log `Started ... in X seconds`) y memoria base como línea base.
 - **MUST** arrancar con JVM estándar por defecto; la imagen nativa es opt-in con justificación en un ADR del proyecto.
 - **SHOULD** probar primero opciones baratas: eliminar auto-configuraciones y dependencias no usadas, CDS/AppCDS, `spring.main.lazy-initialization` (con cautela: oculta errores de cableado hasta la primera petición).
-- **MUST** que, si se adopta nativo, el build nativo se ejecute en CI y los tests corran también en modo nativo (`native:test`, TODO-VERIFY).
+- **MUST** que, si se adopta nativo, el build nativo se ejecute en CI y los tests corran también en modo nativo (`native:test`, comprobar al fijar la versión).
 - **MUST** declarar hints para reflexión/recursos (`RuntimeHintsRegistrar`, `@RegisterReflectionForBinding`) en lugar de ficheros JSON manuales cuando sea posible.
 - **MUST NOT** usar reflexión dinámica, proxies o carga de clases en tiempo de ejecución sin comprobar su compatibilidad AOT.
 - **MUST NOT** asumir que una librería es compatible con nativo; verificar su soporte en su documentación.
@@ -176,19 +176,19 @@
 - **MUST** usar `@WebMvcTest(Controller.class)` para controladores (validación, serialización, códigos HTTP, Problem Details).
 - **MUST** usar `@DataJpaTest` con una base real vía Testcontainers (misma BD que producción) para repositorios; **MUST NOT** probar queries nativas contra H2.
 - **MUST** usar `@JsonTest` para contratos de serialización críticos.
-- **MUST** sustituir colaboradores con `@MockitoBean` (Spring Framework 6.2+; en versiones anteriores `@MockBean`, TODO-VERIFY) y limitar su uso: muchos mocks indican un slice mal elegido.
+- **MUST** sustituir colaboradores con `@MockitoBean` (Spring Framework 6.2+; en versiones anteriores `@MockBean`, comprobar al fijar la versión) y limitar su uso: muchos mocks indican un slice mal elegido.
 - **SHOULD** reutilizar contenedores entre tests (singleton / `@ServiceConnection`, Boot 3.1+) para no multiplicar el tiempo.
 - **MUST NOT** usar `@DirtiesContext` salvo causa documentada: destruye la caché de contextos.
 - **MUST** que los tests no dependan del orden ni de datos de otros tests.
 
 ## upgrade-policy
 
-- **MUST** estar en una línea de Spring Boot con soporte OSS vigente; comprobar las fechas de fin de soporte en la página oficial de versiones (TODO-VERIFY, no fijadas aquí).
+- **MUST** estar en una línea de Spring Boot con soporte OSS vigente; comprobar las fechas de fin de soporte en la página oficial de versiones (comprobar al fijar la versión, no fijadas aquí).
 - **MUST** subir versiones de parche dentro de la línea con frecuencia (mensual como objetivo) y por PR automático.
 - **MUST** subir de línea menor/mayor de una en una, sin saltos, siguiendo la guía de migración oficial (Release Notes y Migration Guide del wiki de Spring Boot).
 - **MUST** eliminar APIs `@Deprecated` en la línea actual antes de saltar a la siguiente.
 - **MUST** gestionar versiones por el BOM de Spring Boot (`bom-management`); **MUST NOT** fijar a mano versiones de librerías que el BOM ya gestiona sin comentario justificado.
 - **MUST** una subida por PR, con suite completa verde y sin mezclar cambios funcionales.
 - **SHOULD** compatibilidad de Spring Cloud/Modulith verificada en su matriz oficial antes de subir Boot.
-- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff (TODO-VERIFY receta disponible).
+- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff (comprobar receta disponible).
 - **MUST NOT** usar versiones SNAPSHOT/milestone/RC en ramas de producción.

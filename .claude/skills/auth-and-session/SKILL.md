@@ -19,7 +19,7 @@ metadata:
 - **MUST** usar Authorization Code con PKCE; nunca flujo implícito ni password grant.
 - **SHOULD** preferir el patrón BFF: el backend-for-frontend hace el intercambio OIDC, guarda los tokens y entrega al navegador una cookie de sesión `HttpOnly; Secure; SameSite` (`bff-and-api-gateway`).
 - **MUST NOT** guardar access/refresh tokens en `localStorage`/`sessionStorage` ni en el store persistido.
-- **MUST** si no hay BFF (SPA pura), mantener el access token solo en memoria y documentar el riesgo en un ADR; refresh token en navegador: TODO-VERIFY con la guía vigente de OAuth 2.0 for Browser-Based Apps.
+- **MUST** si no hay BFF (SPA pura), mantener el access token solo en memoria y documentar el riesgo en un ADR; refresh token en navegador: comprobar con la guía vigente de OAuth 2.0 for Browser-Based Apps.
 - **MUST** con sesión por cookie, proteger mutaciones frente a CSRF (cabecera personalizada o token) y enviar `credentials: 'include'` solo al propio origen/BFF.
 - **MUST** obtener el usuario actual de un endpoint (`/me`) y guardarlo como server-state, no decodificar JWT en el cliente para decidir permisos.
 - **MUST** tratar 401 centralizadamente (redirigir a login) y 403 como pantalla de acceso denegado.

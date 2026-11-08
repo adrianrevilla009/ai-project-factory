@@ -62,7 +62,7 @@ spec:
         mountPath: /v1/auth/kubernetes
         serviceAccountRef: { name: cert-manager }
 ```
-Campos de `ClusterIssuer` y de los roles PKI: TODO-VERIFY contra las versiones fijadas.
+Campos de `ClusterIssuer` y de los roles PKI: comprobar contra las versiones fijadas.
 
 ## Checklist de revisión
 - [ ] Raíz offline; intermedia por región, firmada por la raíz común.
@@ -80,6 +80,6 @@ Campos de `ClusterIssuer` y de los roles PKI: TODO-VERIFY contra las versiones f
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `crypto-tls-mtls-key-rotation`, `rotation-and-leases`, `deployment-ha`, `zero-trust`.
-- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/pki ; https://cert-manager.io/docs/configuration/vault/ (TODO-VERIFY no recuperada).
+- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/pki ; https://cert-manager.io/docs/configuration/vault/ (comprobar no recuperada).
 - Estado: diseño; preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

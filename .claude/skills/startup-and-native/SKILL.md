@@ -19,7 +19,7 @@ metadata:
 - **MUST** medir antes de optimizar: registrar tiempo de arranque (log `Started ... in X seconds`) y memoria base como línea base.
 - **MUST** arrancar con JVM estándar por defecto; la imagen nativa es opt-in con justificación en un ADR del proyecto.
 - **SHOULD** probar primero opciones baratas: eliminar auto-configuraciones y dependencias no usadas, CDS/AppCDS, `spring.main.lazy-initialization` (con cautela: oculta errores de cableado hasta la primera petición).
-- **MUST** que, si se adopta nativo, el build nativo se ejecute en CI y los tests corran también en modo nativo (`native:test`, TODO-VERIFY).
+- **MUST** que, si se adopta nativo, el build nativo se ejecute en CI y los tests corran también en modo nativo (`native:test`, comprobar al fijar la versión).
 - **MUST** declarar hints para reflexión/recursos (`RuntimeHintsRegistrar`, `@RegisterReflectionForBinding`) en lugar de ficheros JSON manuales cuando sea posible.
 - **MUST NOT** usar reflexión dinámica, proxies o carga de clases en tiempo de ejecución sin comprobar su compatibilidad AOT.
 - **MUST NOT** asumir que una librería es compatible con nativo; verificar su soporte en su documentación.

@@ -73,5 +73,5 @@ Detrás del flag features.refunds.enabled (apagado por defecto). Rollback: apaga
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `code-review-guidelines`, `conventional-commits`, `git-workflow`, `definition-of-ready-and-done`, `quality-gates`.
-- Fuentes: práctica interna; umbral de tamaño es heurística del equipo, no norma (TODO-VERIFY si se adopta un valor distinto).
+- Fuentes: práctica interna; umbral de tamaño es heurística del equipo, no norma (comprobar si se adopta un valor distinto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

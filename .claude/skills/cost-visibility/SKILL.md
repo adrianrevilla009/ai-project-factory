@@ -78,5 +78,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `workload-baseline`, `autoscaling`, `namespaces-quotas-multitenancy`.
-- Fuentes: documentación de OpenCost (opencost.io/docs) — TODO-VERIFY versión y métricas exactas; 2026-11-07 sin verificación en vivo.
+- Fuentes: documentación de OpenCost (opencost.io/docs) — comprobar versión y métricas exactas; 2026-11-07 sin verificación en vivo.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

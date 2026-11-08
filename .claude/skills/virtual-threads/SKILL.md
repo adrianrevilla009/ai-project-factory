@@ -16,10 +16,10 @@ metadata:
 - No aplica a trabajo CPU-bound (no aceleran) ni a código que depende de pools para limitar un recurso escaso sin otro límite.
 
 ## Reglas
-- **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (TODO-VERIFY versión mínima de Boot).
+- **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (comprobar versión mínima de Boot).
 - **MUST NOT** hacer pool de virtual threads: crear uno por tarea (`Executors.newVirtualThreadPerTaskExecutor()`).
 - **MUST** limitar el recurso, no los hilos: usar `Semaphore`, pool de conexiones o bulkhead (ver `backpressure-and-bulkheads`).
-- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491, TODO-VERIFY).
+- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491, comprobar al fijar la versión).
 - **MUST NOT** almacenar objetos pesados en `ThreadLocal`: hay millones de hilos potenciales. Preferir `ScopedValue` (ver `structured-concurrency-and-scoped-values`).
 - **SHOULD** medir con `-Djdk.tracePinnedThreads=full` o eventos JFR `jdk.VirtualThreadPinned` antes de generalizar.
 - **SHOULD** medir antes/después (latencia p99, throughput); no asumir mejora.
@@ -67,5 +67,5 @@ spring.threads.virtual.enabled=true
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threads-executors-and-pools`, `structured-concurrency-and-scoped-values`, `connection-pooling`.
-- Fuentes: JEP 444 y JEP 491 (openjdk.org/jeps) — TODO-VERIFY, consultar 2026-11-07; documentación de Spring Boot sobre virtual threads.
+- Fuentes: JEP 444 y JEP 491 (openjdk.org/jeps) — comprobar al fijar la versión, consultar 2026-11-07; documentación de Spring Boot sobre virtual threads.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

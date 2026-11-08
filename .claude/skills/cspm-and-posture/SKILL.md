@@ -39,7 +39,7 @@ sin propietarios ni fecha de reescaneo.
 ```bash
 # Comandos de ejemplo (solo lectura; el proyecto generado los ejecuta en su CI/cron)
 prowler aws --list-compliance          # ver frameworks disponibles
-prowler aws --compliance cis_<version>_aws   # TODO-VERIFY nombre exacto del framework
+prowler aws --compliance cis_<version>_aws   # comprobar nombre exacto del framework
 kubescape scan framework nsa           # postura del clúster contra NSA-CISA
 kubescape scan ./k8s/                  # manifiestos antes de aplicar
 ```

@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** ser opt-in: `make local-gitops` separado de `make local-up`; ningún perfil lo activa por defecto.
-- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado); TODO-VERIFY la opción más simple con la versión de Argo CD usada.
+- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado); comprobar la opción más simple con la versión de Argo CD usada.
 - **MUST** usar el patrón app-of-apps y los mismos manifiestos Kustomize que el perfil local, para no mantener dos fuentes de verdad.
 - **MUST** `syncPolicy.automated` con `prune: true` y `selfHeal: true` solo en el clúster local; documentar que en los entornos reales la política la decide la guía de promoción.
 - **MUST** que el destino sea `https://kubernetes.default.svc` (el clúster kind), nunca un clúster remoto.

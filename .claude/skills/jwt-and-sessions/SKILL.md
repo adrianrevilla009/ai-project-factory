@@ -28,7 +28,7 @@ metadata:
 - **MUST NOT** loguear tokens completos.
 
 ## Por qué
-Los ataques típicos son aceptar tokens sin verificar, confusión de algoritmo, tokens para otra audiencia y robo desde almacenamiento accesible por JavaScript (XSS). Los flags de cookie y la vida corta limitan el daño. Los nombres de propiedades de cookie en Spring dependen de la versión (TODO-VERIFY).
+Los ataques típicos son aceptar tokens sin verificar, confusión de algoritmo, tokens para otra audiencia y robo desde almacenamiento accesible por JavaScript (XSS). Los flags de cookie y la vida corta limitan el daño. Los nombres de propiedades de cookie en Spring dependen de la versión (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal
@@ -48,7 +48,7 @@ decoder.setJwtValidator(new DelegatingOAuth2TokenValidator<>(
         JwtValidators.createDefaultWithIssuer(issuer), audienceValidator));
 ```
 ```yaml
-# Cookie de sesión (propiedades Spring Boot; TODO-VERIFY según versión)
+# Cookie de sesión (propiedades Spring Boot; comprobar según versión)
 server:
   servlet:
     session:

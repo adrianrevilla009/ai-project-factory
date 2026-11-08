@@ -78,5 +78,5 @@ data "aws_iam_policy_document" "orders_reader" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `scp-guardrails`, `identity-center-sso`, `secrets-management`, `deserialization-xxe-ssrf-traversal`, `container-and-k8s-security`.
-- Fuentes: AWS IAM User Guide (security best practices, policy evaluation logic), consultada 2026-11-07, TODO-VERIFY claves de condición exactas.
+- Fuentes: AWS IAM User Guide (security best practices, policy evaluation logic), consultada 2026-11-07, comprobar claves de condición exactas.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

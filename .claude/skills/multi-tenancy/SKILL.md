@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** en schema/BD por tenant: pool por tenant acotado o pooler externo, y migraciones orquestadas con informe por tenant (ver `schema-migrations`).
 
 ## Por qué
-Una fuga entre tenants es un incidente de seguridad y de cumplimiento. El filtro por convención ("acuérdate del WHERE") falla tarde o temprano; por eso hay un filtro central más una barrera en la BD. Los modelos con más aislamiento cuestan más: miles de schemas complican migraciones y pools. Verificar la API de multi-tenancy de Hibernate contra su documentación (TODO-VERIFY).
+Una fuga entre tenants es un incidente de seguridad y de cumplimiento. El filtro por convención ("acuérdate del WHERE") falla tarde o temprano; por eso hay un filtro central más una barrera en la BD. Los modelos con más aislamiento cuestan más: miles de schemas complican migraciones y pools. Verificar la API de multi-tenancy de Hibernate contra su documentación (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal

@@ -9,7 +9,7 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 /**
  * Ejemplo para proyectos generados (skill ddd-tactical). Sustituir "com.example".
- * No ejecutado en la fabrica; TODO-VERIFY version de ArchUnit al integrarlo.
+ * No ejecutado en la fabrica; comprobar version de ArchUnit al integrarlo.
  */
 @AnalyzeClasses(packages = "com.example", importOptions = ImportOption.DoNotIncludeTests.class)
 class DomainIsolationRules {

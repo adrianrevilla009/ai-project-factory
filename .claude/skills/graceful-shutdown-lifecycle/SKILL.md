@@ -79,5 +79,5 @@ Local: se puede comprobar con `docker stop` o `kill -TERM`; no se reproduce el d
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `actuator-and-health`, `resilience`, `delivery-semantics`, `startup-and-native`.
-- Fuentes oficiales: Spring Boot Reference "Graceful Shutdown", consultada 2026-11-07; TODO-VERIFY comportamiento de readiness durante el apagado en la versión vigente.
+- Fuentes oficiales: Spring Boot Reference "Graceful Shutdown", consultada 2026-11-07; comprobar comportamiento de readiness durante el apagado en la versión vigente.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

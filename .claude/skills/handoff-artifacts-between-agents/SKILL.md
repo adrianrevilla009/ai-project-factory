@@ -62,5 +62,5 @@ Fichero `docs/handoffs/2026-11-07-orders-backend-to-qa.md` (ruta ilustrativa; ca
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parallel-work-and-worktrees`, `verify-before-asserting`, `gate-protocol`, `cost-control`.
-- Fuentes: https://code.claude.com/docs/en/sub-agents (subagentes con contexto propio; TODO-VERIFY detalles de paso de contexto), `.claude/agents/README.md`.
+- Fuentes: https://code.claude.com/docs/en/sub-agents (subagentes con contexto propio; comprobar detalles de paso de contexto), `.claude/agents/README.md`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

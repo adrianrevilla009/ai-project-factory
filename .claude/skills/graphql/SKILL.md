@@ -51,7 +51,7 @@ Map<Order, Customer> customer(List<Order> orders) {
     return orders.stream().collect(Collectors.toMap(o -> o, o -> byId.get(o.customerId())));
 }
 ```
-Límite de profundidad: registrar instrumentación de max depth/complexity de graphql-java (TODO-VERIFY nombres de clase por versión).
+Límite de profundidad: registrar instrumentación de max depth/complexity de graphql-java (comprobar nombres de clase por versión).
 
 ## Checklist de revisión
 - [ ] Esquema revisado antes del código; listas paginadas.
@@ -68,5 +68,5 @@ Límite de profundidad: registrar instrumentación de max depth/complexity de gr
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `pagination-filter-sort`, `authz-rbac-abac-rebac`, `backward-compatibility-rules`.
-- Fuentes: spec graphql.org, documentación de Spring for GraphQL — TODO-VERIFY versión y APIs de instrumentación, no consultadas el 2026-11-07.
+- Fuentes: spec graphql.org, documentación de Spring for GraphQL — comprobar versión y APIs de instrumentación, no consultadas el 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

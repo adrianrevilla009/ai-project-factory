@@ -59,7 +59,7 @@ spec:
       to:
         - operation: { methods: ["POST"], paths: ["/payments"] }
 ```
-Versión de API de Istio y campos: TODO-VERIFY contra la documentación vigente.
+Versión de API de Istio y campos: comprobar contra la documentación vigente.
 
 ## Checklist de revisión
 - [ ] mTLS `STRICT` en namespaces de aplicación.

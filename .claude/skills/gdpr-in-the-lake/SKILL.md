@@ -29,7 +29,7 @@ metadata:
 - **MUST NOT** afirmar cumplimiento RGPD completo: solo "diseñado para facilitar", pendiente de revisión legal.
 
 ## Por qué
-Los formatos del lago son inmutables por diseño; un `DELETE` solo escribe metadatos nuevos y el dato sigue en ficheros antiguos. El art. 17 exige supresión sin dilación indebida cuando aplica un motivo (fuente: https://gdpr-info.eu/art-17-gdpr/, consultada 2026-11-07, texto no oficial; confirmar en EUR-Lex). En Iceberg, `expire_snapshots` y `remove_orphan_files` existen como procedimientos de Spark (https://iceberg.apache.org/docs/latest/spark-procedures/, 2026-11-07); semántica exacta por versión: TODO-VERIFY.
+Los formatos del lago son inmutables por diseño; un `DELETE` solo escribe metadatos nuevos y el dato sigue en ficheros antiguos. El art. 17 exige supresión sin dilación indebida cuando aplica un motivo (fuente: https://gdpr-info.eu/art-17-gdpr/, consultada 2026-11-07, texto no oficial; confirmar en EUR-Lex). En Iceberg, `expire_snapshots` y `remove_orphan_files` existen como procedimientos de Spark (https://iceberg.apache.org/docs/latest/spark-procedures/, 2026-11-07); semántica exacta por versión: comprobar al fijar la versión.
 
 ## Ejemplos
 ### Mal
@@ -68,5 +68,5 @@ completed_at: "2026-11-07"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-governance-and-classification`, `access-control-masking-and-retention`, `pii-and-data-classification`, `consent-and-dsar-management`.
-- Fuentes: art. 17 RGPD (URL arriba); documentación de Iceberg. Plazos (art. 12(3)): TODO-VERIFY en EUR-Lex.
+- Fuentes: art. 17 RGPD (URL arriba); documentación de Iceberg. Plazos (art. 12(3)): comprobar en EUR-Lex.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

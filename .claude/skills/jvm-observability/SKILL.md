@@ -21,7 +21,7 @@ metadata:
 - **MUST** relacionar memoria de la JVM con el `limit` del contenedor: alertar por cercanía de OOMKilled, no solo por heap.
 - **MUST** habilitar `-XX:+HeapDumpOnOutOfMemoryError` con ruta a un volumen efímero con espacio; **MUST NOT** subir volcados a sitios sin control de acceso (contienen datos).
 - **SHOULD** usar JFR (continuo, de bajo overhead) para diagnóstico bajo demanda en lugar de agentes de profiling permanentes.
-- **SHOULD** exponer métricas de executors (`ExecutorServiceMetrics`) y de hilos virtuales o pinning si se usan (TODO-VERIFY qué eventos JFR).
+- **SHOULD** exponer métricas de executors (`ExecutorServiceMetrics`) y de hilos virtuales o pinning si se usan (comprobar qué eventos JFR).
 - **MUST NOT** alertar por uso de heap bruto; alertar por síntoma (latencia, errores) y usar la JVM como diagnóstico.
 - **SHOULD** registrar `jvm.info` / versión de JDK como atributo para correlacionar regresiones con upgrades.
 
@@ -66,5 +66,5 @@ JAVA_TOOL_OPTIONS=-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/dumps
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `jvm-in-containers`, `profiling-and-leaks`, `metrics-micrometer`, `connection-pooling`, `virtual-threads`.
-- Fuentes: documentación de Micrometer (JVM metrics) y de OpenJDK/JFR, consultadas 2026-11-07; TODO-VERIFY nombres exactos en la versión usada.
+- Fuentes: documentación de Micrometer (JVM metrics) y de OpenJDK/JFR, consultadas 2026-11-07; comprobar nombres exactos en la versión usada.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

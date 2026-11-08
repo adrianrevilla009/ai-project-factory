@@ -58,7 +58,7 @@ paths:
             application/problem+json:
               example: { type: "about:blank", title: "Not Found", status: 404 }
 ```
-Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fuente: https://springdoc.org/, consultado 2026-11-07). TODO-VERIFY: versión del starter compatible con la versión de Spring Boot elegida.
+Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fuente: https://springdoc.org/, consultado 2026-11-07). Comprobar versión del starter compatible con la versión de Spring Boot elegida.
 
 ## Checklist de revisión
 - [ ] El spec está versionado y el PR muestra su diff.

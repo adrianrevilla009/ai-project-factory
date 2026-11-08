@@ -17,7 +17,7 @@
 ## db-and-kafka-observability
 
 - **MUST** exponer métricas del pool (`hikaricp.connections.active/pending/timeout`) y alertar por espera de conexión, que es síntoma de saturación.
-- **MUST** tener spans de BD con `db.system.name` (o el atributo vigente en tu semconv: TODO-VERIFY) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
+- **MUST** tener spans de BD con `db.system.name` (o el atributo vigente en tu semconv: comprobar al fijar la versión) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
 - **SHOULD** habilitar logs de queries lentas con umbral configurable, sin parámetros; **SHOULD** contar sentencias por petición en tests (ver `n-plus-one`).
 - **MUST** medir consumo Kafka con: lag por grupo/partición, tasa de procesamiento, tiempo de procesamiento por registro, errores y reintentos.
 - **MUST** exponer métricas del cliente Kafka a Micrometer y propagar `traceparent` en cabeceras (ver `tracing`).
@@ -44,13 +44,13 @@
 - **MUST** relacionar memoria de la JVM con el `limit` del contenedor: alertar por cercanía de OOMKilled, no solo por heap.
 - **MUST** habilitar `-XX:+HeapDumpOnOutOfMemoryError` con ruta a un volumen efímero con espacio; **MUST NOT** subir volcados a sitios sin control de acceso (contienen datos).
 - **SHOULD** usar JFR (continuo, de bajo overhead) para diagnóstico bajo demanda en lugar de agentes de profiling permanentes.
-- **SHOULD** exponer métricas de executors (`ExecutorServiceMetrics`) y de hilos virtuales o pinning si se usan (TODO-VERIFY qué eventos JFR).
+- **SHOULD** exponer métricas de executors (`ExecutorServiceMetrics`) y de hilos virtuales o pinning si se usan (comprobar qué eventos JFR).
 - **MUST NOT** alertar por uso de heap bruto; alertar por síntoma (latencia, errores) y usar la JVM como diagnóstico.
 - **SHOULD** registrar `jvm.info` / versión de JDK como atributo para correlacionar regresiones con upgrades.
 
 ## llm-observability
 
-- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (aún en evolución: TODO-VERIFY nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens`).
+- **MUST** envolver cada llamada a un modelo en un span con atributos de modelo, proveedor, tokens de entrada y salida, motivo de finalización y estado de error, siguiendo las convenciones semánticas de GenAI (aún en evolución: comprobar nombres como `gen_ai.request.model` y `gen_ai.usage.input_tokens`).
 - **MUST** exponer métricas: latencia (histograma) incluyendo tiempo hasta el primer token si hay streaming, tokens consumidos, errores por tipo, reintentos y rate limits.
 - **MUST** estimar coste por petición a partir de tokens y tarifa configurable; el coste es una métrica, no un cálculo manual.
 - **MUST NOT** registrar prompts ni respuestas completos por defecto: pueden contener PII o secretos. Si se capturan para depuración, deben ser opt-in, muestreados, enmascarados y con retención corta.
@@ -84,7 +84,7 @@
 
 ## otel-fundamentals-and-semconv
 
-- **MUST** definir el `Resource` en cada servicio: `service.name`, `service.version`, `deployment.environment.name` (nombre vigente del atributo: TODO-VERIFY) y `service.namespace`.
+- **MUST** definir el `Resource` en cada servicio: `service.name`, `service.version`, `deployment.environment.name` (nombre vigente del atributo: comprobar al fijar la versión) y `service.namespace`.
 - **MUST** usar nombres de atributo de las convenciones semánticas (`http.request.method`, `http.response.status_code`, `http.route`, `server.address`) en lugar de nombres propios.
 - **MUST** exportar por OTLP al Collector, no directamente a cada backend; el Collector aplica `memory_limiter`, `batch`, redacción y enrutado.
 - **MUST NOT** usar identificadores no acotados (userId, orderId, URL completa) como atributo de métrica; sí pueden ir en spans y logs.
@@ -124,17 +124,17 @@
 - **MUST NOT** incluir PII, secretos ni cuerpos completos; aplicar enmascarado en el encoder o en el Collector.
 - **MUST NOT** usar etiquetas de Loki de alta cardinalidad (`trace_id`, `user_id`); las etiquetas son pocas (`service`, `namespace`, `level`) y el resto se filtra por contenido.
 - **SHOULD** registrar una sola vez cada error, con la excepción como último argumento.
-- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece (TODO-VERIFY desde qué versión y formatos), o un encoder JSON explícito.
+- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece (comprobar desde qué versión y formatos), o un encoder JSON explícito.
 - **SHOULD** definir un campo `event` estable en eventos de negocio para poder consultarlos y alertar.
 
 ## tracing
 
 - **MUST** propagar contexto con W3C Trace Context (`traceparent`); **MUST NOT** inventar cabeceras propias de correlación.
 - **MUST** propagar el contexto en hilos propios y `CompletableFuture`/executors (ver `async-and-context-propagation`); con virtual threads, verificar que se mantiene.
-- **MUST** propagar el contexto en mensajes Kafka vía cabeceras (instrumentación del cliente o de Spring Kafka con observación activada: TODO-VERIFY propiedades).
+- **MUST** propagar el contexto en mensajes Kafka vía cabeceras (instrumentación del cliente o de Spring Kafka con observación activada: comprobar propiedades).
 - **MUST** crear spans manuales solo para operaciones de negocio con significado; nombre de baja cardinalidad (`order.reserve-stock`), nunca con IDs en el nombre.
 - **MUST** marcar el span como error (estado y excepción) cuando falla; **MUST NOT** marcar error por respuestas 4xx esperadas de cliente.
 - **MUST NOT** guardar PII, tokens ni payloads en atributos o eventos de span.
 - **SHOULD** usar muestreo por cabecera del padre (`parentbased`) con ratio bajo en producción y 100 % en entornos de prueba; **SHOULD** considerar muestreo por cola en el Collector para conservar errores y trazas lentas.
 - **SHOULD** enlazar con `span links` en consumidores por lotes en vez de un padre único.
-- **SHOULD** habilitar exemplars o enlaces métrica-traza si el stack lo permite (TODO-VERIFY).
+- **SHOULD** habilitar exemplars o enlaces métrica-traza si el stack lo permite (comprobar al fijar la versión).

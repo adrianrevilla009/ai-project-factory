@@ -19,7 +19,7 @@ metadata:
 ## Reglas
 - **MUST** expresar la política de resiliencia de cada tier (RTO/RPO por fallo de aplicación, infraestructura, AZ y región) en un fichero versionado del proyecto, coherente con `tier-model-and-rpo-rto`.
 - **MUST** tratar el resultado como estimación basada en configuración, no como medición; **MUST NOT** usarla para afirmar que un RTO "está probado".
-- **SHOULD** definir la aplicación por pila Terraform/tags para que el inventario sea reproducible. TODO-VERIFY orígenes de recursos soportados.
+- **SHOULD** definir la aplicación por pila Terraform/tags para que el inventario sea reproducible. Comprobar orígenes de recursos soportados.
 - **SHOULD** convertir cada recomendación en issue con prioridad y dueño, o en riesgo aceptado documentado.
 - **SHOULD** repetir la evaluación tras cambios relevantes y antes de cada revisión anual de tier.
 - **MUST** validar que el coste de las recomendaciones cabe en el presupuesto (`finops-of-resilience`).
@@ -58,5 +58,5 @@ review: "Estimación de configuración; el RTO real se mide en game day"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `fault-injection-and-game-days`, `dependency-mapping-and-blast-radius`, `finops-of-resilience`.
-- Fuente: DR whitepaper (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html, 2026-11-07). Detalles de la política y fuentes de importación: TODO-VERIFY en la documentación de Resilience Hub.
+- Fuente: DR whitepaper (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html, 2026-11-07). Detalles de la política y fuentes de importación: comprobar en la documentación de Resilience Hub.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

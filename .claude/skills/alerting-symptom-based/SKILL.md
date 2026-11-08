@@ -54,7 +54,7 @@ groups:
       summary: "orders-api consume el presupuesto de error muy rápido"
       runbook_url: "https://runbooks.example.internal/orders-api/error-budget"
 ```
-Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real (TODO-VERIFY contra la guía SRE).
+Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real (comprobar contra la guía SRE).
 
 ## Checklist de revisión
 - [ ] Toda alerta `page` es síntoma o burn rate.

@@ -23,7 +23,7 @@ metadata:
 - **MUST NOT** guardar secretos en `application*.yml` ni en el repositorio; se inyectan por entorno o gestor de secretos. Los ejemplos usan valores `changeme`.
 - **SHOULD** usar `Duration` y `DataSize` en vez de números sin unidad.
 - **SHOULD** dar valores por defecto seguros con `@DefaultValue` y diferenciar entornos con perfiles o variables, no con ramas `if` en código.
-- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE (TODO-VERIFY configuración Maven).
+- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE (comprobar configuración Maven).
 
 ## Por qué
 La configuración tipada se valida una vez al arrancar, se documenta en un solo sitio y se prueba sin contexto. Con `@Value` dispersos, un typo se descubre en runtime y los valores sin unidad (`timeout: 30`) son ambiguos.

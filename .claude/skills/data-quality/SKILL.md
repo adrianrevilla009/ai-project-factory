@@ -23,7 +23,7 @@ metadata:
 - **MUST** asignar un propietario por dataset que reciba las alertas.
 - **MUST NOT** "arreglar" datos corruptos en el mart; corregir en origen o en una capa intermedia trazable.
 - **SHOULD** empezar por PK única/no nula, FKs y valores aceptados (los cuatro tests genéricos de dbt) y añadir reglas de negocio después.
-- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, TODO-VERIFY licencia y versión vigentes).
+- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, comprobar licencia y versión vigentes).
 - **SHOULD** versionar las expectativas junto al código del pipeline.
 
 ## Por qué
@@ -53,7 +53,7 @@ models:
               config: { severity: warn }
               arguments: { values: ['placed', 'shipped', 'returned'] }
 ```
-Forma de `arguments`/`config` según la versión de dbt (TODO-VERIFY).
+Forma de `arguments`/`config` según la versión de dbt (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Cada dataset tiene tests de PK, FKs y valores aceptados.

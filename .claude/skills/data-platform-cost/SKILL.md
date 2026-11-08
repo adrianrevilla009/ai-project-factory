@@ -23,7 +23,7 @@ metadata:
 - **SHOULD** ajustar la frecuencia de refresco al valor de negocio (diario antes que cada minuto) y preferir cargas incrementales.
 - **SHOULD** limitar `SELECT *` y escaneos sin filtro de partición; usar vistas agregadas para BI.
 - **SHOULD** vigilar egress entre regiones y servicios; mantener cómputo y datos en la misma región.
-- **MUST NOT** afirmar cifras de precio sin fuente y fecha: los precios del proveedor son TODO-VERIFY en la página oficial en el momento de decidir.
+- **MUST NOT** afirmar cifras de precio sin fuente y fecha: los precios del proveedor se comprueban en la página oficial en el momento de decidir.
 - **MUST NOT** introducir un servicio de pago por defecto (D16); comparar primero con alternativas OSS.
 
 ## Por qué

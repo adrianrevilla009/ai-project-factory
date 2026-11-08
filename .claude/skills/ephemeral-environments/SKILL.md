@@ -78,5 +78,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `promotion-between-environments`, `test-data-management`, `finops`, `container-and-k8s-security`.
-- Fuentes: Argo CD ApplicationSet, generador Pull Request — TODO-VERIFY URL y campos en https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/.
+- Fuentes: Argo CD ApplicationSet, generador Pull Request — comprobar URL y campos en https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

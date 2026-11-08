@@ -53,7 +53,7 @@ class ModularityTests {
     }
 }
 ```
-Requiere la dependencia `spring-modulith-core` (TODO-VERIFY artefacto y versión gestionada por el BOM de Spring Boot vigente).
+Requiere la dependencia `spring-modulith-core` (comprobar artefacto y versión gestionada por el BOM de Spring Boot vigente).
 
 ## Checklist de revisión
 - [ ] Paquetes de primer nivel = módulos de negocio.

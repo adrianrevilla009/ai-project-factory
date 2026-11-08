@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** definir un esquema (JSON Schema o record Java) por cada salida consumida por código y validar la respuesta contra él antes de usarla, aunque el proveedor ofrezca modo estructurado.
-- **SHOULD** usar la función nativa de salida estructurada del proveedor cuando exista (en la API de Claude: `output_config.format` con `type: "json_schema"`, y `strict: true` en herramientas; TODO-VERIFY disponibilidad por modelo y por proveedor de nube).
+- **SHOULD** usar la función nativa de salida estructurada del proveedor cuando exista (en la API de Claude: `output_config.format` con `type: "json_schema"`, y `strict: true` en herramientas; verificado en la documentación de Claude el 2026-11-08: GA desde 2026-01-29; la disponibilidad por modelo y por proveedor de nube se comprueba al elegirlos).
 - **MUST** tratar el JSON generado como entrada no confiable: validar tipos, rangos y longitudes; reglas de negocio deterministas después (ver `intelligent-document-processing`).
 - **MUST** gestionar fallos: truncado por `max_tokens`, rechazo del modelo, JSON inválido. Reintentar como máximo 1-2 veces con el error de validación; después, error controlado o revisión humana.
 - **MUST** usar `enum` y campos cerrados (`additionalProperties: false`) para clasificaciones; incluir un valor explícito `unknown`.

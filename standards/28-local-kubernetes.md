@@ -5,7 +5,7 @@
 ## aws-emulation
 
 - **MUST** preferir el emulador oficial o de código abierto sin cuenta: DynamoDB Local (`amazon/dynamodb-local`) para DynamoDB, MinIO para S3, Redis para ElastiCache, Strimzi para MSK.
-- **MUST** tratar LocalStack como opcional: hoy exige Auth Token (https://docs.localstack.cloud/aws/getting-started/auth-token/, 2026-11-07), lo que choca con D16. TODO-VERIFY el plan gratuito vigente antes de adoptarlo.
+- **MUST** tratar LocalStack como opcional: hoy exige Auth Token (https://docs.localstack.cloud/aws/getting-started/auth-token/, 2026-11-07), lo que choca con D16. Comprobar el plan gratuito vigente antes de adoptarlo.
 - **MUST** acceder a los emuladores por configuración de endpoint (`endpoint-override`), nunca con ramas `if (local)` en el código de dominio.
 - **MUST** que las credenciales del emulador sean de ejemplo (`example`/`changeme`) y vivan solo en el perfil local.
 - **MUST** listar en el README del perfil qué NO se reproduce (ver `local-parity-matrix`): Global Tables fiables, throttling, backups y consistencia eventual en DynamoDB; replicación y Object Lock completo en S3; Multi-AZ en Redis.
@@ -17,7 +17,7 @@
 
 - **MUST** usar kind por defecto (ADR-0034); k3d solo como alternativa documentada y justificada en el README del proyecto.
 - **MUST** definir el clúster en un fichero versionado (`deploy/local/kind-config.yaml`), nunca con flags sueltos en comandos de wiki.
-- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS (TODO-VERIFY tags disponibles por release de kind).
+- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS (comprobar tags disponibles por release de kind).
 - **MUST** exponer un registro local para el bucle de desarrollo (patrón oficial de kind con `certs.d`), en vez de `kind load` en cada cambio.
 - **MUST** envolver crear/destruir/reiniciar en `make local-up`, `make local-down`, `make local-reset` idempotentes.
 - **SHOULD** usar un clúster por proyecto con nombre explícito (`kind create cluster --name <project>`), nunca el contexto `kind-kind` genérico.
@@ -43,7 +43,7 @@
 - **MUST** reutilizar los mismos manifiestos/Helm/Kustomize que usará GitOps (`helm-standards`, `kustomize-overlays`) con un overlay `local`; no escribir YAML paralelo solo para el bucle.
 - **MUST** construir con el mismo Dockerfile multistage que CI (`docker-multistage`) y publicar al registro local.
 - **MUST** definir `make dev` como único punto de entrada.
-- **SHOULD** limitar el live-update a recursos estáticos o classes recargables; para Java el rebuild de imagen con caché de capas es el camino fiable (TODO-VERIFY soporte de sync por herramienta).
+- **SHOULD** limitar el live-update a recursos estáticos o classes recargables; para Java el rebuild de imagen con caché de capas es el camino fiable (comprobar soporte de sync por herramienta).
 - **SHOULD** declarar en el fichero qué recursos arrancan por defecto, respetando el perfil de `local-profiles`.
 - **MUST NOT** commitear credenciales ni tokens en el Tiltfile/skaffold.yaml; usar secretos de ejemplo (`changeme`) para el perfil local.
 - **MUST NOT** ejecutar el bucle contra un contexto que no sea de clúster local.
@@ -51,7 +51,7 @@
 ## devcontainer-integration
 
 - **MUST** que el devcontainer incluya el tooling del bucle local: Docker (docker-in-docker o socket del host), kind, kubectl, Helm, Kustomize y Tilt o Skaffold según `dev-loop`.
-- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`. TODO-VERIFY las features y versiones vigentes en https://containers.dev/features.
+- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`. Comprobar las features y versiones vigentes en https://containers.dev/features.
 - **MUST** que `make local-up` funcione dentro del devcontainer sin pasos manuales previos.
 - **MUST** documentar el requisito de recursos del contenedor (ver `resource-budgets`); docker-in-docker anida un segundo nivel de consumo.
 - **SHOULD** preferir el socket del host cuando el equipo acepta compartir el daemon; documentar el compromiso de aislamiento.
@@ -63,7 +63,7 @@
 ## local-gitops
 
 - **MUST** ser opt-in: `make local-gitops` separado de `make local-up`; ningún perfil lo activa por defecto.
-- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado); TODO-VERIFY la opción más simple con la versión de Argo CD usada.
+- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado); comprobar la opción más simple con la versión de Argo CD usada.
 - **MUST** usar el patrón app-of-apps y los mismos manifiestos Kustomize que el perfil local, para no mantener dos fuentes de verdad.
 - **MUST** `syncPolicy.automated` con `prune: true` y `selfHeal: true` solo en el clúster local; documentar que en los entornos reales la política la decide la guía de promoción.
 - **MUST** que el destino sea `https://kubernetes.default.svc` (el clúster kind), nunca un clúster remoto.
@@ -94,7 +94,7 @@
 
 ## resource-budgets
 
-- **MUST** documentar por perfil la RAM y CPU mínimas de la máquina. Los valores numéricos son hipótesis a medir (TODO-VERIFY midiendo con `kubectl top`), no cifras garantizadas.
+- **MUST** documentar por perfil la RAM y CPU mínimas de la máquina. Los valores numéricos son hipótesis a medir (comprobar midiendo con `kubectl top`), no cifras garantizadas.
 - **MUST** que `minimal` (servicio, Postgres, DynamoDB Local) sea el perfil por defecto y quepa en un portátil de gama media.
 - **MUST** que todo pod local declare `resources.requests` y `resources.limits`; sin límites un pod puede tumbar el nodo kind.
 - **MUST** fijar `requests` bajos y `limits` moderados en el overlay local; no reutilizar los del diseño para AWS.

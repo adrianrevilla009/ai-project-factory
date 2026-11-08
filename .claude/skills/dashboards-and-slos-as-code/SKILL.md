@@ -22,7 +22,7 @@ metadata:
 - **MUST** `uid` estable y `title` único por dashboard; datasources por `uid`, no por nombre.
 - **MUST** que todo dashboard de servicio use variables (`namespace`, `service`) y muestre los 4 golden signals (latencia, tráfico, errores, saturación) más el SLO.
 - **SHOULD** el SLO vive en el repo del servicio; los dashboards de plataforma, en el repo de plataforma.
-- **SHOULD** el generador de SLOs sea de código abierto (p. ej. Sloth o Pyrra; elegir por ADR, TODO-VERIFY formato de spec vigente).
+- **SHOULD** el generador de SLOs sea de código abierto (p. ej. Sloth o Pyrra; elegir por ADR, comprobar formato de spec vigente).
 - **MUST NOT** SLOs al 100% ni sin ventana; el objetivo debe tener error budget con política asociada.
 
 ## Por qué
@@ -46,7 +46,7 @@ providers:
     options: { path: /var/lib/grafana/dashboards }
 ```
 ```yaml
-# slo/orders.yaml (spec Sloth, TODO-VERIFY version del esquema)
+# slo/orders.yaml (spec Sloth, comprobar version del esquema)
 version: "prometheus/v1"
 service: "orders"
 slos:
@@ -78,5 +78,5 @@ slos:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `tempo-and-service-graphs`, `cardinality-and-cost-governance`, `slo-error-budget-policy` (bloque 19).
-- Fuentes oficiales: Grafana, provisioning de dashboards (https://grafana.com/docs/grafana/latest/administration/provisioning/ ; no verificada en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Herramientas SLO: documentación de Sloth/Pyrra, TODO-VERIFY.
+- Fuentes oficiales: Grafana, provisioning de dashboards (https://grafana.com/docs/grafana/latest/administration/provisioning/ ; no verificada en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Herramientas SLO: documentación de Sloth/Pyrra, comprobar al fijar la versión.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

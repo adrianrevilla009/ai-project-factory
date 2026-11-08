@@ -71,7 +71,7 @@ Nota: `char[]` en record usa igualdad por referencia; preferir un tipo con `equa
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
 | Revisión de entidades y logs | 3 | agente `code-reviewer` (pendiente de definir) |
-| Regla `-Xlint`/Error Prone `EqualsHashCode` en el proyecto generado | 1 | pendiente (TODO-VERIFY herramienta) |
+| Regla `-Xlint`/Error Prone `EqualsHashCode` en el proyecto generado | 1 | pendiente (comprobar herramienta) |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `immutability-and-value-objects`, `jpa-entity-design`, `logging-rules`, `data-privacy-in-db`.

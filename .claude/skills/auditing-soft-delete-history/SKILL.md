@@ -19,7 +19,7 @@ metadata:
 - **MUST** auditar con mecanismo central (`@EntityListeners(AuditingEntityListener.class)` + `@CreatedDate`, `@LastModifiedDate`, `@CreatedBy`, `@LastModifiedBy`), no a mano en cada servicio.
 - **MUST** guardar instantes en UTC (`Instant`, `timestamptz`) y el autor como identificador estable del sujeto (claim `sub`), no nombre visible.
 - **MUST** decidir por entidad entre borrado físico, lógico o archivado; el borrado lógico no es el defecto.
-- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate, TODO-VERIFY nombre según versión), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
+- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate, comprobar nombre según versión), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
 - **MUST** tratar el derecho de supresión: un borrado lógico NO cumple una petición de supresión de datos personales (ver `data-privacy-in-db`).
 - **MUST NOT** usar historial como sustituto de backup ni como bus de eventos.
 - **SHOULD** para historial completo preferir Hibernate Envers o tablas `_history` mediante trigger; elegir una y documentarla. Envers duplica escrituras y crece: definir retención.

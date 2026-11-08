@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** marcar columnas PII/clasificación como metadato (ver `data-governance-and-classification`).
 
 ## Por qué
-La mayoría de errores en informes vienen de granularidad ambigua (fan-out en joins) y de dimensiones sobrescritas que reescriben la historia. La estrella da consultas simples y predecibles; la elección entre estrella, Data Vault y OBT es de contexto, no dogma (TODO-VERIFY: referencias de Kimball/Linstedt, no consultadas aquí).
+La mayoría de errores en informes vienen de granularidad ambigua (fan-out en joins) y de dimensiones sobrescritas que reescriben la historia. La estrella da consultas simples y predecibles; la elección entre estrella, Data Vault y OBT es de contexto, no dogma (comprobar referencias de Kimball/Linstedt, no consultadas aquí).
 
 ## Ejemplos
 ### Mal
@@ -65,5 +65,5 @@ Local: PostgreSQL/DuckDB. No hay diferencia de modelado en AWS; preparado para A
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `etl-vs-elt-and-dbt`, `data-quality`, `warehouse-options`, `bi-and-reporting`.
-- Fuentes: TODO-VERIFY (bibliografía de modelado dimensional).
+- Fuentes: comprobar (bibliografía de modelado dimensional).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

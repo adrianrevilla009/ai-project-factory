@@ -21,7 +21,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST** elegir ALB para HTTP/HTTPS/gRPC (rutas, host, WAF) y NLB para TCP/TLS, IP estática o PrivateLink.
 - **MUST** servir solo HTTPS en listeners públicos; el puerto 80 solo redirige a 443 (HTTP 301).
 - **MUST** usar certificados de ACM (renovación automática) por región; para CloudFront el certificado vive en us-east-1.
-- **MUST** fijar una política TLS moderna (TLS 1.2 mínimo, preferible 1.3) con una `ssl_policy` explícita, no la heredada por defecto (TODO-VERIFY nombre vigente).
+- **MUST** fijar una política TLS moderna (TLS 1.2 mínimo, preferible 1.3) con una `ssl_policy` explícita, no la heredada por defecto (comprobar nombre vigente).
 - **MUST** activar `drop_invalid_header_fields`, access logs a S3 y `enable_deletion_protection` en producción.
 - **MUST NOT** terminar TLS en el balanceador y reenviar HTTP en claro hacia pods con datos sensibles: recifrar hacia el backend (HTTPS al target o mTLS de malla).
 - **SHOULD** usar `target-type: ip` con AWS Load Balancer Controller en EKS (ver `eks-networking`) y health checks dedicados.
@@ -76,7 +76,7 @@ resource "aws_lb_listener" "https" {
   load_balancer_arn = aws_lb.public.arn
   port              = 443
   protocol          = "HTTPS"
-  ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06" # TODO-VERIFY vigente
+  ssl_policy        = "ELBSecurityPolicy-TLS13-1-2-2021-06" # comprobar vigente
   certificate_arn   = aws_acm_certificate_validation.api.certificate_arn
   default_action {
     type             = "forward"

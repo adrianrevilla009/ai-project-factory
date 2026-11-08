@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** devolver errores genéricos al cliente; el detalle SQL va al log.
 
 ## Por qué
-La inyección ocurre cuando datos y código comparten canal. Parametrizar separa ambos de forma estructural; el escapado manual falla por contexto y por dialecto. Los identificadores no se pueden enlazar como parámetro, por eso requieren allowlist. Referencia general: OWASP Injection Prevention Cheat Sheet (consultada 2026-11-07; TODO-VERIFY URL vigente).
+La inyección ocurre cuando datos y código comparten canal. Parametrizar separa ambos de forma estructural; el escapado manual falla por contexto y por dialecto. Los identificadores no se pueden enlazar como parámetro, por eso requieren allowlist. Referencia general: OWASP Injection Prevention Cheat Sheet (consultada 2026-11-07; comprobar URL vigente).
 
 ## Ejemplos
 ### Mal

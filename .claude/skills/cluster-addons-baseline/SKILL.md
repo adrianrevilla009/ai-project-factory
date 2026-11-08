@@ -39,15 +39,15 @@ kubectl apply -f https://example.com/cert-manager/latest/install.yaml
 addons:
   - name: cert-manager
     chart: cert-manager
-    version: "TODO-VERIFY"
+    version: "<fijar en el BOM>"
     namespace: cert-manager
   - name: external-secrets
     chart: external-secrets
-    version: "TODO-VERIFY"
+    version: "<fijar en el BOM>"
     namespace: external-secrets
   - name: external-dns
     chart: external-dns
-    version: "TODO-VERIFY"
+    version: "<fijar en el BOM>"
     namespace: external-dns
     scope: "zonas gestionadas solo del entorno"
 ```

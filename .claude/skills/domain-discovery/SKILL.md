@@ -71,5 +71,5 @@ glossary:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ddd-strategic`, `ddd-tactical`, `aggregates-and-event-design`, `requirements-engineering`, `adr`.
-- Fuentes: https://www.eventstorming.com/ (Brandolini; TODO-VERIFY detalle de fases en la fuente primaria, 2026-11-07).
+- Fuentes: https://www.eventstorming.com/ (Brandolini; comprobar detalle de fases en la fuente primaria, 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

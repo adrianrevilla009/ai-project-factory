@@ -58,7 +58,7 @@ spring:
 vault write database/roles/orders-rw db_name=orders default_ttl=1h max_ttl=4h
 vault lease revoke -prefix database/creds/orders-rw   # solo en incidente, con aviso a la app
 ```
-VSO con `rolloutRestartTargets` (ver `injection-patterns`) reinicia el Deployment al cambiar el secreto. La relación exacta entre refresh de VSO y TTL: TODO-VERIFY.
+VSO con `rolloutRestartTargets` (ver `injection-patterns`) reinicia el Deployment al cambiar el secreto. La relación exacta entre refresh de VSO y TTL: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Todos los roles tienen `default_ttl` y `max_ttl`.
@@ -76,6 +76,6 @@ VSO con `rolloutRestartTargets` (ver `injection-patterns`) reinicia el Deploymen
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dynamic-database-credentials`, `injection-patterns`, `connection-pooling`, `pki-and-cert-issuance`, `secrets-management`.
-- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/concepts/lease ; https://developer.hashicorp.com/vault/docs/secrets/databases (TODO-VERIFY comandos de revocación en la versión fijada).
+- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/concepts/lease ; https://developer.hashicorp.com/vault/docs/secrets/databases (comprobar comandos de revocación en la versión fijada).
 - Estado: diseño; preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

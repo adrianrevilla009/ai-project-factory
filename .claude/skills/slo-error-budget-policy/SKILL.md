@@ -52,7 +52,7 @@ error_budget_policy:
   escalation: "head-of-engineering decide en discrepancias"
   signed_by: [product-owner, eng-lead]
 ```
-Los valores de burn rate son un punto de partida (TODO-VERIFY contra SRE Workbook).
+Los valores de burn rate son un punto de partida (comprobar contra SRE Workbook).
 
 ## Checklist de revisión
 - [ ] SLIs orientados a usuario y ventana definida.

@@ -23,7 +23,7 @@ metadata:
 - **MUST** usar plantillas versionadas con i18n (`i18n-and-localization`); sin concatenar texto en código.
 - **MUST NOT** registrar en logs el cuerpo, teléfono o email completos (PII).
 - **MUST NOT** incluir secretos o tokens de larga vida en enlaces; usar tokens de un solo uso con caducidad.
-- **SHOULD** abstraer proveedores tras `NotificationChannelPort` (SMTP local con MailHog/Mailpit en dev; el proveedor real de AWS, p. ej. SES, no se emula localmente y queda TODO-VERIFY).
+- **SHOULD** abstraer proveedores tras `NotificationChannelPort` (SMTP local con MailHog/Mailpit en dev; el proveedor real de AWS, p. ej. SES, no se emula localmente y queda comprobar al fijar la versión).
 
 ## Por qué
 Enviar dentro de la transacción de negocio provoca mensajes de operaciones revertidas o pérdidas. Sin clave de idempotencia, un reintento envía dos veces. Sin preferencias hay riesgo legal (normativa de comunicaciones comerciales: borrador, confirmar con fuente oficial).

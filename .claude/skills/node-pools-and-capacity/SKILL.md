@@ -36,7 +36,7 @@ node_groups = { default = { instance_types = ["m5.large"], min_size = 1, max_siz
 ```
 ### Bien
 ```hcl
-# TODO-VERIFY: atributos segun la version del modulo/provider elegido
+# comprobar atributos segun la version del modulo/provider elegido
 node_groups = {
   system = { instance_types = ["m6i.large"], min_size = 3, max_size = 3,
              subnet_ids = var.private_subnet_ids_3az,

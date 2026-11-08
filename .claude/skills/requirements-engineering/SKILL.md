@@ -73,5 +73,5 @@ nfr:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `definition-of-ready-and-done`, `bdd`, `domain-discovery`, `capacity-and-load-modeling`.
-- Fuentes: INVEST (Bill Wake, 2003) y sintaxis Gherkin: https://cucumber.io/docs/gherkin/reference/ (TODO-VERIFY palabras clave vigentes).
+- Fuentes: INVEST (Bill Wake, 2003) y sintaxis Gherkin: https://cucumber.io/docs/gherkin/reference/ (comprobar palabras clave vigentes).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

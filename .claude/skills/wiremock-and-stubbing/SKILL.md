@@ -60,7 +60,7 @@ void retriesOnce_whenGatewayReturns503() {
         .withHeader("Idempotency-Key", matching(".+")));
 }
 ```
-Coordenadas y versión de WireMock: TODO-VERIFY.
+Coordenadas y versión de WireMock: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Stubs específicos, sin catch-all.
@@ -76,5 +76,5 @@ Coordenadas y versión de WireMock: TODO-VERIFY.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `resilience`, `contract-testing`, `resilience-testing`.
-- Fuentes: documentación oficial de WireMock (https://wiremock.org/docs/) — TODO-VERIFY versión y API de la extensión.
+- Fuentes: documentación oficial de WireMock (https://wiremock.org/docs/) — comprobar versión y API de la extensión.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

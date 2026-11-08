@@ -4,7 +4,7 @@ note: "Testcontainers sigue siendo necesario para tests de integración; el Kube
 rows:
   - { aws: EKS, local: "kind (ADR-0034; k3d alternativa)", not_reproduced: "Nodos gestionados, autoscaling real" }
   - { aws: "Aurora PostgreSQL", local: CloudNativePG, not_reproduced: "Failover global, réplicas Aurora" }
-  - { aws: DynamoDB, local: "DynamoDB Local (oficial) o LocalStack", not_reproduced: "Global Tables fiables, throttling, backups, consistencia eventual; Streams en réplicas en LocalStack (TODO-VERIFY estado actual)" }
+  - { aws: DynamoDB, local: "DynamoDB Local (oficial) o LocalStack", not_reproduced: "Global Tables fiables, throttling, backups, consistencia eventual; Streams en réplicas en LocalStack (comprobar estado actual)" }
   - { aws: MSK, local: "Strimzi (Kafka)", not_reproduced: "Replicación entre regiones" }
   - { aws: S3, local: MinIO, not_reproduced: "Replicación, Object Lock completo" }
   - { aws: ElastiCache, local: Redis, not_reproduced: "Multi-AZ real" }

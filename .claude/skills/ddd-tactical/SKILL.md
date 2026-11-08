@@ -81,5 +81,5 @@ public class Order {                      // aggregate root
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ddd-strategic`, `hexagonal`, `layering-rules-archunit`, `event-driven`, `cqrs`.
-- Fuentes: Evans (2003); Vernon, "Effective Aggregate Design" (2011). TODO-VERIFY: URL oficial.
+- Fuentes: Evans (2003); Vernon, "Effective Aggregate Design" (2011). Comprobar URL oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

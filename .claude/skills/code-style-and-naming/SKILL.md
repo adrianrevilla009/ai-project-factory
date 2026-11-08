@@ -72,12 +72,12 @@ public class InvoiceService {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
-| Formateador (p. ej. Spotless) y Checkstyle en Maven, verificados en CI (el proyecto generado debe configurarlos; herramienta y versión TODO-VERIFY) | 1 | `pom.xml` del proyecto generado (pendiente) |
+| Formateador (p. ej. Spotless) y Checkstyle en Maven, verificados en CI (el proyecto generado debe configurarlos; herramienta y versión comprobar al fijar la versión) | 1 | `pom.xml` del proyecto generado (pendiente) |
 | Revisión de nombres y cohesión | 3 | agente `code-reviewer` (pendiente de definir) |
 
 > Estado: la fábrica solo define la regla; la configuración concreta pertenece al proyecto generado (ADR-0038).
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `modern-java-idioms`, `generics-and-api-design`, `code-smells-and-refactoring`, `solid`, `no-lombok`.
-- Fuentes: Oracle "Code Conventions for the Java Programming Language" y Google Java Style Guide — TODO-VERIFY URL y vigencia; no consultado en línea.
+- Fuentes: Oracle "Code Conventions for the Java Programming Language" y Google Java Style Guide — comprobar URL y vigencia; no consultado en línea.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

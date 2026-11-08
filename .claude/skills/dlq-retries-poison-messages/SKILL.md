@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** contener PII fuera de los logs de la DLQ; tratar la DLQ con el mismo control de acceso y retención que la fuente.
 
 ## Por qué
-Un mensaje venenoso reintentado sin límite bloquea una partición entera y propaga retraso a todo lo posterior. Un descarte silencioso pierde datos sin rastro. Una DLQ sin alerta es un cementerio. Las clases y propiedades de Spring Kafka, RabbitMQ y SQS deben contrastarse con su documentación vigente (TODO-VERIFY).
+Un mensaje venenoso reintentado sin límite bloquea una partición entera y propaga retraso a todo lo posterior. Un descarte silencioso pierde datos sin rastro. Una DLQ sin alerta es un cementerio. Las clases y propiedades de Spring Kafka, RabbitMQ y SQS deben contrastarse con su documentación vigente (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal

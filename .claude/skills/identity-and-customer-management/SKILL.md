@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** confiar en claims editables por el usuario (ej. atributos de perfil sin protección) para autorizar.
 
 ## Por qué
-Mezclar identidad y cliente hace imposible federar, fusionar cuentas o cambiar de IdP. El `sub` es estable; el email cambia. Keycloak soporta federación de usuarios, identity brokering y Admin REST API según su guía oficial (https://www.keycloak.org/docs/latest/server_admin/, consultada 2026-11-07). La feature "organizations" existe en la guía; su madurez por versión es TODO-VERIFY.
+Mezclar identidad y cliente hace imposible federar, fusionar cuentas o cambiar de IdP. El `sub` es estable; el email cambia. Keycloak soporta federación de usuarios, identity brokering y Admin REST API según su guía oficial (https://www.keycloak.org/docs/latest/server_admin/, consultada 2026-11-07). La feature "organizations" existe en la guía; su madurez por versión se comprueba.
 
 ## Ejemplos
 ### Mal

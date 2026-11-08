@@ -47,7 +47,7 @@ const safe = /^https:\/\//.test(user.website) ? user.website : undefined;
 ```text
 Content-Security-Policy: script-src 'nonce-{RANDOM}' 'strict-dynamic'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 ```
-Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar hashes en build o una función de borde. TODO-VERIFY enfoque. No reproducible en local: cabeceras de CloudFront.
+Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar hashes en build o una función de borde. Comprobar enfoque. No reproducible en local: cabeceras de CloudFront.
 
 ## Checklist de revisión
 - [ ] Sin `dangerouslySetInnerHTML`/`innerHTML` sin sanear.

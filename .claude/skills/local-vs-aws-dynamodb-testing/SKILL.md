@@ -51,7 +51,7 @@ DynamoDbClient dynamoDbClient(@Value("${app.dynamodb.endpoint:}") String endpoin
 ```text
 docker run -p 8000:8000 amazon/dynamodb-local -jar DynamoDBLocal.jar -inMemory -sharedDb
 ```
-El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía de AWS; confirmar el tag de imagen vigente (TODO-VERIFY). Ejemplo en bloque de texto, no ejecutado.
+El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía de AWS; confirmar el tag de imagen vigente (comprobar al fijar la versión). Ejemplo en bloque de texto, no ejecutado.
 
 ## Checklist de revisión
 - [ ] Endpoint y credenciales de emulador solo en perfil local/test.

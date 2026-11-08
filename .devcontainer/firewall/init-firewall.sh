@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Firewall de salida por allowlist (D26). Resuelve dominios a IPs y bloquea el resto.
-# TODO-VERIFY: probar en un dev container real; no se ha ejecutado en la Oleada 0.
+# Estado: sin probar en un dev container real; no se ha ejecutado.
 set -euo pipefail
 DIR="$(cd "$(dirname "$0")" && pwd)"
 ipset destroy allowed-domains 2>/dev/null || true

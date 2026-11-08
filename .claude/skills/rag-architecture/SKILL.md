@@ -47,7 +47,7 @@ var docs = vectorStore.similaritySearch(request);
 if (docs.isEmpty()) return Answer.unknown();
 return generator.answerWithCitations(question, docs); // contexto delimitado y citas obligatorias
 ```
-Las firmas exactas de `SearchRequest` y filtros dependen de la versión de Spring AI: TODO-VERIFY.
+Las firmas exactas de `SearchRequest` y filtros dependen de la versión de Spring AI: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Ingesta idempotente y separada de consulta.
@@ -65,5 +65,5 @@ Las firmas exactas de `SearchRequest` y filtros dependen de la versión de Sprin
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rag-over-enterprise-docs`, `vector-store-selection` (pendiente), `llm-security`, `llm-observability`, `pii-and-data-classification`.
-- Fuentes: Spring AI Reference, RAG y VectorStore (docs.spring.io/spring-ai/reference) — TODO-VERIFY URL de sección; OWASP Top 10 for LLM Applications — TODO-VERIFY edición.
+- Fuentes: Spring AI Reference, RAG y VectorStore (docs.spring.io/spring-ai/reference) — comprobar URL de sección; OWASP Top 10 for LLM Applications — comprobar edición.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

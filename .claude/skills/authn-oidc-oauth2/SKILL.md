@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** exigir MFA en el IdP para roles administrativos.
 
 ## Por qué
-Reimplementar autenticación multiplica errores. Con PKCE se evita la interceptación del código en clientes públicos; validar `aud` impide que un token emitido para otra API sea aceptado. Detalles de propiedades de Spring Security y Keycloak a contrastar con la versión usada (TODO-VERIFY).
+Reimplementar autenticación multiplica errores. Con PKCE se evita la interceptación del código en clientes públicos; validar `aud` impide que un token emitido para otra API sea aceptado. Detalles de propiedades de Spring Security y Keycloak a contrastar con la versión usada (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal
@@ -37,7 +37,7 @@ Claims c = Jwts.parser().setSigningKey("changeme-example").parseClaimsJws(token)
 ```
 ### Bien
 ```yaml
-# application.yml (propiedades de Spring Security resource server; TODO-VERIFY según versión)
+# application.yml (propiedades de Spring Security resource server; comprobar según versión)
 spring:
   security:
     oauth2:

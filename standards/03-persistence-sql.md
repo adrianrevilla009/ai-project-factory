@@ -7,7 +7,7 @@
 - **MUST** auditar con mecanismo central (`@EntityListeners(AuditingEntityListener.class)` + `@CreatedDate`, `@LastModifiedDate`, `@CreatedBy`, `@LastModifiedBy`), no a mano en cada servicio.
 - **MUST** guardar instantes en UTC (`Instant`, `timestamptz`) y el autor como identificador estable del sujeto (claim `sub`), no nombre visible.
 - **MUST** decidir por entidad entre borrado físico, lógico o archivado; el borrado lógico no es el defecto.
-- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate, TODO-VERIFY nombre según versión), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
+- **MUST** con borrado lógico: filtrar en todas las lecturas (`@SQLRestriction` de Hibernate, comprobar nombre según versión), excluir filas borradas de índices únicos con índice parcial (`WHERE deleted_at IS NULL`) y definir una purga con plazo.
 - **MUST** tratar el derecho de supresión: un borrado lógico NO cumple una petición de supresión de datos personales (ver `data-privacy-in-db`).
 - **MUST NOT** usar historial como sustituto de backup ni como bus de eventos.
 - **SHOULD** para historial completo preferir Hibernate Envers o tablas `_history` mediante trigger; elegir una y documentarla. Envers duplica escrituras y crece: definir retención.
@@ -80,7 +80,7 @@
 
 - **MUST** probar contra el mismo motor y versión mayor que producción (PostgreSQL con Testcontainers); **MUST NOT** usar H2 "en modo PostgreSQL" para validar SQL, locking, JSON o RLS.
 - **MUST** crear el esquema con las migraciones reales (Flyway) en los tests de persistencia, no con `ddl-auto=create` (ver `schema-migrations`).
-- **MUST** reutilizar el contenedor entre tests de la suite (singleton / `@ServiceConnection`, TODO-VERIFY versión de Spring Boot) para tiempos razonables.
+- **MUST** reutilizar el contenedor entre tests de la suite (singleton / `@ServiceConnection`, comprobar versión de Spring Boot) para tiempos razonables.
 - **MUST** aislar los tests: datos únicos por test o limpieza explícita; no depender del orden. Tener en cuenta que `@Transactional` + rollback no prueba el commit real ni el locking entre transacciones.
 - **MUST** tener tests de concurrencia reales (dos transacciones, hilos) para `optimistic-locking` y `pessimistic-locking`, y tests de conteo de sentencias en consultas críticas (ver `n-plus-one`).
 - **MUST** incluir en tests los casos de aislamiento multi-tenant y RLS cuando aplique (ver `multi-tenancy`).
@@ -108,12 +108,12 @@
 - **MUST NOT** envolver la columna indexada en funciones (`lower(email) = ...`) sin un índice de expresión equivalente.
 - **MUST NOT** fiarse del plan en una BD de desarrollo con 100 filas.
 - **SHOULD** usar índices parciales (`WHERE deleted_at IS NULL`), de cobertura (`INCLUDE`) y GIN/BRIN donde encajen, justificándolo con un plan.
-- **SHOULD** mantener estadísticas al día (autovacuum) y vigilar `pg_stat_statements` para detectar las consultas más costosas (TODO-VERIFY extensión disponible en el entorno).
+- **SHOULD** mantener estadísticas al día (autovacuum) y vigilar `pg_stat_statements` para detectar las consultas más costosas (comprobar extensión disponible en el entorno).
 - **SHOULD** crear índices con `CONCURRENTLY` (ver `schema-migrations`).
 
 ## isolation-levels-and-anomalies
 
-- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos — TODO-VERIFY contra la documentación del motor y versión elegidos.
+- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos — comprobar contra la documentación del motor y versión elegidos.
 - **MUST** identificar las anomalías posibles de cada caso de uso: lost update, non-repeatable read, phantom, write skew.
 - **MUST** proteger el patrón "leer y luego escribir según lo leído" con bloqueo (`optimistic-locking`/`pessimistic-locking`), una restricción de BD o un `UPDATE` atómico condicional; no confiar en el aislamiento por defecto.
 - **SHOULD** preferir restricciones declarativas (`UNIQUE`, `CHECK`, FK) como última defensa de invariantes.
@@ -129,8 +129,8 @@
 - **MUST** mantener una sola vía de escritura por agregado; no mezclar JPA y SQL directo sobre la misma tabla dentro de una transacción sin hacer `flush()` antes y `clear()` después.
 - **MUST** que JDBC/jOOQ usen el mismo `DataSource` y transacción de Spring (`DataSourceTransactionManager`/`JpaTransactionManager` con el mismo `DataSource`) para participar de `@Transactional`.
 - **MUST NOT** devolver `ResultSet` ni tipos de jOOQ (`Record`) fuera de la capa de persistencia; mapear a DTOs/records.
-- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (TODO-VERIFY disponibilidad de `JdbcClient` según versión de Spring).
-- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar que el dialecto necesario está en la edición Open Source (TODO-VERIFY licencia).
+- **SHOULD** preferir `JdbcClient`/`NamedParameterJdbcTemplate` sobre `JdbcTemplate` con `Object[]` posicional (comprobar disponibilidad de `JdbcClient` según versión de Spring).
+- **SHOULD** con jOOQ, generar el código desde el esquema real de las migraciones (en build) para que el compilador detecte cambios de esquema. Usar la edición OSS (D16): confirmar que el dialecto necesario está en la edición Open Source (comprobar licencia).
 - **SHOULD** usar `batchUpdate` para escrituras masivas (ver `batching-and-bulk-ops`).
 
 ## joins-and-fetch-joins
@@ -138,7 +138,7 @@
 - **MUST** distinguir `JOIN` (filtra/une, no inicializa) de `JOIN FETCH` (inicializa la asociación en la entidad).
 - **MUST NOT** hacer `JOIN FETCH` de más de una colección (`List`) en la misma consulta: producto cartesiano y `MultipleBagFetchException`. Cargar la segunda con otra consulta o `@BatchSize`.
 - **MUST NOT** combinar `JOIN FETCH` de colección con `Pageable`/`setMaxResults`: Hibernate pagina en memoria (aviso `HHH000104`). Paginar ids primero y luego cargar con fetch.
-- **MUST** usar `DISTINCT` (o `Set`) solo cuando el fetch de colección duplica la raíz; comprobar si la versión de Hibernate ya deduplica (TODO-VERIFY).
+- **MUST** usar `DISTINCT` (o `Set`) solo cuando el fetch de colección duplica la raíz; comprobar si la versión de Hibernate ya deduplica (comprobar al fijar la versión).
 - **SHOULD** usar `LEFT JOIN FETCH` si la asociación puede faltar; `JOIN FETCH` interno descarta filas sin relación.
 - **SHOULD** preferir `@EntityGraph` en repositorios Spring Data para casos simples y `JOIN FETCH` explícito para los complejos.
 - **MUST NOT** filtrar sobre un alias de `JOIN FETCH` de colección: la colección cargada queda incompleta.
@@ -214,7 +214,7 @@
 
 - **MUST** justificar el particionado con un problema medido (purga costosa, mantenimiento, consultas siempre acotadas por rango) y registrarlo en un ADR.
 - **MUST** elegir una clave de partición que aparezca en las consultas habituales (normalmente fecha) para que haya poda de particiones; verificarlo con `EXPLAIN`.
-- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición (TODO-VERIFY en documentación de PostgreSQL de la versión usada).
+- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición (comprobar en documentación de PostgreSQL de la versión usada).
 - **MUST** automatizar la creación de particiones futuras y la retirada de antiguas; una partición que falta rompe las inserciones.
 - **MUST** definir retención por tipo de dato (negocio, legal, PII) con base en requisitos confirmados; plazos legales son borrador por confirmar con fuente oficial.
 - **MUST NOT** purgar con `DELETE` masivo cuando la partición permite `DETACH`/`DROP`.
@@ -230,14 +230,14 @@
 - **MUST** liberar el contexto (`flush()` + `clear()`) cada lote en procesos con miles de entidades para evitar crecimiento de memoria y dirty checking lento (ver `batching-and-bulk-ops`).
 - **MUST NOT** guardar `EntityManager` ni entidades gestionadas en campos de singletons ni compartirlos entre hilos.
 - **MUST** recordar que `@Modifying` en JPQL/SQL no actualiza las entidades ya cargadas: usar `clearAutomatically = true` o recargar.
-- **SHOULD** marcar `@Transactional(readOnly = true)` en lecturas: evita snapshots para dirty checking en Hibernate (TODO-VERIFY detalle por versión).
+- **SHOULD** marcar `@Transactional(readOnly = true)` en lecturas: evita snapshots para dirty checking en Hibernate (comprobar detalle por versión).
 - **MUST NOT** hacer `save()` en bucle sobre entidades ya gestionadas esperando un INSERT/UPDATE inmediato.
 - **SHOULD** usar `getReferenceById` para asociar sin cargar la fila completa.
 
 ## pessimistic-locking
 
 - **MUST** justificar por escrito por qué no basta bloqueo optimista o un `UPDATE` atómico.
-- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor) — TODO-VERIFY soporte por dialecto; nunca esperar indefinidamente.
+- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor) — comprobar soporte por dialecto; nunca esperar indefinidamente.
 - **MUST** mantener la transacción mínima: tomar el bloqueo tarde y soltarlo pronto (commit); sin I/O externo mientras se retiene.
 - **MUST** adquirir bloqueos sobre varias filas/tablas siempre en el mismo orden (por id ascendente) para evitar deadlocks.
 - **SHOULD** usar `FOR UPDATE SKIP LOCKED` para que varios workers reclamen filas de una tabla-cola sin pisarse.
@@ -250,7 +250,7 @@
 - **MUST** usar proyección (record/interfaz/constructor expression) para lecturas que no modifican datos.
 - **MUST NOT** cargar entidades completas para devolver 3 columnas.
 - **SHOULD** usar `record` como DTO de proyección con constructor expression en JPQL: `select new ...`.
-- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa (TODO-VERIFY según versión de Spring Data).
+- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa (comprobar según versión de Spring Data).
 - **MUST NOT** devolver entidades JPA desde controladores.
 - **MUST** nombrar el DTO por caso de uso (`OrderSummary`), no por tabla.
 - **SHOULD** usar proyecciones también para evitar N+1 en listados con datos de varias tablas.

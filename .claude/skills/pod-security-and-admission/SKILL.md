@@ -20,7 +20,7 @@ metadata:
 - **MUST** documentar excepciones (namespaces de sistema, CNI, mesh con init containers) con motivo y dueño.
 - **MUST** desplegar un motor de políticas propio (Kyverno, OSS) para reglas que PSA no cubre: requests, probes, registros permitidos, sin `latest`.
 - **MUST** introducir políticas nuevas en `Audit`, revisar informes y pasar a `Enforce` por entorno (dev, luego staging, luego prod).
-- **SHOULD** valorar `ValidatingAdmissionPolicy` nativa (CEL) para reglas simples sin webhook; TODO-VERIFY versión mínima de Kubernetes.
+- **SHOULD** valorar `ValidatingAdmissionPolicy` nativa (CEL) para reglas simples sin webhook; comprobar versión mínima de Kubernetes.
 - **MUST** configurar `failurePolicy` y exclusiones de los webhooks pensando en disponibilidad: un webhook caído no debe bloquear el clúster entero ni dejarlo sin control (decisión explícita).
 - **MUST NOT** aplicar políticas Enforce directamente en prod sin periodo de Audit.
 - **MUST** versionar las políticas en el repo y probarlas con casos que pasan y que fallan.
@@ -45,7 +45,7 @@ metadata:
     pod-security.kubernetes.io/audit: restricted
     pod-security.kubernetes.io/warn: restricted
 ```
-Política Kyverno en Audit primero (`validationFailureAction: Audit`), ver `policies/kyverno/workload-baseline.yaml`. Revisar con `kubectl get policyreport -A` (TODO-VERIFY nombre del recurso en la versión instalada).
+Política Kyverno en Audit primero (`validationFailureAction: Audit`), ver `policies/kyverno/workload-baseline.yaml`. Revisar con `kubectl get policyreport -A` (comprobar nombre del recurso en la versión instalada).
 
 ## Checklist de revisión
 - [ ] Namespaces con etiquetas PSA (enforce, audit, warn).

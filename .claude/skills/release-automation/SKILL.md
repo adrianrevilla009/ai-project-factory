@@ -20,7 +20,7 @@ metadata:
 - **MUST** hacer la release desde CI sobre la rama principal limpia y con la verificación completa en verde; **MUST NOT** liberar desde una máquina local.
 - **MUST** generar changelog automático a partir de los commits y crear un tag anotado `vX.Y.Z`.
 - **MUST** publicar en cada release: artefactos, SBOM (`sbom-generation`), informe de licencias y, si aplica, imagen con digest (`container-images`).
-- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR. Detalles TODO-VERIFY.
+- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR. Detalles comprobar al fijar la versión.
 - **MUST** hacer la release idempotente: re-ejecutarla sobre el mismo tag no debe producir artefactos distintos (`reproducible-builds`).
 - **MUST NOT** reescribir ni borrar un tag publicado; corregir con una nueva versión patch.
 - **MUST** exigir aprobación humana antes de promocionar a entornos productivos (gate); el agente MUST NOT crear ni editar `approvals/*.json`.

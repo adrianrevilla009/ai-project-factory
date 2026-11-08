@@ -7,7 +7,7 @@
 - **MUST** elegir ALB para HTTP/HTTPS/gRPC (rutas, host, WAF) y NLB para TCP/TLS, IP estática o PrivateLink.
 - **MUST** servir solo HTTPS en listeners públicos; el puerto 80 solo redirige a 443 (HTTP 301).
 - **MUST** usar certificados de ACM (renovación automática) por región; para CloudFront el certificado vive en us-east-1.
-- **MUST** fijar una política TLS moderna (TLS 1.2 mínimo, preferible 1.3) con una `ssl_policy` explícita, no la heredada por defecto (TODO-VERIFY nombre vigente).
+- **MUST** fijar una política TLS moderna (TLS 1.2 mínimo, preferible 1.3) con una `ssl_policy` explícita, no la heredada por defecto (comprobar nombre vigente).
 - **MUST** activar `drop_invalid_header_fields`, access logs a S3 y `enable_deletion_protection` en producción.
 - **MUST NOT** terminar TLS en el balanceador y reenviar HTTP en claro hacia pods con datos sensibles: recifrar hacia el backend (HTTPS al target o mTLS de malla).
 - **SHOULD** usar `target-type: ip` con AWS Load Balancer Controller en EKS (ver `eks-networking`) y health checks dedicados.
@@ -29,7 +29,7 @@
 - **MUST** conectar regiones con peering de TGW (rutas estáticas, ver `transit-gateway-hub-and-spoke`) o VPC peering inter-región para casos simples; el tráfico viaja por la red de AWS, no por Internet.
 - **MUST** mantener las llamadas síncronas dentro de una región; entre regiones solo replicación asíncrona y tráfico de control (ver `consistency-and-cap-tradeoffs`, `cell-based-architecture`).
 - **MUST** respetar la residencia de datos: ningún dato personal se replica a una región no autorizada (ver `regions-and-data-residency`; normativa = borrador por confirmar con fuente oficial).
-- **MUST** estimar el coste antes de añadir un flujo: transferencia entre regiones, entre AZ, procesamiento de NAT/TGW/endpoints y salida a Internet se cobran por GB (TODO-VERIFY tarifas vigentes; no copiar cifras de memoria).
+- **MUST** estimar el coste antes de añadir un flujo: transferencia entre regiones, entre AZ, procesamiento de NAT/TGW/endpoints y salida a Internet se cobran por GB (comprobar tarifas vigentes; no copiar cifras de memoria).
 - **MUST NOT** construir arquitecturas con tráfico entre AZ innecesario: usar enrutado consciente de topología (topology aware routing) y NAT por AZ.
 - **SHOULD** comprimir y agrupar la replicación; preferir réplicas de lectura locales a lecturas remotas.
 - **SHOULD** reducir salida por NAT con endpoints de gateway/interfaz (ver `private-endpoints-and-egress-control`) y CloudFront para servir caché.
@@ -49,12 +49,12 @@
 
 ## eks-networking
 
-- **MUST** dimensionar IPs de pods: con VPC CNI cada pod consume una IP de VPC; planificar CIDR secundario (p. ej. 100.64.0.0/10) con custom networking o prefix delegation (TODO-VERIFY variables de entorno y versión del add-on).
+- **MUST** dimensionar IPs de pods: con VPC CNI cada pod consume una IP de VPC; planificar CIDR secundario (p. ej. 100.64.0.0/10) con custom networking o prefix delegation (comprobar variables de entorno y versión del add-on).
 - **MUST** desplegar nodos en subredes privadas de todas las AZ y balanceadores en subredes etiquetadas `kubernetes.io/role/elb` (públicas) y `kubernetes.io/role/internal-elb` (privadas).
 - **MUST** configurar el endpoint del API con acceso privado; si hay acceso público, limitar `public_access_cidrs` y nunca 0.0.0.0/0.
 - **MUST** exponer servicios con AWS Load Balancer Controller y `target-type: ip` (ver `alb-nlb-and-tls-termination`), con el rol IRSA/Pod Identity de mínimo privilegio.
 - **MUST** aplicar NetworkPolicy por defecto-denegar entre namespaces, complementando (no sustituyendo) a los SG.
-- **SHOULD** usar security groups for pods solo para cargas que necesiten acceso a datos con SG propios; tiene límites por tipo de instancia (TODO-VERIFY).
+- **SHOULD** usar security groups for pods solo para cargas que necesiten acceso a datos con SG propios; tiene límites por tipo de instancia (comprobar al fijar la versión).
 - **SHOULD** vigilar IP libres por subred y ENI por nodo con alertas.
 - **SHOULD** mantener CoreDNS dimensionado y NodeLocal DNSCache si el volumen de DNS lo justifica.
 
@@ -79,7 +79,7 @@
 - **MUST NOT** conmutar tráfico a una región cuyos datos no estén replicados o cuya capacidad no esté dimensionada; documentar RPO/RTO.
 - **SHOULD** usar `traffic_dial_percentage` de los endpoint groups de Global Accelerator para drenar o hacer canary regional.
 - **SHOULD** activar flow logs del acelerador hacia el archivo de logs.
-- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (TODO-VERIFY tarifas).
+- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (comprobar tarifas).
 
 ## private-endpoints-and-egress-control
 
@@ -90,7 +90,7 @@
 - **MUST** tratar el egress como denegado por defecto: lo que sale a Internet pasa por NAT o un punto central con allowlist de dominios (AWS Network Firewall u otro proxy con FQDN).
 - **MUST NOT** dar IP pública a cargas para que "salgan"; ni abrir egress 0.0.0.0/0 en SG de datos.
 - **SHOULD** compartir endpoints en una VPC de servicios solo si el ahorro compensa el coste de TGW y la complejidad de DNS (ver `dns-route53-private-and-hybrid`).
-- **SHOULD** medir coste: cada interface endpoint cobra por hora y AZ y por GB (TODO-VERIFY tarifas vigentes).
+- **SHOULD** medir coste: cada interface endpoint cobra por hora y AZ y por GB (comprobar tarifas vigentes).
 
 ## transit-gateway-hub-and-spoke
 
@@ -121,7 +121,7 @@
 - **MUST** asociar un `aws_wafv2_web_acl`: scope `CLOUDFRONT` (se crea en us-east-1) o `REGIONAL` (misma región que el ALB).
 - **MUST** incluir grupos gestionados básicos (p. ej. `AWSManagedRulesCommonRuleSet`) y una regla de tasa; desplegar reglas nuevas primero en modo `count` y pasar a `block` tras revisar logs.
 - **MUST** activar logging del WAF hacia el archivo de logs (ver `flow-logs-and-network-observability`) con redacción de cabeceras sensibles.
-- **MUST** impedir el acceso directo al origen: el SG del ALB solo admite la prefix list gestionada de CloudFront y se exige una cabecera secreta rotada, o se usa VPC origin si está disponible (TODO-VERIFY).
+- **MUST** impedir el acceso directo al origen: el SG del ALB solo admite la prefix list gestionada de CloudFront y se exige una cabecera secreta rotada, o se usa VPC origin si está disponible (comprobar al fijar la versión).
 - **MUST** usar Origin Access Control (OAC) para orígenes S3, con el bucket privado.
 - **MUST NOT** depender del WAF como única defensa: validación de entrada y authz siguen en la aplicación.
 - **SHOULD** usar Shield Standard (incluido); Shield Advanced es de pago y solo se adopta con decisión explícita (D16).

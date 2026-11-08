@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** medir con el conteo de sentencias/batches, no a ojo.
 
 ## Por qué
-Cada `save` en un bucle puede ser un viaje de red; con `IDENTITY` Hibernate debe ejecutar el INSERT inmediatamente para conocer el id. El contexto de persistencia crece sin límite y el dirty checking se vuelve cuadrático. Un bulk update evita cargar entidades pero deja obsoletas las que ya estaban en memoria. Los valores de `batch_size` son punto de partida: medir (TODO-VERIFY propiedades contra la guía de usuario de Hibernate de la versión usada).
+Cada `save` en un bucle puede ser un viaje de red; con `IDENTITY` Hibernate debe ejecutar el INSERT inmediatamente para conocer el id. El contexto de persistencia crece sin límite y el dirty checking se vuelve cuadrático. Un bulk update evita cargar entidades pero deja obsoletas las que ya estaban en memoria. Los valores de `batch_size` son punto de partida: medir (comprobar propiedades contra la guía de usuario de Hibernate de la versión usada).
 
 ## Ejemplos
 ### Mal

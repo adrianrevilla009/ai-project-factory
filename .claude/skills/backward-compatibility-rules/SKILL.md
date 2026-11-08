@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** tratar como compatible: añadir campo opcional en respuesta, añadir endpoint, añadir valor opcional de petición, añadir RPC o campo Protobuf nuevo (número nuevo).
 - **MUST** tratar como rompiente: quitar/renombrar campo o ruta, cambiar tipo o formato, volver obligatorio un campo, estrechar un enum de petición, cambiar semántica, cambiar código de estado de éxito.
-- **MUST** exigir a los consumidores tolerar campos desconocidos (tolerant reader): `FAIL_ON_UNKNOWN_PROPERTIES=false` en Jackson (`spring.jackson.deserialization.fail-on-unknown-properties=false`, TODO-VERIFY).
+- **MUST** exigir a los consumidores tolerar campos desconocidos (tolerant reader): `FAIL_ON_UNKNOWN_PROPERTIES=false` en Jackson (`spring.jackson.deserialization.fail-on-unknown-properties=false`, comprobar al fijar la versión).
 - **MUST** ampliar un enum de respuesta solo si el contrato documenta que los clientes deben manejar valores desconocidos.
 - **MUST** migrar con expand/contract: añadir lo nuevo, migrar consumidores, retirar lo viejo en una versión posterior (`api-versioning-deprecation`).
 - **MUST** ejecutar un diff automático del contrato contra la rama principal en CI y bloquear rompientes sin versión mayor nueva.
@@ -46,7 +46,7 @@ Order:
     totalAmount: { type: string, description: "Decimal en texto; sustituye a total" }
 ```
 ```text
-# Chequeo en CI (ejemplo; confirmar herramienta y sintaxis en su documentación, TODO-VERIFY)
+# Chequeo en CI (ejemplo; confirmar herramienta y sintaxis en su documentación, comprobar al fijar la versión)
 openapi-diff old.yaml new.yaml        # OpenAPI
 buf breaking --against '.git#branch=main'   # Protobuf
 ```

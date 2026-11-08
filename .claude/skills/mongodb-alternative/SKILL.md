@@ -18,10 +18,10 @@ metadata:
 ## Reglas
 - **MUST** descartar antes Postgres con `jsonb` e índices GIN, que cubre muchos casos documentales sin almacén nuevo.
 - **MUST** abrir un ADR con la comparación, el coste operativo (`polyglot-operations-cost`) y el plan de salida.
-- **MUST** revisar la licencia y el modelo de distribución antes de elegir edición o servicio gestionado; la fábrica evita licencias de pago por defecto (D16). TODO-VERIFY: licencia vigente de MongoDB Community Server y términos de la edición elegida.
+- **MUST** revisar la licencia y el modelo de distribución antes de elegir edición o servicio gestionado; la fábrica evita licencias de pago por defecto (D16). Comprobar licencia vigente de MongoDB Community Server y términos de la edición elegida.
 - **MUST** mantener las mismas reglas de oro: una fuente de verdad por agregado, sin doble escritura con Postgres, proyecciones derivadas.
 - **MUST NOT** usarlo como event store sin demostrar equivalente de append condicional por versión (índice único `(streamId, version)`).
-- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB; comprobar qué funciones soporta (TODO-VERIFY).
+- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB; comprobar qué funciones soporta (comprobar al fijar la versión).
 - **SHOULD** preferir el emulador/contenedor local para pruebas y declarar qué no se reproduce de la variante gestionada.
 
 ## Por qué
@@ -44,7 +44,7 @@ Si JSONB no basta (medido): ADR con comparación, fuente de verdad única (Mongo
 
 ## Checklist de revisión
 - [ ] JSONB en Postgres evaluado y descartado con datos.
-- [ ] ADR con coste, licencia (TODO-VERIFY) y salida.
+- [ ] ADR con coste, licencia (comprobar al fijar la versión) y salida.
 - [ ] Sin doble escritura con otro almacén.
 - [ ] Diferencias entre emulación local y servicio gestionado declaradas.
 

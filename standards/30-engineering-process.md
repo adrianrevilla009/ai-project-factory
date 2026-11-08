@@ -79,11 +79,11 @@
 ## diagrams-as-code
 
 - **MUST** guardar la fuente del diagrama como texto en el repo, junto a la documentación que ilustra; una imagen exportada sin fuente no se acepta.
-- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI). TODO-VERIFY licencia vigente de cada herramienta antes de fijarla.
+- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI). Comprobar licencia vigente de cada herramienta antes de fijarla.
 - **MUST** elegir una herramienta por tipo de diagrama y documentarlo en el README de docs; no mezclar tres sintaxis para lo mismo.
 - **MUST** que cada diagrama tenga título, leyenda si usa colores/formas y nivel de abstracción único (ver `c4-and-arc42`).
 - **MUST** mantener el diagrama en el mismo PR que el cambio que lo invalida.
-- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra (TODO-VERIFY soporte vigente en la documentación de GitHub).
+- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra (comprobar soporte vigente en la documentación de GitHub).
 - **SHOULD** modelar C4 una sola vez (modelo Structurizr) y derivar varias vistas, en lugar de redibujar.
 - **SHOULD** limitar el diagrama a ~15 elementos; dividir en vistas si crece.
 - **MUST NOT** incluir secretos, IPs reales ni identificadores de cuenta en diagramas.
@@ -135,7 +135,7 @@
 - **MUST** clasificar en el radar: Adopt, Trial, Assess, Hold, con fecha y dueño; revisar el radar cada trimestre.
 - **SHOULD** probar con una prueba de concepto acotada antes de pasar a Adopt.
 - **SHOULD** aislar la librería tras un puerto/adaptador para reducir el coste de salida.
-- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (TODO-VERIFY).
+- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (comprobar al fijar la versión).
 
 ## living-readme
 

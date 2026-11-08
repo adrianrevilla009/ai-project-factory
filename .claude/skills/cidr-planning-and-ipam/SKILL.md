@@ -77,5 +77,5 @@ resource "aws_vpc" "orders" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vpc-multi-az-layers`, `transit-gateway-hub-and-spoke`, `eks-networking`, `regions-and-data-residency`.
-- Fuentes: documentación oficial de Amazon VPC IPAM y de dimensionado de VPC/subredes (consulta 2026-11-07, TODO-VERIFY límites y atributos contra la doc vigente).
+- Fuentes: documentación oficial de Amazon VPC IPAM y de dimensionado de VPC/subredes (consulta 2026-11-07, comprobar límites y atributos contra la doc vigente).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

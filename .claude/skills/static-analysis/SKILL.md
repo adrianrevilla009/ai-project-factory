@@ -41,7 +41,7 @@ public class OrderService { /* ... */ }
 public record OrderView(List<Line> lines) { }
 ```
 ```xml
-<!-- parent pom: plugin configurado una vez; fallar en violaciones. Versiones: TODO-VERIFY -->
+<!-- parent pom: plugin configurado una vez; fallar en violaciones. Versiones: comprobar al fijar la versión -->
 <plugin>
   <artifactId>maven-checkstyle-plugin</artifactId>
   <configuration>
@@ -50,7 +50,7 @@ public record OrderView(List<Line> lines) { }
   </configuration>
 </plugin>
 ```
-Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple` y `-Xplugin:ErrorProne`; los flags exactos y la compatibilidad con la versión de JDK se confirman en la documentación oficial (TODO-VERIFY).
+Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple` y `-Xplugin:ErrorProne`; los flags exactos y la compatibilidad con la versión de JDK se confirman en la documentación oficial (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Las cuatro herramientas están en el parent POM y fallan el build.

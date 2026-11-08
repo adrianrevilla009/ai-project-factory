@@ -24,7 +24,7 @@ metadata:
 - **MUST** clasificar en el radar: Adopt, Trial, Assess, Hold, con fecha y dueño; revisar el radar cada trimestre.
 - **SHOULD** probar con una prueba de concepto acotada antes de pasar a Adopt.
 - **SHOULD** aislar la librería tras un puerto/adaptador para reducir el coste de salida.
-- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (TODO-VERIFY).
+- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (comprobar al fijar la versión).
 
 ## Por qué
 Cada dependencia es deuda de mantenimiento, superficie de ataque y riesgo de licencia. Un proceso corto y explícito evita la proliferación y deja trazabilidad de por qué se eligió cada pieza.
@@ -42,7 +42,7 @@ Cada dependencia es deuda de mantenimiento, superficie de ataque y riesgo de lic
 # ADR-0045: Librería de resiliencia
 Estado: propuesta
 Candidatas: Resilience4j, implementación propia
-Criterios: licencia (Apache-2.0, TODO-VERIFY), actividad del repo, integración con Spring Boot, métricas Micrometer
+Criterios: licencia (Apache-2.0, comprobar al fijar la versión), actividad del repo, integración con Spring Boot, métricas Micrometer
 Decisión: Resilience4j, tras puerto `ResilienceOps`
 Radar: Trial (2026-11-07), dueño tech-lead, revisión 2027-02-07
 Salida: sustituir el adaptador; ningún import fuera de `infrastructure`

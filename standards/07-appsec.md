@@ -84,7 +84,7 @@
 - **MUST** usar mTLS entre servicios cuando la política de zero-trust lo requiera; en malla Istio, `PeerAuthentication` en modo `STRICT` (D-Istio).
 - **MUST** cifrar con claves gestionadas (KMS: AWS KMS, preparado para AWS no verificado en real); envelope encryption para datos grandes. En local se sustituye por una clave de prueba: KMS real no se reproduce.
 - **MUST** definir rotación para cada clave y certificado (automática donde sea posible), con soporte de versión de clave (`kid`) para descifrar con la anterior durante la transición.
-- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo, TODO-VERIFY).
+- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo, comprobar al fijar la versión).
 - **SHOULD** tener plan de agilidad criptográfica (algoritmo y versión almacenados junto al dato).
 
 ## dependency-security
@@ -193,7 +193,7 @@
 - **MUST** ordenar matchers de lo específico a lo general.
 - **MUST** exponer Actuator solo con `health` y `info` sin detalles; el resto detrás de rol y red de gestión.
 - **MUST NOT** desactivar la seguridad con perfiles (`@Profile("dev")` con `permitAll`) sin que el arranque falle si el perfil llega a un entorno compartido.
-- **MUST** devolver errores sin stack traces ni detalles internos (`server.error.include-stacktrace=never`, TODO-VERIFY propiedad).
+- **MUST** devolver errores sin stack traces ni detalles internos (`server.error.include-stacktrace=never`, comprobar propiedad).
 - **SHOULD** una cadena por tipo de cliente (API stateless vs. web con sesión).
 - **SHOULD** probar la seguridad con `spring-security-test`, incluyendo caso anónimo.
 - **MUST NOT** depender de ocultar rutas ("security by obscurity").
@@ -207,7 +207,7 @@
 - **MUST** limitar tamaño, frecuencia y paginación (`dos-and-rate-limiting`).
 - **MUST** mantener inventario de APIs y versiones expuestas; desactivar las obsoletas.
 - **MUST** validar toda URL aportada por el usuario antes de consumirla (`deserialization-xxe-ssrf-traversal`).
-- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones (TODO-VERIFY ediciones actuales de ambos Top 10).
+- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones (comprobar ediciones actuales de ambos Top 10).
 
 ## pii-and-data-classification
 

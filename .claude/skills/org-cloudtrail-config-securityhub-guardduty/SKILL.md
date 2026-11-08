@@ -66,10 +66,10 @@ resource "aws_guardduty_organization_admin_account" "this" {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Checkov: `aws_cloudtrail` con `is_multi_region_trail`, validación y KMS (checks nativos CKV_AWS_35/36/67, TODO-VERIFY ids) | 1 | pendiente: configuración en `policies/iac-checks/` |
+| Checkov: `aws_cloudtrail` con `is_multi_region_trail`, validación y KMS (checks nativos CKV_AWS_35/36/67, comprobar ids) | 1 | pendiente: configuración en `policies/iac-checks/` |
 | Revisión de excepciones de Security Hub | 4 | revisión humana |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `log-archive-and-audit-account`, `scp-guardrails`, `kms-multi-region-keys`, `compliance-as-code`.
-- Fuentes: guías de usuario de CloudTrail, Config, Security Hub y GuardDuty (2026-11-07) — TODO-VERIFY URLs y estándares vigentes.
+- Fuentes: guías de usuario de CloudTrail, Config, Security Hub y GuardDuty (2026-11-07) — comprobar URLs y estándares vigentes.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -69,5 +69,5 @@ ProblemDetail notFound(OrderNotFoundException ex) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `pagination-filter-sort`, `idempotency-keys`, `api-versioning-deprecation`.
-- Fuentes (verificadas 2026-11-07 solo por nombre de RFC; TODO-VERIFY URL): RFC 9110 (HTTP Semantics), RFC 9457 (Problem Details); `ProblemDetail` de Spring Framework 6+ (TODO-VERIFY versión del proyecto).
+- Fuentes (verificadas 2026-11-07 solo por nombre de RFC; comprobar URL): RFC 9110 (HTTP Semantics), RFC 9457 (Problem Details); `ProblemDetail` de Spring Framework 6+ (comprobar versión del proyecto).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

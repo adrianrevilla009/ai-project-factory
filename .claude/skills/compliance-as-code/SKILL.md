@@ -72,5 +72,5 @@ deny contains msg if {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `scp-guardrails`, `org-cloudtrail-config-securityhub-guardduty`, `tagging-cost-allocation-budgets`, `verify-before-asserting`.
-- Fuentes: documentación de Checkov, OPA/Conftest y AWS Config conformance packs (2026-11-07) — TODO-VERIFY URLs; marcos normativos: borrador por confirmar.
+- Fuentes: documentación de Checkov, OPA/Conftest y AWS Config conformance packs (2026-11-07) — comprobar URLs; marcos normativos: borrador por confirmar.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

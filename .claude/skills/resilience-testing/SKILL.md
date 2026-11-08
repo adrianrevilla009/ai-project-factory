@@ -58,7 +58,7 @@ void opensCircuitAfterRepeatedFailures() {
             .isEqualTo(CircuitBreaker.State.OPEN));
 }
 ```
-Clases de Resilience4j y WireMock: TODO-VERIFY contra la versión usada.
+Clases de Resilience4j y WireMock: comprobar contra la versión usada.
 
 ## Checklist de revisión
 - [ ] Un test por política declarada (timeout, retry, breaker, fallback).
@@ -75,5 +75,5 @@ Clases de Resilience4j y WireMock: TODO-VERIFY contra la versión usada.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `chaos-engineering`, `wiremock-and-stubbing`, `http-clients-and-timeouts`, `backpressure-and-bulkheads`.
-- Fuentes: documentación de Resilience4j (https://resilience4j.readme.io/) y WireMock (https://wiremock.org/docs/), TODO-VERIFY API a 2026-11-07.
+- Fuentes: documentación de Resilience4j (https://resilience4j.readme.io/) y WireMock (https://wiremock.org/docs/), comprobar API a 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

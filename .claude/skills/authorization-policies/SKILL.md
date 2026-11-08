@@ -59,7 +59,7 @@ spec:
             methods: ["GET", "POST"]
             paths: ["/orders/*"]
 ```
-Versión de API y semántica de `spec: {}`: TODO-VERIFY en la documentación de la versión elegida.
+Versión de API y semántica de `spec: {}`: comprobar en la documentación de la versión elegida.
 
 ## Checklist de revisión
 - [ ] Deny-all en cada namespace de negocio.

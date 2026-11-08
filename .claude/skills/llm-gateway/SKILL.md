@@ -53,7 +53,7 @@ consumers:
     rate_limit_per_minute: 120
     data_classification_max: internal
 ```
-Los nombres de propiedades de Spring AI son TODO-VERIFY por proveedor y versión.
+Los nombres de propiedades de Spring AI se comprueban por proveedor y versión.
 
 ## Checklist de revisión
 - [ ] Un único punto de salida a proveedores; sin claves de proveedor en servicios.
@@ -71,5 +71,5 @@ Los nombres de propiedades de Spring AI son TODO-VERIFY por proveedor y versión
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `llm-observability`, `llm-security`, `rate-limiting-quotas`, `resilience`, `secrets-management`, `model-risk-and-ai-act-mapping`.
-- Fuentes: documentación del producto de pasarela elegido — TODO-VERIFY; sin fuente oficial única.
+- Fuentes: documentación del producto de pasarela elegido — comprobar al fijar la versión; sin fuente oficial única.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

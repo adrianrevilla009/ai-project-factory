@@ -48,7 +48,7 @@
 - **MUST** programar snapshots Raft (`vault operator raft snapshot save`) a un bucket de la misma región con cifrado, y ensayar la restauración.
 - **SHOULD** usar Raft Autopilot para limpieza de nodos muertos y actualizaciones controladas.
 - **SHOULD** fijar `topologySpreadConstraints` por zona y `PodDisruptionBudget` `maxUnavailable: 1`.
-- **SHOULD** registrar la licencia: Vault es BUSL, OpenBao es la alternativa abierta (ADR-0031); TODO-VERIFY licencia de la versión fijada con revisión legal.
+- **SHOULD** registrar la licencia: Vault es BUSL, OpenBao es la alternativa abierta (ADR-0031); comprobar licencia de la versión fijada con revisión legal.
 
 ## dynamic-database-credentials
 
@@ -78,7 +78,7 @@
 ## feature-flags-openfeature
 
 - **MUST** acceder a los flags a través de la API de OpenFeature (estándar abierto, SDK Java) y no del SDK de un proveedor concreto, para poder cambiar de provider sin tocar el código de negocio.
-- **MUST** elegir un provider sin licencia de pago por defecto (D16); fichero/ConfigMap o un servidor OSS compatible con OpenFeature. TODO-VERIFY provider concreto y versión.
+- **MUST** elegir un provider sin licencia de pago por defecto (D16); fichero/ConfigMap o un servidor OSS compatible con OpenFeature. Comprobar provider concreto y versión.
 - **MUST** pasar siempre un valor por defecto seguro en cada evaluación: si el provider cae, el sistema se comporta como "flag apagado".
 - **MUST** tipificar y nombrar los flags (`orders.new-pricing.enabled`) con propietario, fecha de creación y fecha de retirada prevista.
 - **MUST** clasificar cada flag: release (vida corta), ops/kill switch, experimento o permiso; solo los de release y experimento caducan.
@@ -93,10 +93,10 @@
 
 - **SHOULD** usar **Vault Secrets Operator (VSO)** por defecto: sincroniza a `Secret` de Kubernetes mediante CRDs (`VaultStaticSecret`, `VaultDynamicSecret`) sin sidecar. Es la opción más simple de operar.
 - **SHOULD** usar **Agent Injector** (sidecar) cuando se necesita renovación de leases y plantillas de fichero sin `Secret` de K8s; coste: un contenedor extra por pod.
-- **SHOULD** usar **CSI Provider** cuando no se quiere persistir el valor en etcd y basta montar un volumen efímero; limitación: rotación y sincronización a variables de entorno más pobre. TODO-VERIFY comportamiento de rotación en la versión fijada.
+- **SHOULD** usar **CSI Provider** cuando no se quiere persistir el valor en etcd y basta montar un volumen efímero; limitación: rotación y sincronización a variables de entorno más pobre. Comprobar comportamiento de rotación en la versión fijada.
 - **MUST** documentar la elección por servicio en un ADR corto; **MUST NOT** mezclar patrones sin motivo.
 - **MUST** preferir montar secretos como **ficheros** y leerlos con `spring.config.import=optional:configtree:/vault/secrets/`; evitar variables de entorno (se filtran en volcados y `/proc`).
-- **MUST** que el cifrado de `Secret` en etcd (KMS provider) esté activo si se usa VSO; sin él, el secreto queda en claro en etcd. TODO-VERIFY configuración EKS.
+- **MUST** que el cifrado de `Secret` en etcd (KMS provider) esté activo si se usa VSO; sin él, el secreto queda en claro en etcd. Comprobar configuración EKS.
 - **MUST** que cada servicio use su ServiceAccount y rol (`auth-methods`); **MUST NOT** compartir un rol entre namespaces.
 - **MUST** que la app tolere el cambio del secreto (relectura o reinicio controlado; en VSO, `rolloutRestartTargets`).
 - **MUST NOT** registrar valores de secretos en logs, `toString()` ni Actuator (`management.endpoint.env.show-values=NEVER`).
@@ -156,7 +156,7 @@
 
 - **MUST** partir de GitOps + Vault y documentar por escrito en un ADR del proyecto por qué no basta antes de añadir Config Server.
 - **MUST** justificar con al menos uno de: cambio de configuración en caliente sin redespliegue (con `/actuator/refresh` o bus), muchos servicios no Kubernetes, o equipos que ya operan Config Server.
-- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault (TODO-VERIFY backend y propiedades en la versión de Spring Cloud fijada).
+- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault (comprobar backend y propiedades en la versión de Spring Cloud fijada).
 - **MUST** proteger el servidor: autenticación entre servicios (mTLS o OAuth2), sin endpoints abiertos, y cifrado de transporte.
 - **MUST** tratarlo como componente de plataforma crítico: al menos 2 réplicas, healthchecks y alerta, porque su caída bloquea arranques.
 - **MUST** configurar los clientes con fallo rápido y reintentos acotados (`spring.config.import` con `configserver:`), y valores por defecto seguros.
@@ -178,7 +178,7 @@
 
 ## vault-and-keycloak-dr
 
-- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción. TODO-VERIFY contra la documentación vigente de la versión fijada.
+- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción. Comprobar contra la documentación vigente de la versión fijada.
 - **MUST** programar snapshots Raft (`vault operator raft snapshot save`) y copiarlos cifrados a almacenamiento fuera del clúster y de la región (en AWS, S3 con KMS: preparado para AWS, no verificado en real).
 - **MUST** definir RPO = intervalo de snapshot y RTO medido, y ensayar la restauración en un clúster limpio al menos trimestralmente.
 - **MUST** proteger por separado las claves de unseal/recovery y el material de auto-unseal: un snapshot sin ellos no sirve.

@@ -20,7 +20,7 @@ metadata:
 - **MUST** aplicar un bulkhead por dependencia (semáforo o pool dedicado) para que una dependencia lenta no consuma todos los hilos.
 - **MUST** poner timeout en cada llamada saliente; sin timeout el bulkhead se llena igual.
 - **MUST** que los consumidores de mensajes limiten el prefetch/`max.poll.records` y la concurrencia al ritmo que el proceso aguanta.
-- **SHOULD** usar Resilience4j `Bulkhead`/`ThreadPoolBulkhead` y `RateLimiter` (TODO-VERIFY versión y compatibilidad con la de Spring Boot del proyecto).
+- **SHOULD** usar Resilience4j `Bulkhead`/`ThreadPoolBulkhead` y `RateLimiter` (comprobar versión y compatibilidad con la de Spring Boot del proyecto).
 - **SHOULD** con virtual threads, limitar con `Semaphore` la concurrencia hacia el recurso (ver `virtual-threads`).
 - **MUST** definir degradación explícita (respuesta parcial, caché, valor por defecto) cuando el bulkhead rechaza.
 - **MUST NOT** reintentar sin límite ni sin *jitter* contra una dependencia saturada (amplifica la caída).

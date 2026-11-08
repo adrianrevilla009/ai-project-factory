@@ -25,7 +25,7 @@ metadata:
 - **SHOULD** limitar la paralelización al número de tareas realmente independientes (ver `cost-control`).
 
 ## Por qué
-Dos sesiones sobre el mismo árbol se pisan: una lee un fichero a medias, la otra lo reescribe. Un worktree es un checkout separado con su propia rama y evita eso sin clonar el repositorio. Claude Code lo soporta con `claude --worktree <nombre>` (verificado 2026-11-07, https://code.claude.com/docs/en/common-workflows; requiere al menos un commit; detalles de limpieza y `.worktreeinclude` en https://code.claude.com/docs/en/worktrees.md). Hoy este directorio de la fábrica no es un repositorio git, así que el aislamiento por worktree solo aplica a proyectos generados con git; aquí la separación se logra por propiedad de carpetas. TODO-VERIFY: la opción de aislamiento por worktree en la definición de subagentes.
+Dos sesiones sobre el mismo árbol se pisan: una lee un fichero a medias, la otra lo reescribe. Un worktree es un checkout separado con su propia rama y evita eso sin clonar el repositorio. Claude Code lo soporta con `claude --worktree <nombre>` (verificado 2026-11-07, https://code.claude.com/docs/en/common-workflows; requiere al menos un commit; detalles de limpieza y `.worktreeinclude` en https://code.claude.com/docs/en/worktrees.md). Hoy este directorio de la fábrica no es un repositorio git, así que el aislamiento por worktree solo aplica a proyectos generados con git; aquí la separación se logra por propiedad de carpetas. Comprobar la opción de aislamiento por worktree en la definición de subagentes.
 
 ## Ejemplos
 ### Mal

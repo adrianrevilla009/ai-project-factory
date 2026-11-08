@@ -51,7 +51,7 @@ class ArchitectureTest {
         slices().matching("com.acme.orders.(*)..").should().beFreeOfCycles();
 }
 ```
-Reglas reales reutilizables: `policies/archunit/DomainIsolationRules.java`, `HexagonalArchitectureRules.java`, `ModuleBoundaryRules.java`. Versión de ArchUnit: TODO-VERIFY.
+Reglas reales reutilizables: `policies/archunit/DomainIsolationRules.java`, `HexagonalArchitectureRules.java`, `ModuleBoundaryRules.java`. Versión de ArchUnit: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Cada regla de arquitectura documentada tiene su test.

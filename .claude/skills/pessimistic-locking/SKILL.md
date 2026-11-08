@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** justificar por escrito por qué no basta bloqueo optimista o un `UPDATE` atómico.
-- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor) — TODO-VERIFY soporte por dialecto; nunca esperar indefinidamente.
+- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor) — comprobar soporte por dialecto; nunca esperar indefinidamente.
 - **MUST** mantener la transacción mínima: tomar el bloqueo tarde y soltarlo pronto (commit); sin I/O externo mientras se retiene.
 - **MUST** adquirir bloqueos sobre varias filas/tablas siempre en el mismo orden (por id ascendente) para evitar deadlocks.
 - **SHOULD** usar `FOR UPDATE SKIP LOCKED` para que varios workers reclamen filas de una tabla-cola sin pisarse.

@@ -16,14 +16,14 @@ metadata:
 - No aplica a parches de dependencias menores gestionadas por Renovate/Dependabot (`renovate-dependabot-policy`, bloque 09).
 
 ## Reglas
-- **MUST** estar en una línea de Spring Boot con soporte OSS vigente; comprobar las fechas de fin de soporte en la página oficial de versiones (TODO-VERIFY, no fijadas aquí).
+- **MUST** estar en una línea de Spring Boot con soporte OSS vigente; comprobar las fechas de fin de soporte en la página oficial de versiones (comprobar al fijar la versión, no fijadas aquí).
 - **MUST** subir versiones de parche dentro de la línea con frecuencia (mensual como objetivo) y por PR automático.
 - **MUST** subir de línea menor/mayor de una en una, sin saltos, siguiendo la guía de migración oficial (Release Notes y Migration Guide del wiki de Spring Boot).
 - **MUST** eliminar APIs `@Deprecated` en la línea actual antes de saltar a la siguiente.
 - **MUST** gestionar versiones por el BOM de Spring Boot (`bom-management`); **MUST NOT** fijar a mano versiones de librerías que el BOM ya gestiona sin comentario justificado.
 - **MUST** una subida por PR, con suite completa verde y sin mezclar cambios funcionales.
 - **SHOULD** compatibilidad de Spring Cloud/Modulith verificada en su matriz oficial antes de subir Boot.
-- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff (TODO-VERIFY receta disponible).
+- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff (comprobar receta disponible).
 - **MUST NOT** usar versiones SNAPSHOT/milestone/RC en ramas de producción.
 
 ## Por qué

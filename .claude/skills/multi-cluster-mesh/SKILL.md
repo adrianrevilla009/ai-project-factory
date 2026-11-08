@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** justificar en ADR del proyecto la necesidad multi-clúster antes de adoptarlo.
-- **MUST** elegir modelo explícito: primario-remoto o multi-primario, red única o redes distintas (TODO-VERIFY topologías vigentes y requisitos en la versión de Istio).
+- **MUST** elegir modelo explícito: primario-remoto o multi-primario, red única o redes distintas (comprobar topologías vigentes y requisitos en la versión de Istio).
 - **MUST** compartir una raíz de confianza común: CA raíz propia y CA intermedia por clúster; nunca la CA autogenerada por defecto en producción.
 - **MUST** custodiar las claves de CA según `secrets-management`; nunca en el repositorio.
 - **MUST** usar nombres de red y de clúster únicos y coherentes en la configuración de cada clúster.
@@ -46,7 +46,7 @@ global:
     clusterName: cluster-a
   network: network-a
 ```
-Claves exactas de `values`/IstioOperator: TODO-VERIFY; seguir la guía oficial de la versión elegida.
+Claves exactas de `values`/IstioOperator: comprobar al fijar la versión; seguir la guía oficial de la versión elegida.
 
 ## Checklist de revisión
 - [ ] ADR con motivo y modelo elegido.

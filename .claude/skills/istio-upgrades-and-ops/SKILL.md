@@ -16,10 +16,10 @@ metadata:
 - No aplica al upgrade de Kubernetes (ver `cluster-upgrades-and-drift`), aunque debe coordinarse con él.
 
 ## Reglas
-- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes (TODO-VERIFY matriz vigente).
+- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes (comprobar matriz vigente).
 - **MUST** actualizar en una versión menor cada vez y revisar notas de versión y cambios incompatibles.
-- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final (TODO-VERIFY comandos exactos de la versión).
-- **MUST** ejecutar `istioctl x precheck` antes (TODO-VERIFY nombre del subcomando) y `istioctl analyze` después.
+- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final (comprobar comandos exactos de la versión).
+- **MUST** ejecutar `istioctl x precheck` antes (comprobar nombre del subcomando) y `istioctl analyze` después.
 - **MUST** tener `istiod` con varias réplicas, PDB y `requests` definidos.
 - **SHOULD** actualizar primero un namespace de prueba y observar métricas antes de producción.
 - **MUST** probar el rollback: la etiqueta de revisión anterior debe seguir disponible hasta validar.
@@ -47,7 +47,7 @@ kubectl rollout restart deployment -n orders-test
 # 4) Validar
 istioctl analyze -n orders-test
 ```
-Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts: TODO-VERIFY.
+Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts: comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Versión fijada y compatible con Kubernetes.

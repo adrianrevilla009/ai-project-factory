@@ -18,12 +18,12 @@ metadata:
 ## Reglas
 - **MUST** modelar un stream por agregado: `pk = <TYPE>#<aggregateId>`, `sk` = versión con ceros a la izquierda (`v0000000042`) para ordenar lexicográficamente.
 - **MUST** añadir con escritura condicional `attribute_not_exists(pk)` sobre la clave completa `(pk, sk)`: dos escritores con la misma versión esperada, uno falla (concurrencia optimista).
-- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites (TODO-VERIFY en la guía de la API).
+- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites (comprobar en la guía de la API).
 - **MUST** publicar desde el propio almacén con DynamoDB Streams (o equivalente); **MUST NOT** publicar en el bus como segundo paso del comando (doble escritura).
 - **MUST** tratar los consumidores como at-least-once: idempotentes por `(streamId, version)` (`idempotency-and-deduplication`).
 - **MUST NOT** actualizar ni borrar ítems de eventos; la política IAM de la aplicación solo permite `PutItem` condicional y `Query`.
 - **SHOULD** guardar metadatos: `type`, `schemaVersion`, `occurredAt`, `correlationId`, `causationId`, `payload`.
-- **SHOULD** configurar retención y orden de Streams según la documentación vigente (TODO-VERIFY: retención de 24 h de los registros de Streams).
+- **SHOULD** configurar retención y orden de Streams según la documentación vigente (comprobar retención de 24 h de los registros de Streams).
 - **MUST** fijar la región de escritura por agregado si hay Global Tables (`global-tables-and-write-region-rules`).
 
 ## Por qué

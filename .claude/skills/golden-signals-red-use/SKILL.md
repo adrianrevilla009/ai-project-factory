@@ -46,7 +46,7 @@ histogram_quantile(0.95,
 # Saturación del pool
 max(hikaricp_connections_pending{application="orders-api"})
 ```
-Los nombres de métrica dependen del exportador y la versión de Micrometer (TODO-VERIFY).
+Los nombres de métrica dependen del exportador y la versión de Micrometer (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] RED por endpoint y USE por recurso presentes.

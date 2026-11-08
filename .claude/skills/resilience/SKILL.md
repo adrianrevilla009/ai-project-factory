@@ -21,7 +21,7 @@ metadata:
 - **MUST** definir `fallback` explícito y de significado de negocio claro, o dejar propagar el error; **MUST NOT** devolver listas vacías o `null` que oculten el fallo.
 - **MUST** configurar instancias por nombre en `application.yml`, una por dependencia, no valores en anotaciones.
 - **MUST** usar `Bulkhead` (semáforo) para limitar concurrencia hacia dependencias lentas.
-- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead (comprobar el orden real de aspectos, TODO-VERIFY).
+- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead (comprobar el orden real de aspectos, comprobar al fijar la versión).
 - **SHOULD** exponer métricas y estado de los breakers vía Actuator (`actuator-and-health`).
 - **MUST NOT** hacer retry anidado en varias capas (multiplica la carga: 3x3x3).
 
@@ -62,7 +62,7 @@ resilience4j:
         wait-duration: 200ms
         enable-exponential-backoff: true
 ```
-Los valores son ilustrativos; calibrar con métricas reales. Nombres de propiedades: TODO-VERIFY contra la versión usada.
+Los valores son ilustrativos; calibrar con métricas reales. Nombres de propiedades: comprobar contra la versión usada.
 
 ## Checklist de revisión
 - [ ] Hay timeout antes que retry/breaker.

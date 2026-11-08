@@ -62,5 +62,5 @@ String price = NumberFormat.getCurrencyInstance(userLocale).format(amount);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `time-and-money`, `sql-injection-prevention`, `owasp-top10-and-api-top10`.
-- Fuentes: Javadoc de `java.nio.charset.StandardCharsets`, `java.text.Normalizer`, `java.util.Locale` — no verificado en línea. Nota: el comportamiento por defecto de charset cambió en JDK recientes (UTF-8 por defecto): TODO-VERIFY versión; la regla sigue siendo ser explícito.
+- Fuentes: Javadoc de `java.nio.charset.StandardCharsets`, `java.text.Normalizer`, `java.util.Locale` — no verificado en línea. Nota: el comportamiento por defecto de charset cambió en JDK recientes (UTF-8 por defecto): comprobar versión; la regla sigue siendo ser explícito.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

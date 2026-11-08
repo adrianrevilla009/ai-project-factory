@@ -24,7 +24,7 @@ metadata:
 - **MUST** respetar señales de exclusión del origen (términos de uso, `robots.txt`, avisos de reserva de derechos) y no hacer scraping de fuentes que lo prohíban.
 - **MUST** versionar el dataset con hash e identificar qué versión entrenó cada modelo (ver `classical-mlops`).
 - **MUST** poder retirar datos: si un titular ejerce sus derechos o caduca una licencia, saber qué modelos e índices se ven afectados y planificar reindexado o reentrenamiento.
-- **SHOULD** preferir datos propios, de licencia abierta compatible (CC0, CC-BY, Apache-2.0 según el caso) o sintéticos generados con modelos cuyas condiciones permitan ese uso (TODO-VERIFY por proveedor).
+- **SHOULD** preferir datos propios, de licencia abierta compatible (CC0, CC-BY, Apache-2.0 según el caso) o sintéticos generados con modelos cuyas condiciones permitan ese uso (comprobar por proveedor).
 - **SHOULD** mantener la lista de licencias aceptadas y rechazadas por el proyecto y una revisión legal para las dudosas.
 - **SHOULD** revisar el dato sintético: puede heredar restricciones del modelo generador y sesgos.
 - **MUST NOT** mezclar sin etiquetar datos con licencias incompatibles en un mismo conjunto.
@@ -45,7 +45,7 @@ id: support-tickets-2026-10
 sha256: "<hash del snapshot>"
 origin: "tickets internos, cliente ACME (example)"
 obtained_at: "2026-10-15"
-legal_basis: "contrato marco cláusula 7.2 (uso para mejora del servicio); TODO-VERIFY con legal"
+legal_basis: "contrato marco cláusula 7.2 (uso para mejora del servicio); comprobar con legal"
 license: "propietaria del cliente"
 allowed_use: [fine_tuning_internal, evaluation]
 forbidden_use: [redistribution, training_for_other_customers]
@@ -70,5 +70,5 @@ owner: data-steward@example.com
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `pii-and-data-classification`, `classical-mlops`, `model-risk-and-ai-act-mapping`, `intelligent-document-processing`, `vector-store-selection`.
-- Fuentes: texto oficial del RGPD y del Reglamento de IA de la UE en EUR-Lex (TODO-VERIFY artículos y fechas de aplicación); textos de licencias en https://creativecommons.org y https://www.apache.org/licenses/ (consulta 2026-11-07, TODO-VERIFY).
+- Fuentes: texto oficial del RGPD y del Reglamento de IA de la UE en EUR-Lex (comprobar artículos y fechas de aplicación); textos de licencias en https://creativecommons.org y https://www.apache.org/licenses/ (consulta 2026-11-07, comprobar al fijar la versión).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

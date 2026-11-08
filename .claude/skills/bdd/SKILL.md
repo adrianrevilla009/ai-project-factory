@@ -52,7 +52,7 @@ void priceIsCalculated() {
     result = pricing.finalPrice(order);   // step fino: delega en el dominio
 }
 ```
-Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): TODO-VERIFY.
+Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): comprobar al fijar la versión.
 
 ## Checklist de revisión
 - [ ] Un lector de negocio entiende el escenario sin ver código.
@@ -68,5 +68,5 @@ Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): TODO-VERIFY.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tdd`, `e2e-testing`, `test-strategy`, `api-testing`.
-- Fuentes: documentación oficial de Cucumber (https://cucumber.io/docs) — TODO-VERIFY versión y módulo JUnit Platform.
+- Fuentes: documentación oficial de Cucumber (https://cucumber.io/docs) — comprobar versión y módulo JUnit Platform.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

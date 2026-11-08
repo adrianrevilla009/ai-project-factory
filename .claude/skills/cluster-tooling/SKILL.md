@@ -19,7 +19,7 @@ metadata:
 ## Reglas
 - **MUST** usar kind por defecto (ADR-0034); k3d solo como alternativa documentada y justificada en el README del proyecto.
 - **MUST** definir el clúster en un fichero versionado (`deploy/local/kind-config.yaml`), nunca con flags sueltos en comandos de wiki.
-- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS (TODO-VERIFY tags disponibles por release de kind).
+- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS (comprobar tags disponibles por release de kind).
 - **MUST** exponer un registro local para el bucle de desarrollo (patrón oficial de kind con `certs.d`), en vez de `kind load` en cada cambio.
 - **MUST** envolver crear/destruir/reiniciar en `make local-up`, `make local-down`, `make local-reset` idempotentes.
 - **SHOULD** usar un clúster por proyecto con nombre explícito (`kind create cluster --name <project>`), nunca el contexto `kind-kind` genérico.
@@ -44,7 +44,7 @@ apiVersion: kind.x-k8s.io/v1alpha4
 name: acme-shop
 nodes:
   - role: control-plane
-    image: kindest/node:v1.0.0-changeme   # TODO-VERIFY: tag real de la release de kind
+    image: kindest/node:v1.0.0-changeme   # comprobar tag real de la release de kind
     extraPortMappings:
       - { containerPort: 30080, hostPort: 8080, protocol: TCP }
   - role: worker

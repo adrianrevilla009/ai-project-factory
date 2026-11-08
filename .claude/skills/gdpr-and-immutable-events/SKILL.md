@@ -63,5 +63,5 @@ void forgetSubject(String subjectId) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `pii-and-data-classification`, `data-privacy-in-db`, `secrets-management`, `retention-and-cleanup`.
-- Fuentes: texto del RGPD en EUR-Lex (art. 17) — TODO-VERIFY URL y criterio legal; no se ha consultado en esta revisión.
+- Fuentes: texto del RGPD en EUR-Lex (art. 17) — comprobar URL y criterio legal; no se ha consultado en esta revisión.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

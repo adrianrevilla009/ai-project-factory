@@ -51,7 +51,7 @@ jobs:
           --set image.digest="${{ inputs.digest }}" --atomic --timeout 5m
       - run: ./scripts/smoke.sh "$BASE_URL"
 ```
-`--atomic` y flags de Helm: TODO-VERIFY contra la versión fijada. Si el entorno usa GitOps, el rollback es un revert en el repositorio de configuración (bloque 17).
+`--atomic` y flags de Helm: comprobar contra la versión fijada. Si el entorno usa GitOps, el rollback es un revert en el repositorio de configuración (bloque 17).
 
 ## Checklist de revisión
 - [ ] Digest estable anterior accesible y registrado.

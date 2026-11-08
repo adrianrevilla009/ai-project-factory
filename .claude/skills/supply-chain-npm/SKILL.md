@@ -17,13 +17,13 @@ metadata:
 
 ## Reglas
 - **MUST** versionar el lockfile y usar instalación reproducible en CI (`pnpm install --frozen-lockfile`; con npm, `npm ci`).
-- **MUST** desactivar la ejecución de scripts de ciclo de vida de dependencias por defecto y permitir solo una lista explícita (pnpm: `onlyBuiltDependencies`; TODO-VERIFY comportamiento por defecto en la versión usada).
+- **MUST** desactivar la ejecución de scripts de ciclo de vida de dependencias por defecto y permitir solo una lista explícita (pnpm: `onlyBuiltDependencies`; comprobar comportamiento por defecto en la versión usada).
 - **MUST** instalar desde el registro privado/proxy de la organización con scope propio reservado, para evitar confusión de dependencias (`remote-repos-and-dependency-confusion-protection`, `private-registry`).
 - **MUST** revisar cada dependencia nueva: mantenimiento, licencia, tamaño, dependencias transitivas, nombre exacto (typosquatting) y si hay alternativa nativa.
 - **MUST** ejecutar auditoría (`pnpm audit`) y SCA en CI con SLA de corrección (`vulnerability-sla-and-incident-response`); **MUST** generar SBOM CycloneDX del build (`sbom-generation`).
 - **MUST NOT** usar rangos abiertos (`*`, `latest`) ni dependencias desde URL/git sin commit fijo; **MUST NOT** hacer `curl | sh` en el build.
-- **SHOULD** aplicar un periodo de espera para versiones recién publicadas (pnpm `minimumReleaseAge`; TODO-VERIFY disponibilidad) y actualizar con Renovate/Dependabot según `renovate-dependabot-policy`.
-- **SHOULD** verificar firmas/procedencia cuando el registro las ofrezca (`npm audit signatures`; TODO-VERIFY alcance con pnpm).
+- **SHOULD** aplicar un periodo de espera para versiones recién publicadas (pnpm `minimumReleaseAge`; comprobar disponibilidad) y actualizar con Renovate/Dependabot según `renovate-dependabot-policy`.
+- **SHOULD** verificar firmas/procedencia cuando el registro las ofrezca (`npm audit signatures`; comprobar alcance con pnpm).
 - **SHOULD** separar `dependencies` de `devDependencies` y mantener el árbol pequeño.
 
 ## Por qué
@@ -36,7 +36,7 @@ Los paquetes npm ejecutan código en instalación y con frecuencia son objetivo 
 ```
 ### Bien
 ```ini
-#.npmrc (ejemplo; TODO-VERIFY claves)
+#.npmrc (ejemplo; comprobar claves)
 registry=https://npm.example.internal/
 @acme:registry=https://npm.example.internal/
 ```

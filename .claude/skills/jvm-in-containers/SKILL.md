@@ -25,7 +25,7 @@ metadata:
 - **SHOULD** pasar opciones con `JAVA_TOOL_OPTIONS` o `JAVA_OPTS` documentadas, no en el `ENTRYPOINT` en duro.
 - **SHOULD** dejar que la JVM detecte los CPU del cgroup; **MUST NOT** fijar `-XX:ActiveProcessorCount` sin medir.
 - **MUST** configurar `terminationGracePeriodSeconds` mayor que el apagado ordenado de la aplicación (ver `graceful-shutdown-lifecycle`).
-- **SHOULD** medir con carga antes de elegir GC; el GC por defecto suele bastar. TODO-VERIFY valores por versión de JDK.
+- **SHOULD** medir con carga antes de elegir GC; el GC por defecto suele bastar. Comprobar valores por versión de JDK.
 
 ## Por qué
 Si el heap supera el límite del cgroup, el kernel mata el proceso con OOMKilled sin traza de Java. Un `-Xmx` fijo diverge del límite cuando alguien cambia el manifiesto. Sin `ExitOnOutOfMemoryError`, una JVM en OOM puede quedar degradada y seguir pasando el liveness.
@@ -70,5 +70,5 @@ containers:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `profiling-and-leaks`, `graceful-shutdown-lifecycle`, `startup-and-native`, `threads-executors-and-pools`.
-- Fuentes: documentación del comando `java` de OpenJDK/Oracle (opciones `MaxRAMPercentage`, `ExitOnOutOfMemoryError`) y Kubernetes "Resource Management" — TODO-VERIFY versión y URL; no consultado en línea.
+- Fuentes: documentación del comando `java` de OpenJDK/Oracle (opciones `MaxRAMPercentage`, `ExitOnOutOfMemoryError`) y Kubernetes "Resource Management" — comprobar versión y URL; no consultado en línea.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

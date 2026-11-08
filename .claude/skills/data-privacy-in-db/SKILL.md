@@ -15,7 +15,7 @@ metadata:
 - Aplica a toda tabla o columna que contenga datos personales (nombre, email, teléfono, dirección, identificadores, datos de salud o financieros).
 - No aplica a datos puramente técnicos sin relación con personas. La clasificación general está en `pii-and-data-classification`.
 
-Nota normativa: lo relativo a RGPD/LOPDGDD u otras normas es borrador por confirmar con fuente oficial y asesoría legal (TODO-VERIFY, no verificado 2026-11-07).
+Nota normativa: lo relativo a RGPD/LOPDGDD u otras normas es borrador por confirmar con fuente oficial y asesoría legal (comprobar al fijar la versión, no verificado 2026-11-07).
 
 ## Reglas
 - **MUST** clasificar cada columna personal (público/interno/PII/sensible) en el diseño; documentar propósito y plazo de retención por columna o tabla.
@@ -75,5 +75,5 @@ log.info("Created customer id={}", customer.getId());
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pii-and-data-classification`, `auditing-soft-delete-history`, `partitioning-and-archival`, `multi-tenancy`, `caching`.
-- Fuentes: texto oficial del RGPD (EUR-Lex) y guías de la autoridad de control — TODO-VERIFY, pendiente de confirmar con fuente oficial; no verificado 2026-11-07.
+- Fuentes: texto oficial del RGPD (EUR-Lex) y guías de la autoridad de control — comprobar al fijar la versión, pendiente de confirmar con fuente oficial; no verificado 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

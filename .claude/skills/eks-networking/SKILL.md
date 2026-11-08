@@ -18,12 +18,12 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - No aplica a la malla (Istio, bloque 13) ni a NetworkPolicy de aplicación. En local (kind) NO se reproducen el VPC CNI, las IP de pods como IP de VPC, security groups for pods ni el AWS Load Balancer Controller; el CNI local es otro.
 
 ## Reglas
-- **MUST** dimensionar IPs de pods: con VPC CNI cada pod consume una IP de VPC; planificar CIDR secundario (p. ej. 100.64.0.0/10) con custom networking o prefix delegation (TODO-VERIFY variables de entorno y versión del add-on).
+- **MUST** dimensionar IPs de pods: con VPC CNI cada pod consume una IP de VPC; planificar CIDR secundario (p. ej. 100.64.0.0/10) con custom networking o prefix delegation (comprobar variables de entorno y versión del add-on).
 - **MUST** desplegar nodos en subredes privadas de todas las AZ y balanceadores en subredes etiquetadas `kubernetes.io/role/elb` (públicas) y `kubernetes.io/role/internal-elb` (privadas).
 - **MUST** configurar el endpoint del API con acceso privado; si hay acceso público, limitar `public_access_cidrs` y nunca 0.0.0.0/0.
 - **MUST** exponer servicios con AWS Load Balancer Controller y `target-type: ip` (ver `alb-nlb-and-tls-termination`), con el rol IRSA/Pod Identity de mínimo privilegio.
 - **MUST** aplicar NetworkPolicy por defecto-denegar entre namespaces, complementando (no sustituyendo) a los SG.
-- **SHOULD** usar security groups for pods solo para cargas que necesiten acceso a datos con SG propios; tiene límites por tipo de instancia (TODO-VERIFY).
+- **SHOULD** usar security groups for pods solo para cargas que necesiten acceso a datos con SG propios; tiene límites por tipo de instancia (comprobar al fijar la versión).
 - **SHOULD** vigilar IP libres por subred y ENI por nodo con alertas.
 - **SHOULD** mantener CoreDNS dimensionado y NodeLocal DNSCache si el volumen de DNS lo justifica.
 

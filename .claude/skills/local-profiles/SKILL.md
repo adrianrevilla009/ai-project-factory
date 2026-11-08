@@ -44,7 +44,7 @@ local-up:
 resources:
   - ../../base
   - postgres-cluster.yaml     # CloudNativePG Cluster
-  - dynamodb-local.yaml       # amazon/dynamodb-local, tag fijado (TODO-VERIFY)
+  - dynamodb-local.yaml       # amazon/dynamodb-local, tag fijado (comprobar al fijar la versión)
 ```
 ```yaml
 # deploy/overlays/local-full/kustomization.yaml

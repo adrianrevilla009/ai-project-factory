@@ -17,14 +17,14 @@ metadata:
 
 ## Reglas
 - **MUST** enviar telemetría a un colector propio por OTLP/HTTP (o endpoint de la plataforma) con CORS restringido a los orígenes de la app; nunca claves de backends de pago en el bundle.
-- **MUST** propagar `traceparent` solo hacia orígenes propios (lista explícita, p. ej. `propagateTraceHeaderCorsUrls` en la instrumentación de fetch; TODO-VERIFY nombre exacto) para unir la traza del navegador con la del backend.
+- **MUST** propagar `traceparent` solo hacia orígenes propios (lista explícita, p. ej. `propagateTraceHeaderCorsUrls` en la instrumentación de fetch; comprobar nombre exacto) para unir la traza del navegador con la del backend.
 - **MUST** medir LCP, INP y CLS en campo con la librería `web-vitals` (`onLCP`, `onINP`, `onCLS`) y enviarlas con la versión de release y la ruta (plantilla, no URL con ids).
 - **MUST** capturar errores no gestionados (`window.onerror`, `unhandledrejection`, error boundaries; ver `error-handling-and-boundaries`) con release y mapas de código fuente subidos al sistema de errores, no públicos.
 - **MUST NOT** enviar PII, tokens, cuerpos de petición, contenido de formularios ni query strings completas; sanear antes de enviar y respetar el consentimiento (`data-privacy-in-db`, normativa: borrador por confirmar).
 - **MUST NOT** crear atributos de alta cardinalidad (id de usuario, URL completa) como dimensiones de métricas (`cardinality-and-cost-governance`).
 - **SHOULD** muestrear (p. ej. porcentaje de sesiones) y usar `navigator.sendBeacon`/`keepalive` al descargar la página.
 - **SHOULD** definir SLOs de experiencia (p. ej. % de cargas con LCP bueno) en `dashboards-and-slos-as-code`.
-- El soporte de OTel JS en navegador tiene partes marcadas como experimentales: fijar versiones y revisar el estado (TODO-VERIFY https://opentelemetry.io/docs/languages/js/).
+- El soporte de OTel JS en navegador tiene partes marcadas como experimentales: fijar versiones y revisar el estado (comprobar https://opentelemetry.io/docs/languages/js/).
 
 ## Por qué
 Los laboratorios no reproducen redes, dispositivos ni extensiones reales. Sin correlación con el backend, una pantalla lenta no se atribuye a API, red o render. Y el navegador es entorno hostil: todo lo que se envía es visible para el usuario.
@@ -44,7 +44,7 @@ const send = (m: { name: string; value: number; id: string }) =>
 onLCP(send); onINP(send); onCLS(send);
 ```
 ```ts
-// Propagacion solo a la API propia (TODO-VERIFY opciones del paquete de instrumentacion fetch)
+// Propagacion solo a la API propia (comprobar opciones del paquete de instrumentacion fetch)
 new FetchInstrumentation({ propagateTraceHeaderCorsUrls: [/^https:\/\/api\.example\.com\//] });
 ```
 
@@ -64,5 +64,5 @@ new FetchInstrumentation({ propagateTraceHeaderCorsUrls: [/^https:\/\/api\.examp
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `frontend-performance`, `error-handling-and-boundaries`, `otel-fundamentals-and-semconv`, `tracing`, `cardinality-and-cost-governance`.
-- Fuentes: https://github.com/GoogleChrome/web-vitals ; https://opentelemetry.io/docs/languages/js/ (TODO-VERIFY estado de browser; no consultadas 2026-11-07).
+- Fuentes: https://github.com/GoogleChrome/web-vitals ; https://opentelemetry.io/docs/languages/js/ (comprobar estado de browser; no consultadas 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

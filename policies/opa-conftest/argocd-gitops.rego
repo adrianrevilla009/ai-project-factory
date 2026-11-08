@@ -1,5 +1,5 @@
 # Conftest policy for Argo CD / Argo Rollouts manifests in a GitOps repo.
-# Status: written, NOT executed locally (opa/conftest not installed in the factory). TODO-VERIFY with `conftest test --policy policies/opa-conftest <manifests>`.
+# Status: written, NOT executed locally (opa/conftest not installed in the factory). Test with `conftest test --policy policies/opa-conftest <manifests>`.
 package argocd_gitops
 
 import rego.v1

@@ -68,6 +68,6 @@ vault write transit/keys/orders-pii/config min_decryption_version=2 deletion_all
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `envelope-encryption-and-kms`, `vault-and-keycloak-dr`, `data-replication-matrix`, `crypto-tls-mtls-key-rotation`, `pii-and-data-classification`.
-- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/transit (TODO-VERIFY endpoints/parámetros en la versión fijada); ADR-0010; brief §9. AWS KMS multi-Region keys: https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html (TODO-VERIFY, no recuperada).
+- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/transit (comprobar endpoints/parámetros en la versión fijada); ADR-0010; brief §9. AWS KMS multi-Region keys: https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html (comprobar al fijar la versión, no recuperada).
 - Estado: diseño; preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** empezar por código (patrón Strategy / specification) y justificar por escrito el salto a un motor.
-- **MUST** comprobar licencia del motor elegido (D16). Drools/KIE y DMN de Camunda/Flowable: licencia y versión TODO-VERIFY en documentación oficial.
+- **MUST** comprobar licencia del motor elegido (D16). Drools/KIE y DMN de Camunda/Flowable: licencia y versión comprobar en documentación oficial.
 - **MUST** aislar el motor tras un puerto `PricingRulesPort`; entrada y salida son DTOs inmutables.
 - **MUST** versionar reglas junto al código y probarlas con casos tabulares (given/expected).
 - **MUST** registrar qué versión de reglas decidió cada resultado (trazabilidad, ver `audit-trail-and-activity-log`).

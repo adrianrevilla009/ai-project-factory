@@ -66,7 +66,7 @@ import { InvoiceList } from '@/features/invoices';
 | ESLint `no-restricted-imports` (solo API pública) | 1 | `policies/frontend-boundaries/eslint.boundaries.example.mjs` |
 | Revisión de diseño de nuevas features | 3 | agente `code-reviewer` |
 
-Son ejemplos para copiar al proyecto generado; la fábrica no los ejecuta. Versiones de las herramientas: TODO-VERIFY.
+Son ejemplos para copiar al proyecto generado; la fábrica no los ejecuta. Versiones de las herramientas: comprobar al fijar la versión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `typescript-strict-rules`, `component-patterns`, `state-management`, `routing-and-code-splitting`, `connascence-and-coupling`.

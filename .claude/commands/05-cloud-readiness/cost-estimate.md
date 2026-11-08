@@ -10,7 +10,7 @@ Argumentos: `$ARGUMENTS`
 Agente(s) responsable(s): **finops-analyst**. Contexto: `docs/operating-model/project-lifecycle.md`.
 
 ## Pasos
-1. Usa Infracost o equivalente sobre el plan local/estático (TODO-VERIFY modo offline); cada cifra con fuente y fecha.
+1. Usa Infracost o equivalente sobre el plan local/estático (comprobar modo offline); cada cifra con fuente y fecha.
 2. Compara tiers 0–3.
 
 ## Reglas

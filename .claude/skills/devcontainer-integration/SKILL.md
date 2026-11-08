@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** que el devcontainer incluya el tooling del bucle local: Docker (docker-in-docker o socket del host), kind, kubectl, Helm, Kustomize y Tilt o Skaffold según `dev-loop`.
-- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`. TODO-VERIFY las features y versiones vigentes en https://containers.dev/features.
+- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`. Comprobar las features y versiones vigentes en https://containers.dev/features.
 - **MUST** que `make local-up` funcione dentro del devcontainer sin pasos manuales previos.
 - **MUST** documentar el requisito de recursos del contenedor (ver `resource-budgets`); docker-in-docker anida un segundo nivel de consumo.
 - **SHOULD** preferir el socket del host cuando el equipo acepta compartir el daemon; documentar el compromiso de aislamiento.
@@ -50,7 +50,7 @@ La mayor fuente de "en mi máquina funciona" en Kubernetes local son las version
   "forwardPorts": [8080]
 }
 ```
-Las features y su opción `minikube: none` son TODO-VERIFY; kind se instala en `make tools-install` con versión y checksum fijos.
+Las features y su opción `minikube: none` se comprueban al fijar la versión; kind se instala en `make tools-install` con versión y checksum fijos.
 
 ## Checklist de revisión
 - [ ] Versiones fijadas, sin `latest` en herramientas.

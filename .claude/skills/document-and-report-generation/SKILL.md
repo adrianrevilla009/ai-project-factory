@@ -24,7 +24,7 @@ metadata:
 - **MUST NOT** construir HTML de plantilla concatenando entrada del usuario (XSS/SSRF en conversores HTML→PDF); escapar y bloquear recursos remotos.
 - **MUST NOT** incluir más campos personales de los necesarios; marcar el informe con clasificación de datos.
 - **SHOULD** neutralizar fórmulas en CSV/Excel (prefijos `=`, `+`, `-`, `@`) para evitar CSV injection.
-- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras: TODO-VERIFY.
+- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras: comprobar al fijar la versión.
 
 ## Por qué
 Un informe síncrono de 200 000 filas agota heap y hilos de petición. Los generadores PDF a partir de HTML pueden resolver URLs internas. Un id adivinable sin autorización expone datos de otros clientes.

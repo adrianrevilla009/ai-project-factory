@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** medir con una consulta representativa (benchmark propio) antes de decidir.
 
 ## Por qué
-La elección por moda genera clústeres infrautilizados. Orientación general (TODO-VERIFY con la documentación de cada producto): PostgreSQL cubre analítica pequeña; ClickHouse (OSS) destaca en agregaciones sobre tablas anchas con alta ingesta; DuckDB, en análisis local/embebido; Trino, en consultas federadas sobre el lago; Redshift y Athena son servicios AWS gestionados con coste por uso. No se ha verificado aquí ninguna cifra de rendimiento ni precio.
+La elección por moda genera clústeres infrautilizados. Orientación general (comprobar con la documentación de cada producto): PostgreSQL cubre analítica pequeña; ClickHouse (OSS) destaca en agregaciones sobre tablas anchas con alta ingesta; DuckDB, en análisis local/embebido; Trino, en consultas federadas sobre el lago; Redshift y Athena son servicios AWS gestionados con coste por uso. No se ha verificado aquí ninguna cifra de rendimiento ni precio.
 
 ## Ejemplos
 ### Mal
@@ -62,5 +62,5 @@ Local: PostgreSQL, DuckDB, ClickHouse o Trino en contenedores. No se reproducen 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `datastore-selection-guide`, `etl-vs-elt-and-dbt`, `data-platform-cost`, `bi-and-reporting`.
-- Fuentes: pendientes TODO-VERIFY (documentación oficial de cada motor).
+- Fuentes: pendientes comprobar (documentación oficial de cada motor).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

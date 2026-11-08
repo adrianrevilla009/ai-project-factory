@@ -55,7 +55,7 @@ class MoneyProperties {
     }
 }
 ```
-Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (TODO-VERIFY versión y compatibilidad con la versión de JUnit Platform).
+Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (comprobar versión y compatibilidad con la versión de JUnit Platform).
 
 ## Checklist de revisión
 - [ ] La propiedad expresa un invariante, no copia la implementación.
@@ -71,5 +71,5 @@ Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (TODO-VERIFY ver
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `unit-testing-java`, `mutation-testing`, `time-and-money`, `test-data-management`.
-- Fuentes: https://jqwik.net/docs/current/user-guide.html (TODO-VERIFY: anotaciones y versión, no contrastadas a 2026-11-07).
+- Fuentes: https://jqwik.net/docs/current/user-guide.html (comprobar anotaciones y versión, no contrastadas a 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

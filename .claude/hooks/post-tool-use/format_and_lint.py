@@ -4,7 +4,7 @@
 Config (.claude/hooks/hooks-config.json):
   {"format": {"*.py": ["python3 -m black -q {file}"]}, "lint": {"*.java": ["mvn -q checkstyle:check"]}}
 Formatters never block; linters block (exit 2) so the agent fixes the issue. Without config this is a no-op.
-Commands are run without a shell; {file} is substituted. TODO-VERIFY concrete Java/TS tool invocations per project.
+Commands are run without a shell; {file} is substituted. Concrete Java/TS tool invocations are configured per project.
 """
 import shlex
 import subprocess

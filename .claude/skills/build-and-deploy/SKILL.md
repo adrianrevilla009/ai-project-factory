@@ -42,7 +42,7 @@ aws s3 sync dist/assets s3://example-bucket/assets --cache-control "public,max-a
 aws s3 cp dist/index.html s3://example-bucket/index.html --cache-control "no-cache"
 aws cloudfront create-invalidation --distribution-id EXAMPLE --paths "/index.html" "/config.json"
 ```
-(Comandos ilustrativos, no ejecutados por la fábrica; verificar flags con la documentación de AWS CLI, TODO-VERIFY.)
+(Comandos ilustrativos, no ejecutados por la fábrica; verificar flags con la documentación de AWS CLI, comprobar al fijar la versión.)
 ```hcl
 resource "aws_cloudfront_origin_access_control" "spa" {
   name                              = "spa-oac"
@@ -69,5 +69,5 @@ Local: no se reproduce CloudFront ni OAC; se usa `vite preview` o nginx para pro
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `frontend-performance`, `security-frontend`, `environment-promotion`, `rollback-strategy`, `waf-shield-and-cloudfront`, `multi-region-patterns`.
-- Fuentes: documentación de pnpm, Vite y de Amazon CloudFront/S3 (OAC, origin groups, invalidaciones) — TODO-VERIFY URLs y costes de invalidación; no consultadas 2026-11-07.
+- Fuentes: documentación de pnpm, Vite y de Amazon CloudFront/S3 (OAC, origin groups, invalidaciones) — comprobar URLs y costes de invalidación; no consultadas 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

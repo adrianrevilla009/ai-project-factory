@@ -69,5 +69,5 @@ exceptions:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backstage`, `software-templates`, `developer-experience-metrics`, `tech-debt-management`.
-- Fuentes: ninguna oficial única; criterio de ingeniería de plataforma. TODO-VERIFY si se cita CNCF Platforms White Paper (https://tag-app-delivery.cncf.io/whitepapers/platforms/).
+- Fuentes: ninguna oficial única; criterio de ingeniería de plataforma. Comprobar si se cita CNCF Platforms White Paper (https://tag-app-delivery.cncf.io/whitepapers/platforms/).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

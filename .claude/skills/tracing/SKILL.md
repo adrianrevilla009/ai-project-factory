@@ -18,13 +18,13 @@ metadata:
 ## Reglas
 - **MUST** propagar contexto con W3C Trace Context (`traceparent`); **MUST NOT** inventar cabeceras propias de correlación.
 - **MUST** propagar el contexto en hilos propios y `CompletableFuture`/executors (ver `async-and-context-propagation`); con virtual threads, verificar que se mantiene.
-- **MUST** propagar el contexto en mensajes Kafka vía cabeceras (instrumentación del cliente o de Spring Kafka con observación activada: TODO-VERIFY propiedades).
+- **MUST** propagar el contexto en mensajes Kafka vía cabeceras (instrumentación del cliente o de Spring Kafka con observación activada: comprobar propiedades).
 - **MUST** crear spans manuales solo para operaciones de negocio con significado; nombre de baja cardinalidad (`order.reserve-stock`), nunca con IDs en el nombre.
 - **MUST** marcar el span como error (estado y excepción) cuando falla; **MUST NOT** marcar error por respuestas 4xx esperadas de cliente.
 - **MUST NOT** guardar PII, tokens ni payloads en atributos o eventos de span.
 - **SHOULD** usar muestreo por cabecera del padre (`parentbased`) con ratio bajo en producción y 100 % en entornos de prueba; **SHOULD** considerar muestreo por cola en el Collector para conservar errores y trazas lentas.
 - **SHOULD** enlazar con `span links` en consumidores por lotes en vez de un padre único.
-- **SHOULD** habilitar exemplars o enlaces métrica-traza si el stack lo permite (TODO-VERIFY).
+- **SHOULD** habilitar exemplars o enlaces métrica-traza si el stack lo permite (comprobar al fijar la versión).
 
 ## Por qué
 Una traza rota (contexto perdido en un executor o en Kafka) es peor que ninguna: induce a error. Los nombres con IDs generan cardinalidad inmanejable. Muestrear al 100 % en producción es caro; muestrear a ciegas pierde justo los errores, de ahí el muestreo por cola.
@@ -53,7 +53,7 @@ try (var scope = span.makeCurrent()) {
 }
 ```
 ```yaml
-# Muestreo en el Collector (processor tail_sampling, fragmento ilustrativo: TODO-VERIFY)
+# Muestreo en el Collector (processor tail_sampling, fragmento ilustrativo: comprobar al fijar la versión)
 policies:
   - { name: errors, type: status_code, status_code: { status_codes: [ERROR] } }
   - { name: slow, type: latency, latency: { threshold_ms: 1000 } }

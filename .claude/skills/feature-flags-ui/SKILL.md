@@ -36,7 +36,7 @@ if (flags.adminPanel) return <AdminPanel />; // "seguridad" por flag
 ```
 ### Bien
 ```tsx
-// TODO-VERIFY: API exacta de @openfeature/react-sdk
+// comprobar API exacta de @openfeature/react-sdk
 import { useBooleanFlagValue } from "@openfeature/react-sdk";
 
 export function Checkout() {
@@ -64,5 +64,5 @@ checkout.new-flow | owner: team-checkout | expira: 2027-01-31 | retirar: TICKET-
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `feature-flags-openfeature`, `auth-and-session`, `testing`, `observability-frontend`, `canary-and-traffic-splitting`.
-- Fuentes: https://openfeature.dev (TODO-VERIFY SDK web/React y estado; no consultada 2026-11-07).
+- Fuentes: https://openfeature.dev (comprobar SDK web/React y estado; no consultada 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

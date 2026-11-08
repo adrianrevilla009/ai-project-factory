@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** preferir el emulador oficial o de código abierto sin cuenta: DynamoDB Local (`amazon/dynamodb-local`) para DynamoDB, MinIO para S3, Redis para ElastiCache, Strimzi para MSK.
-- **MUST** tratar LocalStack como opcional: hoy exige Auth Token (https://docs.localstack.cloud/aws/getting-started/auth-token/, 2026-11-07), lo que choca con D16. TODO-VERIFY el plan gratuito vigente antes de adoptarlo.
+- **MUST** tratar LocalStack como opcional: hoy exige Auth Token (https://docs.localstack.cloud/aws/getting-started/auth-token/, 2026-11-07), lo que choca con D16. Comprobar el plan gratuito vigente antes de adoptarlo.
 - **MUST** acceder a los emuladores por configuración de endpoint (`endpoint-override`), nunca con ramas `if (local)` en el código de dominio.
 - **MUST** que las credenciales del emulador sean de ejemplo (`example`/`changeme`) y vivan solo en el perfil local.
 - **MUST** listar en el README del perfil qué NO se reproduce (ver `local-parity-matrix`): Global Tables fiables, throttling, backups y consistencia eventual en DynamoDB; replicación y Object Lock completo en S3; Multi-AZ en Redis.
@@ -67,5 +67,5 @@ not_reproduced:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `local-parity-matrix`, `local-profiles`, `cluster-tooling`, `honest-claims-policy`.
-- Fuentes: `catalog/parity-matrix.yaml`; documentación de LocalStack (2026-11-07); imagen oficial DynamoDB Local (TODO-VERIFY etiqueta).
+- Fuentes: `catalog/parity-matrix.yaml`; documentación de LocalStack (2026-11-07); imagen oficial DynamoDB Local (comprobar etiqueta).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

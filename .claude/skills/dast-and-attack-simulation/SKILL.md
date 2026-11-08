@@ -53,7 +53,7 @@ jobs:
   - type: report
     parameters: {template: "traditional-json", reportDir: "reports"}
 ```
-Nombres de jobs verificados en la documentación del Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07); los parámetros exactos de cada job: TODO-VERIFY contra la versión de ZAP usada.
+Nombres de jobs verificados en la documentación del Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07); los parámetros exactos de cada job: comprobar contra la versión de ZAP usada.
 
 ## Checklist de revisión
 - [ ] El objetivo está en un plan versionado con exclusiones.

@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** mantener una lista versionada en tres categorías: permitidas (p. ej. Apache-2.0, MIT, BSD), a revisar (p. ej. MPL-2.0, LGPL, EPL) y prohibidas (p. ej. AGPL, SSPL, licencias "no comercial"). Contenido por confirmar con legal.
-- **MUST** evaluar licencias automáticamente desde el SBOM CycloneDX (Dependency-Track las evalúa con políticas de licencia, TODO-VERIFY) o con Trivy `--scanners license` (confirmado en la referencia CLI, 2026-11-07).
+- **MUST** evaluar licencias automáticamente desde el SBOM CycloneDX (Dependency-Track las evalúa con políticas de licencia, comprobar al fijar la versión) o con Trivy `--scanners license` (confirmado en la referencia CLI, 2026-11-07).
 - **MUST** fallar el gate ante licencia prohibida o desconocida/ausente (`NOASSERTION`) hasta resolverla.
 - **MUST** registrar excepciones en un fichero versionado con justificación, aprobador y caducidad.
 - **MUST NOT** adoptar componentes con licencia de pago o de uso restringido por defecto (D16); si hay alternativa OSS, usarla.

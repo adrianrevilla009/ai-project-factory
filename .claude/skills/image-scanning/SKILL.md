@@ -20,7 +20,7 @@ metadata:
 - **MUST** escanear en CI tras el build y antes de publicar/promover; **MUST** bloquear con `CRITICAL` y `HIGH` con corrección disponible.
 - **MUST** reescanear periódicamente imágenes ya publicadas (aparecen CVE nuevas); Harbor puede programar escaneo, y Dependency-Track vigila los SBOM.
 - **MUST** gestionar excepciones en un fichero versionado (`.trivyignore` o VEX) con motivo, responsable y fecha de caducidad; **MUST NOT** ignorar sin caducidad.
-- **MUST** fijar la versión del escáner y actualizar su base de datos de forma controlada (TODO-VERIFY política de caché de DB en CI).
+- **MUST** fijar la versión del escáner y actualizar su base de datos de forma controlada (comprobar política de caché de DB en CI).
 - **SHOULD** usar imágenes base mínimas (ver `docker-multistage`) para reducir superficie.
 - **SHOULD** activar también escaneo de misconfiguraciones y secretos en la imagen (`--scanners vuln,secret`).
 - **MUST** guardar el informe (SARIF/JSON) como evidencia del gate.
@@ -43,7 +43,7 @@ trivy image \
   --format sarif --output trivy.sarif \
   registry.example.com/shop/orders@sha256:<digest>
 ```
-Flags `--severity`, `--ignore-unfixed`, `--exit-code`, `--ignorefile`, `--format`, `--scanners`, `--vex` verificados en https://trivy.dev/latest/docs/references/configuration/cli/trivy_image/ (2026-11-07). Equivalente Grype: `grype <imagen> --fail-on high` (TODO-VERIFY).
+Flags `--severity`, `--ignore-unfixed`, `--exit-code`, `--ignorefile`, `--format`, `--scanners`, `--vex` verificados en https://trivy.dev/latest/docs/references/configuration/cli/trivy_image/ (2026-11-07). Equivalente Grype: `grype <imagen> --fail-on high` (comprobar al fijar la versión).
 ```text
 # .trivyignore: motivo y caducidad en comentario (revisado por el gate de higiene)
 # CVE-2099-0001 sin parche; owner=team-shop; expires=2027-01-31

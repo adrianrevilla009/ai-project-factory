@@ -16,7 +16,7 @@ metadata:
 - No aplica a la alta disponibilidad dentro de un clúster (ver `deployment-ha`) ni a la estrategia general multi-región (ver bloque 19).
 
 ## Reglas
-- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción. TODO-VERIFY contra la documentación vigente de la versión fijada.
+- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción. Comprobar contra la documentación vigente de la versión fijada.
 - **MUST** programar snapshots Raft (`vault operator raft snapshot save`) y copiarlos cifrados a almacenamiento fuera del clúster y de la región (en AWS, S3 con KMS: preparado para AWS, no verificado en real).
 - **MUST** definir RPO = intervalo de snapshot y RTO medido, y ensayar la restauración en un clúster limpio al menos trimestralmente.
 - **MUST** proteger por separado las claves de unseal/recovery y el material de auto-unseal: un snapshot sin ellos no sirve.

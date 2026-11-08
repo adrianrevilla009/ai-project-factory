@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** elegir CronJob de Kubernetes para jobs largos aislados y ShedLock para tareas cortas dentro del servicio.
 
 ## Por qué
-Con N réplicas, un `@Scheduled` corre N veces: cobros duplicados, correos repetidos. Un job no idempotente convierte un reintento en un incidente. Versiones de ShedLock/Spring Batch: TODO-VERIFY.
+Con N réplicas, un `@Scheduled` corre N veces: cobros duplicados, correos repetidos. Un job no idempotente convierte un reintento en un incidente. Versiones de ShedLock/Spring Batch: comprobar al fijar la versión.
 
 ## Ejemplos
 ### Mal

@@ -67,5 +67,5 @@ Un orden equivocado produce errores confusos en mitad del incidente (aplicacione
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `application-recovery-controller-and-health-checks`, `data-replication-matrix`, `fault-injection-and-game-days`, `multi-region-patterns`.
-- Fuente: Aurora Global Database, switchover y failover, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). Comando de Vault de BD: TODO-VERIFY contra la documentación de Vault OSS.
+- Fuente: Aurora Global Database, switchover y failover, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). Comando de Vault de BD: comprobar contra la documentación de Vault OSS.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

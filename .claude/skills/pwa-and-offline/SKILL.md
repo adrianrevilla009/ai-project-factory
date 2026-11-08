@@ -24,7 +24,7 @@ metadata:
 - **MUST** gestionar escrituras offline con cola persistente (IndexedDB), idempotencia (`idempotency-keys`) y resolución de conflictos definida; **MUST NOT** asumir orden ni entrega única.
 - **MUST** exigir HTTPS (los service workers solo operan en contextos seguros) y mantener la CSP (`security-frontend`).
 - **SHOULD** cifrar o minimizar datos sensibles en el dispositivo; el almacenamiento del navegador es accesible a scripts del mismo origen.
-- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma (TODO-VERIFY).
+- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma (comprobar al fijar la versión).
 
 ## Por qué
 El service worker es un proxy persistente en el navegador del usuario: un error de caché puede dejar a miles de clientes con una versión rota hasta que se desregistre. El offline con escritura introduce sincronización y conflictos, que son problemas de diseño de datos, no de frontend.
@@ -38,7 +38,7 @@ self.addEventListener("fetch", (e) => {
 ```
 ### Bien
 ```ts
-// Estrategia por ruta (Workbox; TODO-VERIFY API)
+// Estrategia por ruta (Workbox; comprobar API)
 registerRoute(({ url }) => url.pathname.startsWith("/assets/"), new CacheFirst({ cacheName: "assets" }));
 registerRoute(({ url }) => url.pathname.startsWith("/api/catalog"), new StaleWhileRevalidate({ cacheName: "catalog" }));
 // /api/* autenticado: sin ruta => siempre red

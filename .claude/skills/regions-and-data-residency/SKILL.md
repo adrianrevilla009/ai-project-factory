@@ -22,8 +22,8 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 - **MUST** mantener datos personales y de negocio solo en esas dos regiones; denegar el resto por SCP (ver `scp-guardrails`).
 - **MUST** decidir por dato si se replica a la secundaria; la replicación es explícita, nunca por defecto.
 - **MUST** respetar la regla de datos: sin doble escritura Postgres+NoSQL; replicar cada almacén con su mecanismo nativo.
-- **MUST** verificar antes de diseñar que cada servicio existe en ambas regiones (TODO-VERIFY, pendiente de ADR-0006).
-- **SHOULD** tratar servicios globales (IAM, Route 53, CloudFront) como excepciones documentadas; sus datos de control pueden salir de la UE (TODO-VERIFY).
+- **MUST** verificar antes de diseñar que cada servicio existe en ambas regiones (comprobar al fijar la versión, pendiente de ADR-0006).
+- **SHOULD** tratar servicios globales (IAM, Route 53, CloudFront) como excepciones documentadas; sus datos de control pueden salir de la UE (comprobar al fijar la versión).
 - **SHOULD** documentar el RPO/RTO objetivo por servicio con la región secundaria.
 - **MUST NOT** afirmar cumplimiento RGPD por usar regiones UE: es borrador por confirmar con fuente oficial y asesoría legal.
 - **MUST NOT** copiar backups o logs con datos personales fuera de las dos regiones.
@@ -78,5 +78,5 @@ resource "aws_s3_bucket_replication_configuration" "orders_docs" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `scp-guardrails`, `kms-multi-region-keys`, `log-archive-and-audit-account`, `cross-region-connectivity-and-cost`.
-- Fuentes: ADR-0006 (`catalog/adr/0006-regiones-aws.md`); AWS Regional Services List (2026-11-07) — TODO-VERIFY disponibilidad de servicios; RGPD: borrador por confirmar con fuente oficial.
+- Fuentes: ADR-0006 (`catalog/adr/0006-regiones-aws.md`); AWS Regional Services List (2026-11-07) — comprobar disponibilidad de servicios; RGPD: borrador por confirmar con fuente oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

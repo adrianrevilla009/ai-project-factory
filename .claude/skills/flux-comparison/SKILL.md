@@ -27,8 +27,8 @@ Ambos reconcilian desde Git. Diferencias de modelo (verificar al decidir): Flux 
 | Aspecto | Argo CD (D21) | Flux |
 |---|---|---|
 | Unidad | Application / ApplicationSet | Kustomization / HelmRelease |
-| Multi-tenant | AppProject + RBAC | namespaces + impersonación (TODO-VERIFY) |
-| Entrega progresiva | Argo Rollouts | Flagger (TODO-VERIFY) |
+| Multi-tenant | AppProject + RBAC | namespaces + impersonación (comprobar al fijar la versión) |
+| Entrega progresiva | Argo Rollouts | Flagger (comprobar al fijar la versión) |
 
 ## Ejemplos
 ### Mal
@@ -47,7 +47,7 @@ spec:
   prune: true
   sourceRef: {kind: GitRepository, name: shop-gitops}
 ```
-Versión de API `v1`: TODO-VERIFY contra la versión instalada.
+Versión de API `v1`: comprobar contra la versión instalada.
 
 ## Checklist de revisión
 - [ ] Existe ADR si se aparta de D21.

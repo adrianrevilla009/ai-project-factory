@@ -18,19 +18,19 @@ metadata:
 ## Reglas
 - **MUST** usar **sidecar por defecto** (ADR-0032): modo más maduro y documentado.
 - **MUST** registrar en un ADR del proyecto cualquier desviación a ambient, con la verificación de madurez realizada.
-- **SHOULD** valorar ambient solo si la sobrecarga de recursos por pod es un problema medido y la versión de Istio elegida lo declara estable (TODO-VERIFY estado vigente de ambient, de waypoint y de compatibilidad con la versión).
-- **MUST NOT** mezclar sidecar y ambient en un mismo namespace sin haber leído la guía de coexistencia (TODO-VERIFY).
+- **SHOULD** valorar ambient solo si la sobrecarga de recursos por pod es un problema medido y la versión de Istio elegida lo declara estable (ambient, ztunnel y waypoint son estables desde Istio 1.24; comprobar la compatibilidad con la versión elegida).
+- **MUST NOT** mezclar sidecar y ambient en un mismo namespace sin haber leído la guía de coexistencia (comprobar al fijar la versión).
 - **MUST** documentar el modo elegido en el README de plataforma del proyecto.
 
 ## Por qué
 Sidecar: un proxy Envoy por pod, coste de CPU/memoria por réplica, pero comportamiento bien conocido, L7 en cada pod y depuración madura. Ambient: `ztunnel` por nodo para L4/mTLS y `waypoint` opcional para L7, menos sobrecarga pero modelo operativo distinto. ADR-0032 lo deja como alternativa documentada, pendiente de confirmación humana.
 
-| Criterio | Sidecar (defecto) | Ambient (alternativa, TODO-VERIFY) |
+| Criterio | Sidecar (defecto) | Ambient (alternativa, comprobar al fijar la versión) |
 |---|---|---|
 | Madurez | Alta | Verificar en la versión elegida |
 | Recursos | Proxy por pod | Componentes por nodo + waypoint |
 | L7 | En cada pod | Solo con waypoint |
-| Activación | Etiqueta de inyección | Etiqueta `istio.io/dataplane-mode=ambient` (TODO-VERIFY) |
+| Activación | Etiqueta de inyección | Etiqueta `istio.io/dataplane-mode=ambient` (comprobar al fijar la versión) |
 
 ## Ejemplos
 ### Mal
@@ -50,7 +50,7 @@ kind: Namespace
 metadata:
   name: orders
   labels:
-    istio-injection: enabled   # sidecar por defecto; con revisiones: istio.io/rev (TODO-VERIFY)
+    istio-injection: enabled   # sidecar por defecto; con revisiones: istio.io/rev (comprobar al fijar la versión)
 ```
 
 ## Checklist de revisión

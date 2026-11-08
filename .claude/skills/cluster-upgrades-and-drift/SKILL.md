@@ -16,9 +16,9 @@ metadata:
 - No aplica a upgrades de Istio (ver `istio-upgrades-and-ops`) ni al despliegue de aplicaciones.
 
 ## Reglas
-- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (TODO-VERIFY ventanas de soporte de EKS).
+- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (comprobar ventanas de soporte de EKS).
 - **MUST** actualizar de una versión menor cada vez, en este orden: plano de control, addons, nodos; probar antes en dev y staging.
-- **MUST** revisar APIs deprecadas/eliminadas antes de cada upgrade con una herramienta de detección (p. ej. pluto o kubent, OSS; TODO-VERIFY) en CI.
+- **MUST** revisar APIs deprecadas/eliminadas antes de cada upgrade con una herramienta de detección (p. ej. pluto o kubent, OSS; comprobar al fijar la versión) en CI.
 - **MUST** tener PDB y topology spread (ver `workload-baseline`) para que el drain de nodos no corte servicio.
 - **SHOULD** actualizar nodos reemplazándolos (nuevos pools/AMI) en lugar de parchear in-place.
 - **MUST** definir el estado deseado en Git/Terraform; el drift se detecta con `terraform plan` programado y con la comparación de GitOps (ver `drift-and-self-heal-policy`).
@@ -38,7 +38,7 @@ Upgrade de 1.N a 1.N+3 de golpe, sin revisar APIs eliminadas.
 ### Bien
 ```text
 # Runbook upgrade (extracto)
-1. Detectar APIs deprecadas:  pluto detect-files -d manifests/   (TODO-VERIFY herramienta/version)
+1. Detectar APIs deprecadas:  pluto detect-files -d manifests/   (comprobar herramienta/version)
 2. Upgrade dev -> soak 3 dias -> staging -> soak 3 dias -> prod
 3. Orden: control plane, addons (cert-manager, CNI, CSI), pools de nodos (reemplazo en rolling)
 4. Validar: smoke tests + SLOs durante 1 h antes de continuar

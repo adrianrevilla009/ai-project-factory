@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** purgar la tabla de eventos procesados con una retención mayor que la ventana máxima de reentrega.
 
 ## Por qué
-Las redes fallan entre "procesé" y "confirmé"; el broker reenvía. Exactly-once de extremo a extremo no existe sin cooperación del receptor. Sin outbox, un fallo entre el `commit` de la BD y el `send` deja el sistema inconsistente de forma irrecuperable. Verificar el alcance real de las transacciones Kafka en su documentación (TODO-VERIFY).
+Las redes fallan entre "procesé" y "confirmé"; el broker reenvía. Exactly-once de extremo a extremo no existe sin cooperación del receptor. Sin outbox, un fallo entre el `commit` de la BD y el `send` deja el sistema inconsistente de forma irrecuperable. Verificar el alcance real de las transacciones Kafka en su documentación (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal

@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** generar un SBOM en formato CycloneDX (JSON) por cada release, a partir del grafo de dependencias real resuelto.
-- **MUST** usar el plugin `org.cyclonedx:cyclonedx-maven-plugin` con versión fijada en `pluginManagement` del parent (`parent-pom`); versión exacta TODO-VERIFY.
+- **MUST** usar el plugin `org.cyclonedx:cyclonedx-maven-plugin` con versión fijada en `pluginManagement` del parent (`parent-pom`); versión exacta comprobar al fijar la versión.
 - **MUST** en multimódulo producir un SBOM agregado (goal `makeAggregateBom`) y no solo uno por módulo.
 - **MUST** generar también el SBOM de la imagen final (`container-images`), no solo del JAR.
 - **MUST** adjuntar el SBOM a la release como artefacto y conservarlo con la misma retención que el binario.
@@ -43,7 +43,7 @@ Ante una CVE nueva (p. ej. una librería de logging) la pregunta es "¿dónde la
 <plugin>
   <groupId>org.cyclonedx</groupId>
   <artifactId>cyclonedx-maven-plugin</artifactId>
-  <version>${cyclonedx-maven-plugin.version}</version> <!-- TODO-VERIFY versión -->
+  <version>${cyclonedx-maven-plugin.version}</version> <!-- comprobar versión -->
   <executions>
     <execution>
       <phase>package</phase>
@@ -52,7 +52,7 @@ Ante una CVE nueva (p. ej. una librería de logging) la pregunta es "¿dónde la
   </executions>
   <configuration>
     <outputFormat>json</outputFormat>
-    <schemaVersion>1.5</schemaVersion> <!-- TODO-VERIFY versiones de esquema soportadas -->
+    <schemaVersion>1.5</schemaVersion> <!-- comprobar versiones de esquema soportadas -->
   </configuration>
 </plugin>
 ```
@@ -78,5 +78,5 @@ Ante una CVE nueva (p. ej. una librería de logging) la pregunta es "¿dónde la
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `license-compliance`, `container-images`, `parent-pom`, `reproducible-builds`, `supply-chain`.
-- Fuentes: cyclonedx.org (especificación) y documentación del plugin cyclonedx-maven-plugin; consultadas 2026-11-07, TODO-VERIFY goals y versiones.
+- Fuentes: cyclonedx.org (especificación) y documentación del plugin cyclonedx-maven-plugin; consultadas 2026-11-07, comprobar goals y versiones.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

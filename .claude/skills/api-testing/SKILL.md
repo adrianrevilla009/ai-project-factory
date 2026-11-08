@@ -42,7 +42,7 @@ void getOrder() throws Exception {
 @WebMvcTest(OrderController.class)
 class OrderControllerTest {
     @Autowired MockMvc mvc;
-    @MockitoBean OrderQueryService orders;   // nombre de anotación según versión de Spring Boot: TODO-VERIFY
+    @MockitoBean OrderQueryService orders;   // nombre de anotación según versión de Spring Boot: comprobar al fijar la versión
 
     @Test
     @WithMockUser(username = "alice", roles = "CUSTOMER")

@@ -106,7 +106,7 @@
 - **MUST** guardar artefactos al fallar (captura, traza, vídeo, logs de servicios).
 - **SHOULD** probar la API directamente cuando el flujo no necesita UI, y reservar la UI para lo que solo la UI puede romper.
 - **SHOULD** aplicar `flaky-test-management` a cualquier test e2e inestable: se arregla o se elimina, no se reintenta a ciegas.
-- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (TODO-VERIFY versión y elección en la capa frontend).
+- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (comprobar versión y elección en la capa frontend).
 
 ## flaky-test-management
 
@@ -122,7 +122,7 @@
 ## integration-testing-testcontainers
 
 - **MUST** probar contra la misma tecnología y versión mayor que producción (PostgreSQL real, no H2 como sustituto).
-- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: TODO-VERIFY según el estándar del proyecto.
+- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: comprobar según el estándar del proyecto.
 - **MUST** que cada IT sea independiente: limpiar datos o usar transacciones/esquemas por test.
 - **MUST** aplicar las migraciones reales (Flyway/Liquibase) en el contenedor; no `ddl-auto=create`.
 - **SHOULD** usar `@ServiceConnection` (Spring Boot 3.1+) o `@DynamicPropertySource` para enlazar propiedades.

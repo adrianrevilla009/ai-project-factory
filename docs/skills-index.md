@@ -582,4 +582,4 @@ Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `prompt-injection-defense-for-agents` (T1) — Usar cuando un agente lee webs, ficheros, resultados de herramientas o MCP no confiables, o al revisar permisos de agentes expuestos a contenido externo.
 - `skill-authoring-guide` (T1) — Usar al crear o revisar un skill de la fábrica; define anatomía obligatoria, niveles T1/T2/T3 y reglas de enforcement.
 - `subagent-design` (T1) — Usar al crear o revisar un subagente en .claude/agents/ o al decidir si delegar una tarea: alcance, herramientas mínimas, modelo y contrato de salida.
-- `verify-before-asserting` (T1) — Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar TODO-VERIFY.
+- `verify-before-asserting` (T1) — Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar comprobar al fijar la versión.

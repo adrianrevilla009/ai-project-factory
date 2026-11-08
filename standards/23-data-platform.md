@@ -32,7 +32,7 @@
 - **MUST** conectar el BI a gold/marts con una cuenta de servicio de solo lectura, nunca a raw ni a la BD transaccional.
 - **MUST** propagar o respetar la clasificación: dashboards con datos `restricted` solo para roles autorizados y sin exportación libre.
 - **MUST** documentar por métrica: definición, dueño, granularidad y fuente.
-- **SHOULD** preferir herramientas OSS por defecto (Apache Superset o Metabase OSS, TODO-VERIFY licencia/versión); Power BI, Tableau u otros de pago solo si el cliente ya los tiene (D16).
+- **SHOULD** preferir herramientas OSS por defecto (Apache Superset o Metabase OSS, comprobar licencia/versión); Power BI, Tableau u otros de pago solo si el cliente ya los tiene (D16).
 - **SHOULD** agregar previamente (tablas resumen) en lugar de consultas pesadas sobre hechos.
 - **SHOULD** versionar la definición de dashboards (export YAML/JSON) en Git.
 - **MUST NOT** incrustar credenciales de BD en el dashboard ni en el repo.
@@ -57,7 +57,7 @@
 - **MUST** validar datos contra el contrato en el pipeline (no solo el esquema: también reglas de calidad, ver `data-quality`).
 - **MUST** emitir linaje por ejecución (job, run, datasets de entrada/salida) con OpenLineage desde orquestador y dbt/Spark.
 - **MUST NOT** incluir valores de PII en los eventos de linaje ni en facets.
-- **SHOULD** usar un estándar abierto para el contrato (Open Data Contract Standard u otro; TODO-VERIFY: la web datacontract.com no devolvió contenido verificable el 2026-11-07).
+- **SHOULD** usar un estándar abierto para el contrato (Open Data Contract Standard u otro; comprobar la web datacontract.com no devolvió contenido verificable el 2026-11-07).
 - **SHOULD** usar Marquez (OSS) como backend de linaje de referencia en local.
 
 ## data-governance-and-classification
@@ -114,7 +114,7 @@
 - **SHOULD** ajustar la frecuencia de refresco al valor de negocio (diario antes que cada minuto) y preferir cargas incrementales.
 - **SHOULD** limitar `SELECT *` y escaneos sin filtro de partición; usar vistas agregadas para BI.
 - **SHOULD** vigilar egress entre regiones y servicios; mantener cómputo y datos en la misma región.
-- **MUST NOT** afirmar cifras de precio sin fuente y fecha: los precios del proveedor son TODO-VERIFY en la página oficial en el momento de decidir.
+- **MUST NOT** afirmar cifras de precio sin fuente y fecha: los precios del proveedor se comprueban en la página oficial en el momento de decidir.
 - **MUST NOT** introducir un servicio de pago por defecto (D16); comparar primero con alternativas OSS.
 
 ## data-quality
@@ -126,7 +126,7 @@
 - **MUST** asignar un propietario por dataset que reciba las alertas.
 - **MUST NOT** "arreglar" datos corruptos en el mart; corregir en origen o en una capa intermedia trazable.
 - **SHOULD** empezar por PK única/no nula, FKs y valores aceptados (los cuatro tests genéricos de dbt) y añadir reglas de negocio después.
-- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, TODO-VERIFY licencia y versión vigentes).
+- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, comprobar licencia y versión vigentes).
 - **SHOULD** versionar las expectativas junto al código del pipeline.
 
 ## etl-vs-elt-and-dbt

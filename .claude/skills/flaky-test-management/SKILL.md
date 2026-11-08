@@ -69,5 +69,5 @@ Reloj controlado: `Clock.fixed(Instant.parse("2026-01-01T00:00:00Z"), ZoneOffset
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `concurrency-testing`, `integration-testing-testcontainers`, `test-data-management`, `e2e-testing`.
-- Fuentes: Awaitility (https://github.com/awaitility/awaitility, TODO-VERIFY versión y API a 2026-11-07).
+- Fuentes: Awaitility (https://github.com/awaitility/awaitility, comprobar versión y API a 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

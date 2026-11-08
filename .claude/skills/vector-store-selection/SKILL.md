@@ -22,7 +22,7 @@ metadata:
 - **MUST** guardar con cada vector: id de la fuente, versión del modelo de embeddings, dimensión y tenant; un cambio de modelo exige reindexar todo.
 - **MUST** aplicar filtros de autorización (tenant, permisos del documento) en la propia consulta vectorial, no después de recuperar.
 - **MUST** elegir la métrica de distancia que corresponde al modelo (coseno, producto interno o L2) y usar el mismo operador que el índice.
-- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción; TODO-VERIFY versión de pgvector instalada.
+- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción; comprobar versión de pgvector instalada.
 - **SHOULD** valorar OpenSearch (k-NN) cuando ya se opera para búsqueda de texto y se necesita búsqueda híbrida (léxica + vectorial) o escala horizontal; preparado para AWS, no verificado en real.
 - **SHOULD** medir recall tras cambios de parámetros del índice (`ef_search`, `lists`/`probes`).
 - **MUST NOT** adoptar un servicio gestionado de pago por defecto (D16) sin ADR con coste.
@@ -50,7 +50,7 @@ WHERE tenant_id = :tenant AND embedding_model = :model
 ORDER BY embedding <=> :query_embedding
 LIMIT 10;
 ```
-La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un filtro selectivo con índice aproximado puede devolver menos de k resultados: probar `hnsw.iterative_scan` si la versión lo soporta (TODO-VERIFY).
+La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un filtro selectivo con índice aproximado puede devolver menos de k resultados: probar `hnsw.iterative_scan` si la versión lo soporta (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Opción más simple evaluada primero, con recall y latencia medidos.

@@ -25,7 +25,7 @@ metadata:
 - **SHOULD** referenciar los identificadores con la versión explícita (p. ej. `v5.0.0-x.y.z`) para que no cambien de significado.
 
 ## Por qué
-Sin un estándar de verificación, "es seguro" no es discutible. ASVS da una lista cerrada y numerada que permite medir avance y repartir trabajo. Los identificadores cambian entre versiones, por eso la versión va en la matriz (TODO-VERIFY: versión vigente de ASVS y formato de IDs).
+Sin un estándar de verificación, "es seguro" no es discutible. ASVS da una lista cerrada y numerada que permite medir avance y repartir trabajo. Los identificadores cambian entre versiones, por eso la versión va en la matriz (comprobar versión vigente de ASVS y formato de IDs).
 
 ## Ejemplos
 ### Mal
@@ -34,7 +34,7 @@ Sin un estándar de verificación, "es seguro" no es discutible. ASVS da una lis
 ```
 ### Bien
 ```markdown
-# docs/security/asvs-matrix.md  (objetivo: L2, ASVS versión TODO-VERIFY)
+# docs/security/asvs-matrix.md  (objetivo: L2, ASVS versión comprobar al fijar la versión)
 | Requisito (id ASVS) | Aplica | Evidencia | Estado |
 |---|---|---|---|
 | Sesión: invalidar en logout | sí | `SessionLogoutIT` | hecho |
@@ -64,5 +64,5 @@ Scenario: acceso a un pedido de otro tenant
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secure-sdlc-nist-ssdf`, `owasp-top10-and-api-top10`, `authz-rbac-abac-rebac`, `input-validation-output-encoding`.
-- Fuentes: proyecto OWASP ASVS (owasp.org/www-project-application-security-verification-standard) — TODO-VERIFY versión y niveles vigentes.
+- Fuentes: proyecto OWASP ASVS (owasp.org/www-project-application-security-verification-standard) — comprobar versión y niveles vigentes.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

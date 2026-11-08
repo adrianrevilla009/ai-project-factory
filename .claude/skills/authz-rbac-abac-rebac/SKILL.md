@@ -77,5 +77,5 @@ void otherTenantInvoice_returns404() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `method-and-endpoint-security`, `owasp-top10-and-api-top10`, `authn-oidc-oauth2`, `zero-trust`.
-- Fuentes: OWASP Authorization Cheat Sheet (cheatsheetseries.owasp.org) — TODO-VERIFY URL; documentación de Spring Security (method security).
+- Fuentes: OWASP Authorization Cheat Sheet (cheatsheetseries.owasp.org) — comprobar URL; documentación de Spring Security (method security).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

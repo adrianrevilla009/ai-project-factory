@@ -1,5 +1,5 @@
 # Conftest: every `uses:` of a third-party action must be pinned by a 40-hex commit SHA (D20).
-# Estado: escrita, NO ejecutada. TODO-VERIFY: probar con `conftest test --parser yaml .github/workflows/`
+# Estado: escrita, NO ejecutada. Probar con `conftest test --parser yaml .github/workflows/`
 # y confirmar la sintaxis Rego de la version de conftest en uso.
 package main
 

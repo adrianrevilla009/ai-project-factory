@@ -25,7 +25,7 @@ metadata:
 - **MUST** guardar artefactos al fallar (captura, traza, vídeo, logs de servicios).
 - **SHOULD** probar la API directamente cuando el flujo no necesita UI, y reservar la UI para lo que solo la UI puede romper.
 - **SHOULD** aplicar `flaky-test-management` a cualquier test e2e inestable: se arregla o se elimina, no se reintenta a ciegas.
-- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (TODO-VERIFY versión y elección en la capa frontend).
+- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (comprobar versión y elección en la capa frontend).
 
 ## Por qué
 Los e2e son lentos, caros y frágiles, pero son los únicos que detectan fallos de integración entre capas reales. Una suite pequeña y estable da confianza; una grande e inestable se ignora.

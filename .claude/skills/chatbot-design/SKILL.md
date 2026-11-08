@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** declarar un alcance explícito (temas permitidos, acciones permitidas, fuera de alcance) en el system prompt versionado y en la documentación del producto.
-- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act; TODO-VERIFY artículo y fecha con legal).
+- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act; comprobar artículo y fecha con legal).
 - **MUST** ofrecer escalado a un humano en cualquier momento y automáticamente tras N fallos, baja confianza o temas sensibles (queja formal, salud, legal).
 - **MUST** limitar la memoria: ventana de turnos acotada, resumen en lugar de historial completo, TTL y borrado a petición (ver `pii-and-data-classification`).
 - **MUST** responder "no lo sé" con enlace a fuentes cuando la recuperación no encuentra evidencia, y citar fuentes en respuestas factuales.

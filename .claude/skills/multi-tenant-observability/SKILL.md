@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** definir el tenant como unidad de aislamiento y de límites (ingestión, retención, consultas), mapeado a equipo o entorno, no a servicio.
 - **MUST** que el tenant lo inyecte el Collector gateway (cabecera `X-Scope-OrgID` en Loki/Tempo), nunca la aplicación ni el navegador.
-- **MUST** habilitar multi-tenencia explícitamente (Loki `auth_enabled: true`; Tempo `multitenancy_enabled: true`; confirmar claves: TODO-VERIFY) y poner un proxy de autenticación delante que fije la cabecera según la identidad (Keycloak/OIDC, D-identidad).
+- **MUST** habilitar multi-tenencia explícitamente (Loki `auth_enabled: true`; Tempo `multitenancy_enabled: true`; confirmar claves: comprobar al fijar la versión) y poner un proxy de autenticación delante que fije la cabecera según la identidad (Keycloak/OIDC, D-identidad).
 - **MUST** un datasource de Grafana por tenant, con la cabecera fija en el datasource y permisos de carpeta/datasource por equipo.
 - **MUST** límites por tenant (`limits_config`/overrides): tasa de ingestión, streams máximos, retención.
 - **MUST NOT** compartir un tenant "común" para datos de distintos niveles de confidencialidad.

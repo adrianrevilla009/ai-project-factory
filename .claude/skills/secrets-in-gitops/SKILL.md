@@ -49,7 +49,7 @@ spec:
     - secretKey: password
       remoteRef: {key: shop/prod/db, property: password}
 ```
-La versión `external-secrets.io/v1beta1` vs `v1`: TODO-VERIFY contra el operador instalado.
+La versión `external-secrets.io/v1beta1` vs `v1`: comprobar contra el operador instalado.
 
 ## Checklist de revisión
 - [ ] Ningún `Secret` con datos en el repo.

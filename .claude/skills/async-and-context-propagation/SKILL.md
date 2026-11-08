@@ -18,8 +18,8 @@ metadata:
 ## Reglas
 - **MUST** asumir que `ThreadLocal` (SecurityContext, MDC, tenant, transacción) **no** viaja a otro hilo.
 - **MUST** activar `@EnableAsync` y definir un `Executor` propio para `@Async`; nunca depender del defecto implícito.
-- **MUST** propagar contexto con un `TaskDecorator` o con Micrometer Context Propagation (`ContextSnapshot`/`ContextExecutorService`, TODO-VERIFY) en vez de copiar a mano.
-- **MUST** propagar la seguridad con `DelegatingSecurityContextExecutor` (o `DelegatingSecurityContextAsyncTaskExecutor`) de Spring Security (TODO-VERIFY).
+- **MUST** propagar contexto con un `TaskDecorator` o con Micrometer Context Propagation (`ContextSnapshot`/`ContextExecutorService`, comprobar al fijar la versión) en vez de copiar a mano.
+- **MUST** propagar la seguridad con `DelegatingSecurityContextExecutor` (o `DelegatingSecurityContextAsyncTaskExecutor`) de Spring Security (comprobar al fijar la versión).
 - **MUST** limpiar el contexto al terminar la tarea (`MDC.clear()` en `finally`) para no contaminar tareas posteriores del pool.
 - **MUST NOT** pasar entidades JPA gestionadas ni la transacción al hilo asíncrono; pasar ids o DTO. `@Transactional` no cruza hilos.
 - **MUST NOT** esperar que `@Async` funcione en auto-invocación (`this.metodo()`) ni en métodos privados: depende del proxy.

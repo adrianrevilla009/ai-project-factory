@@ -73,5 +73,5 @@ resource "aws_organizations_organizational_unit" "prod" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `control-tower-and-account-factory`, `scp-guardrails`, `log-archive-and-audit-account`, `regions-and-data-residency`.
-- Fuentes: AWS Organizations User Guide y whitepaper "Organizing Your AWS Environment Using Multiple Accounts" (2026-11-07) — TODO-VERIFY URL y límites vigentes.
+- Fuentes: AWS Organizations User Guide y whitepaper "Organizing Your AWS Environment Using Multiple Accounts" (2026-11-07) — comprobar URL y límites vigentes.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

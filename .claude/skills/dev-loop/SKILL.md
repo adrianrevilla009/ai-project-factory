@@ -20,7 +20,7 @@ metadata:
 - **MUST** reutilizar los mismos manifiestos/Helm/Kustomize que usará GitOps (`helm-standards`, `kustomize-overlays`) con un overlay `local`; no escribir YAML paralelo solo para el bucle.
 - **MUST** construir con el mismo Dockerfile multistage que CI (`docker-multistage`) y publicar al registro local.
 - **MUST** definir `make dev` como único punto de entrada.
-- **SHOULD** limitar el live-update a recursos estáticos o classes recargables; para Java el rebuild de imagen con caché de capas es el camino fiable (TODO-VERIFY soporte de sync por herramienta).
+- **SHOULD** limitar el live-update a recursos estáticos o classes recargables; para Java el rebuild de imagen con caché de capas es el camino fiable (comprobar soporte de sync por herramienta).
 - **SHOULD** declarar en el fichero qué recursos arrancan por defecto, respetando el perfil de `local-profiles`.
 - **MUST NOT** commitear credenciales ni tokens en el Tiltfile/skaffold.yaml; usar secretos de ejemplo (`changeme`) para el perfil local.
 - **MUST NOT** ejecutar el bucle contra un contexto que no sea de clúster local.
@@ -45,7 +45,7 @@ k8s_resource('shop-api', port_forwards=8080, resource_deps=['postgres'])
 ```
 ```yaml
 # skaffold.yaml (alternativa)
-apiVersion: skaffold/v4beta11   # TODO-VERIFY: apiVersion vigente
+apiVersion: skaffold/v4beta11   # comprobar apiVersion vigente
 kind: Config
 build:
   artifacts:
@@ -73,5 +73,5 @@ deploy:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cluster-tooling`, `local-profiles`, `docker-multistage`, `kustomize-overlays`, `devcontainer-integration`.
-- Fuentes: documentación de Tilt (https://docs.tilt.dev) y Skaffold (https://skaffold.dev/docs) — TODO-VERIFY versiones y API vigente, no consultadas en esta revisión.
+- Fuentes: documentación de Tilt (https://docs.tilt.dev) y Skaffold (https://skaffold.dev/docs) — comprobar versiones y API vigente, no consultadas en esta revisión.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

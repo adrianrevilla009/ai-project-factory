@@ -22,7 +22,7 @@ metadata:
 - **MUST** recoger y propagar las excepciones de los hilos de prueba (`Future.get()`); un fallo en otro hilo no falla el test por sí solo.
 - **MUST** poner timeout a cada test concurrente (`@Timeout`, JUnit 5) para que un deadlock no cuelgue el pipeline.
 - **MUST** repetir el test (`@RepeatedTest`) para aumentar la probabilidad de exponer carreras; un test que pasa una vez no demuestra ausencia de carrera.
-- **SHOULD** usar jcstress para código sin locks/memory model (TODO-VERIFY) y un thread dump automático en timeout.
+- **SHOULD** usar jcstress para código sin locks/memory model (comprobar al fijar la versión) y un thread dump automático en timeout.
 - **SHOULD** probar idempotencia y exclusión contra Postgres real (Testcontainers), no mocks.
 - **MUST NOT** dejar tests "flaky" en cuarentena sin ticket: o se arreglan o se borran.
 

@@ -62,5 +62,5 @@ path "secret/data/example-app/*" { capabilities = ["read", "list"] }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deployment-ha`, `policies`, `vault-and-keycloak-dr`, `audit-trail-and-security-logging`.
-- Fuentes: https://developer.hashicorp.com/vault/docs/audit (consultada 2026-11-07: mínimo un device operativo, recomendación de dos, HMAC-SHA256). Licencia BUSL y alternativa OpenBao: ADR-0031, TODO-VERIFY con revisión legal. Diseño preparado para AWS, no verificado en real.
+- Fuentes: https://developer.hashicorp.com/vault/docs/audit (consultada 2026-11-07: mínimo un device operativo, recomendación de dos, HMAC-SHA256). Licencia BUSL y alternativa OpenBao: ADR-0031, comprobar con revisión legal. Diseño preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

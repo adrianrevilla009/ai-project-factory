@@ -36,7 +36,7 @@ Desplegamos al 10 %, miramos el dashboard un rato y si no se ve nada raro, al 10
 ```
 ### Bien
 ```yaml
-# Criterios de análisis (formato ilustrativo; adaptar a Argo Rollouts/Flagger, TODO-VERIFY CRD y campos)
+# Criterios de análisis (formato ilustrativo; adaptar a Argo Rollouts/Flagger, comprobar CRD y campos)
 canary:
   steps: [5, 25, 50, 100]
   minDurationPerStepMinutes: 15
@@ -72,5 +72,5 @@ synthetic:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `canary-and-traffic-splitting`, `slo-sli-error-budgets`, `alerting-symptom-based`, `performance-testing`, `golden-signals-red-use`.
-- Fuentes: Argo Rollouts (https://argo-rollouts.readthedocs.io/) y Flagger (https://docs.flagger.app/); TODO-VERIFY campos y versiones a 2026-11-07.
+- Fuentes: Argo Rollouts (https://argo-rollouts.readthedocs.io/) y Flagger (https://docs.flagger.app/); comprobar campos y versiones a 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

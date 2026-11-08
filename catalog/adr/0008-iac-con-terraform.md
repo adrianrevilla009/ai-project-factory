@@ -13,4 +13,4 @@ Terraform con módulos y entornos por cuenta.
 Estándar de facto, ecosistema de escaneo (Checkov/Trivy/OPA) y validación estática.
 
 ## Consecuencias
-Versiones de proveedores fijadas; TODO-VERIFY versión de Terraform y licencia vigente.
+Versiones de proveedores fijadas; comprobar versión de Terraform y licencia vigente.

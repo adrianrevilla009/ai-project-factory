@@ -39,7 +39,7 @@ SKIP=gitleaks git commit -m "wip"
 ```
 ### Bien
 ```yaml
-#.pre-commit-config.yaml (rev: TODO-VERIFY, fijar la versión vigente)
+#.pre-commit-config.yaml (rev: comprobar al fijar la versión, fijar la versión vigente)
 repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2
@@ -55,7 +55,7 @@ repos:
 description = "valores falsos de ejemplo"
 regexes = ['''changeme[\w-]*''', '''example[\w-]*''']
 ```
-Sintaxis de `.gitleaks.toml`: TODO-VERIFY contra la versión fijada.
+Sintaxis de `.gitleaks.toml`: comprobar contra la versión fijada.
 
 ## Checklist de revisión
 - [ ] Escáner en pre-commit y en CI bloqueante; histórico escaneado.

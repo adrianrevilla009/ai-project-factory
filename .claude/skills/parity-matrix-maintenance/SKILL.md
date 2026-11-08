@@ -47,12 +47,12 @@ Cambio: nueva fila SQS. Actualizar también aws-emulation y local-parity-matrix,
 - [ ] Todas las filas con `not_reproduced` no vacío.
 - [ ] Skills afectados actualizados en el mismo cambio.
 - [ ] Sin licencias de pago nuevas por defecto.
-- [ ] TODO-VERIFY donde falte comprobación oficial.
+- [ ] comprobar donde falte comprobación oficial.
 
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Validación de esquemas del catálogo | 1 | `factory/validators/schemas_and_adrs.py` (comprobar que cubre `parity-matrix.yaml`; TODO-VERIFY) |
+| Validación de esquemas del catálogo | 1 | `factory/validators/schemas_and_adrs.py` (comprobar que cubre `parity-matrix.yaml`; comprobar al fijar la versión) |
 | Coherencia matriz vs. skills | 3 | revisión humana (script pendiente) |
 
 ## Relacionados, fuentes y mantenimiento

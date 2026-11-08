@@ -54,7 +54,7 @@ InetAddress ip = InetAddress.getByName(uri.getHost());
 if (ip.isAnyLocalAddress() || ip.isLoopbackAddress() || ip.isLinkLocalAddress() || ip.isSiteLocalAddress())
     throw new IllegalArgumentException("internal address");
 ```
-Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar a la IP ya validada (TODO-VERIFY patrón concreto).
+Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar a la IP ya validada (comprobar patrón concreto).
 
 ## Checklist de revisión
 - [ ] No hay `ObjectInputStream` ni default typing sobre entrada externa.

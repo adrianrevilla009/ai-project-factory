@@ -1,4 +1,4 @@
-// Example ESLint flat-config fragment for a generated React project (ESLint 9 flat config; TODO-VERIFY version).
+// Example ESLint flat-config fragment for a generated React project (ESLint 9 flat config; check the version before use).
 // Inside a feature use relative imports (./x); the alias is for crossing boundaries.
 // Complements dependency-cruiser.example.cjs: ESLint gives feedback in the editor, depcruise gates CI.
 export default [

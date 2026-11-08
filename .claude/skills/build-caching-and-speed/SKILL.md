@@ -22,7 +22,7 @@ metadata:
 - **SHOULD** usar `./mvnw -T 1C` (módulos en paralelo) solo si los módulos y tests son thread-safe; empezar por `-T 1`.
 - **SHOULD** usar `-B` (batch) y `--no-transfer-progress` en CI para logs limpios.
 - **SHOULD** separar tests rápidos (unit, `surefire`) de lentos (integración, `failsafe`) en etapas distintas.
-- **MAY** evaluar la extensión Maven Build Cache; TODO-VERIFY estado, versión y compatibilidad con los plugins usados.
+- **MAY** evaluar la extensión Maven Build Cache; comprobar estado, versión y compatibilidad con los plugins usados.
 - **MUST** ordenar el Dockerfile para cachear capas: dependencias antes del código (ver `container-images`).
 - **MUST NOT** desactivar tests, enforcer o análisis (`-DskipTests`, `-Denforcer.skip`) para ir más rápido en la rama principal.
 
@@ -55,7 +55,7 @@ RUN ./mvnw -B dependency:go-offline
 COPY src src
 RUN ./mvnw -B package -DskipTests
 ```
-`dependency:go-offline` no resuelve siempre todos los plugins (TODO-VERIFY); alternativa: montar caché de BuildKit para `~/.m2`.
+`dependency:go-offline` no resuelve siempre todos los plugins (comprobar al fijar la versión); alternativa: montar caché de BuildKit para `~/.m2`.
 
 ## Checklist de revisión
 - [ ] Hay medición de tiempos por fase antes y después del cambio.

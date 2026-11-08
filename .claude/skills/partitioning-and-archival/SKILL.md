@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** justificar el particionado con un problema medido (purga costosa, mantenimiento, consultas siempre acotadas por rango) y registrarlo en un ADR.
 - **MUST** elegir una clave de partición que aparezca en las consultas habituales (normalmente fecha) para que haya poda de particiones; verificarlo con `EXPLAIN`.
-- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición (TODO-VERIFY en documentación de PostgreSQL de la versión usada).
+- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición (comprobar en documentación de PostgreSQL de la versión usada).
 - **MUST** automatizar la creación de particiones futuras y la retirada de antiguas; una partición que falta rompe las inserciones.
 - **MUST** definir retención por tipo de dato (negocio, legal, PII) con base en requisitos confirmados; plazos legales son borrador por confirmar con fuente oficial.
 - **MUST NOT** purgar con `DELETE` masivo cuando la partición permite `DETACH`/`DROP`.

@@ -78,5 +78,5 @@ Registro de esquemas con compatibilidad BACKWARD (ver asyncapi-event-contracts).
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `adr`, `library-selection-and-tech-radar-process`, `c4-and-arc42`, `change-and-release-management`.
-- Fuentes: práctica extendida en la industria (p. ej. proceso RFC de proyectos open source); sin norma única. TODO-VERIFY referencia concreta si se cita.
+- Fuentes: práctica extendida en la industria (p. ej. proceso RFC de proyectos open source); sin norma única. Comprobar referencia concreta si se cita.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

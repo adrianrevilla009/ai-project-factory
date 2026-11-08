@@ -1,4 +1,4 @@
-# TODO-VERIFY: fijar la imagen base por digest y revisar versiones al preparar la Oleada 1.
+# Pendiente: fijar la imagen base por digest y revisar versiones.
 FROM mcr.microsoft.com/devcontainers/python:3.12
 RUN apt-get update && apt-get install -y --no-install-recommends \
       make jq git curl ca-certificates iptables ipset dnsutils docker.io sudo \
@@ -8,4 +8,4 @@ COPY firewall/ /opt/firewall/
 RUN chmod 0755 /opt/firewall/init-firewall.sh \
     && echo "vscode ALL=(root) NOPASSWD: /opt/firewall/init-firewall.sh" > /etc/sudoers.d/firewall \
     && chmod 0440 /etc/sudoers.d/firewall
-# Node para el CLI de Claude Code: TODO-VERIFY método de instalación vigente.
+# Node para el CLI de Claude Code: método de instalación por confirmar con la documentación de Claude Code.

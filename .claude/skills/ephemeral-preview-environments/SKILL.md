@@ -53,7 +53,7 @@ jobs:
     steps:
       - run: kubectl delete namespace "preview-pr-${{ github.event.number }}" --ignore-not-found
 ```
-(Los `uses:` de configuración de kubeconfig se fijarían por SHA, TODO-VERIFY.)
+(Los `uses:` de configuración de kubeconfig se fijarían por SHA, comprobar al fijar la versión.)
 
 ## Checklist de revisión
 - [ ] Namespace por PR con quota y NetworkPolicy.

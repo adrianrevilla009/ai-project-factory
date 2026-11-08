@@ -42,14 +42,14 @@ CMD ["java", "-jar", "target/app.jar"]
 ```
 ### Bien
 ```dockerfile
-FROM eclipse-temurin:21-jdk@sha256:<digest-example> AS build   # TODO-VERIFY tag y digest vigentes
+FROM eclipse-temurin:21-jdk@sha256:<digest-example> AS build   # comprobar tag y digest vigentes
 WORKDIR /workspace
 COPY mvnw pom.xml ./
 COPY .mvn .mvn
 RUN ./mvnw -B dependency:go-offline
 COPY src src
 RUN ./mvnw -B package -DskipTests \
- && java -Djarmode=layertools -jar target/app.jar extract   # TODO-VERIFY opción según versión de Spring Boot
+ && java -Djarmode=layertools -jar target/app.jar extract   # comprobar opción según versión de Spring Boot
 
 FROM eclipse-temurin:21-jre@sha256:<digest-example> AS runtime
 RUN useradd --system --uid 10001 app
@@ -78,5 +78,5 @@ ENTRYPOINT ["java", "org.springframework.boot.loader.launch.JarLauncher"]
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `build-caching-and-speed`, `jdk-distribution-and-upgrade-cadence`, `supply-chain`, `renovate-dependabot-policy`.
-- Fuentes: docs.docker.com (best practices for Dockerfile, multi-stage), documentación de Spring Boot (container images); consultadas 2026-11-07, TODO-VERIFY detalles de `JarLauncher` y layertools.
+- Fuentes: docs.docker.com (best practices for Dockerfile, multi-stage), documentación de Spring Boot (container images); consultadas 2026-11-07, comprobar detalles de `JarLauncher` y layertools.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

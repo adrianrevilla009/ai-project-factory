@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** incrustar HTML en traducciones; usar componentes de interpolación de la librería.
 
 ## Por qué
-Las frases concatenadas y los plurales manuales funcionan en un idioma y se rompen en el siguiente (polaco o árabe tienen más de dos formas plurales). `Intl` es nativo y evita librerías de fechas pesadas. Cargar todos los idiomas penaliza el LCP de todos. Librería concreta (react-i18next, FormatJS/react-intl, Lingui): decisión por proyecto, TODO-VERIFY en ADR del proyecto.
+Las frases concatenadas y los plurales manuales funcionan en un idioma y se rompen en el siguiente (polaco o árabe tienen más de dos formas plurales). `Intl` es nativo y evita librerías de fechas pesadas. Cargar todos los idiomas penaliza el LCP de todos. Librería concreta (react-i18next, FormatJS/react-intl, Lingui): decisión por proyecto, comprobar en ADR del proyecto.
 
 ## Ejemplos
 ### Mal

@@ -21,8 +21,8 @@ metadata:
 - **MUST** usar `project.build.sourceEncoding=UTF-8` y `maven.compiler.release` fijo.
 - **MUST NOT** incrustar fecha/hora actual, hostname o usuario en el artefacto (`${maven.build.timestamp}` en recursos filtrados, `git.build.time` sin normalizar).
 - **MUST NOT** usar rangos de versión, `LATEST` ni dependencias SNAPSHOT en release (ver `versioning-semver-snapshots`).
-- **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `compare`; TODO-VERIFY disponibilidad en la versión elegida).
-- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas; comprobar con `SOURCE_DATE_EPOCH`/opciones del builder (ver `container-images`, TODO-VERIFY según herramienta).
+- **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `compare`; comprobar disponibilidad en la versión elegida).
+- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas; comprobar con `SOURCE_DATE_EPOCH`/opciones del builder (ver `container-images`, comprobar según herramienta).
 - **MUST** conservar la salida de la verificación como evidencia, sin afirmar nada sobre despliegues reales.
 
 ## Por qué
@@ -41,7 +41,7 @@ build.time=${maven.build.timestamp}
 </properties>
 ```
 ```text
-# verificación (lectura/compilación local, TODO-VERIFY parámetros)
+# verificación (lectura/compilación local, comprobar parámetros)
 ./mvnw -B clean verify
 ./mvnw -B artifact:compare
 ```

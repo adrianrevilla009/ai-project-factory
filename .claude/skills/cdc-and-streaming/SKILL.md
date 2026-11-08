@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** enmascarar o excluir columnas PII en el propio conector (`column.exclude.list`) antes de que lleguen al topic.
 
 ## Por qué
-CDC por log da borrados, orden y baja carga en origen, pero acopla el analítico al modelo físico y deja un slot que retiene WAL mientras el consumidor no avance. La entrega es at-least-once, así que la idempotencia es del destino. Debezium con PostgreSQL soporta `pgoutput` (estándar desde PostgreSQL 10) y `decoderbufs`. Fuente: https://debezium.io/documentation/reference/stable/connectors/postgresql.html (consultado 2026-11-07). El nombre exacto de propiedades de heartbeat y límites de WAL: TODO-VERIFY en la versión usada.
+CDC por log da borrados, orden y baja carga en origen, pero acopla el analítico al modelo físico y deja un slot que retiene WAL mientras el consumidor no avance. La entrega es at-least-once, así que la idempotencia es del destino. Debezium con PostgreSQL soporta `pgoutput` (estándar desde PostgreSQL 10) y `decoderbufs`. Fuente: https://debezium.io/documentation/reference/stable/connectors/postgresql.html (consultado 2026-11-07). El nombre exacto de propiedades de heartbeat y límites de WAL: comprobar en la versión usada.
 
 ## Ejemplos
 ### Mal
@@ -47,7 +47,7 @@ Todas las tablas, PII incluida, sin control de esquema ni de slot.
     "column.exclude.list": "public.orders.customer_email",
     "slot.name": "orders_cdc_slot" } }
 ```
-Lista explícita, PII excluida, secreto por referencia. Verificar nombres de propiedades contra la versión (TODO-VERIFY).
+Lista explícita, PII excluida, secreto por referencia. Verificar nombres de propiedades contra la versión (comprobar al fijar la versión).
 ### Consumidor idempotente
 ```sql
 insert into lake.orders (id, status, source_lsn)

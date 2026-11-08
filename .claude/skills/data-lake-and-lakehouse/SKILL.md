@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** definir retención por zona (ver `access-control-masking-and-retention`).
 
 ## Por qué
-Un lago sin formato de tabla es un "pantano": sin ACID, sin evolución de esquema ni borrados fiables (clave para RGPD, ver `gdpr-in-the-lake`). Iceberg documenta evolución de esquema, particionado oculto, branching/tagging y soporte de Spark, Flink, Trino, DuckDB y otros; catálogos REST, JDBC, Nessie y Glue. Fuente: https://iceberg.apache.org/docs/latest/ (consultado 2026-11-07). Detalles de ACID, time travel y comandos de mantenimiento: TODO-VERIFY en la versión fijada.
+Un lago sin formato de tabla es un "pantano": sin ACID, sin evolución de esquema ni borrados fiables (clave para RGPD, ver `gdpr-in-the-lake`). Iceberg documenta evolución de esquema, particionado oculto, branching/tagging y soporte de Spark, Flink, Trino, DuckDB y otros; catálogos REST, JDBC, Nessie y Glue. Fuente: https://iceberg.apache.org/docs/latest/ (consultado 2026-11-07). Detalles de ACID, time travel y comandos de mantenimiento: comprobar en la versión fijada.
 
 ## Ejemplos
 ### Mal
@@ -37,7 +37,7 @@ bucket policy: Principal "*" (lectura pública)
 ```
 ### Bien
 ```sql
--- Spark SQL sobre catálogo Iceberg (sintaxis TODO-VERIFY por versión)
+-- Spark SQL sobre catálogo Iceberg (sintaxis comprobar por versión)
 CREATE TABLE lake.curated.sales (
   sale_id bigint, customer_id bigint, amount decimal(12,2), sold_at timestamp)
 USING iceberg

@@ -7,11 +7,11 @@
 Decisión abierta del brief (§3). No se inventa una respuesta; requiere confirmación humana.
 
 ## Opciones
-- Nexus Community (TODO-VERIFY licencia/limites vigentes).
+- Nexus Community (comprobar licencia/limites vigentes).
 - Reposilite.
 
 ## Decisión
-Nexus Community o Reposilite como adaptadores del puerto `artifact-repository-port`; sin fijar uno (TODO-VERIFY licencias vigentes). Reposilite recomendado para Maven por sencillez.
+Nexus Community o Reposilite como adaptadores del puerto `artifact-repository-port`; sin fijar uno (comprobar licencias vigentes). Reposilite recomendado para Maven por sencillez.
 
 ## Consecuencias
 Por determinar al decidir.

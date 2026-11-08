@@ -73,7 +73,7 @@ private final LongAdder requests = new LongAdder();   // en vez de volatile long
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
 | Revisión de estado compartido | 3 | agente `code-reviewer` |
-| Análisis estático (SpotBugs/ErrorProne) | pendiente | TODO-VERIFY herramienta y versión |
+| Análisis estático (SpotBugs/ErrorProne) | pendiente | comprobar herramienta y versión |
 | Pruebas de carrera con jcstress | pendiente | ver `concurrency-testing` |
 
 ## Relacionados, fuentes y mantenimiento

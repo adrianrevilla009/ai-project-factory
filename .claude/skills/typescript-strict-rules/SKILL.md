@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** activar `"strict": true` desde el primer commit; nunca "migrar a strict después".
-- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax` (TODO-VERIFY disponibilidad según versión de TypeScript).
+- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax` (comprobar disponibilidad según versión de TypeScript).
 - **MUST NOT** usar `any`; para datos desconocidos usar `unknown` y estrechar.
 - **MUST NOT** usar `!` (non-null) ni `as` para silenciar el compilador; `@ts-expect-error` solo con descripción.
 - **MUST** tratar todo dato externo (respuesta HTTP, `localStorage`, `URLSearchParams`, `postMessage`) como `unknown` y validarlo (Zod u otro esquema) en el borde.

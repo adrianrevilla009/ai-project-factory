@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** exponer métricas del pool (`hikaricp.connections.active/pending/timeout`) y alertar por espera de conexión, que es síntoma de saturación.
-- **MUST** tener spans de BD con `db.system.name` (o el atributo vigente en tu semconv: TODO-VERIFY) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
+- **MUST** tener spans de BD con `db.system.name` (o el atributo vigente en tu semconv: comprobar al fijar la versión) y operación; **MUST NOT** guardar parámetros ni valores de la query en atributos.
 - **SHOULD** habilitar logs de queries lentas con umbral configurable, sin parámetros; **SHOULD** contar sentencias por petición en tests (ver `n-plus-one`).
 - **MUST** medir consumo Kafka con: lag por grupo/partición, tasa de procesamiento, tiempo de procesamiento por registro, errores y reintentos.
 - **MUST** exponer métricas del cliente Kafka a Micrometer y propagar `traceparent` en cabeceras (ver `tracing`).
@@ -66,5 +66,5 @@ registry.counter("orders.dlq.sent", "topic", "orders.v1", "reason", "validation"
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `connection-pooling`, `kafka-producers-consumers`, `dlq-retries-poison-messages`, `n-plus-one`, `tracing`, `metrics-micrometer`.
-- Fuentes: documentación oficial de Micrometer, Spring Kafka, HikariCP y OpenTelemetry semconv (database/messaging), consultada 2026-11-07; TODO-VERIFY nombres de métricas y atributos.
+- Fuentes: documentación oficial de Micrometer, Spring Kafka, HikariCP y OpenTelemetry semconv (database/messaging), consultada 2026-11-07; comprobar nombres de métricas y atributos.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

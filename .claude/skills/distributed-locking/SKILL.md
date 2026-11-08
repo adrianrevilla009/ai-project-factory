@@ -21,8 +21,8 @@ metadata:
 - **MUST** asumir que el titular puede perder el lock sin saberlo (pausa GC, partición): proteger el recurso con un *fencing token* monotónico que el recurso verifique, o hacer la operación idempotente.
 - **MUST NOT** usar un lock distribuido como única garantía de corrección de dinero o inventario.
 - **MUST** liberar solo si se es titular (valor único por adquisición, comparar-y-borrar atómico).
-- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0, TODO-VERIFY) sobre JDBC para jobs.
-- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido (TODO-VERIFY) y no sustituye al fencing.
+- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0, comprobar al fijar la versión) sobre JDBC para jobs.
+- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido (comprobar al fijar la versión) y no sustituye al fencing.
 - **SHOULD** acotar la sección crítica a bastante menos que el TTL y exponer métricas de adquisición/espera.
 - En local se usa el mismo mecanismo sobre el Postgres de desarrollo; no se reproducen fallos de red/partición realistas de AWS.
 

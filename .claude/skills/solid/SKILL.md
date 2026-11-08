@@ -63,7 +63,7 @@ final class PriceCalculator {
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
 | Revisión de PR por agente/humano; los principios no son comprobables al 100% | 3 | agente de revisión de código (pendiente) |
-| Inyección por campo prohibida | 1 | regla ArchUnit `NO_CLASSES_SHOULD_USE_FIELD_INJECTION` de ArchUnit (TODO-VERIFY nombre); pendiente de añadir a `policies/archunit/` |
+| Inyección por campo prohibida | 1 | regla ArchUnit `NO_CLASSES_SHOULD_USE_FIELD_INJECTION` de ArchUnit (comprobar nombre); pendiente de añadir a `policies/archunit/` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `clean-architecture`, `hexagonal`, `gof-patterns-in-practice`, `code-smells-and-refactoring`.

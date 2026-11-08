@@ -21,7 +21,7 @@ metadata:
 - **MUST** reintentar solo operaciones idempotentes; para POST exigir clave de idempotencia (ver `idempotency-keys`).
 - **MUST** respetar el presupuesto de tiempo: `timeout` total >= `attempts` x `perTryTimeout` y menor que el timeout del llamante.
 - **SHOULD** dejar en la malla: timeouts de borde, `outlierDetection`, límites de conexión. **SHOULD** dejar en la aplicación: fallbacks de negocio, bulkheads, degradación funcional.
-- **SHOULD** limitar `retryOn` a fallos de conexión y 503 (TODO-VERIFY valores admitidos).
+- **SHOULD** limitar `retryOn` a fallos de conexión y 503 (comprobar valores admitidos).
 - **MUST** definir una política por defecto de la plataforma y excepciones documentadas.
 
 ## Por qué
@@ -68,5 +68,5 @@ public Order get(String id) { return client.get(id); }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `traffic-management`, `http-clients-and-timeouts`, `idempotency-keys`, `backpressure-and-bulkheads`.
-- Fuentes: istio.io/latest/docs/concepts/traffic-management/#retries — TODO-VERIFY; documentación de Resilience4j — TODO-VERIFY; 2026-11-07.
+- Fuentes: istio.io/latest/docs/concepts/traffic-management/#retries — comprobar al fijar la versión; documentación de Resilience4j — comprobar al fijar la versión; 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

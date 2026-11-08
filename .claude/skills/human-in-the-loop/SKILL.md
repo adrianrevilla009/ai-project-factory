@@ -74,5 +74,5 @@ public void approve(ProposalId id, String approverId) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `agents-and-tool-calling`, `llm-security`, `audit-trail-and-security-logging`, `model-risk-and-ai-act-mapping`, `llm-evals`.
-- Fuentes: Comisión Europea, marco regulatorio de IA, https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07; texto del art. 14 TODO-VERIFY en EUR-Lex).
+- Fuentes: Comisión Europea, marco regulatorio de IA, https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07; texto del art. 14 comprobar en EUR-Lex).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

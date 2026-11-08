@@ -50,5 +50,5 @@ Diez reglas, tabla de comandos y enlaces a `.claude/skills/`.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `skill-authoring-guide`, `context-budgeting`.
-- Fuentes: https://code.claude.com/docs/en/ (memoria/CLAUDE.md) — TODO-VERIFY ruta exacta.
+- Fuentes: https://code.claude.com/docs/en/ (memoria/CLAUDE.md) — comprobar ruta exacta.
 - Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1

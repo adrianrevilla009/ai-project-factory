@@ -23,7 +23,7 @@ metadata:
 - **MUST** estimar el radio de impacto como conjunto de servicios, usuarios y tenants afectados por el fallo de cada dependencia.
 - **SHOULD** contrastar el mapa declarado con la telemetría real (trazas, service graph de Tempo) y registrar las diferencias.
 - **SHOULD** revisar el mapa en cada cambio de arquitectura y tras cada postmortem.
-- **MUST NOT** asumir que una dependencia "regional" de un tercero es independiente de la propia región sin comprobarlo (TODO-VERIFY por proveedor).
+- **MUST NOT** asumir que una dependencia "regional" de un tercero es independiente de la propia región sin comprobarlo (comprobar por proveedor).
 
 ## Por qué
 Las caídas más largas vienen de dependencias que nadie listó: el plano de despliegue o el proveedor de identidad en la región caída. El mapa convierte el RTO en un cálculo: el RTO efectivo es el del peor eslabón duro. Sin mapa no hay forma de decidir qué probar en un game day ni qué aislar con celdas.
@@ -72,5 +72,5 @@ dependencies:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `static-stability-and-cell-architecture`, `fault-injection-and-game-days`, `cell-based-architecture`, `backpressure-and-bulkheads`.
-- Fuentes: Well-Architected Reliability Pillar (https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html) — TODO-VERIFY sección de dependencias.
+- Fuentes: Well-Architected Reliability Pillar (https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html) — comprobar sección de dependencias.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

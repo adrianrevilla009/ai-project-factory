@@ -68,5 +68,5 @@ safe_reporting: blameless
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secure-sdlc-nist-ssdf`, `owasp-top10-and-api-top10`, `asvs-mapping`, `incident-management-and-postmortems`, `code-review-guidelines`, `threat-modeling-stride`.
-- Fuentes: OWASP Security Champions Guide y SAMM, TODO-VERIFY URL y versión; NIST SSDF (SP 800-218) para prácticas de formación, TODO-VERIFY.
+- Fuentes: OWASP Security Champions Guide y SAMM, comprobar URL y versión; NIST SSDF (SP 800-218) para prácticas de formación, comprobar al fijar la versión.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

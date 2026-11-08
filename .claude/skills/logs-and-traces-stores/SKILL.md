@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** usar almacenamiento de objetos (S3 en AWS, MinIO en local) para chunks y bloques; el disco local solo para WAL/caché.
 - **MUST** habilitar retención de Loki en el compactor: `compactor.retention_enabled: true`, `compactor.delete_request_store` y `limits_config.retention_period`; sin `retention_enabled` el compactor solo compacta.
-- **MUST** usar periodo de índice de 24h (requisito de la retención) y esquema TSDB (versión de `schema` por confirmar: TODO-VERIFY).
+- **MUST** usar periodo de índice de 24h (requisito de la retención) y esquema TSDB (versión de `schema` por confirmar: comprobar al fijar la versión).
 - **MUST** mantener pocas etiquetas de Loki, de baja cardinalidad (`namespace`, `app`, `level`); IDs de usuario, de traza o de petición van en el cuerpo del log, no como etiqueta.
 - **MUST** fijar retención de bloques de trazas en Tempo (compactor) con un valor menor que el de logs.
 - **SHOULD** correlacionar logs y trazas con `trace_id` en el cuerpo (JSON) y derived fields en Grafana.

@@ -72,5 +72,5 @@ Comprobación local (comando de lectura, no despliega nada):
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `no-lombok`, `parent-pom`, `dependency-hygiene`, `bom-management`, `dependency-security`.
-- Fuentes: Apache Maven Enforcer Plugin, built-in rules (maven.apache.org/enforcer) — TODO-VERIFY versión y nombres de reglas; fecha de referencia 2026-11-07.
+- Fuentes: Apache Maven Enforcer Plugin, built-in rules (maven.apache.org/enforcer) — comprobar versión y nombres de reglas; fecha de referencia 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

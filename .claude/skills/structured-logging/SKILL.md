@@ -22,7 +22,7 @@ metadata:
 - **MUST NOT** incluir PII, secretos ni cuerpos completos; aplicar enmascarado en el encoder o en el Collector.
 - **MUST NOT** usar etiquetas de Loki de alta cardinalidad (`trace_id`, `user_id`); las etiquetas son pocas (`service`, `namespace`, `level`) y el resto se filtra por contenido.
 - **SHOULD** registrar una sola vez cada error, con la excepción como último argumento.
-- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece (TODO-VERIFY desde qué versión y formatos), o un encoder JSON explícito.
+- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece (comprobar desde qué versión y formatos), o un encoder JSON explícito.
 - **SHOULD** definir un campo `event` estable en eventos de negocio para poder consultarlos y alertar.
 
 ## Por qué
@@ -39,7 +39,7 @@ Los logs en texto libre obligan a regex frágiles; el JSON permite consultas y p
 ```
 ### Bien
 ```yaml
-# application.yml (propiedad sujeta a la versión de Spring Boot: TODO-VERIFY)
+# application.yml (propiedad sujeta a la versión de Spring Boot: comprobar al fijar la versión)
 logging:
   structured:
     format:

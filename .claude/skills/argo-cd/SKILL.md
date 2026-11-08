@@ -95,5 +95,5 @@ metadata:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `repo-strategy`, `drift-and-self-heal-policy`, `environment-promotion`, `eks-multi-region-and-argo-cd-multicluster`.
-- Fuentes (verificadas 2026-11-07): https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/ · .../user-guide/projects/ · .../operator-manual/rbac/ · .../operator-manual/notifications/ · .../user-guide/application-set/. Progressive Syncs de ApplicationSet: TODO-VERIFY (estado alpha/beta y versión).
+- Fuentes (verificadas 2026-11-07): https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/ · .../user-guide/projects/ · .../operator-manual/rbac/ · .../operator-manual/notifications/ · .../user-guide/application-set/. Progressive Syncs de ApplicationSet: comprobar (estado alpha/beta y versión).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

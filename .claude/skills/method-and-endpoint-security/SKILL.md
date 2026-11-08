@@ -21,7 +21,7 @@ metadata:
 - **MUST** ordenar matchers de lo específico a lo general.
 - **MUST** exponer Actuator solo con `health` y `info` sin detalles; el resto detrás de rol y red de gestión.
 - **MUST NOT** desactivar la seguridad con perfiles (`@Profile("dev")` con `permitAll`) sin que el arranque falle si el perfil llega a un entorno compartido.
-- **MUST** devolver errores sin stack traces ni detalles internos (`server.error.include-stacktrace=never`, TODO-VERIFY propiedad).
+- **MUST** devolver errores sin stack traces ni detalles internos (`server.error.include-stacktrace=never`, comprobar propiedad).
 - **SHOULD** una cadena por tipo de cliente (API stateless vs. web con sesión).
 - **SHOULD** probar la seguridad con `spring-security-test`, incluyendo caso anónimo.
 - **MUST NOT** depender de ocultar rutas ("security by obscurity").

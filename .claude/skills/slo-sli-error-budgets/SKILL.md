@@ -36,7 +36,7 @@ El SLO convierte "que funcione bien" en un número discutible y permite equilibr
 ```
 ### Bien
 ```yaml
-# slo/orders-api.yaml (formato propio ilustrativo; la herramienta concreta es TODO-VERIFY)
+# slo/orders-api.yaml (formato propio ilustrativo; la herramienta concreta se comprueba)
 service: orders-api
 owner: team-orders
 slos:

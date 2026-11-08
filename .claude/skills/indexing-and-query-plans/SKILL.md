@@ -23,11 +23,11 @@ metadata:
 - **MUST NOT** envolver la columna indexada en funciones (`lower(email) = ...`) sin un índice de expresión equivalente.
 - **MUST NOT** fiarse del plan en una BD de desarrollo con 100 filas.
 - **SHOULD** usar índices parciales (`WHERE deleted_at IS NULL`), de cobertura (`INCLUDE`) y GIN/BRIN donde encajen, justificándolo con un plan.
-- **SHOULD** mantener estadísticas al día (autovacuum) y vigilar `pg_stat_statements` para detectar las consultas más costosas (TODO-VERIFY extensión disponible en el entorno).
+- **SHOULD** mantener estadísticas al día (autovacuum) y vigilar `pg_stat_statements` para detectar las consultas más costosas (comprobar extensión disponible en el entorno).
 - **SHOULD** crear índices con `CONCURRENTLY` (ver `schema-migrations`).
 
 ## Por qué
-Una consulta sin índice adecuado funciona hasta que la tabla crece; entonces degrada todo el pool (ver `connection-pooling`). El optimizador decide según estadísticas y volumen: solo el plan real lo muestra. Demasiados índices frenan inserciones y actualizaciones. Verificar sintaxis y opciones de `EXPLAIN` contra la documentación de la versión de PostgreSQL usada (TODO-VERIFY).
+Una consulta sin índice adecuado funciona hasta que la tabla crece; entonces degrada todo el pool (ver `connection-pooling`). El optimizador decide según estadísticas y volumen: solo el plan real lo muestra. Demasiados índices frenan inserciones y actualizaciones. Verificar sintaxis y opciones de `EXPLAIN` contra la documentación de la versión de PostgreSQL usada (comprobar al fijar la versión).
 
 ## Ejemplos
 ### Mal

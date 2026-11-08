@@ -20,7 +20,7 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 ## Reglas
 - **MUST** decidir y registrar en un ADR del proyecto: Control Tower + Account Factory for Terraform (AFT), o Organizations + Terraform propio. Ambos son válidos.
 - **MUST** que el alta de cuenta sea código revisado (PR), nunca consola.
-- **MUST** fijar la home region de la landing zone en eu-west-1 y gobernar eu-central-1 como región secundaria (D6); la home region no se puede cambiar después sin rehacer la landing zone (TODO-VERIFY).
+- **MUST** fijar la home region de la landing zone en eu-west-1 y gobernar eu-central-1 como región secundaria (D6); la home region no se puede cambiar después sin rehacer la landing zone (comprobar al fijar la versión).
 - **MUST** aplicar una línea base a toda cuenta nueva: CloudTrail org, Config, roles de acceso vía Identity Center, tags obligatorios y presupuesto.
 - **SHOULD** versionar la personalización de cuentas (baseline) como módulo Terraform con tests estáticos.
 - **SHOULD** mantener la lista de regiones gobernadas explícita, no "todas".
@@ -65,5 +65,5 @@ module "account_orders_prod" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `organization-and-ou-design`, `identity-center-sso`, `scp-guardrails`, `tagging-cost-allocation-budgets`.
-- Fuentes: AWS Control Tower User Guide y repositorio oficial de AFT (2026-11-07) — TODO-VERIFY versiones y limitaciones de región.
+- Fuentes: AWS Control Tower User Guide y repositorio oficial de AFT (2026-11-07) — comprobar versiones y limitaciones de región.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

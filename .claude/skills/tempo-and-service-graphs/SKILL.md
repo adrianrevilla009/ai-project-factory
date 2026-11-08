@@ -16,13 +16,13 @@ metadata:
 - No aplica al almacenamiento y retención de bloques de Tempo (ver `logs-and-traces-stores`) ni a la instrumentación de la aplicación.
 
 ## Reglas
-- **MUST** habilitar el metrics-generator con los procesadores necesarios (`service-graphs`, `span-metrics`) y un `remote_write` a Prometheus; sin remote write las métricas generadas no se guardan (TODO-VERIFY claves exactas de overrides en la versión desplegada).
+- **MUST** habilitar el metrics-generator con los procesadores necesarios (`service-graphs`, `span-metrics`) y un `remote_write` a Prometheus; sin remote write las métricas generadas no se guardan (comprobar claves exactas de overrides en la versión desplegada).
 - **MUST** que los spans lleven `service.name` consistente y atributos de peer/mensajería correctos; sin ellos el grafo de servicios queda incompleto o con nodos "desconocidos".
 - **MUST** limitar las dimensiones de `span-metrics` a un conjunto acotado (p. ej. `http.method`, `http.route`); no usar atributos de alta cardinalidad (ver `cardinality-and-cost-governance`).
 - **MUST** propagar el contexto W3C `traceparent` entre servicios, colas incluidas (cabeceras Kafka).
 - **SHOULD** derivar RED (tasa, errores, duración) de span metrics para servicios sin métricas propias, pero preferir las métricas nativas de la aplicación para los SLOs.
 - **SHOULD** exemplars en histogramas y datasource Grafana con "trace to logs" y "trace to metrics" configurados.
-- **SHOULD** muestreo decidido en el gateway: el metrics-generator debe recibir spans antes de descartarlos si se quieren métricas sin sesgo (TODO-VERIFY orden recomendado).
+- **SHOULD** muestreo decidido en el gateway: el metrics-generator debe recibir spans antes de descartarlos si se quieren métricas sin sesgo (comprobar orden recomendado).
 - **MUST NOT** usar el service graph como fuente de verdad de arquitectura: es observado, no declarado.
 
 ## Por qué
@@ -55,7 +55,7 @@ overrides:
 ```text
 sum(rate(traces_service_graph_request_total{client="web", server="orders"}[5m]))
 ```
-El nombre `traces_service_graph_request_total` es el habitual, TODO-VERIFY en la versión desplegada. Prometheus necesita `--web.enable-remote-write-receiver` para aceptar `/api/v1/write` (verificado en la documentación de Prometheus).
+El nombre `traces_service_graph_request_total` es el habitual, comprobar en la versión desplegada. Prometheus necesita `--web.enable-remote-write-receiver` para aceptar `/api/v1/write` (verificado en la documentación de Prometheus).
 
 ## Checklist de revisión
 - [ ] Processors habilitados y remote write operativo.

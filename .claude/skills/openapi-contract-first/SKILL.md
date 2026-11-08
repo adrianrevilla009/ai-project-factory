@@ -55,7 +55,7 @@ paths:
 <plugin>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-generator-maven-plugin</artifactId>
-  <!-- version gestionada en el parent-pom (TODO-VERIFY) -->
+  <!-- version gestionada en el parent-pom (comprobar al fijar la versión) -->
   <configuration>
     <inputSpec>${project.basedir}/src/main/resources/openapi/orders.yaml</inputSpec>
     <generatorName>spring</generatorName>
@@ -79,5 +79,5 @@ paths:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rest-design-guidelines`, `backward-compatibility-rules`, `sdk-generation`, `contract-testing-pact`.
-- Fuentes: OpenAPI Specification (spec.openapis.org), OpenAPI Generator, Spectral — TODO-VERIFY versiones y opciones exactas (`useSpringBoot3`) en la documentación del generador (2026-11-07 no comprobado).
+- Fuentes: OpenAPI Specification (spec.openapis.org), OpenAPI Generator, Spectral — comprobar versiones y opciones exactas (`useSpringBoot3`) en la documentación del generador (2026-11-07 no comprobado).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

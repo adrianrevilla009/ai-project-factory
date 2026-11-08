@@ -20,7 +20,7 @@ metadata:
 - **MUST** que las versiones release sean inmutables: una versión publicada nunca se re-sube ni se sobrescribe; se corrige con una nueva.
 - **MUST** que `-SNAPSHOT` exista solo en ramas de desarrollo; **MUST NOT** desplegar ni referenciar SNAPSHOT en un release ni en una imagen de producción.
 - **MUST NOT** depender de un SNAPSHOT de terceros en `main`.
-- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta (TODO-VERIFY compatibilidad con la versión de Maven elegida).
+- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta (comprobar compatibilidad con la versión de Maven elegida).
 - **SHOULD** derivar la versión de un tag git `vX.Y.Z` en el pipeline de release (ver `release-automation`).
 - **SHOULD** que todos los módulos de un reactor compartan la misma versión.
 - **MUST NOT** usar `versions:set` manual con commits "bump version" a mano si hay automatización.

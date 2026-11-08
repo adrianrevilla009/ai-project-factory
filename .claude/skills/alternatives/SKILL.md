@@ -19,7 +19,7 @@ metadata:
 - **MUST** mantener las reglas de `pipeline-architecture` y los gates, independientemente de la herramienta.
 - **MUST** registrar la excepción a D20 en un ADR del proyecto con motivo y coste de mantener guías duplicadas.
 - **MUST** conservar los tres principios de D20: pipelines reutilizables, credenciales cortas por OIDC y dependencias fijadas inmutablemente.
-- **SHOULD** preferir GitLab CI con `include:` de plantillas versionadas por SHA/tag protegido y `id_tokens` para OIDC (TODO-VERIFY sintaxis).
+- **SHOULD** preferir GitLab CI con `include:` de plantillas versionadas por SHA/tag protegido y `id_tokens` para OIDC (comprobar sintaxis).
 - **SHOULD** si se usa Jenkins: Jenkinsfile declarativo, shared libraries versionadas, agentes efímeros (pods) y plugins mínimos fijados.
 - **MUST NOT** guardar claves de nube de larga vida en el servidor de CI ni ejecutar builds en el controlador de Jenkins.
 - **MUST NOT** exigir licencias de pago por defecto (D16).
@@ -34,7 +34,7 @@ pipeline { agent any  // corre en el controlador
   environment { AWS_SECRET_ACCESS_KEY = credentials('example-aws-key') } }
 ```
 ### Bien
-Equivalencias (sintaxis por verificar en documentación oficial, TODO-VERIFY):
+Equivalencias (sintaxis por verificar en documentación oficial, comprobar al fijar la versión):
 ```text
 GitHub Actions              GitLab CI                   Jenkins
 workflow_call reutilizable  include: + templates         shared library
@@ -58,5 +58,5 @@ runner efímero              runner autoescalado/K8s      agente pod efímero
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `github-actions`, `pipeline-architecture`, `security-gates`.
-- Fuentes: ADR-0020; https://docs.gitlab.com/ci/ y https://www.jenkins.io/doc/ — TODO-VERIFY (no consultadas en esta revisión).
+- Fuentes: ADR-0020; https://docs.gitlab.com/ci/ y https://www.jenkins.io/doc/ — comprobar (no consultadas en esta revisión).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

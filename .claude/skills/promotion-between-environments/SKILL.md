@@ -44,7 +44,7 @@ cosign verify registry.example.com/shop-staging/orders@$DIGEST \
 crane copy registry.example.com/shop-staging/orders@$DIGEST \
            registry.example.com/shop-prod/orders:1.4.2
 ```
-`crane copy` conserva el digest. TODO-VERIFY: sintaxis exacta de `crane` y que el adaptador elegido preserve las firmas (referrers/tags `.sig`).
+`crane copy` conserva el digest. Comprobar sintaxis exacta de `crane` y que el adaptador elegido preserve las firmas (referrers/tags `.sig`).
 
 ## Checklist de revisión
 - [ ] El digest de prod coincide con el probado en staging.

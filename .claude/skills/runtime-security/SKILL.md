@@ -18,7 +18,7 @@ metadata:
 
 ## Reglas
 - **MUST** usar Falco (licencia OSS) como detector por defecto; no adoptar productos de pago por defecto (D16).
-- **MUST** desplegarlo como DaemonSet con un driver soportado por el kernel de los nodos (TODO-VERIFY: driver eBPF moderno vs módulo, según versión de Falco).
+- **MUST** desplegarlo como DaemonSet con un driver soportado por el kernel de los nodos (comprobar driver eBPF moderno vs módulo, según versión de Falco).
 - **MUST** enviar las alertas a un destino persistente (Falcosidekick hacia Loki/Alertmanager/webhook), no solo a stdout del pod.
 - **MUST** mantener las reglas propias en un fichero versionado (`custom-rules.yaml`) y no editar el ruleset base.
 - **SHOULD** ajustar excepciones con `append`/listas de macros, nunca desactivando una regla entera sin ADR.
@@ -49,7 +49,7 @@ Las políticas de admisión solo actúan al crear el pod. Un atacante con RCE en
       values: [[tooling-debug]]
   append: true
 ```
-Sintaxis de `exceptions` y `append`: TODO-VERIFY contra la documentación de Falco de la versión elegida.
+Sintaxis de `exceptions` y `append`: comprobar contra la documentación de Falco de la versión elegida.
 
 ## Checklist de revisión
 - [ ] Falco corre en todos los nodos de carga (incluidos pools con taints, con tolerations).

@@ -38,8 +38,8 @@ Un gate que se puede saltar o relajar sin revisión deja de ser gate. El código
 ```yaml
 - run: ./mvnw -B verify
 - run: ./mvnw -B spotless:check checkstyle:check
-- run:./mvnw -B org.pitest:pitest-maven:mutationCoverage   # TODO-VERIFY versión del plugin
-- uses: actions/upload-artifact@<SHA-40-HEX> # vX TODO-VERIFY
+- run:./mvnw -B org.pitest:pitest-maven:mutationCoverage   # comprobar versión del plugin
+- uses: actions/upload-artifact@<SHA-40-HEX> # vX comprobar al fijar la versión
   if: always()
   with: { name: reports, path: "**/target/site/jacoco/**" }
 ```

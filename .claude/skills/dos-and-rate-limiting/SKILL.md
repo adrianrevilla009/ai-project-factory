@@ -52,7 +52,7 @@ if (!limiter.tryConsume(clientKey)) {
     return;
 }
 ```
-Librería concreta (Bucket4j, Resilience4j RateLimiter o límite en gateway): TODO-VERIFY elección y versión. En local no se reproduce el límite del API Gateway/WAF de AWS.
+Librería concreta (Bucket4j, Resilience4j RateLimiter o límite en gateway): comprobar elección y versión. En local no se reproduce el límite del API Gateway/WAF de AWS.
 
 ## Checklist de revisión
 - [ ] Todo listado paginado con máximo.
@@ -71,5 +71,5 @@ Librería concreta (Bucket4j, Resilience4j RateLimiter o límite en gateway): TO
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `owasp-top10-and-api-top10`, `file-upload-security`, `threat-modeling-stride`.
-- Fuentes: OWASP API Security Top 10 (consumo de recursos sin restricciones), OWASP DoS Cheat Sheet — TODO-VERIFY URLs y nombre de categoría en la edición vigente.
+- Fuentes: OWASP API Security Top 10 (consumo de recursos sin restricciones), OWASP DoS Cheat Sheet — comprobar URLs y nombre de categoría en la edición vigente.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

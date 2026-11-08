@@ -43,10 +43,10 @@
 - **MUST** repartir con pesos explícitos que sumen 100 y empezar con porcentaje bajo (p. ej. 5 %).
 - **MUST** definir antes criterios de promoción y de rollback (tasa de error, latencia p99) medidos en métricas de la malla.
 - **MUST** poder volver a 100 % estable con un solo cambio de manifiesto.
-- **SHOULD** usar `HTTPRoute.backendRefs[].weight` (Gateway API) y reservar `VirtualService` para lo que no cubra (TODO-VERIFY).
+- **SHOULD** usar `HTTPRoute.backendRefs[].weight` (Gateway API) y reservar `VirtualService` para lo que no cubra (comprobar al fijar la versión).
 - **SHOULD** usar mirroring para probar con tráfico real sin efectos visibles, solo en operaciones idempotentes y de lectura.
 - **MUST NOT** hacer canary con efectos secundarios no idempotentes duplicados (mirroring de pagos).
-- **SHOULD** valorar un controlador de entrega progresiva OSS (p. ej. Argo Rollouts o Flagger; TODO-VERIFY compatibilidad) frente a ediciones manuales.
+- **SHOULD** valorar un controlador de entrega progresiva OSS (p. ej. Argo Rollouts o Flagger; comprobar compatibilidad) frente a ediciones manuales.
 
 ## cluster-addons-baseline
 
@@ -72,9 +72,9 @@
 
 ## cluster-upgrades-and-drift
 
-- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (TODO-VERIFY ventanas de soporte de EKS).
+- **MUST** mantener el clúster dentro de una versión de Kubernetes con soporte; revisar el calendario oficial cada trimestre (comprobar ventanas de soporte de EKS).
 - **MUST** actualizar de una versión menor cada vez, en este orden: plano de control, addons, nodos; probar antes en dev y staging.
-- **MUST** revisar APIs deprecadas/eliminadas antes de cada upgrade con una herramienta de detección (p. ej. pluto o kubent, OSS; TODO-VERIFY) en CI.
+- **MUST** revisar APIs deprecadas/eliminadas antes de cada upgrade con una herramienta de detección (p. ej. pluto o kubent, OSS; comprobar al fijar la versión) en CI.
 - **MUST** tener PDB y topology spread (ver `workload-baseline`) para que el drain de nodos no corte servicio.
 - **SHOULD** actualizar nodos reemplazándolos (nuevos pools/AMI) en lugar de parchear in-place.
 - **MUST** definir el estado deseado en Git/Terraform; el drift se detecta con `terraform plan` programado y con la comparación de GitOps (ver `drift-and-self-heal-policy`).
@@ -98,7 +98,7 @@
 - **MUST** separar roles: el equipo de plataforma posee `Gateway`; los equipos de servicio poseen sus `HTTPRoute`.
 - **MUST** restringir qué namespaces pueden adjuntar rutas con `allowedRoutes`.
 - **MUST** terminar TLS en el `Gateway` con un `Secret` gestionado por cert-manager; nunca certificados en el repo.
-- **SHOULD** usar `VirtualService`/`DestinationRule` de Istio solo para lo que Gateway API no cubra todavía (TODO-VERIFY cobertura vigente).
+- **SHOULD** usar `VirtualService`/`DestinationRule` de Istio solo para lo que Gateway API no cubra todavía (comprobar cobertura vigente).
 - **MUST NOT** mezclar `Ingress` y `Gateway` para el mismo host.
 
 ## helm-standards
@@ -126,10 +126,10 @@
 
 ## istio-upgrades-and-ops
 
-- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes (TODO-VERIFY matriz vigente).
+- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes (comprobar matriz vigente).
 - **MUST** actualizar en una versión menor cada vez y revisar notas de versión y cambios incompatibles.
-- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final (TODO-VERIFY comandos exactos de la versión).
-- **MUST** ejecutar `istioctl x precheck` antes (TODO-VERIFY nombre del subcomando) y `istioctl analyze` después.
+- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final (comprobar comandos exactos de la versión).
+- **MUST** ejecutar `istioctl x precheck` antes (comprobar nombre del subcomando) y `istioctl analyze` después.
 - **MUST** tener `istiod` con varias réplicas, PDB y `requests` definidos.
 - **SHOULD** actualizar primero un namespace de prueba y observar métricas antes de producción.
 - **MUST** probar el rollback: la etiqueta de revisión anterior debe seguir disponible hasta validar.
@@ -149,7 +149,7 @@
 
 ## mesh-observability
 
-- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres a confirmar (TODO-VERIFY según versión).
+- **MUST** recoger las métricas estándar de Istio (p. ej. `istio_requests_total`, `istio_request_duration_milliseconds`) en Prometheus; nombres a confirmar (comprobar según versión).
 - **MUST** instalar Kiali (OSS) solo como herramienta interna; acceso autenticado y fuera del gateway público.
 - **MUST** propagar cabeceras de trazado (W3C `traceparent`/B3) desde la aplicación: la malla no puede unir spans si la app no las reenvía.
 - **SHOULD** configurar muestreo de trazas bajo por defecto (p. ej. 1 %) y subirlo temporalmente al depurar.
@@ -164,7 +164,7 @@
 - **MUST** reintentar solo operaciones idempotentes; para POST exigir clave de idempotencia (ver `idempotency-keys`).
 - **MUST** respetar el presupuesto de tiempo: `timeout` total >= `attempts` x `perTryTimeout` y menor que el timeout del llamante.
 - **SHOULD** dejar en la malla: timeouts de borde, `outlierDetection`, límites de conexión. **SHOULD** dejar en la aplicación: fallbacks de negocio, bulkheads, degradación funcional.
-- **SHOULD** limitar `retryOn` a fallos de conexión y 503 (TODO-VERIFY valores admitidos).
+- **SHOULD** limitar `retryOn` a fallos de conexión y 503 (comprobar valores admitidos).
 - **MUST** definir una política por defecto de la plataforma y excepciones documentadas.
 
 ## mtls-strict-and-peer-auth
@@ -193,7 +193,7 @@
 ## multi-cluster-mesh
 
 - **MUST** justificar en ADR del proyecto la necesidad multi-clúster antes de adoptarlo.
-- **MUST** elegir modelo explícito: primario-remoto o multi-primario, red única o redes distintas (TODO-VERIFY topologías vigentes y requisitos en la versión de Istio).
+- **MUST** elegir modelo explícito: primario-remoto o multi-primario, red única o redes distintas (comprobar topologías vigentes y requisitos en la versión de Istio).
 - **MUST** compartir una raíz de confianza común: CA raíz propia y CA intermedia por clúster; nunca la CA autogenerada por defecto en producción.
 - **MUST** custodiar las claves de CA según `secrets-management`; nunca en el repositorio.
 - **MUST** usar nombres de red y de clúster únicos y coherentes en la configuración de cada clúster.
@@ -243,7 +243,7 @@
 - **MUST** documentar excepciones (namespaces de sistema, CNI, mesh con init containers) con motivo y dueño.
 - **MUST** desplegar un motor de políticas propio (Kyverno, OSS) para reglas que PSA no cubre: requests, probes, registros permitidos, sin `latest`.
 - **MUST** introducir políticas nuevas en `Audit`, revisar informes y pasar a `Enforce` por entorno (dev, luego staging, luego prod).
-- **SHOULD** valorar `ValidatingAdmissionPolicy` nativa (CEL) para reglas simples sin webhook; TODO-VERIFY versión mínima de Kubernetes.
+- **SHOULD** valorar `ValidatingAdmissionPolicy` nativa (CEL) para reglas simples sin webhook; comprobar versión mínima de Kubernetes.
 - **MUST** configurar `failurePolicy` y exclusiones de los webhooks pensando en disponibilidad: un webhook caído no debe bloquear el clúster entero ni dejarlo sin control (decisión explícita).
 - **MUST NOT** aplicar políticas Enforce directamente en prod sin periodo de Audit.
 - **MUST** versionar las políticas en el repo y probarlas con casos que pasan y que fallan.
@@ -256,14 +256,14 @@
 - **MUST NOT** conceder `cluster-admin`, wildcards (`*`) en verbs/resources ni `secrets` get/list global a aplicaciones.
 - **MUST** vincular a humanos mediante grupos del IdP (Keycloak/OIDC), no usuarios individuales.
 - **MUST** revisar permisos peligrosos: `escalate`, `bind`, `impersonate`, `create pods/exec`, `create rolebindings`.
-- **SHOULD** enlazar identidad de nube con IRSA o EKS Pod Identity (TODO-VERIFY cuál usa el proyecto) con un rol por ServiceAccount y condición de namespace/SA en la trust policy.
+- **SHOULD** enlazar identidad de nube con IRSA o EKS Pod Identity (comprobar cuál usa el proyecto) con un rol por ServiceAccount y condición de namespace/SA en la trust policy.
 - **SHOULD** usar tokens proyectados con audiencia y expiración corta; **MUST NOT** crear tokens de larga duración en Secrets.
 - Local: kind no reproduce IRSA/Pod Identity; se simula con credenciales example o un emulador.
 
 ## runtime-security
 
 - **MUST** usar Falco (licencia OSS) como detector por defecto; no adoptar productos de pago por defecto (D16).
-- **MUST** desplegarlo como DaemonSet con un driver soportado por el kernel de los nodos (TODO-VERIFY: driver eBPF moderno vs módulo, según versión de Falco).
+- **MUST** desplegarlo como DaemonSet con un driver soportado por el kernel de los nodos (comprobar driver eBPF moderno vs módulo, según versión de Falco).
 - **MUST** enviar las alertas a un destino persistente (Falcosidekick hacia Loki/Alertmanager/webhook), no solo a stdout del pod.
 - **MUST** mantener las reglas propias en un fichero versionado (`custom-rules.yaml`) y no editar el ruleset base.
 - **SHOULD** ajustar excepciones con `append`/listas de macros, nunca desactivando una regla entera sin ADR.
@@ -274,13 +274,13 @@
 
 - **MUST** usar **sidecar por defecto** (ADR-0032): modo más maduro y documentado.
 - **MUST** registrar en un ADR del proyecto cualquier desviación a ambient, con la verificación de madurez realizada.
-- **SHOULD** valorar ambient solo si la sobrecarga de recursos por pod es un problema medido y la versión de Istio elegida lo declara estable (TODO-VERIFY estado vigente de ambient, de waypoint y de compatibilidad con la versión).
-- **MUST NOT** mezclar sidecar y ambient en un mismo namespace sin haber leído la guía de coexistencia (TODO-VERIFY).
+- **SHOULD** valorar ambient solo si la sobrecarga de recursos por pod es un problema medido y la versión de Istio elegida lo declara estable (ambient, ztunnel y waypoint son estables desde Istio 1.24; comprobar la compatibilidad con la versión elegida).
+- **MUST NOT** mezclar sidecar y ambient en un mismo namespace sin haber leído la guía de coexistencia (comprobar al fijar la versión).
 - **MUST** documentar el modo elegido en el README de plataforma del proyecto.
 
 ## traffic-management
 
-- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (TODO-VERIFY defecto vigente).
+- **MUST** declarar `timeout` en cada ruta de `VirtualService`; sin él el defecto de Envoy puede no ajustarse a tu SLO (comprobar defecto vigente).
 - **MUST** definir en `DestinationRule` `connectionPool` y `outlierDetection` para servicios críticos.
 - **MUST** nombrar `subsets` por etiqueta de versión (`version`), no por IP.
 - **MUST NOT** declarar el mismo host en varios `VirtualService` sin `gateways`/`hosts` coordinados: el resultado es indeterminado.

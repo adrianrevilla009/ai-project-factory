@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** probar contra la misma tecnología y versión mayor que producción (PostgreSQL real, no H2 como sustituto).
-- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: TODO-VERIFY según el estándar del proyecto.
+- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: comprobar según el estándar del proyecto.
 - **MUST** que cada IT sea independiente: limpiar datos o usar transacciones/esquemas por test.
 - **MUST** aplicar las migraciones reales (Flyway/Liquibase) en el contenedor; no `ddl-auto=create`.
 - **SHOULD** usar `@ServiceConnection` (Spring Boot 3.1+) o `@DynamicPropertySource` para enlazar propiedades.
@@ -56,7 +56,7 @@ class OrderRepositoryIT {
     }
 }
 ```
-El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno (TODO-VERIFY).
+El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno (comprobar al fijar la versión).
 
 ## Checklist de revisión
 - [ ] Imagen con tag fijo y misma tecnología que producción.

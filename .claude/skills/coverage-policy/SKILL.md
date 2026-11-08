@@ -75,5 +75,5 @@ void coverageBooster() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mutation-testing`, `test-strategy`, `static-analysis`, `unit-testing-java`.
-- Fuentes: https://www.jacoco.org/jacoco/trunk/doc/check-mojo.html (TODO-VERIFY: parámetros; no contrastado a 2026-11-07).
+- Fuentes: https://www.jacoco.org/jacoco/trunk/doc/check-mojo.html (comprobar parámetros; no contrastado a 2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

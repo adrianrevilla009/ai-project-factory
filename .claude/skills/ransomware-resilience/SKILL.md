@@ -46,7 +46,7 @@ resource "aws_backup_vault_lock_configuration" "isolated" {
   backup_vault_name   = aws_backup_vault.isolated.name
   min_retention_days  = 14
   max_retention_days  = 365
-  changeable_for_days = 3   # compliance mode tras el periodo de gracia; TODO-VERIFY semántica
+  changeable_for_days = 3   # compliance mode tras el periodo de gracia; comprobar semántica
 }
 ```
 ```text
@@ -69,6 +69,6 @@ registrar RTO medido vs objetivo.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backup-vault-immutability-and-restore-tests`, `backup-and-restore`, `incident-response-playbooks-and-forensics`, `tier-model-and-rpo-rto`, `iam-governance-and-pam`.
-- Fuentes: documentación de AWS Backup Vault Lock, TODO-VERIFY URL y semántica de modos governance/compliance; guías de CISA sobre ransomware, TODO-VERIFY.
+- Fuentes: documentación de AWS Backup Vault Lock, comprobar URL y semántica de modos governance/compliance; guías de CISA sobre ransomware, comprobar al fijar la versión.
 - Cloud: preparado para AWS, no verificado en real. En local no se reproduce Vault Lock ni aislamiento por cuentas; solo se ensaya el procedimiento de restauración.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

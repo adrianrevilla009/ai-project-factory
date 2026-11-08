@@ -27,7 +27,7 @@ metadata:
 - **MUST NOT** registrar métricas dentro de bucles calientes creando meters nuevos por iteración.
 
 ## Por qué
-Cada combinación distinta de tags crea una serie temporal; un `userId` como tag puede disparar memoria y coste del backend. Los histogramas permiten calcular percentiles agregables entre instancias (los percentiles precalculados en cliente no se pueden agregar). Propiedades exactas: TODO-VERIFY contra la versión de Spring Boot/Micrometer del proyecto.
+Cada combinación distinta de tags crea una serie temporal; un `userId` como tag puede disparar memoria y coste del backend. Los histogramas permiten calcular percentiles agregables entre instancias (los percentiles precalculados en cliente no se pueden agregar). Propiedades exactas: comprobar contra la versión de Spring Boot/Micrometer del proyecto.
 
 ## Ejemplos
 ### Mal

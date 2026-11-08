@@ -22,7 +22,7 @@ metadata:
 - **MUST** reportar tasa de paso sobre N ejecuciones para casos con LLM; un solo verde no prueba nada.
 - **MUST NOT** usar como juez al mismo agente evaluado ni dejar que el evaluado vea el criterio.
 - **SHOULD** guardar la traza (herramientas llamadas) y evaluar la trayectoria, no solo la respuesta final.
-- **SHOULD** versionar el conjunto de casos y registrar el modelo usado; los umbrales cambian con el modelo (TODO-VERIFY política de versiones de modelo).
+- **SHOULD** versionar el conjunto de casos y registrar el modelo usado; los umbrales cambian con el modelo (comprobar política de versiones de modelo).
 - **SHOULD** crecer el conjunto con cada incidente: un fallo real se convierte en un caso.
 
 ## Por qué

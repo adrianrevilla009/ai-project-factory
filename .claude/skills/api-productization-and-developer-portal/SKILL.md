@@ -62,7 +62,7 @@ paths:
         "429": { description: Rate limit exceeded, headers: { Retry-After: { schema: { type: integer } } } }
 ```
 ```bash
-# gate de compatibilidad en CI (herramienta a elegir; TODO-VERIFY flags)
+# gate de compatibilidad en CI (herramienta a elegir; comprobar flags)
 oasdiff breaking openapi-prev.yaml openapi.yaml --fail-on ERR
 ```
 
@@ -84,5 +84,5 @@ oasdiff breaking openapi-prev.yaml openapi.yaml --fail-on ERR
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `openapi-contract-first`, `api-versioning-deprecation`, `rate-limiting-quotas`, `webhooks`, `contract-gate`, `bff-and-api-gateway`, `backstage`, `api-docs`.
-- Fuentes: especificación OpenAPI (spec.openapis.org) y RFC 9457 (Problem Details), consultadas 2026-11-07 a nivel conceptual; TODO-VERIFY flags de `oasdiff`.
+- Fuentes: especificación OpenAPI (spec.openapis.org) y RFC 9457 (Problem Details), consultadas 2026-11-07 a nivel conceptual; comprobar flags de `oasdiff`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

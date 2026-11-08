@@ -20,7 +20,7 @@ metadata:
 - **MUST** conectar el BI a gold/marts con una cuenta de servicio de solo lectura, nunca a raw ni a la BD transaccional.
 - **MUST** propagar o respetar la clasificación: dashboards con datos `restricted` solo para roles autorizados y sin exportación libre.
 - **MUST** documentar por métrica: definición, dueño, granularidad y fuente.
-- **SHOULD** preferir herramientas OSS por defecto (Apache Superset o Metabase OSS, TODO-VERIFY licencia/versión); Power BI, Tableau u otros de pago solo si el cliente ya los tiene (D16).
+- **SHOULD** preferir herramientas OSS por defecto (Apache Superset o Metabase OSS, comprobar licencia/versión); Power BI, Tableau u otros de pago solo si el cliente ya los tiene (D16).
 - **SHOULD** agregar previamente (tablas resumen) en lugar de consultas pesadas sobre hechos.
 - **SHOULD** versionar la definición de dashboards (export YAML/JSON) en Git.
 - **MUST NOT** incrustar credenciales de BD en el dashboard ni en el repo.
@@ -36,7 +36,7 @@ SELECT SUM(amount * 0.79) AS revenue FROM silver.orders WHERE status <> 'x';
 ```
 ### Bien
 ```yaml
-# metrics/revenue.yml (capa semántica o dbt metrics; TODO-VERIFY herramienta)
+# metrics/revenue.yml (capa semántica o dbt metrics; comprobar herramienta)
 metric: revenue_net
 owner: "team-finance-data"
 grain: "day"

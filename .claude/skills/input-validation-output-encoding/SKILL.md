@@ -56,7 +56,7 @@ public ResponseEntity<Void> create(@Valid @RequestBody CreateUserRequest req) {
 ```jsx
 <p>{comment.text}</p>   {/* React escapa por defecto */}
 ```
-Límites de tamaño (propiedad de Spring Boot; TODO-VERIFY nombre según versión):
+Límites de tamaño (propiedad de Spring Boot; comprobar nombre según versión):
 ```yaml
 server:
   tomcat:

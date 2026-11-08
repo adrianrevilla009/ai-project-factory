@@ -70,5 +70,5 @@ Triage semanal: CISA KEV -> ¿usamos el producto? -> sí: ticket con SLA ; no: a
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threat-modeling-stride`, `vulnerability-sla-and-incident-response`, `cspm-and-posture`, `third-party-risk`, `compliance-as-code`.
-- Fuentes: catálogo CISA KEV (https://www.cisa.gov/known-exploited-vulnerabilities-catalog, TODO-VERIFY no consultado); NIST SP 800-30 y ISO/IEC 27005 para metodología de riesgo, TODO-VERIFY revisión vigente.
+- Fuentes: catálogo CISA KEV (https://www.cisa.gov/known-exploited-vulnerabilities-catalog, comprobar no consultado); NIST SP 800-30 y ISO/IEC 27005 para metodología de riesgo, comprobar revisión vigente.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
