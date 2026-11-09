@@ -56,6 +56,19 @@ spec:
 ```
 En Kyverno, `spec.validationFailureAction` está deprecado: la acción va por regla (`validate.failureAction`, `verifyImages[].failureAction`). Verificado el 2026-11-08 en la documentación de Kyverno.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Controla el origen de lo que entra (registros propios), fija versiones, verifica integridad y firma lo que sale; lleva un inventario (SBOM).
+- Aumenta los controles según la criticidad de la aplicación.
+### Trampas frecuentes
+- Dependencias desde cualquier registro público.
+- Construir en máquinas de desarrolladores.
+- Acciones de CI sin fijar.
+- Imágenes sin firma ni procedencia.
+- SBOM que nadie consulta.
+### Evidencia
+- Cada artefacto desplegado tiene firma, SBOM y registro de su construcción.
+
 ## Checklist de revisión
 - [ ] SBOM generado y almacenado por release.
 - [ ] Artefactos firmados; verificación obligatoria en admisión.

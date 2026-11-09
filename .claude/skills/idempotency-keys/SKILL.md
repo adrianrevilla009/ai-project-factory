@@ -50,6 +50,19 @@ public PaymentResponse pay(String tenant, String key, PayRequest r) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Exige clave de idempotencia en operaciones que crean o cobran y que el cliente puede reintentar.
+- Guarda la clave con el resultado y la huella de la petición.
+### Trampas frecuentes
+- Aceptar la misma clave con cuerpos distintos sin avisar.
+- Claves que caducan demasiado pronto.
+- Idempotencia solo a medias (el efecto externo se repite).
+- Guardar la clave y ejecutar en pasos no atómicos.
+- No documentar el comportamiento ante reintentos.
+### Evidencia
+- Una prueba reenvía la petición y comprueba que el efecto y la respuesta son los mismos.
+
 ## Checklist de revisión
 - [ ] Operaciones críticas exigen `Idempotency-Key`.
 - [ ] Clave, huella y efecto en la misma transacción.

@@ -67,6 +67,19 @@ X-Content-Type-Options: nosniff
 Referrer-Policy: strict-origin-when-cross-origin
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cabeceras de seguridad por defecto; CORS con lista explícita de orígenes; protección CSRF cuando se usa cookie de sesión.
+- Las políticas se despliegan primero en modo informe y después en bloqueo.
+### Trampas frecuentes
+- CORS con comodín y credenciales.
+- Desactivar CSRF globalmente «porque es una API».
+- Una política de seguridad de contenido tan laxa que no protege.
+- Cabeceras que solo están en algunos servicios.
+- Reflejar el origen recibido.
+### Evidencia
+- Una prueba comprueba las cabeceras de todas las respuestas y el rechazo de orígenes no permitidos.
+
 ## Checklist de revisión
 - [ ] CSP sin `unsafe-inline` en scripts y con `frame-ancestors`.
 - [ ] HSTS y `nosniff` presentes.

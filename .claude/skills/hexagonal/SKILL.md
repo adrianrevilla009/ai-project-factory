@@ -63,6 +63,19 @@ class JpaOrderRepositoryAdapter implements OrderRepository {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Puertos y adaptadores cuando el dominio tiene reglas que merecen aislarse y probarse sin infraestructura; en un CRUD fino añade ceremonia sin beneficio.
+- Un puerto por razón de cambio (persistencia, mensajería, cliente externo), no uno por clase.
+### Trampas frecuentes
+- Puertos que replican la API de la librería de terceros.
+- Adaptadores con lógica de negocio.
+- El dominio con anotaciones del framework.
+- Un puerto con una sola implementación y sin motivo para otra.
+- Capas que solo reenvían llamadas.
+### Evidencia
+- Pruebas de arquitectura prohíben que el dominio importe infraestructura.
+
 ## Checklist de revisión
 - [ ] `domain` no importa `org.springframework`, `jakarta.persistence` ni `adapter`.
 - [ ] Cada dependencia externa tiene un puerto y un adaptador.

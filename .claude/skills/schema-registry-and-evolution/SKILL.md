@@ -62,6 +62,19 @@ message OrderCreated {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registro de esquemas con una regla de compatibilidad explícita por tema; el productor falla si el cambio es incompatible.
+- Elige la compatibilidad según quién se actualiza primero (productores o consumidores).
+### Trampas frecuentes
+- Compatibilidad desactivada «para ir más rápido».
+- Esquemas sin documentación.
+- Cambios de tipo.
+- Registrar esquemas desde producción sin revisión.
+- Eventos sin versión de esquema.
+### Evidencia
+- El pipeline del productor comprueba la compatibilidad antes de desplegar.
+
 ## Checklist de revisión
 - [ ] El esquema está en el registry y en el repo (`schemas/`).
 - [ ] Compatibilidad transitiva configurada; chequeo en CI.

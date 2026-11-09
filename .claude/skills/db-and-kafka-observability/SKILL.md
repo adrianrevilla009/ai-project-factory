@@ -52,6 +52,19 @@ registry.counter("orders.dlq.sent", "topic", "orders.v1", "reason", "validation"
   labels: { severity: ticket }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide latencia, errores y saturación de cada dependencia desde el cliente y desde el servidor; incluye el retraso de consumo en mensajería.
+- Correlaciona consultas lentas con la petición que las origina.
+### Trampas frecuentes
+- Solo métricas de servidor sin ver la experiencia del cliente.
+- Registrar el texto de las consultas con datos personales.
+- Alertas por cada partición.
+- No medir el retraso de los consumidores.
+- Atributos con valores de alta cardinalidad.
+### Evidencia
+- Un tablero por dependencia con latencia, errores, saturación y retraso, y alertas sobre el síntoma.
+
 ## Checklist de revisión
 - [ ] Pool de conexiones con métricas y alerta de espera.
 - [ ] Spans de BD sin valores de parámetros.

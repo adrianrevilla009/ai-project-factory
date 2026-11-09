@@ -54,6 +54,19 @@ customer.email:     { level: CONFIDENTIAL, retention: "24m after account closure
 customer.nationalId: { level: RESTRICTED,  retention: "per legal basis, TBD", log: never, field_encryption: true }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clasifica los datos por sensibilidad y decide, por clase, dónde se guardan, quién accede, cuánto se retienen y cómo se protegen.
+- Minimiza: no recojas lo que no necesitas.
+### Trampas frecuentes
+- Recoger datos «por si acaso».
+- Datos personales en registros, caches y entornos de prueba.
+- Clasificación que no se refleja en controles.
+- Copias fuera de la clasificación original.
+- Sin inventario de dónde están los datos.
+### Evidencia
+- Un inventario de datos personales y los controles asociados a cada clase.
+
 ## Checklist de revisión
 - [ ] Cada campo nuevo tiene clasificación y retención.
 - [ ] Ninguna PII en logs, URLs ni errores.

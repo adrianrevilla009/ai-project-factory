@@ -61,6 +61,19 @@ spec:
 ```
 Versión de API de Istio y campos.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- No confíes en la red: identidad fuerte para cada carga de trabajo y persona, cifrado entre servicios y autorización explícita en cada salto.
+- Aplícalo de forma incremental, empezando por lo más sensible.
+### Trampas frecuentes
+- Perímetro fuerte y red interna plana.
+- Cifrado sin autenticación mutua.
+- Reglas de autorización que permiten todo entre servicios.
+- Credenciales compartidas entre servicios.
+- Presentarlo como producto en vez de como una forma de diseñar.
+### Evidencia
+- Un mapa de comunicaciones permitidas entre servicios y pruebas de que las no listadas se rechazan.
+
 ## Checklist de revisión
 - [ ] mTLS `STRICT` en namespaces de aplicación.
 - [ ] AuthorizationPolicy/NetworkPolicy con denegar por defecto.

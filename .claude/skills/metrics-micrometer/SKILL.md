@@ -66,6 +66,19 @@ management:
     distribution.percentiles-histogram.http.server.requests: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Métricas con nombres y etiquetas estables y de cardinalidad acotada; cuenta lo que importa al negocio y al servicio.
+- Histogramas con cubos alineados a los objetivos de nivel de servicio.
+### Trampas frecuentes
+- Etiquetas con identificadores de usuario o de petición.
+- Medias donde necesitas percentiles.
+- Métricas que nadie usa.
+- Nombres que cambian entre versiones.
+- Sin unidad en el nombre.
+### Evidencia
+- Un tablero y una alerta por cada métrica crítica y un control de cardinalidad.
+
 ## Checklist de revisión
 - [ ] Ningún tag con valores no acotados.
 - [ ] Latencias como `Timer` con histograma donde hay SLO.

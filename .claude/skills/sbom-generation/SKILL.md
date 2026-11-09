@@ -61,6 +61,19 @@ Ante una CVE nueva (p. ej. una librería de logging) la pregunta es "¿dónde la
 # subido en CI como artefacto de la release junto al JAR y a la imagen.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Genera un SBOM por artefacto en cada build, en un formato estándar, y guárdalo con el artefacto; consúltalo cuando aparezca una vulnerabilidad.
+- Incluye dependencias transitivas y de contenedor.
+### Trampas frecuentes
+- SBOM que se genera pero nadie almacena.
+- Solo dependencias directas.
+- SBOM de un sitio distinto al artefacto desplegado.
+- Sin vincular el SBOM con el digest.
+- No usarlo para responder a una nueva vulnerabilidad.
+### Evidencia
+- Para una vulnerabilidad reciente, puedes listar en minutos qué artefactos desplegados la contienen.
+
 ## Checklist de revisión
 - [ ] Existe `bom.json` agregado tras el build de release.
 - [ ] La versión del plugin está fijada en el parent.

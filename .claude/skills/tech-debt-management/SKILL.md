@@ -45,6 +45,19 @@ La deuda no registrada es invisible y se paga con intereses compuestos: cada cam
 ```
 Criterio de decisión: interés alto + zona que cambia a menudo = pagar ya; interés bajo + código estable = tolerar y documentar.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra la deuda con su coste (riesgo, tiempo perdido) y decide pagarla cuando el interés supera el esfuerzo.
+- Reserva capacidad estable en cada ciclo para pagarla.
+### Trampas frecuentes
+- Una lista de deuda que solo crece.
+- Llamar «deuda» a cualquier cosa que no gusta.
+- Pagarla solo «cuando haya tiempo».
+- Deuda sin dueño ni fecha de revisión.
+- Refactors gigantes en vez de mejoras continuas.
+### Evidencia
+- Un registro de deuda con coste, dueño y fecha, y una tendencia visible.
+
 ## Checklist de revisión
 - [ ] Toda deuda aceptada está en el registro con dueño y fecha.
 - [ ] Los `TODO` en código llevan ID de deuda.

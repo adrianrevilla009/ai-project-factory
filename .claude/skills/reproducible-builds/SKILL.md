@@ -47,6 +47,19 @@ build.time=${maven.build.timestamp}
 ```
 En release, `outputTimestamp` se fija al timestamp del commit de la etiqueta.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Construye de forma que el mismo código y entorno produzcan el mismo artefacto: versiones fijadas, marcas de tiempo normalizadas, entorno controlado.
+- Comprueba la reproducibilidad en CI construyendo dos veces.
+### Trampas frecuentes
+- Marcas de tiempo y orden de ficheros no deterministas.
+- Dependencias con rangos abiertos.
+- Construcción en la máquina del desarrollador.
+- Variables de entorno que cambian el resultado.
+- No poder verificar que un artefacto sale del código declarado.
+### Evidencia
+- Dos construcciones independientes dan el mismo resumen.
+
 ## Checklist de revisión
 - [ ] `project.build.outputTimestamp` definido.
 - [ ] Plugins y Maven con versión fija.

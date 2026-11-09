@@ -64,6 +64,19 @@ void tamperedToken_isRejected() throws Exception {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Combina capas complementarias: análisis estático, dependencias, secretos, y pruebas dinámicas sobre un entorno de pruebas.
+- Ajusta el ruido: un escáner que nadie lee no protege.
+### Trampas frecuentes
+- Ejecutar un DAST contra producción sin permiso.
+- Resultados sin triaje ni dueño.
+- Un único escáner y la sensación de cobertura completa.
+- Reglas por defecto sin adaptar al proyecto.
+- Bloquear por todo hallazgo hasta que se desactiva.
+### Evidencia
+- Los hallazgos entran en el flujo del equipo con severidad, dueño y plazo.
+
 ## Checklist de revisión
 - [ ] SAST, secretos y dependencias corren en cada PR.
 - [ ] Umbral de bloqueo definido y aplicado.

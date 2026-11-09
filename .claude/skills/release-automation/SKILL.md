@@ -54,6 +54,19 @@ fix(payments): handle duplicate webhook      -> patch
 feat(api)!: remove v1 order payload          -> major
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Automatiza la versión, el registro de cambios, el artefacto y la publicación desde la rama principal a partir de commits convencionales.
+- La release es un evento reproducible, no un ritual manual.
+### Trampas frecuentes
+- Releases manuales con pasos olvidados.
+- Etiquetas que no corresponden a lo publicado.
+- Publicar desde una máquina local.
+- Sin posibilidad de repetir la release.
+- Registro de cambios editado a mano e incompleto.
+### Evidencia
+- Una release de prueba se ejecuta de principio a fin sin intervención manual.
+
 ## Checklist de revisión
 - [ ] La versión sale de los commits, no se edita a mano.
 - [ ] Release solo desde CI y rama principal.

@@ -51,6 +51,19 @@ Requisitos no funcionales: el sistema debe ser rápido, escalable y muy seguro.
   verification: "prueba de resiliencia (bloque 08)"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Convierte los atributos de calidad en escenarios medibles (estímulo, respuesta, medida) y evalúa las decisiones de arquitectura contra ellos.
+- Prioriza: no se puede maximizar todo a la vez.
+### Trampas frecuentes
+- Atributos vagos («debe ser rápido»).
+- Evaluar solo los que gustan al equipo.
+- Un ejercicio que se hace una vez y se archiva.
+- Escenarios sin medida de aceptación.
+- Ignorar los compromisos entre atributos.
+### Evidencia
+- Escenarios priorizados con su medida y la decisión que los soporta.
+
 ## Checklist de revisión
 - [ ] Los escenarios tienen estímulo, respuesta y medida.
 - [ ] Hay 3-5 escenarios priorizados.

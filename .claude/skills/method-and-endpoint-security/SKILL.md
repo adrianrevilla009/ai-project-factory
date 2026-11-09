@@ -61,6 +61,19 @@ void anonymousCannotListOrders() throws Exception {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Denegar por defecto: cada endpoint exige autenticación salvo una lista pequeña y explícita; la autorización por método protege la lógica aunque el endpoint cambie.
+- Las rutas públicas son una lista revisada, no un patrón amplio.
+### Trampas frecuentes
+- Patrones de rutas demasiado amplios en la lista pública.
+- Seguridad solo en el controlador y no en el servicio.
+- Acceso a datos sin comprobar al propietario.
+- Endpoints de gestión abiertos.
+- Probar solo con un usuario administrador.
+### Evidencia
+- Una prueba recorre todas las rutas y comprueba que ninguna queda abierta sin estar en la lista permitida.
+
 ## Checklist de revisión
 - [ ] Cadena acaba en `anyRequest().authenticated()`.
 - [ ] `permitAll` limitado a lista justificada.

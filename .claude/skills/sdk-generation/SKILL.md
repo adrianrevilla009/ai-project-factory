@@ -68,6 +68,19 @@ class CustomerClient {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Genera el SDK desde el contrato y versiónalo con la API; ofrece uno solo cuando el volumen de consumidores lo justifica.
+- Los SDK generados se prueban contra el servicio real.
+### Trampas frecuentes
+- SDK editados a mano.
+- Versiones del SDK desacopladas de la API.
+- Un SDK que oculta errores del servidor.
+- Dependencias pesadas en el SDK.
+- Sin guía de migración entre versiones.
+### Evidencia
+- El SDK se genera y se prueba en CI contra una instancia del servicio.
+
 ## Checklist de revisión
 - [ ] SDK generado desde el OpenAPI del repo; generador con versión fija.
 - [ ] Nada editado a mano en lo generado; personalización por plantillas/envoltorios.

@@ -61,6 +61,19 @@ void otherTenantInvoice_returns404() throws Exception {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Roles (RBAC) para permisos estables, atributos (ABAC) para reglas dependientes del contexto, relaciones (ReBAC) para recursos compartidos; combina según el caso.
+- La autorización se decide en el servidor y por recurso, no solo por endpoint.
+### Trampas frecuentes
+- Comprobar solo el rol y no la propiedad del recurso (acceso a objetos de otros).
+- Reglas de autorización dispersas por el código.
+- Roles que crecen sin control.
+- Confiar en la interfaz para ocultar acciones.
+- Sin pruebas de acceso cruzado entre usuarios o tenants.
+### Evidencia
+- Una matriz de autorización probada con usuarios de distintos roles y tenants.
+
 ## Checklist de revisión
 - [ ] Hay política de denegar por defecto (`anyRequest().authenticated()` o más estricta).
 - [ ] Todo acceso por id filtra por tenant/propietario.

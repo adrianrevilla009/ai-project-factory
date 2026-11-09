@@ -56,6 +56,19 @@ create table event_store (
 );
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Úsalo cuando el historial de eventos es el negocio (auditoría fuerte, reconstrucción, análisis temporal); para auditoría simple basta un registro de auditoría.
+- Planifica versionado de eventos, proyecciones y supresión desde el principio.
+### Trampas frecuentes
+- Event sourcing para un CRUD.
+- Eventos que son «cambió el registro» sin significado de negocio.
+- Cambiar eventos ya publicados.
+- Sin plan de supresión de datos personales.
+- Proyecciones que no se pueden reconstruir.
+### Evidencia
+- Se ha ensayado reconstruir una proyección completa desde los eventos.
+
 ## Checklist de revisión
 - [ ] ADR con alternativas descartadas (auditoría/CDC).
 - [ ] Eventos inmutables, en pasado y versionados.

@@ -56,6 +56,19 @@ if (ip.isAnyLocalAddress() || ip.isLoopbackAddress() || ip.isLinkLocalAddress() 
 ```
 Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar a la IP ya validada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- No deserialices datos no confiables con formatos que ejecutan código; usa formatos de datos simples y listas permitidas de tipos.
+- Desactiva entidades externas en analizadores XML; valida y restringe destinos en peticiones salientes; normaliza rutas.
+### Trampas frecuentes
+- Deserialización nativa de objetos desde la red.
+- Analizadores XML con configuración por defecto.
+- Peticiones salientes a URL elegidas por el usuario sin lista permitida.
+- Resolver rutas con entrada sin normalizar.
+- Seguir redirecciones sin límite.
+### Evidencia
+- Pruebas con cargas conocidas de cada vulnerabilidad y reglas de análisis estático activas.
+
 ## Checklist de revisión
 - [ ] No hay `ObjectInputStream` ni default typing sobre entrada externa.
 - [ ] Todos los parsers XML tienen DTD deshabilitado.

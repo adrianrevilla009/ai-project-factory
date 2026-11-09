@@ -50,6 +50,19 @@ static final ArchRule no_cycles =
 Fitness de rendimiento (CI): k6 con umbral  http_req_duration p(95) < 300ms ; fallo = build rojo.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Convierte las propiedades de arquitectura que importan (límites, rendimiento, seguridad) en comprobaciones automáticas que se ejecutan siempre.
+- Pocas funciones de aptitud y que realmente detengan el cambio.
+### Trampas frecuentes
+- Un gran número de reglas que nadie mantiene.
+- Funciones que solo informan y nunca bloquean.
+- Medir lo fácil en lugar de lo importante.
+- Reglas sin dueño.
+- Excepciones permanentes.
+### Evidencia
+- Cada propiedad crítica tiene una comprobación en CI y un responsable.
+
 ## Checklist de revisión
 - [ ] Cada característica priorizada tiene fitness function o revisión humana declarada.
 - [ ] Se ejecutan en CI y bloquean el merge.

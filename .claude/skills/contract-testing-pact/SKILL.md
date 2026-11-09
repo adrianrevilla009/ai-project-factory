@@ -66,6 +66,19 @@ class CustomerContractVerificationTest {
 pact-broker can-i-deploy --pacticipant billing-service --version $GIT_SHA --to-environment staging
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Contratos dirigidos por el consumidor cuando los consumidores son pocos y conocidos; el proveedor verifica en su pipeline.
+- Los contratos expresan lo que el consumidor usa, no la respuesta completa.
+### Trampas frecuentes
+- Contratos sobreespecificados.
+- Verificaciones del proveedor sin datos de estado adecuados.
+- No publicar resultados en el broker.
+- Saltar la comprobación de despliegue.
+- Mezclar contrato con lógica de negocio.
+### Evidencia
+- La comprobación de despliegue del broker forma parte del pipeline.
+
 ## Checklist de revisión
 - [ ] El pact lo genera el cliente real; solo campos usados; matchers por tipo.
 - [ ] El proveedor verifica en CI con estados deterministas.

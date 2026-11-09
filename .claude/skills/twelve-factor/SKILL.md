@@ -62,6 +62,19 @@ env:
     valueFrom: { secretKeyRef: { name: app-db, key: password } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Úsalo como lista de comprobación de portabilidad: configuración por entorno, procesos sin estado, registros a la salida estándar.
+- Adáptalo al contexto: no todo factor aplica igual a todo servicio.
+### Trampas frecuentes
+- Estado en disco local de la instancia.
+- Configuración incrustada en la imagen.
+- Dependencias implícitas de la máquina.
+- Arranque y apagado lentos.
+- Aplicar el decálogo de forma literal sin entender el porqué.
+### Evidencia
+- Una instancia nueva arranca solo con configuración externa y sin estado local.
+
 ## Checklist de revisión
 - [ ] Mismo artefacto en todos los entornos; config por variables.
 - [ ] Sin secretos ni URLs de entorno en repo/imagen.

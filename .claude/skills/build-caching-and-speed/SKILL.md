@@ -57,6 +57,19 @@ RUN ./mvnw -B package -DskipTests
 ```
 `dependency:go-offline` no resuelve siempre todos los plugins; alternativa: montar caché de BuildKit para `~/.m2`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide dónde se va el tiempo antes de optimizar; cachea dependencias, paraleliza módulos independientes y ejecuta solo lo afectado.
+- Una caché mala (envenenada) es peor que ninguna.
+### Trampas frecuentes
+- Cachés compartidas sin aislamiento entre ramas.
+- Paralelizar sin entender dependencias.
+- Optimizar un build que casi no se ejecuta.
+- Saltarse pruebas para ir más rápido.
+- Cachés sin caducidad.
+### Evidencia
+- El tiempo de build por etapa está medido y mejora tras cada cambio.
+
 ## Checklist de revisión
 - [ ] Hay medición de tiempos por fase antes y después del cambio.
 - [ ] La clave de caché incluye hash de POMs y JDK.

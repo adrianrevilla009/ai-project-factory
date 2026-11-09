@@ -56,6 +56,19 @@ class AuditLogger {
 ```
 Usar `logger` con `addKeyValue` requiere SLF4J 2.x.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra quién, qué, cuándo y desde dónde de cada acción de seguridad relevante, de forma inmutable y separada de los registros de aplicación.
+- Define qué eventos se registran con el equipo de seguridad.
+### Trampas frecuentes
+- Registros editables por la propia aplicación.
+- Registrar datos sensibles en la auditoría.
+- Sin sincronización de relojes.
+- Auditoría que nadie revisa ni alerta.
+- Retención menor que la exigida.
+### Evidencia
+- Una prueba comprueba que cada acción sensible deja un registro completo.
+
 ## Checklist de revisión
 - [ ] Los eventos mínimos de la regla están cubiertos y probados.
 - [ ] Ningún secreto ni PII innecesaria en los eventos.

@@ -48,6 +48,19 @@ DFD (texto):
 | T4 | Gateway | D | Ráfagas sobre /search | rate limit por cliente | `RateLimitIT` | pendiente |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Modela las amenazas al diseñar, sobre un diagrama de flujo de datos con fronteras de confianza; cada amenaza tiene mitigación, dueño o aceptación explícita.
+- Repite cuando cambia la arquitectura o aparece una integración nueva.
+### Trampas frecuentes
+- Un modelo hecho una vez y archivado.
+- Listas de amenazas genéricas sin relación con el sistema.
+- Mitigaciones sin responsable.
+- Hacerlo solo con el equipo de seguridad.
+- No actualizar el diagrama.
+### Evidencia
+- Un modelo versionado con amenazas, mitigaciones y su estado.
+
 ## Checklist de revisión
 - [ ] Existe DFD con fronteras de confianza.
 - [ ] Cada flujo que cruza frontera tiene fila STRIDE.

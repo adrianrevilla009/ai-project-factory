@@ -55,6 +55,19 @@ slos:
 ```
 Con 99,9 % en 30 días el presupuesto es unos 43 minutos de indisponibilidad total.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define pocos objetivos medibles por servicio (disponibilidad y latencia) a partir de la experiencia del usuario, con un presupuesto de error que guía las decisiones.
+- Revisa los objetivos con el negocio.
+### Trampas frecuentes
+- Objetivos del 100 %.
+- Indicadores que no reflejan al usuario.
+- Un objetivo sin consecuencia al incumplirse.
+- Demasiados objetivos por servicio.
+- Medir desde el servidor lo que el usuario ve desde fuera.
+### Evidencia
+- Un panel de presupuesto de error y una política acordada de qué se hace al agotarse.
+
 ## Checklist de revisión
 - [ ] SLIs como buenos/válidos con ventana y objetivo.
 - [ ] SLO versionado con dueño.

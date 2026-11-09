@@ -53,6 +53,19 @@ logging:
 labels: { service: orders-api, namespace: shop }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registros estructurados con identificador de correlación y campos consistentes; el mensaje para personas y los campos para máquinas.
+- Un nivel y un formato únicos en toda la organización.
+### Trampas frecuentes
+- Texto libre imposible de consultar.
+- Datos personales o secretos en los registros.
+- Registros de cada petición con cuerpo completo.
+- Campos con nombres distintos en cada servicio.
+- Sin límite de volumen ni retención.
+### Evidencia
+- Un ejemplo de consulta por identificador de correlación recupera todo un flujo.
+
 ## Checklist de revisión
 - [ ] Salida JSON a stdout, sin ficheros.
 - [ ] `trace_id` y `span_id` presentes en los logs de petición.

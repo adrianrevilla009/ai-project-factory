@@ -47,6 +47,19 @@ ResponseEntity<ProblemDetail> tooMany(long retryAfterSeconds) {
 ```
 Local: se puede probar con un límite en el gateway local o un filtro con almacén compartido; en AWS (API Gateway usage plans, WAF) está preparado para AWS, no verificado en real; no se reproducen en local.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Límites por cliente e identidad, con cuotas y límites de ráfaga distintos; informa de lo que queda.
+- Aplica el límite lo más cerca posible del borde y vuelve a protegerte dentro.
+### Trampas frecuentes
+- Un límite global que un cliente ruidoso agota para todos.
+- Límites por IP detrás de un proxy compartido.
+- Sin cabeceras que digan cuándo reintentar.
+- Límites sin métricas ni alertas.
+- Rechazar sin diferenciar clientes críticos.
+### Evidencia
+- Una prueba de carga demuestra que un cliente que excede su cuota no afecta a otro.
+
 ## Checklist de revisión
 - [ ] Límites por cliente y por clase de operación documentados.
 - [ ] 429 + `Retry-After` + `problem+json`.

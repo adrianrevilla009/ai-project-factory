@@ -66,6 +66,19 @@ public class Order {                      // aggregate root
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Agregados pequeños que protegen invariantes de una sola transacción; referencias entre agregados por identificador.
+- Entidades y objetos de valor con comportamiento, no meros contenedores.
+### Trampas frecuentes
+- Agregados enormes que bloquean mucho.
+- Referencias directas entre agregados.
+- Modelo anémico con la lógica en servicios.
+- Repositorios para entidades internas del agregado.
+- Invariantes entre agregados forzadas en una transacción.
+### Evidencia
+- Cada agregado declara su invariante y una prueba la verifica.
+
 ## Checklist de revisión
 - [ ] Cada aggregate tiene una raíz y sus invariantes viven en ella.
 - [ ] Referencias entre aggregates por id.

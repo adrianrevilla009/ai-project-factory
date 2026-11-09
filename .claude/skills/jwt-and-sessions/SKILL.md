@@ -58,6 +58,19 @@ server:
         same-site: lax
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sesión en el servidor con cookie `HttpOnly` cuando hay navegador; tokens firmados para servicio a servicio, con vida corta.
+- Un token no se puede revocar a menos que tengas un mecanismo para ello: diseña la revocación.
+### Trampas frecuentes
+- Tokens de larga vida sin revocación.
+- Datos sensibles dentro del token.
+- Aceptar algoritmos «none» o cambiar el algoritmo.
+- Almacenar el token en `localStorage`.
+- Cookies sin `Secure` ni `SameSite`.
+### Evidencia
+- Pruebas de caducidad, manipulación de firma y revocación.
+
 ## Checklist de revisión
 - [ ] Decoder con firma, algoritmo fijado, `iss`, `aud`, `exp`.
 - [ ] Sin datos sensibles en claims.

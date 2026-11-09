@@ -59,6 +59,19 @@ OrderServiceGrpc.OrderServiceBlockingStub stub =
     OrderServiceGrpc.newBlockingStub(channel).withDeadlineAfter(2, TimeUnit.SECONDS);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- gRPC para comunicación interna entre servicios con contratos estrictos y rendimiento; REST para APIs públicas y clientes de navegador.
+- Evolución de mensajes con reglas de compatibilidad (no reutilizar números de campo).
+### Trampas frecuentes
+- Reutilizar o renumerar campos.
+- Cambiar el tipo de un campo existente.
+- Exponer gRPC al navegador sin una pasarela.
+- Sin plazos máximos en las llamadas.
+- Mensajes enormes.
+### Evidencia
+- Una comprobación de compatibilidad de esquemas protobuf en CI.
+
 ## Checklist de revisión
 - [ ] Paquete versionado; sin números de campo reutilizados (`reserved`).
 - [ ] Enums con `_UNSPECIFIED = 0`.

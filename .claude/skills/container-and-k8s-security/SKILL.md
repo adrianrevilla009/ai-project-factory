@@ -64,6 +64,19 @@ spec:
       resources: { requests: { cpu: 100m, memory: 256Mi }, limits: { memory: 512Mi } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Imagen mínima, usuario sin privilegios, sistema de ficheros de solo lectura y sin capacidades extra; en el clúster, políticas de admisión que lo exijan.
+- La configuración segura se impone, no se recomienda.
+### Trampas frecuentes
+- Contenedores que corren como administrador.
+- Imágenes con herramientas de compilación en producción.
+- Permisos amplios en cuentas de servicio.
+- Sin límites de recursos.
+- Secretos en variables de entorno de la imagen.
+### Evidencia
+- Una política de admisión rechaza una carga que incumple y un escáner revisa las imágenes.
+
 ## Checklist de revisión
 - [ ] No root, sin privilegios, capabilities descartadas, FS de solo lectura.
 - [ ] Imagen mínima, fijada por digest, sin secretos.

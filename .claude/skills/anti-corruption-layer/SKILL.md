@@ -56,6 +56,19 @@ final class LegacyCrmTranslator {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Capa anticorrupción cuando integras un sistema cuyo modelo no quieres adoptar; un traductor explícito en la frontera.
+- Si el sistema externo es estable y su modelo encaja, no hace falta.
+### Trampas frecuentes
+- Dejar que los tipos del sistema externo se filtren por el dominio.
+- Una capa que reexpone los mismos campos sin traducir.
+- Traducción con lógica de negocio repartida.
+- Sin pruebas de la traducción con datos reales del legado.
+- Capa que se convierte en un cuello de botella sin dueño.
+### Evidencia
+- Pruebas de traducción en ambos sentidos con casos del sistema real.
+
 ## Checklist de revisión
 - [ ] Los tipos externos solo existen en el paquete del adaptador.
 - [ ] El puerto usa lenguaje del dominio.

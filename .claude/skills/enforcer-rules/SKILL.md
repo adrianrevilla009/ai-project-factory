@@ -54,6 +54,19 @@ Comprobación local (comando de lectura, no despliega nada):
 ./mvnw -B validate
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reglas del enforcer para lo que debe fallar el build: versiones mínimas, dependencias prohibidas, convergencia de dependencias.
+- Pocas reglas, con mensajes que explican cómo corregir.
+### Trampas frecuentes
+- Reglas que se desactivan para pasar.
+- Demasiadas reglas que frenan sin valor.
+- Mensajes sin guía.
+- Sin prueba de que la regla falla cuando debe.
+- Configuración distinta por módulo.
+### Evidencia
+- Un caso de prueba con una dependencia prohibida hace fallar el build.
+
 ## Checklist de revisión
 - [ ] Enforcer en `validate` con `fail=true`.
 - [ ] Lista de baneadas coincide con `catalog/forbidden-libraries.yaml`.

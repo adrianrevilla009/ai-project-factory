@@ -51,6 +51,19 @@ class InvoiceService {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Empieza por un monolito con módulos de límites estrictos y comunicación por interfaces públicas o eventos internos; extrae un servicio cuando haya una razón organizativa o de escala medida.
+- Cada módulo es dueño de sus datos: nadie lee las tablas de otro.
+### Trampas frecuentes
+- Módulos que comparten tablas y entidades.
+- Un módulo «compartido» que acaba siendo el centro.
+- Llamadas directas a clases internas de otro módulo.
+- Extraer servicios sin que los límites estén limpios.
+- Un monolito sin ninguna regla comprobable de límites.
+### Evidencia
+- Reglas automáticas de módulos y un mapa de dependencias entre ellos sin ciclos.
+
 ## Checklist de revisión
 - [ ] Los módulos siguen capacidades de negocio.
 - [ ] Solo se usa `..api..` entre módulos; `..internal..` es privado.

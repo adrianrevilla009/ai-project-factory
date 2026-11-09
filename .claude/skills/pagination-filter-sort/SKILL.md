@@ -51,6 +51,19 @@ OrderPage list(@RequestParam(defaultValue = "50") @Max(100) int size,
 ```
 Comprobar que el motor/Hibernate soporta la comparación de tuplas; si no, expandirla.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Paginación por cursor para colecciones grandes; por página para colecciones pequeñas y estables.
+- Filtros y orden con una lista permitida de campos.
+### Trampas frecuentes
+- Ordenar por cualquier campo sin índice.
+- Filtros que permiten consultas arbitrarias costosas.
+- Tamaño de página sin tope.
+- Cursores que revelan datos internos.
+- Orden inestable entre páginas.
+### Evidencia
+- Pruebas con datos que cambian entre peticiones y consultas con índice.
+
 ## Checklist de revisión
 - [ ] Toda colección paginada con `size` máximo.
 - [ ] Orden con desempate único e índice que lo soporte.

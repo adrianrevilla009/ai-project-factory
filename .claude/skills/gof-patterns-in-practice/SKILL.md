@@ -54,6 +54,19 @@ class FeeCalculator {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa un patrón por el problema que resuelve; muchas veces una función o un record lo resuelven con menos código.
+- Nombra el patrón en el código solo si ayuda a quien lo lee.
+### Trampas frecuentes
+- Un patrón por obligación (fábrica de una sola clase).
+- Singleton con estado global.
+- Jerarquías de estrategias para dos casos.
+- Patrones que esconden flujo de control sencillo.
+- Documentar el patrón en vez de su motivo.
+### Evidencia
+- El patrón elegido se justifica con el cambio que absorbe.
+
 ## Checklist de revisión
 - [ ] El patrón resuelve un problema presente y nombrado.
 - [ ] No existe una alternativa más simple (lambda, `record`, método).

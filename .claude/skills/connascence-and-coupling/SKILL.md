@@ -49,6 +49,19 @@ Ejecución < Temporalidad < Valor < Identidad          (dinámicas, difíciles d
 ```
 Criterio práctico: fuerte y cercano = OK; fuerte y lejano = rediseñar o ADR.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reduce la conascencia fuerte entre módulos distantes y acepta la fuerte dentro de un mismo módulo.
+- Mide el acoplamiento donde duele: lo que cambia junto.
+### Trampas frecuentes
+- Acoplamiento por posición de parámetros entre servicios.
+- Dependencias de tipos concretos entre módulos.
+- Cambios que siempre tocan tres módulos a la vez.
+- Medir el acoplamiento sin mirar el historial de cambios.
+- Eliminar todo acoplamiento a costa de indirección inútil.
+### Evidencia
+- El historial de cambios conjuntos de los módulos revela dónde está el acoplamiento real.
+
 ## Checklist de revisión
 - [ ] No hay ciclos entre paquetes/módulos.
 - [ ] Ningún modelo de dominio o entidad compartido entre contexts.

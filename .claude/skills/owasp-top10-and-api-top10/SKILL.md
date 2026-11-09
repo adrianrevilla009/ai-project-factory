@@ -57,6 +57,19 @@ Registro y monitorización   -> audit-trail-and-security-logging
 SSRF                        -> deserialization-xxe-ssrf-traversal
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Úsalo como mínimo común para formar y revisar, no como una auditoría completa; cada categoría se traduce en reglas y pruebas concretas del proyecto.
+- Prioriza las categorías por el contexto de tu aplicación.
+### Trampas frecuentes
+- Creer que cubrir la lista basta.
+- Memorizar títulos sin saber cómo fallan en tu código.
+- Revisiones de seguridad sin ejemplos reales.
+- Ignorar las categorías propias de las APIs (autorización a nivel de objeto).
+- No actualizar tras una nueva edición.
+### Evidencia
+- Una tabla categoría → control → prueba que lo verifica.
+
 ## Checklist de revisión
 - [ ] Todo endpoint con id valida propiedad/tenant.
 - [ ] Respuestas mediante DTO; entrada sin campos privilegiados.

@@ -45,6 +45,19 @@ rollback: "volver /api/invoices/** a legacy-monolith cambiando la ruta"
 exit_criteria: "0 peticiones al legado durante 30 días -> apagar"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Migra por funcionalidad con un punto de enrutamiento que decide quién atiende cada petición; empieza por lo de menor riesgo y mayor valor de aprendizaje.
+- Define el criterio para apagar cada pieza del legado.
+### Trampas frecuentes
+- Reescribir todo y cambiar de golpe.
+- Migrar sin poder volver atrás a nivel de ruta.
+- Datos duplicados sin una fuente de verdad clara.
+- Mantener ambos sistemas indefinidamente.
+- Sin métricas comparables entre el viejo y el nuevo.
+### Evidencia
+- Para cada ruta migrada: tráfico, errores y latencia comparados con el legado.
+
 ## Checklist de revisión
 - [ ] Hay punto de interceptación y rollback por rebanada.
 - [ ] Cada rebanada tiene dueño de datos único.

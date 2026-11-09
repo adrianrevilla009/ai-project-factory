@@ -51,6 +51,19 @@ openapi-diff old.yaml new.yaml        # OpenAPI
 buf breaking --against '.git#branch=main'   # Protobuf
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Añadir es compatible; quitar, renombrar o cambiar el significado no lo es: hazlo en dos fases con un periodo de convivencia.
+- Los consumidores toleran campos desconocidos (lector tolerante).
+### Trampas frecuentes
+- Hacer obligatorio un campo antes opcional.
+- Cambiar tipos o unidades.
+- Quitar valores de una enumeración.
+- Suponer que todos los clientes se actualizan a la vez.
+- No probar compatibilidad con la versión anterior.
+### Evidencia
+- Una comprobación automática de compatibilidad entre versiones del contrato.
+
 ## Checklist de revisión
 - [ ] El cambio está clasificado (compatible / rompiente).
 - [ ] Consumidores toleran campos desconocidos.

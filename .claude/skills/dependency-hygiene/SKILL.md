@@ -61,6 +61,19 @@ npm ci
 ```
 (versión del plugin)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Declara solo lo que usas y usa lo que declaras; limpia las no usadas y evita transitivas por casualidad.
+- Antes de añadir una dependencia, evalúa mantenimiento, licencia, tamaño y alternativas.
+### Trampas frecuentes
+- Añadir una librería por una función trivial.
+- Depender de transitivas sin declararlas.
+- Versiones fijadas por «funciona así».
+- Librerías abandonadas sin plan.
+- Duplicar librerías con la misma función.
+### Evidencia
+- Un análisis de dependencias en CI sin no usadas ni no declaradas.
+
 ## Checklist de revisión
 - [ ] Dependencia nueva justificada y en el catálogo.
 - [ ] `dependency:analyze` limpio.

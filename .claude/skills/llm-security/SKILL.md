@@ -51,6 +51,19 @@ Politica de tools: allowlist = [search_orders (read-only), create_refund_draft]
 Prohibido: shell, acceso a red libre, lectura de ficheros fuera del workspace.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Trata la entrada, el contexto recuperado y la salida del modelo como no confiables; limita lo que el modelo puede hacer (herramientas con mínimo privilegio) y valida lo que devuelve.
+- Las acciones de efecto real pasan por confirmación o políticas.
+### Trampas frecuentes
+- Obedecer instrucciones que vienen en documentos recuperados.
+- Dar al modelo credenciales o herramientas con permisos amplios.
+- Ejecutar la salida del modelo sin validar.
+- Registrar prompts con datos personales sin control.
+- Sin evaluaciones de seguridad antes de desplegar.
+### Evidencia
+- Un conjunto de pruebas adversariales que se ejecuta antes de cada cambio.
+
 ## Checklist de revisión
 - [ ] Salida del modelo validada por esquema y nunca ejecutada ni renderizada en crudo.
 - [ ] Tools en allowlist con permisos del usuario; acciones críticas con aprobación humana.

@@ -54,6 +54,19 @@ jdbc.queryForObject("select set_config('app.tenant_id', ?, true)", String.class,
 @Test void tenantBCannotSeeTenantAOrders() { /* crea en A, consulta como B, espera vacío */ }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el modelo de aislamiento por requisitos (regulación, ruido entre vecinos, personalización) y su coste operativo.
+- Aísla también cargas, cuotas y observabilidad por tenant.
+### Trampas frecuentes
+- Aislamiento solo a nivel de aplicación en un sistema con requisitos regulatorios fuertes.
+- Un tenant que degrada a los demás.
+- Configuración por tenant que se multiplica sin control.
+- Migraciones que no escalan con el número de tenants.
+- Métricas agregadas que esconden al tenant afectado.
+### Evidencia
+- Una prueba de aislamiento (datos y rendimiento) entre tenants.
+
 ## Checklist de revisión
 - [ ] ADR con modelo de aislamiento elegido y alternativas.
 - [ ] Tenant extraído del token validado.

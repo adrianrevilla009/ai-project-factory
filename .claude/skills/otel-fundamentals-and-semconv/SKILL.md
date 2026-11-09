@@ -54,6 +54,19 @@ service:
     traces: { receivers: [otlp], processors: [memory_limiter, batch], exporters: [otlp/tempo] }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Instrumenta con el estándar abierto y sus convenciones de nombres; así puedes cambiar de backend sin reinstrumentar.
+- Pocos atributos útiles y estables mejor que muchos inconsistentes.
+### Trampas frecuentes
+- Nombres de atributos propios para lo que el estándar ya define.
+- Atributos de cardinalidad ilimitada en métricas.
+- Datos personales en atributos.
+- Instrumentar todo sin saber qué se usará.
+- Mezclar versiones de convenciones sin plan.
+### Evidencia
+- Un catálogo de atributos y métricas con propietario y revisión en cada cambio.
+
 ## Checklist de revisión
 - [ ] `service.name`, versión y entorno definidos.
 - [ ] Atributos con nombres semconv; propios con prefijo de dominio.

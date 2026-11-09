@@ -55,6 +55,19 @@ class LayeringRules {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reglas de capas y dependencias en pruebas automáticas desde el principio: la arquitectura que no se comprueba se erosiona.
+- Reglas pocas, claras y con el motivo en el mensaje.
+### Trampas frecuentes
+- Reglas que se saltan con anotaciones de excepción sin control.
+- Reglas tan generales que nunca fallan.
+- Congelar violaciones sin plan.
+- Pruebas de arquitectura que tardan minutos.
+- Actualizar la regla para que pase en lugar de corregir el código.
+### Evidencia
+- Cada regla tiene un caso que demuestra que falla cuando se viola.
+
 ## Checklist de revisión
 - [ ] Hay reglas de capas, ciclos y dominio puro.
 - [ ] Los tests se ejecutan en `mvn verify` y en CI.

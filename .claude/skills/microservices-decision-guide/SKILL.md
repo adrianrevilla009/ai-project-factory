@@ -43,6 +43,19 @@ Coste asumido: contrato OpenAPI versionado, trazas distribuidas, despliegue prop
 Alternativas descartadas: caché en el monolito; réplica de lectura.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Microservicios cuando equipos independientes necesitan desplegar y escalar por separado y el coste operativo está asumido; si no, monolito modular.
+- Cada servicio con su propia base de datos y un contrato versionado.
+### Trampas frecuentes
+- Dividir por capas técnicas (un servicio de datos, uno de lógica).
+- Servicios que se despliegan siempre juntos: monolito distribuido.
+- Base de datos compartida.
+- Más servicios que equipos capaces de operarlos.
+- Sin observabilidad ni automatización antes de dividir.
+### Evidencia
+- Un ADR por cada servicio nuevo con el problema de organización o escala que resuelve.
+
 ## Checklist de revisión
 - [ ] Existe motivo medible y ADR.
 - [ ] El servicio es dueño exclusivo de sus datos.

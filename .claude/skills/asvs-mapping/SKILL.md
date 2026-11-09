@@ -49,6 +49,19 @@ Scenario: acceso a un pedido de otro tenant
   Then recibe 404
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el nivel de verificación según el riesgo de la aplicación y trabaja la matriz por requisitos; cada fila lleva estado, evidencia y responsable.
+- Revisa la matriz cuando cambia la versión del estándar.
+### Trampas frecuentes
+- Marcar «cumple» sin evidencia.
+- Aplicar el nivel más alto a todo por defecto y no cumplirlo.
+- Una matriz rellenada una vez y olvidada.
+- Mezclar versiones del estándar.
+- Tratarlo como lista de comprobación de una sola vez.
+### Evidencia
+- Cada requisito aplicable tiene un enlace a su evidencia (prueba, configuración o revisión).
+
 ## Checklist de revisión
 - [ ] Nivel objetivo documentado en ADR.
 - [ ] Matriz con versión de ASVS y sin celdas vacías.

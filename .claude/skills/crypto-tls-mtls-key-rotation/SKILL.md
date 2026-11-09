@@ -57,6 +57,19 @@ metadata: { name: default, namespace: example-app }
 spec: { mtls: { mode: STRICT } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa primitivas estándar y bibliotecas probadas; no inventes protocolos. TLS moderno entre todo y mTLS entre servicios cuando se necesite identidad de carga.
+- Las claves se rotan y la rotación se ensaya.
+### Trampas frecuentes
+- Algoritmos débiles o modos inseguros.
+- Claves en el código o junto a los datos que protegen.
+- Certificados sin renovación automática.
+- Desactivar la verificación de certificados «en pruebas».
+- Aleatoriedad previsible para fines de seguridad.
+### Evidencia
+- Un inventario de claves y certificados con fechas de caducidad y un ensayo de rotación.
+
 ## Checklist de revisión
 - [ ] Algoritmos y modos de la lista permitida; IV/nonce único.
 - [ ] Contraseñas con hash adaptativo y sal.

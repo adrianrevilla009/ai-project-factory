@@ -49,6 +49,19 @@ Un SNAPSHOT cambia bajo los pies: el mismo `1.2.0-SNAPSHOT` compilado hoy y mañ
 ./mvnw -B -Drevision=1.4.0 verify
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- SemVer para lo que otros consumen; las versiones de desarrollo (snapshot) solo en ramas de trabajo, nunca en releases.
+- Una versión publicada es inmutable.
+### Trampas frecuentes
+- Reescribir una versión ya publicada.
+- Dependencias de versiones en desarrollo en una release.
+- Saltar la versión mayor ante cambios incompatibles.
+- Versiones calculadas a mano.
+- Sin relación entre versión y commit.
+### Evidencia
+- El build de release falla si hay dependencias en desarrollo.
+
 ## Checklist de revisión
 - [ ] Versión release sin `-SNAPSHOT`.
 - [ ] Ninguna dependencia SNAPSHOT en `main`/release.

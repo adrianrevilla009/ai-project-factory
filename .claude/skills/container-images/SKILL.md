@@ -62,6 +62,19 @@ COPY --from=build /workspace/extracted/application/ ./
 ENTRYPOINT ["java", "-jar", "application.jar"]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Etapas múltiples, imagen final mínima, usuario sin privilegios y versión fijada por digest; separa las capas que cambian poco de las que cambian mucho.
+- Construye una imagen una vez y promociónala.
+### Trampas frecuentes
+- Etiquetas `latest`.
+- Herramientas de compilación en la imagen final.
+- Secretos dentro de la imagen.
+- Contenedores que corren como administrador.
+- Imágenes enormes que ralentizan los despliegues.
+### Evidencia
+- Un escáner de imágenes y una política de admisión comprueban la base y el usuario.
+
 ## Checklist de revisión
 - [ ] Multi-stage, imagen final solo JRE.
 - [ ] Base con versión y digest; sin `latest`.

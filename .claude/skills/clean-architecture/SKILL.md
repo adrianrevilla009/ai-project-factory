@@ -52,6 +52,19 @@ public final class CancelOrder {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Úsala como criterio de dirección de dependencias (hacia el dominio), no como un número fijo de capas.
+- El caso de uso es la unidad: una entrada, una salida y sus reglas.
+### Trampas frecuentes
+- Capas obligatorias que no aportan nada en servicios pequeños.
+- Casos de uso que son simples reenvíos al repositorio.
+- Modelos distintos por capa copiados campo a campo sin necesidad.
+- Dependencias del framework en el núcleo.
+- Confundir la estructura de carpetas con la arquitectura.
+### Evidencia
+- Un diagrama de dependencias real (no el deseado) coincide con las reglas.
+
 ## Checklist de revisión
 - [ ] Ningún import apunta hacia fuera (entidades -> casos de uso -> adaptadores).
 - [ ] Los límites usan `record`/DTO propios.

@@ -51,6 +51,19 @@ class OrdersV1Controller {
 ```
 Los valores de fecha son ilustrativos; confirmar sintaxis de `Deprecation` contra RFC 9745.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Versiona solo ante cambios incompatibles; los compatibles (añadir campos opcionales) no necesitan versión nueva.
+- Anuncia la deprecación con un plazo y cabeceras o documentación que lo indiquen.
+### Trampas frecuentes
+- Versionar por cada cambio pequeño.
+- Retirar una versión sin plazo ni medición de uso.
+- Mantener demasiadas versiones vivas.
+- Cambiar el significado de un campo sin cambiar de versión.
+- No medir quién usa cada versión.
+### Evidencia
+- Un panel de uso por versión y una fecha de retirada comunicada.
+
 ## Checklist de revisión
 - [ ] Versión mayor en ruta; sin versión por defecto implícita.
 - [ ] Cambio rompiente justificado; no cabía de forma compatible.

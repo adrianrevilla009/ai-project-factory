@@ -63,6 +63,19 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 ```
 (configuración del plugin Maven JAXB/CXF).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Encapsula el servicio SOAP tras un puerto y una capa anticorrupción; trátalo como un tercero poco fiable.
+- Genera el cliente desde el contrato y fija las versiones.
+### Trampas frecuentes
+- Tipos generados del WSDL por todo el dominio.
+- Sin tiempos máximos ni reintentos controlados.
+- Seguridad débil (sin TLS ni validación de firmas) por «es interno».
+- Configuración XML sin protección frente a entidades externas.
+- Sin pruebas con respuestas reales del legado.
+### Evidencia
+- Pruebas con respuestas grabadas del servicio real y un tiempo máximo configurado.
+
 ## Checklist de revisión
 - [ ] WSDL/XSD versionado; clases generadas en build, no a mano.
 - [ ] Capa anticorrupción: sin tipos JAXB en dominio.

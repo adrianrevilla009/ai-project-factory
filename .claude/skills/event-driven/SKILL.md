@@ -54,6 +54,19 @@ void onMessage(Envelope e) {
 ```
 Ambas escrituras del consumidor deben ir en la misma transacción.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Eventos para desacoplar en el tiempo y notificar hechos ocurridos; peticiones síncronas cuando necesitas una respuesta inmediata.
+- Distingue eventos (hechos) de comandos (peticiones).
+### Trampas frecuentes
+- Eventos que son llamadas disfrazadas (esperan respuesta).
+- Un evento con todo el estado interno de la entidad.
+- Dependencias ocultas entre servicios a través de eventos.
+- Sin esquema ni versionado.
+- Orden asumido donde no está garantizado.
+### Evidencia
+- Un catálogo de eventos con propietario, esquema y consumidores conocidos.
+
 ## Checklist de revisión
 - [ ] Eventos en pasado; comandos separados.
 - [ ] Outbox en lugar de publicar dentro de la transacción.

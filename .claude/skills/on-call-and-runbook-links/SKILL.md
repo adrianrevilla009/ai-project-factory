@@ -52,6 +52,19 @@ Escalar a: guardia de plataforma tras 15 minutos sin mejora.
 Atención: no truncar tablas ni reiniciar la BD sin aprobación humana.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada alerta pagable enlaza a un runbook con pasos, comprobaciones y escalado; el relevo tiene calendario y rotación sostenible.
+- Mejora el runbook tras cada incidente.
+### Trampas frecuentes
+- Alertas sin runbook.
+- Runbooks obsoletos.
+- Siempre la misma persona de guardia.
+- Sin escalado definido.
+- Guardia sin descanso compensatorio.
+### Evidencia
+- Cada alerta pagable tiene un enlace a un runbook revisado en el último trimestre.
+
 ## Checklist de revisión
 - [ ] Toda alerta `page` tiene `runbook_url` válido.
 - [ ] Runbook con impacto, comprobaciones, mitigaciones y escalado.

@@ -64,6 +64,19 @@ JwtDecoder jwtDecoder(OAuth2TokenValidator<Jwt> audienceValidator, @Value("${spr
 ```
 En local Keycloak se ejecuta en contenedor; en AWS no se reproduce el IdP gestionado (Cognito u otro): preparado para AWS, no verificado en real.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Delega la autenticación en un proveedor de identidad estándar (OIDC) y usa el flujo de código con PKCE para clientes públicos.
+- Tokens de vida corta y renovación controlada; el servicio valida firma, emisor, destinatario y caducidad.
+### Trampas frecuentes
+- Flujo implícito o credenciales de contraseña del propietario.
+- Validar solo la firma y no el destinatario.
+- Guardar tokens en almacenamiento accesible a scripts.
+- Sesiones eternas.
+- Implementar tu propio sistema de contraseñas.
+### Evidencia
+- Pruebas con tokens caducados, de otro emisor y de otro destinatario que deben rechazarse.
+
 ## Checklist de revisión
 - [ ] Flujo Authorization Code + PKCE; sin Implicit ni password grant.
 - [ ] Resource server valida `iss`, `aud`, `exp` y firma.

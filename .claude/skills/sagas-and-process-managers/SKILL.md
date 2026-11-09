@@ -48,6 +48,19 @@ void on(StockReleased e) { saga.advance(e.sagaId(), COMPENSATED); }
 Pasos: ReserveStock (comp: ReleaseStock) -> ChargePayment (comp: RefundPayment) -> ScheduleShipment (irreversible, último)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Orquestación (un coordinador central) cuando el proceso es complejo y debe ser visible; coreografía (reacciones a eventos) cuando es simple y los servicios son autónomos.
+- Cada paso tiene su acción compensatoria definida.
+### Trampas frecuentes
+- Sagas sin compensaciones.
+- Coreografías con tantos pasos que nadie ve el flujo.
+- Estado de la saga solo en memoria.
+- Compensaciones que también pueden fallar sin plan.
+- Asumir que la compensación deshace todo (hay efectos que no se revierten).
+### Evidencia
+- Un diagrama del proceso con estados, tiempos máximos y compensaciones, y pruebas de fallo en cada paso.
+
 ## Checklist de revisión
 - [ ] Cada paso tiene compensación o está marcado irreversible y al final.
 - [ ] Estado de saga persistido con deadline y estado terminal manual.

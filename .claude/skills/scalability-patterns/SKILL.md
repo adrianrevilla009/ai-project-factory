@@ -54,6 +54,19 @@ server:
 Objetivo: 300 RPS pico, p95 < 300 ms, 50 GB de datos a 12 meses -> réplicas stateless x4, caché de catálogo TTL 60 s.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide el cuello de botella antes de aplicar un patrón: escalar horizontalmente lo que no lo es solo mueve el problema.
+- Escala primero lo sin estado; el estado, con particionado o réplicas según el acceso.
+### Trampas frecuentes
+- Escalar el servicio cuando el límite es la base de datos.
+- Caché como primera respuesta.
+- Particionado sin una clave que reparta la carga.
+- Autoescalado sin límites ni pruebas.
+- Diseñar para una escala que no se espera.
+### Evidencia
+- Una prueba de carga que identifica el primer límite y una mejora medida.
+
 ## Checklist de revisión
 - [ ] Objetivos de carga numéricos documentados.
 - [ ] Sin estado en memoria del proceso.

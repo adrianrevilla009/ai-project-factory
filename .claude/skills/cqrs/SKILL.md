@@ -57,6 +57,19 @@ public interface OrderQueries {
 void on(OrderPlaced e) { summaries.upsert(e.orderId(), e.total()); }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Separa lectura y escritura cuando sus necesidades de modelo, escala o consistencia son distintas; si no, añade complejidad sin beneficio.
+- Empieza con el mismo almacén y modelos distintos; separa los almacenes solo si hace falta.
+### Trampas frecuentes
+- CQRS en todos los servicios por defecto.
+- Lecturas que no toleran el retraso y se diseñan como si no existiera.
+- Proyecciones sin forma de reconstruirse.
+- Comandos que devuelven datos de lectura complejos.
+- Dos modelos que divergen sin pruebas.
+### Evidencia
+- Se mide el retraso de las proyecciones y hay un procedimiento de reconstrucción.
+
 ## Checklist de revisión
 - [ ] Comandos y consultas en handlers separados.
 - [ ] ADR que justifica cualquier modelo de lectura separado.

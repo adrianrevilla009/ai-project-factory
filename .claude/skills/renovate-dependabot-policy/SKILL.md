@@ -57,6 +57,19 @@ updates:
 ```
 (Claves de `dependabot.yml` a contrastar con la documentación vigente de GitHub)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un bot que propone actualizaciones agrupadas con pruebas automáticas; los parches se integran con rapidez y las versiones mayores se planifican.
+- Los cambios de seguridad tienen prioridad y plazo.
+### Trampas frecuentes
+- Cientos de PR de actualización sin revisar.
+- Combinar actualización con cambios funcionales.
+- Fusionar sin pruebas fiables.
+- Sin agrupación ni calendario.
+- Ignorar las mayores hasta que son imposibles.
+### Evidencia
+- Una tasa de PR de actualización integrados y su edad media.
+
 ## Checklist de revisión
 - [ ] Bot activo para todos los ecosistemas presentes.
 - [ ] Agrupación y límite de PRs configurados.

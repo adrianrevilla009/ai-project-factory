@@ -44,6 +44,19 @@ Cumplimos NIST SSDF.
 | RV | Gestionar vulnerabilidades | SECURITY.md + SLA | Operación | hecho |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Integra la seguridad en cada fase (requisitos, diseño, código, pruebas, entrega, operación) con actividades proporcionales al riesgo del cambio.
+- Mide con pocos indicadores útiles (tiempo de corrección, cobertura de análisis), no con el número de actividades.
+### Trampas frecuentes
+- Una auditoría de seguridad final que llega tarde.
+- Un proceso idéntico para un cambio trivial y uno crítico.
+- Actividades que nadie ejecuta pero figuran en el documento.
+- Seguridad como equipo aparte que bloquea.
+- Sin dueño para corregir los hallazgos.
+### Evidencia
+- Una matriz actividad → fase → evidencia, con los registros reales de un cambio reciente.
+
 ## Checklist de revisión
 - [ ] Existe tabla de trazabilidad con una evidencia por fila.
 - [ ] Hay modelo de amenazas previo a implementar.

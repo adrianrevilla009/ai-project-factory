@@ -54,6 +54,19 @@ DB_PASSWORD=changeme
 # 3) limpiar historial si procede  4) post-mortem y regla de deteccion
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un gestor de secretos con acceso por identidad, rotación y auditoría; los secretos de corta vida son mejores que los estáticos.
+- La aplicación recibe una referencia, no el valor, siempre que sea posible.
+### Trampas frecuentes
+- Secretos en el repositorio, en la imagen o en variables de entorno sin control.
+- Un único secreto compartido por todos los entornos.
+- Sin rotación.
+- Registro de secretos en logs o volcados.
+- Procedimiento de fuga improvisado.
+### Evidencia
+- Un escáner de secretos en CI y una rotación ensayada de una credencial.
+
 ## Checklist de revisión
 - [ ] No hay secretos en repo, imágenes ni logs; `.env` en `.gitignore`.
 - [ ] Origen del secreto en runtime documentado, con permisos mínimos.

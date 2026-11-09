@@ -48,6 +48,19 @@ max(hikaricp_connections_pending{application="orders-api"})
 ```
 Los nombres de métrica dependen del exportador y la versión de Micrometer.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Servicios con peticiones: tasa, errores y duración (RED); recursos: utilización, saturación y errores (USE); y las cuatro señales doradas como mínimo de cada servicio.
+- Empieza por lo que ve el usuario.
+### Trampas frecuentes
+- Medir solo recursos y no la experiencia.
+- Promedios en lugar de percentiles.
+- Un tablero distinto por servicio sin estándar.
+- Alertas por cada señal sin criterio.
+- Olvidar la saturación.
+### Evidencia
+- Cada servicio tiene el mismo tablero base con sus señales.
+
 ## Checklist de revisión
 - [ ] RED por endpoint y USE por recurso presentes.
 - [ ] Latencia con histograma y percentiles.

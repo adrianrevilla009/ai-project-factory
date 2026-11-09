@@ -61,6 +61,19 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 </suppress>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Escanea dependencias directas y transitivas con una política de severidad y plazos; prioriza lo explotable y alcanzable.
+- Actualizar con frecuencia reduce el riesgo más que cualquier escáner.
+### Trampas frecuentes
+- Ignorar las transitivas.
+- Silenciar alertas sin motivo y sin caducidad.
+- Actualizar solo ante una alerta.
+- Dependencias abandonadas sin plan.
+- Confiar en una única fuente de datos de vulnerabilidades.
+### Evidencia
+- Un informe de vulnerabilidades abiertas por severidad y edad con una política de plazos.
+
 ## Checklist de revisión
 - [ ] SCA en CI con umbral de fallo definido.
 - [ ] Versiones fijadas y lockfile usado.

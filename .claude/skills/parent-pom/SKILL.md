@@ -58,6 +58,19 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
 </build>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Centraliza en el padre versiones, plugins y configuración común; cada módulo hereda y solo declara lo propio.
+- El padre se versiona como un artefacto más.
+### Trampas frecuentes
+- Configuración duplicada en cada módulo.
+- Un padre que impone dependencias a todos.
+- Versiones de plugins sin fijar.
+- Cambios en el padre sin probar con los módulos.
+- Un padre corporativo que se actualiza sin aviso.
+### Evidencia
+- Un build limpio con la configuración de solo el padre.
+
 ## Checklist de revisión
 - [ ] Todos los plugins con versión en `pluginManagement`.
 - [ ] `release` en lugar de `source`/`target`; encoding UTF-8.

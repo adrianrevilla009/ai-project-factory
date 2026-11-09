@@ -54,6 +54,19 @@ em.createQuery("select u from User u where u.email = :email", User.class)
 new ProcessBuilder("/usr/bin/convert", safeFile.toString(), "out.png").start();
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una defensa por familia: parametrización (SQL, NoSQL), codificación de contexto (HTML, LDAP), API sin shell (comandos), y listas permitidas.
+- Pensar en «datos frente a código»: nunca los mezcles.
+### Trampas frecuentes
+- Construir comandos o consultas concatenando entrada.
+- Confiar en filtros de caracteres.
+- Plantillas que evalúan expresiones del usuario.
+- Registrar entrada sin neutralizar (inyección en registros).
+- Olvidar las inyecciones de segundo orden.
+### Evidencia
+- Pruebas con cargas de cada familia contra cada punto de entrada.
+
 ## Checklist de revisión
 - [ ] Ningún SQL/JPQL se construye con `+` o `format` sobre datos externos.
 - [ ] Los `ORDER BY`/nombres dinámicos pasan por allowlist.

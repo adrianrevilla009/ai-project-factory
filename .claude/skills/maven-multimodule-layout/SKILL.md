@@ -59,6 +59,19 @@ La estructura de módulos es la forma más barata de hacer cumplir la arquitectu
 ```
 Build parcial: `./mvnw -pl orders-boot -am verify` compila el módulo y lo que necesita.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un módulo por límite que quieres hacer cumplir o por artefacto que despliegas; no más.
+- Define dependencias entre módulos en un solo sentido y sin ciclos.
+### Trampas frecuentes
+- Módulos que son carpetas sin razón.
+- Dependencias cíclicas «resueltas» con un módulo común.
+- Versiones repetidas en cada módulo.
+- Módulos que tardan más en compilar que su valor.
+- Un módulo de utilidades que lo contiene todo.
+### Evidencia
+- El grafo de módulos es acíclico y las pruebas de arquitectura lo comprueban.
+
 ## Checklist de revisión
 - [ ] `*-domain` no tiene Spring/JPA en su árbol de dependencias.
 - [ ] No hay ciclos ni módulos `common`/`utils`.

@@ -59,6 +59,19 @@ DefaultErrorHandler errorHandler(KafkaTemplate<Object, Object> template) {
 ```
 ARN de ejemplo (`example`); la política es configuración preparada para AWS, no verificada en real. En local, LocalStack o ElasticMQ solo emulan la redrive de forma aproximada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reintentos con retroceso y límite, y después a una cola de mensajes fallidos con alerta; un mensaje que falla por su contenido no mejora reintentando.
+- Distingue fallos transitorios de permanentes.
+### Trampas frecuentes
+- Reintentos infinitos que bloquean la partición.
+- Una cola de fallidos que nadie mira.
+- Reenviar mensajes sin arreglar la causa.
+- Perder el contexto del fallo.
+- No tener un procedimiento para reprocesar.
+### Evidencia
+- Una alerta sobre la profundidad de la cola de fallidos y un procedimiento de reproceso probado.
+
 ## Checklist de revisión
 - [ ] Errores permanentes no se reintentan.
 - [ ] Reintentos acotados con backoff y jitter.

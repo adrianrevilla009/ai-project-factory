@@ -53,6 +53,19 @@ try (var scope = span.makeCurrent()) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra para cada llamada al modelo: modelo, versión, tokens, latencia, coste, resultado y evaluación, sin guardar contenido sensible sin necesidad.
+- Las evaluaciones de calidad son parte de la observabilidad.
+### Trampas frecuentes
+- Registrar prompts completos con datos personales.
+- Medir solo latencia y no calidad.
+- Sin coste por petición ni por tenant.
+- Cambiar de modelo sin comparar métricas.
+- Sin trazas que unan la llamada con el flujo de negocio.
+### Evidencia
+- Un tablero de coste, latencia y calidad por modelo y versión.
+
 ## Checklist de revisión
 - [ ] Span por llamada con modelo y tokens.
 - [ ] Métricas de latencia, tokens, errores y coste.

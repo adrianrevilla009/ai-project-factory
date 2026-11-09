@@ -64,6 +64,19 @@ sftp.known-hosts=/etc/factory/known_hosts
 sftp.password=changeme-example
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Procesa ficheros con validación previa, idempotencia por nombre y suma de comprobación, y mueve a «procesado» o «error».
+- Define el contrato del fichero (formato, codificación, frecuencia).
+### Trampas frecuentes
+- Procesar un fichero a medio escribir.
+- Sin validar antes de cargar.
+- Reprocesar el mismo fichero y duplicar datos.
+- Credenciales SFTP compartidas.
+- Sin alerta si no llega el fichero esperado.
+### Evidencia
+- Una alerta de fichero no recibido y una prueba con fichero corrupto y repetido.
+
 ## Checklist de revisión
 - [ ] Entrega atómica (`.part` + rename) y checksum validado.
 - [ ] Idempotencia por nombre+checksum; job reiniciable.

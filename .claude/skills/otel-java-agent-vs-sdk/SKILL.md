@@ -49,6 +49,19 @@ ENV JAVA_TOOL_OPTIONS="-javaagent:/opt/otel/agent.jar" \
     OTEL_TRACES_SAMPLER_ARG=0.1
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El agente ofrece instrumentación automática con poco código; el SDK, control fino y spans de negocio: combina ambos.
+- Fija versiones del agente y revisa su coste.
+### Trampas frecuentes
+- Solo instrumentación automática y ningún span de negocio.
+- Instrumentar a mano lo que el agente ya cubre.
+- Agente sin fijar versión.
+- Ignorar el impacto en el arranque y la memoria.
+- Configuración distinta por servicio.
+### Evidencia
+- Una medición del coste del agente y los spans de negocio que cubren los flujos críticos.
+
 ## Checklist de revisión
 - [ ] Una sola vía de instrumentación declarada.
 - [ ] Agente con versión y checksum fijados.

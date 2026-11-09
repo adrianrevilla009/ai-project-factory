@@ -52,6 +52,19 @@ El heap "alto" suele ser normal (GC lazy); lo que importa es el heap tras GC, el
 JAVA_TOOL_OPTIONS=-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/dumps
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Observa memoria, recolección de basura, hilos y pools con métricas estándar y establece alertas sobre síntomas (latencia, errores) más que sobre cada métrica interna.
+- Activa perfilado continuo de bajo coste si hace falta.
+### Trampas frecuentes
+- Alertar por uso de CPU o memoria sin relación con el usuario.
+- No distinguir montón y memoria nativa.
+- Volcados de hilos manuales ante un incidente.
+- Sin línea base de comportamiento normal.
+- Métricas internas sin dueño.
+### Evidencia
+- Un tablero de JVM con una línea base y qué cambio indica problema.
+
 ## Checklist de revisión
 - [ ] Dashboard de JVM y pools por servicio.
 - [ ] Memoria comparada con el límite del contenedor.

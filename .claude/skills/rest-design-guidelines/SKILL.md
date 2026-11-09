@@ -54,6 +54,19 @@ ProblemDetail notFound(OrderNotFoundException ex) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Recursos y verbos con su semántica (seguros, idempotentes); para operaciones de negocio que no encajan, un recurso que represente la acción.
+- Una convención única de nombres, errores, paginación y filtros en toda la organización.
+### Trampas frecuentes
+- Verbos en la ruta (`/crearPedido`).
+- `POST` para todo.
+- Cambiar semántica entre versiones sin avisar.
+- Respuestas con estructuras distintas según el endpoint.
+- Exponer el modelo interno de la base de datos.
+### Evidencia
+- Un linter de contratos comprueba las convenciones en CI.
+
 ## Checklist de revisión
 - [ ] Rutas con sustantivos plurales, sin verbos.
 - [ ] Códigos de estado correctos y `Location` en 201.

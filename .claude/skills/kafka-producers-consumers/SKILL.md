@@ -74,6 +74,19 @@ void onOrder(OrderCreated event) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Claves de partición que reparten la carga y conservan el orden donde importa; confirmación manual tras procesar.
+- Productores idempotentes y consumidores idempotentes: la entrega es al menos una vez.
+### Trampas frecuentes
+- Confirmación automática antes de procesar: se pierden mensajes.
+- Una clave de partición que concentra la carga.
+- Consumidores que tardan más que el tiempo máximo y provocan reequilibrios.
+- Sin gestión de mensajes venenosos.
+- Asumir orden global.
+### Evidencia
+- Pruebas de reequilibrio, reintento y duplicados con Kafka real.
+
 ## Checklist de revisión
 - [ ] `acks=all` e idempotencia activos; resultado del `send` gestionado.
 - [ ] Auto-commit desactivado; `group.id` propio del servicio.

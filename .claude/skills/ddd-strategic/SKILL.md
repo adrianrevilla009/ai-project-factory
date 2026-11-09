@@ -50,6 +50,19 @@ Fragmento de context map (documento `docs/architecture/context-map.md` del proye
 | ERP      | Billing    | Anti-Corruption Layer| adaptador `ErpGateway`   |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Delimita contextos por lenguaje y propiedad del equipo, no por tablas; el mapa de contextos muestra cómo se relacionan (cliente-proveedor, conformista, capa anticorrupción).
+- Invierte más en el dominio central y compra o simplifica el resto.
+### Trampas frecuentes
+- Un único modelo para toda la empresa.
+- Contextos que coinciden con la estructura técnica y no con el negocio.
+- Lenguaje distinto entre código y conversaciones de negocio.
+- Mapa de contextos que nadie actualiza.
+- Aplicar DDD completo a un subdominio genérico.
+### Evidencia
+- Un glosario y un mapa de contextos revisados con el negocio.
+
 ## Checklist de revisión
 - [ ] Cada subdominio está clasificado (core/supporting/generic).
 - [ ] Cada context tiene dueño, responsabilidad y glosario propio.

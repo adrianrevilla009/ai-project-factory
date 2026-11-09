@@ -63,6 +63,19 @@ data "aws_iam_policy_document" "orders_reader" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Empieza sin permisos y añade lo mínimo; usa roles temporales por carga de trabajo y condiciones (origen, etiquetas) para acotar.
+- Revisa los permisos usados frente a los concedidos.
+### Trampas frecuentes
+- Comodines en acciones y recursos.
+- Credenciales de larga vida.
+- Un rol compartido por muchas cargas.
+- Permisos de administración «temporales» que se quedan.
+- Sin revisión periódica.
+### Evidencia
+- Un análisis de permisos no usados y reglas que rechazan los comodines.
+
 ## Checklist de revisión
 - [ ] Sin `*` en acciones ni recursos de workloads (excepciones justificadas).
 - [ ] `PassRole` y `AssumeRole` acotados; trust policy exacta.

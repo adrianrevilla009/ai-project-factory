@@ -59,6 +59,19 @@ policies:
   - { name: slow, type: latency, latency: { threshold_ms: 1000 } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Propaga el contexto de traza en todas las fronteras (HTTP, mensajes, hilos) y crea spans en las operaciones que importan, no en todas.
+- Muestrea con criterio: conserva errores y lentitud.
+### Trampas frecuentes
+- Contexto perdido en colas o tareas asíncronas.
+- Spans para cada método.
+- Muestreo uniforme que descarta los casos interesantes.
+- Atributos con datos sensibles.
+- Trazas sin relación con los registros.
+### Evidencia
+- Una traza completa de un flujo con mensajes y llamadas externas y con enlace a sus registros.
+
 ## Checklist de revisión
 - [ ] Spans de baja cardinalidad en nombre; atributos sin PII.
 - [ ] Contexto propagado en async y Kafka.

@@ -61,6 +61,19 @@ CREATE TABLE processed_event (
 -- insertIfAbsent: INSERT ... ON CONFLICT (event_id) DO NOTHING
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Asume entrega al menos una vez y haz idempotente el consumidor; «exactamente una vez» solo existe dentro de los límites de un sistema.
+- Documenta qué garantiza cada canal.
+### Trampas frecuentes
+- Creer que una transacción del broker cubre efectos en otra base de datos.
+- Consumidores que no toleran duplicados.
+- Orden asumido entre particiones.
+- Confirmar antes de procesar.
+- Mezclar semánticas sin documentarlo.
+### Evidencia
+- Una prueba entrega el mismo mensaje dos veces y comprueba un único efecto.
+
 ## Checklist de revisión
 - [ ] La garantía de entrega está declarada.
 - [ ] Existe outbox para eventos de dominio; no hay doble escritura.

@@ -64,6 +64,19 @@ paths:
 </plugin>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El contrato se escribe y se revisa antes del código y es la fuente de generación y de pruebas.
+- Valida las respuestas reales contra el contrato en las pruebas.
+### Trampas frecuentes
+- Contrato generado a posteriori que describe lo que hay, no lo que debe haber.
+- Código y contrato que divergen sin avisar.
+- Ejemplos inexistentes o incorrectos.
+- Esquemas con todo opcional.
+- Cambios incompatibles sin revisión del contrato.
+### Evidencia
+- El contrato está en el repositorio, validado en CI y verificado contra el servicio.
+
 ## Checklist de revisión
 - [ ] El YAML cambia en el mismo PR que el código.
 - [ ] `operationId`, ejemplos y errores definidos.

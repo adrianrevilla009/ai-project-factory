@@ -56,6 +56,19 @@ exceptions:
 mvn -B verify          # incluye el plugin de informe de licencias
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define una política de licencias permitidas, a revisar y prohibidas, y comprueba cada dependencia automáticamente.
+- Las excepciones las decide una persona con criterio legal.
+### Trampas frecuentes
+- Revisar licencias solo al final.
+- Mezclar código con licencias incompatibles.
+- Ignorar las transitivas.
+- Sin registro de excepciones.
+- Licencias de pago sin decisión.
+### Evidencia
+- Un informe de licencias por build con las excepciones aprobadas.
+
 ## Checklist de revisión
 - [ ] Cada dependencia nueva tiene licencia identificada, también las transitivas.
 - [ ] Ninguna licencia `denied` ni `unknown` en el informe.

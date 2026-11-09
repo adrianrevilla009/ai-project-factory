@@ -56,6 +56,19 @@ groups:
 ```
 Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Alerta sobre síntomas que afectan al usuario (errores, latencia, disponibilidad) y usa las causas para diagnosticar; cada alerta pagable tiene una acción clara.
+- Reduce el ruido con agrupación y umbrales basados en el objetivo de servicio.
+### Trampas frecuentes
+- Alertar por CPU o disco sin impacto.
+- Alertas sin runbook.
+- Pagar a una persona por algo que puede esperar al día siguiente.
+- Umbrales fijos copiados.
+- Nadie revisa la calidad de las alertas.
+### Evidencia
+- Una revisión periódica de las alertas por ruido y por incidentes que no detectaron.
+
 ## Checklist de revisión
 - [ ] Toda alerta `page` es síntoma o burn rate.
 - [ ] `runbook_url`, `summary` y `severity` presentes.

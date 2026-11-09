@@ -47,6 +47,19 @@ Código: guarda en primario y lee inmediatamente de la réplica para mostrar el 
 @Version private long version;   // conflicto -> OptimisticLockingFailureException -> 409
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Decide por operación: qué debe ser fuertemente consistente (dinero, inventario) y qué tolera consistencia eventual (listados, métricas).
+- Haz visible la consistencia eventual en la experiencia de usuario.
+### Trampas frecuentes
+- Pedir consistencia fuerte en todo y pagar latencia y disponibilidad.
+- Consistencia eventual sin tiempo máximo ni monitorización.
+- Ignorar qué ocurre durante una partición de red.
+- Esconder la inconsistencia al usuario hasta que genera un incidente.
+- Elegir por la tecnología y no por el requisito.
+### Evidencia
+- Una tabla operación → nivel de consistencia, con el motivo.
+
 ## Checklist de revisión
 - [ ] Tabla de consistencia por operación en el ADR.
 - [ ] Lecturas tras escritura leen del primario o usan versión.

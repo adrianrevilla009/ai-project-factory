@@ -45,6 +45,19 @@ HomeView home(@AuthenticationPrincipal Jwt jwt) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pasarela para preocupaciones transversales (autenticación, límites, enrutamiento); BFF cuando cada cliente necesita una forma distinta de los datos.
+- La pasarela no contiene lógica de negocio.
+### Trampas frecuentes
+- Lógica de negocio en la pasarela.
+- Un BFF compartido por clientes con necesidades distintas.
+- Pasarela que es un punto único de fallo sin alta disponibilidad.
+- Transformaciones complejas que nadie versiona.
+- Duplicar autenticación en la pasarela y en los servicios (confiar solo en una).
+### Evidencia
+- El contrato del BFF está versionado y probado con cada cliente.
+
 ## Checklist de revisión
 - [ ] El gateway sólo contiene preocupaciones transversales.
 - [ ] Cada BFF sirve a un cliente y tiene dueño.

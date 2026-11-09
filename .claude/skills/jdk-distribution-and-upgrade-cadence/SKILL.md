@@ -57,6 +57,19 @@ ci_matrix: ["21", "next-lts-early-access"]
 { "packageRules": [{ "matchPackageNames": ["eclipse-temurin"], "groupName": "jdk patch updates" }] }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige una distribución con soporte y publicación fiable para la versión elegida y una cadencia de actualización (versiones de soporte prolongado con un plan hacia la siguiente).
+- Actualiza parches de seguridad con rapidez.
+### Trampas frecuentes
+- Distribuciones sin soporte claro.
+- Quedarse en una versión sin parches.
+- Distintos JDK en construcción y ejecución.
+- Saltos de versión sin probar la compatibilidad de librerías.
+- Sin fecha de fin de soporte conocida.
+### Evidencia
+- Un calendario con el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración.
+
 ## Checklist de revisión
 - [ ] JDK objetivo es LTS y está documentado con fecha de revisión.
 - [ ] Misma distribución en local, CI e imagen.

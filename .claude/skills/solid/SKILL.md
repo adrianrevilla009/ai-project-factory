@@ -52,6 +52,19 @@ final class PriceCalculator {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Úsalos como preguntas de revisión, no como reglas absolutas: ¿por qué razones cambia esta clase? ¿depende de abstracciones útiles?
+- Aplica un principio cuando duele no hacerlo.
+### Trampas frecuentes
+- Interfaces para todo «por si acaso».
+- Clases diminutas que dispersan una idea.
+- Herencia para reutilizar código.
+- Abstracciones sin segundo uso real.
+- Citar el principio para cerrar una discusión.
+### Evidencia
+- Las revisiones dan ejemplos concretos del problema, no solo el nombre del principio.
+
 ## Checklist de revisión
 - [ ] Cada clase se describe sin usar "y".
 - [ ] No hay subclases que rechacen métodos heredados.

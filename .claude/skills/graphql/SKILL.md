@@ -53,6 +53,19 @@ Map<Order, Customer> customer(List<Order> orders) {
 ```
 Límite de profundidad: registrar instrumentación de max depth/complexity de graphql-java.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- GraphQL cuando muchos clientes necesitan forma flexible de los datos; si hay pocos clientes y consultas estables, REST es más simple.
+- Limita la profundidad, la complejidad y el coste de cada consulta.
+### Trampas frecuentes
+- Exponer el esquema de la base de datos.
+- Consultas sin límite que tumban el servicio.
+- N+1 en los resolvedores sin carga por lotes.
+- Autorización solo a nivel de consulta y no de campo.
+- Introspección abierta en producción sin decisión.
+### Evidencia
+- Pruebas de consultas costosas y de autorización por campo.
+
 ## Checklist de revisión
 - [ ] Esquema revisado antes del código; listas paginadas.
 - [ ] Relaciones con batch/DataLoader.

@@ -46,6 +46,19 @@ router:
 deploy: "una celda cada vez; si el error rate de la celda canario > umbral, parar"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Celdas cuando necesitas limitar el radio de impacto (por cliente, región o grupo); cada celda es una copia completa e independiente.
+- El enrutador de celdas debe ser simple y muy fiable.
+### Trampas frecuentes
+- Celdas que comparten una base de datos o una dependencia crítica.
+- Un enrutador complejo que se vuelve el punto de fallo.
+- Celdas demasiado grandes o desiguales.
+- Sin forma de mover un cliente entre celdas.
+- Adoptar el modelo con una carga que no lo justifica.
+### Evidencia
+- Un experimento que apaga una celda y mide que el resto no se ve afectado.
+
 ## Checklist de revisión
 - [ ] La celda es autosuficiente en la ruta crítica.
 - [ ] El enrutador es simple y su caída tiene plan.

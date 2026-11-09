@@ -61,6 +61,19 @@ Override justificado:
 <!-- OVERRIDE: CVE-XXXX-example, ticket SEC-0000, retirar cuando el BOM >= x.y (2027-01-31) -->
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un BOM corporativo fija versiones compatibles de las librerías aprobadas; los proyectos importan el BOM y no declaran versiones sueltas.
+- Actualiza el BOM con pruebas de compatibilidad.
+### Trampas frecuentes
+- Versiones declaradas por proyecto que divergen.
+- Un BOM que nadie mantiene.
+- Sobrescribir versiones del BOM sin decisión.
+- Mezclar BOM de distintas generaciones.
+- Actualizar una librería sin probar el conjunto.
+### Evidencia
+- Una comprobación en CI rechaza versiones fuera del BOM.
+
 ## Checklist de revisión
 - [ ] Ninguna dependencia gestionada lleva `<version>`.
 - [ ] Cada override tiene motivo, ticket y fecha.

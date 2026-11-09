@@ -58,6 +58,19 @@ components:
   "correlationId": "example-corr-1", "data": { "orderId": "o-1", "total": "10.50", "currency": "EUR" } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Documenta cada evento con su canal, esquema, propietario y garantías (orden, entrega).
+- El contrato de eventos es tan público como el de una API.
+### Trampas frecuentes
+- Eventos sin esquema.
+- Cambiar un evento sin versionar.
+- Campos con significado implícito.
+- Consumidores desconocidos para el productor.
+- Contrato que no coincide con lo publicado.
+### Evidencia
+- El contrato se valida en CI contra los mensajes reales y está versionado.
+
 ## Checklist de revisión
 - [ ] Canal y mensaje en AsyncAPI; esquema publicado.
 - [ ] Envelope completo con `id` único y versión.

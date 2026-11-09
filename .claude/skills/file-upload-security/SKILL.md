@@ -58,6 +58,19 @@ UploadResponse upload(@RequestParam MultipartFile file) throws IOException {
 # target.normalize() no empieza por el directorio destino.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Valida tipo por contenido y no por extensión, limita el tamaño, guarda fuera de la raíz web con un nombre generado y sirve con cabeceras seguras.
+- Analiza el contenido (antivirus) cuando el riesgo lo justifica.
+### Trampas frecuentes
+- Guardar con el nombre original.
+- Servir los archivos subidos desde el mismo origen que la aplicación.
+- Confiar en el tipo MIME del cliente.
+- Procesar imágenes o documentos con librerías sin límites.
+- Permitir ejecutar lo subido.
+### Evidencia
+- Pruebas con archivos disfrazados, enormes y con rutas maliciosas.
+
 ## Checklist de revisión
 - [ ] Límites de tamaño configurados y probados.
 - [ ] Tipo validado por contenido y allowlist.

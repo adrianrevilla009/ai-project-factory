@@ -60,6 +60,19 @@ ResponseEntity<Void> hook(@RequestBody byte[] raw,
 webhook.secret=changeme-example-secret
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Firma cada envío (HMAC con marca de tiempo) y verifica en el receptor con comparación en tiempo constante; reintentos con retroceso y un identificador de evento para deduplicar.
+- Permite rotar secretos sin interrupción.
+### Trampas frecuentes
+- Webhooks sin firma.
+- Comparar la firma con `equals`.
+- Aceptar peticiones antiguas (reproducción).
+- Procesar de forma síncrona y largo en el receptor.
+- Sin forma de reenviar eventos perdidos.
+### Evidencia
+- Pruebas de firma inválida, antigua y duplicada.
+
 ## Checklist de revisión
 - [ ] Firma verificada sobre bytes crudos, comparación constante.
 - [ ] Ventana de timestamp y deduplicación por `eventId`.

@@ -54,6 +54,19 @@ if (!limiter.tryConsume(clientKey)) {
 ```
 Librería concreta (Bucket4j, Resilience4j RateLimiter o límite en gateway). En local no se reproduce el límite del API Gateway/WAF de AWS.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Protege en capas: borde (CDN, WAF), pasarela y servicio; limita por identidad y por coste, no solo por número de peticiones.
+- Diseña la degradación: qué sigue funcionando cuando se está bajo ataque.
+### Trampas frecuentes
+- Solo límites por IP.
+- Consultas o expresiones con coste ilimitado.
+- Sin tiempos máximos en las peticiones.
+- Respuestas de error caras de generar.
+- No probar el comportamiento bajo carga hostil.
+### Evidencia
+- Una prueba de carga con tráfico abusivo demuestra que el servicio degrada de forma controlada.
+
 ## Checklist de revisión
 - [ ] Todo listado paginado con máximo.
 - [ ] Rate limit en login y endpoints caros; respuesta 429 con `Retry-After`.

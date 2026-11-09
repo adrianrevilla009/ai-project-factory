@@ -50,6 +50,19 @@ Money total(Order order, PricingContext ctx) {
 // Pasos: test de caracterización -> extract method subtotal() -> introduce parameter object PricingContext
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Refactoriza con pruebas que cubren el comportamiento, en pasos pequeños y separados de los cambios funcionales.
+- Prioriza los olores en código que cambia a menudo.
+### Trampas frecuentes
+- Refactorizar sin pruebas.
+- Mezclar refactor y funcionalidad en el mismo PR.
+- Perseguir olores en código estable que nadie toca.
+- Grandes reescrituras que no entregan valor hasta el final.
+- Renombrados masivos sin revisión.
+### Evidencia
+- Cada refactor mantiene verdes las pruebas existentes.
+
 ## Checklist de revisión
 - [ ] Hay tests antes del refactor.
 - [ ] Commits de refactor separados de los de comportamiento.

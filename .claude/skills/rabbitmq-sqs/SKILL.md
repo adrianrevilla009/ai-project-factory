@@ -63,6 +63,19 @@ resource "aws_sqs_queue" "invoices" {
 ```
 Nombres de atributos Terraform: los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Colas de trabajo con confirmación explícita, tiempo de visibilidad mayor que el de proceso y cola de mensajes fallidos.
+- SQS estándar no garantiza orden ni una única entrega; las colas FIFO lo ofrecen con límites de rendimiento.
+### Trampas frecuentes
+- Tiempo de visibilidad menor que el proceso: duplicados.
+- Confirmar antes de terminar.
+- Mensajes grandes en la cola (guarda el objeto aparte).
+- Sin cola de fallidos.
+- Asumir orden en colas estándar.
+### Evidencia
+- Pruebas con duplicados y con consumidores lentos.
+
 ## Checklist de revisión
 - [ ] Justificada cola frente a Kafka.
 - [ ] Ack/delete solo tras éxito; prefetch o visibility timeout dimensionados.

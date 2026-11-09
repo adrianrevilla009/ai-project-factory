@@ -60,6 +60,19 @@ distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-mav
 ./mvnw -B verify
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El wrapper fija la versión de Maven del proyecto y las toolchains, la del JDK; así el build es el mismo en cada máquina.
+- Actualízalos de forma deliberada.
+### Trampas frecuentes
+- Depender del Maven instalado en cada máquina.
+- Versiones distintas en CI y en local.
+- Wrapper sin verificación de integridad.
+- Un JDK distinto al de ejecución.
+- No actualizar nunca.
+### Evidencia
+- Un clon limpio construye con un único comando sin instalaciones previas.
+
 ## Checklist de revisión
 - [ ] `mvnw` y `.mvn/wrapper/` están en git.
 - [ ] CI y Dockerfile llaman a `./mvnw`.

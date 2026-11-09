@@ -67,6 +67,19 @@ spring:
       max-file-size: 5MB
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Valida en el borde con listas permitidas (formato, longitud, rango) y codifica la salida según el contexto (HTML, URL, SQL, shell).
+- La validación no sustituye a la parametrización ni a la codificación.
+### Trampas frecuentes
+- Validar en el cliente solamente.
+- Listas de caracteres prohibidos.
+- Codificar en la entrada en lugar de en la salida.
+- Ignorar el contexto (HTML frente a atributo frente a script).
+- Mensajes de error que reflejan la entrada sin codificar.
+### Evidencia
+- Pruebas con entradas hostiles para cada contexto de salida.
+
 ## Checklist de revisión
 - [ ] Los DTOs de entrada tienen restricciones y `@Valid`.
 - [ ] Hay límites de longitud y tamaño.
