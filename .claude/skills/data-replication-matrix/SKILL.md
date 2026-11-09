@@ -59,6 +59,19 @@ dynamo.putItem(r -> r.tableName("events")
     .conditionExpression("attribute_not_exists(pk) AND attribute_not_exists(sk)"));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Para cada almacén, decide el modelo de replicación y sus límites: qué lee quién, cuánto retraso se tolera y cómo se resuelven los conflictos.
+- Documenta lo que no soporta (transacciones, caducidades, consistencia fuerte entre regiones).
+### Trampas frecuentes
+- Asumir que la réplica es consistente y actual.
+- Escrituras en varias regiones sin regla de conflicto.
+- Almacenes con garantías distintas tratados igual.
+- Sin medir el retraso.
+- Olvidar los datos derivados (cachés, búsqueda).
+### Evidencia
+- Una matriz almacén → replicación → retraso → conflicto → procedimiento.
+
 ## Checklist de revisión
 - [ ] Cada almacén aparece en la matriz con mecanismo y RPO medido.
 - [ ] Región de escritura por agregado definida y enrutada.

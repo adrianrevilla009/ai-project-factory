@@ -57,6 +57,19 @@ dependencies:
     on_failure: "tokens ya emitidos válidos hasta su exp; sin login nuevo"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mapea las dependencias reales (síncronas y asíncronas, internas y de terceros) y calcula qué pierde cada fallo; prioriza reducir el radio de impacto.
+- Incluye dependencias globales (identidad, DNS).
+### Trampas frecuentes
+- Un mapa dibujado una vez a mano.
+- Suponer que un tercero «regional» es independiente de tu región.
+- Dependencias duras donde bastaría una degradación.
+- No incluir las dependencias de herramientas de operación.
+- Sin revisión cuando cambia la arquitectura.
+### Evidencia
+- Un mapa generado desde trazas y un análisis de impacto por componente.
+
 ## Checklist de revisión
 - [ ] Todas las dependencias, incluidas las de plataforma, listadas.
 - [ ] Cada una marcada dura/blanda con comportamiento degradado.

@@ -54,6 +54,19 @@ spring:
       fail-fast: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un servidor de configuración solo cuando hay muchos servicios y cambios frecuentes; para pocos, ficheros por entorno en un repositorio bastan.
+- Los secretos no viven en el repositorio de configuración.
+### Trampas frecuentes
+- Un servidor de configuración como punto único de fallo.
+- Secretos en el repositorio de configuración.
+- Cambios de configuración sin revisión.
+- Recarga en caliente sin entender sus efectos.
+- Dependencia del servidor para arrancar sin respaldo.
+### Evidencia
+- Una prueba de arranque con el servidor de configuración caído.
+
 ## Checklist de revisión
 - [ ] ADR del proyecto que justifica Config Server frente a GitOps + Vault.
 - [ ] Sin secretos en el repo de configuración.

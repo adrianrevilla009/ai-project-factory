@@ -65,6 +65,19 @@ spec:
 ```
 `networking.istio.io/v1` es la versión servida y almacenada (verificado el 2026-11-08); los valores numéricos se ajustan con pruebas de carga.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Tiempos máximos, reintentos acotados y detección de valores atípicos configurados por ruta con valores justificados; reparte tráfico con pesos para despliegues progresivos.
+- Los reintentos de la malla y los de la aplicación no deben multiplicarse.
+### Trampas frecuentes
+- Reintentos en la malla y en el cliente a la vez.
+- Tiempos máximos mayores que el de la petición entrante.
+- Pesos que no suman o rutas que se pisan.
+- Sin tiempo máximo en rutas lentas.
+- Configuración por servicio sin estándar.
+### Evidencia
+- Una prueba con un backend lento muestra el tiempo máximo y los reintentos esperados.
+
 ## Checklist de revisión
 - [ ] Timeout en cada ruta.
 - [ ] `connectionPool` y `outlierDetection` en críticos.

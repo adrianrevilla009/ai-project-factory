@@ -65,6 +65,19 @@ resource "aws_route53_resolver_rule" "corp" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Zonas privadas para nombres internos y reenvío condicional hacia y desde la red local; nombres coherentes entre entornos.
+- Controla quién puede crear registros.
+### Trampas frecuentes
+- Zonas públicas con nombres internos.
+- Reglas de reenvío demasiado amplias.
+- Registros de salud que no reflejan el estado real.
+- Sin firma de zonas públicas cuando procede.
+- Dependencias de DNS de una sola región.
+### Evidencia
+- Pruebas de resolución desde cada red y de comportamiento ante la caída de un resolvedor.
+
 ## Checklist de revisión
 - [ ] Zonas privadas asociadas a todas las VPC consumidoras.
 - [ ] Resolver endpoints con 2+ IP en AZ distintas y SG limitado a 53.

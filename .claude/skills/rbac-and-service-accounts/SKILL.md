@@ -54,6 +54,19 @@ rules:
     verbs: ["get"]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Permisos mínimos por rol y por cuenta de servicio; una cuenta de servicio por carga, sin montar credenciales cuando no se necesitan.
+- Revisa quién puede hacer qué de forma periódica.
+### Trampas frecuentes
+- Enlaces a administrador del clúster para personas o aplicaciones.
+- Cuenta de servicio por defecto compartida.
+- Permisos con comodines.
+- Credenciales de cuenta de servicio de larga vida.
+- Sin revisión de permisos.
+### Evidencia
+- Un informe de permisos efectivos por cuenta de servicio y reglas que rechazan los comodines.
+
 ## Checklist de revisión
 - [ ] ServiceAccount propia, sin automount innecesario.
 - [ ] Sin `cluster-admin` ni wildcards para apps.

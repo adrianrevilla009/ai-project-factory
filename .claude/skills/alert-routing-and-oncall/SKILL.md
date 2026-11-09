@@ -66,6 +66,19 @@ inhibit_rules:
     equal: [namespace, service]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Enruta por servicio y gravedad a quien puede actuar; agrupa y suprime duplicados, y usa múltiples ventanas para las alertas por presupuesto de error.
+- Revisa la calidad de las alertas con regularidad.
+### Trampas frecuentes
+- Todas las alertas a todos.
+- Sin agrupación: tormenta de avisos.
+- Alertas sin dueño ni acción.
+- Silencios permanentes.
+- Sin pruebas del encaminamiento.
+### Evidencia
+- Una alerta de prueba llega a la persona correcta por el canal correcto.
+
 ## Checklist de revisión
 - [ ] Cada alerta de página tiene `runbook_url` y es accionable.
 - [ ] Agrupación, tiempos e inhibiciones explícitos.

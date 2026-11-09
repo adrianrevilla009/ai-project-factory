@@ -55,6 +55,19 @@ resource "aws_cloudwatch_event_target" "page_oncall" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Acceso de emergencia con credenciales sellados, uso excepcional, alerta inmediata y revisión posterior; acceso privilegiado normal, temporal y con aprobación.
+- Prueba el procedimiento de emergencia periódicamente.
+### Trampas frecuentes
+- Acceso permanente de administración «por si acaso».
+- Cuentas de emergencia sin alertas.
+- Un procedimiento que nadie ha ensayado.
+- Credenciales de emergencia en un lugar al que accede mucha gente.
+- Sin revisión tras cada uso.
+### Evidencia
+- Un ensayo anual del acceso de emergencia con registro y alertas.
+
 ## Checklist de revisión
 - [ ] Elevación JIT con aprobación, motivo y caducidad.
 - [ ] Rol break-glass con MFA y alerta en cada uso.

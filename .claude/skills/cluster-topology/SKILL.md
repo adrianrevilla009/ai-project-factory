@@ -44,6 +44,19 @@ clusters:
 local: kind (1 clúster, sin AZ; no reproduce LB, IAM ni multi-AZ)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un clúster por entorno y por límite de riesgo; múltiples clústeres pequeños aíslan mejor pero cuestan más de operar.
+- Separa el plano de gestión de las cargas cuando el tamaño lo justifica.
+### Trampas frecuentes
+- Un clúster para todo, incluidos producción y pruebas.
+- Clústeres tan numerosos que nadie puede mantenerlos al día.
+- Cargas de distinta criticidad en los mismos nodos sin aislamiento.
+- Dependencias entre clústeres sin documentar.
+- Sin plan de recreación de un clúster.
+### Evidencia
+- Un clúster nuevo se crea desde código y se prueba restaurando una carga en él.
+
 ## Checklist de revisión
 - [ ] Prod y no-prod en clústeres separados.
 - [ ] ADR con propósito y criterio de crecimiento por clúster.

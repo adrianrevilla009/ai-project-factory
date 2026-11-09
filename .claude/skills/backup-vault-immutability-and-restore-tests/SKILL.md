@@ -54,6 +54,19 @@ Trimestral: restaurar último recovery point de Aurora en eu-central-1 a un clú
 ejecutar consulta de negocio de control, anotar duración, destruir el clúster.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Copias inmutables en una cuenta aislada con bloqueo de retención y pruebas periódicas de restauración automatizadas.
+- Protege contra borrado malicioso y contra errores propios.
+### Trampas frecuentes
+- Copias en la misma cuenta que los datos.
+- Restauraciones nunca probadas.
+- Bloqueo configurado que se puede desactivar con un permiso común.
+- Sin cifrado ni control de acceso.
+- Objetivos de recuperación sin medir.
+### Evidencia
+- Un informe de restauración reciente con el tiempo real medido.
+
 ## Checklist de revisión
 - [ ] Copia cross-region (y cross-account) configurada.
 - [ ] Vault Lock con min/max y periodo de enfriamiento deliberado.

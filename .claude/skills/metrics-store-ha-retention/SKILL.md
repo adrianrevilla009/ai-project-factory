@@ -50,6 +50,19 @@ args:
   - --storage.tsdb.retention.size=40GB     # PVC de 50Gi
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dimensiona almacenamiento y retención por valor de los datos: alta resolución poco tiempo, agregados mucho tiempo.
+- Alta disponibilidad con réplicas y copia; un almacén a largo plazo con licencia abierta por ADR.
+### Trampas frecuentes
+- Retención uniforme y coste desbordado.
+- Una sola réplica del almacén.
+- Cardinalidad sin control que hunde el rendimiento.
+- Sin copia de seguridad de las reglas y paneles.
+- Consultas sin límite.
+### Evidencia
+- Una prueba de pérdida de una réplica sin pérdida de datos ni de alertas.
+
 ## Checklist de revisión
 - [ ] Retención por tiempo y por tamaño explícitas, con margen en el PVC.
 - [ ] Al menos 2 réplicas con `external_labels` diferenciadores.

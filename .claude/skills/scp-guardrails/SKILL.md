@@ -52,6 +52,19 @@ Una SCP errónea en la raíz puede dejar a toda la organización sin acceso. El 
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Las políticas de control de servicios son barreras que niegan; no conceden permisos. Pocas y claras: regiones permitidas, protección de registros y de la propia estructura.
+- Pruébalas primero en una unidad de pruebas.
+### Trampas frecuentes
+- Un conjunto enorme que nadie entiende.
+- Negar sin excepciones documentadas para las cuentas de gestión.
+- Cambiarlas directamente en producción.
+- Confundir una política de control con permisos concedidos.
+- Superar el límite de tamaño sin darse cuenta.
+### Evidencia
+- Un caso de prueba por política demuestra la denegación y una revisión de impacto antes de aplicarla.
+
 ## Checklist de revisión
 - [ ] Deny list sobre `FullAWSAccess`.
 - [ ] Región restringida a eu-west-1/eu-central-1 con excepciones globales.

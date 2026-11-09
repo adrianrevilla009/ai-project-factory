@@ -45,6 +45,19 @@ vault operator raft snapshot restore /backup/raft-example.snap   # solo en el en
 # CronJob (resumen): schedule "0 */6 * * *" -> RPO objetivo 6 h; alerta si el último snapshot > 7 h
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada servicio de identidad y secretos tiene su plan de recuperación con copias, orden de arranque y dependencias; en una conmutación, primero los datos y luego el servicio.
+- Prueba la recuperación de ambos juntos.
+### Trampas frecuentes
+- Planes de recuperación independientes que no encajan.
+- Copias sin la clave de desbloqueo.
+- Sin ensayo de la conmutación.
+- Dependencia circular entre ambos servicios.
+- Tiempos de recuperación no medidos.
+### Evidencia
+- Un ensayo de recuperación conjunta con el tiempo real medido.
+
 ## Checklist de revisión
 - [ ] Snapshots programados, cifrados y fuera de la región; RPO declarado.
 - [ ] Ensayo de restauración con RTO medido y fecha del último.

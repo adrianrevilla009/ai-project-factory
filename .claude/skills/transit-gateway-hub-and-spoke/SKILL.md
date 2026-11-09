@@ -68,6 +68,19 @@ resource "aws_ec2_transit_gateway_route" "to_euc1" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un nodo central de tránsito cuando hay muchas redes que conectar; segmenta con tablas de rutas por dominio de confianza.
+- Valora el coste por volumen frente a conexiones directas en pocas redes.
+### Trampas frecuentes
+- Todas las redes con todas por defecto.
+- Aceptar conexiones automáticamente.
+- Sin inspección ni registro del tráfico entre dominios.
+- Ignorar el coste por gigabyte.
+- Rutas que se propagan sin control.
+### Evidencia
+- Una matriz de qué redes pueden hablar con cuáles, comprobada por pruebas de conectividad.
+
 ## Checklist de revisión
 - [ ] Asociación/propagación por defecto desactivadas; tablas por segmento.
 - [ ] dev y prod sin ruta entre sí.

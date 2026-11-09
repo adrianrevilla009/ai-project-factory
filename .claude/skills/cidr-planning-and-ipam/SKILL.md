@@ -62,6 +62,19 @@ resource "aws_vpc" "orders" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Planifica los rangos de toda la organización desde el principio con un gestor central: sin solapamientos entre cuentas, regiones ni redes locales.
+- Reserva espacio para crecer y para redes que aún no existen.
+### Trampas frecuentes
+- Rangos solapados que impiden conectar redes después.
+- Redes demasiado pequeñas que se agotan.
+- Asignación a mano en hojas de cálculo.
+- No reservar rangos para pods o servicios en clústeres.
+- Usar el mismo rango en todos los entornos.
+### Evidencia
+- Un inventario central de rangos validado automáticamente contra solapamientos.
+
 ## Checklist de revisión
 - [ ] El CIDR viene del plan/IPAM y está en la tabla de asignaciones.
 - [ ] No solapa con otras VPC, regiones ni on-premises.

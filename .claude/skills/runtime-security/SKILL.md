@@ -51,6 +51,19 @@ Las políticas de admisión solo actúan al crear el pod. Un atacante con RCE en
 ```
 Sintaxis de `exceptions` y `append`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Detecta comportamientos anómalos en ejecución (procesos, ficheros, red) con reglas ajustadas a tus cargas y una respuesta definida.
+- Complementa, no sustituye, a las políticas de admisión.
+### Trampas frecuentes
+- Reglas por defecto con un ruido que se ignora.
+- Alertas sin respuesta definida.
+- Agentes con permisos excesivos sobre el nodo.
+- Sin pruebas de detección.
+- Confiar solo en la detección y no en la prevención.
+### Evidencia
+- Una simulación de comportamiento sospechoso genera la alerta esperada.
+
 ## Checklist de revisión
 - [ ] Falco corre en todos los nodos de carga (incluidos pools con taints, con tolerations).
 - [ ] Las alertas llegan a un sistema persistente y hay un responsable.

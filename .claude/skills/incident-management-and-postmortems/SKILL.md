@@ -47,6 +47,19 @@ Postmortem: "Error humano de Juan al desplegar. Acción: tener más cuidado."
   | Límite de pool en plantilla de despliegue | orders-team | 2026-11-20 | ORD-190 |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Roles claros (responsable, comunicación, técnicos), contención antes que diagnóstico y un postmortem sin culpables centrado en causas y acciones.
+- Cada acción tiene responsable y fecha.
+### Trampas frecuentes
+- Buscar al culpable.
+- Postmortems sin acciones o que nadie cierra.
+- Sin línea de tiempo.
+- Afirmar la causa raíz sin evidencia.
+- Incidentes repetidos sin aprendizaje compartido.
+### Evidencia
+- Un porcentaje de acciones de postmortem cerradas a tiempo.
+
 ## Checklist de revisión
 - [ ] Severidades y roles definidos y conocidos.
 - [ ] Plantilla de postmortem con acciones con dueño y fecha.

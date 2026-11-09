@@ -53,6 +53,19 @@ rationale: "RTO 15 min cumple tier 1; activo-activo +90% de coste sin ganancia e
 review: "2027-02-07"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Calcula el coste de cada nivel de resiliencia y compáralo con el impacto del tiempo de caída; la resiliencia es una decisión económica compartida con el negocio.
+- Los precios salen de la fuente oficial con fecha.
+### Trampas frecuentes
+- Pagar el nivel más alto sin necesidad.
+- Ignorar el coste de los ensayos y de la transferencia.
+- Cifras de memoria sin fuente.
+- Infradimensionar y descubrirlo en la caída.
+- Sin revisión periódica.
+### Evidencia
+- Una tabla de coste por nivel con fuente y fecha, aprobada por el negocio.
+
 ## Checklist de revisión
 - [ ] Coste de estrategia y de indisponibilidad por tier.
 - [ ] Transferencia entre regiones y backups incluidos.

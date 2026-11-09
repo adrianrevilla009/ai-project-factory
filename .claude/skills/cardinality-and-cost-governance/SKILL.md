@@ -55,6 +55,19 @@ topk(10, count by (__name__) ({__name__=~".+"}))
 ```
 La consulta anterior es costosa: ejecutarla bajo demanda, no en un dashboard.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Controla la cardinalidad en la fuente con límites y revisión de nuevas métricas; mide el coste por equipo.
+- Elimina lo que no se usa.
+### Trampas frecuentes
+- Etiquetas con identificadores de usuario o petición.
+- Métricas sin dueño.
+- Sin límites por equipo.
+- Descubrir el coste en la factura.
+- Mantener todo «por si hace falta».
+### Evidencia
+- Un informe de series activas por equipo y un proceso de alta y baja de métricas.
+
 ## Checklist de revisión
 - [ ] Todas las etiquetas nuevas tienen conjunto de valores acotado.
 - [ ] `sample_limit`/`label_limit` en cada job.

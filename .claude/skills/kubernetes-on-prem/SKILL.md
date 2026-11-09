@@ -37,6 +37,19 @@ kubeadm init --control-plane-endpoint k8s-api.example.internal:6443 --upload-cer
 ```
 Los flags `--control-plane-endpoint` y `--upload-certs` figuran en la guía oficial de HA con kubeadm.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige entre distribución gestionada por el proveedor, autogestionada o servicio híbrido según la capacidad del equipo; el plano de control y los datos de etcd son lo más delicado.
+- Planifica actualizaciones y copias desde el principio.
+### Trampas frecuentes
+- Subestimar la operación del plano de control.
+- Un solo nodo de control.
+- Sin copia de seguridad de etcd.
+- Red y almacenamiento decididos tarde.
+- Sin plan de actualización.
+### Evidencia
+- Un ensayo de pérdida de un nodo de control y de restauración desde copia.
+
 ## Checklist de revisión
 - [ ] 3+ control planes y balanceador con DNS estable.
 - [ ] ADR de topología etcd.

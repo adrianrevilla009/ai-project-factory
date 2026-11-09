@@ -50,6 +50,19 @@ Flags `--severity`, `--ignore-unfixed`, `--exit-code`, `--ignorefile`, `--format
 CVE-2099-0001
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Escanea al construir y de forma periódica lo desplegado: aparecen vulnerabilidades nuevas en imágenes antiguas.
+- Umbrales por severidad y alcanzabilidad.
+### Trampas frecuentes
+- Escanear solo una vez.
+- Bloquear por cualquier hallazgo hasta desactivar el escáner.
+- Bases de vulnerabilidades desactualizadas.
+- Sin plazo de corrección.
+- Resultados sin dueño.
+### Evidencia
+- Un informe de imágenes desplegadas con hallazgos abiertos por edad.
+
 ## Checklist de revisión
 - [ ] Gate bloquea HIGH/CRITICAL corregibles; `|| true` no existe.
 - [ ] Excepciones con motivo, owner y caducidad.

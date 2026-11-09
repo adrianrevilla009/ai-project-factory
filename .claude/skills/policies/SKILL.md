@@ -65,6 +65,19 @@ resource "vault_policy" "orders_read" {
 ```
 En Transit, encrypt/decrypt se conceden con `update`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Políticas por ruta con el mínimo de capacidades y asignadas por identidad; revisión periódica.
+- Las funciones de pago de la edición de empresa no se asumen.
+### Trampas frecuentes
+- Políticas con comodines.
+- Políticas por persona en vez de por rol.
+- Sin revisión periódica.
+- Un perfil «admin» que se usa a diario.
+- Asumir funciones de la edición de pago.
+### Evidencia
+- Un informe de políticas con las rutas y capacidades concedidas, revisado cada trimestre.
+
 ## Checklist de revisión
 - [ ] Sin `*` global ni `sudo` en políticas de aplicación.
 - [ ] KV v2 con `data/` y `metadata/` correctos.

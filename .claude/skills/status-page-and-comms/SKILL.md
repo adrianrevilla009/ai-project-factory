@@ -43,6 +43,19 @@ Estamos investigando. Proxima actualizacion antes de las 14:35 UTC.
 Seguimos monitorizando. Publicaremos un resumen en 5 dias laborables.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una página de estado independiente de tu infraestructura, con comunicaciones claras y honestas durante un incidente; plantillas ensayadas.
+- Define quién comunica y con qué frecuencia.
+### Trampas frecuentes
+- Página de estado alojada en la misma infraestructura que falla.
+- Mensajes vagos o con causas no comprobadas.
+- Sin responsable de comunicación.
+- Actualizar tarde y de forma irregular.
+- Silencio tras el incidente.
+### Evidencia
+- Un simulacro de comunicación de incidente con plantillas y responsable.
+
 ## Checklist de revisión
 - [ ] Página fuera del dominio de fallo de la plataforma.
 - [ ] Componentes y estados definidos; plantillas por fase.

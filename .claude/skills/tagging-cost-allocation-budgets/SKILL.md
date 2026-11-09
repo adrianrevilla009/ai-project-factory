@@ -67,6 +67,19 @@ resource "aws_budgets_budget" "monthly" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un conjunto pequeño de etiquetas obligatorias (propietario, entorno, producto, coste) impuestas por código y por política, activadas para la asignación de costes.
+- Presupuestos con alertas por propietario.
+### Trampas frecuentes
+- Docenas de etiquetas opcionales.
+- Etiquetar a mano.
+- Recursos sin dueño.
+- Etiquetas que difieren en mayúsculas o nombres.
+- Presupuestos sin alertas ni responsable.
+### Evidencia
+- Un informe de recursos sin etiquetas obligatorias que tiende a cero.
+
 ## Checklist de revisión
 - [ ] `default_tags` en todos los providers (incluido el secundario).
 - [ ] Tags activados para costes.

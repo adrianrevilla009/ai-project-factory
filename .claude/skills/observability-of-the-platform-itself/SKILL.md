@@ -57,6 +57,19 @@ groups:
         labels: { severity: warning }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- La plataforma de observabilidad también se observa, con una vía independiente para alertar de su propia caída.
+- Prueba el «latido»: si nadie alerta cuando no hay datos, no hay observabilidad.
+### Trampas frecuentes
+- Monitorizar la plataforma solo con ella misma.
+- No alertar por falta de datos.
+- Sin alta disponibilidad en el colector.
+- Retraso de ingesta no medido.
+- Credenciales sin rotación.
+### Evidencia
+- Una alerta externa salta si la plataforma deja de recibir datos.
+
 ## Checklist de revisión
 - [ ] Watchdog enrutado a un monitor externo.
 - [ ] Sonda externa a Grafana y Alertmanager.

@@ -73,6 +73,19 @@ resource "aws_vpc_security_group_ingress_rule" "db_from_app" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Capas por función (pública, aplicación, datos) en varias zonas de disponibilidad, con subredes privadas por defecto.
+- Una salida a Internet por zona si la disponibilidad lo exige y su coste lo permite.
+### Trampas frecuentes
+- Cargas en subredes públicas con IP pública por defecto.
+- Una sola zona para todo.
+- Reglas de entrada abiertas a todo Internet.
+- Una única salida a Internet compartida por todas las zonas.
+- Subredes sin espacio para crecer.
+### Evidencia
+- Las reglas de red automáticas niegan IP públicas y accesos abiertos en capas privadas.
+
 ## Checklist de revisión
 - [ ] Tres capas y tres AZ; una route table por capa/AZ.
 - [ ] NAT por AZ; ninguna subred de cómputo/datos pública.

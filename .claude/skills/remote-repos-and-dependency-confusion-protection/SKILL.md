@@ -57,6 +57,19 @@ registry=https://nexus.example.com/repository/npm-group/
 </mirrors>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un único punto de resolución interno que consulta los registros públicos y reserva los nombres internos para que no se resuelvan desde fuera.
+- Retrasa la adopción de versiones recién publicadas.
+### Trampas frecuentes
+- Resolver nombres internos desde un registro público.
+- Configuración distinta por desarrollador.
+- Sin caché: la caída del registro público detiene los builds.
+- Credenciales del repositorio en el código.
+- Sin bloqueo de versiones sospechosas.
+### Evidencia
+- Una prueba intenta resolver un nombre interno desde fuera y falla.
+
 ## Checklist de revisión
 - [ ] Sin repositorios de internet en `pom.xml` ni `.npmrc` de proyecto.
 - [ ] Scope/groupId interno enrutado solo al repo interno.

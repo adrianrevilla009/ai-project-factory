@@ -49,6 +49,19 @@ review_on: "2027-05-07"
 exit_plan: "replace with in-house StringEscaper if abandoned"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Evalúa a cada proveedor y librería crítica por impacto y sustituibilidad: qué ocurre si desaparece, cambia de licencia o sufre un incidente.
+- Prefiere dependencias con alternativas claras y puertos que permitan el cambio.
+### Trampas frecuentes
+- Depender de un único proveedor sin plan de salida.
+- Evaluación solo al contratar.
+- Ignorar cambios de licencia o de condiciones.
+- Datos sensibles compartidos sin acuerdo ni controles.
+- Sin inventario de terceros.
+### Evidencia
+- Un registro de terceros con criticidad, datos compartidos y plan de salida.
+
 ## Checklist de revisión
 - [ ] Mantenimiento, licencia y política de seguridad evaluados.
 - [ ] Alternativa del catálogo considerada.

@@ -61,6 +61,19 @@ spec:
 ```
 Versión de API (`security.istio.io/v1`).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Activa mTLS estricto por fases: permisivo para descubrir quién habla en claro, estricto cuando todo está en la malla.
+- Las excepciones son explícitas y temporales.
+### Trampas frecuentes
+- Estricto de golpe y caída de cargas fuera de la malla.
+- Dejar permisivo indefinidamente.
+- Excepciones por puerto sin dueño.
+- Asumir que mTLS es autorización.
+- Certificados raíz sin plan de rotación.
+### Evidencia
+- Un informe de tráfico en claro que baja a cero antes de pasar a estricto.
+
 ## Checklist de revisión
 - [ ] Existe PeerAuthentication STRICT a nivel de malla.
 - [ ] Ningún PERMISSIVE/DISABLE sin ADR y fecha.

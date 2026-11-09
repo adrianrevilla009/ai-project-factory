@@ -52,6 +52,19 @@ cosign verify registry.example.com/shop/orders@sha256:<digest> \
 ```
 `--certificate-identity` y `--certificate-oidc-issuer` confirmados en https://docs.sigstore.dev/cosign/verifying/verify/ (2026-11-07). Formato exacto de la identidad del workflow y `--yes`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Firma las imágenes de tu pipeline con su procedencia y verifica en el clúster antes de ejecutar; firma por identidad del flujo cuando sea posible.
+- Claves de firma fuera del repositorio.
+### Trampas frecuentes
+- Firmar y no verificar.
+- Claves de firma en el repositorio.
+- Firmar imágenes que no salen del pipeline.
+- Procedencia sin datos útiles.
+- Políticas que no cubren todos los espacios de nombres.
+### Evidencia
+- Una imagen sin firma se rechaza en el clúster.
+
 ## Checklist de revisión
 - [ ] Firma por digest, keyless o KMS.
 - [ ] Sin claves privadas en el repo.

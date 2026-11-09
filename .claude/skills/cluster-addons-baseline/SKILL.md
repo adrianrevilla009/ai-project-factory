@@ -52,6 +52,19 @@ addons:
     scope: "zonas gestionadas solo del entorno"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una lista fija de complementos de base (red, DNS, métricas, ingreso, certificados, secretos) con versiones controladas y probadas juntas.
+- Actualízalos con el ciclo de versiones del clúster.
+### Trampas frecuentes
+- Instalar complementos «a mano» sin registro.
+- Versiones incompatibles con la del clúster.
+- Complementos sin límites de recursos.
+- Sin alta disponibilidad en los críticos.
+- Olvidar los permisos que cada complemento necesita.
+### Evidencia
+- La línea base se instala desde código y una prueba de humo la verifica.
+
 ## Checklist de revisión
 - [ ] Lista de addons con versión, dueño y namespace.
 - [ ] Instalados por GitOps/IaC.

@@ -56,6 +56,19 @@ exporters:
     headers: { X-Scope-OrgID: payments }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Aísla los datos y los límites de cada equipo o cliente en el almacén de observabilidad, con cuotas y acceso por identidad.
+- Un tenant ruidoso no degrada a los demás.
+### Trampas frecuentes
+- Un espacio común sin control de acceso.
+- Sin cuotas por tenant.
+- Etiquetas de tenant que se pueden falsificar.
+- Paneles compartidos con datos de varios clientes.
+- Costes sin atribución.
+### Evidencia
+- Una prueba de que un tenant no ve los datos de otro ni agota los recursos.
+
 ## Checklist de revisión
 - [ ] Mapa tenant a equipo documentado.
 - [ ] Cabecera de tenant inyectada solo en el gateway/proxy.

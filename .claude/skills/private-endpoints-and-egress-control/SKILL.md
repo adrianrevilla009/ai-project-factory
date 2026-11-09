@@ -65,6 +65,19 @@ resource "aws_vpc_endpoint" "sts" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Accede a servicios de AWS por endpoints privados y controla la salida a Internet con una lista permitida; así los datos no viajan por Internet.
+- Cada endpoint tiene un coste fijo: úsalos donde aporten.
+### Trampas frecuentes
+- Salida abierta desde cualquier carga.
+- Políticas de endpoint con comodín.
+- Endpoints de más sin necesidad.
+- DNS que resuelve al servicio público.
+- Sin registro del tráfico saliente.
+### Evidencia
+- Una prueba intenta salir a un destino no permitido y falla.
+
 ## Checklist de revisión
 - [ ] Gateway endpoint de S3 en todas las route tables privadas.
 - [ ] Interface endpoints con DNS privado, SG a 443 y política con `aws:PrincipalOrgID`.

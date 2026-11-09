@@ -56,6 +56,19 @@ resource "aws_s3_bucket_public_access_block" "org_logs" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una cuenta de archivo de registros solo de almacenamiento con retención inmutable, y otra de auditoría con acceso de solo lectura para investigar.
+- Nadie con permisos de carga puede borrar los registros.
+### Trampas frecuentes
+- Registros en las cuentas de carga, borrables por quien los genera.
+- Archivo sin cifrado o sin bloqueo de acceso público.
+- Retención menor que la exigida.
+- Acceso de auditoría con permisos de escritura.
+- Sin comprobar que los registros llegan.
+### Evidencia
+- Una prueba de que una cuenta de carga no puede borrar ni modificar el archivo.
+
 ## Checklist de revisión
 - [ ] `log-archive` y `audit` son cuentas distintas.
 - [ ] Versionado, BPA, KMS y Object Lock activos.

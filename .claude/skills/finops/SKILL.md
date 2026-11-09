@@ -62,6 +62,19 @@ resource "aws_budgets_budget" "orders_monthly" {
 ```
 Atributos del recurso: validar con `terraform validate`/docs del provider (los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08); no se ha aplicado en AWS.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Visibilidad, asignación y optimización continuas: etiquetas, informes por equipo y revisión periódica de recursos sin uso; decisiones de compromiso (reservas) con datos de uso estable.
+- El ahorro no debe comprometer la fiabilidad acordada.
+### Trampas frecuentes
+- Optimizar una vez y olvidarlo.
+- Compromisos de capacidad sin entender la carga.
+- Recursos huérfanos.
+- Culpar al equipo sin darle visibilidad.
+- Recortar redundancia que el nivel exige.
+### Evidencia
+- Un informe mensual de coste por equipo con acciones, dueño y ahorro realizado.
+
 ## Checklist de revisión
 - [ ] Etiquetas obligatorias y de asignación de costes.
 - [ ] Presupuestos y monitores de anomalías como código.

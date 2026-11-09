@@ -53,6 +53,19 @@ spec:
 ```
 `telemetry.istio.io/v1` se sirve en el CRD de Istio (verificado el 2026-11-08); los proveedores concretos dependen de la configuración de la malla.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Métricas, trazas y registros de acceso de la malla integrados con el resto; controla la cardinalidad y el muestreo.
+- La malla da señales de red; la aplicación, las de negocio.
+### Trampas frecuentes
+- Métricas de la malla con etiquetas de cardinalidad enorme.
+- Muestreo del 100 % de trazas en producción.
+- Registros de acceso con datos sensibles.
+- Ignorar el coste de los proxies.
+- Alertar por métricas internas de la malla en lugar de síntomas.
+### Evidencia
+- Un tablero de golden signals por servicio construido con datos de la malla.
+
 ## Checklist de revisión
 - [ ] Prometheus recoge métricas de Envoy/Istio.
 - [ ] Kiali no está expuesto públicamente.

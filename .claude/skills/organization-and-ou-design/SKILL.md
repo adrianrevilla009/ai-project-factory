@@ -58,6 +58,19 @@ resource "aws_organizations_organizational_unit" "prod" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Estructura de unidades organizativas por política y ciclo de vida (cargas, seguridad, sandbox, infraestructura), no por organigrama: lo que se hereda son las barreras.
+- Una cuenta por carga y entorno cuando el aislamiento y el coste lo justifican.
+### Trampas frecuentes
+- Reflejar el organigrama, que cambia, en vez de las políticas.
+- Cargas en la cuenta de gestión.
+- Demasiados niveles de unidades anidadas.
+- Una sola cuenta para todos los entornos.
+- Cambios de estructura sin plan de migración de cuentas.
+### Evidencia
+- Un diagrama de la estructura con las políticas aplicadas en cada nivel.
+
 ## Checklist de revisión
 - [ ] Existe cuenta de management sin cargas, `log-archive` y `audit`.
 - [ ] Prod y no-prod en cuentas y OUs separadas.

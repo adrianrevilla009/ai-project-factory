@@ -47,6 +47,19 @@ metadata:
 ```
 Política Kyverno en Audit primero (`failureAction: Audit` en cada regla `validate`; `spec.validationFailureAction` está deprecado), ver `policies/kyverno/workload-baseline.yaml`. Revisar con `kubectl get policyreport -A`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Estándares de seguridad de pods con el nivel restrictivo por defecto y admisión para el resto de reglas (imágenes, etiquetas, registros).
+- Primero auditar, luego imponer.
+### Trampas frecuentes
+- Permitir contenedores privilegiados «temporalmente».
+- Reglas que fallan abiertas sin decisión explícita.
+- Admisión sin alta disponibilidad: bloquea todo si cae.
+- Excepciones sin dueño.
+- Políticas distintas por clúster.
+### Evidencia
+- Una carga que incumple se rechaza y el componente de admisión tiene réplicas.
+
 ## Checklist de revisión
 - [ ] Namespaces con etiquetas PSA (enforce, audit, warn).
 - [ ] Excepciones documentadas.

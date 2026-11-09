@@ -59,6 +59,19 @@ ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 ```
 Las etiquetas `21-jdk`/`21-jre` son ejemplo; fijar versión y digest reales por proyecto.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una etapa para construir y otra para ejecutar, con la mínima imagen final y capas ordenadas por frecuencia de cambio.
+- La caché de dependencias, en una etapa propia.
+### Trampas frecuentes
+- Herramientas de compilación en la imagen final.
+- Copiar todo el contexto antes de instalar dependencias.
+- Secretos en capas.
+- Imagen base sin fijar.
+- Ejecutar como administrador.
+### Evidencia
+- Tamaño y tiempo de construcción medidos y sin herramientas de build en la imagen final.
+
 ## Checklist de revisión
 - [ ] Al menos dos stages; la final no contiene build tools.
 - [ ] Base fijada por versión (digest en release), sin `latest`.

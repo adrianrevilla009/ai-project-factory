@@ -61,6 +61,19 @@ survey:
   anonymous: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Combina métricas de entrega (como DORA) con percepción de los equipos; úsalas para quitar fricción, no para evaluar personas.
+- Una metrica es útil si desencadena una acción.
+### Trampas frecuentes
+- Usar las métricas como objetivo individual.
+- Medir lo fácil y no lo que duele.
+- Comparar equipos con contextos distintos.
+- Sin encuestas ni conversación.
+- Un panel que nadie actúa.
+### Evidencia
+- Cada métrica tiene una acción asociada y un responsable.
+
 ## Checklist de revisión
 - [ ] Cada métrica tiene fórmula, fuente y alcance de equipo.
 - [ ] Hay componente cualitativo anónimo.

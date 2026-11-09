@@ -61,6 +61,19 @@ spec:
 ```
 `security.istio.io/v1` es la versión servida y almacenada del CRD (verificado el 2026-11-08); la semántica de `spec: {}` se contrasta con la documentación de la versión elegida.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Parte de denegar por defecto y permite por identidad de carga, método y ruta; las políticas son código revisado.
+- Prueba las políticas con casos de permiso y de denegación.
+### Trampas frecuentes
+- Políticas de permitir todo.
+- Reglas por IP en vez de por identidad.
+- Políticas solapadas que nadie entiende.
+- Sin pruebas de denegación.
+- Aplicar sin modo de simulación.
+### Evidencia
+- Un conjunto de pruebas de permitir y denegar entre servicios.
+
 ## Checklist de revisión
 - [ ] Deny-all en cada namespace de negocio.
 - [ ] Cada ALLOW con `principals` concretos.

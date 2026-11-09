@@ -54,6 +54,19 @@ vault write -f transit/keys/orders-pii type=aes256-gcm96
 vault write transit/keys/orders-pii/config min_decryption_version=2 deletion_allowed=false
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cifrado como servicio: la aplicación envía datos y recibe texto cifrado sin ver las claves; para datos que deben leerse en varias regiones, cifrado de sobre con claves multi-región del proveedor.
+- El material de claves no se comparte entre clústeres independientes.
+### Trampas frecuentes
+- Suponer que dos instalaciones independientes pueden descifrar lo del otro.
+- Claves de cifrado de datos guardadas con los datos.
+- Sin rotación ni versiones de clave.
+- Cifrar y perder la clave.
+- Usar el servicio para volúmenes que necesitan otro enfoque.
+### Evidencia
+- Una prueba de descifrado en la región secundaria y una rotación ensayada.
+
 ## Checklist de revisión
 - [ ] Ningún dato replicado entre regiones depende de una clave Transit.
 - [ ] Datos multi-región usan envelope encryption con KMS multi-región.

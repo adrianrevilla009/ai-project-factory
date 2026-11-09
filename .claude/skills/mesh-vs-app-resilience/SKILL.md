@@ -54,6 +54,19 @@ http:
 public Order get(String id) { return client.get(id); }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Decide qué política de resiliencia vive en la malla (tiempos, reintentos genéricos) y cuál en la aplicación (lógica que conoce el negocio); no dupliques.
+- Documenta la propiedad de cada política.
+### Trampas frecuentes
+- Reintentos duplicados en capa de malla y de aplicación.
+- Cortacircuitos distintos con criterios que se contradicen.
+- Depender de la malla para lógica de negocio.
+- Sin pruebas de las políticas combinadas.
+- Configuración repartida sin dueño.
+### Evidencia
+- Una tabla de políticas con su dueño y una prueba de la combinación.
+
 ## Checklist de revisión
 - [ ] Cada llamada tiene reintentos en una sola capa.
 - [ ] Solo operaciones idempotentes se reintentan.

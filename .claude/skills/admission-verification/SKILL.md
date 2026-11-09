@@ -58,6 +58,19 @@ verifyImages:
 ```
 Campos confirmados en https://kyverno.io/docs/policy-types/cluster-policy/verify-images/sigstore/ (2026-11-07). En local (kind/k3d) NO se reproduce ECR ni la replicación; usar un registro local de prueba con la misma política.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Verifica firma, origen y reglas en la admisión; decide explícitamente qué hacer si el verificador cae (abierto o cerrado) y documenta el motivo.
+- El verificador tiene alta disponibilidad.
+### Trampas frecuentes
+- Verificador único que bloquea todo si cae.
+- Fallar abierto sin decisión consciente.
+- Reglas distintas por clúster.
+- Sin excepciones controladas para emergencias.
+- No probar el rechazo.
+### Evidencia
+- Una imagen incumplidora se rechaza y la caída del verificador se comporta como se decidió.
+
 ## Checklist de revisión
 - [ ] Subject e issuer concretos, sin comodines totales.
 - [ ] Registros permitidos limitados a ECR en prod.

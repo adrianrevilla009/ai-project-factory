@@ -54,6 +54,19 @@ exceptions:
 ```
 (Esquema ilustrativo, no un formato estándar.)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un camino recomendado es una oferta, no una obligación: debe ser el más fácil, con salida documentada para quien necesita otra cosa.
+- Un equipo responsable de cada camino, con feedback de usuarios.
+### Trampas frecuentes
+- Imponerlo sin ofrecer ventaja.
+- Caminos sin dueño que quedan obsoletos.
+- Sin vía de excepción.
+- Demasiados caminos.
+- Medir adopción sin medir satisfacción.
+### Evidencia
+- Adopción, tiempo hasta el primer despliegue y satisfacción de los equipos.
+
 ## Checklist de revisión
 - [ ] Dueño, versión y changelog definidos.
 - [ ] Obligatorio vs recomendado separados.

@@ -62,6 +62,19 @@ spec:
   policyTypes: [Ingress, Egress]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Entornos efímeros por cambio cuando permiten revisar y probar de verdad; con límites de coste, tiempo de vida y datos sintéticos.
+- Los mismos manifiestos que producción.
+### Trampas frecuentes
+- Entornos que viven semanas.
+- Datos reales en entornos efímeros.
+- Recursos compartidos que un entorno puede romper.
+- Sin límite de coste.
+- Dependencias que no se pueden replicar.
+### Evidencia
+- Un recuento de entornos activos, coste y edad.
+
 ## Checklist de revisión
 - [ ] Namespace con labels owner/ttl, quota, limitrange y default-deny.
 - [ ] Limpieza al cerrar PR y por TTL.

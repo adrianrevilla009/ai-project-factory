@@ -52,6 +52,19 @@ resource "aws_route53_record" "api_primary" {
 ```
 Argumentos del recurso `aws_route53_health_check` con `RECOVERY_CONTROL`: los recursos y sus argumentos de primer nivel se contrastaron con la documentación del provider AWS el 2026-11-08.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un mecanismo de control de conmutación con interruptores explícitos y comprobaciones de salud que reflejen el servicio real, no solo que el puerto responde.
+- Evita la conmutación automática ante falsos positivos.
+### Trampas frecuentes
+- Comprobaciones superficiales.
+- Conmutación que depende del plano de control de la región que falla.
+- Interruptores accesibles a demasiada gente.
+- Sin ensayo del cambio de estado.
+- Control en la misma región que se vigila.
+### Evidencia
+- Un ensayo del cambio de interruptor con el tiempo hasta el tráfico en la otra región.
+
 ## Checklist de revisión
 - [ ] Conmutación regional por routing control, no por edición de DNS.
 - [ ] Health checks profundos y superficiales separados.

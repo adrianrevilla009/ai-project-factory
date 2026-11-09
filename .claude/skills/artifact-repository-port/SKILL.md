@@ -55,6 +55,19 @@ runtime_pull:
   replication: cross-region
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Accede a los artefactos mediante un puerto implementable con distintos repositorios; elige la implementación por licencia, coste y funciones.
+- Documenta qué funciones de pago no se asumen.
+### Trampas frecuentes
+- Dependencia directa de un producto en cada pipeline.
+- Repositorios sin copia de seguridad.
+- Permisos de escritura amplios.
+- Sin política de retención.
+- Funciones de pago asumidas.
+### Evidencia
+- Cambiar de repositorio toca una configuración y no cada pipeline.
+
 ## Checklist de revisión
 - [ ] Los workflows usan el puerto, sin URLs de producto hardcodeadas.
 - [ ] Todo artefacto se referencia por digest.

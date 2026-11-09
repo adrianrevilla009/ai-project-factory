@@ -60,6 +60,19 @@ vault:
 DB_PASSWORD=changeme
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- La configuración que cambia entre entornos vive fuera de la imagen y se versiona; el código es el mismo en todos.
+- Valores por defecto seguros y validación al arrancar.
+### Trampas frecuentes
+- Imágenes distintas por entorno.
+- Configuración editada a mano en el clúster.
+- Valores por defecto inseguros.
+- Diferencias de entorno que nadie conoce.
+- Secretos mezclados con configuración.
+### Evidencia
+- Una comparación automática de la configuración entre entornos muestra solo las diferencias esperadas.
+
 ## Checklist de revisión
 - [ ] Ningún secreto ni valor de producción en el repo del servicio.
 - [ ] Misma imagen en todos los entornos; solo cambian overlays.

@@ -61,6 +61,19 @@ spec:
     - orders-api
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un portal de desarrollo cuando hay suficientes servicios y equipos para que descubrir, documentar y crear sea un problema; si no, el mantenimiento del portal pesa más que el beneficio.
+- Empieza con el catálogo y la documentación; añade plantillas después.
+### Trampas frecuentes
+- Un portal vacío o desactualizado.
+- Cargar a un equipo con mantenerlo a tiempo parcial.
+- Metadatos del catálogo escritos a mano y sin validar.
+- Plugins de terceros sin revisar.
+- Medir el éxito por instalación y no por uso.
+### Evidencia
+- El catálogo se genera o valida desde los repositorios y se mide su uso.
+
 ## Checklist de revisión
 - [ ] Existe `catalog-info.yaml` válido con type, lifecycle y owner (grupo).
 - [ ] Dependencias y APIs declaradas.

@@ -66,6 +66,19 @@ spec:
       backendRefs: [{ name: orders, port: 8080 }]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prefiere la API estándar de pasarela para el enrutado de entrada y reserva los recursos propios de la malla para lo que no cubra.
+- Separa roles: quien gestiona la infraestructura y quien define rutas.
+### Trampas frecuentes
+- Mezclar varias formas de ingreso sin criterio.
+- Permitir que cualquier equipo cree pasarelas.
+- Sin delegación de rutas entre espacios de nombres controlada.
+- Depender de extensiones propias del proveedor para lo básico.
+- Instalar definiciones de recursos sin gestionar versiones.
+### Evidencia
+- Las rutas se validan en CI y los permisos limitan quién crea pasarelas.
+
 ## Checklist de revisión
 - [ ] `Gateway` en namespace de plataforma, `allowedRoutes` restringido.
 - [ ] TLS con certificado de cert-manager.

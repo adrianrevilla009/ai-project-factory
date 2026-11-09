@@ -60,6 +60,19 @@ vault lease revoke -prefix database/creds/orders-rw   # solo en incidente, con a
 ```
 VSO con `rolloutRestartTargets` (ver `injection-patterns`) reinicia el Deployment al cambiar el secreto. La relación exacta entre refresh de VSO y TTL.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prefiere secretos de corta vida con renovación automática; para los estáticos, rotación programada con ventana de convivencia de dos valores.
+- La aplicación debe tolerar la rotación.
+### Trampas frecuentes
+- Rotación que rompe la aplicación.
+- Sin alerta ante un secreto próximo a caducar.
+- Renovaciones que fallan en silencio.
+- Rotar sin poder revertir.
+- Mismo secreto en muchos sitios.
+### Evidencia
+- Un ensayo de rotación sin interrupción de servicio.
+
 ## Checklist de revisión
 - [ ] Todos los roles tienen `default_ttl` y `max_ttl`.
 - [ ] `maxLifetime` del pool menor que el TTL; reconexión probada con rotación forzada.

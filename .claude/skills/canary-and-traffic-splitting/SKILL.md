@@ -50,6 +50,19 @@ spec:
         - { name: orders-v2, port: 8080, weight: 5 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pesos graduales con análisis automático y regreso automático ante degradación; elige el porcentaje y la duración según el riesgo.
+- Un controlador de entrega progresiva si hay muchos servicios.
+### Trampas frecuentes
+- Cambios de peso manuales sin criterios de aborto.
+- Poco tráfico para decidir.
+- Sin sesión pegajosa cuando el estado la necesita.
+- Métricas globales que esconden el problema de la versión nueva.
+- Versiones incompatibles conviviendo sin considerar datos.
+### Evidencia
+- Un despliegue de prueba con aborto automático por una degradación provocada.
+
 ## Checklist de revisión
 - [ ] Versiones separadas con etiqueta `version`.
 - [ ] Pesos suman 100; inicio bajo.

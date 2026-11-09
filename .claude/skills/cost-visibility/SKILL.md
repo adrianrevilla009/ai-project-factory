@@ -63,6 +63,19 @@ spec:
             requests: { cpu: 250m, memory: 384Mi }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Asigna el coste a equipos y servicios con etiquetas y espacios de nombres; muestra el coste ocioso y las solicitudes de recursos sin usar.
+- Reparte costes compartidos con una regla acordada.
+### Trampas frecuentes
+- Un coste global sin atribución.
+- Solicitudes de recursos muy superiores al uso.
+- Informes que nadie lee.
+- Comparar equipos sin tener en cuenta su carga.
+- Optimizar el coste sin mirar la fiabilidad.
+### Evidencia
+- Un informe mensual de coste por equipo con acciones de mejora y responsable.
+
 ## Checklist de revisión
 - [ ] Etiquetas `team`/`env`/`app.kubernetes.io/name` en pod template.
 - [ ] Todos los contenedores con `requests`.

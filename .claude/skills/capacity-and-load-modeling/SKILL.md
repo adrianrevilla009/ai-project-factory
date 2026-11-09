@@ -51,6 +51,19 @@ load_test:
   pass_if: "p95 < 300ms y error rate < 0.1%"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Modela la capacidad con la demanda esperada, los picos y el crecimiento, y valida con pruebas de carga; incluye límites de cuotas del proveedor.
+- Revisa antes de eventos de negocio conocidos.
+### Trampas frecuentes
+- Planificar con medias.
+- Ignorar las cuotas de servicio.
+- Un modelo que nadie actualiza.
+- Sin margen para la pérdida de una zona.
+- Descubrir el límite en producción.
+### Evidencia
+- Un modelo con supuestos explícitos y una prueba que lo contrasta.
+
 ## Checklist de revisión
 - [ ] Modelo de carga con fuente y crecimiento.
 - [ ] Headroom ante pérdida de AZ y de región.

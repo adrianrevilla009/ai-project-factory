@@ -72,6 +72,19 @@ resource "aws_kms_key" "shared_data" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige entre copia y restauración, espera caliente y activo-activo según los objetivos; cuanto más activo, más complejidad de datos.
+- Separa claramente qué se replica y qué se reconstruye.
+### Trampas frecuentes
+- Activo-activo sin resolver los conflictos de escritura.
+- Región secundaria sin ejercitar.
+- Dependencias de una región (identidad, DNS, registros de imágenes).
+- Replicar sin considerar el coste.
+- Suponer que todos los servicios existen en ambas regiones.
+### Evidencia
+- Un ensayo de conmutación y de retorno con los tiempos medidos.
+
 ## Checklist de revisión
 - [ ] Clúster gemelo definido por Terraform + Argo CD.
 - [ ] Un Vault por región; datos compartidos con KMS multi-región.

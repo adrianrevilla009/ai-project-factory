@@ -66,6 +66,19 @@ spec:
   selector: { matchLabels: { app: orders } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una línea base obligatoria para toda carga: solicitudes y límites, sondas, usuario sin privilegios, perfil seccomp y etiqueta de imagen inmutable; se impone con políticas de admisión.
+- Empieza en modo de auditoría y pasa a imposición cuando el atraso se limpia.
+### Trampas frecuentes
+- Cargas sin límites ni sondas.
+- Imponer sin período de auditoría y bloquear despliegues legítimos.
+- Límites de CPU tan ajustados que estrangulan.
+- Excepciones permanentes.
+- Etiquetas mutables de imagen.
+### Evidencia
+- Un informe de la política en auditoría con cero incumplimientos antes de imponerla.
+
 ## Checklist de revisión
 - [ ] requests/limits en todos los contenedores.
 - [ ] Probes con endpoints de Actuator; liveness sin dependencias externas.

@@ -54,6 +54,19 @@ spec:
 ```
 `outlierDetection` es necesario para que el failover por localidad se active.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Malla entre clústeres solo cuando necesitas tráfico y confianza compartidos; valora latencia entre regiones, fallos parciales y complejidad operativa.
+- La conmutación por localidad necesita detección de valores atípicos.
+### Trampas frecuentes
+- Una malla extendida que propaga fallos entre regiones.
+- Confianza raíz distinta sin plan.
+- Ignorar el coste de la comunicación entre regiones.
+- Conmutación por localidad sin detección de valores atípicos.
+- Sin pruebas de pérdida de un clúster.
+### Evidencia
+- Un ensayo con un clúster caído y la conmutación observada.
+
 ## Checklist de revisión
 - [ ] Justificada la malla compartida frente a mallas por región.
 - [ ] Modelo de control plane y de red documentados.

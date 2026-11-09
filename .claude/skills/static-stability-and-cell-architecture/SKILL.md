@@ -54,6 +54,19 @@ spec:
   maxReplicas: 12
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Diseña para que el servicio siga funcionando sin depender de acciones del plano de control durante un fallo: capacidad ya aprovisionada y decisiones tomadas de antemano.
+- Las celdas limitan el radio de impacto.
+### Trampas frecuentes
+- Depender de escalar durante la caída.
+- Conmutaciones que necesitan crear recursos nuevos.
+- Celdas que comparten dependencias críticas.
+- Configuración que se descarga al arrancar y falla si el servicio está caído.
+- Sin pruebas con el plano de control inaccesible.
+### Evidencia
+- Una prueba con el plano de control bloqueado comprueba que el servicio mantiene su capacidad.
+
 ## Checklist de revisión
 - [ ] Capacidad inicial de la secundaria justificada con el modelo de carga.
 - [ ] Cuotas de la secundaria cubren el escalado a plena capacidad.

@@ -62,6 +62,19 @@ slos:
       ticket_alert: { labels: { severity: warning } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Paneles y objetivos de nivel de servicio definidos como código, revisados y desplegados automáticamente.
+- Plantillas comunes para que cada servicio tenga lo mismo.
+### Trampas frecuentes
+- Paneles editados a mano que se pierden.
+- Cada equipo con su propio estilo.
+- Objetivos sin versionar.
+- Paneles que nadie usa.
+- Mediciones que no coinciden con las alertas.
+### Evidencia
+- Un servicio nuevo obtiene su panel base y sus objetivos desde código.
+
 ## Checklist de revisión
 - [ ] Dashboards y SLOs en Git; provisioning sin edición por UI.
 - [ ] `uid` estable y datasource por uid.

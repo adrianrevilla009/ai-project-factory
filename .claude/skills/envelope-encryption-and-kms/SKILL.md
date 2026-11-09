@@ -50,6 +50,19 @@ public interface DataKeyService {
 # Elección: mono-región -> Vault Transit | multi-región -> KMS multi-región + sobre
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cifra los datos con claves de datos efímeras y protege estas con una clave maestra del servicio de claves; la rotación cambia la maestra sin recifrar todo.
+- Para lectura entre regiones, claves multi-región o réplicas de la clave.
+### Trampas frecuentes
+- Guardar la clave de datos en claro junto a los datos.
+- Reutilizar la misma clave de datos para todo.
+- Una clave maestra única para todos los entornos.
+- Perder el acceso a la clave y, con ello, a los datos.
+- Sin contexto de cifrado que ate el dato a su uso.
+### Evidencia
+- Una prueba descifra en otra región y se ensaya la pérdida de acceso a la clave.
+
 ## Checklist de revisión
 - [ ] DEK por objeto, KEK en KMS/Transit; DEK nunca en claro en disco.
 - [ ] Datos multi-región con clave multi-región, no con Transit.

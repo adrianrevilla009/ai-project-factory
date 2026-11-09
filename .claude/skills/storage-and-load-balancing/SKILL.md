@@ -43,6 +43,19 @@ reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clase de almacenamiento por perfil de carga con rendimiento, replicación y copia conocidos; balanceo de entrada con alta disponibilidad real.
+- Pruebas de fallo del almacenamiento.
+### Trampas frecuentes
+- Almacenamiento local sin replicación para datos que importan.
+- Un balanceador único.
+- Rendimiento no medido.
+- Sin copia de los volúmenes.
+- Direcciones fijas sin gestión.
+### Evidencia
+- Una prueba de fallo de nodo con los datos y el tráfico recuperados.
+
 ## Checklist de revisión
 - [ ] StorageClass con reclaimPolicy y binding mode.
 - [ ] Snapshots y backup externo probados.

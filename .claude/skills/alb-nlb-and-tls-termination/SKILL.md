@@ -85,6 +85,19 @@ resource "aws_lb_listener" "https" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Balanceador de aplicación para HTTP con reglas y TLS; de red para TCP o rendimiento extremo; decide dónde termina el TLS y si se reencripta hacia dentro.
+- Política de TLS explícita y moderna.
+### Trampas frecuentes
+- Dejar la política de TLS por defecto.
+- Tráfico sin cifrar entre balanceador y carga en datos sensibles.
+- Sin redirección de HTTP a HTTPS.
+- Sin protección contra borrado.
+- Registros de acceso desactivados.
+### Evidencia
+- Un análisis de la configuración TLS externo y reglas automáticas que lo comprueban.
+
 ## Checklist de revisión
 - [ ] ALB vs NLB justificado; listener 80 solo redirige.
 - [ ] Certificado ACM de la región correcta y política TLS explícita.

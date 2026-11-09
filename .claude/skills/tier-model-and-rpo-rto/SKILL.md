@@ -59,6 +59,19 @@ last_exercise: 2026-10-20    # tabletop, ver game days
 data_write_region: per-aggregate   # ver data-replication-matrix
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Asigna un nivel de resiliencia por servicio según el impacto de negocio y sus objetivos de punto y tiempo de recuperación; cada nivel tiene un coste asociado y acordado.
+- Revisa los niveles con el negocio, no solo con técnicos.
+### Trampas frecuentes
+- Todo en el nivel más alto «por seguridad».
+- Objetivos que nadie ha probado.
+- Dependencias de un nivel inferior para un servicio crítico.
+- Tiempos medidos en teoría.
+- Sin revisión cuando cambia el negocio.
+### Evidencia
+- Cada servicio tiene su nivel, sus objetivos y la fecha de su último ensayo.
+
 ## Checklist de revisión
 - [ ] Existe `resilience.yaml` con tier, RPO, RTO y aprobador.
 - [ ] El tier coincide con los módulos de infraestructura activados.

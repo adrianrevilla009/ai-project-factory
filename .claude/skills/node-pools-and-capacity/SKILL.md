@@ -46,6 +46,19 @@ node_groups = {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Grupos de nodos por perfil de carga (propósito general, memoria, GPU, sistema) con etiquetas y tolerancias; capacidad con autoescalado y margen.
+- Mezcla instancias de distinto tipo con cuidado y prueba la interrupción.
+### Trampas frecuentes
+- Un único tipo de nodo para todo.
+- Sin margen: un despliegue deja el clúster sin capacidad.
+- Cargas críticas en nodos que se pueden interrumpir.
+- Límites de recursos que no se corresponden con el uso real.
+- Autoescalado sin límites máximos.
+### Evidencia
+- Una prueba de escalado y de pérdida de un nodo con las cargas críticas en pie.
+
 ## Checklist de revisión
 - [ ] Pool de sistema separado y con taint.
 - [ ] Pools multi-AZ (3) en prod.

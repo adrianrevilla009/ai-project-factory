@@ -50,6 +50,19 @@ cosign attest --type cyclonedx --predicate sbom-image.cdx.json registry.example.
 ```
 Flag `--format cyclonedx` verificado en https://trivy.dev/latest/docs/references/configuration/cli/trivy_image/ (2026-11-07). `cosign attest --type cyclonedx`. Subida a Dependency-Track vía su API REST (`PUT /api/v1/bom`) con clave de API en secreto de CI.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un SBOM por artefacto, guardado junto a él y consultable; sirve para responder a nuevas vulnerabilidades.
+- Incluye transitivas y la base de la imagen.
+### Trampas frecuentes
+- SBOM que nadie consulta.
+- No incluir la imagen base.
+- Desvincular el SBOM del digest.
+- Generar uno distinto al desplegado.
+- Sin plan para usarlo en un incidente.
+### Evidencia
+- Una consulta por componente devuelve los artefactos afectados.
+
 ## Checklist de revisión
 - [ ] SBOM CycloneDX por artefacto, vinculado al digest.
 - [ ] Cargado en Dependency-Track con proyecto/versión.

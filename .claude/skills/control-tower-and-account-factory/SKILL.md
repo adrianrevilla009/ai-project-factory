@@ -50,6 +50,19 @@ module "account_orders_prod" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una fábrica de cuentas con configuración base idéntica (red, registros, identidad) y solicitudes por código revisadas; decide hasta qué punto personalizas.
+- Los cambios de la línea base se despliegan a todas las cuentas de forma controlada.
+### Trampas frecuentes
+- Crear cuentas a mano.
+- Líneas base que difieren entre cuentas.
+- Personalizaciones fuera del proceso.
+- Sin proceso para retirar cuentas.
+- Dependencias de una región de origen que no se puede cambiar.
+### Evidencia
+- Una cuenta nueva sale con la base completa y comprobable en minutos.
+
 ## Checklist de revisión
 - [ ] ADR de Control Tower vs Terraform propio existe.
 - [ ] Alta de cuenta solo por PR.

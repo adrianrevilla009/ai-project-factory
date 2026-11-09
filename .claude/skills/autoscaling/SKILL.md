@@ -67,6 +67,19 @@ spec:
       metadata: { topic: orders, consumerGroup: orders-consumer, lagThreshold: "100", bootstrapServers: kafka.example.svc:9092 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Escala por la métrica que refleja la carga (concurrencia, cola, latencia) y no solo por CPU; define mínimos y máximos y el comportamiento al reducir.
+- Los nodos y los pods escalan de forma coordinada.
+### Trampas frecuentes
+- Escalar solo por CPU un servicio limitado por E/S.
+- Mínimo de una réplica en servicios críticos.
+- Estabilización demasiado corta: oscilaciones.
+- Máximo ilimitado que dispara el coste.
+- Sin pruebas de carga del escalado.
+### Evidencia
+- Una prueba de carga que muestra el comportamiento de escalado y su tiempo de reacción.
+
 ## Checklist de revisión
 - [ ] Requests correctos antes de HPA.
 - [ ] min >= 2 y max acotado.

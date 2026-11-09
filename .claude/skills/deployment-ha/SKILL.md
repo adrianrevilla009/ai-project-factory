@@ -73,6 +73,19 @@ api_addr     = "https://vault-0.vault-internal:8200"
 cluster_addr = "https://vault-0.vault-internal:8201"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un almacén de secretos con alta disponibilidad y almacenamiento replicado, sellado automático y copia de seguridad probada; trátalo como el servicio más crítico.
+- Define cómo se recupera si se pierde el quórum o las claves.
+### Trampas frecuentes
+- Una única instancia.
+- Claves de desbloqueo guardadas junto al servicio.
+- Copias de seguridad nunca restauradas.
+- Actualizaciones sin ensayo.
+- Sin supervisión del estado de sellado.
+### Evidencia
+- Un ensayo de recuperación desde copia y de pérdida de un nodo.
+
 ## Checklist de revisión
 - [ ] 3 o 5 nodos Raft repartidos en AZ distintas, con PDB.
 - [ ] Un clúster por región; ninguna dependencia de replicación Enterprise.

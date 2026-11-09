@@ -52,6 +52,19 @@ spec:
 ```
 Ubicación exacta de `meshConfig` según método de instalación.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Entrada y salida controladas con pasarelas dedicadas: la salida hacia Internet solo por una pasarela con lista permitida y registro.
+- Escala y protege las pasarelas como un servicio crítico.
+### Trampas frecuentes
+- Salida libre desde cada carga.
+- Una pasarela única sin alta disponibilidad.
+- Sin registro del tráfico saliente.
+- Listas permitidas con comodines.
+- Mezclar tráfico de entrada y salida en el mismo punto sin aislamiento.
+### Evidencia
+- Una prueba intenta salir a un destino no permitido y falla.
+
 ## Checklist de revisión
 - [ ] Ingress en namespace propio con PDB y HPA.
 - [ ] `REGISTRY_ONLY` y `ServiceEntry` por destino externo.

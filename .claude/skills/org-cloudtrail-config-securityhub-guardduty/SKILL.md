@@ -56,6 +56,19 @@ resource "aws_guardduty_organization_admin_account" "this" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registro de actividad y de configuración de toda la organización centralizado, con servicios de detección activados de forma uniforme y administrados desde una cuenta de seguridad.
+- Alertas hacia un destino con dueño y un procedimiento.
+### Trampas frecuentes
+- Registros en la misma cuenta que se vigila.
+- Servicios activos en unas regiones y en otras no.
+- Hallazgos sin dueño ni plazo.
+- Registros sin validación de integridad.
+- Costes de registro sin control.
+### Evidencia
+- Una región o cuenta nueva queda cubierta automáticamente.
+
 ## Checklist de revisión
 - [ ] Trail org multi-región con validación y KMS.
 - [ ] Config con agregador en `audit`.

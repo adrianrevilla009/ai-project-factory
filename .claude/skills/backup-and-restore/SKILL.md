@@ -54,6 +54,19 @@ velero restore create --from-backup daily-apps-<timestamp> --namespace-mappings 
 # verificar smoke tests, anotar RTO medido en docs/runbooks/restore-tests.md
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Copia el estado que importa (datos, configuración de recursos, secretos) y prueba la restauración de forma periódica; una copia no probada no es una copia.
+- Define objetivos de punto y tiempo de recuperación por carga.
+### Trampas frecuentes
+- Copias que nunca se han restaurado.
+- Copiar volúmenes sin coherencia con la aplicación.
+- Copias en el mismo clúster o cuenta que lo copiado.
+- Sin cifrado ni control de acceso.
+- Retención sin criterio.
+### Evidencia
+- Un informe de restauración con el tiempo real medido frente al objetivo.
+
 ## Checklist de revisión
 - [ ] Schedule con ttl y destino externo cifrado.
 - [ ] Restore probado en el último trimestre, con RTO anotado.

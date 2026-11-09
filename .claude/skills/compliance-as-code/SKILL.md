@@ -56,6 +56,19 @@ deny contains msg if {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Expresa los controles como comprobaciones automáticas sobre el código y la configuración, con evidencia generada en cada ejecución.
+- Primero lo nativo de la herramienta; lo propio solo cuando no existe.
+### Trampas frecuentes
+- Controles solo en un documento.
+- Comprobaciones que fallan siempre y se ignoran.
+- Excepciones sin caducidad.
+- Evidencia recogida a mano antes de una auditoría.
+- Mapear controles sin verificarlos.
+### Evidencia
+- Cada control tiene una comprobación o una revisión con dueño y evidencia fechada.
+
 ## Checklist de revisión
 - [ ] Cada control tiene id, origen, capa y dueño.
 - [ ] CI ejecuta Checkov y Conftest sobre el plan.

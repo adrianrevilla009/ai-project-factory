@@ -65,6 +65,19 @@ resource "vault_jwt_auth_backend_role" "ci_deploy" {
 ```
 Nombres de recursos del provider `hashicorp/vault`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada carga se autentica con su identidad de plataforma (cuenta de servicio, rol de nube) y no con secretos estáticos; personas, por proveedor de identidad.
+- Vincula las políticas a atributos verificables.
+### Trampas frecuentes
+- Tokens estáticos de larga vida.
+- Un único método de autenticación para todo.
+- Roles con permisos demasiado amplios.
+- Autenticación por la que cualquier carga del clúster puede obtener cualquier secreto.
+- Sin caducidad de las sesiones.
+### Evidencia
+- Una prueba demuestra que una carga solo obtiene los secretos de su política.
+
 ## Checklist de revisión
 - [ ] Ningún rol con `*` en ServiceAccount o namespace.
 - [ ] TTL y max TTL cortos; sin tokens eternos.

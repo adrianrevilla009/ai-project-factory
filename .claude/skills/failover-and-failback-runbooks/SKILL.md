@@ -54,6 +54,19 @@ Un orden equivocado produce errores confusos en mitad del incidente (aplicacione
 4. Solo si 3 verificado: vault write database/config/example-pg ... (Vault eu-central-1)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Guion con pasos ordenados, responsables y comprobaciones; respeta las dependencias de orden (primero los datos, luego los servicios).
+- La vuelta atrás es otro guion que también se ensaya.
+### Trampas frecuentes
+- Un guion nunca ejecutado.
+- Pasos que asumen que quien lo ejecuta lo conoce.
+- Sin criterio claro de cuándo conmutar.
+- Olvidar la vuelta a la región original.
+- Dependencias de accesos que también estarán caídos.
+### Evidencia
+- Un ensayo cronometrado con quien está de guardia.
+
 ## Checklist de revisión
 - [ ] Orden Aurora antes que Vault explícito y justificado.
 - [ ] Solo plano de datos; sin dependencia de la región caída.

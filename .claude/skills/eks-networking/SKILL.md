@@ -76,6 +76,19 @@ spec:
   policyTypes: ["Ingress"]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige la red de pods por escala y funciones (direcciones de la VPC frente a una red superpuesta) y planifica el agotamiento de direcciones desde el inicio.
+- Políticas de red por defecto restrictivas.
+### Trampas frecuentes
+- Clústeres que agotan direcciones IP.
+- Sin políticas de red: todo habla con todo.
+- Grupos de seguridad por pod sin entender sus límites.
+- Cambiar de plugin de red sin plan.
+- Ignorar el tráfico entre zonas.
+### Evidencia
+- Un cálculo de direcciones por nodo y pod y pruebas de políticas de red.
+
 ## Checklist de revisión
 - [ ] Plan de IPs de pods (CIDR secundario/prefix delegation) y alertas de IP libres.
 - [ ] Subredes etiquetadas para balanceadores; nodos en privadas.

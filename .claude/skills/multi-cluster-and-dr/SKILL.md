@@ -48,6 +48,19 @@ data: { postgres: "replica en standby (ver data-replication-matrix)", kafka: "mi
 failover: "runbook failover-orders.md; ensayo trimestral"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Decide el nivel de recuperación por carga: copia y restauración, clúster en espera o activo-activo; cada paso cuesta más y complica más.
+- La recuperación depende de los datos, no del clúster.
+### Trampas frecuentes
+- Un clúster secundario idéntico y nunca probado.
+- Estado replicado sin coherencia.
+- Dependencias globales no consideradas (DNS, identidad, registros de imágenes).
+- Conmutación manual sin guion.
+- Pruebas que no incluyen la vuelta atrás.
+### Evidencia
+- Un ejercicio de conmutación con tiempos reales y el procedimiento de vuelta.
+
 ## Checklist de revisión
 - [ ] RTO/RPO por servicio y patrón elegido.
 - [ ] Mismo Git para todos los clústeres.

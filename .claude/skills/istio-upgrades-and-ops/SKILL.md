@@ -49,6 +49,19 @@ istioctl analyze -n orders-test
 ```
 Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Actualiza por revisiones (canario del plano de control) y migra espacios de nombres de forma gradual; mantén la compatibilidad con la versión de Kubernetes.
+- Observa el plano de control como un servicio crítico.
+### Trampas frecuentes
+- Actualizaciones en sitio sin vuelta atrás.
+- Mezclar demasiadas versiones sin soporte.
+- Plano de control sin alta disponibilidad.
+- Ignorar la compatibilidad de definiciones de recursos.
+- Sin ensayo previo.
+### Evidencia
+- Un ensayo de actualización por revisiones con migración y reversión probadas.
+
 ## Checklist de revisión
 - [ ] Versión fijada y compatible con Kubernetes.
 - [ ] Upgrade por revisión con namespace piloto.

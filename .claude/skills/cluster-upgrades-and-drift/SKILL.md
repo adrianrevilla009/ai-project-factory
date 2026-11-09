@@ -49,6 +49,19 @@ Upgrade de 1.N a 1.N+3 de golpe, sin revisar APIs eliminadas.
 terraform plan -detailed-exitcode   # exit 2 = drift -> abrir issue
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Actualiza el plano de control y luego los nodos, de una versión menor en una, con detección de APIs retiradas antes y una ventana acordada.
+- La deriva se detecta y se corrige desde el código.
+### Trampas frecuentes
+- Saltar varias versiones.
+- Actualizar sin revisar APIs retiradas.
+- Cambios manuales que se pierden o se mantienen sin que nadie lo sepa.
+- Sin plan de vuelta atrás de los complementos.
+- Versiones sin soporte.
+### Evidencia
+- Un registro de versiones por clúster y un ensayo de actualización en un entorno previo.
+
 ## Checklist de revisión
 - [ ] Versión dentro de soporte y calendario revisado.
 - [ ] Una versión menor por vez, entornos en orden.

@@ -75,6 +75,19 @@ resource "aws_route53_record" "api_secondary" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Redirección a otra región con comprobaciones de salud (DNS) o con una dirección fija global y conmutación rápida; elige según el tiempo de conmutación necesario y el coste.
+- La conmutación es tan buena como la comprobación de salud.
+### Trampas frecuentes
+- Comprobaciones de salud que solo miran que el puerto responde.
+- Tiempos de vida de DNS largos que retrasan la conmutación.
+- Conmutación automática hacia una región que no puede asumir la carga.
+- Sin ensayo de conmutación.
+- Olvidar la salida de datos entre regiones.
+### Evidencia
+- Un ensayo de conmutación con el tiempo medido hasta recuperar el servicio.
+
 ## Checklist de revisión
 - [ ] Modo (activa-pasiva/activa-activa) y RPO/RTO documentados.
 - [ ] Route 53 vs Global Accelerator justificado, con coste.

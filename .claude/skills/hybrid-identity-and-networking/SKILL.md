@@ -38,6 +38,19 @@ On-prem 10.10.0.0/16 | Cloud 10.20.0.0/16 | Pods 10.244.0.0/16 | Services 10.96.
 allow tcp/443 from 10.10.5.0/24 to 10.20.8.0/24
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una identidad única federada entre local y nube y una conexión redundante y cifrada; DNS coherente entre ambos mundos.
+- Define la dependencia: qué ocurre si cae el enlace.
+### Trampas frecuentes
+- Conexión única sin respaldo.
+- Identidades distintas en cada lado.
+- Rangos de red solapados.
+- Servicios críticos que dependen del enlace sin degradación.
+- DNS que no resuelve desde un lado.
+### Evidencia
+- Una prueba de caída del enlace y del proveedor de identidad.
+
 ## Checklist de revisión
 - [ ] Plan CIDR sin solapes.
 - [ ] Federación OIDC documentada; sin claves estáticas.

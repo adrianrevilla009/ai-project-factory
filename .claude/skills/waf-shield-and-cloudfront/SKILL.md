@@ -91,6 +91,19 @@ resource "aws_wafv2_web_acl" "edge" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Protege en el borde con CDN y cortafuegos de aplicación, y restringe el origen para que solo acepte tráfico del CDN.
+- Empieza las reglas en modo recuento y pasa a bloqueo cuando entiendes el ruido.
+### Trampas frecuentes
+- Origen accesible directamente, saltándose el cortafuegos.
+- Reglas activadas en bloqueo sin observación previa.
+- Sin registro del cortafuegos.
+- Cachear contenido personalizado.
+- Costes de transferencia sin vigilar.
+### Evidencia
+- Una prueba demuestra que el origen rechaza tráfico que no viene del CDN.
+
 ## Checklist de revisión
 - [ ] CloudFront o WAF regional delante de todo endpoint público.
 - [ ] Origen cerrado a CloudFront (prefix list + cabecera/VPC origin).

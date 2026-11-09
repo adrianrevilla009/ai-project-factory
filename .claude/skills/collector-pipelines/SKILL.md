@@ -66,6 +66,19 @@ service:
 ```
 (Los exporters `prometheusremotewrite` y `otlphttp/loki` se omiten por brevedad; nombres de componentes)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un colector por capas: agentes locales que añaden contexto y puertas de enlace que muestrean, filtran y exportan; con límites de memoria y colas acotadas.
+- Pipelines separados por señal.
+### Trampas frecuentes
+- Un colector único sin límites que se cae bajo carga.
+- Procesadores en un orden que pierde atributos.
+- Sin reintentos ni colas persistentes en señales críticas.
+- Muestreo por cola sin que todas las partes de una traza lleguen al mismo nodo.
+- Configuración sin versionar.
+### Evidencia
+- Una prueba de carga muestra el comportamiento del colector al saturarse.
+
 ## Checklist de revisión
 - [ ] `memory_limiter` primero y `batch` último en todos los pipelines.
 - [ ] `health_check` habilitado y referenciado en las probes.

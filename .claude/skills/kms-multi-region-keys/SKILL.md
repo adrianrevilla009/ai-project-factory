@@ -55,6 +55,19 @@ resource "aws_kms_replica_key" "orders_data_dr" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Claves multi-región cuando los datos deben poder descifrarse en otra región tras un fallo; claves de una región cuando el aislamiento es el objetivo.
+- Política de claves mínima y separación entre quien administra y quien usa.
+### Trampas frecuentes
+- Una única clave en una región para datos que deben sobrevivir a su pérdida.
+- Políticas con comodines.
+- Rotación desactivada.
+- Mismas claves para entornos distintos.
+- Depender de una clave que no se puede recuperar.
+### Evidencia
+- Un ensayo de descifrado en la región secundaria con la réplica de la clave.
+
 ## Checklist de revisión
 - [ ] CMK propia por dominio y entorno.
 - [ ] `enable_key_rotation = true`.

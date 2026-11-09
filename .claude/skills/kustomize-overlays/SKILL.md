@@ -54,6 +54,19 @@ patches:
 for e in dev staging prod; do kustomize build overlays/$e | kubeconform -strict -summary; done
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Base común y superposiciones por entorno que cambian lo mínimo; si la superposición reescribe media base, la base está mal.
+- Parches pequeños y legibles.
+### Trampas frecuentes
+- Superposiciones que duplican la base.
+- Parches que dependen del orden.
+- Diferencias entre entornos que nadie documenta.
+- Sin validación de los manifiestos generados.
+- Mezclar Helm y superposiciones sin reglas.
+### Evidencia
+- El manifiesto final de cada entorno se genera y se valida en CI.
+
 ## Checklist de revisión
 - [ ] Base única y overlays con solo diferencias.
 - [ ] Build de cada overlay validado en CI.

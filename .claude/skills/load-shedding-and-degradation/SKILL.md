@@ -57,6 +57,19 @@ if (!bulkhead.tryAcquire()) {
 ```
 `bulkhead` y `degradation` son componentes propios del proyecto (por ejemplo con Resilience4j).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Decide qué funciones se sacrifican primero bajo carga (las menos críticas) y cómo se comunica al usuario; rechaza pronto lo que no vas a poder atender.
+- Prioriza por tipo de petición y de cliente.
+### Trampas frecuentes
+- Aceptar todo y colapsar.
+- Degradar sin avisar al cliente.
+- Prioridades que nadie definió.
+- Pruebas que no cubren el caso degradado.
+- Reintentos que empeoran la sobrecarga.
+### Evidencia
+- Una prueba de carga excesiva muestra qué funciones se apagan y cómo responde el sistema.
+
 ## Checklist de revisión
 - [ ] Clases de tráfico por criticidad definidas.
 - [ ] Niveles de degradación documentados con disparadores.

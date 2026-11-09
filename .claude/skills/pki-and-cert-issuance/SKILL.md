@@ -64,6 +64,19 @@ spec:
 ```
 Campos de `ClusterIssuer` y de los roles PKI.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una jerarquía con la raíz fuera de línea, intermedias por entorno y certificados de corta duración emitidos automáticamente.
+- La revocación se diseña con duraciones cortas más que con listas.
+### Trampas frecuentes
+- Raíz en línea.
+- Certificados de larga vida sin renovación automática.
+- Una única autoridad para todo.
+- Claves privadas exportables.
+- Sin inventario de lo emitido.
+### Evidencia
+- Una renovación automática probada y un inventario de certificados con caducidad.
+
 ## Checklist de revisión
 - [ ] Raíz offline; intermedia por región, firmada por la raíz común.
 - [ ] Roles con dominios acotados y TTL corto; sin `allow_any_name`.

@@ -85,6 +85,19 @@ spec:
 ```
 Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acción concreta (`publish:github`, `publish:gitlab`.) depende del SCM.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una plantilla por camino recomendado, mantenida por un equipo y versionada; el proyecto creado pertenece a su equipo.
+- Cómo se propagan las mejoras a proyectos ya creados.
+### Trampas frecuentes
+- Plantillas que divergen de la práctica real.
+- Muchas plantillas casi iguales.
+- Proyectos creados que nunca reciben mejoras.
+- Plantillas con secretos o configuración de ejemplo insegura.
+- Sin pruebas de la propia plantilla.
+### Evidencia
+- Un proyecto creado desde la plantilla pasa todos los controles al instante.
+
 ## Checklist de revisión
 - [ ] La plantilla genera catalog-info, CI, Dockerfile, docs y seguridad.
 - [ ] `owner` usa `OwnerPicker`.

@@ -62,6 +62,19 @@ resource "aws_s3_bucket_replication_configuration" "orders_docs" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Fija las regiones permitidas por requisito de residencia y de resiliencia, y hazlas cumplir con barreras de organización.
+- Comprueba la disponibilidad de los servicios que usas en ambas regiones antes de diseñar.
+### Trampas frecuentes
+- Datos replicados a una región no permitida por una configuración por defecto.
+- Servicios globales que mueven datos sin que lo sepas.
+- Copias de seguridad en otra jurisdicción sin revisar.
+- Suponer que todos los servicios existen en todas las regiones.
+- Residencia comprobada solo para la base de datos principal.
+### Evidencia
+- Un mapa de dónde está cada dato, incluidas copias, registros y réplicas.
+
 ## Checklist de revisión
 - [ ] Regiones por variable y alias, sin literales.
 - [ ] Nada fuera de eu-west-1 / eu-central-1 (SCP y plan).

@@ -57,6 +57,19 @@ resource "aws_ec2_transit_gateway_peering_attachment" "euw1_euc1" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cuenta el coste de transferencia entre regiones y zonas desde el diseño; replica solo lo necesario.
+- Prefiere patrones que mantengan el tráfico dentro de una región o zona.
+### Trampas frecuentes
+- Replicar todo a todas partes.
+- Servicios que hablan entre regiones en cada petición.
+- Sin visibilidad del coste por flujo.
+- Datos replicados sin compresión ni filtrado.
+- Ignorar el coste de las puertas de enlace NAT.
+### Evidencia
+- Un informe de coste de transferencia por origen y destino.
+
 ## Checklist de revisión
 - [ ] Sin llamadas síncronas entre regiones; replicación asíncrona.
 - [ ] Estimación de coste de cada flujo nuevo (regiones, AZ, NAT/TGW/endpoints).

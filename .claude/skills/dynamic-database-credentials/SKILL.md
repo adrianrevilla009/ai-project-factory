@@ -58,6 +58,19 @@ vault write database/roles/orders-rw db_name=orders default_ttl=1h max_ttl=4h \
 3. Reiniciar/reconciliar apps para que obtengan credenciales nuevas.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Credenciales de base de datos efímeras generadas por el almacén de secretos por carga y con caducidad corta; la aplicación renueva o rota.
+- Planifica qué ocurre en conmutaciones y en réplicas de solo lectura.
+### Trampas frecuentes
+- Credenciales estáticas compartidas.
+- Caducidad más corta que lo que la aplicación puede renovar.
+- Roles dinámicos creados en una réplica de solo lectura.
+- Sin revocación inmediata ante una fuga.
+- Orden incorrecto en la conmutación (activar credenciales antes de promover).
+### Evidencia
+- Una prueba de renovación y revocación con la aplicación en funcionamiento.
+
 ## Checklist de revisión
 - [ ] Usuario root de Vault con mínimos privilegios y rotado.
 - [ ] Un rol por servicio, TTL corto, GRANT mínimos, sin SUPERUSER.

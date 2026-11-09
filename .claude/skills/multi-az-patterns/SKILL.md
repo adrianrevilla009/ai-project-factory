@@ -65,6 +65,19 @@ spec:
   selector: { matchLabels: { app: orders-api } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Despliega en varias zonas con capacidad suficiente para perder una; reparte el estado con replicación síncrona dentro de la región.
+- Prueba la pérdida de una zona.
+### Trampas frecuentes
+- Capacidad justa que se agota al perder una zona.
+- Datos en una sola zona.
+- Tráfico entre zonas que dispara costes y latencia.
+- Dependencias de una zona única (por ejemplo, un nodo de coordinación).
+- Afinidad que concentra todo en una zona.
+### Evidencia
+- Un ensayo que retira una zona y mide el efecto.
+
 ## Checklist de revisión
 - [ ] Nodos en 3 AZ; spread por zona y PDB en cada servicio.
 - [ ] Datos con réplica en otra AZ; Vault Raft 3 nodos en 3 AZ.

@@ -64,6 +64,19 @@ management.endpoint.env.show-values=NEVER
 ```
 Versiones de API y campos de los CRDs de VSO.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el patrón por riesgo y por dónde vive el secreto: variables de entorno (simple, más expuesto), ficheros montados (renovables), o acceso directo de la aplicación (más control).
+- Evita que el secreto acabe en etcd en claro.
+### Trampas frecuentes
+- Secretos en variables de entorno visibles en volcados.
+- Copias del secreto en claro en `etcd` sin cifrado.
+- Sin renovación cuando el secreto cambia.
+- Una aplicación que lee todos los secretos.
+- Inyectores sin alta disponibilidad.
+### Evidencia
+- Una prueba cambia el secreto y comprueba que la aplicación lo recibe sin reiniciar o con reinicio controlado.
+
 ## Checklist de revisión
 - [ ] Patrón elegido y justificado por servicio.
 - [ ] Secretos montados como fichero, no en variables de entorno.

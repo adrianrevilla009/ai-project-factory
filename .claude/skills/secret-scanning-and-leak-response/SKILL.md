@@ -57,6 +57,19 @@ regexes = ['''changeme[\w-]*''', '''example[\w-]*''']
 ```
 Sintaxis de `.gitleaks.toml`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Detecta secretos antes del commit y en el repositorio; ante una fuga, revoca y rota primero, limpia el historial después.
+- Un procedimiento ensayado y un responsable.
+### Trampas frecuentes
+- Borrar el secreto del historial y no revocarlo.
+- Escáneres con tanto ruido que se ignoran.
+- Sin procedimiento de rotación rápida.
+- Descubrir la fuga por un tercero.
+- Secretos que se copian a herramientas de colaboración.
+### Evidencia
+- Un simulacro de fuga con tiempo de revocación medido.
+
 ## Checklist de revisión
 - [ ] Escáner en pre-commit y en CI bloqueante; histórico escaneado.
 - [ ] Baseline y allowlist estrechas, con justificación.

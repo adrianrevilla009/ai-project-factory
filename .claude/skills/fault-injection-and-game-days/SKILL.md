@@ -50,6 +50,19 @@ expected_findings: [runbook gaps, missing permissions]
 actions_due: 2026-12-15
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Planifica experimentos con hipótesis, radio acotado y condición de aborto; primero en pruebas, después de forma controlada en producción si la madurez lo permite.
+- Un game day entrena a las personas, no solo al sistema.
+### Trampas frecuentes
+- Fallos sin hipótesis ni observabilidad.
+- Sin aviso ni ventana.
+- Dejar sin arreglar lo descubierto.
+- Radio de impacto ilimitado.
+- Hacerlo solo una vez.
+### Evidencia
+- Un informe con hallazgos, acciones y responsables tras cada ejercicio.
+
 ## Checklist de revisión
 - [ ] Hipótesis, alcance y aborto definidos.
 - [ ] Tabletop realizado y cronometrado.

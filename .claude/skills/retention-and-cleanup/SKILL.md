@@ -55,6 +55,19 @@ retention: { keep_days: 7, scope: all-projects }
 ```
 Formato de política de ciclo de vida de ECR.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define cuánto se conserva cada tipo de artefacto y limpia automáticamente lo demás, conservando lo desplegado y lo que exige la norma.
+- Prueba la limpieza en modo simulación antes de borrar.
+### Trampas frecuentes
+- Borrar imágenes aún desplegadas.
+- Retención infinita con coste creciente.
+- Reglas sin probar.
+- Perder lo necesario para reproducir una release.
+- Políticas distintas por repositorio sin criterio.
+### Evidencia
+- Un informe de tamaño por repositorio y una limpieza simulada antes de activarla.
+
 ## Checklist de revisión
 - [ ] Retención distinta por entorno, escrita en el repo.
 - [ ] Digests desplegados y últimos releases de prod protegidos.

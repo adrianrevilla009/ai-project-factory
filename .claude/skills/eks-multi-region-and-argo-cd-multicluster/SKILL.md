@@ -60,6 +60,19 @@ spec:
 ```
 Nota: el clúster local por defecto no tiene Secret y no lo selecciona el generador.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un clúster de gestión o una instancia por región según el riesgo; define cómo se despliega a cada clúster y cómo se propaga la configuración.
+- Los registros de imágenes y la identidad deben existir en ambas regiones.
+### Trampas frecuentes
+- Un único plano de entrega que cae con una región.
+- Sin réplica de imágenes en la región secundaria.
+- Credenciales de clúster con permisos amplios.
+- Despliegues simultáneos a todas las regiones sin escalonar.
+- Sin ensayo de despliegue con una región caída.
+### Evidencia
+- Un despliegue de prueba con una región indisponible.
+
 ## Checklist de revisión
 - [ ] Modelo (activo-activo / warm standby / pilot light) y tier justificados.
 - [ ] Argo CD no depende de la región que falla.

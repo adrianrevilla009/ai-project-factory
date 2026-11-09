@@ -46,6 +46,19 @@ vault token revoke <root-token-example>                # tras el bootstrap
 path "secret/data/example-app/*" { capabilities = ["read", "list"] }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra cada acceso a secretos en un destino que quien accede no puede modificar; la emergencia tiene un procedimiento propio con alerta.
+- Revisa los registros con una frecuencia definida.
+### Trampas frecuentes
+- Auditoría desactivada por rendimiento.
+- Registros en el mismo sistema que protegen.
+- Sin alerta ante accesos inusuales.
+- Credenciales de emergencia de uso cotidiano.
+- Sin revisión.
+### Evidencia
+- Un acceso sospechoso simulado genera una alerta y deja rastro.
+
 ## Checklist de revisión
 - [ ] Dos o más audit devices activos por clúster y logs exportados fuera del nodo.
 - [ ] Alerta si falla la escritura de auditoría.

@@ -55,6 +55,19 @@ resource "aws_flow_log" "main" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registros de flujo a una cuenta central con campos personalizados útiles; úsalos para diagnóstico y detección, no los guardes todos para siempre.
+- Muestrea y agrega cuando el volumen lo exige.
+### Trampas frecuentes
+- Registros en la misma cuenta que genera el tráfico.
+- Retención infinita sin necesidad.
+- Sin consultas preparadas para incidentes.
+- Costes de almacenamiento inesperados.
+- Confundir rechazos con ataques sin contexto.
+### Evidencia
+- Consultas guardadas para los incidentes habituales y un coste mensual conocido.
+
 ## Checklist de revisión
 - [ ] Flow logs `ALL` en cada VPC, hacia S3 del archivo de logs con KMS y retención.
 - [ ] Formato con campos `pkt-*` y de dirección.

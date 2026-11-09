@@ -48,6 +48,19 @@ global:
 ```
 Claves exactas de `values`/IstioOperator; seguir la guía oficial de la versión elegida.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Malla multiclúster solo cuando los servicios deben comunicarse entre clústeres con identidad común; valora el coste operativo y los fallos parciales.
+- Descubrimiento y confianza compartidos de forma deliberada.
+### Trampas frecuentes
+- Conectar clústeres por defecto sin necesidad.
+- Confianza raíz distinta sin plan.
+- Fallos de un clúster que se propagan por la malla.
+- Latencia entre regiones ignorada.
+- Sin pruebas de pérdida de un clúster.
+### Evidencia
+- Un ensayo con un clúster fuera de servicio y la conmutación de tráfico observada.
+
 ## Checklist de revisión
 - [ ] ADR con motivo y modelo elegido.
 - [ ] Raíz de confianza común y claves custodiadas.

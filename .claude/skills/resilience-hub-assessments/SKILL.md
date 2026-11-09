@@ -45,6 +45,19 @@ targets:
 review: "Estimación de configuración; el RTO real se mide en game day"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa una evaluación sistemática de la arquitectura frente a los objetivos de recuperación y trata sus hallazgos como una lista de trabajo priorizada.
+- Repite al cambiar la arquitectura.
+### Trampas frecuentes
+- Una evaluación única que se archiva.
+- Aceptar los resultados sin contrastarlos con pruebas.
+- Ignorar hallazgos de bajo coste.
+- Evaluar solo la aplicación y no sus dependencias.
+- Sin responsable de cada recomendación.
+### Evidencia
+- Cada hallazgo tiene estado, responsable y fecha.
+
 ## Checklist de revisión
 - [ ] Política por tier versionada y alineada con `resilience.yaml`.
 - [ ] Recomendaciones convertidas en issues o riesgos aceptados.

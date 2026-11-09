@@ -60,6 +60,19 @@ spec:
   policyTypes: [Ingress, Egress]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un espacio de nombres por equipo o entorno con cuotas, límites por defecto y políticas de red; aislamiento adicional (nodos o clústeres) si los inquilinos no confían entre sí.
+- Cuotas realistas, revisadas con el uso.
+### Trampas frecuentes
+- Espacios de nombres sin cuotas: uno consume todo.
+- Aislamiento «suave» entre inquilinos con requisitos fuertes.
+- Permisos de administración sobre el clúster entero.
+- Sin política de red por defecto.
+- Cuotas que nunca se ajustan.
+### Evidencia
+- Una prueba demuestra que un espacio de nombres no puede agotar los recursos de otro.
+
 ## Checklist de revisión
 - [ ] Labels `team`, `env` y PSA en el namespace.
 - [ ] ResourceQuota y LimitRange presentes.

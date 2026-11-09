@@ -50,6 +50,19 @@ rollback: "argo rollouts undo / git revert; probado en game day"
 blocked_when: "error_budget.remaining <= 0 unless label=P0|security"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cambios pequeños y frecuentes con despliegue progresivo; la aprobación formal es proporcional al riesgo y automatizada cuando se puede.
+- Ventanas y congelaciones por riesgo de negocio.
+### Trampas frecuentes
+- Cambios grandes y poco frecuentes.
+- Aprobaciones rutinarias sin leer.
+- Cambios sin plan de vuelta atrás.
+- Mezclar cambios de código y de configuración.
+- Sin registro de qué cambió antes de un incidente.
+### Evidencia
+- Cada cambio es trazable a un PR, una aprobación y un despliegue.
+
 ## Checklist de revisión
 - [ ] Riesgo clasificado y aprobación proporcional.
 - [ ] Oleadas con canary y criterios de aborto.

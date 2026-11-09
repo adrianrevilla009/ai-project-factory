@@ -57,6 +57,19 @@ sum(rate(traces_service_graph_request_total{client="web", server="orders"}[5m]))
 ```
 El nombre `traces_service_graph_request_total` es el habitual. Prometheus necesita `--web.enable-remote-write-receiver` para aceptar `/api/v1/write` (verificado en la documentación de Prometheus).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Trazas con un almacén barato por identificador y grafos de servicio generados desde las propias trazas; combina métricas derivadas de spans con cuidado de cardinalidad.
+- Muestreo coherente en toda la cadena.
+### Trampas frecuentes
+- Esperar poder buscar por cualquier atributo sin índices.
+- Métricas de spans con cardinalidad enorme.
+- Muestreo distinto en cada servicio.
+- Grafos que no reflejan dependencias reales por trazas rotas.
+- Retención sin criterio.
+### Evidencia
+- Un grafo de servicios que coincide con las dependencias reales conocidas.
+
 ## Checklist de revisión
 - [ ] Processors habilitados y remote write operativo.
 - [ ] `service.name` consistente en todos los servicios.

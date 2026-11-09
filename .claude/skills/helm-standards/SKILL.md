@@ -56,6 +56,19 @@ helm lint charts/service -f charts/service/values-prod.yaml
 helm template orders charts/service | kubeconform -strict -summary
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un chart por servicio con valores explícitos y esquema de validación; versiona el chart y la aplicación por separado cuando sus ritmos difieren.
+- Plantillas simples: la lógica compleja es una señal de que falta un operador o un componente.
+### Trampas frecuentes
+- Plantillas con lógica enrevesada.
+- Valores sin validar.
+- Charts que despliegan recursos de varios servicios.
+- Secretos en los valores.
+- Subcharts sin versión fija.
+### Evidencia
+- El chart pasa validación de esquema y de manifiestos en CI.
+
 ## Checklist de revisión
 - [ ] Chart base reutilizado; `values.schema.json` presente.
 - [ ] version y appVersion coherentes.

@@ -52,6 +52,19 @@ exceptions:
 trivy fs --scanners license --severity HIGH,CRITICAL .
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una política escrita de licencias con tres categorías y una comprobación automática sobre el SBOM; las excepciones las decide una persona con criterio legal.
+- Revisa también bases de imagen y herramientas.
+### Trampas frecuentes
+- Revisar solo al final.
+- Licencias de pago asumidas.
+- Sin registro de excepciones.
+- Ignorar las transitivas.
+- No detectar un cambio de licencia de una dependencia.
+### Evidencia
+- Un informe de licencias por build con las excepciones aprobadas.
+
 ## Checklist de revisión
 - [ ] Lista de licencias versionada y marcada como pendiente de legal.
 - [ ] Gate de licencias en CI con licencia desconocida = fallo.

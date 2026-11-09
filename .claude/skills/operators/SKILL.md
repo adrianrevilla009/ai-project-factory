@@ -57,6 +57,19 @@ spec:
       labelSelector: { matchLabels: { cnpg.io/cluster: orders-db } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un operador cuando gestiona un recurso con ciclo de vida complejo (base de datos, certificados) y está mantenido; un operador propio solo si no existe una alternativa.
+- Evalúa su madurez, soporte y modo de fallo.
+### Trampas frecuentes
+- Operadores abandonados en producción.
+- Permisos de clúster excesivos para el operador.
+- Actualizaciones de definiciones de recursos sin plan.
+- Un operador por cada necesidad pequeña.
+- Sin copia de seguridad del estado que gestiona.
+### Evidencia
+- Un ADR por operador con soporte, permisos y plan de actualización.
+
 ## Checklist de revisión
 - [ ] ADR operator vs gestionado.
 - [ ] Versiones de operator/CRDs fijadas.

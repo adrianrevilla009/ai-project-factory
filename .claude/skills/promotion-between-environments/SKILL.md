@@ -46,6 +46,19 @@ crane copy registry.example.com/shop-staging/orders@$DIGEST \
 ```
 `crane copy` conserva el digest. Comprobar sintaxis exacta de `crane` y que el adaptador elegido preserve las firmas (referrers/tags `.sig`).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Promociona el mismo artefacto entre entornos con comprobaciones en cada salto; la promoción es un registro auditable.
+- El salto a producción exige evidencia del entorno anterior.
+### Trampas frecuentes
+- Reconstruir por entorno.
+- Promociones manuales sin registro.
+- Saltarse un entorno.
+- No comprobar el digest tras promover.
+- Artefactos que cambian entre saltos.
+### Evidencia
+- Un registro con digest y comprobaciones de cada promoción.
+
 ## Checklist de revisión
 - [ ] El digest de prod coincide con el probado en staging.
 - [ ] Gate de escaneo, firma y SBOM antes de promover.

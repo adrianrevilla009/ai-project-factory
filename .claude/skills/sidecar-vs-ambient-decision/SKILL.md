@@ -53,6 +53,19 @@ metadata:
     istio-injection: enabled   # sidecar por defecto; con revisiones: istio.io/rev
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sidecar por defecto por madurez operativa y modelo conocido; ambiente cuando el consumo por pod es un problema medido y la versión lo declara estable.
+- No mezcles modos en un espacio de nombres sin entender la coexistencia.
+### Trampas frecuentes
+- Pasar a ambiente por moda sin medir el consumo.
+- Ignorar las diferencias de funciones entre modos.
+- Mezclar modos sin plan.
+- Cambiar de modo en producción sin ensayo.
+- Olvidar la capa de proxy de nivel de aplicación cuando la necesitas.
+### Evidencia
+- Una medición del consumo por pod con y sin sidecar y un ensayo del cambio.
+
 ## Checklist de revisión
 - [ ] Modo documentado y coherente con ADR-0032.
 - [ ] Si hay ambient: ADR de proyecto con medición y verificación de madurez.

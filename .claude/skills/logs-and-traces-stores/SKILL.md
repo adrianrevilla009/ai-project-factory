@@ -52,6 +52,19 @@ limits_config:
 {namespace="payments", app="orders-api", level="error"} |= "trace_id=4bf92f3577b34da6"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Almacena registros y trazas con índices mínimos y retención por tipo; las consultas habituales deben ser baratas.
+- Separa datos calientes y fríos.
+### Trampas frecuentes
+- Indexar todo el contenido de cada línea.
+- Retención infinita.
+- Sin control de acceso por equipo.
+- Trazas completas al 100 % sin muestreo.
+- Almacén sin copia ni alta disponibilidad.
+### Evidencia
+- Un informe de coste por volumen y retención y consultas de referencia con tiempos.
+
 ## Checklist de revisión
 - [ ] Almacén de objetos configurado; credenciales por rol/secreto, no literales.
 - [ ] `retention_enabled` y `delete_request_store` presentes.

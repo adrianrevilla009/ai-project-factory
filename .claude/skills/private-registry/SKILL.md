@@ -37,6 +37,19 @@ image: registry.example.internal/team-orders/orders@sha256:000000000000000000000
 ```
 La política Kyverno de firmas ya existe y se aplica a este registro.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un registro propio con alta disponibilidad, control de acceso y réplica o caché de imágenes públicas para que el clúster no dependa de Internet.
+- Plan de capacidad y de copia de seguridad.
+### Trampas frecuentes
+- Un registro único sin copia.
+- Todos con permisos de escritura.
+- Dependencia de registros públicos en el arranque.
+- Sin limpieza ni retención.
+- Certificados y credenciales sin rotación.
+### Evidencia
+- Un arranque del clúster con Internet cortado.
+
 ## Checklist de revisión
 - [ ] Proyectos privados y robots por equipo.
 - [ ] Escaneo y bloqueo por severidad.

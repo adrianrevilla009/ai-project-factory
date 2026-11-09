@@ -57,6 +57,19 @@ resource "aws_ssoadmin_account_assignment" "dev_team_orders_dev" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Acceso humano por federación con identidad corporativa y roles temporales; sin usuarios locales con credenciales de larga vida.
+- Conjuntos de permisos por función, asignados a grupos.
+### Trampas frecuentes
+- Usuarios IAM con claves de acceso.
+- Permisos asignados a personas y no a grupos.
+- Sin autenticación multifactor en el proveedor.
+- Sesiones demasiado largas.
+- Cuentas de emergencia sin control ni alerta.
+### Evidencia
+- No existen usuarios locales con credenciales de larga vida y las asignaciones salen de grupos.
+
 ## Checklist de revisión
 - [ ] Sin `aws_iam_user` ni access keys para personas.
 - [ ] Asignaciones a grupos, no a usuarios.

@@ -56,6 +56,19 @@ class OpenFeatureToggles implements FeatureToggles {
 ```
 Firmas de `OpenFeatureAPI`/`ImmutableContext`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un estándar abierto para evaluar flags con un proveedor intercambiable; el valor por defecto es seguro y la evaluación local, rápida.
+- Los flags de corta vida se retiran.
+### Trampas frecuentes
+- Flags permanentes que se vuelven configuración.
+- Evaluación remota en cada petición.
+- Un flag como control de seguridad.
+- Combinaciones sin probar.
+- Sin propietario ni fecha de retirada.
+### Evidencia
+- Cada flag tiene dueño, valor por defecto y fecha de retirada.
+
 ## Checklist de revisión
 - [ ] Acceso por puerto y API OpenFeature, no SDK de proveedor.
 - [ ] Default seguro en cada evaluación.

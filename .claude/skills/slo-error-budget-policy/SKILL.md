@@ -54,6 +54,19 @@ error_budget_policy:
 ```
 Los valores de burn rate son un punto de partida.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una política escrita de qué se hace al agotar el presupuesto (congelar cambios, priorizar fiabilidad) y quién decide; acordada con negocio y producto.
+- Revisa los objetivos cuando cambia el uso.
+### Trampas frecuentes
+- Una política sin consecuencias reales.
+- Objetivos irreales.
+- Decidir caso por caso sin criterios.
+- Presupuesto que se gasta sin que nadie lo vea.
+- No distinguir fallos propios de los de dependencias.
+### Evidencia
+- Un registro de las veces que se activó la política y qué se hizo.
+
 ## Checklist de revisión
 - [ ] SLIs orientados a usuario y ventana definida.
 - [ ] SLO derivado del tier, no del 100%.
