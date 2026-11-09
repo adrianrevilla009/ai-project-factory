@@ -44,6 +44,20 @@ Las regresiones de rendimiento llegan por acumulación de cambios pequeños. Run
 ```
 `assert_thresholds.py` es un script del proyecto generado (pendiente en la fábrica). Flags de JMeter: comprobar contra la versión fijada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Umbrales derivados de los SLO y comparados con la línea base; una puerta de rendimiento en cada commit solo si es corta y estable.
+- Contra un entorno efímero o de pruebas estable, nunca contra producción.
+- Resultados con ruido: ejecuta varias veces o usa márgenes estadísticos.
+### Trampas frecuentes
+- Entornos con recursos variables que dan resultados incomparables.
+- Umbrales absolutos copiados de otro servicio.
+- No descartar el calentamiento de la JVM.
+- Bloquear por una desviación dentro del ruido.
+- Medir solo medias.
+### Evidencia
+- Los resultados quedan versionados y se comparan con la ejecución anterior en cada promoción.
+
 ## Checklist de revisión
 - [ ] Umbrales derivados del SLO y versionados.
 - [ ] JMeter en modo `-n`, con warm-up.

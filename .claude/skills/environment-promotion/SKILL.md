@@ -45,6 +45,20 @@ images:
 rollback: git revert <sha-del-PR-de-promoción>   # Argo CD sincroniza el estado anterior
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Promociona el mismo digest de un entorno al siguiente mediante un PR al repositorio de estado.
+- Automatiza la promoción a entornos bajos y exige aprobación humana y evidencia para producción.
+- Ventanas de despliegue y congelaciones según el riesgo del negocio.
+### Trampas frecuentes
+- Reconstruir la imagen para cada entorno.
+- Promociones por mensaje o a mano sin rastro.
+- Entornos que difieren tanto que lo probado no vale en el siguiente.
+- Aprobaciones rutinarias sin leer la evidencia.
+- Mezclar cambios de código y de configuración en una promoción.
+### Evidencia
+- Cada promoción es un PR con enlaces a las pruebas y al análisis del entorno anterior.
+
 ## Checklist de revisión
 - [ ] Mismo digest en todos los entornos.
 - [ ] Promoción por PR a `envs/<env>`.

@@ -56,6 +56,20 @@ SET lock_timeout = '5s';
 ALTER TABLE orders ADD COLUMN status_code smallint;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Expand/contract: la migración de esta versión es compatible con el código de la anterior; así el despliegue progresivo y el rollback son seguros.
+- Una migración como paso explícito antes del despliegue, no al arrancar la aplicación con varias réplicas.
+- Cambios grandes (reescrituras de tablas): en lotes y con la aplicación aún compatible.
+### Trampas frecuentes
+- Migraciones destructivas en el mismo despliegue que el código que las necesita.
+- Que cada réplica intente migrar al arrancar.
+- Usuario de runtime con permisos de DDL.
+- Migraciones que bloquean tablas grandes sin planificar la ventana.
+- Editar una migración ya aplicada.
+### Evidencia
+- La migración se probó en CI contra una base real con datos representativos y se documentó su reversión o su compensación.
+
 ## Checklist de revisión
 - [ ] Migración como paso previo único, no en el arranque de N pods.
 - [ ] Compatible con N-1 (expand/contract).

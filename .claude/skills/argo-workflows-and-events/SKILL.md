@@ -58,6 +58,19 @@ spec:
           resources: {limits: {cpu: 500m, memory: 256Mi}}
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Argo Workflows para trabajos de larga duración o con grafo de dependencias en el clúster; el CI normal sigue en el motor de CI.
+- Plantillas reutilizables y cuentas de servicio de mínimo privilegio por espacio de nombres.
+### Trampas frecuentes
+- Convertirlo en un segundo sistema de CI.
+- Workflows sin límites de tiempo ni de recursos.
+- Eventos disparados por fuentes no autenticadas.
+- Sin limpieza de ejecuciones antiguas.
+- Una cuenta de servicio con permisos de administrador del clúster.
+### Evidencia
+- Cada workflow declara tiempo máximo, recursos y retención.
+
 ## Checklist de revisión
 - [ ] Es trabajo in-cluster que no cabe en GitHub Actions.
 - [ ] ServiceAccount propia, deadline, TTL y límites.

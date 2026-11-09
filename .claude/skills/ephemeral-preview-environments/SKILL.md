@@ -55,6 +55,20 @@ jobs:
 ```
 (Los `uses:` de configuración de kubeconfig se fijarían por SHA, comprobar al fijar la versión.)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un entorno por PR cuando el equipo lo usa de verdad para revisar; si nadie lo abre, es coste sin valor.
+- Mismos manifiestos que producción con valores distintos, para que el entorno pruebe lo que se va a desplegar.
+- TTL y destrucción al cerrar el PR como red de seguridad.
+### Trampas frecuentes
+- Entornos que se quedan vivos semanas y cuestan dinero.
+- Datos reales o secretos compartidos con otros entornos.
+- Dependencias compartidas que un PR puede romper para los demás.
+- Exponer el entorno a Internet sin autenticación.
+- Límites de recursos ausentes.
+### Evidencia
+- Un recuento de entornos activos y su coste, y un TTL que los elimina.
+
 ## Checklist de revisión
 - [ ] Namespace por PR con quota y NetworkPolicy.
 - [ ] Teardown al cerrar y TTL.

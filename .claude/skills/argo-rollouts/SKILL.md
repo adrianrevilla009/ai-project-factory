@@ -81,6 +81,20 @@ spec:
           query: sum(rate(http_server_requests_seconds_count{app="shop-service",status=~"5.."}[2m])) / sum(rate(http_server_requests_seconds_count{app="shop-service"}[2m]))
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Canary con análisis automático para servicios con tráfico suficiente; blue/green cuando necesitas conmutación instantánea y puedes pagar el doble de capacidad.
+- Porcentajes exactos requieren enrutado de tráfico (malla); sin él, el reparto depende del número de réplicas.
+- Análisis basado en el SLO, comparado con la versión estable.
+### Trampas frecuentes
+- Canary sin análisis automático: es un despliegue lento con el mismo riesgo.
+- Métricas con retraso que llegan después de la decisión.
+- Pasos demasiado cortos para ver el efecto.
+- Dejar el rollout a medias sin responsable.
+- Mezclar `Deployment` y `Rollout` para el mismo servicio.
+### Evidencia
+- Un rollout abortado a propósito en preproducción demuestra que el análisis detiene el avance.
+
 ## Checklist de revisión
 - [ ] Todo canary tiene análisis (paso o background).
 - [ ] `successCondition` y `failureLimit` definidos; sin datos no cuenta como éxito.

@@ -44,6 +44,20 @@ Un gate que se puede saltar o relajar sin revisión deja de ser gate. El código
   with: { name: reports, path: "**/target/site/jacoco/**" }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pocas puertas que bloquean de verdad mejor que muchas que se ignoran: cada una con dueño, umbral y motivo.
+- Código nuevo estricto y la deuda anterior en un baseline con plan; evita exigir lo imposible de golpe.
+- Las puertas lentas (mutación, carga) van en programado o por cambio, no en cada commit.
+### Trampas frecuentes
+- Subir el umbral para ser exigentes y acabar teniendo que saltarlo.
+- Un gate que falla por razones ajenas al cambio (flaky, servicio externo).
+- Medir solo cobertura y olvidar el resto.
+- Excepciones sin caducidad.
+- Resultados que nadie puede ver ni entender.
+### Evidencia
+- Cada gate tiene un propietario, un umbral justificado y un historial de excepciones con fecha.
+
 ## Checklist de revisión
 - [ ] Ningún `continue-on-error`/`-DskipTests` en el camino a main.
 - [ ] ArchUnit, formato y estilo se ejecutan en modo check.

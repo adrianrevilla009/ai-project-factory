@@ -41,6 +41,19 @@ Spinnaker (heredado) limitado a app legacy "billing-vm"; servicios nuevos: repo 
 Plan de migración: ADR + hoja de ruta por servicio.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Argo CD y Rollouts por defecto; Spinnaker solo para un caso que ellos no cubran y con ADR.
+- Si se hereda, acota su ámbito y planifica migrar a manifiestos declarativos.
+### Trampas frecuentes
+- Introducir una plataforma pesada para un canary que ya cubre Rollouts.
+- Pipelines de Spinnaker sin versionar en Git.
+- Credenciales de cuentas cloud de larga vida.
+- Dos fuentes de verdad para el mismo despliegue.
+- Sin plan de salida.
+### Evidencia
+- Un ADR con el caso que justifica la herramienta y el plan de salida.
+
 ## Checklist de revisión
 - [ ] Existe ADR si se usa Spinnaker.
 - [ ] Sin doble gestión del mismo recurso.

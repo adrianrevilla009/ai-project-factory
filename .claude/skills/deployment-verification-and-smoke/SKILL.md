@@ -46,6 +46,20 @@ Un despliegue "verde" en Kubernetes solo significa que los manifiestos se aplica
   run: ./scripts/smoke.sh "$BASE_URL"   # health + lectura + escritura idempotente
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un `apply` correcto no significa que funcione: espera al rollout y comprueba.
+- Smoke mínimo y estable: salud, una lectura y una escritura de bajo riesgo; el resto, en pruebas previas.
+- Comprueba que la versión desplegada es la esperada para no probar la anterior.
+### Trampas frecuentes
+- Smoke que depende de datos de producción o los modifica.
+- Fallos intermitentes del smoke que se acaban ignorando.
+- Declarar éxito sin esperar a que los pods estén listos.
+- Verificación que pasa por una caché y no por el servicio.
+- Sin acción definida cuando falla.
+### Evidencia
+- El pipeline falla y revierte automáticamente si el smoke no pasa en un tiempo acotado.
+
 ## Checklist de revisión
 - [ ] Se espera el rollout con timeout.
 - [ ] Smoke cubre salud, lectura y escritura sintética.

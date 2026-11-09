@@ -43,6 +43,20 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
 - run: semgrep scan --config policies/semgrep --error
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Capas complementarias: secretos, SAST, dependencias, imagen, IaC y DAST; ninguna sustituye a las demás.
+- Bloquea por severidad y explotabilidad, no por cualquier hallazgo; una política de excepciones con plazo evita la fatiga.
+- Firma y SBOM al final, sobre el artefacto que se despliega.
+### Trampas frecuentes
+- Bloquear con cualquier hallazgo de baja severidad: se acaba desactivando el escáner.
+- Escaneos sin base de datos actualizada.
+- Falsos positivos sin triaje que se acumulan.
+- Escanear la imagen de ayer y desplegar la de hoy.
+- Resultados en un sitio que nadie mira.
+### Evidencia
+- Los hallazgos entran en el flujo de trabajo del equipo con propietario y plazo, y hay un SBOM por build.
+
 ## Checklist de revisión
 - [ ] SAST, secretos, SCA, imagen e IaC presentes y bloqueantes.
 - [ ] Sin `|| true` ni `continue-on-error` en escaneos.

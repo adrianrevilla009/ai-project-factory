@@ -44,6 +44,19 @@ pin por SHA                 include por ref inmutable    versión fija de librar
 runner efímero              runner autoescalado/K8s      agente pod efímero
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Si el equipo ya usa otro motor de CI y cambiar cuesta más que mantener un ADR, conserva las reglas y los gates y documenta la excepción.
+- Lo que importa son los principios (artefacto único, credenciales cortas por OIDC, gates bloqueantes), no el producto.
+### Trampas frecuentes
+- Duplicar las guías para cada motor y que diverjan.
+- Migrar de motor «por tecnología» sin un problema concreto.
+- Perder las puertas de seguridad al traducir el pipeline.
+- Credenciales de larga vida porque el motor nuevo no soporta OIDC.
+- Sin ADR que registre la excepción.
+### Evidencia
+- Un ADR por la excepción con el coste de mantenimiento y la lista de gates equivalentes.
+
 ## Checklist de revisión
 - [ ] ADR de excepción a D20 registrado.
 - [ ] Mismos gates y orden que `pipeline-architecture`.

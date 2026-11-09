@@ -44,6 +44,20 @@ CD:    promote same digest: dev -> staging -> prod (aprobación por entorno)
        cada paso: migración -> deploy -> smoke -> verificación -> (rollback)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Construye una vez y promociona el mismo artefacto por su digest; si reconstruyes por entorno, lo que probaste no es lo que despliegas.
+- Ordena las etapas de lo barato a lo caro para fallar rápido; paraleliza las que no dependen entre sí.
+- Monorepo o repos múltiples: en monorepo, ejecuta solo lo afectado por el cambio y mantén el pipeline completo en la rama principal.
+### Trampas frecuentes
+- Pipelines de 40 minutos que se saltan «solo esta vez».
+- Un gate informativo que nunca bloquea: nadie lo mira.
+- Lógica de negocio del despliegue en scripts del CI que no se pueden ejecutar en local.
+- Etapas que dependen de estado dejado por ejecuciones anteriores.
+- Un único pipeline gigante que nadie se atreve a tocar.
+### Evidencia
+- El mismo digest pasa por todos los entornos y cada gate se puede ejecutar en local con un comando.
+
 ## Checklist de revisión
 - [ ] Un solo build por versión; promoción por digest.
 - [ ] Etapas ordenadas barato -> caro y todos los gates bloqueantes.

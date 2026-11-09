@@ -52,6 +52,20 @@ spec:
     path: apps/shop-service/overlays/prod
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Repositorio de código y repositorio de manifiestos separados: ciclos de vida, permisos y auditoría distintos.
+- Carpetas por entorno en lugar de ramas por entorno: las ramas divergen y las fusiones entre ellas son dolorosas.
+- Un repositorio de manifiestos por equipo o por dominio cuando la escala o los permisos lo piden.
+### Trampas frecuentes
+- Ramas por entorno que acaban distintas.
+- Manifiestos dentro del repositorio de la aplicación con permisos de escritura amplios.
+- `HEAD` implícito como revisión objetivo.
+- Rama principal del repositorio de estado sin protección.
+- Copiar manifiestos entre entornos a mano.
+### Evidencia
+- La rama principal está protegida y todo cambio de un entorno es un PR revisado.
+
 ## Checklist de revisión
 - [ ] Código y manifiestos en repos distintos.
 - [ ] Un directorio por entorno; sin ramas por entorno.

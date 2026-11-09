@@ -45,6 +45,20 @@ DORA calculado a mano en una hoja cada trimestre; "fallo" = lo que recuerde el e
 ```
 `DEPLOY_EVENTS_URL` es un endpoint interno del proyecto (por definir). Lead time = tiempo entre el primer commit del cambio y el evento de despliegue exitoso en producción.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide las cuatro métricas (frecuencia, plazo de cambios, tasa de fallo y tiempo de recuperación) para mejorar el proceso, no para comparar personas ni equipos.
+- Define «fallo de cambio» y enlázalo a despliegues; si no, la métrica no vale.
+- Mide también el pipeline: duración, colas, tests inestables.
+### Trampas frecuentes
+- Usar las métricas como objetivos individuales: se manipulan.
+- Calcularlas a mano una vez al trimestre.
+- Contar los despliegues de configuración igual que los de código sin distinguirlos.
+- Ignorar el tiempo en cola de los ejecutores.
+- Comparar equipos con contextos muy distintos.
+### Evidencia
+- Un panel con las cuatro métricas por servicio y la definición de fallo escrita.
+
 ## Checklist de revisión
 - [ ] Evento de despliegue emitido en éxito, fallo y rollback.
 - [ ] "Fallo de cambio" definido y enlazado a incidentes.

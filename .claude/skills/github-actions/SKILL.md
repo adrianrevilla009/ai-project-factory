@@ -85,6 +85,20 @@ jobs:
 ```
 El rol y la región son ejemplo; preparado para AWS, no verificado en real. En local no se reproduce OIDC contra AWS: se usa `act` o un runner kind sin credenciales cloud (comprobar al fijar la versión).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Fija las acciones de terceros por SHA completo; un tag es mutable y puede cambiar bajo tus pies.
+- Permisos mínimos por defecto y ampliados por job; credenciales de nube por OIDC, sin claves guardadas.
+- Flujos reutilizables para lo común; no copies el mismo YAML en cien repositorios.
+### Trampas frecuentes
+- `pull_request_target` que ejecuta código de forks con secretos.
+- Interpolar entradas no confiables (títulos de PR, ramas) directamente en comandos de shell: inyección.
+- Secretos accesibles a todos los jobs y no solo al que los necesita.
+- Runners compartidos con estado entre ejecuciones.
+- Cachés que se envenenan desde ramas no confiables.
+### Evidencia
+- Un análisis del workflow (por ejemplo, con las reglas de `policies/opa-conftest/github-actions-pinning.rego`) confirma que todo está fijado por SHA.
+
 ## Checklist de revisión
 - [ ] Todo `uses:` externo termina en SHA de 40 hex.
 - [ ] `permissions:` explícito y mínimo; `id-token: write` solo donde hay OIDC.

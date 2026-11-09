@@ -53,6 +53,20 @@ jobs:
 ```
 `--atomic` y flags de Helm: comprobar contra la versión fijada. Si el entorno usa GitOps, el rollback es un revert en el repositorio de configuración (bloque 17).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Volver atrás redesplegando el digest anterior es lo normal; arreglar hacia delante solo si es más rápido y seguro.
+- La compatibilidad de esquema y de mensajes entre versiones es lo que permite revertir; sin ella el rollback es una ilusión.
+- Decide el disparador (métrica, tiempo, persona) antes del despliegue.
+### Trampas frecuentes
+- Un rollback que nunca se ha ensayado.
+- Migraciones irreversibles sin plan de compensación.
+- Perder la configuración de la versión anterior.
+- Revertir el código y dejar mensajes ya publicados en un formato nuevo.
+- Depender de que quien conoce el procedimiento esté disponible.
+### Evidencia
+- Un ensayo de rollback registrado en preproducción y el digest estable de cada entorno anotado.
+
 ## Checklist de revisión
 - [ ] Digest estable anterior accesible y registrado.
 - [ ] Esquema compatible N-1/N.

@@ -79,6 +79,20 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"   # CRD/namespace antes que la app (wave 0)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un proyecto por equipo o dominio con orígenes, destinos y recursos permitidos explícitos; el proyecto por defecto, sin uso.
+- Una instancia por clúster o una central: la central simplifica, pero concentra el riesgo y el acceso a todos los clústeres.
+- Notificaciones y estado de salud visibles para el equipo que despliega.
+### Trampas frecuentes
+- Permisos con comodines en los proyectos.
+- Sincronización automática con poda en producción sin pensarlo.
+- Aplicaciones que apuntan a una rama móvil.
+- Cuentas locales compartidas en lugar de SSO.
+- Ignorar diferencias de forma generalizada y ocultar la deriva real.
+### Evidencia
+- El RBAC se valida en CI y los proyectos no usan comodines.
+
 ## Checklist de revisión
 - [ ] Ninguna Application usa `project: default`.
 - [ ] AppProject sin `*` en repos/destinos.

@@ -51,6 +51,20 @@ spec:
 ```
 Usa `external-secrets.io/v1`: desde ESO v0.17.0 la API `v1beta1` ya no se sirve, y un manifiesto antiguo falla con un operador actual (verificado el 2026-11-08 en las notas de versión del proyecto).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Nunca el secreto en Git; sí una referencia a un gestor, con un operador que lo materializa en el clúster.
+- Cifrar en Git (sellado) es una segunda opción cuando no hay gestor externo; exige gestionar bien las claves de cifrado.
+- Rotación desacoplada del despliegue de la aplicación.
+### Trampas frecuentes
+- Secretos «cifrados» con una clave que está en el mismo repositorio.
+- Plugins que inyectan secretos al generar manifiestos: acaban en la caché del orquestador.
+- Un `Secret` en claro en `etcd` sin cifrado en reposo.
+- Secretos compartidos entre entornos.
+- No poder rotar sin redesplegar.
+### Evidencia
+- Un escáner de secretos en el repositorio de estado y rotación probada de una credencial.
+
 ## Checklist de revisión
 - [ ] Ningún `Secret` con datos en el repo.
 - [ ] Solo `ExternalSecret`/`SealedSecret`/referencias.

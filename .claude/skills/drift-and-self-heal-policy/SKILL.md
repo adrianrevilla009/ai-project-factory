@@ -52,6 +52,20 @@ ignoreDifferences:
     jsonPointers: ["/spec/replicas"]   # gestionado por HPA
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- En desarrollo y staging, autocorrección y poda; en producción, sincronización automática de lo seguro y aprobación humana para lo destructivo.
+- El cambio manual es un incidente de proceso: se corrige en Git, no con `kubectl`.
+- Ignora diferencias solo en campos concretos que un controlador gestiona legítimamente (por ejemplo, réplicas con HPA).
+### Trampas frecuentes
+- Activar poda en producción sin una red de seguridad.
+- Ignorar diferencias en recursos enteros.
+- Que la autocorrección pelee con otro controlador en bucle.
+- Cambios de emergencia manuales que nunca se llevan a Git.
+- Alertas de deriva sin responsable.
+### Evidencia
+- Un informe de aplicaciones desincronizadas y de cambios manuales detectados, revisado de forma periódica.
+
 ## Checklist de revisión
 - [ ] `prune`/`selfHeal` explícitos y coherentes con el entorno.
 - [ ] Cada `ignoreDifferences` es específico y comentado.

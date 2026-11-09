@@ -51,6 +51,20 @@ release:
     - run:./scripts/release.sh   # calcula versión (herramienta a elegir: comprobar al fijar la versión), tag anotado y notas
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- SemVer para lo que otros consumen (librerías, APIs); para un servicio interno, lo importante es identificar la versión desplegada, no el número.
+- Deriva la versión y el registro de cambios de Conventional Commits para que no dependan de la memoria de nadie.
+- Un tag anotado sobre el commit que pasó los gates.
+### Trampas frecuentes
+- Versiones que se reutilizan o se reescriben.
+- Cambios incompatibles en una versión menor.
+- Un changelog escrito a mano que no refleja lo publicado.
+- Releases desde ramas distintas de la principal sin control.
+- Artefactos sin la versión ni el SHA en sus metadatos.
+### Evidencia
+- Cada artefacto desplegado se puede trazar a un commit y a una entrada del changelog.
+
 ## Checklist de revisión
 - [ ] Commits siguen Conventional Commits.
 - [ ] Tag anotado inmutable desde main tras gates verdes.

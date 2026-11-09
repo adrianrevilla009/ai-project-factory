@@ -49,6 +49,20 @@ spec:
 ```
 Versión de API `v1`: comprobar contra la versión instalada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Argo CD por defecto (ADR-0021); Flux solo si se hereda o si hay un motivo documentado.
+- Si se hereda Flux, conserva su modelo en vez de mezclar los dos: cada herramienta con su ámbito.
+- Las reglas de repositorio, secretos y promoción son independientes de la herramienta.
+### Trampas frecuentes
+- Dos herramientas reconciliando el mismo espacio de nombres.
+- Migrar por afición sin problema que resolver.
+- Perder las puertas de seguridad al cambiar de herramienta.
+- Duplicar guías sin un dueño.
+- Sin ADR que registre la excepción.
+### Evidencia
+- Un ADR por la excepción y un mapa de qué herramienta gestiona qué.
+
 ## Checklist de revisión
 - [ ] Existe ADR si se aparta de D21.
 - [ ] Un único controlador por recurso.

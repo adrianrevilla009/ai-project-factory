@@ -46,6 +46,20 @@ Los tests de contrato solo previenen roturas si se consulta la matriz de compati
 ```
 Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); `--retry-*` comprobar al fijar la versión. Variables `PACT_BROKER_BASE_URL`/token vía secret del entorno, nunca en claro.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un contrato publicado por el consumidor en cada build y verificado por el proveedor antes de desplegar.
+- Pregunta «¿puedo desplegar?» contra los entornos reales y registra los despliegues para que el broker conozca el estado.
+- Etiqueta con rama y entorno para contratos de versiones en paralelo.
+### Trampas frecuentes
+- No registrar los despliegues: la comprobación decide con datos obsoletos.
+- Verificaciones que usan un proveedor con datos distintos a los del consumidor.
+- Publicar contratos desde ramas locales sin control.
+- Saltarse la puerta porque «solo cambia un campo».
+- Contratos de sobra que bloquean cambios legítimos.
+### Evidencia
+- El pipeline falla ante un cambio incompatible y el broker refleja la versión desplegada de cada entorno.
+
 ## Checklist de revisión
 - [ ] Pacts publicados con versión = commit.
 - [ ] can-i-deploy bloqueante antes de cada entorno.
