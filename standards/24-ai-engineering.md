@@ -65,7 +65,7 @@
 - **MUST** no duplicar la escritura de metadatos en Postgres y NoSQL (regla 4.5): una sola fuente de verdad por dato.
 - **MUST** guardar por documento: id, hash SHA-256, tamaño, tipo MIME detectado, propietario/tenant, clasificación de datos, versión, fecha, clave del objeto.
 - **MUST** tratar los documentos como inmutables: una modificación crea una versión nueva; el borrado es lógico y con retención definida.
-- **MUST** servir descargas mediante URL prefirmada de corta duración o un endpoint que compruebe autorización por documento y tenant (ver `idor-and-object-level-authorization`).
+- **MUST** servir descargas mediante URL prefirmada de corta duración o un endpoint que compruebe autorización por documento y tenant (ver `authz-rbac-abac-rebac`).
 - **MUST** cifrar en reposo (SSE-KMS en AWS; preparado para AWS, no verificado en real) y en tránsito.
 - **MUST** definir retención y borrado según clasificación y normativa aplicable (borrador por confirmar con fuente oficial).
 - **MUST** ordenar el flujo para evitar objetos huérfanos: subir a una clave temporal, registrar metadatos y confirmar; un job limpia temporales caducados.

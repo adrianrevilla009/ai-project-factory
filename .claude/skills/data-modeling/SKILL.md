@@ -13,7 +13,7 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica al diseñar marts, hechos/dimensiones y tablas que consumirá BI o ML.
-- No aplica al modelo relacional transaccional (ver `normalization-and-denormalization`) ni a modelos de documentos NoSQL.
+- No aplica al modelo relacional transaccional (ver `db-design-conventions`) ni a modelos de documentos NoSQL.
 
 ## Reglas
 - **MUST** declarar la granularidad de cada tabla de hechos en una frase ("una fila por línea de pedido") antes de añadir columnas.

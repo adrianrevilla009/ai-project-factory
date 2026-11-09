@@ -73,6 +73,6 @@ El PSI 0.2 es un umbral habitual de la práctica; calibrar con datos propios.
 | Revisión de la ficha del modelo | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
-- Skills relacionados: `model-risk-and-ai-act-mapping`, `llm-evals`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `dvc-or-lakefs-versioning`.
+- Skills relacionados: `model-risk-and-ai-act-mapping`, `llm-evals`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `feature-store-and-ml-data`.
 - Fuentes: documentación de scikit-learn sobre persistencia de modelos y riesgos de pickle (comprobar URL exacta); MLflow, si se usa (licencia y versión: comprobar al fijar la versión).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -75,6 +75,6 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 | Revisión de contrato de errores | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
-- Skills relacionados: `controllers-and-validation`, `rest-design-guidelines`, `observability-logging` (si existe), `testing-slices`.
+- Skills relacionados: `controllers-and-validation`, `rest-design-guidelines`, `structured-logging`, `testing-slices`.
 - Fuentes oficiales: RFC 9457 (rfc-editor.org/rfc/rfc9457) y Spring Framework Reference "Error Responses", consultadas 2026-11-07.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

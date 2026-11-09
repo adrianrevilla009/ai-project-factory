@@ -53,7 +53,7 @@
 - **MUST** consumir con `@TransactionalEventListener(phase = AFTER_COMMIT)` cuando el efecto no deba ocurrir si la transacción hace rollback.
 - **MUST** que los listeners con efectos externos sean idempotentes: pueden ejecutarse más de una vez.
 - **SHOULD** usar `@ApplicationModuleListener` de Spring Modulith (asíncrono, transaccional propio) y su registro de publicación de eventos para no perder eventos tras un fallo.
-- **MUST NOT** publicar a un broker desde el listener y escribir además en otra base de datos sin outbox (sin doble escritura; ver `transactional-outbox`).
+- **MUST NOT** publicar a un broker desde el listener y escribir además en otra base de datos sin outbox (sin doble escritura; ver `outbox-and-cdc`).
 - **MUST NOT** depender del orden entre listeners.
 - **SHOULD** que el evento cruce el límite del módulo solo si está en su API pública (`project-layout`).
 

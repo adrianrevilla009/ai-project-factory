@@ -12,7 +12,7 @@ metadata:
 # Evals de agentes
 
 ## Cuándo aplicar y cuándo no
-- Aplica al cambiar un agente de `.claude/agents/`, un skill, un hook o un prompt, y al añadir casos a `tests/agent-evals`.
+- Aplica al cambiar un agente de `.claude/agents/`, un skill, un hook o un prompt, y al añadir casos a `tests/agent-evals` (pendiente: esa carpeta aún no existe).
 - No aplica a tests unitarios de código Java del proyecto generado (ver skills de testing) ni a evaluar calidad de modelos en general.
 
 ## Reglas
@@ -69,5 +69,5 @@ min_pass_rate: 1.0
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mcp-governance`, `cost-control`, `verify-before-asserting`, `handoff-artifacts-between-agents`.
-- Fuentes: `tests/hooks/README.md`, `.claude/agents/quality/eval-engineer.md`; salida de hooks (exit 2) según `docs/architecture/claude-code-formats.md`.
+- Fuentes: `tests/README.md`, `.claude/agents/quality/eval-engineer.md`; salida de hooks (exit 2) según `docs/architecture/claude-code-formats.md`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

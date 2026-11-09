@@ -219,3 +219,19 @@ def test_knowledge_link_to_missing_skill_or_adr_detected(tmp_path):
     (tmp_path / "knowledge" / "a.md").write_text("`real-skill` `ghost-skill` ADR-0001 ADR-0999")
     msgs = [f.message for f in schemas_and_adrs.validate_knowledge_links(tmp_path)]
     assert msgs == ["unknown skill 'ghost-skill'", "unknown ADR-0999"]
+
+
+# ------------------------------------------------------------------ references
+import references  # noqa: E402
+
+
+def test_repo_references_are_valid():
+    assert references.validate_all(ROOT) == []
+
+
+def test_unknown_cross_reference_and_missing_path_detected(tmp_path):
+    known = {"real-skill"}
+    text = "- Skills relacionados: `real-skill`, `ghost-skill`.\nUsa `policies/nope.yaml`.\nUsa `policies/nope2.yaml` (pendiente).\nVer `real-skill` y `otro-fantasma`.\n"
+    msgs = [f.message for f in references.validate_text(text, "x.md", tmp_path, known)]
+    assert msgs == ["cross-reference to unknown skill 'ghost-skill'", "path does not exist: policies/nope.yaml",
+                    "cross-reference to unknown skill 'otro-fantasma'"]

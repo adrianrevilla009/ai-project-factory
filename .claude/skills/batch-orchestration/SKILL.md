@@ -13,7 +13,7 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica a cargas programadas con dependencias, reintentos y backfills en la plataforma de datos.
-- No aplica a tareas `@Scheduled` de un microservicio (ver `java-scheduled-without-lock` en `policies/semgrep/`) ni a flujos de CI/CD (ver `argo-workflows-and-events`).
+- No aplica a tareas `@Scheduled` de un microservicio (ver `scheduling-and-batch`; la regla Semgrep está en `policies/semgrep/java-scheduled-without-lock.yaml`) ni a flujos de CI/CD (ver `argo-workflows-and-events`).
 
 ## Reglas
 - **MUST** hacer cada tarea idempotente y parametrizada por intervalo de datos (no por `now()`): re-ejecutar el mismo intervalo da el mismo resultado.

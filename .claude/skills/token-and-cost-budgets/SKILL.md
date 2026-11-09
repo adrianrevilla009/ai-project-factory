@@ -78,6 +78,6 @@ public final class BudgetGuard {
 | Revisión de presupuestos y alertas | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
-- Skills relacionados: `llm-gateway`, `llm-observability`, `llm-evals`, `finops-cost-management`, `rate-limiting`.
+- Skills relacionados: `llm-gateway`, `llm-observability`, `llm-evals`, `finops`, `rate-limiting-quotas`.
 - Fuentes: documentación de precios y conteo de tokens del proveedor elegido (p. ej. https://platform.claude.com/docs/en/about-claude/pricing, consultada 2026-11-07; comprobar cifras vigentes).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

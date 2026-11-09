@@ -13,7 +13,7 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica a cualquier dataset que alimente informes, ML o integraciones.
-- No aplica a validación de entrada de una API (ver `validation-and-sanitization`) ni a monitorización continua de frescura/volumen (ver `data-observability`).
+- No aplica a validación de entrada de una API (ver `input-validation-output-encoding`) ni a monitorización continua de frescura/volumen (ver `data-observability`).
 
 ## Reglas
 - **MUST** definir por dataset las dimensiones relevantes: unicidad, completitud, validez, integridad referencial, frescura, consistencia.

@@ -46,7 +46,7 @@ secrets:
     - gitleaks detect --redact
 dast-baseline:
   script:
-    - docker compose -f compose.test.yaml up -d
+    - make local-up   # el servicio bajo prueba corre en el clúster kind del pipeline, no en Compose (ADR-0005)
     - zap-baseline.py -t http://localhost:8080 -r zap-report.html
 ```
 ```yaml

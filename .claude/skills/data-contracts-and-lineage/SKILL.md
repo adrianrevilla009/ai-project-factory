@@ -13,7 +13,7 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica a datasets compartidos entre equipos o expuestos a BI/ML, y a pipelines que deben poder responder "de dónde viene este dato".
-- No aplica a tablas internas efímeras de un solo job ni a contratos de API síncronas (ver `openapi-first`, `asyncapi-event-contracts`).
+- No aplica a tablas internas efímeras de un solo job ni a contratos de API síncronas (ver `openapi-contract-first`, `asyncapi-event-contracts`).
 
 ## Reglas
 - **MUST** versionar un contrato por dataset publicado: esquema (nombres, tipos, nulabilidad), semántica, propietario, frescura/SLA, clasificación de datos y política de retención.

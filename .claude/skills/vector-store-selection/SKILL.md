@@ -66,7 +66,7 @@ La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un fil
 | Revisión del ADR de selección con medidas | 3 | agente `code-reviewer` / revisión humana |
 
 ## Relacionados, fuentes y mantenimiento
-- Skills relacionados: `llm-evals`, `llm-security`, `pii-and-data-classification`, `idor-and-object-level-authorization`, `token-and-cost-budgets`.
+- Skills relacionados: `llm-evals`, `llm-security`, `pii-and-data-classification`, `authz-rbac-abac-rebac`, `token-and-cost-budgets`.
 - Fuentes: README de pgvector (HNSW, IVFFlat, `vector_cosine_ops`) vía https://pgxn.org/dist/vector/; documentación de OpenSearch k-NN (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
 - En local OpenSearch/pgvector corren en contenedor; no se reproduce el dimensionado ni el aislamiento de un servicio gestionado en AWS.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

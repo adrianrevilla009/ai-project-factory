@@ -3,6 +3,7 @@ import sys
 
 import code_blocks
 import honest_claims
+import references
 import schemas_and_adrs
 import skill_structure
 from common import REPO_ROOT
@@ -11,6 +12,7 @@ from common import REPO_ROOT
 def main() -> int:
     findings = skill_structure.validate_all(REPO_ROOT) + honest_claims.scan_repo(REPO_ROOT)
     findings += code_blocks.validate_all(REPO_ROOT)
+    findings += references.validate_all(REPO_ROOT)
     findings += schemas_and_adrs.validate_schemas(REPO_ROOT) + schemas_and_adrs.validate_adrs(REPO_ROOT)
     findings += schemas_and_adrs.validate_mcp_catalog(REPO_ROOT)
     findings += schemas_and_adrs.validate_knowledge_links(REPO_ROOT)

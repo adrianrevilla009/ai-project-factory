@@ -41,10 +41,10 @@ Arrancar: ./run.sh   <!-- el script ya no existe -->
 Gestiona el ciclo de vida de pedidos. Equipo: orders. Contrato: `docs/api/openapi.yaml`.
 
 ## Requisitos
-- JDK 21, Maven wrapper incluido, Docker Compose.
+- JDK 21, Maven wrapper incluido, Docker y un clúster Kubernetes local (kind), ver `cluster-tooling`.
 
 ## Arranque local
-    docker compose up -d postgres
+    make local-up
     ./mvnw spring-boot:run -Dspring-boot.run.profiles=local
 
 ## Tests
