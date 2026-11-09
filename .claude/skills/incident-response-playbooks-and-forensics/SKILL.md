@@ -21,7 +21,7 @@ metadata:
 - **MUST** definir quién declara el incidente, quién lidera, quién comunica y quién decide contención; incluir contactos fuera de banda.
 - **MUST** preservar evidencia antes de erradicar: copiar logs, snapshots y memoria cuando sea viable, con hash y registro de quién la manejó (cadena de custodia).
 - **MUST** guardar la evidencia en almacenamiento de solo escritura y acceso restringido.
-- **MUST** consultar a legales/DPO desde el inicio si hay datos personales: los plazos de notificación son un borrador por confirmar con fuente oficial (p. ej. RGPD, 72 h a la autoridad; comprobar texto vigente).
+- **MUST** consultar a legales/DPO desde el inicio si hay datos personales: los plazos de notificación son un borrador por confirmar con fuente oficial (p. ej. RGPD, 72 h a la autoridad).
 - **SHOULD** ejecutar simulacros (tabletop) al menos una vez al año y actualizar los playbooks con lo aprendido.
 - **SHOULD** sincronizar relojes (NTP) y conservar logs suficientes para reconstruir la línea temporal.
 - **MUST NOT** apagar o reconstruir un sistema afectado sin haber decidido qué evidencia se pierde.
@@ -71,4 +71,5 @@ sha256sum evidence/access-log-2026-11-07.json >> evidence/CHAIN.txt
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vulnerability-sla-and-incident-response`, `incident-management-and-postmortems`, `secret-scanning-and-leak-response`, `status-page-and-comms`, `audit-trail-and-security-logging`, `ransomware-resilience`.
 - Fuentes (verificado 2026-11-07): NIST SP 800-61 Rev. 3, https://csrc.nist.gov/pubs/sp/800/61/r3/final. Normativa de notificación: borrador por confirmar con fuente oficial.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

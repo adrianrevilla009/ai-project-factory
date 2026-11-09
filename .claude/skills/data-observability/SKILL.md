@@ -68,5 +68,5 @@ def run(ctx):
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-quality`, `data-contracts-and-lineage`, `batch-orchestration`, `alert-routing-and-oncall`, `slo-error-budget-policy`.
-- Fuentes: especificación OpenLineage (openlineage.io) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: especificación OpenLineage (openlineage.io).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

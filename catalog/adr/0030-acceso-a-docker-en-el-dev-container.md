@@ -13,4 +13,4 @@ El dev container incluye acceso a Docker para Testcontainers y kind, mediante so
 Decisión del dueño (2026-11-06): añadirlo ahora. Implicación de seguridad: el socket de Docker equivale a root en el host; mitigaciones: firewall de salida por allowlist, sin credenciales cloud en el contenedor, y alternativa documentada (Docker-in-Docker rootless o Sysbox) para revisar en la Oleada 3. Riesgo de §13 aceptado y documentado.
 
 ## Consecuencias
-Comprobar si Docker rootless es viable para kind + Testcontainers.
+

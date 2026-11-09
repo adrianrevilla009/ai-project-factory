@@ -28,7 +28,7 @@
 
 - **MUST** decidir y registrar en un ADR del proyecto: Control Tower + Account Factory for Terraform (AFT), o Organizations + Terraform propio. Ambos son válidos.
 - **MUST** que el alta de cuenta sea código revisado (PR), nunca consola.
-- **MUST** fijar la home region de la landing zone en eu-west-1 y gobernar eu-central-1 como región secundaria (D6); la home region no se puede cambiar después sin rehacer la landing zone (comprobar al fijar la versión).
+- **MUST** fijar la home region de la landing zone en eu-west-1 y gobernar eu-central-1 como región secundaria (D6); la home region no se puede cambiar después sin rehacer la landing zone.
 - **MUST** aplicar una línea base a toda cuenta nueva: CloudTrail org, Config, roles de acceso vía Identity Center, tags obligatorios y presupuesto.
 - **SHOULD** versionar la personalización de cuentas (baseline) como módulo Terraform con tests estáticos.
 - **SHOULD** mantener la lista de regiones gobernadas explícita, no "todas".
@@ -39,11 +39,11 @@
 
 - **MUST** dar acceso humano solo vía Identity Center con credenciales temporales; cero usuarios IAM con claves de larga duración.
 - **MUST** asignar permission sets a grupos, nunca a usuarios individuales.
-- **MUST** federar el IdP corporativo (Keycloak como IdP externo vía SAML/SCIM, comprobar soporte SCIM) y exigir MFA en el IdP.
+- **MUST** federar el IdP corporativo (Keycloak como IdP externo vía SAML/SCIM) y exigir MFA en el IdP.
 - **MUST** limitar la duración de sesión (por defecto ≤ 8 h; admin ≤ 1 h).
 - **MUST** separar permission sets: `ReadOnly`, `Developer`, `Deployer` (CI), `PlatformAdmin`, `SecurityAudit`.
 - **SHOULD** gestionar grupos y asignaciones por Terraform.
-- **SHOULD** ubicar la instancia en eu-west-1 (región primaria, D6); la región de la instancia es difícil de cambiar (comprobar al fijar la versión).
+- **SHOULD** ubicar la instancia en eu-west-1 (región primaria, D6); la región de la instancia es difícil de cambiar.
 - **MUST NOT** conceder `AdministratorAccess` permanente a nadie en prod; ver `break-glass-and-jit-access`.
 
 ## kms-multi-region-keys
@@ -61,7 +61,7 @@
 ## log-archive-and-audit-account
 
 - **MUST** separar `log-archive` (solo almacenamiento) de `audit` (herramientas de seguridad y consulta de solo lectura).
-- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política (comprobar requisitos legales).
+- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política.
 - **MUST** definir retención explícita (p. ej. 365 días en caliente y archivado después; plazo legal por confirmar con fuente oficial) con lifecycle.
 - **MUST** replicar a un bucket en eu-central-1 (secundaria, D6) si el log es evidencia.
 - **MUST** restringir con política de bucket: escritura solo desde servicios de la organización (`aws:PrincipalOrgID`), borrado denegado.
@@ -98,8 +98,8 @@
 - **MUST** mantener datos personales y de negocio solo en esas dos regiones; denegar el resto por SCP (ver `scp-guardrails`).
 - **MUST** decidir por dato si se replica a la secundaria; la replicación es explícita, nunca por defecto.
 - **MUST** respetar la regla de datos: sin doble escritura Postgres+NoSQL; replicar cada almacén con su mecanismo nativo.
-- **MUST** verificar antes de diseñar que cada servicio existe en ambas regiones (comprobar al fijar la versión, pendiente de ADR-0006).
-- **SHOULD** tratar servicios globales (IAM, Route 53, CloudFront) como excepciones documentadas; sus datos de control pueden salir de la UE (comprobar al fijar la versión).
+- **MUST** verificar antes de diseñar que cada servicio existe en ambas regiones.
+- **SHOULD** tratar servicios globales (IAM, Route 53, CloudFront) como excepciones documentadas; sus datos de control pueden salir de la UE.
 - **SHOULD** documentar el RPO/RTO objetivo por servicio con la región secundaria.
 - **MUST NOT** afirmar cumplimiento RGPD por usar regiones UE: es borrador por confirmar con fuente oficial y asesoría legal.
 - **MUST NOT** copiar backups o logs con datos personales fuera de las dos regiones.
@@ -107,7 +107,7 @@
 ## scp-guardrails
 
 - **MUST** usar estrategia "deny list": mantener `FullAWSAccess` y añadir denegaciones concretas.
-- **MUST** denegar acciones fuera de eu-west-1 y eu-central-1 (D6) con `aws:RequestedRegion`, exceptuando servicios globales (IAM, Organizations, Route 53, CloudFront, etc.; lista por validar, comprobar al fijar la versión).
+- **MUST** denegar acciones fuera de eu-west-1 y eu-central-1 (D6) con `aws:RequestedRegion`, exceptuando servicios globales (IAM, Organizations, Route 53, CloudFront, etc.; lista por validar).
 - **MUST** denegar desactivar o borrar CloudTrail, Config, GuardDuty y Security Hub de la organización.
 - **MUST** denegar uso del usuario root en cuentas miembro y la creación de access keys.
 - **MUST** denegar `kms:ScheduleKeyDeletion` y `kms:DisableKey` salvo rol de plataforma.
@@ -120,7 +120,7 @@
 
 - **MUST** definir un conjunto mínimo de tags: `project`, `environment`, `owner`, `cost-center`, `data-classification`.
 - **MUST** aplicarlos con `default_tags` del provider, no recurso a recurso.
-- **MUST** activar los tags como cost allocation tags en la cuenta de facturación (la activación no es retroactiva, comprobar al fijar la versión).
+- **MUST** activar los tags como cost allocation tags en la cuenta de facturación (la activación no es retroactiva).
 - **MUST** crear un AWS Budget por cuenta con avisos al 50/80/100 % y al previsto, con destinatario real (alias de grupo).
 - **SHOULD** usar un tag policy de Organizations para fijar claves y valores permitidos.
 - **SHOULD** añadir detección de anomalías de coste.

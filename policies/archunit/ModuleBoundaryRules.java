@@ -1,5 +1,5 @@
 // Ejemplo de reglas ArchUnit para monolito modular: solo la API pública de un módulo es accesible.
-// Comprobar versión de archunit-junit5 y API slices() contra la documentación oficial.
+
 package com.example.architecture;
 
 import com.tngtech.archunit.junit.AnalyzeClasses;

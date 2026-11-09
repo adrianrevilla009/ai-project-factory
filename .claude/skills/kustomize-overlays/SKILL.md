@@ -68,5 +68,5 @@ for e in dev staging prod; do kustomize build overlays/$e | kubeconform -strict 
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `helm-standards`, `workload-baseline`, `config-by-environment`, `cluster-addons-baseline`.
-- Fuentes: documentación de Kustomize / kubectl (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Kustomize / kubectl.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -51,7 +51,7 @@ jobs:
           --set image.digest="${{ inputs.digest }}" --atomic --timeout 5m
       - run: ./scripts/smoke.sh "$BASE_URL"
 ```
-`--atomic` y flags de Helm: comprobar contra la versión fijada. Si el entorno usa GitOps, el rollback es un revert en el repositorio de configuración (bloque 17).
+`--atomic` y flags de Helm. Si el entorno usa GitOps, el rollback es un revert en el repositorio de configuración (bloque 17).
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -82,5 +82,6 @@ jobs:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `database-migration-step`, `deployment-verification-and-smoke`, `schema-migrations`, `change-and-release-management`, `environment-promotion`.
-- Fuentes: documentación de Helm upgrade/rollback (https://helm.sh/docs/helm/helm_upgrade/) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Helm upgrade/rollback (https://helm.sh/docs/helm/helm_upgrade/).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

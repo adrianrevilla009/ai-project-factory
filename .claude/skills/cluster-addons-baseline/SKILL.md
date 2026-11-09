@@ -35,7 +35,7 @@ kubectl apply -f https://example.com/cert-manager/latest/install.yaml
 ```
 ### Bien
 ```yaml
-# platform/addons.yaml (extracto, versiones a verificar)
+# platform/addons.yaml (extracto; las versiones se fijan en el BOM del proyecto)
 addons:
   - name: cert-manager
     chart: cert-manager
@@ -69,5 +69,5 @@ Policy de versiones fijadas: pendiente.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `helm-standards`, `cluster-upgrades-and-drift`, `injection-patterns`, `pki-and-cert-issuance`, `dns-route53-private-and-hybrid`.
-- Fuentes: documentación de cert-manager, external-dns y External Secrets Operator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de cert-manager, external-dns y External Secrets Operator.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -22,7 +22,7 @@ metadata:
 - **MUST** hacer las llamadas salientes idempotentes (clave de idempotencia o upsert por `external_id`) y reintentables con backoff y jitter.
 - **MUST** emitir los cambios a sincronizar vía outbox, no llamando al ERP dentro de la transacción de BD (`outbox-and-cdc`).
 - **MUST** configurar timeouts, circuit breaker y bulkhead por integración; el ERP caído no debe tirar la aplicación.
-- **MUST** respetar los límites del proveedor (cuotas, lotes) con un limitador propio; los valores concretos se leen de su documentación oficial (comprobar por proveedor).
+- **MUST** respetar los límites del proveedor (cuotas, lotes) con un limitador propio; los valores concretos se leen de su documentación oficial.
 - **MUST** reconciliar periódicamente (job de conciliación con informe de diferencias) y enviar fallos definitivos a una cola de revisión manual (DLQ).
 - **MUST** guardar credenciales de la integración en el gestor de secretos, con OAuth2 client credentials cuando el proveedor lo ofrezca.
 - **SHOULD** preferir webhooks/eventos del proveedor más sondeo incremental con marca de agua (`updated_since`) frente a cargas completas.
@@ -75,5 +75,6 @@ public void handle(OrderSyncPayload p) {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `anti-corruption-layer`, `outbox-and-cdc`, `idempotency-keys`, `webhooks`, `backpressure-and-bulkheads`, `batch-file-sftp-integration`, `soap-legacy-integration`.
-- Fuentes: documentación oficial de cada proveedor (límites, autenticación) — comprobar por proveedor; no se asumen valores.
+- Fuentes: documentación oficial de cada proveedor (límites, autenticación); no se asumen valores.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

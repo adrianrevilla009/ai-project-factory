@@ -23,7 +23,7 @@ metadata:
 - **MUST** enrutar los reportes válidos al registro de `vulnerability-management-program` con SLA, y cerrar el ciclo con el reportero.
 - **MUST** canalizar reportes por un buzón/herramienta dedicada con acceso restringido; los detalles son confidenciales hasta la corrección.
 - **SHOULD** empezar con VDP sin recompensas y pasar a bounty (privado, luego público) cuando haya capacidad de triaje.
-- **SHOULD** coordinar divulgación pública con un plazo acordado (referencia: ISO/IEC 29147 y 30111; comprobar contenido).
+- **SHOULD** coordinar divulgación pública con un plazo acordado (referencia: ISO/IEC 29147 y 30111).
 - **MUST NOT** emprender acciones legales contra investigadores que actúen de buena fe dentro de la política.
 - **MUST NOT** prometer recompensas sin presupuesto y baremo publicados.
 
@@ -43,7 +43,7 @@ Expires: 2027-06-30T00:00:00.000Z
 Policy: https://www.example.com/security/disclosure-policy
 Preferred-Languages: es, en
 ```
-Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 9116 (comprobar lista completa en rfc-editor.org/rfc/rfc9116, 2026-11-07).
+Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 9116.
 
 ## Checklist de revisión
 - [ ] security.txt publicado, no caducado y servido por HTTPS.
@@ -60,5 +60,6 @@ Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 91
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vulnerability-management-program`, `incident-management-and-postmortems`, `penetration-testing-program`.
-- Fuentes: RFC 9116 (rfc-editor.org/rfc/rfc9116); ISO/IEC 29147 y 30111 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: RFC 9116 (rfc-editor.org/rfc/rfc9116); ISO/IEC 29147 y 30111.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

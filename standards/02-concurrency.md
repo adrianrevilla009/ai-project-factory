@@ -6,8 +6,8 @@
 
 - **MUST** asumir que `ThreadLocal` (SecurityContext, MDC, tenant, transacción) **no** viaja a otro hilo.
 - **MUST** activar `@EnableAsync` y definir un `Executor` propio para `@Async`; nunca depender del defecto implícito.
-- **MUST** propagar contexto con un `TaskDecorator` o con Micrometer Context Propagation (`ContextSnapshot`/`ContextExecutorService`, comprobar al fijar la versión) en vez de copiar a mano.
-- **MUST** propagar la seguridad con `DelegatingSecurityContextExecutor` (o `DelegatingSecurityContextAsyncTaskExecutor`) de Spring Security (comprobar al fijar la versión).
+- **MUST** propagar contexto con un `TaskDecorator` o con Micrometer Context Propagation (`ContextSnapshot`/`ContextExecutorService`) en vez de copiar a mano.
+- **MUST** propagar la seguridad con `DelegatingSecurityContextExecutor` (o `DelegatingSecurityContextAsyncTaskExecutor`) de Spring Security.
 - **MUST** limpiar el contexto al terminar la tarea (`MDC.clear()` en `finally`) para no contaminar tareas posteriores del pool.
 - **MUST NOT** pasar entidades JPA gestionadas ni la transacción al hilo asíncrono; pasar ids o DTO. `@Transactional` no cruza hilos.
 - **MUST NOT** esperar que `@Async` funcione en auto-invocación (`this.metodo()`) ni en métodos privados: depende del proxy.
@@ -20,7 +20,7 @@
 - **MUST** aplicar un bulkhead por dependencia (semáforo o pool dedicado) para que una dependencia lenta no consuma todos los hilos.
 - **MUST** poner timeout en cada llamada saliente; sin timeout el bulkhead se llena igual.
 - **MUST** que los consumidores de mensajes limiten el prefetch/`max.poll.records` y la concurrencia al ritmo que el proceso aguanta.
-- **SHOULD** usar Resilience4j `Bulkhead`/`ThreadPoolBulkhead` y `RateLimiter` (comprobar versión y compatibilidad con la de Spring Boot del proyecto).
+- **SHOULD** usar Resilience4j `Bulkhead`/`ThreadPoolBulkhead` y `RateLimiter`.
 - **SHOULD** con virtual threads, limitar con `Semaphore` la concurrencia hacia el recurso (ver `virtual-threads`).
 - **MUST** definir degradación explícita (respuesta parcial, caché, valor por defecto) cuando el bulkhead rechaza.
 - **MUST NOT** reintentar sin límite ni sin *jitter* contra una dependencia saturada (amplifica la caída).
@@ -45,7 +45,7 @@
 - **MUST** recoger y propagar las excepciones de los hilos de prueba (`Future.get()`); un fallo en otro hilo no falla el test por sí solo.
 - **MUST** poner timeout a cada test concurrente (`@Timeout`, JUnit 5) para que un deadlock no cuelgue el pipeline.
 - **MUST** repetir el test (`@RepeatedTest`) para aumentar la probabilidad de exponer carreras; un test que pasa una vez no demuestra ausencia de carrera.
-- **SHOULD** usar jcstress para código sin locks/memory model (comprobar al fijar la versión) y un thread dump automático en timeout.
+- **SHOULD** usar jcstress para código sin locks/memory model y un thread dump automático en timeout.
 - **SHOULD** probar idempotencia y exclusión contra Postgres real (Testcontainers), no mocks.
 - **MUST NOT** dejar tests "flaky" en cuarentena sin ticket: o se arreglan o se borran.
 
@@ -68,8 +68,8 @@
 - **MUST** asumir que el titular puede perder el lock sin saberlo (pausa GC, partición): proteger el recurso con un *fencing token* monotónico que el recurso verifique, o hacer la operación idempotente.
 - **MUST NOT** usar un lock distribuido como única garantía de corrección de dinero o inventario.
 - **MUST** liberar solo si se es titular (valor único por adquisición, comparar-y-borrar atómico).
-- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0, comprobar al fijar la versión) sobre JDBC para jobs.
-- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido (comprobar al fijar la versión) y no sustituye al fencing.
+- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0) sobre JDBC para jobs.
+- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido y no sustituye al fencing.
 - **SHOULD** acotar la sección crítica a bastante menos que el TTL y exponer métricas de adquisición/espera.
 - En local se usa el mismo mecanismo sobre el Postgres de desarrollo; no se reproducen fallos de red/partición realistas de AWS.
 
@@ -111,7 +111,7 @@
 
 ## scheduling-and-batch
 
-- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock, comprobar al fijar la versión; o un `CronJob` de Kubernetes fuera del servicio).
+- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock; o un `CronJob` de Kubernetes fuera del servicio).
 - **MUST** que el job sea idempotente y reanudable: procesa por lotes con marca de progreso; relanzarlo no duplica efectos (ver `idempotency-and-deduplication`).
 - **MUST** configurar el scheduler de Spring con pool propio: por defecto `@Scheduled` usa un solo hilo y un job lento bloquea a los demás (`spring.task.scheduling.pool.size`, verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - **MUST** capturar y registrar excepciones; un job que falla en silencio no se repara.
@@ -123,7 +123,7 @@
 
 ## structured-concurrency-and-scoped-values
 
-- **MUST** comprobar el estado del JEP en la versión de JDK del proyecto: `StructuredTaskScope` ha sido API en preview en varias versiones y su forma ha cambiado; `ScopedValue` pasó a definitivo más tarde (comprobar JEP 505/506 y versión de JDK).
+- **MUST** comprobar el estado del JEP en la versión de JDK del proyecto: `StructuredTaskScope` ha sido API en preview en varias versiones y su forma ha cambiado; `ScopedValue` pasó a definitivo más tarde.
 - **MUST NOT** usar APIs en preview en código de producción sin decisión explícita (ADR) y `--enable-preview` documentado en el build.
 - **MUST** si no hay preview: lograr el mismo efecto con `ExecutorService` + `close()` en try-with-resources, y cancelar hermanas ante fallo.
 - **MUST** que el ámbito de la tarea cierre antes que el método que la abrió (try-with-resources); nada de subtareas que sobrevivan al llamante.
@@ -149,7 +149,7 @@
 - **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (Boot 3.2+; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - **MUST NOT** hacer pool de virtual threads: crear uno por tarea (`Executors.newVirtualThreadPerTaskExecutor()`).
 - **MUST** limitar el recurso, no los hilos: usar `Semaphore`, pool de conexiones o bulkhead (ver `backpressure-and-bulkheads`).
-- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491, comprobar al fijar la versión).
+- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491).
 - **MUST NOT** almacenar objetos pesados en `ThreadLocal`: hay millones de hilos potenciales. Preferir `ScopedValue` (ver `structured-concurrency-and-scoped-values`).
 - **SHOULD** medir con `-Djdk.tracePinnedThreads=full` o eventos JFR `jdk.VirtualThreadPinned` antes de generalizar.
 - **SHOULD** medir antes/después (latencia p99, throughput); no asumir mejora.

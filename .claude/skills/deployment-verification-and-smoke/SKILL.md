@@ -75,5 +75,5 @@ Un despliegue "verde" en Kubernetes solo significa que los manifiestos se aplica
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rollback-strategy`, `actuator-and-health`, `argo-rollouts`, `database-migration-step`.
-- Fuentes: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

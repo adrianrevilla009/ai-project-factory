@@ -63,7 +63,7 @@ resource "vault_policy" "orders_read" {
   policy = file("${path.module}/policies/orders-read.hcl")
 }
 ```
-En Transit, encrypt/decrypt se conceden con `update`; comprobar en la documentación de la versión fijada.
+En Transit, encrypt/decrypt se conceden con `update`.
 
 ## Checklist de revisión
 - [ ] Sin `*` global ni `sudo` en políticas de aplicación.
@@ -80,6 +80,7 @@ En Transit, encrypt/decrypt se conceden con `update`; comprobar en la documentac
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `auth-methods`, `dynamic-database-credentials`, `transit-encryption`, `cloud-iam-least-privilege`.
-- Fuentes: https://developer.hashicorp.com/vault/docs/concepts/policies (consultada 2026-11-07; comprobar sintaxis de templating y capabilities de Transit).
+- Fuentes: https://developer.hashicorp.com/vault/docs/concepts/policies (consultada 2026-11-07).
 - Estado: diseño; preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

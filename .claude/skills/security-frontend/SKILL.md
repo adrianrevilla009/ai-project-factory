@@ -47,7 +47,7 @@ const safe = /^https:\/\//.test(user.website) ? user.website : undefined;
 ```text
 Content-Security-Policy: script-src 'nonce-{RANDOM}' 'strict-dynamic'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'
 ```
-Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar hashes en build o una función de borde. Comprobar enfoque. No reproducible en local: cabeceras de CloudFront.
+Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar hashes en build o una función de borde.  No reproducible en local: cabeceras de CloudFront.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -80,5 +80,6 @@ Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `auth-and-session`, `supply-chain-npm`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `build-and-deploy`.
-- Fuentes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP (2026-11-07); OWASP XSS Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP (2026-11-07); OWASP XSS Prevention Cheat Sheet.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

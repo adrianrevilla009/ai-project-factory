@@ -11,7 +11,7 @@ forbidden:
     alternative: "SLF4J + Logback."
   - id: commons-collections-3
     match: ["commons-collections:commons-collections", "<artifactid>commons-collections</artifactid>"]
-    reason: "Versión 3.x con cadenas de deserialización conocidas (comprobar CVEs vigentes)."
+    reason: "Versión 3.x con cadenas de deserialización conocidas."
     alternative: "java.util.* o commons-collections4."
   - id: joda-time
     match: ["joda-time"]
@@ -19,5 +19,5 @@ forbidden:
     alternative: "java.time."
   - id: moment-js
     match: ["\"moment\":"]
-    reason: "En modo mantenimiento (comprobar estado vigente)."
+    reason: "En modo mantenimiento."
     alternative: "date-fns o Temporal/Intl."

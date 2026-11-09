@@ -80,5 +80,5 @@ Nombres de atributos Terraform: los recursos y sus argumentos de primer nivel se
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dlq-retries-poison-messages`, `delivery-semantics`, `kafka-producers-consumers`.
-- Fuentes: documentación de RabbitMQ (quorum queues, confirms, consumer acks) y de Amazon SQS (visibility timeout, DLQ, FIFO) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de RabbitMQ (quorum queues, confirms, consumer acks) y de Amazon SQS (visibility timeout, DLQ, FIFO).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

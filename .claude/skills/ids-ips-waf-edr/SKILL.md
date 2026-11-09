@@ -37,7 +37,7 @@ SecRuleRemoveById 942100  # sin comentario ni caducidad
 ```
 ### Bien
 ```text
-# waf-rollout.example.conf (sintaxis ModSecurity v3; comprobar contra la versión usada)
+# waf-rollout.example.conf (sintaxis ModSecurity v3)
 SecRuleEngine DetectionOnly
 # Excepcion SEC-example-12, caduca 2027-03-01: campo "q" de /search genera FP en regla 942100
 SecRule REQUEST_URI "@beginsWith /search" \
@@ -61,5 +61,6 @@ Plan: 2 semanas en DetectionOnly, revisión de falsos positivos, paso a bloqueo 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `siem-and-detection-engineering`, `container-and-k8s-security`, `dos-and-rate-limiting`, `vulnerability-management-program`.
-- Fuentes (2026-11-07, comprobar URLs): OWASP Core Rule Set; documentación de Suricata, Falco, Coraza y Wazuh.
+- Fuentes (2026-11-07): OWASP Core Rule Set; documentación de Suricata, Falco, Coraza y Wazuh.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

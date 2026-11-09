@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** partir de GitOps + Vault y documentar por escrito en un ADR del proyecto por qué no basta antes de añadir Config Server.
 - **MUST** justificar con al menos uno de: cambio de configuración en caliente sin redespliegue (con `/actuator/refresh` o bus), muchos servicios no Kubernetes, o equipos que ya operan Config Server.
-- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault (comprobar backend y propiedades en la versión de Spring Cloud fijada).
+- **MUST NOT** guardar secretos en el repositorio Git del Config Server; usar el backend Vault del servidor o inyección por Vault.
 - **MUST** proteger el servidor: autenticación entre servicios (mTLS o OAuth2), sin endpoints abiertos, y cifrado de transporte.
 - **MUST** tratarlo como componente de plataforma crítico: al menos 2 réplicas, healthchecks y alerta, porque su caída bloquea arranques.
 - **MUST** configurar los clientes con fallo rápido y reintentos acotados (`spring.config.import` con `configserver:`), y valores por defecto seguros.
@@ -45,7 +45,7 @@ spring.cloud.config.server.git.password: changeme-real-token
 ```
 ### Bien
 ```yaml
-# Cliente (propiedades: comprobar en la versión de Spring Cloud fijada)
+# Cliente (propiedades)
 spring:
   config:
     import: "configserver:https://config.example.internal"
@@ -69,5 +69,6 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `config-by-environment`, `feature-flags-openfeature`, `secrets-management`, `actuator-and-health`.
-- Fuentes: ADR-0011; documentación de Spring Cloud Config (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Diseño preparado para AWS, no verificado en real.
+- Fuentes: ADR-0011; documentación de Spring Cloud Config. Diseño preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

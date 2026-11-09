@@ -29,7 +29,7 @@ metadata:
 - **MUST NOT** enviar documentos completos si basta un fragmento recuperado.
 
 ## Por qué
-El coste de un LLM crece con tokens y con reintentos, y un bucle de agente o un usuario con entradas enormes puede multiplicarlo sin que se note hasta la factura. Un tope por petición y por tenant convierte el coste en un riesgo acotado. Los precios y límites exactos dependen del proveedor y del modelo: consultar su página oficial (comprobar en cada revisión).
+El coste de un LLM crece con tokens y con reintentos, y un bucle de agente o un usuario con entradas enormes puede multiplicarlo sin que se note hasta la factura. Un tope por petición y por tenant convierte el coste en un riesgo acotado. Los precios y límites exactos dependen del proveedor y del modelo: consultar su página oficial.
 
 ## Ejemplos
 ### Mal
@@ -79,5 +79,6 @@ public final class BudgetGuard {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-gateway`, `llm-observability`, `llm-evals`, `finops`, `rate-limiting-quotas`.
-- Fuentes: documentación de precios y conteo de tokens del proveedor elegido (p. ej. https://platform.claude.com/docs/en/about-claude/pricing, consultada 2026-11-07; comprobar cifras vigentes).
+- Fuentes: documentación de precios y conteo de tokens del proveedor elegido (p. ej. https://platform.claude.com/docs/en/about-claude/pricing, consultada 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

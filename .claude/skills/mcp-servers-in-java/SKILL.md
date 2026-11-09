@@ -58,7 +58,7 @@ class OrderMcpTools {
     }
 }
 ```
-Anotaciones y propiedades comprobadas en la documentación de Spring AI el 2026-11-07; cabeceras de autenticación exactas del transporte: comprobar al fijar la versión. En local se prueba con Keycloak (ADR de identidad); no se reproduce ninguna integración AWS.
+Anotaciones y propiedades comprobadas en la documentación de Spring AI el 2026-11-07; cabeceras de autenticación exactas del transporte. En local se prueba con Keycloak (ADR de identidad); no se reproduce ninguna integración AWS.
 
 ## Checklist de revisión
 - [ ] Transporte adecuado; HTTP con OIDC y TLS.
@@ -76,5 +76,6 @@ Anotaciones y propiedades comprobadas en la documentación de Spring AI el 2026-
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `agents-and-tool-calling`, `llm-security`, `prompt-injection-defense-for-agents`, `owasp-top10-and-api-top10`, `rate-limiting-quotas`.
-- Fuentes: Spring AI Reference, MCP Server Boot Starter (docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html, 2026-11-07); especificación MCP (modelcontextprotocol.io) — comprobar revisión.
+- Fuentes: Spring AI Reference, MCP Server Boot Starter (docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html, 2026-11-07); especificación MCP (modelcontextprotocol.io).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

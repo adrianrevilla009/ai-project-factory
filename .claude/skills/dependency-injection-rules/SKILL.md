@@ -74,5 +74,5 @@ var service = new InvoiceService(fakeRepository, fakeMailer);
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `project-layout`, `domain-events-in-spring`, `solid`, `testing-slices`.
-- Fuentes oficiales: Spring Framework Reference, "Dependency Injection" (docs.spring.io) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: Spring Framework Reference, "Dependency Injection" (docs.spring.io).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

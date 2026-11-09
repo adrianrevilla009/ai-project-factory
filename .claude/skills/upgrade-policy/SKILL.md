@@ -16,14 +16,14 @@ metadata:
 - No aplica a parches de dependencias menores gestionadas por Renovate/Dependabot (`renovate-dependabot-policy`, bloque 09).
 
 ## Reglas
-- **MUST** estar en una línea de Spring Boot con soporte OSS vigente; comprobar las fechas de fin de soporte en la página oficial de versiones (comprobar al fijar la versión, no fijadas aquí).
+- **MUST** estar en una línea de Spring Boot con soporte OSS vigente.
 - **MUST** subir versiones de parche dentro de la línea con frecuencia (mensual como objetivo) y por PR automático.
 - **MUST** subir de línea menor/mayor de una en una, sin saltos, siguiendo la guía de migración oficial (Release Notes y Migration Guide del wiki de Spring Boot).
 - **MUST** eliminar APIs `@Deprecated` en la línea actual antes de saltar a la siguiente.
 - **MUST** gestionar versiones por el BOM de Spring Boot (`bom-management`); **MUST NOT** fijar a mano versiones de librerías que el BOM ya gestiona sin comentario justificado.
 - **MUST** una subida por PR, con suite completa verde y sin mezclar cambios funcionales.
 - **SHOULD** compatibilidad de Spring Cloud/Modulith verificada en su matriz oficial antes de subir Boot.
-- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff (comprobar receta disponible).
+- **SHOULD** ejecutar OpenRewrite o la herramienta de migración oficial como ayuda, revisando el diff.
 - **MUST NOT** usar versiones SNAPSHOT/milestone/RC en ramas de producción.
 
 ## Por qué
@@ -76,5 +76,6 @@ Plan de subida (en el PR):
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `bom-management`, `parent-pom`, `renovate-dependabot-policy`, `startup-and-native`.
-- Fuentes: Spring Boot: página de versiones soportadas y Migration Guide (wiki oficial) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Boot: página de versiones soportadas y Migration Guide (wiki oficial).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

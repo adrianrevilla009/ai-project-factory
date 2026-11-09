@@ -92,18 +92,18 @@
 - **MUST** tratar los GSI como eventualmente consistentes y como coste de escritura adicional; límite por defecto de 20 GSI por tabla (ver fuente).
 - **MUST** paginar con `LastEvaluatedKey` y limitar el tamaño de respuesta; **MUST NOT** asumir joins ni agregaciones.
 - **MUST** usar escrituras condicionales (`conditionExpression`) para unicidad y concurrencia optimista.
-- **MUST** respetar el tamaño máximo de ítem (400 KB; comprobar en cuotas vigentes); los blobs van a S3 con referencia.
+- **MUST** respetar el tamaño máximo de ítem (400 KB); los blobs van a S3 con referencia.
 
 ## dynamodb-event-store
 
 - **MUST** modelar un stream por agregado: `pk = <TYPE>#<aggregateId>`, `sk` = versión con ceros a la izquierda (`v0000000042`) para ordenar lexicográficamente.
 - **MUST** añadir con escritura condicional `attribute_not_exists(pk)` sobre la clave completa `(pk, sk)`: dos escritores con la misma versión esperada, uno falla (concurrencia optimista).
-- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites (comprobar en la guía de la API).
+- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites.
 - **MUST** publicar desde el propio almacén con DynamoDB Streams (o equivalente); **MUST NOT** publicar en el bus como segundo paso del comando (doble escritura).
 - **MUST** tratar los consumidores como at-least-once: idempotentes por `(streamId, version)` (`idempotency-and-deduplication`).
 - **MUST NOT** actualizar ni borrar ítems de eventos; la política IAM de la aplicación solo permite `PutItem` condicional y `Query`.
 - **SHOULD** guardar metadatos: `type`, `schemaVersion`, `occurredAt`, `correlationId`, `causationId`, `payload`.
-- **SHOULD** configurar retención y orden de Streams según la documentación vigente (comprobar retención de 24 h de los registros de Streams).
+- **SHOULD** configurar retención y orden de Streams según la documentación vigente.
 - **MUST** fijar la región de escritura por agregado si hay Global Tables (`global-tables-and-write-region-rules`).
 
 ## event-versioning-and-upcasting
@@ -159,7 +159,7 @@
 - **MUST** revisar la licencia y el modelo de distribución antes de elegir edición o servicio gestionado; la fábrica evita licencias de pago por defecto (D16). MongoDB se distribuye bajo la SSPL, que la OSI no reconoce como licencia de código abierto y que obliga a quien ofrezca MongoDB como servicio a licenciarlo o liberar su código (verificado el 2026-11-08); un revisor legal debe validar el uso previsto.
 - **MUST** mantener las mismas reglas de oro: una fuente de verdad por agregado, sin doble escritura con Postgres, proyecciones derivadas.
 - **MUST NOT** usarlo como event store sin demostrar equivalente de append condicional por versión (índice único `(streamId, version)`).
-- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB; comprobar qué funciones soporta (comprobar al fijar la versión).
+- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB.
 - **SHOULD** preferir el emulador/contenedor local para pruebas y declarar qué no se reproduce de la variante gestionada.
 
 ## outbox-and-cdc
@@ -215,7 +215,7 @@
 - **MUST** cargar: último snapshot válido + eventos con `version` posterior; si el esquema del snapshot no coincide, ignorarlo y reconstruir desde los eventos.
 - **MUST** escribir el snapshot de forma asíncrona o fuera de la ruta del comando, y tolerar que falle.
 - **MUST NOT** actualizar el snapshot en la misma operación que decide el estado como si fuera un segundo estado (sería una segunda fuente de verdad).
-- **SHOULD** crear snapshots cada N eventos (N medido, p. ej. múltiplo de 100: comprobar con datos del proyecto) o por tiempo.
+- **SHOULD** crear snapshots cada N eventos (N medido, p. ej. múltiplo de 100) o por tiempo.
 - **SHOULD** guardarlos con clave separada del stream (`pk = SNAPSHOT#ORDER#<id>`) para no mezclarlos con eventos.
 - **MUST** probar que `fold(eventos)` y `snapshot + eventos posteriores` dan el mismo estado.
 

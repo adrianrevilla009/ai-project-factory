@@ -67,5 +67,5 @@ ThreadPoolTaskExecutor emailExecutor() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `virtual-threads`, `backpressure-and-bulkheads`, `async-and-context-propagation`.
-- Fuentes: Javadoc de `java.util.concurrent.ThreadPoolExecutor` y referencia de Spring `TaskExecutor` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Javadoc de `java.util.concurrent.ThreadPoolExecutor` y referencia de Spring `TaskExecutor`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

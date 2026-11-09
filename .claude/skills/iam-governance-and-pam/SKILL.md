@@ -64,6 +64,7 @@ leaver_sla: same-business-day
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `break-glass-and-jit-access`, `audit-and-break-glass`, `cloud-iam-least-privilege`, `identity-center-sso`, `rbac-and-service-accounts`.
-- Fuentes: NIST SP 800-53 familia AC (control de acceso), comprobar revisión vigente y URL; cadencias de recertificación son recomendación de la fábrica, a confirmar con la política de la organización.
+- Fuentes: NIST SP 800-53 familia AC (control de acceso); cadencias de recertificación son recomendación de la fábrica, a confirmar con la política de la organización.
 - Cloud: preparado para AWS, no verificado en real. En local no se reproduce IAM de AWS; Keycloak solo cubre identidad de aplicación.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

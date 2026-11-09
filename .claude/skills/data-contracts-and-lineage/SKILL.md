@@ -22,11 +22,11 @@ metadata:
 - **MUST** validar datos contra el contrato en el pipeline (no solo el esquema: también reglas de calidad, ver `data-quality`).
 - **MUST** emitir linaje por ejecución (job, run, datasets de entrada/salida) con OpenLineage desde orquestador y dbt/Spark.
 - **MUST NOT** incluir valores de PII en los eventos de linaje ni en facets.
-- **SHOULD** usar un estándar abierto para el contrato (Open Data Contract Standard u otro; comprobar la web datacontract.com no devolvió contenido verificable el 2026-11-07).
+- **SHOULD** usar un estándar abierto para el contrato (Open Data Contract Standard u otro).
 - **SHOULD** usar Marquez (OSS) como backend de linaje de referencia en local.
 
 ## Por qué
-Sin contrato, un renombrado de columna aguas arriba rompe informes en silencio. El linaje acota el impacto de un cambio y apoya auditoría y RGPD. OpenLineage define Dataset, Job y Run, extensibles con facets, con integraciones para Airflow, dbt y Spark; Marquez es su implementación de referencia. Fuente: https://openlineage.io/docs/ (consultado 2026-11-07). Nombres de propiedades de configuración de cada integración: comprobar al fijar la versión.
+Sin contrato, un renombrado de columna aguas arriba rompe informes en silencio. El linaje acota el impacto de un cambio y apoya auditoría y RGPD. OpenLineage define Dataset, Job y Run, extensibles con facets, con integraciones para Airflow, dbt y Spark; Marquez es su implementación de referencia. Fuente: https://openlineage.io/docs/ (consultado 2026-11-07). Nombres de propiedades de configuración de cada integración.
 
 ## Ejemplos
 ### Mal
@@ -35,7 +35,7 @@ Sin contrato, un renombrado de columna aguas arriba rompe informes en silencio. 
 ```
 ### Bien
 ```yaml
-# contracts/orders.v1.yaml  (formato propio ilustrativo; alinear con un estándar, comprobar al fijar la versión)
+# contracts/orders.v1.yaml  (formato propio ilustrativo; alinear con un estándar)
 dataset: marts.fct_orders
 version: 1.2.0
 owner: team-sales
@@ -69,4 +69,5 @@ Local: Marquez en contenedor. No se reproduce DataZone/Glue Data Catalog; prepar
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-quality`, `data-governance-and-classification`, `asyncapi-event-contracts`, `cdc-and-streaming`.
 - Fuentes: documentación OpenLineage (URL arriba, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

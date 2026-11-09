@@ -60,7 +60,7 @@ void retriesOnce_whenGatewayReturns503() {
         .withHeader("Idempotency-Key", matching(".+")));
 }
 ```
-Coordenadas y versión de WireMock: comprobar al fijar la versión.
+Coordenadas y versión de WireMock.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -88,5 +88,6 @@ Coordenadas y versión de WireMock: comprobar al fijar la versión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `resilience`, `contract-testing`, `resilience-testing`.
-- Fuentes: documentación oficial de WireMock (https://wiremock.org/docs/) — comprobar versión y API de la extensión.
+- Fuentes: documentación oficial de WireMock (https://wiremock.org/docs/).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

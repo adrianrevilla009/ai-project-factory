@@ -71,5 +71,6 @@ resource "aws_guardduty_organization_admin_account" "this" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `log-archive-and-audit-account`, `scp-guardrails`, `kms-multi-region-keys`, `compliance-as-code`.
-- Fuentes: guías de usuario de CloudTrail, Config, Security Hub y GuardDuty (2026-11-07) — comprobar URLs y estándares vigentes.
+- Fuentes: guías de usuario de CloudTrail, Config, Security Hub y GuardDuty (2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

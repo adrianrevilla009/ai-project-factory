@@ -20,7 +20,7 @@ metadata:
 - **MUST** poner una `description` corta (una frase, < 200 caracteres) que diga *cuándo* cargar el skill.
 - **MUST** declarar en `metadata`: `block`, `tier`, `owner`, `last_reviewed`, `enforcement`.
 - **MUST** indicar en *Enforcement* un mecanismo real (artefacto con ruta) o declarar "revisión humana".
-- **MUST** citar fuentes oficiales con fecha; lo no verificable lleva `TODO-VERIFY`.
+- **MUST** citar fuentes oficiales con fecha; lo no verificable se declara «no comprobado» o se omite.
 - **MUST NOT** afirmar que algo funciona en AWS real (ver `verify-before-asserting`).
 - **SHOULD** escribir ejemplos autocontenidos y realistas (sin depender de una app de referencia, ADR-0038).
 - **SHOULD** mantener `SKILL.md` < 400 líneas; el detalle va a `references/` y `examples/`.

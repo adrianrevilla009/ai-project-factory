@@ -53,7 +53,7 @@ jobs:
   - type: report
     parameters: {template: "traditional-json", reportDir: "reports"}
 ```
-Nombres de jobs verificados en la documentación del Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07); los parámetros exactos de cada job: comprobar contra la versión de ZAP usada.
+Nombres de jobs verificados en la documentación del Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07); los parámetros exactos de cada job.
 
 ## Checklist de revisión
 - [ ] El objetivo está en un plan versionado con exclusiones.
@@ -72,4 +72,5 @@ Nombres de jobs verificados en la documentación del Automation Framework (zapro
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `penetration-testing-program`, `vulnerability-management-program`, `ephemeral-environments`, `asvs-mapping`.
 - Fuentes: ZAP Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

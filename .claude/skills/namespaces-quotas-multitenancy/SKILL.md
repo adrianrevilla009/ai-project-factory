@@ -75,5 +75,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `pod-security-and-admission`, `rbac-and-service-accounts`, `multi-tenancy`, `container-and-k8s-security`.
-- Fuentes: documentación de Kubernetes (Resource Quotas, Limit Ranges, Network Policies, multi-tenancy) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Kubernetes (Resource Quotas, Limit Ranges, Network Policies, multi-tenancy).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

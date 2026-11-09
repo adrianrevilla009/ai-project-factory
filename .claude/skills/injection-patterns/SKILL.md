@@ -19,10 +19,10 @@ metadata:
 ## Reglas
 - **SHOULD** usar **Vault Secrets Operator (VSO)** por defecto: sincroniza a `Secret` de Kubernetes mediante CRDs (`VaultStaticSecret`, `VaultDynamicSecret`) sin sidecar. Es la opción más simple de operar.
 - **SHOULD** usar **Agent Injector** (sidecar) cuando se necesita renovación de leases y plantillas de fichero sin `Secret` de K8s; coste: un contenedor extra por pod.
-- **SHOULD** usar **CSI Provider** cuando no se quiere persistir el valor en etcd y basta montar un volumen efímero; limitación: rotación y sincronización a variables de entorno más pobre. Comprobar comportamiento de rotación en la versión fijada.
+- **SHOULD** usar **CSI Provider** cuando no se quiere persistir el valor en etcd y basta montar un volumen efímero; limitación: rotación y sincronización a variables de entorno más pobre.
 - **MUST** documentar la elección por servicio en un ADR corto; **MUST NOT** mezclar patrones sin motivo.
 - **MUST** preferir montar secretos como **ficheros** y leerlos con `spring.config.import=optional:configtree:/vault/secrets/`; evitar variables de entorno (se filtran en volcados y `/proc`).
-- **MUST** que el cifrado de `Secret` en etcd (KMS provider) esté activo si se usa VSO; sin él, el secreto queda en claro en etcd. Comprobar configuración EKS.
+- **MUST** que el cifrado de `Secret` en etcd (KMS provider) esté activo si se usa VSO; sin él, el secreto queda en claro en etcd.
 - **MUST** que cada servicio use su ServiceAccount y rol (`auth-methods`); **MUST NOT** compartir un rol entre namespaces.
 - **MUST** que la app tolere el cambio del secreto (relectura o reinicio controlado; en VSO, `rolloutRestartTargets`).
 - **MUST NOT** registrar valores de secretos en logs, `toString()` ni Actuator (`management.endpoint.env.show-values=NEVER`).
@@ -62,7 +62,7 @@ volumes: [{ name: db, secret: { secretName: orders-db } }]
 spring.config.import=optional:configtree:/vault/secrets/
 management.endpoint.env.show-values=NEVER
 ```
-Versiones de API y campos de los CRDs de VSO: comprobar en la versión fijada.
+Versiones de API y campos de los CRDs de VSO.
 
 ## Checklist de revisión
 - [ ] Patrón elegido y justificado por servicio.
@@ -80,6 +80,7 @@ Versiones de API y campos de los CRDs de VSO: comprobar en la versión fijada.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `auth-methods`, `rotation-and-leases`, `secrets-management`, `configuration-properties`, `container-and-k8s-security`.
-- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/deploy/kubernetes (comprobar ruta y comparativa vigentes).
+- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/deploy/kubernetes.
 - Estado: diseño; preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -66,5 +66,5 @@ CREATE INDEX idx_orders_created_id ON orders (created_at, id);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pagination-filter-sort`, `joins-and-fetch-joins`, `indexing-and-query-plans`, `projections-and-dtos`.
-- Fuentes: Spring Data commons reference (paging, `Slice`, scrolling) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Data commons reference (paging, `Slice`, scrolling).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -24,7 +24,7 @@ metadata:
 - **MUST** monitorizar en servicio: latencia, errores, distribución de entradas (deriva de datos) y, cuando lleguen etiquetas, calidad real (deriva de rendimiento).
 - **MUST** poder volver a la versión anterior sin reentrenar (rollback) y desplegar de forma gradual (sombra o canario).
 - **SHOULD** evaluar sesgo entre grupos relevantes y documentar uso previsto y límites en una ficha del modelo (ver `model-risk-and-ai-act-mapping`).
-- **SHOULD** servir modelos ligeros en proceso (p. ej. formato ONNX, comprobar runtime Java) o como servicio separado con contrato versionado.
+- **SHOULD** servir modelos ligeros en proceso (p. ej. formato ONNX) o como servicio separado con contrato versionado.
 - **SHOULD** orquestar el reentrenamiento con el orquestador de datos del proyecto (ver bloque de datos) y no con scripts manuales.
 - **MUST NOT** cargar modelos serializados con `pickle` de origen no confiable: ejecuta código arbitrario al deserializar.
 - **MUST NOT** entrenar con datos personales sin base legal y minimización (ver `pii-and-data-classification`).
@@ -74,5 +74,6 @@ El PSI 0.2 es un umbral habitual de la práctica; calibrar con datos propios.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `model-risk-and-ai-act-mapping`, `llm-evals`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `feature-store-and-ml-data`.
-- Fuentes: documentación de scikit-learn sobre persistencia de modelos y riesgos de pickle (comprobar URL exacta); MLflow, si se usa (licencia y versión: comprobar al fijar la versión).
+- Fuentes: documentación de scikit-learn sobre persistencia de modelos y riesgos de pickle; MLflow, si se usa (licencia y versión).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

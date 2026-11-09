@@ -46,7 +46,7 @@ Order:
     totalAmount: { type: string, description: "Decimal en texto; sustituye a total" }
 ```
 ```text
-# Chequeo en CI (ejemplo; confirmar herramienta y sintaxis en su documentación, comprobar al fijar la versión)
+# Chequeo en CI (ejemplo; confirmar herramienta y sintaxis en su documentación)
 openapi-diff old.yaml new.yaml        # OpenAPI
 buf breaking --against '.git#branch=main'   # Protobuf
 ```
@@ -66,5 +66,6 @@ buf breaking --against '.git#branch=main'   # Protobuf
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `api-versioning-deprecation`, `openapi-contract-first`, `grpc-protobuf`, `asyncapi-event-contracts`, `schema-registry-and-evolution`, `contract-testing-pact`.
-- Fuentes: patrón Tolerant Reader (Fowler), documentación de buf y de herramientas de diff OpenAPI (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: patrón Tolerant Reader (Fowler), documentación de buf y de herramientas de diff OpenAPI.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

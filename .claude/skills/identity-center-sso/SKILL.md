@@ -20,11 +20,11 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 ## Reglas
 - **MUST** dar acceso humano solo vía Identity Center con credenciales temporales; cero usuarios IAM con claves de larga duración.
 - **MUST** asignar permission sets a grupos, nunca a usuarios individuales.
-- **MUST** federar el IdP corporativo (Keycloak como IdP externo vía SAML/SCIM, comprobar soporte SCIM) y exigir MFA en el IdP.
+- **MUST** federar el IdP corporativo (Keycloak como IdP externo vía SAML/SCIM) y exigir MFA en el IdP.
 - **MUST** limitar la duración de sesión (por defecto ≤ 8 h; admin ≤ 1 h).
 - **MUST** separar permission sets: `ReadOnly`, `Developer`, `Deployer` (CI), `PlatformAdmin`, `SecurityAudit`.
 - **SHOULD** gestionar grupos y asignaciones por Terraform.
-- **SHOULD** ubicar la instancia en eu-west-1 (región primaria, D6); la región de la instancia es difícil de cambiar (comprobar al fijar la versión).
+- **SHOULD** ubicar la instancia en eu-west-1 (región primaria, D6); la región de la instancia es difícil de cambiar.
 - **MUST NOT** conceder `AdministratorAccess` permanente a nadie en prod; ver `break-glass-and-jit-access`.
 
 ## Por qué
@@ -73,5 +73,6 @@ resource "aws_ssoadmin_account_assignment" "dev_team_orders_dev" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `break-glass-and-jit-access`, `scp-guardrails`, `control-tower-and-account-factory`.
-- Fuentes: IAM Identity Center User Guide (2026-11-07) — comprobar URL, SCIM con Keycloak y duración máxima de sesión.
+- Fuentes: IAM Identity Center User Guide (2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -85,5 +85,6 @@ test: { environment: "jsdom", setupFiles: ["./src/test/setup.ts"], coverage: { p
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `accessibility`, `api-client-from-openapi`, `e2e-testing`, `contract-testing`, `flaky-test-management`, `coverage-policy`.
-- Fuentes: https://vitest.dev , https://testing-library.com , https://mswjs.io , https://playwright.dev (comprobar versiones y API vigentes; no consultadas en detalle 2026-11-07).
+- Fuentes: https://vitest.dev, https://testing-library.com, https://mswjs.io, https://playwright.dev.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

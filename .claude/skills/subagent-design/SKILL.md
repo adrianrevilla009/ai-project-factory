@@ -27,7 +27,7 @@ metadata:
 - **MUST NOT** asumir que el subagente conoce la conversación: recibe contexto nuevo; el prompt de delegación debe ser autocontenido.
 
 ## Por qué
-Cada subagente corre en su propia ventana de contexto con prompt de sistema, herramientas y permisos propios; por eso protege el contexto principal, pero también por eso no hereda lo ya hablado. Un agente con `Write` que solo debía revisar convierte una revisión en una modificación sin trazabilidad. Campos y límites (`tools`, `disallowedTools`, `model`, `skills`, `isolation`, `permissionMode`, `maxTurns`, `memory`, `mcpServers`; profundidad de anidamiento 3 por defecto) verificados en https://code.claude.com/docs/en/sub-agents el 2026-11-07. El comportamiento exacto del ámbito de nombres por subcarpeta sigue `TODO-VERIFY` (ver `docs/architecture/claude-code-formats.md`).
+Cada subagente corre en su propia ventana de contexto con prompt de sistema, herramientas y permisos propios; por eso protege el contexto principal, pero también por eso no hereda lo ya hablado. Un agente con `Write` que solo debía revisar convierte una revisión en una modificación sin trazabilidad. Campos y límites (`tools`, `disallowedTools`, `model`, `skills`, `isolation`, `permissionMode`, `maxTurns`, `memory`, `mcpServers`; profundidad de anidamiento 3 por defecto) verificados en https://code.claude.com/docs/en/sub-agents el 2026-11-07. Las subcarpetas de `.claude/agents/` no afectan al nombre del subagente: la identidad sale solo del campo `name` (verificado el 2026-11-09; ver `docs/architecture/claude-code-formats.md`).
 
 ## Ejemplos
 ### Mal

@@ -51,5 +51,6 @@ La política Kyverno de firmas ya existe y se aplica a este registro.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `image-scanning`, `image-signing-and-provenance`, `supply-chain`, `artifact-repository-port`.
-- Fuentes (consultada 2026-11-07): https://goharbor.io/docs/ (versión documentada v2.15.0). Comprobar detalles de proxy cache y robots en la versión usada.
+- Fuentes (consultada 2026-11-07): https://goharbor.io/docs/ (versión documentada v2.15.0).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

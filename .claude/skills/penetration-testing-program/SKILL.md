@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** disponer de un documento de autorización firmado antes de cualquier prueba: alcance (dominios, IPs, cuentas, entornos), exclusiones, ventana horaria, contactos de emergencia, tipo de prueba (caja negra/gris/blanca) y reglas de compromiso (RoE).
 - **MUST** preferir un entorno de staging con datos sintéticos; si se prueba producción, acordar límites (sin denegación de servicio, sin exfiltración real de datos, sin ingeniería social salvo autorización expresa).
-- **MUST** confirmar la titularidad: si el sistema está en un proveedor cloud, comprobar su política vigente de pruebas de seguridad (comprobar por proveedor).
+- **MUST** confirmar la titularidad: si el sistema está en un proveedor cloud.
 - **MUST** definir un canal de parada inmediata y un contacto del SOC/on-call informado de la ventana.
 - **MUST** exigir informe con hallazgo, evidencia reproducible, impacto, severidad y recomendación, más un resumen ejecutivo.
 - **MUST** abrir cada hallazgo en el registro de `vulnerability-management-program` con SLA y programar un retest.
@@ -63,5 +63,6 @@ deliverables: [executive_summary, technical_findings, retest_report]
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dast-and-attack-simulation`, `vulnerability-management-program`, `asvs-mapping`, `bug-bounty-and-disclosure`.
-- Fuentes (2026-11-07, comprobar URLs exactas): OWASP Web Security Testing Guide; NIST SP 800-115; PTES; política de pruebas de seguridad del proveedor cloud usado.
+- Fuentes (2026-11-07): OWASP Web Security Testing Guide; NIST SP 800-115; PTES; política de pruebas de seguridad del proveedor cloud usado.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -71,5 +71,5 @@ CREATE TABLE document_version (
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `intelligent-document-processing`, `ocr-options`, `file-upload-security`, `pii-and-data-classification`, `storage-and-load-balancing`.
-- Fuentes: documentación oficial de Amazon S3 (versionado, SSE-KMS, URL prefirmadas) (por nombre; URL y versión se fijan al adoptarlas en el proyecto). En local MinIO no reproduce IAM/KMS de AWS.
+- Fuentes: documentación oficial de Amazon S3 (versionado, SSE-KMS, URL prefirmadas). En local MinIO no reproduce IAM/KMS de AWS.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

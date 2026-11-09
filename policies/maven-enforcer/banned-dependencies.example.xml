@@ -2,12 +2,12 @@
   Ejemplo de configuracion de maven-enforcer-plugin para el parent POM de un proyecto generado.
   Deriva de catalog/forbidden-libraries.yaml (fuente de verdad: si cambia el catalogo, cambia esto).
   Skill: .claude/skills/enforcer-rules/SKILL.md  y  no-lombok (D27).
-  Estado: ejemplo NO ejecutado en la fabrica (comprobar version del plugin y sintaxis con la version elegida).
+  Estado: ejemplo NO ejecutado en la fabrica.
 -->
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-enforcer-plugin</artifactId>
-  <version><!-- comprobar version vigente --></version>
+  <version></version>
   <executions>
     <execution>
       <id>enforce-factory-rules</id>
@@ -16,8 +16,8 @@
       <configuration>
         <fail>true</fail>
         <rules>
-          <requireMavenVersion><version>[3.9,)</version></requireMavenVersion> <!-- comprobar minimo -->
-          <requireJavaVersion><version>[21,)</version></requireJavaVersion>   <!-- comprobar LTS -->
+          <requireMavenVersion><version>[3.9,</version></requireMavenVersion>
+          <requireJavaVersion><version>[21,</version></requireJavaVersion>
           <requirePluginVersions/>
           <banDuplicatePomDependencyVersions/>
           <dependencyConvergence/>

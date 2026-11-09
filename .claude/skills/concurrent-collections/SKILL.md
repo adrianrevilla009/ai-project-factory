@@ -66,5 +66,5 @@ boolean submit(Job j) { return queue.offer(j); }       // false = rechazar, no b
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `locks-and-synchronization`, `backpressure-and-bulkheads`, `caching`.
-- Fuentes: Javadoc de `java.util.concurrent` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Javadoc de `java.util.concurrent`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

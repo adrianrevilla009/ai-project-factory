@@ -3,7 +3,7 @@
 Conocimiento transversal de la fábrica, en dos capas.
 
 ## Catálogos (escritos, revisables)
-Capa de navegación sobre las 487 skills. No sustituyen a las skills: te llevan a ellas desde un problema.
+Capa de navegación sobre las 490 skills. No sustituyen a las skills: te llevan a ellas desde un problema.
 
 | Documento | Responde a |
 |---|---|

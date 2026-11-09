@@ -76,5 +76,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mtls-strict-and-peer-auth`, `zero-trust`, `authz-rbac-abac-rebac`, `rbac-and-service-accounts`.
-- Fuentes: istio.io/latest/docs/reference/config/security/authorization-policy/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/reference/config/security/authorization-policy/.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

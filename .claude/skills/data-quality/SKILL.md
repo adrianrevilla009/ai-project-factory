@@ -23,7 +23,7 @@ metadata:
 - **MUST** asignar un propietario por dataset que reciba las alertas.
 - **MUST NOT** "arreglar" datos corruptos en el mart; corregir en origen o en una capa intermedia trazable.
 - **SHOULD** empezar por PK única/no nula, FKs y valores aceptados (los cuatro tests genéricos de dbt) y añadir reglas de negocio después.
-- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core, comprobar licencia y versión vigentes).
+- **SHOULD** usar herramientas OSS (dbt tests; Great Expectations Core).
 - **SHOULD** versionar las expectativas junto al código del pipeline.
 
 ## Por qué
@@ -53,7 +53,7 @@ models:
               config: { severity: warn }
               arguments: { values: ['placed', 'shipped', 'returned'] }
 ```
-Forma de `arguments`/`config` según la versión de dbt (comprobar al fijar la versión).
+Forma de `arguments`/`config` según la versión de dbt.
 
 ## Checklist de revisión
 - [ ] Cada dataset tiene tests de PK, FKs y valores aceptados.
@@ -73,4 +73,5 @@ Local: dbt/Great Expectations sobre Postgres/DuckDB. Sin diferencias con AWS sal
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `etl-vs-elt-and-dbt`, `data-observability`, `data-contracts-and-lineage`, `batch-orchestration`.
 - Fuentes: documentación dbt (URL arriba, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

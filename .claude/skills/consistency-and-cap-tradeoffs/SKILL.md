@@ -62,5 +62,5 @@ Código: guarda en primario y lee inmediatamente de la réplica para mostrar el 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sagas-and-process-managers`, `cqrs`, `event-driven`, `scalability-patterns`.
-- Fuentes: Brewer, "CAP Twelve Years Later" (2012); Abadi, "PACELC" (2012). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Brewer, "CAP Twelve Years Later" (2012); Abadi, "PACELC" (2012)..
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

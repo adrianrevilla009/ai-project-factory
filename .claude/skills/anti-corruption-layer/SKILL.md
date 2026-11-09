@@ -70,5 +70,5 @@ final class LegacyCrmTranslator {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `ddd-strategic`, `strangler-fig-migration`, `soap-legacy-integration`.
-- Fuentes: Eric Evans, "Domain-Driven Design" (2003), patrón Anticorruption Layer; Microsoft Azure Architecture Center, "Anti-corruption layer pattern" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Eric Evans, "Domain-Driven Design" (2003), patrón Anticorruption Layer; Microsoft Azure Architecture Center, "Anti-corruption layer pattern".
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

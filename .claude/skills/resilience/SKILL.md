@@ -21,7 +21,7 @@ metadata:
 - **MUST** definir `fallback` explícito y de significado de negocio claro, o dejar propagar el error; **MUST NOT** devolver listas vacías o `null` que oculten el fallo.
 - **MUST** configurar instancias por nombre en `application.yml`, una por dependencia, no valores en anotaciones.
 - **MUST** usar `Bulkhead` (semáforo) para limitar concurrencia hacia dependencias lentas.
-- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead (comprobar el orden real de aspectos, comprobar al fijar la versión).
+- **SHOULD** orden de composición documentado: Retry envuelve a CircuitBreaker, que envuelve a TimeLimiter/Bulkhead.
 - **SHOULD** exponer métricas y estado de los breakers vía Actuator (`actuator-and-health`).
 - **MUST NOT** hacer retry anidado en varias capas (multiplica la carga: 3x3x3).
 
@@ -62,7 +62,7 @@ resilience4j:
         wait-duration: 200ms
         enable-exponential-backoff: true
 ```
-Los valores son ilustrativos; calibrar con métricas reales. Nombres de propiedades: comprobar contra la versión usada.
+Los valores son ilustrativos; calibrar con métricas reales. Nombres de propiedades.
 
 ## Checklist de revisión
 - [ ] Hay timeout antes que retry/breaker.
@@ -80,5 +80,6 @@ Los valores son ilustrativos; calibrar con métricas reales. Nombres de propieda
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `actuator-and-health`, `idempotency-keys`, `resilience-testing`.
-- Fuentes: documentación oficial de Resilience4j y de Spring Cloud Circuit Breaker (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Resilience4j y de Spring Cloud Circuit Breaker.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

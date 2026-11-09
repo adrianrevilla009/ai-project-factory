@@ -79,11 +79,11 @@
 ## diagrams-as-code
 
 - **MUST** guardar la fuente del diagrama como texto en el repo, junto a la documentación que ilustra; una imagen exportada sin fuente no se acepta.
-- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI). Comprobar licencia vigente de cada herramienta antes de fijarla.
+- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI).
 - **MUST** elegir una herramienta por tipo de diagrama y documentarlo en el README de docs; no mezclar tres sintaxis para lo mismo.
 - **MUST** que cada diagrama tenga título, leyenda si usa colores/formas y nivel de abstracción único (ver `c4-and-arc42`).
 - **MUST** mantener el diagrama en el mismo PR que el cambio que lo invalida.
-- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra (comprobar soporte vigente en la documentación de GitHub).
+- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra.
 - **SHOULD** modelar C4 una sola vez (modelo Structurizr) y derivar varias vistas, en lugar de redibujar.
 - **SHOULD** limitar el diagrama a ~15 elementos; dividir en vistas si crece.
 - **MUST NOT** incluir secretos, IPs reales ni identificadores de cuenta en diagramas.
@@ -127,7 +127,7 @@
 
 ## library-selection-and-tech-radar-process
 
-- **MUST** comprobar primero si el stack ya aprobado cubre la necesidad (Java + Spring Boot + Maven, Terraform, Istio, Keycloak...); las decisiones cerradas D1-D27 no se reabren aquí.
+- **MUST** comprobar primero si el stack ya aprobado cubre la necesidad (Java + Spring Boot + Maven, Terraform, Istio, Keycloak.); las decisiones cerradas D1-D27 no se reabren aquí.
 - **MUST** evaluar: necesidad real, madurez y actividad del mantenimiento, licencia, seguridad (CVEs, SBOM), tamaño de dependencias transitivas, integración con el stack y coste de salida.
 - **MUST** licencia compatible y sin coste por defecto (D16); las licencias de pago o copyleft fuerte requieren decisión humana en ADR.
 - **MUST** registrar la decisión en un ADR cuando la librería sea estructural o difícil de reemplazar.
@@ -135,7 +135,7 @@
 - **MUST** clasificar en el radar: Adopt, Trial, Assess, Hold, con fecha y dueño; revisar el radar cada trimestre.
 - **SHOULD** probar con una prueba de concepto acotada antes de pasar a Adopt.
 - **SHOULD** aislar la librería tras un puerto/adaptador para reducir el coste de salida.
-- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (comprobar al fijar la versión).
+- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial.
 
 ## living-readme
 

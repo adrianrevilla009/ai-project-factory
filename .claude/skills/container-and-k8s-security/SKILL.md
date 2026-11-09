@@ -79,5 +79,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `secrets-management`, `container-images`, `cloud-iam-least-privilege`, `zero-trust`.
-- Fuentes: Kubernetes Pod Security Standards y documentación de Kyverno, OWASP Docker/Kubernetes Cheat Sheets (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Kubernetes Pod Security Standards y documentación de Kyverno, OWASP Docker/Kubernetes Cheat Sheets.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

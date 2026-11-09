@@ -64,5 +64,5 @@ void discountByTier(String tier, BigDecimal total, BigDecimal expected) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `workflow-bpm`, `audit-trail-and-activity-log`, `testing-slices`.
-- Fuentes: documentación oficial de Drools/DMN (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Drools/DMN.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -63,7 +63,7 @@ resource "vault_jwt_auth_backend_role" "ci_deploy" {
   token_ttl      = 600
 }
 ```
-Nombres de recursos del provider `hashicorp/vault`: comprobar contra la versión fijada.
+Nombres de recursos del provider `hashicorp/vault`.
 
 ## Checklist de revisión
 - [ ] Ningún rol con `*` en ServiceAccount o namespace.
@@ -83,4 +83,5 @@ Nombres de recursos del provider `hashicorp/vault`: comprobar contra la versión
 - Relacionados: `policies`, `injection-patterns`, `authn-oidc-oauth2`, `cloud-iam-least-privilege`, `secrets-management`.
 - Fuentes: https://developer.hashicorp.com/vault/docs/auth (consultada 2026-11-07, no verificados todos los parámetros: comprobar `bound_claims`/`token_*` en la versión fijada).
 - Estado: diseño; preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

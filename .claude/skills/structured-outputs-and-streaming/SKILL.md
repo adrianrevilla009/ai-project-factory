@@ -76,5 +76,5 @@ Streaming: `SseEmitter emitter = new SseEmitter(60_000L); emitter.onTimeout(stre
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-security`, `llm-evals`, `guardrails-and-pii-redaction`, `token-and-cost-budgets`, `intelligent-document-processing`.
-- Fuentes: https://platform.claude.com/docs/en/build-with-claude/structured-outputs; limitaciones de esquema y modelos soportados cambian (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: https://platform.claude.com/docs/en/build-with-claude/structured-outputs; limitaciones de esquema y modelos soportados cambian.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

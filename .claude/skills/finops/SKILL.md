@@ -17,7 +17,7 @@ metadata:
 - La fábrica no tiene cuenta ni facturación real (ADR-0004): los importes son estimaciones de diseño, preparado para AWS, no verificado en real. En local no se reproducen Budgets, Cost Explorer ni Cost Anomaly Detection.
 
 ## Reglas
-- **MUST** definir una política de etiquetas obligatorias (`service`, `env`, `owner`, `cost-center`, `tier`) aplicada por Terraform (`default_tags`) y activarlas como etiquetas de asignación de costes (comprobar activación).
+- **MUST** definir una política de etiquetas obligatorias (`service`, `env`, `owner`, `cost-center`, `tier`) aplicada por Terraform (`default_tags`) y activarlas como etiquetas de asignación de costes.
 - **MUST** declarar presupuestos como código (AWS Budgets) por entorno/servicio con umbrales de aviso (p. ej. 50/80/100% real y 100% previsto) y destinatario.
 - **MUST** declarar monitores y suscripciones de Cost Anomaly Detection; las alertas pueden ir a email o a un tema SNS. La detección no es inmediata: usa datos de Cost Explorer con hasta 24 h de retraso.
 - **MUST** medir un coste unitario por negocio (coste por pedido, por tenant, por 1000 peticiones) y seguirlo como métrica junto al SLO.
@@ -78,5 +78,6 @@ Atributos del recurso: validar con `terraform validate`/docs del provider (los r
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `finops-of-resilience`, `capacity-and-load-modeling`, `ephemeral-environments`, `cloud-iam-least-privilege`.
-- Fuentes (verificado 2026-11-07): https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html . Comprobar AWS Budgets y atributos Terraform.
+- Fuentes (verificado 2026-11-07): https://docs.aws.amazon.com/cost-management/latest/userguide/manage-ad.html.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

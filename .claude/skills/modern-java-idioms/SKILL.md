@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** preferir `Stream.toList()` (inmutable) a `collect(Collectors.toList())`.
 
 ## Por qué
-Las construcciones modernas mueven errores de tiempo de ejecución a tiempo de compilación: un `sealed` + `switch` exhaustivo falla al compilar cuando se añade una variante, mientras que `if/else` con `instanceof` falla en producción. Los records eliminan boilerplate sin necesidad de Lombok. Disponibilidad por versión: verificar en las JEP/notas de versión del JDK elegido (comprobar al fijar la versión).
+Las construcciones modernas mueven errores de tiempo de ejecución a tiempo de compilación: un `sealed` + `switch` exhaustivo falla al compilar cuando se añade una variante, mientras que `if/else` con `instanceof` falla en producción. Los records eliminan boilerplate sin necesidad de Lombok. Disponibilidad por versión: verificar en las JEP/notas de versión del JDK elegido.
 
 ## Ejemplos
 ### Mal
@@ -72,5 +72,6 @@ static String describe(Shape shape) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `immutability-and-value-objects`, `no-lombok`, `code-style-and-naming`, `null-safety`.
-- Fuentes: JEP 395 (records), JEP 409 (sealed), JEP 441 (pattern matching for switch) en openjdk.org — comprobar versión y fecha de verificación (2026-11-07 no comprobada en línea).
+- Fuentes: JEP 395 (records), JEP 409 (sealed), JEP 441 (pattern matching for switch) en openjdk.org.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

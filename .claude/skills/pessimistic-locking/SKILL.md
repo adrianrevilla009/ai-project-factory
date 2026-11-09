@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** justificar por escrito por qué no basta bloqueo optimista o un `UPDATE` atómico.
-- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor) — comprobar soporte por dialecto; nunca esperar indefinidamente.
+- **MUST** definir siempre timeout de bloqueo (`jakarta.persistence.lock.timeout`, o `NOWAIT`/`lock_timeout` del motor); nunca esperar indefinidamente.
 - **MUST** mantener la transacción mínima: tomar el bloqueo tarde y soltarlo pronto (commit); sin I/O externo mientras se retiene.
 - **MUST** adquirir bloqueos sobre varias filas/tablas siempre en el mismo orden (por id ascendente) para evitar deadlocks.
 - **SHOULD** usar `FOR UPDATE SKIP LOCKED` para que varios workers reclamen filas de una tabla-cola sin pisarse.
@@ -77,5 +77,6 @@ SELECT id FROM jobs WHERE status = 'PENDING' ORDER BY id LIMIT 10 FOR UPDATE SKI
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `optimistic-locking`, `isolation-levels-and-anomalies`, `distributed-locking`, `connection-pooling`.
-- Fuentes: Jakarta Persistence (`LockModeType`) y documentación del motor (`SELECT ... FOR UPDATE`, `SKIP LOCKED`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Jakarta Persistence (`LockModeType`) y documentación del motor (`SELECT ... FOR UPDATE`, `SKIP LOCKED`).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

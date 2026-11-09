@@ -21,7 +21,7 @@ metadata:
 - **MUST** basar los números en telemetría real o en supuestos marcados como tales; nunca en intuición sin etiqueta.
 - **MUST** calcular el headroom para el peor caso de fallo soportado: si una AZ cae, las restantes absorben su carga (con 3 AZ cada una dimensionada para 50% del pico, no 33%).
 - **MUST** modelar el failover regional: la región superviviente recibe el 100%; si no es capaz, el diseño es un pilot light con degradación explícita (`load-shedding-and-degradation`).
-- **MUST** identificar el recurso limitante (CPU, conexiones de BD, IOPS, cuotas de servicio) y la cuota de AWS que se alcanzaría (comprobar cuotas).
+- **MUST** identificar el recurso limitante (CPU, conexiones de BD, IOPS, cuotas de servicio) y la cuota de AWS que se alcanzaría.
 - **SHOULD** aplicar la ley de Little (concurrencia = tasa x latencia) para dimensionar pools y hilos (`connection-pooling`, `threads-executors-and-pools`).
 - **SHOULD** probar carga en entorno aislado con perfil realista (rampa, pico, soak) y criterios de aceptación ligados al SLO.
 - **MUST NOT** autoescalar sin límites máximos ni sin considerar las dependencias duras que no escalan (BD).
@@ -66,5 +66,6 @@ load_test:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `scalability-patterns`, `multi-az-patterns`, `finops-of-resilience`, `load-shedding-and-degradation`.
-- Fuentes: Well-Architected Reliability Pillar (cuotas y escalado) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Well-Architected Reliability Pillar (cuotas y escalado).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

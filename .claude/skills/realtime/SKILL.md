@@ -23,9 +23,9 @@ metadata:
 - **MUST** tratar los mensajes como invalidaciones o deltas sobre la caché de servidor: `queryClient.invalidateQueries` o `setQueryData`, no un segundo almacén de estado paralelo.
 - **MUST** cerrar la conexión al desmontar, al cerrar sesión y en pestañas ocultas si no es necesaria; una sola conexión compartida por app, no una por componente.
 - **MUST** validar el esquema de cada mensaje (Zod) antes de usarlo; ignorar tipos desconocidos (compatibilidad hacia delante).
-- **SHOULD** usar latidos (heartbeat) menores que el timeout de inactividad de balanceadores y proxies (en ALB el valor por defecto es 60 s; comprobar al fijar la versión) y comprobar el comportamiento del CDN con respuestas en streaming.
+- **SHOULD** usar latidos (heartbeat) menores que el timeout de inactividad de balanceadores y proxies (en ALB el valor por defecto es 60 s) y comprobar el comportamiento del CDN con respuestas en streaming.
 - **SHOULD** tener degradación: si falla el canal, volver a polling y mostrar estado "sin conexión".
-- Sobre HTTP/1.1 los navegadores limitan conexiones por dominio (alrededor de 6); con HTTP/2 se relaja (comprobar al fijar la versión).
+- Sobre HTTP/1.1 los navegadores limitan conexiones por dominio (alrededor de 6); con HTTP/2 se relaja.
 
 ## Por qué
 Una conexión viva multiplica el coste de infraestructura y los casos de fallo (redes móviles, proxys, expiración de sesión). Tratar los eventos como invalidación de caché mantiene una única fuente de verdad y simplifica la reconexión.
@@ -77,5 +77,6 @@ es.addEventListener("order-updated", (e) => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `state-management`, `auth-and-session`, `security-frontend`, `notifications`, `idempotency-and-deduplication`, `alb-nlb-and-tls-termination`.
-- Fuentes: MDN (Server-sent events, WebSocket API) y RFC 6455 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: MDN (Server-sent events, WebSocket API) y RFC 6455.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

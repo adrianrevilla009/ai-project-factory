@@ -24,7 +24,7 @@ metadata:
 - **MUST NOT** construir HTML de plantilla concatenando entrada del usuario (XSS/SSRF en conversores HTML→PDF); escapar y bloquear recursos remotos.
 - **MUST NOT** incluir más campos personales de los necesarios; marcar el informe con clasificación de datos.
 - **SHOULD** neutralizar fórmulas en CSV/Excel (prefijos `=`, `+`, `-`, `@`) para evitar CSV injection.
-- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras: comprobar al fijar la versión.
+- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras.
 
 ## Por qué
 Un informe síncrono de 200 000 filas agota heap y hilos de petición. Los generadores PDF a partir de HTML pueden resolver URLs internas. Un id adivinable sin autorización expone datos de otros clientes.
@@ -67,5 +67,6 @@ void write(OutputStream out, Principal owner) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `import-export-and-bulk-data`, `scheduling-and-batch-jobs`, `pii-and-data-classification`.
-- Fuentes: OWASP CSV Injection (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS (S3 + URL firmada), no verificado en real; en local se usa un emulador/MinIO.
+- Fuentes: OWASP CSV Injection. Preparado para AWS (S3 + URL firmada), no verificado en real; en local se usa un emulador/MinIO.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

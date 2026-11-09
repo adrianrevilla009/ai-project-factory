@@ -71,5 +71,5 @@ create table event_store (
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cqrs`, `event-driven`, `ddd-tactical`, `consistency-and-cap-tradeoffs`.
-- Fuentes: Fowler, "Event Sourcing" (martinfowler.com); Young, "Versioning in an Event Sourced System" (2017). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Fowler, "Event Sourcing" (martinfowler.com); Young, "Versioning in an Event Sourced System" (2017)..
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

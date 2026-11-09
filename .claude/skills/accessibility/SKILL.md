@@ -43,7 +43,7 @@ La accesibilidad barata es la que nace en el HTML semántico; añadirla al final
 <input id="email" type="email" aria-describedby="email-err" aria-invalid={!!error} />
 {error && <p id="email-err" role="alert">{error}</p>}
 ```
-### Prueba axe en Vitest (comprobar paquete vitest-axe/jest-axe y versión)
+### Prueba axe en Vitest
 ```tsx
 import { axe } from "vitest-axe";
 it("form has no a11y violations", async () => {
@@ -83,5 +83,6 @@ it("form has no a11y violations", async () => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `design-system-and-tokens`, `forms-and-validation`, `testing`, `component-patterns`.
-- Fuentes: W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/; WAI-ARIA Authoring Practices https://www.w3.org/WAI/ARIA/apg/ ; documentación de axe-core (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: W3C WCAG 2.2 https://www.w3.org/TR/WCAG22/; WAI-ARIA Authoring Practices https://www.w3.org/WAI/ARIA/apg/ ; documentación de axe-core.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

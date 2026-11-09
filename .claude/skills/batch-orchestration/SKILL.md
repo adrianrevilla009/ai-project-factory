@@ -28,7 +28,7 @@ metadata:
 - **SHOULD** separar orquestación de transformación: el orquestador llama a dbt/Spark, no contiene la lógica SQL.
 
 ## Por qué
-Los reintentos y backfills solo son seguros si las tareas son idempotentes; una tarea basada en `now` duplica o pierde datos al reintentar. Airflow y Dagster son OSS (Apache-2.0), sin licencia de pago. Conceptos DAG, `@dag`, `catchup` y `default_args`: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (consultado 2026-11-07). Dagster: comprobar (la URL de documentación redirige a dagster.io/docs; no verificado el detalle del modelo de activos).
+Los reintentos y backfills solo son seguros si las tareas son idempotentes; una tarea basada en `now` duplica o pierde datos al reintentar. Airflow y Dagster son OSS (Apache-2.0), sin licencia de pago. Conceptos DAG, `@dag`, `catchup` y `default_args`: https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html (consultado 2026-11-07). Dagster; no verificado el detalle del modelo de activos.
 
 ## Ejemplos
 ### Mal
@@ -49,7 +49,7 @@ def sales_daily():
     load()
 sales_daily()
 ```
-Comprobar la firma de contexto (`data_interval_start`) en la versión de Airflow usada (comprobar al fijar la versión).
+El contexto de Airflow expone `data_interval_start`; úsalo en lugar de la hora actual para que los reintentos sean reproducibles.
 
 ## Checklist de revisión
 - [ ] Cada tarea es idempotente y recibe el intervalo, no la hora actual.
@@ -71,4 +71,5 @@ En local se reproduce con Airflow/Dagster en contenedores. No se reproduce MWAA 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `etl-vs-elt-and-dbt`, `data-quality`, `data-platform-cost`, `cdc-and-streaming`.
 - Fuentes: documentación Apache Airflow (URL arriba, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

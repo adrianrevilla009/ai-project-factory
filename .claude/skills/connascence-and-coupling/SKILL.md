@@ -65,5 +65,5 @@ Criterio práctico: fuerte y cercano = OK; fuerte y lejano = rediseñar o ADR.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `solid`, `ddd-strategic`, `hexagonal`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: Page-Jones, "What Every Programmer Should Know About OO Design" (1995); connascence.io. (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Page-Jones, "What Every Programmer Should Know About OO Design" (1995); connascence.io..
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

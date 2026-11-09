@@ -42,7 +42,7 @@ void getOrder() throws Exception {
 @WebMvcTest(OrderController.class)
 class OrderControllerTest {
     @Autowired MockMvc mvc;
-    @MockitoBean OrderQueryService orders;   // nombre de anotación según versión de Spring Boot: comprobar al fijar la versión
+    @MockitoBean OrderQueryService orders;   // nombre de anotación según versión de Spring Boot
 
     @Test
     @WithMockUser(username = "alice", roles = "CUSTOMER")
@@ -91,5 +91,6 @@ class OrderControllerTest {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `controllers-and-validation`, `error-handling-problem-details`, `testing-slices`, `openapi-contract-first`, `method-and-endpoint-security`.
-- Fuentes: documentación de Spring Framework (MockMvc) y Spring Security Test (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Spring Framework (MockMvc) y Spring Security Test.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

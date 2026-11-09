@@ -38,7 +38,7 @@ volumes:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata: { name: replicated-ssd }
-provisioner: example.csi.vendor.io   # comprobar nombre real del driver elegido
+provisioner: example.csi.vendor.io
 reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
 ```
@@ -57,5 +57,6 @@ volumeBindingMode: WaitForFirstConsumer
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `kubernetes-on-prem`, `gateway-api`, `container-and-k8s-security`.
-- Fuentes: https://kubernetes.io/docs/concepts/storage/storage-classes/ — comprobar (no consultada en esta sesión).
+- Fuentes: https://kubernetes.io/docs/concepts/storage/storage-classes/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

@@ -59,7 +59,7 @@ spec:
   portLevelMtls:
     9100: { mode: PERMISSIVE }
 ```
-Versión de API (`security.istio.io/v1`): comprobar contra la versión de Istio elegida.
+Versión de API (`security.istio.io/v1`).
 
 ## Checklist de revisión
 - [ ] Existe PeerAuthentication STRICT a nivel de malla.
@@ -76,5 +76,6 @@ Versión de API (`security.istio.io/v1`): comprobar contra la versión de Istio 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authorization-policies`, `zero-trust`, `crypto-tls-mtls-key-rotation`, `sidecar-vs-ambient-decision`.
-- Fuentes: istio.io/latest/docs/concepts/security/ y reference de PeerAuthentication (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/concepts/security/ y reference de PeerAuthentication.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

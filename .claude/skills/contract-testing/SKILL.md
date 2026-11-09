@@ -83,5 +83,6 @@ interfaces:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `contract-testing-pact`, `openapi-contract-first`, `asyncapi-event-contracts`, `backward-compatibility-rules`, `wiremock-and-stubbing`.
-- Fuentes: documentación oficial de Pact (https://docs.pact.io) — comprobar versión y soporte de mensajería.
+- Fuentes: documentación oficial de Pact (https://docs.pact.io).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

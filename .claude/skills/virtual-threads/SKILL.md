@@ -19,7 +19,7 @@ metadata:
 - **MUST** exigir Java 21+ (virtual threads definitivos, JEP 444). En Spring Boot, activar con `spring.threads.virtual.enabled=true` (Boot 3.2+; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - **MUST NOT** hacer pool de virtual threads: crear uno por tarea (`Executors.newVirtualThreadPerTaskExecutor()`).
 - **MUST** limitar el recurso, no los hilos: usar `Semaphore`, pool de conexiones o bulkhead (ver `backpressure-and-bulkheads`).
-- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491, comprobar al fijar la versión).
+- **MUST** vigilar el *pinning*: en Java 21–23 un hilo virtual dentro de `synchronized` con I/O bloqueante fija el hilo portador; preferir `ReentrantLock` en ese código. Java 24 lo mitiga (JEP 491).
 - **MUST NOT** almacenar objetos pesados en `ThreadLocal`: hay millones de hilos potenciales. Preferir `ScopedValue` (ver `structured-concurrency-and-scoped-values`).
 - **SHOULD** medir con `-Djdk.tracePinnedThreads=full` o eventos JFR `jdk.VirtualThreadPinned` antes de generalizar.
 - **SHOULD** medir antes/después (latencia p99, throughput); no asumir mejora.
@@ -67,5 +67,6 @@ spring.threads.virtual.enabled=true
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `threads-executors-and-pools`, `structured-concurrency-and-scoped-values`, `connection-pooling`.
-- Fuentes: JEP 444 y JEP 491 (openjdk.org/jeps) — comprobar al fijar la versión, consultar 2026-11-07; documentación de Spring Boot sobre virtual threads.
+- Fuentes: JEP 444 y JEP 491 (openjdk.org/jeps); documentación de Spring Boot sobre virtual threads.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

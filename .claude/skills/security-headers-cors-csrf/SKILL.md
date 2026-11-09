@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** verificar con un escáner de cabeceras en CI.
 
 ## Por qué
-Las cabeceras reducen el impacto de XSS y clickjacking; CORS permisivo permite que sitios ajenos lean respuestas autenticadas; CSRF explota cookies que el navegador envía solo. Valores concretos de cabeceras y API de Spring deben contrastarse con documentación vigente (comprobar al fijar la versión).
+Las cabeceras reducen el impacto de XSS y clickjacking; CORS permisivo permite que sitios ajenos lean respuestas autenticadas; CSRF explota cookies que el navegador envía solo. Valores concretos de cabeceras y API de Spring deben contrastarse con documentación vigente.
 
 ## Ejemplos
 ### Mal
@@ -84,5 +84,6 @@ Referrer-Policy: strict-origin-when-cross-origin
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `jwt-and-sessions`, `input-validation-output-encoding`, `method-and-endpoint-security`.
-- Fuentes: OWASP HTTP Headers Cheat Sheet, CSRF Prevention Cheat Sheet; MDN sobre CSP y CORS; Spring Security (CORS, CSRF) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP HTTP Headers Cheat Sheet, CSRF Prevention Cheat Sheet; MDN sobre CSP y CORS; Spring Security (CORS, CSRF).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

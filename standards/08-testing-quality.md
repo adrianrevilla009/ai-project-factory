@@ -106,7 +106,7 @@
 - **MUST** guardar artefactos al fallar (captura, traza, vídeo, logs de servicios).
 - **SHOULD** probar la API directamente cuando el flujo no necesita UI, y reservar la UI para lo que solo la UI puede romper.
 - **SHOULD** aplicar `flaky-test-management` a cualquier test e2e inestable: se arregla o se elimina, no se reintenta a ciegas.
-- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (comprobar versión y elección en la capa frontend).
+- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto.
 
 ## flaky-test-management
 
@@ -119,10 +119,22 @@
 - **SHOULD** medir la tasa de flakiness por test en CI y listar los peores.
 - **SHOULD** reproducir localmente repitiendo el test (`@RepeatedTest`) o en bucle antes de corregir.
 
+## gatling-load-testing
+
+- **MUST** decidir en un ADR si se usa Gatling en lugar de JMeter, con el motivo; no hay dos herramientas para lo mismo sin una razón.
+- **MUST** usar la edición Community, bajo Apache 2.0 y gratuita también para uso comercial; los protocolos de gRPC, MQTT, GraphQL y JDBC son módulos aparte con otra licencia (Gatling Enterprise Component License) y no se asumen (D16; verificado el 2026-11-09 en la documentación de licencias de Gatling).
+- **MUST NOT** depender de funciones de Gatling Enterprise (informes en vivo, comparación de ejecuciones, equipos y SSO, generación distribuida) por defecto.
+- **MUST** guardar las simulaciones como código en el repositorio, junto al criterio de aceptación que verifican.
+- **SHOULD** usar un modelo de carga abierto (llegadas por segundo) para servicios que reciben tráfico independiente de las respuestas; un modelo cerrado (usuarios concurrentes) solo si los usuarios reales esperan a la respuesta antes de actuar.
+- **MUST** definir aserciones derivadas del SLO (tasa de error y latencia) para que el job falle por sí mismo, sin interpretar a mano un informe.
+- **MUST** calentar el sistema y descartar ese tramo del análisis; comparar con la línea base anterior y guardar el commit, el entorno y la configuración.
+- **MUST NOT** ejecutar contra producción ni contra servicios de terceros reales.
+- **SHOULD** ejecutar un smoke corto en cada PR y las pruebas completas en un entorno dedicado (`performance-gate`).
+
 ## integration-testing-testcontainers
 
 - **MUST** probar contra la misma tecnología y versión mayor que producción (PostgreSQL real, no H2 como sustituto).
-- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: comprobar según el estándar del proyecto.
+- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión.
 - **MUST** que cada IT sea independiente: limpiar datos o usar transacciones/esquemas por test.
 - **MUST** aplicar las migraciones reales (Flyway/Liquibase) en el contenedor; no `ddl-auto=create`.
 - **SHOULD** usar `@ServiceConnection` (Spring Boot 3.1+) o `@DynamicPropertySource` para enlazar propiedades.
@@ -186,6 +198,18 @@
 - **MUST NOT** probar la política con timeouts reales largos: configurarlos pequeños en el perfil de test.
 - **SHOULD** probar la recuperación (la dependencia vuelve y el breaker cierra).
 - **SHOULD** cubrir apagado ordenado y reinicio de dependencia (ver `graceful-shutdown-lifecycle`).
+
+## sonarqube-quality-gate
+
+- **MUST** conocer los límites de SonarQube Community Build antes de decidir: es gratuito, pero solo analiza la rama principal y no ofrece análisis de PR ni comentarios en el PR; eso es de la edición Developer en adelante, de pago (verificado el 2026-11-09 en la documentación de Sonar).
+- **MUST NOT** depender de funciones de pago por defecto (D16). Si se necesita análisis de PR, o se contrata con ADR, o se cubre con las herramientas del propio build.
+- **SHOULD** compensar la falta de análisis de PR con la cobertura del diff, Checkstyle, PMD, SpotBugs y Semgrep en el pipeline (`quality-gates`).
+- **MUST** definir la puerta de calidad sobre código nuevo («clean as you code»): condiciones de bugs y vulnerabilidades nuevos, cobertura y duplicación del código añadido; la deuda anterior se gestiona aparte.
+- **MUST** pasar el token por variable de entorno o secreto del CI (`${SONAR_TOKEN}`), nunca en el `pom.xml` ni en el repositorio.
+- **MUST NOT** ejecutar el análisis con secretos sobre código de forks.
+- **SHOULD** importar el informe de cobertura de JaCoCo (XML) en lugar de recalcularlo.
+- **SHOULD** autoalojarlo con copias de seguridad de su base de datos y actualizarlo de forma regular; lo que contiene es un mapa de los puntos débiles de tu código.
+- **MUST** tratar un fallo de la puerta como bloqueo del pipeline en la rama principal, con el mismo régimen de excepciones que otras puertas.
 
 ## static-analysis
 

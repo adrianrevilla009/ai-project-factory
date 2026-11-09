@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** probar contra el mismo motor y versión mayor que producción (PostgreSQL con Testcontainers); **MUST NOT** usar H2 "en modo PostgreSQL" para validar SQL, locking, JSON o RLS.
 - **MUST** crear el esquema con las migraciones reales (Flyway) en los tests de persistencia, no con `ddl-auto=create` (ver `schema-migrations`).
-- **MUST** reutilizar el contenedor entre tests de la suite (singleton / `@ServiceConnection`, comprobar versión de Spring Boot) para tiempos razonables.
+- **MUST** reutilizar el contenedor entre tests de la suite (singleton / `@ServiceConnection`) para tiempos razonables.
 - **MUST** aislar los tests: datos únicos por test o limpieza explícita; no depender del orden. Tener en cuenta que `@Transactional` + rollback no prueba el commit real ni el locking entre transacciones.
 - **MUST** tener tests de concurrencia reales (dos transacciones, hilos) para `optimistic-locking` y `pessimistic-locking`, y tests de conteo de sentencias en consultas críticas (ver `n-plus-one`).
 - **MUST** incluir en tests los casos de aislamiento multi-tenant y RLS cuando aplique (ver `multi-tenancy`).
@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** ejecutar `flush()` + `clear()` antes de verificar para forzar lectura real desde la BD.
 
 ## Por qué
-Los bugs de persistencia viven en el comportamiento del motor: tipos, índices únicos, collation, bloqueos, JSON, RLS. Una BD en memoria distinta da falsa confianza. Un test con rollback automático oculta fallos de constraints diferidos y problemas de commit. Las versiones exactas de Testcontainers y Spring Boot deben verificarse en su documentación (comprobar al fijar la versión).
+Los bugs de persistencia viven en el comportamiento del motor: tipos, índices únicos, collation, bloqueos, JSON, RLS. Una BD en memoria distinta da falsa confianza. Un test con rollback automático oculta fallos de constraints diferidos y problemas de commit. Las versiones exactas de Testcontainers y Spring Boot deben verificarse en su documentación.
 
 ## Ejemplos
 ### Mal
@@ -48,7 +48,7 @@ class OrderRepositoryTest {
 class OrderRepositoryTest {
 
     @Container @ServiceConnection
-    static PostgreSQLContainer<?> pg = new PostgreSQLContainer<>("postgres:16-alpine"); // comprobar tag igual a produccion
+    static PostgreSQLContainer<?> pg = new PostgreSQLContainer<>("postgres:16-alpine");
 
     @Autowired OrderRepository repo;
     @Autowired EntityManager em;
@@ -84,5 +84,6 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `integration-testing-testcontainers`, `schema-migrations`, `n-plus-one`, `test-data-management`, `testing-slices`.
-- Fuentes: documentación de Testcontainers y de Spring Boot (Testing) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Testcontainers y de Spring Boot (Testing).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

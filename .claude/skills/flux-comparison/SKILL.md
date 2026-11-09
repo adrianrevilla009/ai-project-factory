@@ -27,8 +27,8 @@ Ambos reconcilian desde Git. Diferencias de modelo (verificar al decidir): Flux 
 | Aspecto | Argo CD (D21) | Flux |
 |---|---|---|
 | Unidad | Application / ApplicationSet | Kustomization / HelmRelease |
-| Multi-tenant | AppProject + RBAC | namespaces + impersonación (comprobar al fijar la versión) |
-| Entrega progresiva | Argo Rollouts | Flagger (comprobar al fijar la versión) |
+| Multi-tenant | AppProject + RBAC | namespaces + impersonación |
+| Entrega progresiva | Argo Rollouts | Flagger |
 
 ## Ejemplos
 ### Mal
@@ -47,7 +47,7 @@ spec:
   prune: true
   sourceRef: {kind: GitRepository, name: shop-gitops}
 ```
-Versión de API `v1`: comprobar contra la versión instalada.
+Versión de API `v1`.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -74,4 +74,5 @@ Revisión humana (decisión de arquitectura en ADR). Sin artefacto automático.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `argo-rollouts`, `spinnaker-comparison`, `repo-strategy`.
 - Fuentes (2026-11-07): https://fluxcd.io/flux/concepts/ · ADR-0021.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

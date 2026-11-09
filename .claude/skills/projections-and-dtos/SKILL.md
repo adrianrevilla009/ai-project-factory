@@ -19,7 +19,7 @@ metadata:
 - **MUST** usar proyección (record/interfaz/constructor expression) para lecturas que no modifican datos.
 - **MUST NOT** cargar entidades completas para devolver 3 columnas.
 - **SHOULD** usar `record` como DTO de proyección con constructor expression en JPQL: `select new ...`.
-- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa (comprobar según versión de Spring Data).
+- **SHOULD** preferir proyecciones de clase (records) a proyecciones de interfaz dinámicas cuando el rendimiento importe; las de interfaz anidadas pueden cargar la entidad completa.
 - **MUST NOT** devolver entidades JPA desde controladores.
 - **MUST** nombrar el DTO por caso de uso (`OrderSummary`), no por tabla.
 - **SHOULD** usar proyecciones también para evitar N+1 en listados con datos de varias tablas.
@@ -65,5 +65,6 @@ interface OrderRepository extends JpaRepository<Order, Long> {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `query-strategy`, `mapping-mapstruct`, `pagination`.
-- Fuentes: Spring Data JPA reference (Projections) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Data JPA reference (Projections).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

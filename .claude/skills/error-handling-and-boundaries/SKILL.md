@@ -22,7 +22,7 @@ metadata:
 - **MUST** interpretar las respuestas de error del backend como Problem Details (RFC 9457; `error-handling-problem-details`) y mostrar `title`/`detail` solo si son aptos para usuario.
 - **MUST NOT** capturar y tragar errores (`catch {}` vacío); relanzar, mostrar o reportar.
 - **MUST** los errores de carga de chunk lazy (despliegue nuevo) llevar a recarga controlada.
-- **SHOULD** usar `react-error-boundary` (o un `errorElement` del router) en lugar de clases propias; comprobar API vigente.
+- **SHOULD** usar `react-error-boundary` (o un `errorElement` del router) en lugar de clases propias.
 - **SHOULD** reportar errores a un servicio de observabilidad con identificador de correlación, sin PII ni tokens (`logging-rules`).
 - **MUST NOT** esperar que un boundary capture errores de eventos, `setTimeout` o promesas; esos se gestionan donde ocurren.
 
@@ -86,5 +86,6 @@ if (data.length === 0) return <EmptyState />;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `error-handling-problem-details`, `routing-and-code-splitting`, `forms-and-validation`, `logging-rules`, `security-frontend`.
-- Fuentes: documentación de React (Error Boundaries), RFC 9457 (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de React (Error Boundaries), RFC 9457.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

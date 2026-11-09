@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** no depender de migraciones "undo" (de pago en Flyway Teams); el plan de vuelta atrás es avanzar con otra migración.
 
 ## Por qué
-El esquema es estado compartido entre versiones de la aplicación durante un despliegue gradual. Un `DROP COLUMN` o `RENAME` en un paso rompe las instancias antiguas. Un `CREATE INDEX` normal bloquea escrituras. Verificar sintaxis y comportamiento en documentación oficial de Flyway y PostgreSQL de la versión usada (comprobar al fijar la versión). Aquí no se afirma nada de ejecución en AWS real: preparado para AWS (p. ej. RDS), no verificado en real.
+El esquema es estado compartido entre versiones de la aplicación durante un despliegue gradual. Un `DROP COLUMN` o `RENAME` en un paso rompe las instancias antiguas. Un `CREATE INDEX` normal bloquea escrituras. Verificar sintaxis y comportamiento en documentación oficial de Flyway y PostgreSQL de la versión usada. Aquí no se afirma nada de ejecución en AWS real: preparado para AWS (p. ej. RDS), no verificado en real.
 
 ## Ejemplos
 ### Mal
@@ -41,7 +41,7 @@ CREATE INDEX idx_orders_customer ON orders (customer_id);   -- bloquea escritura
 -- V7__add_phone_number.sql (expand)
 ALTER TABLE customer ADD COLUMN phone_number text;
 
--- V8__idx_orders_customer.sql   (con flyway: executeInTransaction=false en su.conf, comprobar al fijar la versión)
+-- V8__idx_orders_customer.sql   (con flyway: executeInTransaction=false en su.conf)
 CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_orders_customer ON orders (customer_id);
 
 -- V9__phone_not_null.sql (tras backfill y release que escribe la nueva columna)
@@ -73,5 +73,6 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `db-design-conventions`, `indexing-and-query-plans`, `db-testing`, `partitioning-and-archival`.
-- Fuentes: documentación de Flyway y de PostgreSQL (CREATE INDEX, ALTER TABLE) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Flyway y de PostgreSQL (CREATE INDEX, ALTER TABLE).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

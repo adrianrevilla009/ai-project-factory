@@ -92,5 +92,5 @@ void onOrder(OrderCreated event) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `dlq-retries-poison-messages`, `schema-registry-and-evolution`, `asyncapi-event-contracts`.
-- Fuentes: documentación de Apache Kafka (configuración de producer/consumer) y de Spring for Apache Kafka (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Apache Kafka (configuración de producer/consumer) y de Spring for Apache Kafka.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

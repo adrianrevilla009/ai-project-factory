@@ -53,7 +53,7 @@ exceptions:
 ```
 ```text
 # CI (esquema): generar informe -> comparar con la política -> fallar si denied/unknown
-mvn -B verify          # incluye el plugin de informe de licencias (comprobar plugin y versión)
+mvn -B verify          # incluye el plugin de informe de licencias
 ```
 
 ## Checklist de revisión
@@ -73,6 +73,7 @@ mvn -B verify          # incluye el plugin de informe de licencias (comprobar pl
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `dependency-hygiene`, `dependency-security`, `supply-chain`.
-- Fuentes: lista SPDX de licencias (spdx.org/licenses) y textos oficiales de cada licencia; consultadas 2026-11-07, comprobar plugin Maven concreto.
+- Fuentes: lista SPDX de licencias (spdx.org/licenses) y textos oficiales de cada licencia; consultadas 2026-11-07.
 - Normativa/legal: borrador por confirmar con fuente oficial y asesoría legal.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

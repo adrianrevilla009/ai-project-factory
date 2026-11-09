@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** definir retención por zona (ver `access-control-masking-and-retention`).
 
 ## Por qué
-Un lago sin formato de tabla es un "pantano": sin ACID, sin evolución de esquema ni borrados fiables (clave para RGPD, ver `gdpr-in-the-lake`). Iceberg documenta evolución de esquema, particionado oculto, branching/tagging y soporte de Spark, Flink, Trino, DuckDB y otros; catálogos REST, JDBC, Nessie y Glue. Fuente: https://iceberg.apache.org/docs/latest/ (consultado 2026-11-07). Detalles de ACID, time travel y comandos de mantenimiento: comprobar en la versión fijada.
+Un lago sin formato de tabla es un "pantano": sin ACID, sin evolución de esquema ni borrados fiables (clave para RGPD, ver `gdpr-in-the-lake`). Iceberg documenta evolución de esquema, particionado oculto, branching/tagging y soporte de Spark, Flink, Trino, DuckDB y otros; catálogos REST, JDBC, Nessie y Glue. Fuente: https://iceberg.apache.org/docs/latest/ (consultado 2026-11-07). Detalles de ACID, time travel y comandos de mantenimiento.
 
 ## Ejemplos
 ### Mal
@@ -71,4 +71,5 @@ En local: MinIO + Iceberg/Parquet con Spark, Trino o DuckDB. No se reproducen IA
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `warehouse-options`, `data-modeling`, `data-governance-and-classification`, `data-platform-cost`.
 - Fuentes: documentación Apache Iceberg (URL arriba, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

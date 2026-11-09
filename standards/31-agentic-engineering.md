@@ -10,7 +10,7 @@
 - **MUST** reportar tasa de paso sobre N ejecuciones para casos con LLM; un solo verde no prueba nada.
 - **MUST NOT** usar como juez al mismo agente evaluado ni dejar que el evaluado vea el criterio.
 - **SHOULD** guardar la traza (herramientas llamadas) y evaluar la trayectoria, no solo la respuesta final.
-- **SHOULD** versionar el conjunto de casos y registrar el modelo usado; los umbrales cambian con el modelo (comprobar política de versiones de modelo).
+- **SHOULD** versionar el conjunto de casos y registrar el modelo usado; los umbrales cambian con el modelo.
 - **SHOULD** crecer el conjunto con cada incidente: un fallo real se convierte en un caso.
 
 ## bootstrap-generated-project-claude-config
@@ -72,7 +72,7 @@
 
 - **MUST** traspasar mediante un fichero en el repositorio, no mediante el historial de chat: el agente receptor arranca sin memoria.
 - **MUST** incluir en el artefacto: objetivo, decisiones tomadas, ficheros tocados, evidencias (comando y resultado), pendientes y riesgos.
-- **MUST** marcar en cada afirmación si está verificada o es suposición (`TODO-VERIFY`).
+- **MUST** marcar en cada afirmación si está «verificada» o es un «supuesto».
 - **MUST NOT** pegar secretos, datos personales ni salidas completas de logs en el traspaso.
 - **MUST NOT** dar por válido lo que dice el artefacto sin comprobarlo (ver `verify-before-asserting`).
 - **SHOULD** usar un formato fijo y corto (menos de 60 líneas) con rutas, no contenidos.
@@ -118,7 +118,7 @@
 - **MUST** poner una `description` corta (una frase, < 200 caracteres) que diga *cuándo* cargar el skill.
 - **MUST** declarar en `metadata`: `block`, `tier`, `owner`, `last_reviewed`, `enforcement`.
 - **MUST** indicar en *Enforcement* un mecanismo real (artefacto con ruta) o declarar "revisión humana".
-- **MUST** citar fuentes oficiales con fecha; lo no verificable lleva `TODO-VERIFY`.
+- **MUST** citar fuentes oficiales con fecha; lo no verificable se declara «no comprobado» o se omite.
 - **MUST NOT** afirmar que algo funciona en AWS real (ver `verify-before-asserting`).
 - **SHOULD** escribir ejemplos autocontenidos y realistas (sin depender de una app de referencia, ADR-0038).
 - **SHOULD** mantener `SKILL.md` < 400 líneas; el detalle va a `references/` y `examples/`.
@@ -139,7 +139,7 @@
 ## verify-before-asserting
 
 - **MUST** contrastar versiones y APIs con documentación oficial vigente; citar URL y fecha.
-- **MUST** marcar `TODO-VERIFY` lo que no pueda comprobarse.
+- **MUST** declarar como «no comprobado», con el motivo, lo que no pueda comprobarse; nunca presentarlo como hecho.
 - **MUST** ejecutar el test/comando antes de decir que pasa; informar del resultado real, incluidos fallos.
 - **MUST NOT** afirmar que algo funciona en AWS real ("listo para producción en AWS", "probado en AWS", "production-ready on AWS"). Fórmula correcta: "preparado para AWS, no verificado en real".
 - **MUST** tratar normativa y legal como borrador por confirmar, con fuente oficial y fecha de verificación.

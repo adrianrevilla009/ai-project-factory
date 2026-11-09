@@ -21,7 +21,7 @@ metadata:
 - **MUST** asignar un rol de comunicaciones por incidente, distinto del comandante técnico.
 - **MUST** publicar una primera actualización en un plazo acordado por tier (p. ej. 15 min para tier 1; el plazo lo fija `tier-model-and-rpo-rto`) y actualizaciones periódicas aunque sean "sin novedades".
 - **MUST** usar lenguaje de impacto al usuario, sin jerga interna, sin culpar a terceros y sin prometer hora de resolución no confirmada.
-- **SHOULD** usar una herramienta de código abierto autoalojable (p. ej. Cachet, Uptime Kuma o una página estática; elegir por ADR, comprobar estado de mantenimiento) en lugar de SaaS de pago por defecto (D16).
+- **SHOULD** usar una herramienta de código abierto autoalojable (p. ej. Cachet, Uptime Kuma o una página estática; elegir por ADR) en lugar de SaaS de pago por defecto (D16).
 - **SHOULD** automatizar solo el borrador desde alertas `critical`; la publicación la aprueba una persona.
 - **MUST NOT** publicar datos personales, nombres de clientes ni detalles de vulnerabilidades.
 - **MUST NOT** reutilizar la misma plantilla para incidentes de seguridad: pasan por el proceso de seguridad y legal (normativa de notificación: borrador por confirmar con fuente oficial).
@@ -57,5 +57,6 @@ Seguimos monitorizando. Publicaremos un resumen en 5 dias laborables.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `incident-management-and-postmortems`, `tier-model-and-rpo-rto`.
-- Fuentes: buenas prácticas de gestión de incidentes (Atlassian/Google SRE), no verificadas en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: buenas prácticas de gestión de incidentes (Atlassian/Google SRE), no verificadas en esta sesión.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

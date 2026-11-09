@@ -23,7 +23,7 @@ metadata:
 - **MUST NOT** guardar secretos en `application*.yml` ni en el repositorio; se inyectan por entorno o gestor de secretos. Los ejemplos usan valores `changeme`.
 - **SHOULD** usar `Duration` y `DataSize` en vez de números sin unidad.
 - **SHOULD** dar valores por defecto seguros con `@DefaultValue` y diferenciar entornos con perfiles o variables, no con ramas `if` en código.
-- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE (comprobar configuración Maven).
+- **SHOULD** añadir `spring-boot-configuration-processor` para metadatos de IDE.
 
 ## Por qué
 La configuración tipada se valida una vez al arrancar, se documenta en un solo sitio y se prueba sin contexto. Con `@Value` dispersos, un typo se descubre en runtime y los valores sin unidad (`timeout: 30`) son ambiguos.
@@ -67,5 +67,6 @@ payments:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `project-layout`, `actuator-and-health`, `http-clients-and-timeouts`, `twelve-factor`.
-- Fuentes oficiales: Spring Boot Reference, "Externalized Configuration" (docs.spring.io/spring-boot) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: Spring Boot Reference, "Externalized Configuration" (docs.spring.io/spring-boot).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

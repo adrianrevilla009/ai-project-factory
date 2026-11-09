@@ -79,5 +79,6 @@ slo:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `slo-sli-error-budgets`, `profiling-and-leaks`, `connection-pooling`, `canary-analysis-and-synthetic-monitoring`.
-- Fuentes: Apache JMeter, manual de ejecución en línea de comandos (https://jmeter.apache.org/usermanual/get-started.html, comprobar flags a 2026-11-07).
+- Fuentes: Apache JMeter, manual de ejecución en línea de comandos (https://jmeter.apache.org/usermanual/get-started.html).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

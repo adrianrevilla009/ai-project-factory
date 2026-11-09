@@ -28,7 +28,7 @@ metadata:
 - **SHOULD** probar con casos adversarios (inyección directa e indirecta) en una batería de evaluación; no hay defensa perfecta de prompt, la contención es arquitectónica.
 
 ## Por qué
-Un LLM no distingue de forma fiable instrucciones de datos: un documento recuperado puede ordenarle revelar información o llamar a una herramienta. Por eso el control está fuera del modelo: privilegios, validación y aprobación humana. Referencia de categorías: OWASP Top 10 for LLM Applications (consultado 2026-11-07, comprobar edición vigente).
+Un LLM no distingue de forma fiable instrucciones de datos: un documento recuperado puede ordenarle revelar información o llamar a una herramienta. Por eso el control está fuera del modelo: privilegios, validación y aprobación humana. Referencia de categorías: OWASP Top 10 for LLM Applications (consultado 2026-11-07).
 
 ## Ejemplos
 ### Mal
@@ -66,5 +66,6 @@ Prohibido: shell, acceso a red libre, lectura de ficheros fuera del workspace.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `llm-observability`, `pii-and-data-classification`, `authz-rbac-abac-rebac`, `injection-families`, `dos-and-rate-limiting`.
-- Fuentes: OWASP Top 10 for LLM Applications y OWASP LLM Prompt Injection Prevention Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Top 10 for LLM Applications y OWASP LLM Prompt Injection Prevention Cheat Sheet.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

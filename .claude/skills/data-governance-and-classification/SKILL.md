@@ -70,5 +70,5 @@ models:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pii-and-data-classification`, `data-contracts-and-lineage`, `access-control-masking-and-retention`, `gdpr-in-the-lake`.
-- Fuentes: documentación de DataHub/OpenMetadata (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Normativa: borrador por confirmar con fuente oficial.
+- Fuentes: documentación de DataHub/OpenMetadata. Normativa: borrador por confirmar con fuente oficial.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

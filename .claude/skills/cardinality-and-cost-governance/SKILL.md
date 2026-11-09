@@ -19,7 +19,7 @@ metadata:
 - **MUST** que ninguna etiqueta de métrica tome valores no acotados (ID de usuario, pedido, email, URL con parámetros, traceId).
 - **MUST** usar la plantilla de ruta (`/orders/{id}`) y no la URL cruda como etiqueta `uri`.
 - **MUST** presupuesto de series activas por servicio y tenant; superarlo bloquea el despliegue o dispara alerta.
-- **MUST** límites duros en el scrape: `sample_limit`, `label_limit` y `label_value_length_limit` por job (confirmar nombres: comprobar al fijar la versión).
+- **MUST** límites duros en el scrape: `sample_limit`, `label_limit` y `label_value_length_limit` por job (confirmar nombres).
 - **MUST** eliminar en origen lo no usado con `metric_relabel_configs` (`action: drop`) o en el Collector, antes de almacenar.
 - **MUST** vigilar `prometheus_tsdb_head_series` y las top-N métricas por series con un dashboard y alerta de crecimiento.
 - **SHOULD** buckets de histograma justificados; cada bucket multiplica series por las demás etiquetas.
@@ -71,5 +71,6 @@ La consulta anterior es costosa: ejecutarla bajo demanda, no en un dashboard.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `metrics-store-ha-retention`, `logs-and-traces-stores`, `multi-tenant-observability`, `collector-pipelines`, `finops` (bloque 19).
-- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/configuration/configuration/ (límites de scrape y `metric_relabel_configs`; no verificada en esta sesión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/configuration/configuration/ (límites de scrape y `metric_relabel_configs`; no verificada en esta sesión.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

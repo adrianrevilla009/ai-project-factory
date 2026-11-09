@@ -66,5 +66,6 @@ blocked_when: "error_budget.remaining <= 0 unless label=P0|security"
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `slo-error-budget-policy`, `eks-multi-region-and-argo-cd-multicluster`, `incident-management-and-postmortems`, `schema-migrations`, `dependency-mapping-and-blast-radius`.
-- Fuentes: Well-Architected Operational Excellence / Reliability (cambios) — comprobar URL concreta; Argo Rollouts — comprobar al fijar la versión.
+- Fuentes: Well-Architected Operational Excellence / Reliability (cambios); Argo Rollouts.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

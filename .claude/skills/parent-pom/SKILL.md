@@ -42,7 +42,7 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
 ### Bien
 ```xml
 <properties>
-  <maven.compiler.release>21</maven.compiler.release> <!-- comprobar LTS vigente, ver jdk-distribution-and-upgrade-cadence -->
+  <maven.compiler.release>21</maven.compiler.release>
   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   <project.build.outputTimestamp>2026-01-01T00:00:00Z</project.build.outputTimestamp>
 </properties>
@@ -51,7 +51,7 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version><!-- comprobar versión vigente --></version>
+        <version></version>
       </plugin>
     </plugins>
   </pluginManagement>
@@ -74,5 +74,6 @@ El parent es el único sitio donde cambiar una política afecta a todos los mód
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maven-multimodule-layout`, `bom-management`, `enforcer-rules`, `reproducible-builds`, `maven-wrapper-and-toolchains`.
-- Fuentes: Apache Maven POM Reference y documentación de Spring Boot (using the Maven plugin / parent) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Apache Maven POM Reference y documentación de Spring Boot (using the Maven plugin / parent).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

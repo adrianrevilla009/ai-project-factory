@@ -46,9 +46,9 @@ release:
   runs-on: ubuntu-latest
   permissions: { contents: write }
   steps:
-    - uses: actions/checkout@<SHA-40-HEX> # vX comprobar al fijar la versión
+    - uses: actions/checkout@<SHA-40-HEX> # vX
       with: { fetch-depth: 0 }
-    - run:./scripts/release.sh   # calcula versión (herramienta a elegir: comprobar al fijar la versión), tag anotado y notas
+    - run:./scripts/release.sh   # calcula versión (herramienta a elegir), tag anotado y notas
 ```
 
 ## Criterios de decisión y trampas
@@ -80,5 +80,6 @@ release:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pipeline-architecture`, `supply-chain`, `api-versioning-deprecation`, `change-and-release-management`.
-- Fuentes: https://semver.org/ y https://www.conventionalcommits.org/ (consultar 2026-11-07, comprobar versión de cada especificación); regla 9 de `CLAUDE.md`.
+- Fuentes: https://semver.org/ y https://www.conventionalcommits.org/ (consultar 2026-11-07); regla 9 de `CLAUDE.md`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

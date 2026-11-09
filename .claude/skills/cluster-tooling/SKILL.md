@@ -19,7 +19,7 @@ metadata:
 ## Reglas
 - **MUST** usar kind por defecto (ADR-0034); k3d solo como alternativa documentada y justificada en el README del proyecto.
 - **MUST** definir el clúster en un fichero versionado (`deploy/local/kind-config.yaml`), nunca con flags sueltos en comandos de wiki.
-- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS (comprobar tags disponibles por release de kind).
+- **MUST** fijar la versión de nodo (`image: kindest/node:<tag>`) alineada con la versión de Kubernetes objetivo de EKS.
 - **MUST** exponer un registro local para el bucle de desarrollo (patrón oficial de kind con `certs.d`), en vez de `kind load` en cada cambio.
 - **MUST** envolver crear/destruir/reiniciar en `make local-up`, `make local-down`, `make local-reset` idempotentes.
 - **SHOULD** usar un clúster por proyecto con nombre explícito (`kind create cluster --name <project>`), nunca el contexto `kind-kind` genérico.
@@ -44,7 +44,7 @@ apiVersion: kind.x-k8s.io/v1alpha4
 name: acme-shop
 nodes:
   - role: control-plane
-    image: kindest/node:v1.0.0-changeme   # comprobar tag real de la release de kind
+    image: kindest/node:v1.0.0-changeme
     extraPortMappings:
       - { containerPort: 30080, hostPort: 8080, protocol: TCP }
   - role: worker
@@ -76,4 +76,5 @@ El registro local sigue el script oficial de kind (contenedor `registry:2` en el
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dev-loop`, `local-profiles`, `local-parity-matrix`, `resource-budgets`, `devcontainer-integration`.
 - Fuentes: kind, "Local Registry" https://kind.sigs.k8s.io/docs/user/local-registry/ (verificado 2026-11-07; el parche de containerd es opcional desde kind v0.27.0 según esa página).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

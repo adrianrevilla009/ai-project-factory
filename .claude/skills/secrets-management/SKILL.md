@@ -43,7 +43,7 @@ spring:
   datasource:
     password: ${DB_PASSWORD}      # inyectado en runtime; valor fuera del repo
   config:
-    import: "optional:aws-secretsmanager:/example-app/prod/db"   # comprobar starter y sintaxis (Spring Cloud AWS)
+    import: "optional:aws-secretsmanager:/example-app/prod/db"
 ```
 ```text
 # .env.example (si, se versiona; .env real no)
@@ -63,11 +63,12 @@ DB_PASSWORD=changeme
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Hook de seguridad que bloquea literales que parecen secretos | 2 | `.claude/hooks/` (revisar nombre exacto del hook existente, comprobar al fijar la versión) |
+| Hook de seguridad que bloquea literales que parecen secretos | 2 | `.claude/hooks/` (revisar nombre exacto del hook existente) |
 | Escáner de secretos en CI (p. ej. gitleaks, licencia OSS) | 1 | pendiente (workflow de CI del proyecto generado) |
 | Revisión humana de la política de rotación | 4 | PR |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `crypto-tls-mtls-key-rotation`, `cloud-iam-least-privilege`, `audit-trail-and-security-logging`, `container-and-k8s-security`.
-- Fuentes: OWASP Secrets Management Cheat Sheet, documentación de AWS Secrets Manager y de Vault/OpenBao, consultadas 2026-11-07, comprobar URLs y licencias vigentes.
+- Fuentes: OWASP Secrets Management Cheat Sheet, documentación de AWS Secrets Manager y de Vault/OpenBao, consultadas 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

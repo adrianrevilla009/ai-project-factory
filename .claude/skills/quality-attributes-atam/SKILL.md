@@ -64,5 +64,6 @@ Requisitos no funcionales: el sistema debe ser rápido, escalable y muy seguro.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `evolutionary-architecture-fitness-functions`, `scalability-patterns`, `consistency-and-cap-tradeoffs`, `performance-testing`, `resilience-testing`.
-- Fuentes: SEI/CMU, "ATAM: Method for Architecture Evaluation" (2000) — comprobar URL; Bass, Clements, Kazman, "Software Architecture in Practice".
+- Fuentes: SEI/CMU, "ATAM: Method for Architecture Evaluation" (2000); Bass, Clements, Kazman, "Software Architecture in Practice".
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -22,7 +22,7 @@ metadata:
 - **MUST** liberar el contexto (`flush()` + `clear()`) cada lote en procesos con miles de entidades para evitar crecimiento de memoria y dirty checking lento (ver `batching-and-bulk-ops`).
 - **MUST NOT** guardar `EntityManager` ni entidades gestionadas en campos de singletons ni compartirlos entre hilos.
 - **MUST** recordar que `@Modifying` en JPQL/SQL no actualiza las entidades ya cargadas: usar `clearAutomatically = true` o recargar.
-- **SHOULD** marcar `@Transactional(readOnly = true)` en lecturas: evita snapshots para dirty checking en Hibernate (comprobar detalle por versión).
+- **SHOULD** marcar `@Transactional(readOnly = true)` en lecturas: evita snapshots para dirty checking en Hibernate.
 - **MUST NOT** hacer `save()` en bucle sobre entidades ya gestionadas esperando un INSERT/UPDATE inmediato.
 - **SHOULD** usar `getReferenceById` para asociar sin cargar la fila completa.
 
@@ -76,5 +76,6 @@ int cancelExpired(Instant now);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `batching-and-bulk-ops`, `lazy-vs-eager`, `spring-data-rules`.
-- Fuentes: guía de usuario de Hibernate ORM (persistence context, flushing) y Spring Data JPA reference (`@Modifying`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: guía de usuario de Hibernate ORM (persistence context, flushing) y Spring Data JPA reference (`@Modifying`).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

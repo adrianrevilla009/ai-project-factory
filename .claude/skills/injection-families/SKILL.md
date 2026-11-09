@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** devolver errores genéricos al cliente; el detalle SQL va al log.
 
 ## Por qué
-La inyección ocurre cuando datos y código comparten canal. Parametrizar separa ambos de forma estructural; el escapado manual falla por contexto y por dialecto. Los identificadores no se pueden enlazar como parámetro, por eso requieren allowlist. Referencia general: OWASP Injection Prevention Cheat Sheet (consultada 2026-11-07; comprobar URL vigente).
+La inyección ocurre cuando datos y código comparten canal. Parametrizar separa ambos de forma estructural; el escapado manual falla por contexto y por dialecto. Los identificadores no se pueden enlazar como parámetro, por eso requieren allowlist. Referencia general: OWASP Injection Prevention Cheat Sheet (consultada 2026-11-07).
 
 ## Ejemplos
 ### Mal
@@ -73,5 +73,6 @@ new ProcessBuilder("/usr/bin/convert", safeFile.toString(), "out.png").start();
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `input-validation-output-encoding`, `owasp-top10-and-api-top10`, `deserialization-xxe-ssrf-traversal`, `n-plus-one`.
-- Fuentes: OWASP Cheat Sheet Series (Injection Prevention, Query Parameterization, OS Command Injection) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Cheat Sheet Series (Injection Prevention, Query Parameterization, OS Command Injection).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

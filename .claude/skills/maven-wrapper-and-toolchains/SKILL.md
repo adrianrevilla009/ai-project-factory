@@ -38,12 +38,12 @@ mvn clean install        # versión y JDK dependen de cada máquina
 ```properties
 # .mvn/wrapper/maven-wrapper.properties
 distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.9.9/apache-maven-3.9.9-bin.zip
-# comprobar versión vigente y propiedad de checksum (distributionSha256Sum) en la documentación del wrapper
+
 ```
 ```xml
 <!-- parent pom -->
 <properties>
-  <maven.compiler.release>21</maven.compiler.release> <!-- comprobar JDK objetivo del proyecto -->
+  <maven.compiler.release>21</maven.compiler.release>
 </properties>
 ```
 ```xml
@@ -75,5 +75,6 @@ distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-mav
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `enforcer-rules`, `parent-pom`, `jdk-distribution-and-upgrade-cadence`, `reproducible-builds`.
-- Fuentes: maven.apache.org (Maven Wrapper, Guide to Using Toolchains); consultadas 2026-11-07, comprobar versiones y propiedades.
+- Fuentes: maven.apache.org (Maven Wrapper, Guide to Using Toolchains); consultadas 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

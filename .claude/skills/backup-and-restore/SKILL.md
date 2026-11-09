@@ -71,5 +71,5 @@ Alerta automática de backup fallido: pendiente.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `operators`, `multi-cluster-and-dr`, `backup-vault-immutability-and-restore-tests`, `failover-and-failback-runbooks`.
-- Fuentes: documentación de Velero (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Velero.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -25,7 +25,7 @@ metadata:
 - **MUST NOT** declarar "conforme con SSDF" o "certificado"; usar "alineado con SSDF, evidencias en `docs/security/`".
 
 ## Por qué
-SSDF describe resultados, no herramientas: obliga a poder demostrar qué se hizo y cuándo. Sin tabla de trazabilidad los controles se aplican de forma desigual y no sobreviven a una auditoría. La numeración exacta de prácticas debe contrastarse con el documento vigente (comprobar versión de SP 800-218 y si aplica la revisión 1.2 en borrador).
+SSDF describe resultados, no herramientas: obliga a poder demostrar qué se hizo y cuándo. Sin tabla de trazabilidad los controles se aplican de forma desigual y no sobreviven a una auditoría. La numeración exacta de prácticas debe contrastarse con el documento vigente.
 
 ## Ejemplos
 ### Mal
@@ -60,5 +60,6 @@ Cumplimos NIST SSDF.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `asvs-mapping`, `threat-modeling-stride`, `supply-chain`, `vulnerability-sla-and-incident-response`, `gate-protocol`.
-- Fuentes: NIST SP 800-218 (SSDF), csrc.nist.gov — consultada 2026-11-07 solo a nivel de estructura de grupos; comprobar numeración de prácticas.
+- Fuentes: NIST SP 800-218 (SSDF), csrc.nist.gov — consultada 2026-11-07 solo a nivel de estructura de grupos.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

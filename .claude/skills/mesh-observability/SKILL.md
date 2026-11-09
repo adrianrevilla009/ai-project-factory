@@ -68,5 +68,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `logging-rules`, `traffic-management`, `canary-and-traffic-splitting`, `ingress-and-egress-gateways`.
-- Fuentes: istio.io/latest/docs/tasks/observability/ y kiali.io/docs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/tasks/observability/ y kiali.io/docs.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

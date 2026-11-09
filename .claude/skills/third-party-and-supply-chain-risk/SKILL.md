@@ -66,5 +66,6 @@ logo de "Seguro" en la web. Sin contrato de encargado, sin plan de salida.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `third-party-risk`, `supply-chain`, `sbom`, `license-compliance`, `threat-intel-and-risk-register`, `pii-and-data-classification`.
-- Fuentes: NIST SP 800-161 (gestión de riesgo de cadena de suministro), comprobar revisión vigente y URL; requisitos contractuales/normativos: borrador por confirmar con fuente oficial.
+- Fuentes: NIST SP 800-161 (gestión de riesgo de cadena de suministro); requisitos contractuales/normativos: borrador por confirmar con fuente oficial.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

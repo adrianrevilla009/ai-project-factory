@@ -16,7 +16,7 @@ metadata:
 - No aplica al escaneo de CVE en sí (ver `image-scanning`, `dependency-security`) ni a la firma (ver `image-signing-and-provenance`).
 
 ## Reglas
-- **MUST** generar un SBOM CycloneDX por artefacto en CI: Maven con `cyclonedx-maven-plugin`, npm con `@cyclonedx/cyclonedx-npm`, imágenes con `trivy image --format cyclonedx` (comprobar versiones de plugins).
+- **MUST** generar un SBOM CycloneDX por artefacto en CI: Maven con `cyclonedx-maven-plugin`, npm con `@cyclonedx/cyclonedx-npm`, imágenes con `trivy image --format cyclonedx`.
 - **MUST** generar SBOM de aplicación (dependencias declaradas) y de imagen (paquetes del SO) por separado; son complementarios.
 - **MUST** publicar el SBOM junto al digest en el repositorio de artefactos y como atestación cosign (`image-signing-and-provenance`).
 - **MUST** cargar los SBOM en Dependency-Track (OSS, sin licencia de pago) por proyecto y versión, para vigilancia continua de CVE nuevos sobre builds ya publicados.
@@ -48,7 +48,7 @@ echo "spring-boot, jackson, ..." > sbom.txt
 trivy image --format cyclonedx --output sbom-image.cdx.json registry.example.com/shop/orders@sha256:<digest>
 cosign attest --type cyclonedx --predicate sbom-image.cdx.json registry.example.com/shop/orders@sha256:<digest>
 ```
-Flag `--format cyclonedx` verificado en https://trivy.dev/latest/docs/references/configuration/cli/trivy_image/ (2026-11-07). `cosign attest --type cyclonedx`: comprobar al fijar la versión. Subida a Dependency-Track vía su API REST (`PUT /api/v1/bom`, comprobar al fijar la versión) con clave de API en secreto de CI.
+Flag `--format cyclonedx` verificado en https://trivy.dev/latest/docs/references/configuration/cli/trivy_image/ (2026-11-07). `cosign attest --type cyclonedx`. Subida a Dependency-Track vía su API REST (`PUT /api/v1/bom`) con clave de API en secreto de CI.
 
 ## Checklist de revisión
 - [ ] SBOM CycloneDX por artefacto, vinculado al digest.
@@ -66,5 +66,6 @@ Flag `--format cyclonedx` verificado en https://trivy.dev/latest/docs/references
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `image-scanning`, `license-policy`, `dependency-security`.
-- Fuentes: CycloneDX https://cyclonedx.org/ ; Dependency-Track https://docs.dependencytrack.org/ (comprobar API); Trivy (2026-11-07).
+- Fuentes: CycloneDX https://cyclonedx.org/; Dependency-Track https://docs.dependencytrack.org/; Trivy (2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

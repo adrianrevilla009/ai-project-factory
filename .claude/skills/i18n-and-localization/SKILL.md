@@ -69,5 +69,6 @@ order.notFound=El pedido {0} no existe
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `frontend-i18n-and-formatting`, `api-docs`, `openapi-contract-first`, `document-and-report-generation`.
-- Fuentes: documentación de Spring Framework (MessageSource, LocaleResolver, ProblemDetail) — comprobar versión; BCP 47 (RFC 5646); ISO 4217.
+- Fuentes: documentación de Spring Framework (MessageSource, LocaleResolver, ProblemDetail); BCP 47 (RFC 5646); ISO 4217.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

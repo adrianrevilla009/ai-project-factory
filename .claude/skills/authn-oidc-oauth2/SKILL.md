@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** exigir MFA en el IdP para roles administrativos.
 
 ## Por qué
-Reimplementar autenticación multiplica errores. Con PKCE se evita la interceptación del código en clientes públicos; validar `aud` impide que un token emitido para otra API sea aceptado. Detalles de propiedades de Spring Security y Keycloak a contrastar con la versión usada (comprobar al fijar la versión).
+Reimplementar autenticación multiplica errores. Con PKCE se evita la interceptación del código en clientes públicos; validar `aud` impide que un token emitido para otra API sea aceptado. Detalles de propiedades de Spring Security y Keycloak a contrastar con la versión usada.
 
 ## Ejemplos
 ### Mal
@@ -37,7 +37,7 @@ Claims c = Jwts.parser().setSigningKey("changeme-example").parseClaimsJws(token)
 ```
 ### Bien
 ```yaml
-# application.yml (propiedades de Spring Security resource server; comprobar según versión)
+# application.yml (propiedades de Spring Security resource server)
 spring:
   security:
     oauth2:
@@ -81,5 +81,6 @@ En local Keycloak se ejecuta en contenedor; en AWS no se reproduce el IdP gestio
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `jwt-and-sessions`, `authz-rbac-abac-rebac`, `secrets-management`, `zero-trust`.
-- Fuentes: RFC 6749, RFC 7636 (PKCE), OpenID Connect Core; documentación de Spring Security (OAuth2 Resource Server) y de Keycloak (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: RFC 6749, RFC 7636 (PKCE), OpenID Connect Core; documentación de Spring Security (OAuth2 Resource Server) y de Keycloak.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -21,8 +21,8 @@ metadata:
 - **MUST** emitir atestaciones: procedencia SLSA y SBOM CycloneDX asociadas al digest (`cosign attest`).
 - **MUST** verificar en el paso de promoción con `--certificate-identity` (o `-regexp`) y `--certificate-oidc-issuer` explícitos; **MUST NOT** verificar con comodines que acepten cualquier identidad.
 - **MUST** declarar el nivel SLSA realmente alcanzado, con evidencia; **MUST NOT** afirmar un nivel sin evidencia (builds en runners efímeros, sin acceso manual).
-- **SHOULD** usar Rekor público para keyless; si la política de privacidad lo impide, evaluar Sigstore privado (comprobar coste operativo) o claves KMS.
-- **MUST** copiar firmas y atestaciones al promover a ECR si se verifica en admisión desde ECR (comprobar que el adaptador las preserva, comprobar al fijar la versión).
+- **SHOULD** usar Rekor público para keyless; si la política de privacidad lo impide, evaluar Sigstore privado o claves KMS.
+- **MUST** copiar firmas y atestaciones al promover a ECR si se verifica en admisión desde ECR (comprobar que el adaptador las preserva).
 - **SHOULD** limitar `id-token: write` al job de firma.
 
 ## Por qué
@@ -50,7 +50,7 @@ cosign verify registry.example.com/shop/orders@sha256:<digest> \
   --certificate-identity "https://github.com/example-org/shop/.github/workflows/release.yml@refs/heads/main" \
   --certificate-oidc-issuer https://token.actions.githubusercontent.com
 ```
-`--certificate-identity` y `--certificate-oidc-issuer` confirmados en https://docs.sigstore.dev/cosign/verifying/verify/ (2026-11-07). Formato exacto de la identidad del workflow y `--yes`: comprobar al fijar la versión.
+`--certificate-identity` y `--certificate-oidc-issuer` confirmados en https://docs.sigstore.dev/cosign/verifying/verify/ (2026-11-07). Formato exacto de la identidad del workflow y `--yes`.
 
 ## Checklist de revisión
 - [ ] Firma por digest, keyless o KMS.
@@ -68,5 +68,6 @@ cosign verify registry.example.com/shop/orders@sha256:<digest> \
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `sbom`, `admission-verification`, `promotion-between-environments`.
-- Fuentes: Sigstore cosign https://docs.sigstore.dev/cosign/verifying/verify/ ; SLSA https://slsa.dev/spec/ (comprobar versión de spec) — 2026-11-07.
+- Fuentes: Sigstore cosign https://docs.sigstore.dev/cosign/verifying/verify/; SLSA https://slsa.dev/spec/ — 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

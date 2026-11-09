@@ -26,7 +26,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST NOT** conmutar tráfico a una región cuyos datos no estén replicados o cuya capacidad no esté dimensionada; documentar RPO/RTO.
 - **SHOULD** usar `traffic_dial_percentage` de los endpoint groups de Global Accelerator para drenar o hacer canary regional.
 - **SHOULD** activar flow logs del acelerador hacia el archivo de logs.
-- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53 (comprobar tarifas).
+- **SHOULD** valorar el coste fijo y por GB de Global Accelerator frente a Route 53.
 
 ## Por qué
 DNS-failover depende de cachés fuera de nuestro control; un acelerador conmuta en la red de AWS pero añade coste y un servicio más. Un health check superficial mantiene tráfico en una región rota. El valor del diseño está en el ensayo y en los datos replicados, no en el recurso Terraform.
@@ -89,5 +89,6 @@ resource "aws_route53_record" "api_secondary" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dns-route53-private-and-hybrid`, `alb-nlb-and-tls-termination`, `cross-region-connectivity-and-cost`, `regions-and-data-residency`, `multi-cluster-and-dr`.
-- Fuentes: documentación oficial de Route 53 (failover, health checks) y AWS Global Accelerator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Route 53 (failover, health checks) y AWS Global Accelerator.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

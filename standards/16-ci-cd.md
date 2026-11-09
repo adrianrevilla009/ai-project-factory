@@ -7,7 +7,7 @@
 - **MUST** mantener las reglas de `pipeline-architecture` y los gates, independientemente de la herramienta.
 - **MUST** registrar la excepción a D20 en un ADR del proyecto con motivo y coste de mantener guías duplicadas.
 - **MUST** conservar los tres principios de D20: pipelines reutilizables, credenciales cortas por OIDC y dependencias fijadas inmutablemente.
-- **SHOULD** preferir GitLab CI con `include:` de plantillas versionadas por SHA/tag protegido y `id_tokens` para OIDC (comprobar sintaxis).
+- **SHOULD** preferir GitLab CI con `include:` de plantillas versionadas por SHA/tag protegido y `id_tokens` para OIDC.
 - **SHOULD** si se usa Jenkins: Jenkinsfile declarativo, shared libraries versionadas, agentes efímeros (pods) y plugins mínimos fijados.
 - **MUST NOT** guardar claves de nube de larga vida en el servidor de CI ni ejecutar builds en el controlador de Jenkins.
 - **MUST NOT** exigir licencias de pago por defecto (D16).

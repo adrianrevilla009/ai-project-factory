@@ -16,7 +16,7 @@ metadata:
 - No aplica a dimensionar capacidad en AWS (ver `capacity-and-load-modeling`); los valores locales no se extrapolan.
 
 ## Reglas
-- **MUST** documentar por perfil la RAM y CPU mínimas de la máquina. Los valores numéricos son hipótesis a medir (comprobar midiendo con `kubectl top`), no cifras garantizadas.
+- **MUST** documentar por perfil la RAM y CPU mínimas de la máquina. Los valores numéricos son hipótesis a medir, no cifras garantizadas.
 - **MUST** que `minimal` (servicio, Postgres, DynamoDB Local) sea el perfil por defecto y quepa en un portátil de gama media.
 - **MUST** que todo pod local declare `resources.requests` y `resources.limits`; sin límites un pod puede tumbar el nodo kind.
 - **MUST** fijar `requests` bajos y `limits` moderados en el overlay local; no reutilizar los del diseño para AWS.
@@ -61,10 +61,11 @@ processors=4
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Kyverno: exigir requests/limits | 1 | `policies/kyverno/workload-baseline.yaml` (verificar que cubre recursos; comprobar al fijar la versión) |
+| Kyverno: exigir requests/limits | 1 | `policies/kyverno/workload-baseline.yaml` (verificar que cubre recursos) |
 | Presupuesto por perfil | 3 | revisión humana |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `local-profiles`, `cluster-tooling`, `autoscaling`, `devcontainer-integration`.
-- Fuentes: documentación de Kubernetes sobre gestión de recursos de contenedores (comprobar URL); `catalog/adr/0034-kubernetes-local-kind-vs-k3d.md`.
+- Fuentes: documentación de Kubernetes sobre gestión de recursos de contenedores; `catalog/adr/0034-kubernetes-local-kind-vs-k3d.md`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

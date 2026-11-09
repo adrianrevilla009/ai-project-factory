@@ -22,7 +22,7 @@ metadata:
 - **MUST** guardar con cada vector: id de la fuente, versión del modelo de embeddings, dimensión y tenant; un cambio de modelo exige reindexar todo.
 - **MUST** aplicar filtros de autorización (tenant, permisos del documento) en la propia consulta vectorial, no después de recuperar.
 - **MUST** elegir la métrica de distancia que corresponde al modelo (coseno, producto interno o L2) y usar el mismo operador que el índice.
-- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción; comprobar versión de pgvector instalada.
+- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción.
 - **SHOULD** valorar OpenSearch (k-NN) cuando ya se opera para búsqueda de texto y se necesita búsqueda híbrida (léxica + vectorial) o escala horizontal; preparado para AWS, no verificado en real.
 - **SHOULD** medir recall tras cambios de parámetros del índice (`ef_search`, `lists`/`probes`).
 - **MUST NOT** adoptar un servicio gestionado de pago por defecto (D16) sin ADR con coste.
@@ -50,7 +50,7 @@ WHERE tenant_id = :tenant AND embedding_model = :model
 ORDER BY embedding <=> :query_embedding
 LIMIT 10;
 ```
-La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un filtro selectivo con índice aproximado puede devolver menos de k resultados: probar `hnsw.iterative_scan` si la versión lo soporta (comprobar al fijar la versión).
+La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un filtro selectivo con índice aproximado puede devolver menos de k resultados: probar `hnsw.iterative_scan` si la versión lo soporta.
 
 ## Checklist de revisión
 - [ ] Opción más simple evaluada primero, con recall y latencia medidos.
@@ -67,6 +67,7 @@ La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un fil
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-evals`, `llm-security`, `pii-and-data-classification`, `authz-rbac-abac-rebac`, `token-and-cost-budgets`.
-- Fuentes: README de pgvector (HNSW, IVFFlat, `vector_cosine_ops`) vía https://pgxn.org/dist/vector/; documentación de OpenSearch k-NN (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: README de pgvector (HNSW, IVFFlat, `vector_cosine_ops`) vía https://pgxn.org/dist/vector/; documentación de OpenSearch k-NN.
 - En local OpenSearch/pgvector corren en contenedor; no se reproduce el dimensionado ni el aislamiento de un servicio gestionado en AWS.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

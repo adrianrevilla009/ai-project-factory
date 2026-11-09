@@ -24,7 +24,7 @@ metadata:
 - **MUST** gestionar escrituras offline con cola persistente (IndexedDB), idempotencia (`idempotency-keys`) y resolución de conflictos definida; **MUST NOT** asumir orden ni entrega única.
 - **MUST** exigir HTTPS (los service workers solo operan en contextos seguros) y mantener la CSP (`security-frontend`).
 - **SHOULD** cifrar o minimizar datos sensibles en el dispositivo; el almacenamiento del navegador es accesible a scripts del mismo origen.
-- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma (comprobar al fijar la versión).
+- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma.
 
 ## Por qué
 El service worker es un proxy persistente en el navegador del usuario: un error de caché puede dejar a miles de clientes con una versión rota hasta que se desregistre. El offline con escritura introduce sincronización y conflictos, que son problemas de diseño de datos, no de frontend.
@@ -38,7 +38,7 @@ self.addEventListener("fetch", (e) => {
 ```
 ### Bien
 ```ts
-// Estrategia por ruta (Workbox; comprobar API)
+// Estrategia por ruta (Workbox)
 registerRoute(({ url }) => url.pathname.startsWith("/assets/"), new CacheFirst({ cacheName: "assets" }));
 registerRoute(({ url }) => url.pathname.startsWith("/api/catalog"), new StaleWhileRevalidate({ cacheName: "catalog" }));
 // /api/* autenticado: sin ruta => siempre red
@@ -81,5 +81,6 @@ self.addEventListener("activate", async () => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `build-and-deploy`, `security-frontend`, `frontend-performance`, `idempotency-keys`, `state-management`.
-- Fuentes: MDN (Service Worker API, PWA) y documentación de Workbox (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: MDN (Service Worker API, PWA) y documentación de Workbox.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

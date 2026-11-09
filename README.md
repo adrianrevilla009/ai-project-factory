@@ -6,7 +6,7 @@ Qué contiene:
 
 | Pieza | Dónde | Cuántas |
 |---|---|---|
-| Skills (estándares con ejemplos, checklist y enforcement) | `.claude/skills/` | 487 en 31 bloques, ver [índice](docs/skills-index.md) |
+| Skills (estándares con ejemplos, checklist y enforcement) | `.claude/skills/` | 490 en 31 bloques, ver [índice](docs/skills-index.md) |
 | Agentes por rol | `.claude/agents/` | 25 |
 | Comandos por fase del proyecto | `.claude/commands/` | 27 |
 | Hooks que bloquean acciones inseguras o fuera de proceso | `.claude/hooks/` | 19, con tests |
@@ -33,8 +33,8 @@ Nada de lo que produce esta fábrica se despliega en AWS (ADR-0004). La infraest
 
 ## Estado
 - **Estructura y mecanismos:** completos y con tests (`make check` en verde).
-- **Contenido de las skills:** borrador. Las versiones, flags, licencias, precios y URLs concretas no están fijadas: cada skill dice qué comprobar al adoptar la herramienta. Solo algunos datos se contrastaron con documentación oficial (por ejemplo, la salida estructurada de la API de Claude y el estado de Istio ambient). `TODO-VERIFY` se reserva como marcador para lo que un agente no pueda comprobar en un proyecto.
-- **Policies:** Semgrep probado (`make policy-test`); Rego, Kyverno, ArchUnit y frontend escritos pero sin ejecutar ([detalle](policies/README.md)).
+- **Contenido de las skills:** guías teóricas. Las versiones, flags y sintaxis de herramientas de terceros no se fijan aquí: se fijan en el BOM de cada proyecto y se contrastan con la documentación de la versión adoptada. Los datos concretos que sí aparecen (límites de AWS, licencias, nombres de propiedades, versiones de API) se verificaron contra fuentes oficiales y llevan su fecha. Lo que un agente no pueda comprobar en un proyecto, lo declara «no comprobado».
+- **Políticas:** las 46 reglas de Semgrep están probadas (`make policy-test`); Rego, Kyverno, ArchUnit y frontend son ejemplos escritos sin ejecutar ([detalle](policies/README.md)).
 - **Dev container y firewall:** sin probar en un contenedor real.
 - **Texto legal y de cumplimiento:** borrador que debe confirmar una persona.
 - **Decisiones 0032–0037:** aceptadas por defecto, pendientes de tu revisión.

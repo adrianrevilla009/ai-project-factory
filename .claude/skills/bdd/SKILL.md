@@ -52,7 +52,7 @@ void priceIsCalculated() {
     result = pricing.finalPrice(order);   // step fino: delega en el dominio
 }
 ```
-Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): comprobar al fijar la versión.
+Librería y versión (p. ej. Cucumber-JVM con JUnit Platform).
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -82,5 +82,6 @@ Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): comprobar al fija
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tdd`, `e2e-testing`, `test-strategy`, `api-testing`.
-- Fuentes: documentación oficial de Cucumber (https://cucumber.io/docs) — comprobar versión y módulo JUnit Platform.
+- Fuentes: documentación oficial de Cucumber (https://cucumber.io/docs).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

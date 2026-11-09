@@ -19,7 +19,7 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 
 ## Reglas
 - **MUST** separar `log-archive` (solo almacenamiento) de `audit` (herramientas de seguridad y consulta de solo lectura).
-- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política (comprobar requisitos legales).
+- **MUST** activar en los buckets: versionado, Block Public Access, cifrado SSE-KMS y S3 Object Lock en modo compliance o governance según política.
 - **MUST** definir retención explícita (p. ej. 365 días en caliente y archivado después; plazo legal por confirmar con fuente oficial) con lifecycle.
 - **MUST** replicar a un bucket en eu-central-1 (secundaria, D6) si el log es evidencia.
 - **MUST** restringir con política de bucket: escritura solo desde servicios de la organización (`aws:PrincipalOrgID`), borrado denegado.
@@ -72,5 +72,6 @@ resource "aws_s3_bucket_public_access_block" "org_logs" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `org-cloudtrail-config-securityhub-guardduty`, `kms-multi-region-keys`, `regions-and-data-residency`.
-- Fuentes: S3 User Guide (Object Lock) y CloudTrail User Guide (2026-11-07) — comprobar URLs; retención legal: borrador por confirmar.
+- Fuentes: S3 User Guide (Object Lock) y CloudTrail User Guide (2026-11-07); retención legal: borrador por confirmar.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

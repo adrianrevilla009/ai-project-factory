@@ -78,5 +78,5 @@ Override justificado:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `dependency-hygiene`, `renovate-dependabot-policy`, `license-compliance`, `versioning-semver-snapshots`.
-- Fuentes: Apache Maven, "Introduction to the Dependency Mechanism" (dependency management, import scope) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Apache Maven, "Introduction to the Dependency Mechanism" (dependency management, import scope).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -46,7 +46,7 @@ migrate:
     - run: >
         ./mvnw -B flyway:migrate -Dflyway.url=$DB_URL
         -Dflyway.user=$MIGRATOR_USER -Dflyway.password=$MIGRATOR_PASSWORD
-  # credenciales del entorno (example/changeme solo en local); plugin y flags comprobar al fijar la versión
+  # credenciales del entorno (example/changeme solo en local); plugin y flags
 deploy:
   needs: migrate
 ```
@@ -86,5 +86,6 @@ ALTER TABLE orders ADD COLUMN status_code smallint;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `schema-migrations`, `rollback-strategy`, `deployment-verification-and-smoke`, `db-testing`.
-- Fuentes: documentación de Flyway (https://documentation.red-gate.com/flyway) — comprobar comandos y propiedades por versión.
+- Fuentes: documentación de Flyway (https://documentation.red-gate.com/flyway).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

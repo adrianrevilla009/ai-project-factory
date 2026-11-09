@@ -25,7 +25,7 @@ metadata:
 - **MUST** guardar artefactos al fallar (captura, traza, vídeo, logs de servicios).
 - **SHOULD** probar la API directamente cuando el flujo no necesita UI, y reservar la UI para lo que solo la UI puede romper.
 - **SHOULD** aplicar `flaky-test-management` a cualquier test e2e inestable: se arregla o se elimina, no se reintenta a ciegas.
-- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto (comprobar versión y elección en la capa frontend).
+- **SHOULD** el frontend usar Playwright o Cypress según decisión del proyecto.
 
 ## Por qué
 Los e2e son lentos, caros y frágiles, pero son los únicos que detectan fallos de integración entre capas reales. Una suite pequeña y estable da confianza; una grande e inestable se ignora.
@@ -78,5 +78,6 @@ El endpoint `test-support` solo existe en el perfil de test, nunca en producció
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `test-strategy`, `api-testing`, `flaky-test-management`, `test-data-management`, `wiremock-and-stubbing`.
-- Fuentes: práctica de la pirámide de tests (Fowler, https://martinfowler.com/articles/practical-test-pyramid.html; Playwright (https://playwright.dev/docs/best-practices (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: práctica de la pirámide de tests (Fowler, https://martinfowler.com/articles/practical-test-pyramid.html; Playwright (https://playwright.dev/docs/best-practices.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

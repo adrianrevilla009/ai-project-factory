@@ -66,5 +66,6 @@ registry.counter("orders.dlq.sent", "topic", "orders.v1", "reason", "validation"
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `connection-pooling`, `kafka-producers-consumers`, `dlq-retries-poison-messages`, `n-plus-one`, `tracing`, `metrics-micrometer`.
-- Fuentes: documentación oficial de Micrometer, Spring Kafka, HikariCP y OpenTelemetry semconv (database/messaging), consultada 2026-11-07; comprobar nombres de métricas y atributos.
+- Fuentes: documentación oficial de Micrometer, Spring Kafka, HikariCP y OpenTelemetry semconv (database/messaging), consultada 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** elegir UN framework por servicio y registrar la decisión en un ADR del proyecto (criterios: integración Spring Boot, madurez de la API, cobertura de proveedores y vector stores necesarios).
 - **SHOULD** preferir Spring AI en servicios Spring Boot (autoconfiguración, `ChatClient`, advisors, observabilidad Micrometer); LangChain4j si se necesita `AiServices` declarativo o cobertura que Spring AI no tenga.
-- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores (comprobar versión vigente al arrancar el proyecto).
+- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores.
 - **MUST** encapsular el framework tras un puerto propio (`interface AnswerGenerator`) en la capa de aplicación; el dominio no importa `org.springframework.ai` ni `dev.langchain4j`.
 - **MUST** configurar timeouts, reintentos acotados y modelo/temperatura por propiedades, no en código.
 - **MUST** leer claves del proveedor desde el gestor de secretos (ver `secrets-management`), nunca de `application.yml`.
@@ -66,7 +66,7 @@ spring:
     openai:
       api-key: ${LLM_API_KEY}   # inyectada desde el gestor de secretos
 ```
-Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(...)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor: comprobar al fijar la versión.
+Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(.)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor.
 
 ## Checklist de revisión
 - [ ] Un solo framework y ADR de la decisión.
@@ -84,4 +84,5 @@ Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(...)`, advisors) com
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `llm-gateway`, `rag-architecture`, `agents-and-tool-calling`, `llm-security`, `secrets-management`.
 - Fuentes: Spring AI Reference, ChatClient API (docs.spring.io/spring-ai/reference/api/chatclient.html, 2026-11-07); LangChain4j, AI Services (docs.langchain4j.dev/tutorials/ai-services, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

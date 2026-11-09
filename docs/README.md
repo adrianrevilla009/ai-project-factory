@@ -3,7 +3,7 @@
 | Documento | Contenido |
 |---|---|
 | `FACTORY_BRIEF.md` | Brief original: alcance, decisiones D1–D27 y principios. Fuente de verdad del diseño. |
-| `skills-index.md` | **Generado** por `make index`: tabla de las 487 skills por bloque, con tier y nivel de enforcement. No editar a mano. |
+| `skills-index.md` | **Generado** por `make index`: tabla de las 490 skills por bloque, con tier y nivel de enforcement. No editar a mano. |
 | `skill-writing-brief.md` | Instrucciones para escribir una skill nueva: 7 secciones, límites del `description`, cómo referenciar enforcement. |
 | `onboarding.md` | Cómo crear un proyecto con la fábrica y cómo mantenerla. |
 | `architecture/overview.md` | Cómo encajan skills, agentes, comandos, hooks y gates, y cómo viaja una regla hasta cumplirse. |

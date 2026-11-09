@@ -84,5 +84,5 @@ Policy Kyverno de `minReplicas`: pendiente.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `node-pools-and-capacity`, `workload-baseline`, `backpressure-and-bulkheads`, `capacity-and-load-modeling`.
-- Fuentes: Kubernetes (HPA), VPA y KEDA docs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Kubernetes (HPA), VPA y KEDA docs.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** incrustar HTML en traducciones; usar componentes de interpolación de la librería.
 
 ## Por qué
-Las frases concatenadas y los plurales manuales funcionan en un idioma y se rompen en el siguiente (polaco o árabe tienen más de dos formas plurales). `Intl` es nativo y evita librerías de fechas pesadas. Cargar todos los idiomas penaliza el LCP de todos. Librería concreta (react-i18next, FormatJS/react-intl, Lingui): decisión por proyecto, comprobar en ADR del proyecto.
+Las frases concatenadas y los plurales manuales funcionan en un idioma y se rompen en el siguiente (polaco o árabe tienen más de dos formas plurales). `Intl` es nativo y evita librerías de fechas pesadas. Cargar todos los idiomas penaliza el LCP de todos. Librería concreta (react-i18next, FormatJS/react-intl, Lingui): decisión por proyecto.
 
 ## Ejemplos
 ### Mal
@@ -78,5 +78,6 @@ export async function loadMessages(locale: string) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `i18n-and-localization`, `strings-encoding-locale`, `time-and-money`, `accessibility`, `routing-and-code-splitting`.
-- Fuentes: MDN `Intl` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) solo a nivel de existencia de API; librerías (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: MDN `Intl` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) solo a nivel de existencia de API; librerías.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

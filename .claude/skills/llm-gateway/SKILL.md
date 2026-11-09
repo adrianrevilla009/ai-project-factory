@@ -71,5 +71,6 @@ Los nombres de propiedades de Spring AI se comprueban por proveedor y versión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `llm-observability`, `llm-security`, `rate-limiting-quotas`, `resilience`, `secrets-management`, `model-risk-and-ai-act-mapping`.
-- Fuentes: documentación del producto de pasarela elegido — comprobar al fijar la versión; sin fuente oficial única.
+- Fuentes: documentación del producto de pasarela elegido; sin fuente oficial única.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

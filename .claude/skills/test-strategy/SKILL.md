@@ -43,7 +43,7 @@ integraciones-> contract tests (Pact) + WireMock
 E2E          -> 5-10 recorridos críticos, solo en release
 ```
 ```xml
-<!-- Surefire corre *Test; Failsafe corre *IT en la fase verify (versiones: comprobar al fijar la versión) -->
+<!-- Surefire corre *Test; Failsafe corre *IT en la fase verify (versiones) -->
 <plugin><artifactId>maven-surefire-plugin</artifactId></plugin>
 <plugin><artifactId>maven-failsafe-plugin</artifactId></plugin>
 ```
@@ -76,5 +76,6 @@ E2E          -> 5-10 recorridos críticos, solo en release
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `testing-slices`, `unit-testing-java`, `integration-testing-testcontainers`, `contract-testing`, `e2e-testing`, `coverage-policy`.
-- Fuentes: documentación de Maven Surefire/Failsafe y Spring Boot Testing (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Maven Surefire/Failsafe y Spring Boot Testing.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -80,5 +80,5 @@ resource "aws_route53_resolver_rule" "corp" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `private-endpoints-and-egress-control`, `global-accelerator-and-failover-routing`, `transit-gateway-hub-and-spoke`.
-- Fuentes: documentación oficial de Route 53 (zonas privadas) y Route 53 Resolver (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Route 53 (zonas privadas) y Route 53 Resolver.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

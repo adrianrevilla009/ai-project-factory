@@ -53,7 +53,7 @@ jobs:
     steps:
       - run: kubectl delete namespace "preview-pr-${{ github.event.number }}" --ignore-not-found
 ```
-(Los `uses:` de configuración de kubeconfig se fijarían por SHA, comprobar al fijar la versión.)
+(Los `uses:` de configuración de kubeconfig se fijarían por SHA)
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -84,5 +84,6 @@ jobs:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `performance-gate`, `contract-gate`, `finops`, `container-and-k8s-security`.
-- Fuentes: ADR-0034, ADR-0005; Kubernetes ResourceQuota (https://kubernetes.io/docs/concepts/policy/resource-quotas/) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: ADR-0034, ADR-0005; Kubernetes ResourceQuota (https://kubernetes.io/docs/concepts/policy/resource-quotas/).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

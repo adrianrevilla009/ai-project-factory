@@ -61,7 +61,7 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 <!-- generación en build desde el WSDL del proveedor -->
 <wsdlLocation>src/main/resources/wsdl/customer.wsdl</wsdlLocation>
 ```
-(configuración del plugin Maven JAXB/CXF: comprobar coordenadas y versión).
+(configuración del plugin Maven JAXB/CXF).
 
 ## Checklist de revisión
 - [ ] WSDL/XSD versionado; clases generadas en build, no a mano.
@@ -81,5 +81,6 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `wiremock-and-stubbing`, `contract-testing-pact`, `connascence-and-coupling`.
-- Fuentes: OWASP XML External Entity Prevention Cheat Sheet; documentación de Spring Web Services (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP XML External Entity Prevention Cheat Sheet; documentación de Spring Web Services.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

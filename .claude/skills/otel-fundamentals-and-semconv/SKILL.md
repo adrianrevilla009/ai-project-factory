@@ -16,7 +16,7 @@ metadata:
 - No aplica a la elección agente vs SDK (ver `otel-java-agent-vs-sdk`) ni al detalle de cada señal (`metrics-micrometer`, `tracing`, `structured-logging`).
 
 ## Reglas
-- **MUST** definir el `Resource` en cada servicio: `service.name`, `service.version`, `deployment.environment.name` (nombre vigente del atributo: comprobar al fijar la versión) y `service.namespace`.
+- **MUST** definir el `Resource` en cada servicio: `service.name`, `service.version`, `deployment.environment.name` (nombre vigente del atributo) y `service.namespace`.
 - **MUST** usar nombres de atributo de las convenciones semánticas (`http.request.method`, `http.response.status_code`, `http.route`, `server.address`) en lugar de nombres propios.
 - **MUST** exportar por OTLP al Collector, no directamente a cada backend; el Collector aplica `memory_limiter`, `batch`, redacción y enrutado.
 - **MUST NOT** usar identificadores no acotados (userId, orderId, URL completa) como atributo de métrica; sí pueden ir en spans y logs.
@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** versionar la configuración del Collector en el repo del servicio o de plataforma (observabilidad como código).
 
 ## Por qué
-Con nombres estándar, los dashboards, alertas y consultas son reutilizables entre servicios y entre backends. El Collector desacopla la aplicación del almacenamiento: cambiar Tempo o Loki no obliga a redeplegar servicios. La cardinalidad en métricas es el fallo de coste más común. Las convenciones semánticas evolucionan (algunas aún experimentales): fijar la versión usada y revisarla al actualizar (comprobar al fijar la versión).
+Con nombres estándar, los dashboards, alertas y consultas son reutilizables entre servicios y entre backends. El Collector desacopla la aplicación del almacenamiento: cambiar Tempo o Loki no obliga a redeplegar servicios. La cardinalidad en métricas es el fallo de coste más común. Las convenciones semánticas evolucionan (algunas aún experimentales): fijar la versión usada y revisarla al actualizar.
 
 ## Ejemplos
 ### Mal
@@ -68,5 +68,6 @@ service:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-java-agent-vs-sdk`, `metrics-micrometer`, `tracing`, `structured-logging`, `pii-and-data-classification`.
-- Fuentes: documentación oficial de OpenTelemetry (opentelemetry.io: semantic conventions, Collector); versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto). En local se reproduce el stack OSS; no se reproducen servicios gestionados de AWS.
+- Fuentes: documentación oficial de OpenTelemetry (opentelemetry.io: semantic conventions, Collector); versiones. En local se reproduce el stack OSS; no se reproducen servicios gestionados de AWS.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

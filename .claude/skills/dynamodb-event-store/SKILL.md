@@ -18,12 +18,12 @@ metadata:
 ## Reglas
 - **MUST** modelar un stream por agregado: `pk = <TYPE>#<aggregateId>`, `sk` = versión con ceros a la izquierda (`v0000000042`) para ordenar lexicográficamente.
 - **MUST** añadir con escritura condicional `attribute_not_exists(pk)` sobre la clave completa `(pk, sk)`: dos escritores con la misma versión esperada, uno falla (concurrencia optimista).
-- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites (comprobar en la guía de la API).
+- **MUST** escribir varios eventos del mismo comando en un solo `TransactWriteItems` (misma tabla, misma región) y respetar sus límites.
 - **MUST** publicar desde el propio almacén con DynamoDB Streams (o equivalente); **MUST NOT** publicar en el bus como segundo paso del comando (doble escritura).
 - **MUST** tratar los consumidores como at-least-once: idempotentes por `(streamId, version)` (`idempotency-and-deduplication`).
 - **MUST NOT** actualizar ni borrar ítems de eventos; la política IAM de la aplicación solo permite `PutItem` condicional y `Query`.
 - **SHOULD** guardar metadatos: `type`, `schemaVersion`, `occurredAt`, `correlationId`, `causationId`, `payload`.
-- **SHOULD** configurar retención y orden de Streams según la documentación vigente (comprobar retención de 24 h de los registros de Streams).
+- **SHOULD** configurar retención y orden de Streams según la documentación vigente.
 - **MUST** fijar la región de escritura por agregado si hay Global Tables (`global-tables-and-write-region-rules`).
 
 ## Por qué
@@ -70,5 +70,6 @@ try {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `aggregates-and-event-design`, `snapshots`, `projections-and-read-models`, `dynamodb-data-modeling`, `delivery-semantics`.
-- Fuentes: documentación de DynamoDB Streams y de transacciones (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) — límites y retención (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS, no verificado en real.
+- Fuentes: documentación de DynamoDB Streams y de transacciones (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/) — límites y retención. Preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

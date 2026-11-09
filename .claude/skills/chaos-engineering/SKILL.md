@@ -36,7 +36,7 @@ Matamos pods de producción un viernes a ver qué pasa.
 ```
 ### Bien
 ```yaml
-# application-chaos.yml (perfil explícito "chaos-monkey"; comprobar nombres de propiedades en la versión usada)
+# application-chaos.yml (perfil explícito "chaos-monkey")
 spring:
   profiles:
     include: chaos-monkey
@@ -89,5 +89,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience-testing`, `resilience`, `backpressure-and-bulkheads`, `slo-sli-error-budgets`.
-- Fuentes: Chaos Monkey for Spring Boot (https://codecentric.github.io/chaos-monkey-spring-boot/), Chaos Mesh (https://chaos-mesh.org/docs/), Toxiproxy (https://github.com/Shopify/toxiproxy); comprobar propiedades y versiones a 2026-11-07.
+- Fuentes: Chaos Monkey for Spring Boot (https://codecentric.github.io/chaos-monkey-spring-boot/), Chaos Mesh (https://chaos-mesh.org/docs/), Toxiproxy (https://github.com/Shopify/toxiproxy).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

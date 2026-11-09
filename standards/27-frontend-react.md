@@ -18,7 +18,7 @@
 ## api-client-from-openapi
 
 - **MUST** que el contrato OpenAPI sea la fuente de verdad; el frontend no redefine tipos de la API a mano.
-- **MUST** generar tipos/cliente con una herramienta (p. ej. openapi-typescript + openapi-fetch, u Orval; comprobar elección y versión) y confirmar el comando en `package.json`.
+- **MUST** generar tipos/cliente con una herramienta (p. ej. openapi-typescript + openapi-fetch, u Orval) y confirmar el comando en `package.json`.
 - **MUST** ubicar el código generado en `src/shared/api/generated/`, marcado como generado y excluido de lint/formato.
 - **MUST NOT** editar a mano el código generado; se cambia el contrato y se regenera.
 - **MUST** regenerar en CI y fallar si el resultado difiere del commiteado (drift).
@@ -32,7 +32,7 @@
 - **MUST** usar Authorization Code con PKCE; nunca flujo implícito ni password grant.
 - **SHOULD** preferir el patrón BFF: el backend-for-frontend hace el intercambio OIDC, guarda los tokens y entrega al navegador una cookie de sesión `HttpOnly; Secure; SameSite` (`bff-and-api-gateway`).
 - **MUST NOT** guardar access/refresh tokens en `localStorage`/`sessionStorage` ni en el store persistido.
-- **MUST** si no hay BFF (SPA pura), mantener el access token solo en memoria y documentar el riesgo en un ADR; refresh token en navegador: comprobar con la guía vigente de OAuth 2.0 for Browser-Based Apps.
+- **MUST** si no hay BFF (SPA pura), mantener el access token solo en memoria y documentar el riesgo en un ADR; refresh token en navegador.
 - **MUST** con sesión por cookie, proteger mutaciones frente a CSRF (cabecera personalizada o token) y enviar `credentials: 'include'` solo al propio origen/BFF.
 - **MUST** obtener el usuario actual de un endpoint (`/me`) y guardarlo como server-state, no decodificar JWT en el cliente para decidir permisos.
 - **MUST** tratar 401 centralizadamente (redirigir a login) y 403 como pantalla de acceso denegado.
@@ -73,7 +73,7 @@
 - **MUST** que los componentes base (`Button`, `Input`, `Dialog`...) vivan en `src/shared/ui`, sin lógica de negocio ni llamadas a API.
 - **SHOULD** documentar cada componente base en Storybook con sus variantes y estados (foco, deshabilitado, error).
 - **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria) antes que reimplementar diálogos o menús.
-- **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens (comprobar ratios) y verificarlo en Storybook.
+- **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens y verificarlo en Storybook.
 - **MUST NOT** copiar componentes entre features: si se repite dos veces con intención común, sube a `shared/ui`.
 - **SHOULD** versionar cambios de tokens con nota de migración si hay varios consumidores.
 
@@ -85,7 +85,7 @@
 - **MUST** interpretar las respuestas de error del backend como Problem Details (RFC 9457; `error-handling-problem-details`) y mostrar `title`/`detail` solo si son aptos para usuario.
 - **MUST NOT** capturar y tragar errores (`catch {}` vacío); relanzar, mostrar o reportar.
 - **MUST** los errores de carga de chunk lazy (despliegue nuevo) llevar a recarga controlada.
-- **SHOULD** usar `react-error-boundary` (o un `errorElement` del router) en lugar de clases propias; comprobar API vigente.
+- **SHOULD** usar `react-error-boundary` (o un `errorElement` del router) en lugar de clases propias.
 - **SHOULD** reportar errores a un servicio de observabilidad con identificador de correlación, sin PII ni tokens (`logging-rules`).
 - **MUST NOT** esperar que un boundary capture errores de eventos, `setTimeout` o promesas; esos se gestionan donde ocurren.
 
@@ -107,7 +107,7 @@
 - **MUST** mostrar los errores junto al campo, enlazados con `aria-invalid` y `aria-describedby`, y mover el foco al primer error al enviar.
 - **MUST** deshabilitar el envío mientras `isSubmitting` para evitar dobles envíos; la idempotencia real es del backend (`idempotency-keys`).
 - **MUST** mapear los errores 400/422 del servidor (Problem Details) a campos con `setError`.
-- **SHOULD** compartir el esquema entre formulario y cliente API solo si procede del contrato OpenAPI; no duplicar reglas a mano (comprobar generación de Zod desde OpenAPI).
+- **SHOULD** compartir el esquema entre formulario y cliente API solo si procede del contrato OpenAPI; no duplicar reglas a mano.
 - **SHOULD** valores por defecto explícitos en `defaultValues`; sin inputs no controlados mezclados.
 - **MUST NOT** guardar contraseñas ni datos sensibles en el estado global ni en el almacenamiento del navegador.
 - **MUST NOT** usar `any` en los handlers (`typescript-strict-rules`).
@@ -137,7 +137,7 @@
 ## frontend-performance
 
 - **MUST** definir objetivos en el percentil 75 por móvil y escritorio: LCP <= 2,5 s, INP <= 200 ms, CLS <= 0,1 (https://web.dev/articles/vitals, consultado 2026-11-07).
-- **MUST** fijar un presupuesto de bundle (JS inicial gzip/brotli por ruta) y hacer fallar el CI si se supera; el valor numérico lo decide el proyecto (comprobar con datos reales).
+- **MUST** fijar un presupuesto de bundle (JS inicial gzip/brotli por ruta) y hacer fallar el CI si se supera; el valor numérico lo decide el proyecto.
 - **MUST** medir con datos de campo (RUM, ver `observability-frontend`) además de laboratorio (Lighthouse).
 - **MUST** reservar espacio para imágenes y medios (`width`/`height` o `aspect-ratio`) para evitar CLS; **SHOULD** usar `loading="lazy"` salvo en la imagen LCP.
 - **MUST NOT** importar librerías enteras para una función (usar imports por módulo o alternativas ligeras); revisar el análisis de bundle ante cada dependencia nueva.
@@ -159,14 +159,14 @@
 ## observability-frontend
 
 - **MUST** enviar telemetría a un colector propio por OTLP/HTTP (o endpoint de la plataforma) con CORS restringido a los orígenes de la app; nunca claves de backends de pago en el bundle.
-- **MUST** propagar `traceparent` solo hacia orígenes propios (lista explícita, p. ej. `propagateTraceHeaderCorsUrls` en la instrumentación de fetch; comprobar nombre exacto) para unir la traza del navegador con la del backend.
+- **MUST** propagar `traceparent` solo hacia orígenes propios (lista explícita, p. ej. `propagateTraceHeaderCorsUrls` en la instrumentación de fetch) para unir la traza del navegador con la del backend.
 - **MUST** medir LCP, INP y CLS en campo con la librería `web-vitals` (`onLCP`, `onINP`, `onCLS`) y enviarlas con la versión de release y la ruta (plantilla, no URL con ids).
 - **MUST** capturar errores no gestionados (`window.onerror`, `unhandledrejection`, error boundaries; ver `error-handling-and-boundaries`) con release y mapas de código fuente subidos al sistema de errores, no públicos.
 - **MUST NOT** enviar PII, tokens, cuerpos de petición, contenido de formularios ni query strings completas; sanear antes de enviar y respetar el consentimiento (`data-privacy-in-db`, normativa: borrador por confirmar).
 - **MUST NOT** crear atributos de alta cardinalidad (id de usuario, URL completa) como dimensiones de métricas (`cardinality-and-cost-governance`).
 - **SHOULD** muestrear (p. ej. porcentaje de sesiones) y usar `navigator.sendBeacon`/`keepalive` al descargar la página.
 - **SHOULD** definir SLOs de experiencia (p. ej. % de cargas con LCP bueno) en `dashboards-and-slos-as-code`.
-- El soporte de OTel JS en navegador tiene partes marcadas como experimentales: fijar versiones y revisar el estado (comprobar https://opentelemetry.io/docs/languages/js/).
+- El soporte de OTel JS en navegador tiene partes marcadas como experimentales: fijar versiones y revisar el estado.
 
 ## pwa-and-offline
 
@@ -178,7 +178,7 @@
 - **MUST** gestionar escrituras offline con cola persistente (IndexedDB), idempotencia (`idempotency-keys`) y resolución de conflictos definida; **MUST NOT** asumir orden ni entrega única.
 - **MUST** exigir HTTPS (los service workers solo operan en contextos seguros) y mantener la CSP (`security-frontend`).
 - **SHOULD** cifrar o minimizar datos sensibles en el dispositivo; el almacenamiento del navegador es accesible a scripts del mismo origen.
-- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma (comprobar al fijar la versión).
+- **SHOULD** declarar un manifiesto web válido y probar instalación en los navegadores objetivo; el soporte varía por plataforma.
 
 ## realtime
 
@@ -189,9 +189,9 @@
 - **MUST** tratar los mensajes como invalidaciones o deltas sobre la caché de servidor: `queryClient.invalidateQueries` o `setQueryData`, no un segundo almacén de estado paralelo.
 - **MUST** cerrar la conexión al desmontar, al cerrar sesión y en pestañas ocultas si no es necesaria; una sola conexión compartida por app, no una por componente.
 - **MUST** validar el esquema de cada mensaje (Zod) antes de usarlo; ignorar tipos desconocidos (compatibilidad hacia delante).
-- **SHOULD** usar latidos (heartbeat) menores que el timeout de inactividad de balanceadores y proxies (en ALB el valor por defecto es 60 s; comprobar al fijar la versión) y comprobar el comportamiento del CDN con respuestas en streaming.
+- **SHOULD** usar latidos (heartbeat) menores que el timeout de inactividad de balanceadores y proxies (en ALB el valor por defecto es 60 s) y comprobar el comportamiento del CDN con respuestas en streaming.
 - **SHOULD** tener degradación: si falla el canal, volver a polling y mostrar estado "sin conexión".
-- Sobre HTTP/1.1 los navegadores limitan conexiones por dominio (alrededor de 6); con HTTP/2 se relaja (comprobar al fijar la versión).
+- Sobre HTTP/1.1 los navegadores limitan conexiones por dominio (alrededor de 6); con HTTP/2 se relaja.
 
 ## rendering-strategy-decision
 
@@ -243,13 +243,13 @@
 ## supply-chain-npm
 
 - **MUST** versionar el lockfile y usar instalación reproducible en CI (`pnpm install --frozen-lockfile`; con npm, `npm ci`).
-- **MUST** desactivar la ejecución de scripts de ciclo de vida de dependencias por defecto y permitir solo una lista explícita (pnpm: `onlyBuiltDependencies`; comprobar comportamiento por defecto en la versión usada).
+- **MUST** desactivar la ejecución de scripts de ciclo de vida de dependencias por defecto y permitir solo una lista explícita (pnpm: `onlyBuiltDependencies`).
 - **MUST** instalar desde el registro privado/proxy de la organización con scope propio reservado, para evitar confusión de dependencias (`remote-repos-and-dependency-confusion-protection`, `private-registry`).
 - **MUST** revisar cada dependencia nueva: mantenimiento, licencia, tamaño, dependencias transitivas, nombre exacto (typosquatting) y si hay alternativa nativa.
 - **MUST** ejecutar auditoría (`pnpm audit`) y SCA en CI con SLA de corrección (`vulnerability-sla-and-incident-response`); **MUST** generar SBOM CycloneDX del build (`sbom-generation`).
 - **MUST NOT** usar rangos abiertos (`*`, `latest`) ni dependencias desde URL/git sin commit fijo; **MUST NOT** hacer `curl | sh` en el build.
 - **SHOULD** aplicar un periodo de espera para versiones recién publicadas (pnpm `minimumReleaseAge`, disponible desde pnpm 10.16 y activado por defecto con 1 día en pnpm 11; verificado el 2026-11-08 en pnpm.io) y actualizar con Renovate/Dependabot según `renovate-dependabot-policy`.
-- **SHOULD** verificar firmas/procedencia cuando el registro las ofrezca (`npm audit signatures`; comprobar alcance con pnpm).
+- **SHOULD** verificar firmas/procedencia cuando el registro las ofrezca (`npm audit signatures`).
 - **SHOULD** separar `dependencies` de `devDependencies` y mantener el árbol pequeño.
 
 ## testing
@@ -267,7 +267,7 @@
 ## typescript-strict-rules
 
 - **MUST** activar `"strict": true` desde el primer commit; nunca "migrar a strict después".
-- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax` (comprobar disponibilidad según versión de TypeScript).
+- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax`.
 - **MUST NOT** usar `any`; para datos desconocidos usar `unknown` y estrechar.
 - **MUST NOT** usar `!` (non-null) ni `as` para silenciar el compilador; `@ts-expect-error` solo con descripción.
 - **MUST** tratar todo dato externo (respuesta HTTP, `localStorage`, `URLSearchParams`, `postMessage`) como `unknown` y validarlo (Zod u otro esquema) en el borde.

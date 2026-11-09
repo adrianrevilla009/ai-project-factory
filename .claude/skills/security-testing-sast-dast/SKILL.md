@@ -37,7 +37,7 @@ Cada técnica cubre una clase distinta: SAST ve patrones en el código, DAST ve 
 ```
 ### Bien
 ```yaml
-# Fragmento de CI (sintaxis de ejemplo; comprobar flags contra la versión instalada)
+# Fragmento de CI (sintaxis de ejemplo)
 sast:
   script:
     - semgrep scan --config policies/semgrep/ --sarif --output semgrep.sarif --error
@@ -81,5 +81,6 @@ void tamperedToken_isRejected() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secure-sdlc-nist-ssdf`, `dependency-security`, `secrets-management`, `static-analysis`, `injection-families`.
-- Fuentes: documentación de Semgrep OSS y OWASP ZAP; OWASP Web Security Testing Guide (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Semgrep OSS y OWASP ZAP; OWASP Web Security Testing Guide.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

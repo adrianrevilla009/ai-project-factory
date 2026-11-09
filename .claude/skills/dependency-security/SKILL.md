@@ -45,7 +45,7 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 <plugin>
   <groupId>org.owasp</groupId>
   <artifactId>dependency-check-maven</artifactId>
-  <version><!-- comprobar version vigente --></version>
+  <version></version>
   <configuration>
     <failBuildOnCVSS>7</failBuildOnCVSS>
     <suppressionFiles><suppressionFile>dc-suppressions.xml</suppressionFile></suppressionFiles>
@@ -76,5 +76,6 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `dependency-hygiene`, `renovate-dependabot-policy`, `license-compliance`, `vulnerability-sla-and-incident-response`.
-- Fuentes: documentación de OWASP Dependency-Check y OSV-Scanner; versiones y parámetros (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de OWASP Dependency-Check y OSV-Scanner; versiones y parámetros.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

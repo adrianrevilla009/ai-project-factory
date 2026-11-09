@@ -13,4 +13,4 @@ eu-west-1 (principal) y eu-central-1 (secundaria), parametrizadas en Terraform.
 Residencia UE y proximidad entre regiones.
 
 ## Consecuencias
-Comprobar disponibilidad de todos los servicios usados en ambas regiones antes de la Oleada 3.
+

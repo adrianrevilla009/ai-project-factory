@@ -83,5 +83,6 @@ pact-broker can-i-deploy --pacticipant billing-service --version $GIT_SHA --to-e
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `contract-testing`, `openapi-contract-first`, `backward-compatibility-rules`, `api-testing`.
-- Fuentes: documentación de Pact (docs.pact.io: consumer tests, provider verification, can-i-deploy, pending pacts), consultada 2026-11-07 — comprobar versión de Pact JVM.
+- Fuentes: documentación de Pact (docs.pact.io: consumer tests, provider verification, can-i-deploy, pending pacts), consultada 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -24,7 +24,7 @@ metadata:
 - **MUST** usar mTLS entre servicios cuando la política de zero-trust lo requiera; en malla Istio, `PeerAuthentication` en modo `STRICT` (D-Istio).
 - **MUST** cifrar con claves gestionadas (KMS: AWS KMS, preparado para AWS no verificado en real); envelope encryption para datos grandes. En local se sustituye por una clave de prueba: KMS real no se reproduce.
 - **MUST** definir rotación para cada clave y certificado (automática donde sea posible), con soporte de versión de clave (`kid`) para descifrar con la anterior durante la transición.
-- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo, comprobar al fijar la versión).
+- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo).
 - **SHOULD** tener plan de agilidad criptográfica (algoritmo y versión almacenados junto al dato).
 
 ## Por qué
@@ -74,5 +74,6 @@ spec: { mtls: { mode: STRICT } }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `jwt-and-sessions`, `zero-trust`, `pii-and-data-classification`.
-- Fuentes: OWASP Cryptographic Storage, Password Storage y TLS Cheat Sheets; documentación Istio (PeerAuthentication) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Cryptographic Storage, Password Storage y TLS Cheat Sheets; documentación Istio (PeerAuthentication).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

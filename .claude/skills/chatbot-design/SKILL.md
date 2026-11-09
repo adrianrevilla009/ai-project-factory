@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** declarar un alcance explícito (temas permitidos, acciones permitidas, fuera de alcance) en el system prompt versionado y en la documentación del producto.
-- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act; comprobar artículo y fecha con legal).
+- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act).
 - **MUST** ofrecer escalado a un humano en cualquier momento y automáticamente tras N fallos, baja confianza o temas sensibles (queja formal, salud, legal).
 - **MUST** limitar la memoria: ventana de turnos acotada, resumen en lugar de historial completo, TTL y borrado a petición (ver `pii-and-data-classification`).
 - **MUST** responder "no lo sé" con enlace a fuentes cuando la recuperación no encuentra evidencia, y citar fuentes en respuestas factuales.
@@ -74,4 +74,5 @@ public OrderStatus orderStatus(String orderId, @AuthenticatedCustomer CustomerId
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rag-architecture`, `guardrails-and-pii-redaction`, `human-in-the-loop`, `llm-security`, `model-risk-and-ai-act-mapping`.
 - Fuentes: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (transparencia, consultado 2026-11-07). Borrador legal por confirmar.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -52,7 +52,7 @@ error_budget_policy:
   escalation: "head-of-engineering decide en discrepancias"
   signed_by: [product-owner, eng-lead]
 ```
-Los valores de burn rate son un punto de partida (comprobar contra SRE Workbook).
+Los valores de burn rate son un punto de partida.
 
 ## Checklist de revisión
 - [ ] SLIs orientados a usuario y ventana definida.
@@ -71,4 +71,5 @@ Los valores de burn rate son un punto de partida (comprobar contra SRE Workbook)
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `dashboards-and-slos-as-code`, `change-and-release-management`, `incident-management-and-postmortems`.
 - Fuentes (verificado 2026-11-07): https://sre.google/workbook/error-budget-policy/ .
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

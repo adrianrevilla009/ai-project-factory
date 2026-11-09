@@ -82,5 +82,5 @@ clients:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `configuration-properties`, `graceful-shutdown-lifecycle`, `reactive-vs-blocking`.
-- Fuentes: Spring Framework Reference (REST Clients) y Spring Boot Reference (HTTP clients) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Framework Reference (REST Clients) y Spring Boot Reference (HTTP clients).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

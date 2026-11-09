@@ -18,10 +18,10 @@ metadata:
 ## Reglas
 - **MUST** recorrer los peldaños en orden y detenerse en el primero que falle:
   1. `terraform fmt -check` y `terraform validate` (con `terraform init -backend=false`).
-  2. `tflint` (reglas del provider AWS, comprobar plugin y versión).
+  2. `tflint` (reglas del provider AWS).
   3. Checkov o Trivy en modo config sobre el directorio (`checkov -d .`, `trivy config .`), más las reglas propias de `policies/iac-checks/`.
-  4. OPA/Conftest con Rego de `policies/opa-conftest/` sobre HCL (`conftest test --parser hcl2`, comprobar flag) o sobre JSON de plan generado con providers simulados.
-  5. `terraform test` con `mock_provider` (comprobar versión mínima de Terraform) para comprobar lógica de módulos sin credenciales.
+  4. OPA/Conftest con Rego de `policies/opa-conftest/` sobre HCL (`conftest test --parser hcl2`) o sobre JSON de plan generado con providers simulados.
+  5. `terraform test` con `mock_provider` para comprobar lógica de módulos sin credenciales.
 - **MUST** que ningún peldaño requiera credenciales AWS ni red hacia AWS; si lo pide, el peldaño no pertenece a la escalera.
 - **MUST NOT** ejecutar `terraform plan` ni `apply` contra AWS. Un plan solo es válido con providers simulados o salida sintética.
 - **MUST** reportar el resultado con la etiqueta de `maturity-labels`: llegar al peldaño 5 significa "validada estáticamente", nunca más.
@@ -66,5 +66,6 @@ Resultado: peldaños 1-5 superados. Madurez: validada estáticamente; preparado 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maturity-labels`, `cost-estimation`, `honest-claims-policy`, `compliance-as-code`.
-- Fuentes: `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`; documentación de Terraform, tflint, Checkov, Trivy y Conftest (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`; documentación de Terraform, tflint, Checkov, Trivy y Conftest.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

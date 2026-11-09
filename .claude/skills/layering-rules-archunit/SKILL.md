@@ -70,5 +70,5 @@ class LayeringRules {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `modular-monolith`, `architecture-testing-archunit`, `evolutionary-architecture-fitness-functions`.
-- Fuentes: ArchUnit User Guide, https://www.archunit.org/userguide/html/000_Index.html (a verificar (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: ArchUnit User Guide, https://www.archunit.org/userguide/html/000_Index.html.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

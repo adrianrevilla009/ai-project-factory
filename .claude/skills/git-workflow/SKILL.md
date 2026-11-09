@@ -70,5 +70,6 @@ class RefundController { /* ... */ }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `conventional-commits`, `pr-rules`, `release-versioning-changelog`, `change-and-release-management`.
-- Fuentes: https://trunkbaseddevelopment.com/ y https://semver.org/ (consultadas 2026-11-07); ajustes de branch protection de GitHub: comprobar en la documentación vigente.
+- Fuentes: https://trunkbaseddevelopment.com/ y https://semver.org/ (consultadas 2026-11-07); ajustes de branch protection de GitHub.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

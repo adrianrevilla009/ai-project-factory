@@ -53,7 +53,7 @@ class ModularityTests {
     }
 }
 ```
-Requiere la dependencia `spring-modulith-core` (comprobar artefacto y versión gestionada por el BOM de Spring Boot vigente).
+Requiere la dependencia `spring-modulith-core`.
 
 ## Checklist de revisión
 - [ ] Paquetes de primer nivel = módulos de negocio.
@@ -70,5 +70,6 @@ Requiere la dependencia `spring-modulith-core` (comprobar artefacto y versión g
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `modular-monolith`, `layering-rules-archunit`, `domain-events-in-spring`, `dependency-injection-rules`.
-- Fuentes oficiales: documentación de Spring Modulith (docs.spring.io/spring-modulith) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: documentación de Spring Modulith (docs.spring.io/spring-modulith).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

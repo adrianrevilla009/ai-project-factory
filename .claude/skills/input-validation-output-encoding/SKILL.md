@@ -84,5 +84,5 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `injection-families`, `security-headers-cors-csrf`, `file-upload-security`, `owasp-top10-and-api-top10`.
-- Fuentes: OWASP Input Validation Cheat Sheet y XSS Prevention Cheat Sheet; documentación de Jakarta Bean Validation (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Input Validation Cheat Sheet y XSS Prevention Cheat Sheet; documentación de Jakarta Bean Validation.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

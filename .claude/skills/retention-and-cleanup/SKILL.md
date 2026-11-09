@@ -20,7 +20,7 @@ metadata:
 - **MUST** conservar siempre los digests actualmente desplegados y los N últimos releases de prod para permitir rollback (ver `rollback-strategy`).
 - **MUST NOT** borrar un digest referenciado por un manifiesto GitOps o por una atestación de release vigente.
 - **MUST** ejecutar primero en modo simulación (dry-run) y revisar el listado antes de activar el borrado.
-- **MUST** limpiar también capas huérfanas: en Harbor el borrado de artefactos no libera espacio hasta ejecutar el garbage collection (comprobar en docs de la versión usada).
+- **MUST** limpiar también capas huérfanas: en Harbor el borrado de artefactos no libera espacio hasta ejecutar el garbage collection.
 - **SHOULD** excluir de la limpieza por regla lo marcado como `release` o con tag semver estable.
 - **SHOULD** usar políticas de ciclo de vida de ECR para el registro runtime y repository creation templates para que los repos replicados las hereden (las políticas de ciclo de vida no se replican).
 - **MUST** registrar en el puerto (`artifact-repository-port`) la política aplicada, para que sea revisable.
@@ -53,7 +53,7 @@ retention: { keep_days: 7, scope: all-projects }
   ]
 }
 ```
-Formato de política de ciclo de vida de ECR; comprobar campos contra https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html antes de usar.
+Formato de política de ciclo de vida de ECR.
 
 ## Checklist de revisión
 - [ ] Retención distinta por entorno, escrita en el repo.
@@ -71,5 +71,6 @@ Formato de política de ciclo de vida de ECR; comprobar campos contra https://do
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `artifact-repository-port`, `promotion-between-environments`, `rollback-strategy`.
-- Fuentes: ECR replication (no replica lifecycle policies) https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication.html (verificado 2026-11-07); Harbor https://goharbor.io/docs/ (comprobar retention/GC).
+- Fuentes: ECR replication (no replica lifecycle policies) https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication.html (verificado 2026-11-07); Harbor https://goharbor.io/docs/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

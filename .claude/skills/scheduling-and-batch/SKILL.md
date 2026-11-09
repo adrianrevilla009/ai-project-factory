@@ -16,7 +16,7 @@ metadata:
 - No aplica a flujos disparados por eventos o peticiones; ni a orquestación de larga vida con estado (ver `sagas-and-process-managers`).
 
 ## Reglas
-- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock, comprobar al fijar la versión; o un `CronJob` de Kubernetes fuera del servicio).
+- **MUST** asumir varias instancias: todo `@Scheduled` en un servicio con más de una réplica necesita ejecución única (ShedLock; o un `CronJob` de Kubernetes fuera del servicio).
 - **MUST** que el job sea idempotente y reanudable: procesa por lotes con marca de progreso; relanzarlo no duplica efectos (ver `idempotency-and-deduplication`).
 - **MUST** configurar el scheduler de Spring con pool propio: por defecto `@Scheduled` usa un solo hilo y un job lento bloquea a los demás (`spring.task.scheduling.pool.size`, verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
 - **MUST** capturar y registrar excepciones; un job que falla en silencio no se repara.
@@ -65,5 +65,6 @@ public void sendReminders() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `distributed-locking`, `idempotency-and-deduplication`, `batching-and-bulk-ops`, `graceful-shutdown-lifecycle`.
-- Fuentes: documentación de Spring (Task Execution and Scheduling), Spring Batch y ShedLock (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Spring (Task Execution and Scheduling), Spring Batch y ShedLock.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

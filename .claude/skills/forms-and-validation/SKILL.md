@@ -21,13 +21,13 @@ metadata:
 - **MUST** mostrar los errores junto al campo, enlazados con `aria-invalid` y `aria-describedby`, y mover el foco al primer error al enviar.
 - **MUST** deshabilitar el envío mientras `isSubmitting` para evitar dobles envíos; la idempotencia real es del backend (`idempotency-keys`).
 - **MUST** mapear los errores 400/422 del servidor (Problem Details) a campos con `setError`.
-- **SHOULD** compartir el esquema entre formulario y cliente API solo si procede del contrato OpenAPI; no duplicar reglas a mano (comprobar generación de Zod desde OpenAPI).
+- **SHOULD** compartir el esquema entre formulario y cliente API solo si procede del contrato OpenAPI; no duplicar reglas a mano.
 - **SHOULD** valores por defecto explícitos en `defaultValues`; sin inputs no controlados mezclados.
 - **MUST NOT** guardar contraseñas ni datos sensibles en el estado global ni en el almacenamiento del navegador.
 - **MUST NOT** usar `any` en los handlers (`typescript-strict-rules`).
 
 ## Por qué
-Un esquema único da validación, tipos y mensajes coherentes. React Hook Form reduce renders al no controlar cada tecla. El cliente puede ser eludido, por eso el servidor es la autoridad. Los errores accesibles son requisito de WCAG 2.2 (comprobar criterio exacto). Firmas de `zodResolver` y de `useForm` dependen de versión (comprobar al fijar la versión).
+Un esquema único da validación, tipos y mensajes coherentes. React Hook Form reduce renders al no controlar cada tecla. El cliente puede ser eludido, por eso el servidor es la autoridad. Los errores accesibles son requisito de WCAG 2.2. Firmas de `zodResolver` y de `useForm` dependen de versión.
 
 ## Ejemplos
 ### Mal
@@ -89,5 +89,6 @@ const onSubmit = handleSubmit(async (values) => {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `state-management`, `typescript-strict-rules`, `error-handling-and-boundaries`, `error-handling-problem-details`, `input-validation-output-encoding`.
-- Fuentes: documentación de React Hook Form, Zod y @hookform/resolvers (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de React Hook Form, Zod y @hookform/resolvers.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -25,7 +25,7 @@ metadata:
 - **MUST NOT** alojar el único Argo CD en la región que puede fallar; el plano GitOps debe poder reconciliar la región superviviente.
 - **MUST NOT** replicar estado de aplicación mediante Argo CD; el estado sigue la matriz de `data-replication-matrix`.
 - **SHOULD** desplegar por oleadas (región canaria primero) con `sync-wave`/progressive sync; ver `change-and-release-management`.
-- **SHOULD** mantener imágenes en un registro accesible desde ambas regiones (Harbor/ECR con réplica; comprobar réplica ECR).
+- **SHOULD** mantener imágenes en un registro accesible desde ambas regiones (Harbor/ECR con réplica).
 
 ## Por qué
 Un clúster regional que cae arrastra su Argo CD si está dentro. Las copias manuales de manifiestos divergen y el failover descubre la divergencia. El generador `cluster` crea una Application por clúster registrado y expone `name`, `server` y labels como parámetros, así que añadir una región es registrar un clúster con labels.
@@ -75,5 +75,6 @@ Nota: el clúster local por defecto no tiene Secret y no lo selecciona el genera
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-region-patterns`, `failover-and-failback-runbooks`, `istio-multicluster-tradeoffs`, `dependency-mapping-and-blast-radius`.
-- Fuentes (verificado 2026-11-07): https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Cluster/ . Comprobar límites de EKS por región y réplica de ECR en docs de AWS.
+- Fuentes (verificado 2026-11-07): https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Cluster/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

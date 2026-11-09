@@ -73,5 +73,5 @@ if (!bulkhead.tryAcquire()) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backpressure-and-bulkheads`, `resilience`, `capacity-and-load-modeling`, `dependency-mapping-and-blast-radius`, `static-stability-and-cell-architecture`.
-- Fuentes: Amazon Builders' Library "Using load shedding to avoid overload" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Amazon Builders' Library "Using load shedding to avoid overload".
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -48,7 +48,7 @@ interface CustomerMapper {
 ```
 ```xml
 <!-- maven-compiler-plugin: annotationProcessorPaths con mapstruct-processor -->
-<!-- comprobar versión de mapstruct y mapstruct-processor vigente -->
+
 ```
 
 ## Checklist de revisión
@@ -66,5 +66,6 @@ interface CustomerMapper {
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `controllers-and-validation`, `n-plus-one`, `spring-data-rules`, `projections-and-dtos`.
-- Fuentes oficiales: MapStruct Reference Guide (mapstruct.org) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: MapStruct Reference Guide (mapstruct.org).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -81,5 +81,5 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `actuator-and-health`, `container-and-k8s-security`, `pod-security-and-admission`, `autoscaling`.
-- Fuentes: documentación de Kubernetes (probes, PDB, topology spread) y Kyverno (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Kubernetes (probes, PDB, topology spread) y Kyverno.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

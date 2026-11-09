@@ -20,7 +20,7 @@ metadata:
 - **SHOULD** `dev`/`staging`: `automated` + `prune: true` + `selfHeal: true`. `prod`: sync automático de lo ya promovido en Git, `selfHeal: true`, `prune` solo tras revisión (o sync manual con ventana).
 - **MUST** tratar el cambio manual en el clúster como incidente de proceso: corregir en Git, no con `kubectl edit`.
 - **MUST** acotar `ignoreDifferences` a campos concretos (`jsonPointers`/`jqPathExpressions`) de kinds concretos, con comentario del motivo (p. ej. `/spec/replicas` gestionado por HPA).
-- **SHOULD** usar `syncOptions: [RespectIgnoreDifferences=true]` cuando el campo ignorado no deba reescribirse al sincronizar (comprobar al fijar la versión).
+- **SHOULD** usar `syncOptions: [RespectIgnoreDifferences=true]` cuando el campo ignorado no deba reescribirse al sincronizar.
 - **SHOULD** usar `syncWindows` del AppProject para limitar cuándo prod se sincroniza.
 - **MUST NOT** usar `ignoreDifferences` global para silenciar diffs que no se entienden.
 - **MUST NOT** activar `allowEmpty: true` salvo caso justificado (evita vaciar una app por error).
@@ -82,4 +82,5 @@ ignoreDifferences:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `environment-promotion`, `repo-strategy`.
 - Fuentes (verificadas 2026-11-07): https://argo-cd.readthedocs.io/en/stable/user-guide/auto_sync/ (defectos prune/selfHeal/allowEmpty desactivados; reconciliación 120 s) · .../user-guide/diffing/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -22,7 +22,7 @@ metadata:
 - **MUST** que los componentes base (`Button`, `Input`, `Dialog`...) vivan en `src/shared/ui`, sin lógica de negocio ni llamadas a API.
 - **SHOULD** documentar cada componente base en Storybook con sus variantes y estados (foco, deshabilitado, error).
 - **SHOULD** apoyar primitivas accesibles ya probadas (p. ej. Radix UI, React Aria) antes que reimplementar diálogos o menús.
-- **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens (comprobar ratios) y verificarlo en Storybook.
+- **MUST** cumplir contraste mínimo de WCAG 2.2 en los pares de tokens y verificarlo en Storybook.
 - **MUST NOT** copiar componentes entre features: si se repite dos veces con intención común, sube a `shared/ui`.
 - **SHOULD** versionar cambios de tokens con nota de migración si hay varios consumidores.
 
@@ -74,11 +74,12 @@ export const Disabled = { args: { children: 'Guardar', disabled: true } };
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Stylelint (p. ej. `declaration-property-value-disallowed-list` para colores literales) | 1 | pendiente (configuración del proyecto generado; comprobar regla) |
+| Stylelint (p. ej. `declaration-property-value-disallowed-list` para colores literales) | 1 | pendiente (configuración del proyecto generado) |
 | Addon a11y de Storybook / axe en CI | 1 | pendiente (proyecto generado) |
 | Revisión visual de nuevos componentes | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `component-patterns`, `frontend-architecture`, `frontend-i18n-and-formatting`, `frontend-performance`.
-- Fuentes: documentación de Storybook, WCAG 2.2 (W3C) — comprobar enlaces y versiones (2026-11-07).
+- Fuentes: documentación de Storybook, WCAG 2.2 (W3C).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

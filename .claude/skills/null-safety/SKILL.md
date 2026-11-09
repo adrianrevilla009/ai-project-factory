@@ -21,7 +21,7 @@ metadata:
 - **MUST NOT** devolver `null` desde métodos que devuelven colecciones o arrays: devolver colección vacía.
 - **MUST NOT** usar `Optional` como campo, parámetro de método ni elemento de colección.
 - **MUST NOT** llamar `Optional.get()` sin comprobación; usar `orElseThrow(() -> new NotFoundException(...))`, `map`, `ifPresent` u `orElse`.
-- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring) — comprobar soporte en la versión de Spring Boot elegida.
+- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring).
 - **SHOULD** usar `Objects.requireNonNullElse` / `Map.getOrDefault` antes que comprobaciones manuales repetidas.
 - **MUST NOT** devolver `Boolean` nulo como tercer estado; usar un enum.
 
@@ -36,7 +36,7 @@ public List<Order> findOrders(String customerId) {
     return repo.find(customerId);
 }
 public User load(Optional<String> id) {            // Optional como parámetro
-    return repo.findById(id.get()).get();          // dos get() sin comprobar
+    return repo.findById(id.get).get;          // dos get sin comprobar
 }
 ```
 ### Bien
@@ -63,9 +63,10 @@ public User load(String id) {
 | Regla Semgrep `java-optional-get` (heurística amplia, sin ejecutar; no activar tal cual) | 1 | `policies/semgrep/java-language-pitfalls.yaml` |
 | Revisión de contratos de nulos | 3 | agente `code-reviewer` (pendiente de definir) |
 
-> Estado: la regla existe como borrador con `TODO-VERIFY`; precisa tipado para no saltar con cualquier `get()`.
+> Estado: la regla Semgrep solo marca `get()` sobre receptores tipados como `Optional` y está probada en `tests/semgrep/`.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `exceptions-and-error-handling`, `immutability-and-value-objects`, `generics-and-api-design`.
-- Fuentes: Javadoc de `java.util.Optional` y `java.util.Objects` (oracle/openjdk); JSpecify (jspecify.dev) — comprobar versión y soporte; no verificado en línea.
+- Fuentes: Javadoc de `java.util.Optional` y `java.util.Objects` (oracle/openjdk); JSpecify (jspecify.dev); no verificado en línea.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

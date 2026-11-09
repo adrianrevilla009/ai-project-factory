@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** en schema/BD por tenant: pool por tenant acotado o pooler externo, y migraciones orquestadas con informe por tenant (ver `schema-migrations`).
 
 ## Por qué
-Una fuga entre tenants es un incidente de seguridad y de cumplimiento. El filtro por convención ("acuérdate del WHERE") falla tarde o temprano; por eso hay un filtro central más una barrera en la BD. Los modelos con más aislamiento cuestan más: miles de schemas complican migraciones y pools. Verificar la API de multi-tenancy de Hibernate contra su documentación (comprobar al fijar la versión).
+Una fuga entre tenants es un incidente de seguridad y de cumplimiento. El filtro por convención ("acuérdate del WHERE") falla tarde o temprano; por eso hay un filtro central más una barrera en la BD. Los modelos con más aislamiento cuestan más: miles de schemas complican migraciones y pools. Verificar la API de multi-tenancy de Hibernate contra su documentación.
 
 ## Ejemplos
 ### Mal
@@ -75,5 +75,6 @@ void tenantB_cannotReadTenantA_order() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-tenant-architecture`, `caching`, `connection-pooling`, `schema-migrations`, `data-privacy-in-db`.
-- Fuentes: PostgreSQL docs (Row Security Policies), Hibernate ORM User Guide (multitenancy) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: PostgreSQL docs (Row Security Policies), Hibernate ORM User Guide (multitenancy).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

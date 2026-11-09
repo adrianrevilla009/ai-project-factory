@@ -58,7 +58,7 @@ SELECT event_id, customer_id FROM gold.events WHERE event_date = DATE '2026-11-0
 - [ ] Parquet/Iceberg con particionado acorde al filtro principal.
 - [ ] Retención y compactación definidas.
 - [ ] Presupuesto con alertas y dueño.
-- [ ] Cifras de precio con fuente y fecha, o marcadas TODO-VERIFY.
+- [ ] Cifras de precio con fuente y fecha; sin fuente, sin cifra.
 
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
@@ -68,5 +68,5 @@ SELECT event_id, customer_id FROM gold.events WHERE event_date = DATE '2026-11-0
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cost-visibility`, `data-lake-and-lakehouse`, `warehouse-options`, `partitioning-and-archival`, `finops-of-resilience`.
-- Fuentes: calculadora de precios oficial del proveedor (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: calculadora de precios oficial del proveedor.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

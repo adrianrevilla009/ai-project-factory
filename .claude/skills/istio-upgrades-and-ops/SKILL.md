@@ -16,10 +16,10 @@ metadata:
 - No aplica al upgrade de Kubernetes (ver `cluster-upgrades-and-drift`), aunque debe coordinarse con él.
 
 ## Reglas
-- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes (comprobar matriz vigente).
+- **MUST** fijar la versión de Istio en el repositorio (Helm values / IstioOperator-equivalente) y comprobar la matriz de compatibilidad con la versión de Kubernetes.
 - **MUST** actualizar en una versión menor cada vez y revisar notas de versión y cambios incompatibles.
-- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final (comprobar comandos exactos de la versión).
-- **MUST** ejecutar `istioctl x precheck` antes (comprobar nombre del subcomando) y `istioctl analyze` después.
+- **MUST** preferir upgrade canary por **revisión**: instalar `istiod` nuevo en paralelo, migrar namespaces cambiando la etiqueta `istio.io/rev` y reiniciar sus pods; retirar el antiguo al final.
+- **MUST** ejecutar `istioctl x precheck` antes y `istioctl analyze` después.
 - **MUST** tener `istiod` con varias réplicas, PDB y `requests` definidos.
 - **SHOULD** actualizar primero un namespace de prueba y observar métricas antes de producción.
 - **MUST** probar el rollback: la etiqueta de revisión anterior debe seguir disponible hasta validar.
@@ -47,7 +47,7 @@ kubectl rollout restart deployment -n orders-test
 # 4) Validar
 istioctl analyze -n orders-test
 ```
-Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts: comprobar al fijar la versión.
+Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts.
 
 ## Checklist de revisión
 - [ ] Versión fijada y compatible con Kubernetes.
@@ -65,5 +65,6 @@ Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts: comprobar
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cluster-upgrades-and-drift`, `sidecar-vs-ambient-decision`, `multi-cluster-mesh`, `upgrade-policy`.
-- Fuentes: istio.io/latest/docs/setup/upgrade/canary/ y tabla de soporte de versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/setup/upgrade/canary/ y tabla de soporte de versiones.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

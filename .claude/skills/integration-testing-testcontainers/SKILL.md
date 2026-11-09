@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** probar contra la misma tecnología y versión mayor que producción (PostgreSQL real, no H2 como sustituto).
-- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión: comprobar según el estándar del proyecto.
+- **MUST** fijar la imagen con tag explícito, nunca `latest`; versión.
 - **MUST** que cada IT sea independiente: limpiar datos o usar transacciones/esquemas por test.
 - **MUST** aplicar las migraciones reales (Flyway/Liquibase) en el contenedor; no `ddl-auto=create`.
 - **SHOULD** usar `@ServiceConnection` (Spring Boot 3.1+) o `@DynamicPropertySource` para enlazar propiedades.
@@ -56,7 +56,7 @@ class OrderRepositoryIT {
     }
 }
 ```
-El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno (comprobar al fijar la versión).
+El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -88,5 +88,6 @@ El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `db-testing`, `testing-slices`, `schema-migrations`, `kafka-producers-consumers`, `test-data-management`.
-- Fuentes: documentación de Testcontainers for Java y de Spring Boot (Testcontainers support) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Testcontainers for Java y de Spring Boot (Testcontainers support).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

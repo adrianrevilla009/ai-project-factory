@@ -25,7 +25,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST** tratar el egress como denegado por defecto: lo que sale a Internet pasa por NAT o un punto central con allowlist de dominios (AWS Network Firewall u otro proxy con FQDN).
 - **MUST NOT** dar IP pública a cargas para que "salgan"; ni abrir egress 0.0.0.0/0 en SG de datos.
 - **SHOULD** compartir endpoints en una VPC de servicios solo si el ahorro compensa el coste de TGW y la complejidad de DNS (ver `dns-route53-private-and-hybrid`).
-- **SHOULD** medir coste: cada interface endpoint cobra por hora y AZ y por GB (comprobar tarifas vigentes).
+- **SHOULD** medir coste: cada interface endpoint cobra por hora y AZ y por GB.
 
 ## Por qué
 Sin endpoints, el tráfico a servicios AWS cruza el NAT (coste por GB y salida pública). Una política de endpoint reduce la exfiltración hacia cuentas ajenas. Un egress sin allowlist convierte cualquier RCE en canal de salida de datos.
@@ -80,5 +80,6 @@ resource "aws_vpc_endpoint" "sts" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `vpc-multi-az-layers`, `dns-route53-private-and-hybrid`, `cloud-iam-least-privilege`, `zero-trust`, `ssrf` (ver `deserialization-xxe-ssrf-traversal`).
-- Fuentes: documentación oficial de AWS PrivateLink / VPC endpoints y de AWS Network Firewall (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de AWS PrivateLink / VPC endpoints y de AWS Network Firewall.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

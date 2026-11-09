@@ -68,5 +68,5 @@ public List<Order> listOpenOrders() { /* ... */ }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `code-smells-and-refactoring`, `risk-register`, `definition-of-ready-and-done`, `pr-rules`.
-- Fuentes: concepto de "technical debt" de Ward Cunningham (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: concepto de "technical debt" de Ward Cunningham.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -46,7 +46,7 @@ histogram_quantile(0.95,
 # Saturación del pool
 max(hikaricp_connections_pending{application="orders-api"})
 ```
-Los nombres de métrica dependen del exportador y la versión de Micrometer (comprobar al fijar la versión).
+Los nombres de métrica dependen del exportador y la versión de Micrometer.
 
 ## Checklist de revisión
 - [ ] RED por endpoint y USE por recurso presentes.
@@ -63,4 +63,5 @@ Los nombres de métrica dependen del exportador y la versión de Micrometer (com
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `metrics-micrometer`, `jvm-observability`, `alerting-symptom-based`, `slo-sli-error-budgets`, `on-call-and-runbook-links`.
 - Fuentes: libro SRE de Google (golden signals), método RED (Tom Wilkie) y USE (Brendan Gregg), consultados 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

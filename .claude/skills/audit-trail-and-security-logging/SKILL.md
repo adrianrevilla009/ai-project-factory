@@ -71,5 +71,5 @@ Usar `logger` con `addKeyValue` requiere SLF4J 2.x.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `structured-logging`, `pii-and-data-classification`, `org-cloudtrail-config-securityhub-guardduty`, `vulnerability-sla-and-incident-response`.
-- Fuentes: OWASP Logging Cheat Sheet y Logging Vocabulary (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Logging Cheat Sheet y Logging Vocabulary.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

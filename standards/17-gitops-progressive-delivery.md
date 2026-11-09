@@ -42,7 +42,7 @@
 - **SHOULD** `dev`/`staging`: `automated` + `prune: true` + `selfHeal: true`. `prod`: sync automático de lo ya promovido en Git, `selfHeal: true`, `prune` solo tras revisión (o sync manual con ventana).
 - **MUST** tratar el cambio manual en el clúster como incidente de proceso: corregir en Git, no con `kubectl edit`.
 - **MUST** acotar `ignoreDifferences` a campos concretos (`jsonPointers`/`jqPathExpressions`) de kinds concretos, con comentario del motivo (p. ej. `/spec/replicas` gestionado por HPA).
-- **SHOULD** usar `syncOptions: [RespectIgnoreDifferences=true]` cuando el campo ignorado no deba reescribirse al sincronizar (comprobar al fijar la versión).
+- **SHOULD** usar `syncOptions: [RespectIgnoreDifferences=true]` cuando el campo ignorado no deba reescribirse al sincronizar.
 - **SHOULD** usar `syncWindows` del AppProject para limitar cuándo prod se sincroniza.
 - **MUST NOT** usar `ignoreDifferences` global para silenciar diffs que no se entienden.
 - **MUST NOT** activar `allowEmpty: true` salvo caso justificado (evita vaciar una app por error).

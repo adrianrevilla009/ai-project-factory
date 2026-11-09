@@ -21,7 +21,7 @@ metadata:
 - **MUST** usar solo acciones de plano de datos para conmutar (ARC routing controls, promoción de BD ya aprovisionada) y **MUST NOT** depender de crear recursos nuevos en la región caída.
 - **MUST** respetar este orden:
   1. Declarar el desastre y congelar despliegues; frenar escrituras en la primaria si es alcanzable.
-  2. Comprobar el lag y elegir la secundaria.
+  2.
   3. **Promover Aurora Global (failover con pérdida de datos aceptada) y verificar que hay escritor.**
   4. **Solo después**, activar el motor de BD de Vault de la secundaria (rol dinámico) y rotar credenciales.
   5. Escalar EKS/Argo CD de la secundaria a capacidad plena.
@@ -67,5 +67,6 @@ Un orden equivocado produce errores confusos en mitad del incidente (aplicacione
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `application-recovery-controller-and-health-checks`, `data-replication-matrix`, `fault-injection-and-game-days`, `multi-region-patterns`.
-- Fuente: Aurora Global Database, switchover y failover, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). Comando de Vault de BD: comprobar contra la documentación de Vault OSS.
+- Fuente: Aurora Global Database, switchover y failover, https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html (2026-11-07). Comando de Vault de BD.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

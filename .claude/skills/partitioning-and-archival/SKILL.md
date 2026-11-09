@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** justificar el particionado con un problema medido (purga costosa, mantenimiento, consultas siempre acotadas por rango) y registrarlo en un ADR.
 - **MUST** elegir una clave de partición que aparezca en las consultas habituales (normalmente fecha) para que haya poda de particiones; verificarlo con `EXPLAIN`.
-- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición (comprobar en documentación de PostgreSQL de la versión usada).
+- **MUST** tener en cuenta que la clave primaria y los índices únicos de una tabla particionada deben incluir la clave de partición.
 - **MUST** automatizar la creación de particiones futuras y la retirada de antiguas; una partición que falta rompe las inserciones.
 - **MUST** definir retención por tipo de dato (negocio, legal, PII) con base en requisitos confirmados; plazos legales son borrador por confirmar con fuente oficial.
 - **MUST NOT** purgar con `DELETE` masivo cuando la partición permite `DETACH`/`DROP`.
@@ -68,5 +68,6 @@ El `DROP` va solo en migraciones/jobs revisados, nunca ejecutado desde un agente
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `indexing-and-query-plans`, `schema-migrations`, `data-privacy-in-db`, `auditing-soft-delete-history`.
-- Fuentes: documentación de PostgreSQL (Table Partitioning) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de PostgreSQL (Table Partitioning).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

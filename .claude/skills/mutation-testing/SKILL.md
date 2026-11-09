@@ -89,5 +89,6 @@ void vipCustomerGetsTenPercentAtExactlyThreshold() {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `coverage-policy`, `unit-testing-java`, `property-based-testing`, `test-strategy`.
-- Fuentes: https://pitest.org/quickstart/maven/ (comprobar parámetros y versión; no contrastado con la versión vigente a 2026-11-07).
+- Fuentes: https://pitest.org/quickstart/maven/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -16,7 +16,7 @@ metadata:
 - No aplica a la alta disponibilidad dentro de un clúster (ver `deployment-ha`) ni a la estrategia general multi-región (ver bloque 19).
 
 ## Reglas
-- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción. Comprobar contra la documentación vigente de la versión fijada.
+- **MUST** asumir que Vault OSS no incluye replicación de DR entre clústeres (es función Enterprise, fuera de alcance por D10/D16); la recuperación se basa en snapshots Raft y reconstrucción.
 - **MUST** programar snapshots Raft (`vault operator raft snapshot save`) y copiarlos cifrados a almacenamiento fuera del clúster y de la región (en AWS, S3 con KMS: preparado para AWS, no verificado en real).
 - **MUST** definir RPO = intervalo de snapshot y RTO medido, y ensayar la restauración en un clúster limpio al menos trimestralmente.
 - **MUST** proteger por separado las claves de unseal/recovery y el material de auto-unseal: un snapshot sin ellos no sirve.
@@ -61,5 +61,6 @@ vault operator raft snapshot restore /backup/raft-example.snap   # solo en el en
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deployment-ha`, `audit-and-break-glass`, `tier-model-and-rpo-rto`, `failover-and-failback-runbooks`, `envelope-encryption-and-kms`.
-- Fuentes: ADR-0010 y ADR-0031; documentación de Vault (operator raft snapshot) y de Keycloak (export/import) (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Diseño preparado para AWS, no verificado en real.
+- Fuentes: ADR-0010 y ADR-0031; documentación de Vault (operator raft snapshot) y de Keycloak (export/import). Diseño preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

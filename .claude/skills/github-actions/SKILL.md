@@ -14,7 +14,7 @@ metadata:
 ## Cuándo aplicar y cuándo no
 - Aplica a cualquier `.github/workflows/*.yml` de un proyecto generado o de la fábrica.
 - No aplica a GitLab CI/Jenkins (ver `alternatives`).
-- Los SHA de los ejemplos son marcadores: **nunca** copiarlos; resolverlos con `git ls-remote` o la API al fijarlos (comprobar al fijar la versión).
+- Los SHA de los ejemplos son marcadores: **nunca** copiarlos; resolverlos con `git ls-remote` o la API al fijarlos.
 
 ## Reglas
 - **MUST** fijar toda acción y workflow reutilizable de terceros por SHA de commit completo (40 hex), con el tag en comentario.
@@ -54,7 +54,7 @@ permissions: { contents: read }
 concurrency: { group: "ci-${{ github.ref }}", cancel-in-progress: true }
 jobs:
   build:
-    uses: acme/platform-workflows/.github/workflows/maven-build.yml@<SHA-40-HEX> # v1.x comprobar al fijar la versión
+    uses: acme/platform-workflows/.github/workflows/maven-build.yml@<SHA-40-HEX> # v1.x
     with: { java-version: "21" }
 ```
 ```yaml
@@ -68,8 +68,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@<SHA-40-HEX> # vX comprobar al fijar la versión
-      - uses: actions/setup-java@<SHA-40-HEX> # vX comprobar al fijar la versión
+      - uses: actions/checkout@<SHA-40-HEX> # vX
+      - uses: actions/setup-java@<SHA-40-HEX> # vX
         with: { distribution: temurin, java-version: "${{ inputs.java-version }}", cache: maven }
       - run: ./mvnw -B verify
   deploy-dev:
@@ -78,12 +78,12 @@ jobs:
     environment: dev          # revisores/ramas se configuran en el repo
     permissions: { id-token: write, contents: read }
     steps:
-      - uses: aws-actions/configure-aws-credentials@<SHA-40-HEX> # vX comprobar al fijar la versión
+      - uses: aws-actions/configure-aws-credentials@<SHA-40-HEX> # vX
         with:
           role-to-assume: arn:aws:iam::111111111111:role/example-ci-dev
           aws-region: eu-west-1
 ```
-El rol y la región son ejemplo; preparado para AWS, no verificado en real. En local no se reproduce OIDC contra AWS: se usa `act` o un runner kind sin credenciales cloud (comprobar al fijar la versión).
+El rol y la región son ejemplo; preparado para AWS, no verificado en real. En local no se reproduce OIDC contra AWS: se usa `act` o un runner kind sin credenciales cloud.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -109,12 +109,13 @@ El rol y la región son ejemplo; preparado para AWS, no verificado en real. En l
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Conftest: SHA obligatorio y `permissions` | 1 | `policies/opa-conftest/github-actions-pinning.rego` (no ejecutada, comprobar al fijar la versión) |
+| Conftest: SHA obligatorio y `permissions` | 1 | `policies/opa-conftest/github-actions-pinning.rego` (no ejecutada) |
 | Workflow de la fábrica ya fijado por SHA | 1 | `.github/workflows/ci.yml` |
 | Detección de inyección en `run:` (zizmor/Semgrep) | 1 | pendiente |
 | Configuración de environments y trust OIDC | 4 | revisión humana (gate-5) |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pipeline-architecture`, `supply-chain`, `cloud-iam-least-privilege`, `secrets-management`.
-- Fuentes (2026-11-07): https://docs.github.com/en/actions/reference/workflows-and-actions/reusable-workflows ; https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect (nota: GitHub anuncia un formato de `sub` inmutable con IDs (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes (2026-11-07): https://docs.github.com/en/actions/reference/workflows-and-actions/reusable-workflows ; https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect (nota: GitHub anuncia un formato de `sub` inmutable con IDs.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -41,7 +41,7 @@ public class OrderService { /* ... */ }
 public record OrderView(List<Line> lines) { }
 ```
 ```xml
-<!-- parent pom: plugin configurado una vez; fallar en violaciones. Versiones: comprobar al fijar la versión -->
+<!-- parent pom: plugin configurado una vez; fallar en violaciones. Versiones
 <plugin>
   <artifactId>maven-checkstyle-plugin</artifactId>
   <configuration>
@@ -50,7 +50,7 @@ public record OrderView(List<Line> lines) { }
   </configuration>
 </plugin>
 ```
-Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple` y `-Xplugin:ErrorProne`; los flags exactos y la compatibilidad con la versión de JDK se confirman en la documentación oficial (comprobar al fijar la versión).
+Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple` y `-Xplugin:ErrorProne`; los flags exactos y la compatibilidad con la versión de JDK se confirman en la documentación oficial.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -80,5 +80,6 @@ Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `code-style-and-naming`, `coverage-policy`, `security-testing-sast-dast`, `no-lombok`.
-- Fuentes: documentación oficial de Checkstyle, PMD, SpotBugs y Error Prone (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Checkstyle, PMD, SpotBugs y Error Prone.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

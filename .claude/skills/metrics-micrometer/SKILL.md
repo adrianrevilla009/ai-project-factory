@@ -27,7 +27,7 @@ metadata:
 - **MUST NOT** registrar métricas dentro de bucles calientes creando meters nuevos por iteración.
 
 ## Por qué
-Cada combinación distinta de tags crea una serie temporal; un `userId` como tag puede disparar memoria y coste del backend. Los histogramas permiten calcular percentiles agregables entre instancias (los percentiles precalculados en cliente no se pueden agregar). Propiedades exactas: comprobar contra la versión de Spring Boot/Micrometer del proyecto.
+Cada combinación distinta de tags crea una serie temporal; un `userId` como tag puede disparar memoria y coste del backend. Los histogramas permiten calcular percentiles agregables entre instancias (los percentiles precalculados en cliente no se pueden agregar). Propiedades exactas.
 
 ## Ejemplos
 ### Mal
@@ -80,5 +80,6 @@ management:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-fundamentals-and-semconv`, `golden-signals-red-use`, `slo-sli-error-budgets`, `actuator-and-health`.
-- Fuentes: documentación oficial de Micrometer y Spring Boot Actuator (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Micrometer y Spring Boot Actuator.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

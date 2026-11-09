@@ -83,5 +83,5 @@ resource "aws_ec2_transit_gateway_route" "to_euc1" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cidr-planning-and-ipam`, `cross-region-connectivity-and-cost`, `flow-logs-and-network-observability`, `zero-trust`.
-- Fuentes: documentación oficial de AWS Transit Gateway (tablas de rutas, peering, appliance mode) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de AWS Transit Gateway (tablas de rutas, peering, appliance mode).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

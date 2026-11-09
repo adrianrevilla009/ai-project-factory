@@ -77,5 +77,6 @@ public void approve(OrderId id, Actor actor) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `audit-trail-and-security-logging`, `auditing-soft-delete-history`, `audit-and-break-glass`, `outbox-and-cdc`, `pii-and-data-classification`, `gdpr-and-immutable-events`.
-- Fuentes: OWASP Logging Cheat Sheet, https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html (comprobar al fijar la versión, no consultada en esta revisión).
+- Fuentes: OWASP Logging Cheat Sheet, https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

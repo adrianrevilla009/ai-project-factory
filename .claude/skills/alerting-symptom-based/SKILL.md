@@ -54,7 +54,7 @@ groups:
       summary: "orders-api consume el presupuesto de error muy rápido"
       runbook_url: "https://runbooks.example.internal/orders-api/error-budget"
 ```
-Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real (comprobar contra la guía SRE).
+Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real.
 
 ## Checklist de revisión
 - [ ] Toda alerta `page` es síntoma o burn rate.
@@ -71,4 +71,5 @@ Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real (comproba
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `slo-sli-error-budgets`, `golden-signals-red-use`, `on-call-and-runbook-links`, `jvm-observability`.
 - Fuentes: documentación de Prometheus Alertmanager y The Site Reliability Workbook (alerting on SLOs), consultados 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

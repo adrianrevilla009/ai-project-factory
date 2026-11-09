@@ -22,7 +22,7 @@ metadata:
 - **MUST NOT** incluir PII, secretos ni cuerpos completos; aplicar enmascarado en el encoder o en el Collector.
 - **MUST NOT** usar etiquetas de Loki de alta cardinalidad (`trace_id`, `user_id`); las etiquetas son pocas (`service`, `namespace`, `level`) y el resto se filtra por contenido.
 - **SHOULD** registrar una sola vez cada error, con la excepción como último argumento.
-- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece (comprobar desde qué versión y formatos), o un encoder JSON explícito.
+- **SHOULD** usar el soporte nativo de logging estructurado de Spring Boot si la versión lo ofrece, o un encoder JSON explícito.
 - **SHOULD** definir un campo `event` estable en eventos de negocio para poder consultarlos y alertar.
 
 ## Por qué
@@ -67,5 +67,6 @@ labels: { service: orders-api, namespace: shop }
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `logging-rules`, `tracing`, `pii-and-data-classification`, `async-and-context-propagation`.
-- Fuentes: documentación oficial de Spring Boot (logging) y Grafana Loki (labels) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de Spring Boot (logging) y Grafana Loki (labels).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

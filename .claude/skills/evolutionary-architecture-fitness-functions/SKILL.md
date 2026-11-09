@@ -66,5 +66,6 @@ Fitness de rendimiento (CI): k6 con umbral  http_req_duration p(95) < 300ms ; fa
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `layering-rules-archunit`, `quality-attributes-atam`, `connascence-and-coupling`, `tech-debt-management`.
-- Fuentes: Ford, Parsons y Kua, "Building Evolutionary Architectures" (O'Reilly, 2.ª ed. 2023). Comprobar edición y versión de ArchUnit.
+- Fuentes: Ford, Parsons y Kua, "Building Evolutionary Architectures" (O'Reilly, 2.ª ed. 2023).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -73,5 +73,5 @@ counters.merge(key, 1L, Long::sum);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `concurrent-collections`, `distributed-locking`, `concurrency-testing`.
-- Fuentes: Javadoc de `java.util.concurrent.locks` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Javadoc de `java.util.concurrent.locks`.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

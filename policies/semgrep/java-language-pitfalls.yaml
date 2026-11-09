@@ -58,7 +58,7 @@ rules:
   - id: java-optional-get
     languages: [java]
     severity: WARNING
-    message: "Evitar Optional.get() sin comprobar; usar orElseThrow con excepcion de dominio (skill null-safety)."
+    message: "Evitar Optional.get sin comprobar; usar orElseThrow con excepcion de dominio (skill null-safety)."
     pattern: (Optional<$T> $O).get()
     metadata:
       skill: null-safety

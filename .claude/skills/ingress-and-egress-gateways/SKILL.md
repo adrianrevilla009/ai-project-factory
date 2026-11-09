@@ -50,7 +50,7 @@ spec:
   resolution: DNS
   ports: [{ number: 443, name: https, protocol: TLS }]
 ```
-Ubicación exacta de `meshConfig` según método de instalación: comprobar al fijar la versión.
+Ubicación exacta de `meshConfig` según método de instalación.
 
 ## Checklist de revisión
 - [ ] Ingress en namespace propio con PDB y HPA.
@@ -66,5 +66,6 @@ Ubicación exacta de `meshConfig` según método de instalación: comprobar al f
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `gateway-api`, `authorization-policies`, `zero-trust`, `dos-and-rate-limiting`.
-- Fuentes: istio.io/latest/docs/tasks/traffic-management/egress/ (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/tasks/traffic-management/egress/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

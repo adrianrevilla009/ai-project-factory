@@ -81,10 +81,11 @@ function useDebouncedValue<T>(value: T, ms: number): T { /* hook reutilizable */
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
 | `eslint-plugin-react-hooks` (rules-of-hooks, exhaustive-deps) | 1 | pendiente (configuración del proyecto generado) |
-| `react/no-unstable-nested-components`, `react/no-array-index-key` | 1 | pendiente (eslint-plugin-react; comprobar nombres) |
+| `react/no-unstable-nested-components`, `react/no-array-index-key` | 1 | pendiente (eslint-plugin-react) |
 | Revisión de API de componentes | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `design-system-and-tokens`, `state-management`, `frontend-architecture`, `frontend-performance`.
-- Fuentes: documentación de React (react.dev: "You Might Not Need an Effect", Rules of Hooks) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de React (react.dev: "You Might Not Need an Effect", Rules of Hooks).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

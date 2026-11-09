@@ -18,7 +18,7 @@ El detalle de fases y comandos está en [`project-lifecycle.md`](operating-model
 ## Qué esperar (y qué no)
 - Todo el contenido normativo (RGPD, AI Act, accesibilidad…) sale como **borrador por confirmar** con fuente oficial y una persona de legal o cumplimiento.
 - La infraestructura AWS se escribe y se valida de forma estática, pero **nunca se despliega**: la etiqueta correcta es «preparado para AWS, no verificado en real».
-- Cuando un agente no puede comprobar un dato, lo marca con `TODO-VERIFY` en vez de inventarlo.
+- Cuando un agente no puede comprobar un dato, lo declara «no comprobado» en vez de inventarlo.
 
 ## Mantener la fábrica
 | Quiero… | Hago… |

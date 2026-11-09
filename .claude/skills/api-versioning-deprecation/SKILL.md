@@ -19,7 +19,7 @@ metadata:
 - **MUST** usar versión mayor en la ruta para APIs REST (`/v1/orders`); minor/patch solo en `info.version` del contrato.
 - **MUST** preferir evolución compatible dentro de la misma versión mayor; una versión nueva solo para cambios rompientes inevitables.
 - **MUST** mantener como máximo dos versiones mayores vivas por API.
-- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses, comprobar con negocio) y marcar `deprecated: true` en OpenAPI.
+- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses) y marcar `deprecated: true` en OpenAPI.
 - **MUST** emitir cabeceras `Deprecation` (RFC 9745) y `Sunset` (RFC 8594) en respuestas de recursos deprecados, con enlace `Link: rel="deprecation"` a la guía de migración.
 - **MUST** medir el uso por versión y consumidor (métrica con etiqueta `api_version`) antes de retirar.
 - **MUST NOT** retirar una versión con tráfico de consumidores conocidos sin acuerdo explícito.
@@ -49,7 +49,7 @@ class OrdersV1Controller {
     }
 }
 ```
-Los valores de fecha son ilustrativos; confirmar sintaxis de `Deprecation` contra RFC 9745 (comprobar al fijar la versión).
+Los valores de fecha son ilustrativos; confirmar sintaxis de `Deprecation` contra RFC 9745.
 
 ## Checklist de revisión
 - [ ] Versión mayor en ruta; sin versión por defecto implícita.
@@ -66,5 +66,6 @@ Los valores de fecha son ilustrativos; confirmar sintaxis de `Deprecation` contr
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backward-compatibility-rules`, `openapi-contract-first`, `rest-design-guidelines`, `sdk-generation`.
-- Fuentes: RFC 8594 (Sunset), RFC 9745 (Deprecation HTTP header) — comprobar número y sintaxis, no consultados en vivo el 2026-11-07.
+- Fuentes: RFC 8594 (Sunset), RFC 9745 (Deprecation HTTP header).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

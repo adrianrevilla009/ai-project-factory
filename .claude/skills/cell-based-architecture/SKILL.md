@@ -61,5 +61,5 @@ La fábrica no despliega (ADR-0004): el diseño queda "preparado para AWS, no ve
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-tenant-architecture`, `scalability-patterns`, `consistency-and-cap-tradeoffs`, `quality-attributes-atam`.
-- Fuentes: AWS Well-Architected, guía de arquitectura basada en celdas (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: AWS Well-Architected, guía de arquitectura basada en celdas.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

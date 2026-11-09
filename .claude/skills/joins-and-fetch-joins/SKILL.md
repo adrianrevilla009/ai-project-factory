@@ -19,7 +19,7 @@ metadata:
 - **MUST** distinguir `JOIN` (filtra/une, no inicializa) de `JOIN FETCH` (inicializa la asociación en la entidad).
 - **MUST NOT** hacer `JOIN FETCH` de más de una colección (`List`) en la misma consulta: producto cartesiano y `MultipleBagFetchException`. Cargar la segunda con otra consulta o `@BatchSize`.
 - **MUST NOT** combinar `JOIN FETCH` de colección con `Pageable`/`setMaxResults`: Hibernate pagina en memoria (aviso `HHH000104`). Paginar ids primero y luego cargar con fetch.
-- **MUST** usar `DISTINCT` (o `Set`) solo cuando el fetch de colección duplica la raíz; comprobar si la versión de Hibernate ya deduplica (comprobar al fijar la versión).
+- **MUST** usar `DISTINCT` (o `Set`) solo cuando el fetch de colección duplica la raíz.
 - **SHOULD** usar `LEFT JOIN FETCH` si la asociación puede faltar; `JOIN FETCH` interno descarta filas sin relación.
 - **SHOULD** preferir `@EntityGraph` en repositorios Spring Data para casos simples y `JOIN FETCH` explícito para los complejos.
 - **MUST NOT** filtrar sobre un alias de `JOIN FETCH` de colección: la colección cargada queda incompleta.
@@ -62,5 +62,6 @@ List<Order> findWithPaymentsByIdIn(Collection<Long> ids);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `lazy-vs-eager`, `pagination`, `projections-and-dtos`.
-- Fuentes: guía de usuario de Hibernate ORM (HQL, fetching) — comprobar versión, URL y comportamiento de `DISTINCT`.
+- Fuentes: guía de usuario de Hibernate ORM (HQL, fetching).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

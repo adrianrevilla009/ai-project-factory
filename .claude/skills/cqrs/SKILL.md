@@ -72,5 +72,5 @@ void on(OrderPlaced e) { summaries.upsert(e.orderId(), e.total()); }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `event-driven`, `consistency-and-cap-tradeoffs`, `ddd-tactical`.
-- Fuentes: Fowler, "CQRS" (martinfowler.com); Young, "CQRS Documents" (2010). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Fowler, "CQRS" (martinfowler.com); Young, "CQRS Documents" (2010)..
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

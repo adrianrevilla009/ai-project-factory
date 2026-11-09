@@ -21,7 +21,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST** conectar regiones con peering de TGW (rutas estáticas, ver `transit-gateway-hub-and-spoke`) o VPC peering inter-región para casos simples; el tráfico viaja por la red de AWS, no por Internet.
 - **MUST** mantener las llamadas síncronas dentro de una región; entre regiones solo replicación asíncrona y tráfico de control (ver `consistency-and-cap-tradeoffs`, `cell-based-architecture`).
 - **MUST** respetar la residencia de datos: ningún dato personal se replica a una región no autorizada (ver `regions-and-data-residency`; normativa = borrador por confirmar con fuente oficial).
-- **MUST** estimar el coste antes de añadir un flujo: transferencia entre regiones, entre AZ, procesamiento de NAT/TGW/endpoints y salida a Internet se cobran por GB (comprobar tarifas vigentes; no copiar cifras de memoria).
+- **MUST** estimar el coste antes de añadir un flujo: transferencia entre regiones, entre AZ, procesamiento de NAT/TGW/endpoints y salida a Internet se cobran por GB.
 - **MUST NOT** construir arquitecturas con tráfico entre AZ innecesario: usar enrutado consciente de topología (topology aware routing) y NAT por AZ.
 - **SHOULD** comprimir y agrupar la replicación; preferir réplicas de lectura locales a lecturas remotas.
 - **SHOULD** reducir salida por NAT con endpoints de gateway/interfaz (ver `private-endpoints-and-egress-control`) y CloudFront para servir caché.
@@ -71,5 +71,6 @@ resource "aws_ec2_transit_gateway_peering_attachment" "euw1_euc1" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transit-gateway-hub-and-spoke`, `private-endpoints-and-egress-control`, `global-accelerator-and-failover-routing`, `regions-and-data-residency`, `tagging-cost-allocation-budgets`.
-- Fuentes: páginas oficiales de precios de AWS (transferencia de datos, NAT Gateway, Transit Gateway) y documentación de peering de TGW, consulta 2026-11-07, comprobar (sin cifras en este skill).
+- Fuentes: páginas oficiales de precios de AWS (transferencia de datos, NAT Gateway, Transit Gateway) y documentación de peering de TGW, consulta 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

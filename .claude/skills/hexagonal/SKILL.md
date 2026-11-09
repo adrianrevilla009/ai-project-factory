@@ -78,5 +78,6 @@ class JpaOrderRepositoryAdapter implements OrderRepository {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `clean-architecture`, `layering-rules-archunit`, `ddd-tactical`, `anti-corruption-layer`.
-- Fuentes: Alistair Cockburn, "Hexagonal Architecture" (alistair.cockburn.us) — comprobar URL exacta; ArchUnit User Guide (archunit.org) — comprobar versión.
+- Fuentes: Alistair Cockburn, "Hexagonal Architecture" (alistair.cockburn.us); ArchUnit User Guide (archunit.org).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

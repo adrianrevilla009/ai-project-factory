@@ -19,9 +19,9 @@ metadata:
 - **MUST** que CI y desarrolladores resuelvan dependencias solo a través del repositorio corporativo (proxy/grupo); **MUST NOT** declarar `repositories` de internet directas en `pom.xml` ni registries en `.npmrc` del proyecto.
 - **MUST** que los namespaces internos (`com.acme.*`, `@acme/*`) se resuelvan solo del repositorio interno: reglas de enrutado/exclusión (Nexus routing rules) o scoped registry en `.npmrc`.
 - **MUST** reservar el scope npm y el groupId internos en los registros públicos cuando sea posible.
-- **MUST** usar lockfiles con integridad (`package-lock.json`, `pnpm-lock.yaml`) y `npm ci`; en Maven fijar versiones y verificar checksums/firmas (comprobar plugin de verificación).
+- **MUST** usar lockfiles con integridad (`package-lock.json`, `pnpm-lock.yaml`) y `npm ci`; en Maven fijar versiones y verificar checksums/firmas.
 - **MUST** deshabilitar el uso de snapshots y versiones por rango (`LATEST`, `RELEASE`, `^`) en releases.
-- **SHOULD** cuarentena/retardo en nuevas versiones del proxy (p. ej. no aceptar versiones publicadas hace menos de N días; comprobar soporte en el producto).
+- **SHOULD** cuarentena/retardo en nuevas versiones del proxy (p. ej. no aceptar versiones publicadas hace menos de N días).
 - **SHOULD** bloquear egress de los runners de build excepto hacia el repositorio corporativo.
 - **MUST NOT** guardar credenciales en `settings.xml`/`.npmrc` versionados; usar variables de entorno.
 
@@ -73,5 +73,6 @@ registry=https://nexus.example.com/repository/npm-group/
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dependency-security`, `supply-chain`, `artifact-repository-port`, `third-party-risk`.
-- Fuentes: Nexus https://help.sonatype.com/en/repository-management.html (comprobar routing rules en Community); npm scopes https://docs.npmjs.com/cli/configuring-npm/npmrc (comprobar al fijar la versión, 2026-11-07).
+- Fuentes: Nexus https://help.sonatype.com/en/repository-management.html; npm scopes https://docs.npmjs.com/cli/configuring-npm/npmrc.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

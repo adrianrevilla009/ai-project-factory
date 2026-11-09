@@ -25,7 +25,7 @@ metadata:
 - **MUST NOT** depender del control plane de un único clúster para que el tráfico de la región superviviente siga funcionando (`static-stability-and-cell-architecture`).
 - **SHOULD** usar balanceo por localidad con `outlierDetection` para failover automático; medir el tráfico entre regiones (coste de transferencia, `finops-of-resilience`).
 - **SHOULD** limitar el alcance de endpoints visibles entre clústeres a los servicios que lo necesitan.
-- **SHOULD** valorar el modo ambient/sidecar según la versión adoptada (ambient es GA desde Istio 1.24; su multicluster multi-red es beta desde 1.29 y el multicluster alfa se introdujo en 1.27; comprobar en la página «Feature Status» de la versión adoptada).
+- **SHOULD** valorar el modo ambient/sidecar según la versión adoptada (ambient es GA desde Istio 1.24; su multicluster multi-red es beta desde 1.29 y el multicluster alfa se introdujo en 1.27).
 
 ## Por qué
 La documentación de Istio describe multi-primary como más disponible (un control plane caído limita el alcance de la caída) a cambio de coordinar la configuración, y primary-remote como más simple con dependencia centralizada. Cada clúster añadido amplía el dominio de fallo de una configuración errónea: el fallo correlacionado es el riesgo real.
@@ -52,7 +52,7 @@ spec:
       interval: 10s
       baseEjectionTime: 30s
 ```
-`outlierDetection` es necesario para que el failover por localidad se active (comprobar en docs de la versión adoptada).
+`outlierDetection` es necesario para que el failover por localidad se active.
 
 ## Checklist de revisión
 - [ ] Justificada la malla compartida frente a mallas por región.
@@ -70,4 +70,5 @@ spec:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-region-patterns`, `static-stability-and-cell-architecture`, `eks-multi-region-and-argo-cd-multicluster`, `dependency-mapping-and-blast-radius`.
 - Fuentes (verificado 2026-11-07): https://istio.io/latest/docs/ops/deployment/deployment-models/ . Estado de ambient (GA en 1.24) y de su multicluster (beta en 1.29): istio.io/latest/docs/releases/feature-stages/ y el blog de Istio de 2025-2026.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

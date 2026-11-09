@@ -75,5 +75,5 @@ El límite de iteraciones y la confirmación se implementan en el bucle del fram
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mcp-servers-in-java`, `prompt-injection-defense-for-agents`, `llm-security`, `human-in-the-loop` (pendiente), `token-and-cost-budgets` (pendiente).
-- Fuentes: Spring AI Reference, Tool Calling (docs.spring.io/spring-ai/reference/api/chatclient.html, 2026-11-07); LangChain4j AI Services (2026-11-07); OWASP Top 10 for LLM Applications (excessive agency) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring AI Reference, Tool Calling (docs.spring.io/spring-ai/reference/api/chatclient.html, 2026-11-07); LangChain4j AI Services (2026-11-07); OWASP Top 10 for LLM Applications (excessive agency).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

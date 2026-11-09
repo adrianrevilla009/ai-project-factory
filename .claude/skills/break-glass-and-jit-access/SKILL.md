@@ -70,5 +70,5 @@ resource "aws_cloudwatch_event_target" "page_oncall" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `identity-center-sso`, `scp-guardrails`, `org-cloudtrail-config-securityhub-guardduty`, `on-call-and-runbook-links`.
-- Fuentes: AWS IAM Best Practices y guía de emergency access de AWS (2026-11-07) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: AWS IAM Best Practices y guía de emergency access de AWS (2026-11-07).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** traspasar mediante un fichero en el repositorio, no mediante el historial de chat: el agente receptor arranca sin memoria.
 - **MUST** incluir en el artefacto: objetivo, decisiones tomadas, ficheros tocados, evidencias (comando y resultado), pendientes y riesgos.
-- **MUST** marcar en cada afirmación si está verificada o es suposición (`TODO-VERIFY`).
+- **MUST** marcar en cada afirmación si está «verificada» o es un «supuesto».
 - **MUST NOT** pegar secretos, datos personales ni salidas completas de logs en el traspaso.
 - **MUST NOT** dar por válido lo que dice el artefacto sin comprobarlo (ver `verify-before-asserting`).
 - **SHOULD** usar un formato fijo y corto (menos de 60 líneas) con rutas, no contenidos.
@@ -62,5 +62,6 @@ Fichero `docs/handoffs/2026-11-07-orders-backend-to-qa.md` (ruta ilustrativa; ca
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parallel-work-and-worktrees`, `verify-before-asserting`, `gate-protocol`, `cost-control`.
-- Fuentes: https://code.claude.com/docs/en/sub-agents (subagentes con contexto propio; comprobar detalles de paso de contexto), `.claude/README.md`.
+- Fuentes: https://code.claude.com/docs/en/sub-agents (subagentes con contexto propio), `.claude/README.md`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

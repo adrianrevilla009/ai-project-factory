@@ -60,6 +60,17 @@
 - **SHOULD** políticas de recurso que denieguen acceso público y tráfico sin TLS (`aws:SecureTransport`).
 - **SHOULD** validar con herramientas estáticas antes de aplicar (Checkov, `terraform validate`, Access Analyzer `validate-policy`).
 
+## codeql-sast
+
+- **MUST** decidir su uso en un ADR del proyecto antes de activarlo: el CLI de CodeQL es gratuito en repositorios públicos y para investigación y código abierto, pero para analizar código privado exige GitHub Code Security u otra licencia comercial (verificado el 2026-11-09 en la documentación de GitHub).
+- **MUST NOT** activarlo por defecto en un repositorio privado sin esa licencia: choca con D16 (sin licencias de pago por defecto).
+- **SHOULD** mantener Semgrep como SAST base y usar CodeQL como complemento: reglas propias rápidas y de patrón frente a análisis profundo y más lento.
+- **MUST** ejecutarlo en cada PR hacia la rama principal y de forma programada (por ejemplo, semanal) sobre la rama principal, para detectar vulnerabilidades nuevas en código antiguo.
+- **MUST** configurar la compilación para Java y Kotlin: el análisis de lenguajes compilados necesita observar el build (modo automático o un comando explícito de Maven sin tests).
+- **MUST** tratar cada alerta con un dueño y un plazo según `vulnerability-sla-and-incident-response`; descartar una alerta exige un motivo registrado, nunca solo cerrarla.
+- **SHOULD** empezar con el conjunto de consultas por defecto y ampliarlo cuando el ruido sea manejable.
+- **MUST** dar al job el permiso mínimo de subida de resultados y fijar la acción por SHA completo (`github-actions`).
+
 ## container-and-k8s-security
 
 - **MUST** ejecutar como no root (`runAsNonRoot: true`, UID numérico) con `allowPrivilegeEscalation: false`.
@@ -84,7 +95,7 @@
 - **MUST** usar mTLS entre servicios cuando la política de zero-trust lo requiera; en malla Istio, `PeerAuthentication` en modo `STRICT` (D-Istio).
 - **MUST** cifrar con claves gestionadas (KMS: AWS KMS, preparado para AWS no verificado en real); envelope encryption para datos grandes. En local se sustituye por una clave de prueba: KMS real no se reproduce.
 - **MUST** definir rotación para cada clave y certificado (automática donde sea posible), con soporte de versión de clave (`kid`) para descifrar con la anterior durante la transición.
-- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo, comprobar al fijar la versión).
+- **SHOULD** emitir certificados de vida corta y automatizar renovación (cert-manager u homólogo).
 - **SHOULD** tener plan de agilidad criptográfica (algoritmo y versión almacenados junto al dato).
 
 ## dependency-security
@@ -107,7 +118,7 @@
 - **MUST** deshabilitar DTD y entidades externas en todo parser XML (`disallow-doctype-decl`, `XMLConstants.ACCESS_EXTERNAL_DTD` vacío).
 - **MUST** validar destinos salientes (SSRF): solo `https`, host en allowlist, resolver DNS y rechazar IPs de loopback, link-local (`169.254.0.0/16`, incluye metadatos de instancia), privadas y reservadas.
 - **MUST NOT** seguir redirecciones automáticamente en llamadas con URL aportada por el usuario; revalidar cada salto o deshabilitarlas.
-- **MUST** normalizar rutas (`Path.normalize()` + `toRealPath()`) y comprobar `startsWith(baseDir)` antes de abrir ficheros.
+- **MUST** normalizar rutas (`Path.normalize` + `toRealPath`) y comprobar `startsWith(baseDir)` antes de abrir ficheros.
 - **SHOULD** forzar IMDSv2 y limitar el egress de red de la carga para que SSRF tenga poco alcance (preparado para AWS, no verificado en real; en local no se reproduce IMDS).
 - **SHOULD** aplicar `ObjectInputFilter` si la serialización nativa es inevitable en código heredado.
 
@@ -207,7 +218,7 @@
 - **MUST** limitar tamaño, frecuencia y paginación (`dos-and-rate-limiting`).
 - **MUST** mantener inventario de APIs y versiones expuestas; desactivar las obsoletas.
 - **MUST** validar toda URL aportada por el usuario antes de consumirla (`deserialization-xxe-ssrf-traversal`).
-- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones (comprobar ediciones actuales de ambos Top 10).
+- **SHOULD** revisar la lista vigente anualmente: las categorías cambian entre ediciones.
 
 ## pii-and-data-classification
 

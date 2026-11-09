@@ -58,7 +58,7 @@ paths:
             application/problem+json:
               example: { type: "about:blank", title: "Not Found", status: 404 }
 ```
-Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fuente: https://springdoc.org/, consultado 2026-11-07). Comprobar versión del starter compatible con la versión de Spring Boot elegida.
+Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fuente: https://springdoc.org/, consultado 2026-11-07).
 
 ## Checklist de revisión
 - [ ] El spec está versionado y el PR muestra su diff.
@@ -78,4 +78,5 @@ Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fue
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `asyncapi-event-contracts`, `api-versioning-deprecation`, `contract-testing`, `changelog-release-notes`.
 - Fuentes: https://springdoc.org/ (2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

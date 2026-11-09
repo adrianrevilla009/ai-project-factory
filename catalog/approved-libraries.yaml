@@ -1,6 +1,6 @@
 # Librerías aprobadas por categoría (puntos de partida; las VERSIONES las fija el BOM corporativo y se verifican en fuente oficial).
 version: 1
-status: "borrador; versiones comprobar al fijar la versión"
+status: "borrador; versiones"
 java:
   web: [spring-boot-starter-web]
   persistence: [spring-boot-starter-data-jpa, flyway-core, jooq]

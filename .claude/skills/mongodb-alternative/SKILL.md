@@ -21,7 +21,7 @@ metadata:
 - **MUST** revisar la licencia y el modelo de distribución antes de elegir edición o servicio gestionado; la fábrica evita licencias de pago por defecto (D16). MongoDB se distribuye bajo la SSPL, que la OSI no reconoce como licencia de código abierto y que obliga a quien ofrezca MongoDB como servicio a licenciarlo o liberar su código (verificado el 2026-11-08); un revisor legal debe validar el uso previsto.
 - **MUST** mantener las mismas reglas de oro: una fuente de verdad por agregado, sin doble escritura con Postgres, proyecciones derivadas.
 - **MUST NOT** usarlo como event store sin demostrar equivalente de append condicional por versión (índice único `(streamId, version)`).
-- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB; comprobar qué funciones soporta (comprobar al fijar la versión).
+- **SHOULD** tratar Amazon DocumentDB como producto distinto con API compatible, no como MongoDB.
 - **SHOULD** preferir el emulador/contenedor local para pruebas y declarar qué no se reproduce de la variante gestionada.
 
 ## Por qué
@@ -55,5 +55,6 @@ Si JSONB no basta (medido): ADR con comparación, fuente de verdad única (Mongo
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `datastore-selection-guide`, `polyglot-operations-cost`, `dynamodb-data-modeling`, `license-policy`.
-- Fuentes: documentación oficial de MongoDB y de Amazon DocumentDB — no consultadas en esta revisión (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de MongoDB y de Amazon DocumentDB — no consultadas en esta revisión.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3

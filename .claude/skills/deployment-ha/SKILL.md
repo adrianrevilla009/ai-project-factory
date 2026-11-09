@@ -49,7 +49,7 @@ storage "file" { path = "/vault/data" } # un nodo, sin HA
 ### Bien
 ```hcl
 ui = false
-disable_mlock = true   # en K8s sin IPC_LOCK; comprobar según la política del clúster
+disable_mlock = true   # en K8s sin IPC_LOCK
 
 listener "tcp" {
   address         = "0.0.0.0:8200"
@@ -90,6 +90,7 @@ cluster_addr = "https://vault-0.vault-internal:8201"
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `vault-and-keycloak-dr`, `transit-encryption`, `secrets-management`, `crypto-tls-mtls-key-rotation`; ADR-0010, ADR-0031.
-- Fuentes (consultadas 2026-11-07): https://developer.hashicorp.com/vault/docs/concepts/integrated-storage ; https://developer.hashicorp.com/vault/docs/configuration/seal/awskms. Comprobar tamaño de clúster recomendado y versión de Vault a fijar.
+- Fuentes (consultadas 2026-11-07): https://developer.hashicorp.com/vault/docs/concepts/integrated-storage; https://developer.hashicorp.com/vault/docs/configuration/seal/awskms.
 - Estado: diseño; preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -68,5 +68,5 @@ repo.findAll(Specification.where(hasStatus(status)).and(totalAbove(min)), pageab
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `projections-and-dtos`, `sql-injection-prevention`, `jdbc-and-jooq`, `indexing-and-query-plans`, `spring-data-rules`.
-- Fuentes: Spring Data JPA reference (query methods, Specifications) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Data JPA reference (query methods, Specifications).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

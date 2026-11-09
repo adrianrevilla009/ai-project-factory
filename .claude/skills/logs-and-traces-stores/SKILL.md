@@ -18,7 +18,7 @@ metadata:
 ## Reglas
 - **MUST** usar almacenamiento de objetos (S3 en AWS, MinIO en local) para chunks y bloques; el disco local solo para WAL/caché.
 - **MUST** habilitar retención de Loki en el compactor: `compactor.retention_enabled: true`, `compactor.delete_request_store` y `limits_config.retention_period`; sin `retention_enabled` el compactor solo compacta.
-- **MUST** usar periodo de índice de 24h (requisito de la retención) y esquema TSDB (versión de `schema` por confirmar: comprobar al fijar la versión).
+- **MUST** usar periodo de índice de 24h (requisito de la retención) y esquema TSDB (versión de `schema` por confirmar).
 - **MUST** mantener pocas etiquetas de Loki, de baja cardinalidad (`namespace`, `app`, `level`); IDs de usuario, de traza o de petición van en el cuerpo del log, no como etiqueta.
 - **MUST** fijar retención de bloques de trazas en Tempo (compactor) con un valor menor que el de logs.
 - **SHOULD** correlacionar logs y trazas con `trace_id` en el cuerpo (JSON) y derived fields en Grafana.
@@ -67,6 +67,7 @@ limits_config:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `logging-rules`, `cardinality-and-cost-governance`, `tempo-and-service-graphs`, `multi-tenant-observability`.
-- Fuentes oficiales: https://grafana.com/docs/loki/latest/operations/storage/retention/ (verificado 2026-11-07: claves del compactor, índice 24h, `retention_stream`). Config de retención de Tempo (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: https://grafana.com/docs/loki/latest/operations/storage/retention/ (verificado 2026-11-07: claves del compactor, índice 24h, `retention_stream`). Config de retención de Tempo.
 - Preparado para AWS, no verificado en real. En local MinIO sustituye a S3: no se reproducen políticas de bucket, KMS ni lifecycle de S3.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

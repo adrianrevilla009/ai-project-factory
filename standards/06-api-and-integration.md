@@ -7,7 +7,7 @@
 - **MUST** usar versión mayor en la ruta para APIs REST (`/v1/orders`); minor/patch solo en `info.version` del contrato.
 - **MUST** preferir evolución compatible dentro de la misma versión mayor; una versión nueva solo para cambios rompientes inevitables.
 - **MUST** mantener como máximo dos versiones mayores vivas por API.
-- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses, comprobar con negocio) y marcar `deprecated: true` en OpenAPI.
+- **MUST** anunciar la deprecación con antelación mínima acordada (por defecto 6 meses) y marcar `deprecated: true` en OpenAPI.
 - **MUST** emitir cabeceras `Deprecation` (RFC 9745) y `Sunset` (RFC 8594) en respuestas de recursos deprecados, con enlace `Link: rel="deprecation"` a la guía de migración.
 - **MUST** medir el uso por versión y consumidor (métrica con etiqueta `api_version`) antes de retirar.
 - **MUST NOT** retirar una versión con tráfico de consumidores conocidos sin acuerdo explícito.
@@ -206,7 +206,7 @@
 - **MUST NOT** editar a mano el código generado; las personalizaciones van en plantillas, `.openapi-generator-ignore` o envoltorios propios.
 - **MUST** publicar el SDK como artefacto separado (módulo Maven / paquete npm) con SemVer alineado al contrato: cambio incompatible = major.
 - **MUST** regenerar en CI y fallar si el código generado versionado difiere de la salida (no hay deriva); preferible no versionar el código generado y construirlo en build.
-- **MUST** que el generador Java no introduzca Lombok (D27): comprobar opciones y dependencias resultantes.
+- **MUST** que el generador Java no introduzca Lombok (D27).
 - **MUST** timeouts, reintentos solo idempotentes y propagación de `traceparent` configurables en el cliente.
 - **SHOULD** mantener los tests de contrato (`contract-testing-pact`) contra el SDK generado.
 - **SHOULD** registrar credenciales fuera del SDK; el SDK recibe un proveedor de token, no secretos embebidos.

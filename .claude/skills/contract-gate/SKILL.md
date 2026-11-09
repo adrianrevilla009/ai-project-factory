@@ -44,7 +44,7 @@ Los tests de contrato solo previenen roturas si se consulta la matriz de compati
     pact-broker record-deployment --pacticipant orders
     --version "$GITHUB_SHA" --environment staging
 ```
-Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); `--retry-*` comprobar al fijar la versión. Variables `PACT_BROKER_BASE_URL`/token vía secret del entorno, nunca en claro.
+Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); `--retry-*`. Variables `PACT_BROKER_BASE_URL`/token vía secret del entorno, nunca en claro.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -76,4 +76,5 @@ Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `contract-testing-pact`, `pipeline-architecture`, `backward-compatibility-rules`, `environment-promotion`.
 - Fuentes: https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); ADR-0019.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -66,5 +66,5 @@ public final class CancelOrder {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `layering-rules-archunit`, `solid`, `ddd-tactical`.
-- Fuentes: Robert C. Martin, "The Clean Architecture" (blog.cleancoder.com, 2012) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Robert C. Martin, "The Clean Architecture" (blog.cleancoder.com, 2012).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -70,5 +70,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `local-profiles`, `resource-budgets`, `dev-loop`, `cluster-tooling`.
-- Fuentes: documentación de Kubernetes sobre Jobs (comprobar URL y campos vigentes).
+- Fuentes: documentación de Kubernetes sobre Jobs.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

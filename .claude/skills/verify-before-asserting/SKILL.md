@@ -1,6 +1,6 @@
 ---
 name: verify-before-asserting
-description: Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar comprobar al fijar la versión.
+description: Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o a declarar que no se pudo comprobar.
 metadata:
   block: "31-agentic-engineering"
   tier: T1
@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** contrastar versiones y APIs con documentación oficial vigente; citar URL y fecha.
-- **MUST** marcar `TODO-VERIFY` lo que no pueda comprobarse.
+- **MUST** declarar como «no comprobado», con el motivo, lo que no pueda comprobarse; nunca presentarlo como hecho.
 - **MUST** ejecutar el test/comando antes de decir que pasa; informar del resultado real, incluidos fallos.
 - **MUST NOT** afirmar que algo funciona en AWS real ("listo para producción en AWS", "probado en AWS", "production-ready on AWS"). Fórmula correcta: "preparado para AWS, no verificado en real".
 - **MUST** tratar normativa y legal como borrador por confirmar, con fuente oficial y fecha de verificación.
@@ -37,7 +37,7 @@ Sin despliegue real (D4), Terraform puede validar y fallar al aplicar. La honest
 ```
 
 ## Checklist de revisión
-- [ ] Cada versión/flag tiene fuente o `TODO-VERIFY`.
+- [ ] Cada versión o flag tiene fuente, o está declarado «no comprobado».
 - [ ] Ninguna frase prohibida sobre AWS.
 - [ ] Resultados de tests citados desde ejecución real.
 
@@ -50,4 +50,5 @@ Sin despliegue real (D4), Terraform puede validar y fallar al aplicar. La honest
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `honest-claims-policy`, `maturity-labels`, `gate-protocol`.
 - Fuentes: brief §4.6.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1

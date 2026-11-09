@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** que el devcontainer incluya el tooling del bucle local: Docker (docker-in-docker o socket del host), kind, kubectl, Helm, Kustomize y Tilt o Skaffold según `dev-loop`.
-- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`. Comprobar las features y versiones vigentes en https://containers.dev/features.
+- **MUST** fijar versiones de las herramientas (feature o descarga con checksum); no usar `latest`.
 - **MUST** que `make local-up` funcione dentro del devcontainer sin pasos manuales previos.
 - **MUST** documentar el requisito de recursos del contenedor (ver `resource-budgets`); docker-in-docker anida un segundo nivel de consumo.
 - **SHOULD** preferir el socket del host cuando el equipo acepta compartir el daemon; documentar el compromiso de aislamiento.
@@ -68,4 +68,5 @@ Las features y su opción `minikube: none` se comprueban al fijar la versión; k
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cluster-tooling`, `dev-loop`, `resource-budgets`, `local-profiles`.
 - Fuentes: especificación Dev Containers (https://containers.dev, 2026-11-07, sin verificar detalle).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -20,7 +20,7 @@ Skill de diseño: la fábrica nunca despliega (ADR-0004). Madurez: definido / va
 ## Reglas
 - **MUST** definir un conjunto mínimo de tags: `project`, `environment`, `owner`, `cost-center`, `data-classification`.
 - **MUST** aplicarlos con `default_tags` del provider, no recurso a recurso.
-- **MUST** activar los tags como cost allocation tags en la cuenta de facturación (la activación no es retroactiva, comprobar al fijar la versión).
+- **MUST** activar los tags como cost allocation tags en la cuenta de facturación (la activación no es retroactiva).
 - **MUST** crear un AWS Budget por cuenta con avisos al 50/80/100 % y al previsto, con destinatario real (alias de grupo).
 - **SHOULD** usar un tag policy de Organizations para fijar claves y valores permitidos.
 - **SHOULD** añadir detección de anomalías de coste.
@@ -82,5 +82,6 @@ resource "aws_budgets_budget" "monthly" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `control-tower-and-account-factory`, `compliance-as-code`, `cost-visibility`.
-- Fuentes: AWS Billing and Cost Management, Budgets y Tagging (2026-11-07) — comprobar URLs; Terraform AWS provider `default_tags`.
+- Fuentes: AWS Billing and Cost Management, Budgets y Tagging (2026-11-07); Terraform AWS provider `default_tags`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

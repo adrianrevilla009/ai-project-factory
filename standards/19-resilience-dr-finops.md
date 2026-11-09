@@ -31,7 +31,7 @@
 - **MUST** basar los números en telemetría real o en supuestos marcados como tales; nunca en intuición sin etiqueta.
 - **MUST** calcular el headroom para el peor caso de fallo soportado: si una AZ cae, las restantes absorben su carga (con 3 AZ cada una dimensionada para 50% del pico, no 33%).
 - **MUST** modelar el failover regional: la región superviviente recibe el 100%; si no es capaz, el diseño es un pilot light con degradación explícita (`load-shedding-and-degradation`).
-- **MUST** identificar el recurso limitante (CPU, conexiones de BD, IOPS, cuotas de servicio) y la cuota de AWS que se alcanzaría (comprobar cuotas).
+- **MUST** identificar el recurso limitante (CPU, conexiones de BD, IOPS, cuotas de servicio) y la cuota de AWS que se alcanzaría.
 - **SHOULD** aplicar la ley de Little (concurrencia = tasa x latencia) para dimensionar pools y hilos (`connection-pooling`, `threads-executors-and-pools`).
 - **SHOULD** probar carga en entorno aislado con perfil realista (rampa, pico, soak) y criterios de aceptación ligados al SLO.
 - **MUST NOT** autoescalar sin límites máximos ni sin considerar las dependencias duras que no escalan (BD).
@@ -64,7 +64,7 @@
 
 - **MUST** en event sourcing con Global Tables fijar **una región de escritura por agregado/tenant**. En modo MREC los conflictos se resuelven por "last writer wins" y las condiciones evalúan contra la versión local, así que el control de concurrencia por versión solo protege dentro de una región.
 - **MUST NOT** escribir el mismo agregado en ambas regiones a la vez en MREC.
-- **SHOULD** valorar MRSC (consistencia fuerte multi-región, RPO cero) solo si el caso lo exige: exactamente 3 regiones (o 2 + testigo), sin TTL ni transacciones, mayor latencia de escritura. Comprobar disponibilidad con eu-west-1 y eu-central-1 en uso real.
+- **SHOULD** valorar MRSC (consistencia fuerte multi-región, RPO cero) solo si el caso lo exige: exactamente 3 regiones (o 2 + testigo), sin TTL ni transacciones, mayor latencia de escritura.
 - **MUST NOT** hacer doble escritura Postgres + NoSQL para "replicar" (4.5): cada agregado tiene una única fuente de verdad.
 - **MUST** monitorizar el retraso (ReplicationLatency en MREC, AuroraGlobalDBRPOLag) y alertar frente al RPO del tier.
 - **MUST** que los backups con Vault Lock cubran también corrupción lógica, que la replicación propaga.
@@ -78,7 +78,7 @@
 - **MUST** estimar el radio de impacto como conjunto de servicios, usuarios y tenants afectados por el fallo de cada dependencia.
 - **SHOULD** contrastar el mapa declarado con la telemetría real (trazas, service graph de Tempo) y registrar las diferencias.
 - **SHOULD** revisar el mapa en cada cambio de arquitectura y tras cada postmortem.
-- **MUST NOT** asumir que una dependencia "regional" de un tercero es independiente de la propia región sin comprobarlo (comprobar por proveedor).
+- **MUST NOT** asumir que una dependencia "regional" de un tercero es independiente de la propia región sin comprobarlo.
 
 ## eks-multi-region-and-argo-cd-multicluster
 
@@ -90,7 +90,7 @@
 - **MUST NOT** alojar el único Argo CD en la región que puede fallar; el plano GitOps debe poder reconciliar la región superviviente.
 - **MUST NOT** replicar estado de aplicación mediante Argo CD; el estado sigue la matriz de `data-replication-matrix`.
 - **SHOULD** desplegar por oleadas (región canaria primero) con `sync-wave`/progressive sync; ver `change-and-release-management`.
-- **SHOULD** mantener imágenes en un registro accesible desde ambas regiones (Harbor/ECR con réplica; comprobar réplica ECR).
+- **SHOULD** mantener imágenes en un registro accesible desde ambas regiones (Harbor/ECR con réplica).
 
 ## failover-and-failback-runbooks
 
@@ -98,7 +98,7 @@
 - **MUST** usar solo acciones de plano de datos para conmutar (ARC routing controls, promoción de BD ya aprovisionada) y **MUST NOT** depender de crear recursos nuevos en la región caída.
 - **MUST** respetar este orden:
   1. Declarar el desastre y congelar despliegues; frenar escrituras en la primaria si es alcanzable.
-  2. Comprobar el lag y elegir la secundaria.
+  2.
   3. **Promover Aurora Global (failover con pérdida de datos aceptada) y verificar que hay escritor.**
   4. **Solo después**, activar el motor de BD de Vault de la secundaria (rol dinámico) y rotar credenciales.
   5. Escalar EKS/Argo CD de la secundaria a capacidad plena.
@@ -123,7 +123,7 @@
 
 ## finops
 
-- **MUST** definir una política de etiquetas obligatorias (`service`, `env`, `owner`, `cost-center`, `tier`) aplicada por Terraform (`default_tags`) y activarlas como etiquetas de asignación de costes (comprobar activación).
+- **MUST** definir una política de etiquetas obligatorias (`service`, `env`, `owner`, `cost-center`, `tier`) aplicada por Terraform (`default_tags`) y activarlas como etiquetas de asignación de costes.
 - **MUST** declarar presupuestos como código (AWS Budgets) por entorno/servicio con umbrales de aviso (p. ej. 50/80/100% real y 100% previsto) y destinatario.
 - **MUST** declarar monitores y suscripciones de Cost Anomaly Detection; las alertas pueden ir a email o a un tema SNS. La detección no es inmediata: usa datos de Cost Explorer con hasta 24 h de retraso.
 - **MUST** medir un coste unitario por negocio (coste por pedido, por tenant, por 1000 peticiones) y seguirlo como métrica junto al SLO.
@@ -166,7 +166,7 @@
 - **MUST NOT** depender del control plane de un único clúster para que el tráfico de la región superviviente siga funcionando (`static-stability-and-cell-architecture`).
 - **SHOULD** usar balanceo por localidad con `outlierDetection` para failover automático; medir el tráfico entre regiones (coste de transferencia, `finops-of-resilience`).
 - **SHOULD** limitar el alcance de endpoints visibles entre clústeres a los servicios que lo necesitan.
-- **SHOULD** valorar el modo ambient/sidecar según la versión adoptada (ambient es GA desde Istio 1.24; su multicluster multi-red es beta desde 1.29 y el multicluster alfa se introdujo en 1.27; comprobar en la página «Feature Status» de la versión adoptada).
+- **SHOULD** valorar el modo ambient/sidecar según la versión adoptada (ambient es GA desde Istio 1.24; su multicluster multi-red es beta desde 1.29 y el multicluster alfa se introdujo en 1.27).
 
 ## load-shedding-and-degradation
 
@@ -206,7 +206,7 @@
 
 - **MUST** expresar la política de resiliencia de cada tier (RTO/RPO por fallo de aplicación, infraestructura, AZ y región) en un fichero versionado del proyecto, coherente con `tier-model-and-rpo-rto`.
 - **MUST** tratar el resultado como estimación basada en configuración, no como medición; **MUST NOT** usarla para afirmar que un RTO "está probado".
-- **SHOULD** definir la aplicación por pila Terraform/tags para que el inventario sea reproducible. Comprobar orígenes de recursos soportados.
+- **SHOULD** definir la aplicación por pila Terraform/tags para que el inventario sea reproducible.
 - **SHOULD** convertir cada recomendación en issue con prioridad y dueño, o en riesgo aceptado documentado.
 - **SHOULD** repetir la evaluación tras cambios relevantes y antes de cada revisión anual de tier.
 - **MUST** validar que el coste de las recomendaciones cabe en el presupuesto (`finops-of-resilience`).

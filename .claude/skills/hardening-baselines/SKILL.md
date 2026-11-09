@@ -43,7 +43,7 @@ benchmark: "CIS Kubernetes Benchmark"
 version: "<fijar en el BOM>"
 profile: level-1
 as_code: terraform/modules/node-baseline
-scan: kubescape scan framework cis   # comprobar nombre del framework en la versión instalada
+scan: kubescape scan framework cis
 deviations:
   - control: "1.2.x"                  # ejemplo ilustrativo
     reason: "requerido por el agente de observabilidad"
@@ -56,7 +56,7 @@ COPY app.jar /app.jar
 USER nonroot
 ENTRYPOINT ["java","-jar","/app.jar"]
 ```
-Etiqueta de imagen: comprobar al fijar la versión; fijar por digest en el proyecto real.
+Etiqueta de imagen; fijar por digest en el proyecto real.
 
 ## Checklist de revisión
 - [ ] Benchmark, versión y perfil registrados.
@@ -74,6 +74,7 @@ Etiqueta de imagen: comprobar al fijar la versión; fijar por digest en el proye
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `container-images`, `container-and-k8s-security`, `workload-baseline`, `cspm-and-posture`, `pod-security-and-admission`.
-- Fuentes: CIS Benchmarks, https://www.cisecurity.org/cis-benchmarks (comprobar no consultado, versiones y licencia de uso); Kubescape https://github.com/kubescape/kubescape (verificado 2026-11-07).
+- Fuentes: CIS Benchmarks, https://www.cisecurity.org/cis-benchmarks; Kubescape https://github.com/kubescape/kubescape (verificado 2026-11-07).
 - Cloud: preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

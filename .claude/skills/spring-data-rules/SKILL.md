@@ -88,5 +88,6 @@ spring:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `n-plus-one`, `mapping-mapstruct`, `pagination-filter-sort`, `http-clients-and-timeouts`.
-- Fuentes oficiales: Spring Data JPA Reference y Spring Framework "Transaction Management", consultadas 2026-11-07; comprobar propiedades de paginación en la versión vigente.
+- Fuentes oficiales: Spring Data JPA Reference y Spring Framework "Transaction Management", consultadas 2026-11-07.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

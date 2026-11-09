@@ -2,7 +2,7 @@
 
 > Generado por `factory/tools/build_index.py`. No editar a mano.
 
-Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
+Skills: **490** de 490 previstos en `catalog/skills-inventory.yaml`.
 
 ## 01-java-language (T1) — 14/14
 
@@ -139,13 +139,14 @@ Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `soap-legacy-integration` (T1) — Usar al consumir o exponer servicios SOAP/WSDL de sistemas heredados: contrato WSDL, XXE, timeouts y capa anticorrupción.
 - `webhooks` (T1) — Usar al emitir o recibir webhooks: firma HMAC, anti-replay, reintentos, idempotencia y protección SSRF.
 
-## 07-appsec (T1) — 26/26
+## 07-appsec (T1) — 27/27
 
 - `asvs-mapping` (T1) — Usar al fijar el nivel OWASP ASVS de un servicio y trazar requisitos de seguridad a código y tests; para backlog de seguridad y revisiones de diseño.
 - `audit-trail-and-security-logging` (T1) — Usar al decidir qué eventos de seguridad y auditoría registrar, con qué campos, y cómo protegerlos de manipulación y de fugas de datos.
 - `authn-oidc-oauth2` (T1) — Usar al integrar autenticación con Keycloak/OIDC y OAuth2 en Spring Boot y React: flujos, PKCE, validación de tokens, resource server y logout.
 - `authz-rbac-abac-rebac` (T1) — Usar al diseñar o revisar autorización: elegir RBAC, ABAC o ReBAC, aislamiento por tenant, denegar por defecto y evitar IDOR/BOLA en servicios Spring Boot.
 - `cloud-iam-least-privilege` (T1) — Usar al escribir políticas IAM, roles de servicio o permisos de AWS (Terraform o consola) para aplicar mínimo privilegio y evitar comodines.
+- `codeql-sast` (T2) — Usar al decidir si añadir CodeQL como segunda capa de SAST junto a Semgrep, y al configurarlo en CI con su licencia, compilación y triaje de alertas.
 - `container-and-k8s-security` (T1) — Usar al escribir Dockerfile o manifiestos Kubernetes/Helm para endurecer imágenes, pods, red y RBAC del clúster.
 - `crypto-tls-mtls-key-rotation` (T1) — Usar al cifrar o firmar datos, hashear contraseñas, configurar TLS/mTLS o diseñar la rotación de claves y certificados.
 - `dependency-security` (T1) — Usar al añadir, actualizar o auditar dependencias Maven/npm y al gestionar CVE conocidos en bibliotecas de terceros.
@@ -168,7 +169,7 @@ Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `vulnerability-sla-and-incident-response` (T1) — Usar al triar vulnerabilidades, fijar plazos de corrección (SLA) o responder a un incidente de seguridad con contención, comunicación y post-mortem.
 - `zero-trust` (T1) — Usar al diseñar la arquitectura de red e identidad de servicios: no confiar en la red interna, identidad por carga de trabajo, mTLS con Istio y mínimo privilegio.
 
-## 08-testing-quality (T1) — 22/22
+## 08-testing-quality (T1) — 24/24
 
 - `api-testing` (T1) — Usar al probar endpoints REST de un servicio Spring: estado, cuerpo, Problem Details, validación, seguridad y paginación, con MockMvc o RestAssured.
 - `architecture-testing-archunit` (T1) — Usar al convertir reglas de arquitectura (capas, dependencias, ciclos, nombres) en tests ArchUnit ejecutados en cada build.
@@ -180,12 +181,14 @@ Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `coverage-policy` (T1) — Usar al definir o revisar umbrales de cobertura (JaCoCo), exclusiones y cómo interpretar la cobertura en CI sin convertirla en objetivo vacío.
 - `e2e-testing` (T1) — Usar al diseñar o escribir tests end-to-end de flujos críticos (UI y API encadenada) y decidir qué NO debe cubrirse a ese nivel.
 - `flaky-test-management` (T1) — Usar cuando un test falla de forma intermitente, al diagnosticar tests inestables o antes de poner reintentos, @Disabled o quarantine.
+- `gatling-load-testing` (T2) — Usar al elegir Gatling como alternativa a JMeter para pruebas de carga como código, y al escribir simulaciones con modelo abierto y criterios derivados del SLO.
 - `integration-testing-testcontainers` (T1) — Usar al escribir tests de integración que necesitan PostgreSQL, Kafka, Redis u otro servicio real, con Testcontainers y Spring Boot.
 - `localstack-aws` (T1) — Usar al probar código que usa S3, SQS, SNS, DynamoDB u otros servicios AWS con LocalStack en local o CI, y para saber qué NO reproduce.
 - `mutation-testing` (T1) — Usar al medir la calidad real de los tests unitarios con PIT (pitest) en módulos Java de lógica de dominio y definir umbrales.
 - `performance-testing` (T1) — Usar al planificar o ejecutar pruebas de rendimiento con JMeter: baseline, carga, soak y spike, con criterios de aceptación y entorno comparable.
 - `property-based-testing` (T1) — Usar al testear invariantes, parsers, serialización o reglas con muchos casos límite con jqwik (propiedades y generadores) en vez de ejemplos fijos.
 - `resilience-testing` (T1) — Usar al escribir tests automáticos que comprueban timeouts, retries, circuit breaker, bulkheads y degradación ante fallos de dependencias.
+- `sonarqube-quality-gate` (T2) — Usar al plantear SonarQube como análisis de calidad en CI, conociendo los límites de la edición gratuita, y al definir su puerta de calidad sobre código nuevo.
 - `static-analysis` (T1) — Usar al configurar o revisar el análisis estático en Maven (Checkstyle, PMD, SpotBugs, Error Prone) y los quality gates que bloquean el build.
 - `tdd` (T1) — Usar al implementar lógica de dominio o corregir un bug: ciclo rojo-verde-refactor con tests primero y pasos pequeños.
 - `test-data-management` (T1) — Usar al crear datos de prueba: builders, fixtures, datasets de integración, anonimización de datos reales y limpieza entre tests.
@@ -582,4 +585,4 @@ Skills: **487** de 487 previstos en `catalog/skills-inventory.yaml`.
 - `prompt-injection-defense-for-agents` (T1) — Usar cuando un agente lee webs, ficheros, resultados de herramientas o MCP no confiables, o al revisar permisos de agentes expuestos a contenido externo.
 - `skill-authoring-guide` (T1) — Usar al crear o revisar un skill de la fábrica; define anatomía obligatoria, niveles T1/T2/T3 y reglas de enforcement.
 - `subagent-design` (T1) — Usar al crear o revisar un subagente en .claude/agents/ o al decidir si delegar una tarea: alcance, herramientas mínimas, modelo y contrato de salida.
-- `verify-before-asserting` (T1) — Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o marcar comprobar al fijar la versión.
+- `verify-before-asserting` (T1) — Usar antes de afirmar versiones, comportamiento de herramientas, normativa o que algo funciona; obliga a verificar o a declarar que no se pudo comprobar.

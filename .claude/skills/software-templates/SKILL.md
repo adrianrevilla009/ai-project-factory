@@ -83,7 +83,7 @@ spec:
       - title: Repositorio
         url: '${{ steps.publish.output.remoteUrl }}'
 ```
-Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acción concreta (`publish:github`, `publish:gitlab`...) depende del SCM. Comprobar ids de acción `catalog:register` y `publish:*` en la versión instalada.
+Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acción concreta (`publish:github`, `publish:gitlab`.) depende del SCM.
 
 ## Checklist de revisión
 - [ ] La plantilla genera catalog-info, CI, Dockerfile, docs y seguridad.
@@ -102,4 +102,5 @@ Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acció
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backstage`, `golden-paths-governance`, `docker-multistage`, `sbom`.
 - Fuentes (verificado 2026-11-07): https://backstage.io/docs/features/software-templates/writing-templates (apiVersion `scaffolder.backstage.io/v1beta3`, steps con id/name/action/input, `fetch:template`, `publish:github`, `OwnerPicker`).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

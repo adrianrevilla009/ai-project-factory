@@ -88,5 +88,5 @@ class Invoice {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `id-generation`, `lazy-vs-eager`, `optimistic-locking`, `equals-hashcode-tostring`, `ddd-tactical`.
-- Fuentes: Jakarta Persistence y guía de usuario de Hibernate ORM (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Jakarta Persistence y guía de usuario de Hibernate ORM.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

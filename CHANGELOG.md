@@ -2,6 +2,20 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versionado SemVer.
 
+## [0.4.0] - 2026-11-09
+### Añadido
+- MCP: `catalog/mcp-servers.yaml` (11 servidores revisados, validado por `make validate`) y `docs/architecture/mcp.md`.
+- Hooks `UserPromptSubmit` (secretos en prompts), `SubagentStop` (evidencia), `PreCompact` (estado) y `SessionEnd` (auditoría): 19 hooks en total.
+- `knowledge/`: catálogo de patrones, de antipatrones e índice de decisiones, con enlaces validados.
+- `docs/onboarding.md` y `docs/architecture/overview.md`.
+- Skills `codeql-sast`, `sonarqube-quality-gate` y `gatling-load-testing` (490 en total).
+- Sección «Criterios de decisión y trampas» en las 67 skills de QA, frontend, CI/CD y GitOps.
+- Validadores de referencias cruzadas entre skills y de enlaces de `knowledge/`; `policies/iac-checks/` como especificación de los checks pendientes.
+### Cambiado
+- La convención `TODO-VERIFY` desaparece: lo que no se puede comprobar se declara «no comprobado». Eliminadas las frases «comprobar…» de las skills; los datos de herramientas de terceros se fijan en el BOM de cada proyecto.
+- El bootstrap copia también agentes y comandos al proyecto generado.
+- Ejemplos de Docker Compose sustituidos por el clúster kind (ADR-0005).
+
 ## [0.3.0] - 2026-11-08
 ### Añadido
 - `make policy-test`: 46 reglas Semgrep validadas y probadas con casos positivos y negativos (`tests/semgrep/`).

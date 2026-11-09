@@ -9,7 +9,7 @@ Una vista de conjunto: qué es cada pieza, cómo se conectan y por qué una regl
 ## Piezas y para qué sirve cada una
 | Pieza | Dónde | Papel |
 |---|---|---|
-| Skills | `.claude/skills/` | La norma: cuándo aplicar, reglas (MUST/SHOULD), por qué, ejemplos, checklist y cómo se hace cumplir. 487 en 31 bloques |
+| Skills | `.claude/skills/` | La norma: cuándo aplicar, reglas (MUST/SHOULD), por qué, ejemplos, checklist y cómo se hace cumplir. 490 en 31 bloques |
 | Agentes | `.claude/agents/` | Roles con herramientas limitadas: negocio, entrega, ingeniería, calidad y gobierno |
 | Comandos | `.claude/commands/` | El flujo por fases, de la entrevista inicial al cierre |
 | Hooks | `.claude/hooks/` | Código determinista que bloquea lo inseguro o fuera de proceso. Es lo que no depende de que el modelo «se acuerde» |

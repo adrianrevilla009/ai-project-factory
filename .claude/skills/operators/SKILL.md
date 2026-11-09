@@ -40,7 +40,7 @@ spec: { instances: 1 }   # sin backup, sin resources, sin spread
 ```
 ### Bien
 ```yaml
-# comprobar campos segun la version de CloudNativePG instalada
+
 apiVersion: postgresql.cnpg.io/v1
 kind: Cluster
 metadata: { name: orders-db, namespace: shop-orders-prod }
@@ -74,5 +74,6 @@ Policy automática de réplicas mínimas: pendiente.
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `backup-and-restore`, `workload-baseline`, `cluster-upgrades-and-drift`, `db-testing`.
-- Fuentes: documentación de CloudNativePG y Strimzi (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de CloudNativePG y Strimzi.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

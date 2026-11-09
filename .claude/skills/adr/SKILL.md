@@ -72,5 +72,5 @@ B acopla disponibilidad; C añade dependencia no cubierta por la matriz local.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rfc-process`, `c4-and-arc42`, `library-selection-and-tech-radar-process`, `architecture-testing-archunit`.
-- Fuentes: https://adr.github.io/madr/ (2026-11-07); Michael Nygard, "Documenting Architecture Decisions" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: https://adr.github.io/madr/ (2026-11-07); Michael Nygard, "Documenting Architecture Decisions".
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

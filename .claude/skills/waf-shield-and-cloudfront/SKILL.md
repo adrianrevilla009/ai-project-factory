@@ -22,7 +22,7 @@ Madurez: definido / validado estáticamente. Preparado para AWS, no verificado e
 - **MUST** asociar un `aws_wafv2_web_acl`: scope `CLOUDFRONT` (se crea en us-east-1) o `REGIONAL` (misma región que el ALB).
 - **MUST** incluir grupos gestionados básicos (p. ej. `AWSManagedRulesCommonRuleSet`) y una regla de tasa; desplegar reglas nuevas primero en modo `count` y pasar a `block` tras revisar logs.
 - **MUST** activar logging del WAF hacia el archivo de logs (ver `flow-logs-and-network-observability`) con redacción de cabeceras sensibles.
-- **MUST** impedir el acceso directo al origen: el SG del ALB solo admite la prefix list gestionada de CloudFront y se exige una cabecera secreta rotada, o se usa VPC origin si está disponible (comprobar al fijar la versión).
+- **MUST** impedir el acceso directo al origen: el SG del ALB solo admite la prefix list gestionada de CloudFront y se exige una cabecera secreta rotada, o se usa VPC origin si está disponible.
 - **MUST** usar Origin Access Control (OAC) para orígenes S3, con el bucket privado.
 - **MUST NOT** depender del WAF como única defensa: validación de entrada y authz siguen en la aplicación.
 - **SHOULD** usar Shield Standard (incluido); Shield Advanced es de pago y solo se adopta con decisión explícita (D16).
@@ -105,5 +105,6 @@ resource "aws_wafv2_web_acl" "edge" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `alb-nlb-and-tls-termination`, `dos-and-rate-limiting`, `security-headers-cors-csrf`, `owasp-top10-and-api-top10`.
-- Fuentes: documentación oficial de AWS WAF, AWS Shield y CloudFront (origin access control, prefix list gestionada) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de AWS WAF, AWS Shield y CloudFront (origin access control, prefix list gestionada).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

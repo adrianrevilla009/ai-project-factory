@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** revisar la lista de servidores en cada `skill-review` y retirar los que no se usen.
 
 ## Por qué
-Un servidor MCP amplía la superficie de ataque: ejecuta código con los permisos del usuario y devuelve texto que el modelo obedece. Un permiso amplio convierte una inyección en una acción real. Alcances (verificado 2026-11-07, https://code.claude.com/docs/en/mcp): `local` y `user` viven en `~/.claude.json`; `project` vive en `.mcp.json` y pide aprobación en sesiones interactivas, pero en `claude -p` carga sin preguntar, así que en CI la revisión de PR es el único control. En remoto, las variables de credenciales de proveedores se leen vacías; hay que copiarlas a un nombre propio. Las listas administradas (`allowedMcpServers`, `deniedMcpServers`) son para organizaciones; esta fábrica no las despliega: comprobar su ubicación exacta en settings.
+Un servidor MCP amplía la superficie de ataque: ejecuta código con los permisos del usuario y devuelve texto que el modelo obedece. Un permiso amplio convierte una inyección en una acción real. Alcances (verificado 2026-11-07, https://code.claude.com/docs/en/mcp): `local` y `user` viven en `~/.claude.json`; `project` vive en `.mcp.json` y pide aprobación en sesiones interactivas, pero en `claude -p` carga sin preguntar, así que en CI la revisión de PR es el único control. En remoto, las variables de credenciales de proveedores se leen vacías; hay que copiarlas a un nombre propio. Las listas administradas (`allowedMcpServers`, `deniedMcpServers`) son para organizaciones; esta fábrica no las despliega.
 
 ## Ejemplos
 ### Mal
@@ -83,4 +83,5 @@ Un servidor MCP amplía la superficie de ataque: ejecuta código con los permiso
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `prompt-injection-defense-for-agents`, `agent-evals`, `cost-control`, `secrets-management`.
 - Fuentes: https://code.claude.com/docs/en/mcp (consultada 2026-11-07); `docs/architecture/claude-code-formats.md`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

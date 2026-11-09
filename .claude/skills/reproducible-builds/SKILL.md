@@ -22,7 +22,7 @@ metadata:
 - **MUST NOT** incrustar fecha/hora actual, hostname o usuario en el artefacto (`${maven.build.timestamp}` en recursos filtrados, `git.build.time` sin normalizar).
 - **MUST NOT** usar rangos de versión, `LATEST` ni dependencias SNAPSHOT en release (ver `versioning-semver-snapshots`).
 - **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `artifact:compare`, que figura en la página del plugin; verificado el 2026-11-08).
-- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas; comprobar con `SOURCE_DATE_EPOCH`/opciones del builder (ver `container-images`, comprobar según herramienta).
+- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas.
 - **MUST** conservar la salida de la verificación como evidencia, sin afirmar nada sobre despliegues reales.
 
 ## Por qué
@@ -41,7 +41,7 @@ build.time=${maven.build.timestamp}
 </properties>
 ```
 ```text
-# verificación (lectura/compilación local, comprobar parámetros)
+# verificación (lectura/compilación local)
 ./mvnw -B clean verify
 ./mvnw -B artifact:compare
 ```
@@ -63,5 +63,6 @@ En release, `outputTimestamp` se fija al timestamp del commit de la etiqueta.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `maven-wrapper-and-toolchains`, `versioning-semver-snapshots`, `sbom-generation`, `container-images`.
-- Fuentes: Apache Maven, "Configuring for Reproducible Builds" y reproducible-builds.org (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Apache Maven, "Configuring for Reproducible Builds" y reproducible-builds.org.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

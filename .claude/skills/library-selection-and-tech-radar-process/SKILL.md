@@ -16,7 +16,7 @@ metadata:
 - No aplica a actualizar versiones de dependencias ya aprobadas (ver `dependency-hygiene`, `bom-management`).
 
 ## Reglas
-- **MUST** comprobar primero si el stack ya aprobado cubre la necesidad (Java + Spring Boot + Maven, Terraform, Istio, Keycloak...); las decisiones cerradas D1-D27 no se reabren aquí.
+- **MUST** comprobar primero si el stack ya aprobado cubre la necesidad (Java + Spring Boot + Maven, Terraform, Istio, Keycloak.); las decisiones cerradas D1-D27 no se reabren aquí.
 - **MUST** evaluar: necesidad real, madurez y actividad del mantenimiento, licencia, seguridad (CVEs, SBOM), tamaño de dependencias transitivas, integración con el stack y coste de salida.
 - **MUST** licencia compatible y sin coste por defecto (D16); las licencias de pago o copyleft fuerte requieren decisión humana en ADR.
 - **MUST** registrar la decisión en un ADR cuando la librería sea estructural o difícil de reemplazar.
@@ -24,7 +24,7 @@ metadata:
 - **MUST** clasificar en el radar: Adopt, Trial, Assess, Hold, con fecha y dueño; revisar el radar cada trimestre.
 - **SHOULD** probar con una prueba de concepto acotada antes de pasar a Adopt.
 - **SHOULD** aislar la librería tras un puerto/adaptador para reducir el coste de salida.
-- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial (comprobar al fijar la versión).
+- **MUST NOT** fijar versiones por criterio propio: usar el BOM y verificar en documentación oficial.
 
 ## Por qué
 Cada dependencia es deuda de mantenimiento, superficie de ataque y riesgo de licencia. Un proceso corto y explícito evita la proliferación y deja trazabilidad de por qué se eligió cada pieza.
@@ -42,7 +42,7 @@ Cada dependencia es deuda de mantenimiento, superficie de ataque y riesgo de lic
 # ADR-0045: Librería de resiliencia
 Estado: propuesta
 Candidatas: Resilience4j, implementación propia
-Criterios: licencia (Apache-2.0, comprobar al fijar la versión), actividad del repo, integración con Spring Boot, métricas Micrometer
+Criterios: licencia (Apache-2.0), actividad del repo, integración con Spring Boot, métricas Micrometer
 Decisión: Resilience4j, tras puerto `ResilienceOps`
 Radar: Trial (2026-11-07), dueño tech-lead, revisión 2027-02-07
 Salida: sustituir el adaptador; ningún import fuera de `infrastructure`
@@ -71,5 +71,6 @@ Radar:  Adopt  | Trial       | Assess | Hold
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `adr`, `dependency-hygiene`, `bom-management`, `rfc-process`, `risk-register`.
-- Fuentes: concepto de Technology Radar (Thoughtworks (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: concepto de Technology Radar (Thoughtworks.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

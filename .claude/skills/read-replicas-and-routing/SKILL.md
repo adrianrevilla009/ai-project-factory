@@ -76,5 +76,5 @@ public List<OrderSummary> list() { /* a replica */ }
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `connection-pooling`, `caching`, `consistency-and-cap-tradeoffs`.
-- Fuentes: Spring Framework API (`AbstractRoutingDataSource`, `LazyConnectionDataSourceProxy`), documentación de PostgreSQL (replicación) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Framework API (`AbstractRoutingDataSource`, `LazyConnectionDataSourceProxy`), documentación de PostgreSQL (replicación).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

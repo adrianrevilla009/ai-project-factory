@@ -20,10 +20,10 @@ metadata:
 - **MUST** repartir con pesos explícitos que sumen 100 y empezar con porcentaje bajo (p. ej. 5 %).
 - **MUST** definir antes criterios de promoción y de rollback (tasa de error, latencia p99) medidos en métricas de la malla.
 - **MUST** poder volver a 100 % estable con un solo cambio de manifiesto.
-- **SHOULD** usar `HTTPRoute.backendRefs[].weight` (Gateway API) y reservar `VirtualService` para lo que no cubra (comprobar al fijar la versión).
+- **SHOULD** usar `HTTPRoute.backendRefs[].weight` (Gateway API) y reservar `VirtualService` para lo que no cubra.
 - **SHOULD** usar mirroring para probar con tráfico real sin efectos visibles, solo en operaciones idempotentes y de lectura.
 - **MUST NOT** hacer canary con efectos secundarios no idempotentes duplicados (mirroring de pagos).
-- **SHOULD** valorar un controlador de entrega progresiva OSS (p. ej. Argo Rollouts o Flagger; comprobar compatibilidad) frente a ediciones manuales.
+- **SHOULD** valorar un controlador de entrega progresiva OSS (p. ej. Argo Rollouts o Flagger) frente a ediciones manuales.
 
 ## Por qué
 Un 5 % de tráfico a la versión nueva limita el radio de impacto y da datos reales. Sin criterios previos, la promoción se decide por sensación.
@@ -64,5 +64,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `traffic-management`, `gateway-api`, `mesh-observability`, `backward-compatibility-rules`.
-- Fuentes: istio.io/latest/docs/tasks/traffic-management/traffic-shifting/ y gateway-api.sigs.k8s.io (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: istio.io/latest/docs/tasks/traffic-management/traffic-shifting/ y gateway-api.sigs.k8s.io.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

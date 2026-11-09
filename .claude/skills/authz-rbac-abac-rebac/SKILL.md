@@ -27,7 +27,7 @@ metadata:
 - **MUST NOT** codificar roles en cadenas dispersas; usar constantes o enum.
 
 ## Por qué
-El control de acceso roto es la categoría más frecuente en APIs. Los roles solos no impiden que el usuario A lea el pedido del usuario B. Elegir el modelo más simple que exprese la regla evita políticas inmanejables; ReBAC solo compensa con grafos de permisos reales (si se usa un motor externo, comprobar su licencia, D16).
+El control de acceso roto es la categoría más frecuente en APIs. Los roles solos no impiden que el usuario A lea el pedido del usuario B. Elegir el modelo más simple que exprese la regla evita políticas inmanejables; ReBAC solo compensa con grafos de permisos reales (si se usa un motor externo).
 
 ## Ejemplos
 ### Mal
@@ -77,5 +77,6 @@ void otherTenantInvoice_returns404() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `method-and-endpoint-security`, `owasp-top10-and-api-top10`, `authn-oidc-oauth2`, `zero-trust`.
-- Fuentes: OWASP Authorization Cheat Sheet (cheatsheetseries.owasp.org) — comprobar URL; documentación de Spring Security (method security).
+- Fuentes: OWASP Authorization Cheat Sheet (cheatsheetseries.owasp.org); documentación de Spring Security (method security).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

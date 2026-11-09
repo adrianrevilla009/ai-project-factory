@@ -39,7 +39,7 @@ SKIP=gitleaks git commit -m "wip"
 ```
 ### Bien
 ```yaml
-#.pre-commit-config.yaml (rev: comprobar al fijar la versión, fijar la versión vigente)
+#.pre-commit-config.yaml (rev)
 repos:
   - repo: https://github.com/gitleaks/gitleaks
     rev: v8.24.2
@@ -55,7 +55,7 @@ repos:
 description = "valores falsos de ejemplo"
 regexes = ['''changeme[\w-]*''', '''example[\w-]*''']
 ```
-Sintaxis de `.gitleaks.toml`: comprobar contra la versión fijada.
+Sintaxis de `.gitleaks.toml`.
 
 ## Checklist de revisión
 - [ ] Escáner en pre-commit y en CI bloqueante; histórico escaneado.
@@ -74,4 +74,5 @@ Sintaxis de `.gitleaks.toml`: comprobar contra la versión fijada.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `rotation-and-leases`, `audit-and-break-glass`, `supply-chain`, `vulnerability-sla-and-incident-response`.
 - Fuentes: https://github.com/gitleaks/gitleaks (consultada 2026-11-07: licencia MIT, comandos `git`/`dir`/`stdin`, `.gitleaks.toml`, pre-commit).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -21,7 +21,7 @@ metadata:
 - **MUST** ejecutar HA como réplicas independientes que scrapean lo mismo, con `external_labels` distintos por réplica (`replica: a|b`); Prometheus no replica datos entre instancias.
 - **MUST** que Alertmanager se despliegue en clúster (mínimo 3 réplicas) y que cada réplica de Prometheus envíe a todas.
 - **MUST NOT** tratar el disco local como almacén histórico: más allá de la retención local, usar `remote_write` a un backend de largo plazo.
-- **SHOULD** elegir el backend de largo plazo por ADR (candidatos con licencia abierta; comprobar licencia antes: comprobar al fijar la versión), sin licencias de pago por defecto (D16).
+- **SHOULD** elegir el backend de largo plazo por ADR (candidatos con licencia abierta), sin licencias de pago por defecto (D16).
 - **SHOULD** deduplicar en consulta por el label `replica` y no mezclar réplicas en dashboards.
 - **MUST NOT** usar NFS para el TSDB local.
 
@@ -41,7 +41,7 @@ global:
   scrape_interval: 30s
   external_labels: { cluster: local-kind, replica: a }
 remote_write:
-  - url: http://longterm-store.observability:9009/api/v1/push   # comprobar según backend elegido
+  - url: http://longterm-store.observability:9009/api/v1/push
     queue_config: { max_samples_per_send: 2000 }
 ```
 ```yaml
@@ -65,6 +65,7 @@ args:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `cardinality-and-cost-governance`, `observability-of-the-platform-itself`, `multi-tenant-observability`.
-- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/storage/ (verificado 2026-11-07: flags de retención, defecto 15d, `remote_write`). Afirmaciones sobre NFS y HA: de la misma página, comprobar la redacción exacta.
+- Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/storage/ (verificado 2026-11-07: flags de retención, defecto 15d, `remote_write`). Afirmaciones sobre NFS y HA: de la misma página.
 - Preparado para AWS, no verificado en real. En local (kind) no se reproducen volúmenes EBS ni el backend de largo plazo real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

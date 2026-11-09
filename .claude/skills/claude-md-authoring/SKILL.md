@@ -50,5 +50,6 @@ Diez reglas, tabla de comandos y enlaces a `.claude/skills/`.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `skill-authoring-guide`, `context-budgeting`.
-- Fuentes: https://code.claude.com/docs/en/ (memoria/CLAUDE.md) — comprobar ruta exacta.
+- Fuentes: https://code.claude.com/docs/en/ (memoria/CLAUDE.md).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1

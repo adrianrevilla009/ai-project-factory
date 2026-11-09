@@ -28,7 +28,7 @@ metadata:
 - **MUST NOT** loguear tokens completos.
 
 ## Por qué
-Los ataques típicos son aceptar tokens sin verificar, confusión de algoritmo, tokens para otra audiencia y robo desde almacenamiento accesible por JavaScript (XSS). Los flags de cookie y la vida corta limitan el daño. Los nombres de propiedades de cookie en Spring dependen de la versión (comprobar al fijar la versión).
+Los ataques típicos son aceptar tokens sin verificar, confusión de algoritmo, tokens para otra audiencia y robo desde almacenamiento accesible por JavaScript (XSS). Los flags de cookie y la vida corta limitan el daño. Los nombres de propiedades de cookie en Spring dependen de la versión.
 
 ## Ejemplos
 ### Mal
@@ -75,5 +75,6 @@ server:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authn-oidc-oauth2`, `security-headers-cors-csrf`, `secrets-management`.
-- Fuentes: RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), OWASP Session Management Cheat Sheet (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: RFC 7519 (JWT), RFC 8725 (JWT Best Current Practices), OWASP Session Management Cheat Sheet.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

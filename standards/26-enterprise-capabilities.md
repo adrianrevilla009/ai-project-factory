@@ -50,7 +50,7 @@
 - **MUST** guardar cada consentimiento como evento inmutable: sujeto, finalidad, versión del texto, valor (otorgado/retirado), marca temporal, canal y prueba (IP/UA solo si la finalidad lo justifica).
 - **MUST** modelar el consentimiento por finalidad, nunca un único "acepto todo" ni casillas premarcadas.
 - **MUST** hacer la retirada tan fácil como el otorgamiento y propagarla a los servicios consumidores por evento (outbox).
-- **MUST** modelar el DSAR como un caso con máquina de estados (`RECEIVED`, `IDENTITY_VERIFIED`, `IN_PROGRESS`, `COMPLETED`, `REJECTED`), fecha límite calculada y alerta previa al vencimiento (plazo base de un mes según el art. 12; comprobar prórrogas).
+- **MUST** modelar el DSAR como un caso con máquina de estados (`RECEIVED`, `IDENTITY_VERIFIED`, `IN_PROGRESS`, `COMPLETED`, `REJECTED`), fecha límite calculada y alerta previa al vencimiento (plazo base de un mes según el art. 12).
 - **MUST** verificar la identidad del solicitante antes de entregar datos.
 - **MUST** mantener un inventario de dónde vive cada dato personal (ver `pii-and-data-classification`); sin inventario no hay DSAR fiable.
 - **MUST** responder el acceso/portabilidad en formato estructurado (JSON/CSV) y entregarlo por canal seguro con enlace caducable.
@@ -68,7 +68,7 @@
 - **MUST NOT** construir HTML de plantilla concatenando entrada del usuario (XSS/SSRF en conversores HTML→PDF); escapar y bloquear recursos remotos.
 - **MUST NOT** incluir más campos personales de los necesarios; marcar el informe con clasificación de datos.
 - **SHOULD** neutralizar fórmulas en CSV/Excel (prefijos `=`, `+`, `-`, `@`) para evitar CSV injection.
-- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras: comprobar al fijar la versión.
+- **SHOULD** elegir librerías con licencia compatible con D16; licencias de iText/JasperReports/otras.
 
 ## i18n-and-localization
 
@@ -115,7 +115,7 @@
 - **MUST** hacer las llamadas salientes idempotentes (clave de idempotencia o upsert por `external_id`) y reintentables con backoff y jitter.
 - **MUST** emitir los cambios a sincronizar vía outbox, no llamando al ERP dentro de la transacción de BD (`outbox-and-cdc`).
 - **MUST** configurar timeouts, circuit breaker y bulkhead por integración; el ERP caído no debe tirar la aplicación.
-- **MUST** respetar los límites del proveedor (cuotas, lotes) con un limitador propio; los valores concretos se leen de su documentación oficial (comprobar por proveedor).
+- **MUST** respetar los límites del proveedor (cuotas, lotes) con un limitador propio; los valores concretos se leen de su documentación oficial.
 - **MUST** reconciliar periódicamente (job de conciliación con informe de diferencias) y enviar fallos definitivos a una cola de revisión manual (DLQ).
 - **MUST** guardar credenciales de la integración en el gestor de secretos, con OAuth2 client credentials cuando el proveedor lo ofrezca.
 - **SHOULD** preferir webhooks/eventos del proveedor más sondeo incremental con marca de agua (`updated_since`) frente a cargas completas.
@@ -147,7 +147,7 @@
 - **MUST** usar plantillas versionadas con i18n (`i18n-and-localization`); sin concatenar texto en código.
 - **MUST NOT** registrar en logs el cuerpo, teléfono o email completos (PII).
 - **MUST NOT** incluir secretos o tokens de larga vida en enlaces; usar tokens de un solo uso con caducidad.
-- **SHOULD** abstraer proveedores tras `NotificationChannelPort` (SMTP local con MailHog/Mailpit en dev; el proveedor real de AWS, p. ej. SES, no se emula localmente y queda comprobar al fijar la versión).
+- **SHOULD** abstraer proveedores tras `NotificationChannelPort` (SMTP local con MailHog/Mailpit en dev; el proveedor real de AWS, p. ej. SES, no se emula localmente y queda).
 
 ## payments-and-billing
 
@@ -157,7 +157,7 @@
 - **MUST** verificar la firma del webhook sobre el cuerpo crudo, con comparación en tiempo constante, y rechazar marcas de tiempo antiguas.
 - **MUST** deduplicar webhooks por `event.id` (los PSP reintentan y entregan desordenado) y procesarlos de forma idempotente.
 - **MUST** modelar el pago como máquina de estados explícita (`PENDING -> AUTHORIZED -> CAPTURED -> REFUNDED/FAILED`) con transiciones validadas.
-- **MUST NOT** almacenar PAN, CVV ni datos de tarjeta; usar tokenización/hosted fields del PSP para quedar fuera del alcance PCI en lo posible (comprobar alcance PCI DSS con la fuente oficial).
+- **MUST NOT** almacenar PAN, CVV ni datos de tarjeta; usar tokenización/hosted fields del PSP para quedar fuera del alcance PCI en lo posible.
 - **MUST NOT** hacer dual-write entre la BD y el PSP sin outbox o reconciliación (ver `outbox-and-cdc`).
 - **SHOULD** ejecutar una conciliación periódica (job) entre registros propios y el informe del PSP.
 - **SHOULD** emitir facturas como documentos inmutables numerados; las correcciones son notas de abono, no ediciones.
@@ -195,11 +195,11 @@
 - **MUST** paginar con límite máximo; `search_after`/keyset en vez de offset profundo.
 - **MUST NOT** exponer el motor de búsqueda directamente al navegador.
 - **MUST NOT** indexar campos sensibles que no se vayan a buscar.
-- **SHOULD** preferir OpenSearch (código abierto, Apache 2.0 según su repositorio: licencia comprobar al fijar la versión) sobre soluciones con licencia restrictiva (D16). Preparado para AWS (Amazon OpenSearch Service), no verificado en real; local con contenedor OpenSearch, sin reproducir dimensionado, multi-AZ ni cifrado del servicio gestionado.
+- **SHOULD** preferir OpenSearch (código abierto, Apache 2.0 según su repositorio: licencia) sobre soluciones con licencia restrictiva (D16). Preparado para AWS (Amazon OpenSearch Service), no verificado en real; local con contenedor OpenSearch, sin reproducir dimensionado, multi-AZ ni cifrado del servicio gestionado.
 
 ## workflow-bpm
 
-- **MUST** decidir el motor por licencia antes de adoptarlo (D16, sin licencias de pago por defecto). Camunda 8 self-managed usa licencia propietaria y exige Enterprise para producción según https://docs.camunda.io/docs/reference/licenses/ (2026-11-07). Camunda 7 CE y Flowable OSS: licencia y estado de mantenimiento: comprobar al adoptarlos.
+- **MUST** decidir el motor por licencia antes de adoptarlo (D16, sin licencias de pago por defecto). Camunda 8 self-managed usa licencia propietaria y exige Enterprise para producción según https://docs.camunda.io/docs/reference/licenses/ (2026-11-07). Camunda 7 CE y Flowable OSS: licencia y estado de mantenimiento.
 - **MUST** mantener el motor tras una interfaz propia (`ApprovalProcessPort`); el dominio no importa clases del motor.
 - **MUST** versionar los `.bpmn` en el repo y migrar instancias en vuelo de forma explícita.
 - **MUST** hacer idempotentes los service tasks (pueden reejecutarse tras fallo).

@@ -39,7 +39,7 @@ sin propietarios ni fecha de reescaneo.
 ```bash
 # Comandos de ejemplo (solo lectura; el proyecto generado los ejecuta en su CI/cron)
 prowler aws --list-compliance          # ver frameworks disponibles
-prowler aws --compliance cis_<version>_aws   # comprobar nombre exacto del framework
+prowler aws --compliance cis_<version>_aws
 kubescape scan framework nsa           # postura del clúster contra NSA-CISA
 kubescape scan ./k8s/                  # manifiestos antes de aplicar
 ```
@@ -67,6 +67,7 @@ approved_by: security-lead
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `org-cloudtrail-config-securityhub-guardduty`, `static-verification-ladder`, `container-and-k8s-security`, `compliance-as-code`, `drift-and-self-heal-policy`.
-- Fuentes (verificadas 2026-11-07): https://github.com/prowler-cloud/prowler (Apache-2.0, `prowler <provider>`, `--list-compliance`); https://github.com/kubescape/kubescape (Apache-2.0, CNCF incubating, `kubescape scan`, frameworks NSA/MITRE/CIS). Nombres exactos de frameworks (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes (verificadas 2026-11-07): https://github.com/prowler-cloud/prowler (Apache-2.0, `prowler <provider>`, `--list-compliance`); https://github.com/kubescape/kubescape (Apache-2.0, CNCF incubating, `kubescape scan`, frameworks NSA/MITRE/CIS). Nombres exactos de frameworks.
 - Cloud: preparado para AWS, no verificado en real; la fábrica nunca despliega ni escanea cuentas reales (ADR-0004). En local solo Kubescape sobre el clúster local; no se reproduce Security Hub.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

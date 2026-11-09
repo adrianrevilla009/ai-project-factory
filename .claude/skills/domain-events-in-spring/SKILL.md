@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** que el evento cruce el límite del módulo solo si está en su API pública (`project-layout`).
 
 ## Por qué
-Los eventos en proceso reducen el acoplamiento entre módulos, pero comparten el hilo y la transacción por defecto: un listener lento o que falla puede romper al publicador. Separar fase y asincronía hace explícito qué garantías hay. Con Modulith, el registro de eventos da at-least-once dentro del proceso (comprobar detalles de la versión).
+Los eventos en proceso reducen el acoplamiento entre módulos, pero comparten el hilo y la transacción por defecto: un listener lento o que falla puede romper al publicador. Separar fase y asincronía hace explícito qué garantías hay. Con Modulith, el registro de eventos da at-least-once dentro del proceso.
 
 ## Ejemplos
 ### Mal
@@ -79,5 +79,6 @@ class BillingOnOrderPlaced {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `project-layout`, `event-driven`, `outbox-and-cdc`, `spring-data-rules`.
-- Fuentes: Spring Framework (eventos de aplicación) y Spring Modulith reference (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Framework (eventos de aplicación) y Spring Modulith reference.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** activar `"strict": true` desde el primer commit; nunca "migrar a strict después".
-- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax` (comprobar disponibilidad según versión de TypeScript).
+- **SHOULD** añadir `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `noImplicitOverride` y `verbatimModuleSyntax`.
 - **MUST NOT** usar `any`; para datos desconocidos usar `unknown` y estrechar.
 - **MUST NOT** usar `!` (non-null) ni `as` para silenciar el compilador; `@ts-expect-error` solo con descripción.
 - **MUST** tratar todo dato externo (respuesta HTTP, `localStorage`, `URLSearchParams`, `postMessage`) como `unknown` y validarlo (Zod u otro esquema) en el borde.
@@ -86,5 +86,6 @@ if (first === undefined) return null;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `forms-and-validation`, `api-client-from-openapi`, `frontend-architecture`, `null-safety`.
-- Fuentes: TypeScript handbook (tsconfig reference) y typescript-eslint (strict-type-checked) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: TypeScript handbook (tsconfig reference) y typescript-eslint (strict-type-checked).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

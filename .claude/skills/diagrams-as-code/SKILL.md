@@ -17,11 +17,11 @@ metadata:
 
 ## Reglas
 - **MUST** guardar la fuente del diagrama como texto en el repo, junto a la documentación que ilustra; una imagen exportada sin fuente no se acepta.
-- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI). Comprobar licencia vigente de cada herramienta antes de fijarla.
+- **MUST** usar herramientas de licencia abierta y gratuita (D16): Mermaid, PlantUML, Structurizr DSL (Structurizr Lite/CLI).
 - **MUST** elegir una herramienta por tipo de diagrama y documentarlo en el README de docs; no mezclar tres sintaxis para lo mismo.
 - **MUST** que cada diagrama tenga título, leyenda si usa colores/formas y nivel de abstracción único (ver `c4-and-arc42`).
 - **MUST** mantener el diagrama en el mismo PR que el cambio que lo invalida.
-- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra (comprobar soporte vigente en la documentación de GitHub).
+- **SHOULD** preferir Mermaid en Markdown cuando basta, porque GitHub lo renderiza sin pasos extra.
 - **SHOULD** modelar C4 una sola vez (modelo Structurizr) y derivar varias vistas, en lugar de redibujar.
 - **SHOULD** limitar el diagrama a ~15 elementos; dividir en vistas si crece.
 - **MUST NOT** incluir secretos, IPs reales ni identificadores de cuenta en diagramas.
@@ -82,5 +82,6 @@ workspace {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `c4-and-arc42`, `living-readme`, `adr`, `api-docs`.
-- Fuentes: https://mermaid.js.org/ , https://plantuml.com/ , https://docs.structurizr.com/ (comprobar sintaxis y licencias vigentes; no comprobadas en esta revisión, 2026-11-07).
+- Fuentes: https://mermaid.js.org/, https://plantuml.com/, https://docs.structurizr.com/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

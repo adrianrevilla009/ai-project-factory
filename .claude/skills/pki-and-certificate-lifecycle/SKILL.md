@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** automatizar emisión y renovación (ACME con cert-manager en Kubernetes, o la CA gestionada del proveedor); la renovación manual no escala.
-- **MUST** asumir validez cada vez más corta: la CA/Browser Forum aprobó (ballot SC-081v3, 2025-04-11) máximos de 200 días desde 2026-03-15, 100 días desde 2027-03-15 y 47 días desde 2029-03-15 para certificados TLS públicos (fuente secundaria; comprobar en cabforum.org).
+- **MUST** asumir validez cada vez más corta: la CA/Browser Forum aprobó (ballot SC-081v3, 2025-04-11) máximos de 200 días desde 2026-03-15, 100 días desde 2027-03-15 y 47 días desde 2029-03-15 para certificados TLS públicos (fuente secundaria).
 - **MUST** mantener un inventario de certificados con dueño, entorno, fecha de caducidad y método de renovación, y alertar con antelación (p. ej. 30/14/7 días) sobre cualquier certificado sin renovar.
 - **MUST** proteger la clave privada de la CA raíz fuera de línea; emitir con CA intermedias de ámbito limitado (por entorno o dominio).
 - **MUST** generar claves en el sistema que las usa (CSR) y no copiarlas por correo ni tickets; claves privadas nunca en Git.
@@ -41,7 +41,7 @@ data: {tls.key: "changeme-base64-private-key"}   # clave privada en Git
 ```
 ### Bien
 ```yaml
-# cert-manager.io/v1 (comprobar version de API contra la instalada)
+# cert-manager.io/v1
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata: {name: orders-api, namespace: orders}
@@ -70,5 +70,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `encryption-standards`, `crypto-tls-mtls-key-rotation`, `mtls-strict-and-peer-auth`, `ingress-and-egress-gateways`.
-- Fuentes (2026-11-07): calendario SC-081v3 según fuentes secundarias (encryptionconsulting.com, sslinsights.com), pendiente de confirmar en cabforum.org; documentación de cert-manager (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes (2026-11-07): calendario SC-081v3 según fuentes secundarias (encryptionconsulting.com, sslinsights.com), pendiente de confirmar en cabforum.org; documentación de cert-manager.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

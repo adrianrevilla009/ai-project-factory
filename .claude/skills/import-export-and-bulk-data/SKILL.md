@@ -73,5 +73,5 @@ ResponseEntity<Void> upload(@RequestParam MultipartFile f, Principal p) {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `batching-and-bulk-ops`, `document-and-report-generation`, `idempotency-keys`, `audit-trail-and-activity-log`.
-- Fuentes: Spring Batch reference (2026-11-07); límites de subida y antivirus (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Preparado para AWS (S3), no verificado en real.
+- Fuentes: Spring Batch reference (2026-11-07); límites de subida y antivirus. Preparado para AWS (S3), no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -37,7 +37,7 @@ docker push registry.example.com/app:latest     # desde el portatil, sin firma, 
 ```
 ### Bien
 ```text
-# En CI, tras construir (comprobar sintaxis con la version de cosign adoptada)
+# En CI, tras construir
 cosign sign registry.example.com/app@sha256:<digest>
 cosign attest --predicate sbom.cdx.json --type cyclonedx registry.example.com/app@sha256:<digest>
 ```
@@ -71,5 +71,6 @@ En Kyverno, `spec.validationFailureAction` está deprecado: la acción va por re
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `reproducible-builds`, `container-images`, `container-and-k8s-security`, `dependency-security`.
-- Fuentes: slsa.dev, documentación de Sigstore/cosign, CycloneDX y Kyverno (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: slsa.dev, documentación de Sigstore/cosign, CycloneDX y Kyverno.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

@@ -19,10 +19,10 @@ metadata:
 - **MUST** usar una versión LTS de JDK como objetivo; usar versiones no LTS solo en experimentos, nunca en producción.
 - **MUST** elegir una distribución OpenJDK de licencia libre con actualizaciones de seguridad (p. ej. Eclipse Temurin); sin licencias de pago por defecto (D16). Cambiar de distribución requiere ADR.
 - **MUST** usar la misma distribución y versión mayor en desarrollo, CI e imagen de runtime (`maven-wrapper-and-toolchains`, `container-images`).
-- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Fechas: comprobar en la hoja de ruta oficial de la distribución.
+- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Las fechas de fin de soporte se toman de la hoja de ruta oficial de la distribución elegida.
 - **MUST** aplicar parches de seguridad (actualizaciones trimestrales del JDK) mediante PR automatizado de Renovate y pasar toda la suite.
 - **SHOULD** planificar la subida al siguiente LTS cuando la versión actual entre en el último año de soporte, no cuando termine.
-- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation (comprobar en cada documentación).
+- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation.
 - **SHOULD** compilar con `release` al nivel del JDK objetivo y ejecutar CI en la matriz [actual, siguiente LTS] como aviso temprano.
 - **MUST NOT** activar `--enable-preview` en código de producción.
 
@@ -42,14 +42,14 @@ FROM openjdk:latest
 ### Bien
 ```xml
 <properties>
-  <maven.compiler.release>21</maven.compiler.release> <!-- LTS; comprobar LTS vigente a la fecha -->
+  <maven.compiler.release>21</maven.compiler.release> <!-- LTS -->
 </properties>
 ```
 ```yaml
 # docs/jdk-policy.yaml (ejemplo)
 target: 21
 distribution: temurin
-eol_review_date: "comprobar al fijar la versión"
+eol_review_date: "<fecha de fin de soporte de la distribución>"
 next_lts_evaluation: "12 meses antes del fin de soporte"
 ci_matrix: ["21", "next-lts-early-access"]
 ```
@@ -72,5 +72,6 @@ ci_matrix: ["21", "next-lts-early-access"]
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maven-wrapper-and-toolchains`, `container-images`, `renovate-dependabot-policy`, `enforcer-rules`.
-- Fuentes: openjdk.org (releases), adoptium.net (soporte de Temurin), documentación de Spring Boot (requisitos del sistema) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: openjdk.org (releases), adoptium.net (soporte de Temurin), documentación de Spring Boot (requisitos del sistema).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

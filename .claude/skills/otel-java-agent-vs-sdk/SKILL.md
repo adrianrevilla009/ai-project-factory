@@ -26,7 +26,7 @@ metadata:
 - **MUST NOT** activar instrumentaciones que no se usan (reduce overhead y superficie).
 
 ## Por qué
-El agente da cobertura amplia con coste mínimo, pero oculta qué se instrumenta y añade overhead de arranque; Micrometer Tracing encaja si el equipo ya vive en la Observation API de Spring y quiere control en código. Mezclarlos es el error habitual. El detalle de versiones y compatibilidad con Spring Boot debe verificarse en la documentación oficial (comprobar al fijar la versión).
+El agente da cobertura amplia con coste mínimo, pero oculta qué se instrumenta y añade overhead de arranque; Micrometer Tracing encaja si el equipo ya vive en la Observation API de Spring y quiere control en código. Mezclarlos es el error habitual. El detalle de versiones y compatibilidad con Spring Boot debe verificarse en la documentación oficial.
 
 ## Ejemplos
 ### Mal
@@ -37,7 +37,7 @@ ENTRYPOINT ["java","-javaagent:/agent.jar","-jar","app.jar"]
 ```
 ### Bien
 ```dockerfile
-# Versión y checksum fijados por ARG (valores de ejemplo: comprobar al fijar la versión)
+# Versión y checksum fijados por ARG (valores de ejemplo)
 ARG OTEL_AGENT_VERSION=changeme
 ARG OTEL_AGENT_SHA256=changeme
 ADD https://github.com/open-telemetry/opentelemetry-java-instrumentation/releases/download/v${OTEL_AGENT_VERSION}/opentelemetry-javaagent.jar /opt/otel/agent.jar
@@ -63,5 +63,6 @@ ENV JAVA_TOOL_OPTIONS="-javaagent:/opt/otel/agent.jar" \
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `otel-fundamentals-and-semconv`, `tracing`, `metrics-micrometer`, `container-images`, `jvm-in-containers`.
-- Fuentes: documentación oficial de OpenTelemetry Java y de Spring Boot (observability); versiones (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación oficial de OpenTelemetry Java y de Spring Boot (observability); versiones.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

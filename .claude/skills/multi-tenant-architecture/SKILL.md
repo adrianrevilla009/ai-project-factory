@@ -70,5 +70,5 @@ jdbc.queryForObject("select set_config('app.tenant_id', ?, true)", String.class,
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cell-based-architecture`, `scalability-patterns`, `ddd-strategic`.
-- Fuentes: PostgreSQL docs, "Row Security Policies"; AWS Well-Architected SaaS Lens (leer como referencia; no verificado en real). (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: PostgreSQL docs, "Row Security Policies"; AWS Well-Architected SaaS Lens (leer como referencia; no verificado en real)..
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

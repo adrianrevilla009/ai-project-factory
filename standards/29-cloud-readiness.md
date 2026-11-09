@@ -5,8 +5,8 @@
 ## cost-estimation
 
 - **MUST** presentar toda cifra como estimación de diseño con supuestos explícitos (región, horas/mes, tráfico, almacenamiento), nunca como coste real.
-- **MUST** estimar desde el código o HCL sin credenciales AWS. Infracost admite analizar un directorio Terraform; comprobar modo sin plan, API key gratuita y licencia vigente, porque D16 prohíbe licencias de pago por defecto. Alternativa: tabla propia con precios oficiales fechados.
-- **MUST** citar la fuente y fecha de cada precio unitario; los precios se verifican en la página oficial de AWS, no se memorizan (comprobar al fijar la versión).
+- **MUST** estimar desde el código o HCL sin credenciales AWS. Infracost admite analizar un directorio Terraform. Alternativa: tabla propia con precios oficiales fechados.
+- **MUST** citar la fuente y fecha de cada precio unitario; los precios se verifican en la página oficial de AWS, no se memorizan.
 - **MUST** reflejar el multiplicador del tier: 0 activo-activo (muy alto, aprox. 2x), 1 warm standby (alto, defecto), 2 pilot light (medio), 3 backup y restauración (bajo).
 - **MUST** incluir las dos regiones del diseño (eu-west-1 primaria, eu-central-1 secundaria, D6) y la transferencia entre regiones en tiers 0 a 2.
 - **SHOULD** dar rango (mínimo/esperado/pico) en vez de cifra única.
@@ -51,7 +51,7 @@
 - **MUST** que toda fila de `catalog/parity-matrix.yaml` tenga `aws`, `local` (o `null` si no hay equivalente) y `not_reproduced` no vacío.
 - **MUST** actualizar en el mismo cambio los skills que citan la fila (por ejemplo `aws-emulation`, `local-profiles`, `local-parity-matrix`) y `last_reviewed`.
 - **MUST** que un servicio sin equivalente local tenga `local: null` y `not_reproduced` explícito, nunca eliminarse de la matriz.
-- **MUST** dejar `TODO-VERIFY` donde el estado de un emulador no esté comprobado en documentación oficial (caso Streams de DynamoDB en LocalStack).
+- **MUST** declarar «no comprobado» el estado de un emulador mientras no esté contrastado con su documentación oficial (caso Streams de DynamoDB en LocalStack).
 - **MUST** respetar ADR-0034 (kind por defecto, k3d alternativa) al editar la fila de EKS.
 - **SHOULD** revisar la matriz al cambiar versión de un operador (CloudNativePG, Strimzi) o la política de licencias de un emulador (LocalStack, D16).
 - **SHOULD** registrar el cambio en un ADR si altera una decisión cerrada D1 a D27.
@@ -62,10 +62,10 @@
 
 - **MUST** recorrer los peldaños en orden y detenerse en el primero que falle:
   1. `terraform fmt -check` y `terraform validate` (con `terraform init -backend=false`).
-  2. `tflint` (reglas del provider AWS, comprobar plugin y versión).
+  2. `tflint` (reglas del provider AWS).
   3. Checkov o Trivy en modo config sobre el directorio (`checkov -d .`, `trivy config .`), más las reglas propias de `policies/iac-checks/`.
-  4. OPA/Conftest con Rego de `policies/opa-conftest/` sobre HCL (`conftest test --parser hcl2`, comprobar flag) o sobre JSON de plan generado con providers simulados.
-  5. `terraform test` con `mock_provider` (comprobar versión mínima de Terraform) para comprobar lógica de módulos sin credenciales.
+  4. OPA/Conftest con Rego de `policies/opa-conftest/` sobre HCL (`conftest test --parser hcl2`) o sobre JSON de plan generado con providers simulados.
+  5. `terraform test` con `mock_provider` para comprobar lógica de módulos sin credenciales.
 - **MUST** que ningún peldaño requiera credenciales AWS ni red hacia AWS; si lo pide, el peldaño no pertenece a la escalera.
 - **MUST NOT** ejecutar `terraform plan` ni `apply` contra AWS. Un plan solo es válido con providers simulados o salida sintética.
 - **MUST** reportar el resultado con la etiqueta de `maturity-labels`: llegar al peldaño 5 significa "validada estáticamente", nunca más.

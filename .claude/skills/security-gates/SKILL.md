@@ -73,5 +73,5 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `dependency-security`, `container-and-k8s-security`, `quality-gates`, `secrets-management`.
-- Fuentes: ADR-0017 (`catalog/adr/0017-escaneo-y-sbom.md`); docs oficiales de Trivy, Grype, CycloneDX (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: ADR-0017 (`catalog/adr/0017-escaneo-y-sbom.md`); docs oficiales de Trivy, Grype, CycloneDX.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

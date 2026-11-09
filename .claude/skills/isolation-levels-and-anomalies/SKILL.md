@@ -16,7 +16,7 @@ metadata:
 - No aplica a escrituras independientes sin lectura previa ni a lecturas aproximadas (informes).
 
 ## Reglas
-- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos — comprobar contra la documentación del motor y versión elegidos.
+- **MUST** conocer el nivel por defecto del motor de producción (PostgreSQL: READ COMMITTED; MySQL/InnoDB: REPEATABLE READ) y no asumir que es igual en todos.
 - **MUST** identificar las anomalías posibles de cada caso de uso: lost update, non-repeatable read, phantom, write skew.
 - **MUST** proteger el patrón "leer y luego escribir según lo leído" con bloqueo (`optimistic-locking`/`pessimistic-locking`), una restricción de BD o un `UPDATE` atómico condicional; no confiar en el aislamiento por defecto.
 - **SHOULD** preferir restricciones declarativas (`UNIQUE`, `CHECK`, FK) como última defensa de invariantes.
@@ -73,5 +73,6 @@ ALTER TABLE items ADD CONSTRAINT stock_non_negative CHECK (stock >= 0);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `optimistic-locking`, `pessimistic-locking`, `concurrency-testing`, `idempotency-and-deduplication`.
-- Fuentes: documentación del motor elegido (p. ej. PostgreSQL, "Transaction Isolation") (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación del motor elegido (p. ej. PostgreSQL, "Transaction Isolation").
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

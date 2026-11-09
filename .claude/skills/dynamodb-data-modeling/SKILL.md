@@ -24,7 +24,7 @@ metadata:
 - **MUST** tratar los GSI como eventualmente consistentes y como coste de escritura adicional; límite por defecto de 20 GSI por tabla (ver fuente).
 - **MUST** paginar con `LastEvaluatedKey` y limitar el tamaño de respuesta; **MUST NOT** asumir joins ni agregaciones.
 - **MUST** usar escrituras condicionales (`conditionExpression`) para unicidad y concurrencia optimista.
-- **MUST** respetar el tamaño máximo de ítem (400 KB; comprobar en cuotas vigentes); los blobs van a S3 con referencia.
+- **MUST** respetar el tamaño máximo de ítem (400 KB); los blobs van a S3 con referencia.
 
 ## Por qué
 DynamoDB escala por diseño de claves, no por consultas flexibles: un patrón de acceso no previsto implica un GSI nuevo o un backfill. Un `Scan` cuesta en proporción al tamaño de la tabla, y una partition key caliente limita el rendimiento aunque haya capacidad global.
@@ -66,5 +66,6 @@ QueryRequest q = QueryRequest.builder()
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dynamodb-event-store`, `global-tables-and-write-region-rules`, `local-vs-aws-dynamodb-testing`, `datastore-selection-guide`.
-- Fuentes (consultadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html (20 GSI por tabla por defecto; 5 LSI). El límite de 400 KB por ítem y el de ítems por transacción: comprobar en la misma guía.
+- Fuentes (consultadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html (20 GSI por tabla por defecto; 5 LSI). El límite de 400 KB por ítem y el de ítems por transacción.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

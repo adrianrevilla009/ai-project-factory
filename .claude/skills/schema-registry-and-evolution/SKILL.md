@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** preferir un registry con licencia OSS (p. ej. Apicurio Registry); Confluent Schema Registry se publica bajo la Confluent Community License, salvo las librerías cliente (Apache 2.0), y no es una licencia de código abierto permisiva (D16; verificado el 2026-11-08).
 
 ## Por qué
-Productores y consumidores se despliegan en momentos distintos: el esquema es el contrato. Una compatibilidad no transitiva permite romper consumidores que aún leen versiones antiguas. El registro automático desde la aplicación deja que un despliegue erróneo cambie el contrato sin revisión. Modos de compatibilidad y propiedades deben contrastarse con la documentación del registry elegido (comprobar al fijar la versión).
+Productores y consumidores se despliegan en momentos distintos: el esquema es el contrato. Una compatibilidad no transitiva permite romper consumidores que aún leen versiones antiguas. El registro automático desde la aplicación deja que un despliegue erróneo cambie el contrato sin revisión. Modos de compatibilidad y propiedades deben contrastarse con la documentación del registry elegido.
 
 ## Ejemplos
 ### Mal
@@ -79,5 +79,6 @@ message OrderCreated {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `asyncapi-event-contracts`, `backward-compatibility-rules`, `kafka-producers-consumers`.
-- Fuentes: documentación de Apicurio Registry y de Confluent Schema Registry (compatibilidad), Avro y Protobuf (reglas de evolución) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Apicurio Registry y de Confluent Schema Registry (compatibilidad), Avro y Protobuf (reglas de evolución).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

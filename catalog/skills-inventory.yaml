@@ -157,6 +157,7 @@ blocks:
   - name: dos-and-rate-limiting
   - name: zero-trust
   - name: security-testing-sast-dast
+  - name: codeql-sast
   - name: injection-families
   - name: deserialization-xxe-ssrf-traversal
   - name: file-upload-security
@@ -186,6 +187,7 @@ blocks:
   - name: contract-testing
   - name: static-analysis
     note: Checkstyle, PMD, SpotBugs, Error Prone, quality gates
+  - name: sonarqube-quality-gate
   - name: code-review-guidelines
   - name: mutation-testing
     note: PIT
@@ -196,6 +198,7 @@ blocks:
   - name: coverage-policy
   - name: performance-testing
     note: 'JMeter: baseline, soak, spike'
+  - name: gatling-load-testing
   - name: chaos-engineering
     note: Chaos Monkey for Spring Boot, Chaos Mesh, Toxiproxy, game days
   - name: resilience-testing

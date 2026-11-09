@@ -18,9 +18,9 @@ metadata:
 ## Reglas
 - **MUST** separar stages: `build` (JDK + Maven), opcional `layers` (extraer capas del JAR) y `runtime` (JRE mínimo). Nada de Maven, fuentes ni caches en la imagen final.
 - **MUST** fijar la imagen base por tag de versión y, para release, por digest (`@sha256:`); **MUST NOT** usar `latest`.
-- **MUST** usar imágenes de runtime mínimas (JRE slim/distroless; comprobar imagen base aprobada por el proyecto).
+- **MUST** usar imágenes de runtime mínimas (JRE slim/distroless).
 - **MUST** ejecutar como usuario no root (`USER` numérico) y compatible con `readOnlyRootFilesystem`; los directorios escribibles (`/tmp`) se montan como `emptyDir`.
-- **MUST** ordenar capas para la caché: primero `pom.xml`/`package*.json` y resolución de dependencias, luego el código. Usar `RUN --mount=type=cache` de BuildKit para `~/.m2` (comprobar sintaxis con la versión de Docker).
+- **MUST** ordenar capas para la caché: primero `pom.xml`/`package*.json` y resolución de dependencias, luego el código. Usar `RUN --mount=type=cache` de BuildKit para `~/.m2`.
 - **MUST** añadir labels OCI (`org.opencontainers.image.source`, `.revision`, `.version`, `.created`) para trazabilidad.
 - **SHOULD** construir multi-arch (`linux/amd64`, `linux/arm64`) con `docker buildx build --platform` si se despliega en Graviton y x86.
 - **MUST NOT** copiar secretos con `COPY`/`ARG`; usar `RUN --mount=type=secret`.
@@ -57,7 +57,7 @@ COPY --from=build /src/target/orders.jar app.jar
 USER 10001
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
 ```
-Las etiquetas `21-jdk`/`21-jre` son ejemplo; fijar versión y digest reales por proyecto (comprobar al fijar la versión).
+Las etiquetas `21-jdk`/`21-jre` son ejemplo; fijar versión y digest reales por proyecto.
 
 ## Checklist de revisión
 - [ ] Al menos dos stages; la final no contiene build tools.
@@ -75,5 +75,6 @@ Las etiquetas `21-jdk`/`21-jre` son ejemplo; fijar versión y digest reales por 
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `image-scanning`, `jvm-in-containers`, `container-and-k8s-security`, `startup-and-native`.
-- Fuentes: Docker multi-stage https://docs.docker.com/build/building/multi-stage/ ; OCI annotations https://github.com/opencontainers/image-spec/blob/main/annotations.md (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Docker multi-stage https://docs.docker.com/build/building/multi-stage/ ; OCI annotations https://github.com/opencontainers/image-spec/blob/main/annotations.md.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

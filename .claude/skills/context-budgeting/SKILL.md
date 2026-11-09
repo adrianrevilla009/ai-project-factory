@@ -27,7 +27,7 @@ metadata:
 - **MUST NOT** guardar decisiones solo en la conversación: tras compactar o limpiar se pierden; van a ADR/ficheros de fase.
 
 ## Por qué
-Claude Code reenvía la conversación completa en cada petición; contexto largo = más coste, más latencia y peor atención a las reglas importantes. Los skills cargan bajo demanda, `CLAUDE.md` siempre. La recomendación oficial de mantener `CLAUDE.md` bajo ~200 líneas y las prácticas de `/clear`, `/compact`, `/context` y delegación a subagentes están en https://code.claude.com/docs/en/costs (2026-11-07); la fábrica es más estricta (80). Los nombres exactos de comandos pueden cambiar entre versiones: `TODO-VERIFY` por release.
+Claude Code reenvía la conversación completa en cada petición; contexto largo = más coste, más latencia y peor atención a las reglas importantes. Los skills cargan bajo demanda, `CLAUDE.md` siempre. La recomendación oficial de mantener `CLAUDE.md` bajo ~200 líneas y las prácticas de `/clear`, `/compact`, `/context` y delegación a subagentes están en https://code.claude.com/docs/en/costs (2026-11-07); la fábrica es más estricta (80). Los nombres exactos de comandos pueden cambiar entre versiones: se consultan en la documentación de la versión instalada.
 
 ## Ejemplos
 ### Mal

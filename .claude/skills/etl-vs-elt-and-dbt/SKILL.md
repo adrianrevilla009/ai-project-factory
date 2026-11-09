@@ -57,7 +57,7 @@ models:
           - relationships:
               arguments: { to: ref('dim_customers'), field: customer_id }
 ```
-La forma `arguments:` depende de la versión de dbt (comprobar en la versión fijada).
+La forma `arguments:` depende de la versión de dbt.
 
 ## Checklist de revisión
 - [ ] Capas respetadas; marts sin `source()` directo.
@@ -77,4 +77,5 @@ En local: dbt Core contra Postgres o DuckDB. No se reproducen Redshift/Athena/Gl
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-modeling`, `data-quality`, `warehouse-options`, `batch-orchestration`.
 - Fuentes: documentación dbt (URLs arriba, 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

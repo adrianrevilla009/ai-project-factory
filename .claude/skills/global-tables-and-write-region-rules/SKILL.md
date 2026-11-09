@@ -48,7 +48,7 @@ aggregates:
   "Resource": "arn:aws:dynamodb:eu-central-1:111111111111:table/events",
   "Condition": {"StringEquals": {"aws:PrincipalTag/write-region": "eu-west-1"}} }
 ```
-La condición es ilustrativa (cuenta de ejemplo); adaptar y validar con el simulador de políticas de IAM (comprobar al fijar la versión).
+La condición es ilustrativa (cuenta de ejemplo); adaptar y validar con el simulador de políticas de IAM.
 
 ## Checklist de revisión
 - [ ] Modo MREC/MRSC decidido y justificado.
@@ -64,5 +64,6 @@ La condición es ilustrativa (cuenta de ejemplo); adaptar y validar con el simul
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dynamodb-event-store`, `consistency-and-cap-tradeoffs`, `idempotency-and-deduplication`, `multi-tenant-architecture`.
-- Fuentes (consultadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html (modos MREC/MRSC, last writer wins, tres regiones para MRSC, sin transacciones ni TTL en MRSC); https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html. La lista de regiones con MRSC cambia: comprobar al diseñar.
+- Fuentes (consultadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html (modos MREC/MRSC, last writer wins, tres regiones para MRSC, sin transacciones ni TTL en MRSC); https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html. La lista de regiones con MRSC cambia.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

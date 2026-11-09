@@ -68,5 +68,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `tier-model-and-rpo-rto`, `capacity-and-load-modeling`, `dependency-mapping-and-blast-radius`, `finops-of-resilience`.
-- Fuente: AWS DR whitepaper, sección Warm standby, https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html (2026-11-07). Patrón de celdas: comprobar con guía oficial de AWS.
+- Fuente: AWS DR whitepaper, sección Warm standby, https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html (2026-11-07). Patrón de celdas.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

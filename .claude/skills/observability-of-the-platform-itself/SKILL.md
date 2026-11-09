@@ -52,7 +52,7 @@ groups:
         for: 10m
         labels: { severity: critical }
       - alert: CollectorExporterDropping
-        expr: rate(otelcol_exporter_send_failed_spans[5m]) > 0   # comprobar nombre exacto de la metrica
+        expr: rate(otelcol_exporter_send_failed_spans[5m]) > 0
         for: 5m
         labels: { severity: warning }
 ```
@@ -73,6 +73,7 @@ groups:
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alert-routing-and-oncall`, `metrics-store-ha-retention`, `collector-pipelines`, `logs-and-traces-stores`.
-- Fuentes oficiales: https://prometheus.io/docs/alerting/latest/configuration/ (verificado 2026-11-07, estructura de Alertmanager); nombres de métricas internas de Collector y Alertmanager (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes oficiales: https://prometheus.io/docs/alerting/latest/configuration/ (verificado 2026-11-07, estructura de Alertmanager); nombres de métricas internas de Collector y Alertmanager.
 - Preparado para AWS, no verificado en real; el monitor externo debe vivir fuera de la cuenta/clúster y no se reproduce en local.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

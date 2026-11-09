@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** usar selectores en el store para evitar renders innecesarios.
 
 ## Por qué
-Copiar datos del servidor a un store crea una segunda fuente de verdad que caduca. Una librería de server-state ya resuelve caché, deduplicación y reintento. La URL como estado da enlaces compartibles y botón "atrás" correcto. Nombres de API (`useQuery`, `invalidateQueries`, `queryKey`) a verificar contra la versión instalada (comprobar v5).
+Copiar datos del servidor a un store crea una segunda fuente de verdad que caduca. Una librería de server-state ya resuelve caché, deduplicación y reintento. La URL como estado da enlaces compartibles y botón "atrás" correcto. Nombres de API (`useQuery`, `invalidateQueries`, `queryKey`) a verificar contra la versión instalada.
 
 ## Ejemplos
 ### Mal
@@ -79,10 +79,11 @@ const create = useMutation({
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Plugin ESLint de TanStack Query / `react-hooks/exhaustive-deps` | 1 | pendiente (configuración del proyecto generado; comprobar nombres) |
+| Plugin ESLint de TanStack Query / `react-hooks/exhaustive-deps` | 1 | pendiente (configuración del proyecto generado) |
 | Revisión de clasificación del estado | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `forms-and-validation`, `api-client-from-openapi`, `routing-and-code-splitting`, `auth-and-session`.
-- Fuentes: documentación de TanStack Query, Zustand, Redux Toolkit (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de TanStack Query, Zustand, Redux Toolkit.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

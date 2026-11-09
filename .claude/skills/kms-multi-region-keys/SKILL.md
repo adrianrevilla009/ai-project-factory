@@ -71,5 +71,6 @@ resource "aws_kms_replica_key" "orders_data_dr" {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `envelope-encryption-and-kms`, `scp-guardrails`, `log-archive-and-audit-account`, `regions-and-data-residency`.
-- Fuentes: AWS KMS Developer Guide, multi-Region keys (2026-11-07) — comprobar URL y servicios compatibles.
+- Fuentes: AWS KMS Developer Guide, multi-Region keys (2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

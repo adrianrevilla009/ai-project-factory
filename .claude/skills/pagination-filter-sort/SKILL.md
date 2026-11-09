@@ -49,7 +49,7 @@ OrderPage list(@RequestParam(defaultValue = "50") @Max(100) int size,
 }
 // JPQL: where (o.createdAt, o.id) < (:ts, :id) order by o.createdAt desc, o.id desc
 ```
-Comprobar que el motor/Hibernate soporta la comparación de tuplas; si no, expandirla (comprobar al fijar la versión).
+Comprobar que el motor/Hibernate soporta la comparación de tuplas; si no, expandirla.
 
 ## Checklist de revisión
 - [ ] Toda colección paginada con `size` máximo.
@@ -66,5 +66,6 @@ Comprobar que el motor/Hibernate soporta la comparación de tuplas; si no, expan
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rest-design-guidelines`, `openapi-contract-first`, `n-plus-one`, `rate-limiting-quotas`.
-- Fuentes: documentación de Spring Data (`Window`/`ScrollPosition` para keyset) — comprobar disponibilidad por versión.
+- Fuentes: documentación de Spring Data (`Window`/`ScrollPosition` para keyset).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

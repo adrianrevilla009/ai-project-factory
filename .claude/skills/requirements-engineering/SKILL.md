@@ -73,5 +73,6 @@ nfr:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `definition-of-ready-and-done`, `bdd`, `domain-discovery`, `capacity-and-load-modeling`.
-- Fuentes: INVEST (Bill Wake, 2003) y sintaxis Gherkin: https://cucumber.io/docs/gherkin/reference/ (comprobar palabras clave vigentes).
+- Fuentes: INVEST (Bill Wake, 2003) y sintaxis Gherkin: https://cucumber.io/docs/gherkin/reference/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

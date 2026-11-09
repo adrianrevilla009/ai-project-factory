@@ -21,7 +21,7 @@
 - **SHOULD** usar `./mvnw -T 1C` (módulos en paralelo) solo si los módulos y tests son thread-safe; empezar por `-T 1`.
 - **SHOULD** usar `-B` (batch) y `--no-transfer-progress` en CI para logs limpios.
 - **SHOULD** separar tests rápidos (unit, `surefire`) de lentos (integración, `failsafe`) en etapas distintas.
-- **MAY** evaluar la extensión Maven Build Cache; comprobar estado, versión y compatibilidad con los plugins usados.
+- **MAY** evaluar la extensión Maven Build Cache.
 - **MUST** ordenar el Dockerfile para cachear capas: dependencias antes del código (ver `container-images`).
 - **MUST NOT** desactivar tests, enforcer o análisis (`-DskipTests`, `-Denforcer.skip`) para ir más rápido en la rama principal.
 
@@ -48,7 +48,7 @@
 - **MUST** commitear el lockfile de frontend (`package-lock.json` o `pnpm-lock.yaml`) e instalar en CI con `npm ci` / `pnpm install --frozen-lockfile`.
 - **SHOULD** preferir `starter` de Spring Boot sobre listas manuales de artefactos.
 - **SHOULD** revisar el árbol (`dependency:tree`) cuando una dependencia añade más de ~10 transitivas.
-- **MUST NOT** añadir librerías abandonadas (sin release en >2 años, comprobar umbral) sin ADR.
+- **MUST NOT** añadir librerías abandonadas (sin release en >2 años) sin ADR.
 
 ## enforcer-rules
 
@@ -67,10 +67,10 @@
 - **MUST** usar una versión LTS de JDK como objetivo; usar versiones no LTS solo en experimentos, nunca en producción.
 - **MUST** elegir una distribución OpenJDK de licencia libre con actualizaciones de seguridad (p. ej. Eclipse Temurin); sin licencias de pago por defecto (D16). Cambiar de distribución requiere ADR.
 - **MUST** usar la misma distribución y versión mayor en desarrollo, CI e imagen de runtime (`maven-wrapper-and-toolchains`, `container-images`).
-- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Fechas: comprobar en la hoja de ruta oficial de la distribución.
+- **MUST** documentar en `docs/` del proyecto el JDK objetivo, la fecha de fin de soporte y la fecha prevista de migración. Las fechas de fin de soporte se toman de la hoja de ruta oficial de la distribución elegida.
 - **MUST** aplicar parches de seguridad (actualizaciones trimestrales del JDK) mediante PR automatizado de Renovate y pasar toda la suite.
 - **SHOULD** planificar la subida al siguiente LTS cuando la versión actual entre en el último año de soporte, no cuando termine.
-- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation (comprobar en cada documentación).
+- **MUST** comprobar compatibilidad antes de subir: versión mínima de Java de Spring Boot, plugins Maven, agente de OpenTelemetry y librerías con bytecode manipulation.
 - **SHOULD** compilar con `release` al nivel del JDK objetivo y ejecutar CI en la matriz [actual, siguiente LTS] como aviso temprano.
 - **MUST NOT** activar `--enable-preview` en código de producción.
 
@@ -126,7 +126,7 @@
 - **MUST** hacer la release desde CI sobre la rama principal limpia y con la verificación completa en verde; **MUST NOT** liberar desde una máquina local.
 - **MUST** generar changelog automático a partir de los commits y crear un tag anotado `vX.Y.Z`.
 - **MUST** publicar en cada release: artefactos, SBOM (`sbom-generation`), informe de licencias y, si aplica, imagen con digest (`container-images`).
-- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR. Detalles comprobar al fijar la versión.
+- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR.
 - **MUST** hacer la release idempotente: re-ejecutarla sobre el mismo tag no debe producir artefactos distintos (`reproducible-builds`).
 - **MUST NOT** reescribir ni borrar un tag publicado; corregir con una nueva versión patch.
 - **MUST** exigir aprobación humana antes de promocionar a entornos productivos (gate); el agente MUST NOT crear ni editar `approvals/*.json`.
@@ -134,7 +134,7 @@
 
 ## renovate-dependabot-policy
 
-- **MUST** tener un bot de actualización activo: Dependabot (integrado en GitHub, sin coste) o Renovate (OSS autoalojable; comprobar licencia y opción gratuita vigente antes de elegirlo).
+- **MUST** tener un bot de actualización activo: Dependabot (integrado en GitHub, sin coste) o Renovate (OSS autoalojable).
 - **MUST** cubrir ecosistemas: `maven`, `npm`, `docker`/imágenes base, `github-actions` y Terraform si existe.
 - **MUST** agrupar en un PR: dependencias de Spring Boot, de test y minor/patch de frontend; **MUST NOT** abrir un PR por cada patch.
 - **MUST** exigir CI verde y revisión humana para `major`; el automerge solo para `patch` de test/dev y con CI verde.
@@ -152,13 +152,13 @@
 - **MUST NOT** incrustar fecha/hora actual, hostname o usuario en el artefacto (`${maven.build.timestamp}` en recursos filtrados, `git.build.time` sin normalizar).
 - **MUST NOT** usar rangos de versión, `LATEST` ni dependencias SNAPSHOT en release (ver `versioning-semver-snapshots`).
 - **SHOULD** verificar la reproducibilidad en CI construyendo dos veces y comparando (`maven-artifact-plugin`, objetivo `artifact:compare`, que figura en la página del plugin; verificado el 2026-11-08).
-- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas; comprobar con `SOURCE_DATE_EPOCH`/opciones del builder (ver `container-images`, comprobar según herramienta).
+- **SHOULD** que las imágenes usen base fijada por digest y capas ordenadas.
 - **MUST** conservar la salida de la verificación como evidencia, sin afirmar nada sobre despliegues reales.
 
 ## sbom-generation
 
 - **MUST** generar un SBOM en formato CycloneDX (JSON) por cada release, a partir del grafo de dependencias real resuelto.
-- **MUST** usar el plugin `org.cyclonedx:cyclonedx-maven-plugin` con versión fijada en `pluginManagement` del parent (`parent-pom`); versión exacta comprobar al fijar la versión.
+- **MUST** usar el plugin `org.cyclonedx:cyclonedx-maven-plugin` con versión fijada en `pluginManagement` del parent (`parent-pom`); versión exacta.
 - **MUST** en multimódulo producir un SBOM agregado (goal `makeAggregateBom`) y no solo uno por módulo.
 - **MUST** generar también el SBOM de la imagen final (`container-images`), no solo del JAR.
 - **MUST** adjuntar el SBOM a la release como artefacto y conservarlo con la misma retención que el binario.
@@ -172,7 +172,7 @@
 - **MUST** que las versiones release sean inmutables: una versión publicada nunca se re-sube ni se sobrescribe; se corrige con una nueva.
 - **MUST** que `-SNAPSHOT` exista solo en ramas de desarrollo; **MUST NOT** desplegar ni referenciar SNAPSHOT en un release ni en una imagen de producción.
 - **MUST NOT** depender de un SNAPSHOT de terceros en `main`.
-- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta (comprobar compatibilidad con la versión de Maven elegida).
+- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta.
 - **SHOULD** derivar la versión de un tag git `vX.Y.Z` en el pipeline de release (ver `release-automation`).
 - **SHOULD** que todos los módulos de un reactor compartan la misma versión.
 - **MUST NOT** usar `versions:set` manual con commits "bump version" a mano si hay automatización.

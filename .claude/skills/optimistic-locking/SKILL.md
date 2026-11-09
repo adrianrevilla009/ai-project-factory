@@ -72,5 +72,5 @@ ALTER TABLE document ADD COLUMN version BIGINT NOT NULL DEFAULT 0;
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pessimistic-locking`, `isolation-levels-and-anomalies`, `jpa-entity-design`, `error-handling-problem-details`.
-- Fuentes: Jakarta Persistence (`@Version`) y Spring Framework (excepción de bloqueo optimista) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Jakarta Persistence (`@Version`) y Spring Framework (excepción de bloqueo optimista).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

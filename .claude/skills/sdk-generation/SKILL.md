@@ -21,7 +21,7 @@ metadata:
 - **MUST NOT** editar a mano el código generado; las personalizaciones van en plantillas, `.openapi-generator-ignore` o envoltorios propios.
 - **MUST** publicar el SDK como artefacto separado (módulo Maven / paquete npm) con SemVer alineado al contrato: cambio incompatible = major.
 - **MUST** regenerar en CI y fallar si el código generado versionado difiere de la salida (no hay deriva); preferible no versionar el código generado y construirlo en build.
-- **MUST** que el generador Java no introduzca Lombok (D27): comprobar opciones y dependencias resultantes.
+- **MUST** que el generador Java no introduzca Lombok (D27).
 - **MUST** timeouts, reintentos solo idempotentes y propagación de `traceparent` configurables en el cliente.
 - **SHOULD** mantener los tests de contrato (`contract-testing-pact`) contra el SDK generado.
 - **SHOULD** registrar credenciales fuera del SDK; el SDK recibe un proveedor de token, no secretos embebidos.
@@ -47,7 +47,7 @@ Un cliente escrito a mano diverge del contrato y rompe en ejecución. Un generad
 <plugin>
   <groupId>org.openapitools</groupId>
   <artifactId>openapi-generator-maven-plugin</artifactId>
-  <version><!-- comprobar fijar versión exacta vigente --></version>
+  <version></version>
   <executions><execution>
     <goals><goal>generate</goal></goals>
     <configuration>
@@ -86,5 +86,6 @@ class CustomerClient {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `api-versioning-deprecation`, `versioning-semver-snapshots`, `contract-testing-pact`.
-- Fuentes: documentación de OpenAPI Generator (plugin Maven, generador `java`, `.openapi-generator-ignore`) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de OpenAPI Generator (plugin Maven, generador `java`, `.openapi-generator-ignore`).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

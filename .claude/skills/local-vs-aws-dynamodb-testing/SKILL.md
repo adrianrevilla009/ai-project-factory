@@ -51,7 +51,7 @@ DynamoDbClient dynamoDbClient(@Value("${app.dynamodb.endpoint:}") String endpoin
 ```text
 docker run -p 8000:8000 amazon/dynamodb-local -jar DynamoDBLocal.jar -inMemory -sharedDb
 ```
-El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía de AWS; confirmar el tag de imagen vigente (comprobar al fijar la versión). Ejemplo en bloque de texto, no ejecutado.
+El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía de AWS; confirmar el tag de imagen vigente. Ejemplo en bloque de texto, no ejecutado.
 
 ## Checklist de revisión
 - [ ] Endpoint y credenciales de emulador solo en perfil local/test.
@@ -69,4 +69,5 @@ El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `dynamodb-data-modeling`, `dynamodb-event-store`, `global-tables-and-write-region-rules`, `db-testing`, `outbox-and-cdc`.
 - Fuentes (verificadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.html · https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocal.UsageNotes.html
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

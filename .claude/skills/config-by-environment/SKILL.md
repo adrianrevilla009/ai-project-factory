@@ -75,5 +75,5 @@ DB_PASSWORD=changeme
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `configuration-properties`, `injection-patterns`, `twelve-factor`, `secrets-in-gitops`, `spring-cloud-config-module`.
-- Fuentes: ADR-0011; Spring Boot reference, Externalized Configuration (por nombre; URL y versión se fijan al adoptarlas en el proyecto). Diseño preparado para AWS, no verificado en real.
+- Fuentes: ADR-0011; Spring Boot reference, Externalized Configuration. Diseño preparado para AWS, no verificado en real.
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

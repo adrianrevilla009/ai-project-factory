@@ -22,7 +22,7 @@ metadata:
 - **MUST** recoger y propagar las excepciones de los hilos de prueba (`Future.get()`); un fallo en otro hilo no falla el test por sí solo.
 - **MUST** poner timeout a cada test concurrente (`@Timeout`, JUnit 5) para que un deadlock no cuelgue el pipeline.
 - **MUST** repetir el test (`@RepeatedTest`) para aumentar la probabilidad de exponer carreras; un test que pasa una vez no demuestra ausencia de carrera.
-- **SHOULD** usar jcstress para código sin locks/memory model (comprobar al fijar la versión) y un thread dump automático en timeout.
+- **SHOULD** usar jcstress para código sin locks/memory model y un thread dump automático en timeout.
 - **SHOULD** probar idempotencia y exclusión contra Postgres real (Testcontainers), no mocks.
 - **MUST NOT** dejar tests "flaky" en cuarentena sin ticket: o se arreglan o se borran.
 
@@ -78,5 +78,6 @@ await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(outbox.pend
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `locks-and-synchronization`, `idempotency-and-deduplication`, `db-testing`.
-- Fuentes: documentación de JUnit 5, Awaitility y jcstress (openjdk) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de JUnit 5, Awaitility y jcstress (openjdk).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

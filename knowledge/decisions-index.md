@@ -68,6 +68,8 @@
 | Cuánta cobertura y qué más medir | `coverage-policy`, `mutation-testing` |
 | Cómo probar contratos | `contract-testing-pact`, `contract-gate` |
 | Cuándo hacer pruebas de carga y de caos | `performance-testing`, `chaos-engineering` |
+| JMeter o Gatling para la carga | `performance-testing`, `gatling-load-testing` · D19 |
+| Qué herramientas de análisis estático y de seguridad combinar | `static-analysis`, `security-testing-sast-dast`, `codeql-sast`, `sonarqube-quality-gate` |
 
 ## IA y agentes
 | Decisión | Dónde decidir |

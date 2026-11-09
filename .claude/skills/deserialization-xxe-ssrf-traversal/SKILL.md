@@ -21,7 +21,7 @@ metadata:
 - **MUST** deshabilitar DTD y entidades externas en todo parser XML (`disallow-doctype-decl`, `XMLConstants.ACCESS_EXTERNAL_DTD` vacío).
 - **MUST** validar destinos salientes (SSRF): solo `https`, host en allowlist, resolver DNS y rechazar IPs de loopback, link-local (`169.254.0.0/16`, incluye metadatos de instancia), privadas y reservadas.
 - **MUST NOT** seguir redirecciones automáticamente en llamadas con URL aportada por el usuario; revalidar cada salto o deshabilitarlas.
-- **MUST** normalizar rutas (`Path.normalize()` + `toRealPath()`) y comprobar `startsWith(baseDir)` antes de abrir ficheros.
+- **MUST** normalizar rutas (`Path.normalize` + `toRealPath`) y comprobar `startsWith(baseDir)` antes de abrir ficheros.
 - **SHOULD** forzar IMDSv2 y limitar el egress de red de la carga para que SSRF tenga poco alcance (preparado para AWS, no verificado en real; en local no se reproduce IMDS).
 - **SHOULD** aplicar `ObjectInputFilter` si la serialización nativa es inevitable en código heredado.
 
@@ -54,7 +54,7 @@ InetAddress ip = InetAddress.getByName(uri.getHost());
 if (ip.isAnyLocalAddress() || ip.isLoopbackAddress() || ip.isLinkLocalAddress() || ip.isSiteLocalAddress())
     throw new IllegalArgumentException("internal address");
 ```
-Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar a la IP ya validada (comprobar patrón concreto).
+Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar a la IP ya validada.
 
 ## Checklist de revisión
 - [ ] No hay `ObjectInputStream` ni default typing sobre entrada externa.
@@ -74,5 +74,6 @@ Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `injection-families`, `file-upload-security`, `cloud-iam-least-privilege`, `owasp-top10-and-api-top10`.
-- Fuentes: OWASP Cheat Sheet Series (Deserialization, XXE Prevention, SSRF Prevention, Input Validation) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: OWASP Cheat Sheet Series (Deserialization, XXE Prevention, SSRF Prevention, Input Validation).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

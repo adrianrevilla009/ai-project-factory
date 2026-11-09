@@ -80,9 +80,10 @@ import { InvoiceList } from '@/features/invoices';
 | ESLint `no-restricted-imports` (solo API pública) | 1 | `policies/frontend-boundaries/eslint.boundaries.example.mjs` |
 | Revisión de diseño de nuevas features | 3 | agente `code-reviewer` |
 
-Son ejemplos para copiar al proyecto generado; la fábrica no los ejecuta. Versiones de las herramientas: comprobar al fijar la versión.
+Son ejemplos para copiar al proyecto generado; la fábrica no los ejecuta. Versiones de las herramientas.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `typescript-strict-rules`, `component-patterns`, `state-management`, `routing-and-code-splitting`, `connascence-and-coupling`.
-- Fuentes: ADR-0036; documentación de dependency-cruiser y ESLint `no-restricted-imports` (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: ADR-0036; documentación de dependency-cruiser y ESLint `no-restricted-imports`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

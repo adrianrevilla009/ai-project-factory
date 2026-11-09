@@ -89,7 +89,7 @@
 - **SHOULD** pasar opciones con `JAVA_TOOL_OPTIONS` o `JAVA_OPTS` documentadas, no en el `ENTRYPOINT` en duro.
 - **SHOULD** dejar que la JVM detecte los CPU del cgroup; **MUST NOT** fijar `-XX:ActiveProcessorCount` sin medir.
 - **MUST** configurar `terminationGracePeriodSeconds` mayor que el apagado ordenado de la aplicación (ver `graceful-shutdown-lifecycle`).
-- **SHOULD** medir con carga antes de elegir GC; el GC por defecto suele bastar. Comprobar valores por versión de JDK.
+- **SHOULD** medir con carga antes de elegir GC; el GC por defecto suele bastar.
 
 ## logging-rules
 
@@ -134,7 +134,7 @@
 - **MUST NOT** devolver `null` desde métodos que devuelven colecciones o arrays: devolver colección vacía.
 - **MUST NOT** usar `Optional` como campo, parámetro de método ni elemento de colección.
 - **MUST NOT** llamar `Optional.get()` sin comprobación; usar `orElseThrow(() -> new NotFoundException(...))`, `map`, `ifPresent` u `orElse`.
-- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring) — comprobar soporte en la versión de Spring Boot elegida.
+- **SHOULD** declarar la política de nulos del paquete con anotaciones (`@NullMarked` de JSpecify o equivalente de Spring).
 - **SHOULD** usar `Objects.requireNonNullElse` / `Map.getOrDefault` antes que comprobaciones manuales repetidas.
 - **MUST NOT** devolver `Boolean` nulo como tercer estado; usar un enum.
 
@@ -145,7 +145,7 @@
 - **MUST** distinguir fuga de uso alto: una fuga es heap *después de GC completos* creciente en el tiempo.
 - **MUST** capturar un heap dump (`jcmd <pid> GC.heap_dump`) en dos instantes y comparar los objetos retenidos (analizador como Eclipse MAT); buscar el camino al GC root.
 - **MUST** tratar los heap dumps como datos sensibles: pueden contener credenciales y datos personales; no subirlos a herramientas externas ni a tickets.
-- **MUST NOT** perfilar en producción con agentes de alto coste sin aprobación; JFR con configuración por defecto es de bajo overhead (comprobar cifras).
+- **MUST NOT** perfilar en producción con agentes de alto coste sin aprobación; JFR con configuración por defecto es de bajo overhead.
 - **SHOULD** vigilar causas típicas: cachés sin límite ni expiración, `ThreadLocal` no limpiado en pools, listeners no desregistrados, colecciones estáticas, `ClassLoader` retenido, conexiones/streams sin cerrar.
 - **SHOULD** usar JMH para microbenchmarks; **MUST NOT** medir con `System.currentTimeMillis` en bucle y sin calentamiento.
 - **SHOULD** exponer métricas JVM (heap, GC, hilos) y alertar sobre tendencias.

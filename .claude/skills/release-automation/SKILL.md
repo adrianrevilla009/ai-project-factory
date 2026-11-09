@@ -20,7 +20,7 @@ metadata:
 - **MUST** hacer la release desde CI sobre la rama principal limpia y con la verificación completa en verde; **MUST NOT** liberar desde una máquina local.
 - **MUST** generar changelog automático a partir de los commits y crear un tag anotado `vX.Y.Z`.
 - **MUST** publicar en cada release: artefactos, SBOM (`sbom-generation`), informe de licencias y, si aplica, imagen con digest (`container-images`).
-- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR. Detalles comprobar al fijar la versión.
+- **SHOULD** usar versiones CI-friendly (`${revision}` con `flatten-maven-plugin`) o `maven-release-plugin`; elegir una y documentarla en un ADR.
 - **MUST** hacer la release idempotente: re-ejecutarla sobre el mismo tag no debe producir artefactos distintos (`reproducible-builds`).
 - **MUST NOT** reescribir ni borrar un tag publicado; corregir con una nueva versión patch.
 - **MUST** exigir aprobación humana antes de promocionar a entornos productivos (gate); el agente MUST NOT crear ni editar `approvals/*.json`.
@@ -71,5 +71,6 @@ feat(api)!: remove v1 order payload          -> major
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `versioning-semver-snapshots`, `sbom-generation`, `reproducible-builds`, `container-images`, `license-compliance`.
-- Fuentes: conventionalcommits.org, semver.org, documentación de maven-release-plugin y flatten-maven-plugin (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: conventionalcommits.org, semver.org, documentación de maven-release-plugin y flatten-maven-plugin.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

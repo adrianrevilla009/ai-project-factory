@@ -74,5 +74,5 @@ CREATE INDEX idx_order_customer ON customer_order (customer_id);
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `schema-migrations`, `id-generation`, `indexing-and-query-plans`, `jpa-entity-design`.
-- Fuentes: documentación de PostgreSQL (Data Types, Constraints) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de PostgreSQL (Data Types, Constraints).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

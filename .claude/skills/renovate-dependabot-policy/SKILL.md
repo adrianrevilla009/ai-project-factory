@@ -16,7 +16,7 @@ metadata:
 - No aplica a parches de emergencia por CVE crítico (flujo de `dependency-security`, que salta la cadencia).
 
 ## Reglas
-- **MUST** tener un bot de actualización activo: Dependabot (integrado en GitHub, sin coste) o Renovate (OSS autoalojable; comprobar licencia y opción gratuita vigente antes de elegirlo).
+- **MUST** tener un bot de actualización activo: Dependabot (integrado en GitHub, sin coste) o Renovate (OSS autoalojable).
 - **MUST** cubrir ecosistemas: `maven`, `npm`, `docker`/imágenes base, `github-actions` y Terraform si existe.
 - **MUST** agrupar en un PR: dependencias de Spring Boot, de test y minor/patch de frontend; **MUST NOT** abrir un PR por cada patch.
 - **MUST** exigir CI verde y revisión humana para `major`; el automerge solo para `patch` de test/dev y con CI verde.
@@ -55,7 +55,7 @@ updates:
     directory: "/"
     schedule: { interval: weekly }
 ```
-(Claves de `dependabot.yml` a contrastar con la documentación vigente de GitHub: comprobar al fijar la versión.)
+(Claves de `dependabot.yml` a contrastar con la documentación vigente de GitHub)
 
 ## Checklist de revisión
 - [ ] Bot activo para todos los ecosistemas presentes.
@@ -73,5 +73,6 @@ updates:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `bom-management`, `dependency-hygiene`, `dependency-security`, `container-images`, `release-automation`.
-- Fuentes: documentación de GitHub Dependabot y de Renovate (docs.renovatebot.com) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de GitHub Dependabot y de Renovate (docs.renovatebot.com).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

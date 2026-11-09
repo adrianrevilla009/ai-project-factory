@@ -71,5 +71,6 @@ glossary:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `ddd-strategic`, `ddd-tactical`, `aggregates-and-event-design`, `requirements-engineering`, `adr`.
-- Fuentes: https://www.eventstorming.com/ (Brandolini; comprobar detalle de fases en la fuente primaria, 2026-11-07).
+- Fuentes: https://www.eventstorming.com/ (Brandolini).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

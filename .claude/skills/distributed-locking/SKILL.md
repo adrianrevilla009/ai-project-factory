@@ -21,8 +21,8 @@ metadata:
 - **MUST** asumir que el titular puede perder el lock sin saberlo (pausa GC, partición): proteger el recurso con un *fencing token* monotónico que el recurso verifique, o hacer la operación idempotente.
 - **MUST NOT** usar un lock distribuido como única garantía de corrección de dinero o inventario.
 - **MUST** liberar solo si se es titular (valor único por adquisición, comparar-y-borrar atómico).
-- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0, comprobar al fijar la versión) sobre JDBC para jobs.
-- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido (comprobar al fijar la versión) y no sustituye al fencing.
+- **SHOULD** usar el almacén que el proyecto ya tiene y respeta D16 (sin licencias de pago): Postgres (`pg_advisory_xact_lock` o tabla con lease) o ShedLock (Apache-2.0) sobre JDBC para jobs.
+- **MUST NOT** tomar un lock Redis de una sola instancia como si fuera consenso; Redlock es controvertido y no sustituye al fencing.
 - **SHOULD** acotar la sección crítica a bastante menos que el TTL y exponer métricas de adquisición/espera.
 - En local se usa el mismo mecanismo sobre el Postgres de desarrollo; no se reproducen fallos de red/partición realistas de AWS.
 
@@ -64,5 +64,6 @@ UPDATE ledger SET balance = :b, last_token = :token
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `idempotency-and-deduplication`, `scheduling-and-batch`, `optimistic-locking`, `pessimistic-locking`.
-- Fuentes: documentación de ShedLock y de Postgres (advisory locks); crítica de Kleppmann a Redlock (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de ShedLock y de Postgres (advisory locks); crítica de Kleppmann a Redlock.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

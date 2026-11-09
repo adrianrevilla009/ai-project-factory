@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** que el contrato OpenAPI sea la fuente de verdad; el frontend no redefine tipos de la API a mano.
-- **MUST** generar tipos/cliente con una herramienta (p. ej. openapi-typescript + openapi-fetch, u Orval; comprobar elección y versión) y confirmar el comando en `package.json`.
+- **MUST** generar tipos/cliente con una herramienta (p. ej. openapi-typescript + openapi-fetch, u Orval) y confirmar el comando en `package.json`.
 - **MUST** ubicar el código generado en `src/shared/api/generated/`, marcado como generado y excluido de lint/formato.
 - **MUST NOT** editar a mano el código generado; se cambia el contrato y se regenera.
 - **MUST** regenerar en CI y fallar si el resultado difiere del commiteado (drift).
@@ -50,7 +50,7 @@ import type { paths } from './generated/schema';
 export const api = createClient<paths>({ baseUrl: import.meta.env.VITE_API_BASE_URL });
 // uso: const { data, error } = await api.GET('/orders/{id}', { params: { path: { id } } });
 ```
-Comandos y API de las librerías: comprobar contra su documentación.
+Comandos y API de las librerías.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -81,5 +81,6 @@ Comandos y API de las librerías: comprobar contra su documentación.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `contract-testing`, `state-management`, `typescript-strict-rules`, `error-handling-problem-details`.
-- Fuentes: documentación de openapi-typescript/openapi-fetch/Orval y de Vite (variables de entorno) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de openapi-typescript/openapi-fetch/Orval y de Vite (variables de entorno).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

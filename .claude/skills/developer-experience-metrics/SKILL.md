@@ -77,5 +77,6 @@ No hay mecanismo automático: es una decisión de gestión.
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `golden-paths-governance`, `backstage`, `finops`.
-- Fuentes: DORA, https://dora.dev/ — comprobar definición vigente de las métricas (nomenclatura de 2025 puede diferir).
+- Fuentes: DORA, https://dora.dev/.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

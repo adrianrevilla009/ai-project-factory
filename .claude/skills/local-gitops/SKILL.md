@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** ser opt-in: `make local-gitops` separado de `make local-up`; ningún perfil lo activa por defecto.
-- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado); comprobar la opción más simple con la versión de Argo CD usada.
+- **MUST** que Argo CD apunte a un repositorio git accesible desde el clúster (git server local en el clúster o un `file`/bare repo montado).
 - **MUST** usar el patrón app-of-apps y los mismos manifiestos Kustomize que el perfil local, para no mantener dos fuentes de verdad.
 - **MUST** `syncPolicy.automated` con `prune: true` y `selfHeal: true` solo en el clúster local; documentar que en los entornos reales la política la decide la guía de promoción.
 - **MUST** que el destino sea `https://kubernetes.default.svc` (el clúster kind), nunca un clúster remoto.
@@ -65,5 +65,6 @@ spec:
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `local-profiles`, `dev-loop`, `cluster-tooling`.
-- Fuentes: documentación de Argo CD (app-of-apps) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Argo CD (app-of-apps).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

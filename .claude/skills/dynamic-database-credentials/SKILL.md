@@ -28,7 +28,7 @@ metadata:
 - **MUST NOT** emitir credenciales con `SUPERUSER` ni con propiedad de esquemas para servicios de aplicación.
 
 ## Por qué
-Cada instancia con su usuario hace la auditoría atribuible y la revocación inmediata. Pero el motor depende de que la BD sea escribible: en un failover, activar Vault antes de la promoción provoca errores en cascada que parecen caída del propio Vault. Verificar los detalles de Aurora Global (conmutación gestionada vs. manual) en la documentación AWS vigente: comprobar al fijar la versión.
+Cada instancia con su usuario hace la auditoría atribuible y la revocación inmediata. Pero el motor depende de que la BD sea escribible: en un failover, activar Vault antes de la promoción provoca errores en cascada que parecen caída del propio Vault. Verificar los detalles de Aurora Global (conmutación gestionada vs. manual) en la documentación AWS vigente.
 
 ## Ejemplos
 ### Mal
@@ -73,6 +73,7 @@ vault write database/roles/orders-rw db_name=orders default_ttl=1h max_ttl=4h \
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rotation-and-leases`, `policies`, `connection-pooling`, `vault-and-keycloak-dr`, `multi-region-patterns`.
-- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/databases ; brief §9 de la fábrica. Comprobar comportamiento de Aurora Global en promoción.
+- Fuentes (2026-11-07): https://developer.hashicorp.com/vault/docs/secrets/databases; brief §9 de la fábrica.
 - Estado: diseño; preparado para AWS, no verificado en real.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

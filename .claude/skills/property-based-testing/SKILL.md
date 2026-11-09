@@ -55,7 +55,7 @@ class MoneyProperties {
     }
 }
 ```
-Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (comprobar versión y compatibilidad con la versión de JUnit Platform).
+Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM.
 
 ## Criterios de decisión y trampas
 ### Cómo decidir
@@ -84,5 +84,6 @@ Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (comprobar versi
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `unit-testing-java`, `mutation-testing`, `time-and-money`, `test-data-management`.
-- Fuentes: https://jqwik.net/docs/current/user-guide.html (comprobar anotaciones y versión, no contrastadas a 2026-11-07).
+- Fuentes: https://jqwik.net/docs/current/user-guide.html.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

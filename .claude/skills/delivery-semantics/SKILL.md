@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** purgar la tabla de eventos procesados con una retención mayor que la ventana máxima de reentrega.
 
 ## Por qué
-Las redes fallan entre "procesé" y "confirmé"; el broker reenvía. Exactly-once de extremo a extremo no existe sin cooperación del receptor. Sin outbox, un fallo entre el `commit` de la BD y el `send` deja el sistema inconsistente de forma irrecuperable. Verificar el alcance real de las transacciones Kafka en su documentación (comprobar al fijar la versión).
+Las redes fallan entre "procesé" y "confirmé"; el broker reenvía. Exactly-once de extremo a extremo no existe sin cooperación del receptor. Sin outbox, un fallo entre el `commit` de la BD y el `send` deja el sistema inconsistente de forma irrecuperable. Verificar el alcance real de las transacciones Kafka en su documentación.
 
 ## Ejemplos
 ### Mal
@@ -78,5 +78,6 @@ CREATE TABLE processed_event (
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `kafka-producers-consumers`, `idempotency-keys`, `dlq-retries-poison-messages`, `webhooks`.
-- Fuentes: documentación de Apache Kafka (semántica de entrega, transacciones); patrón Transactional Outbox (microservices.io) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Apache Kafka (semántica de entrega, transacciones); patrón Transactional Outbox (microservices.io).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

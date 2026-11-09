@@ -20,7 +20,7 @@ metadata:
 - **MUST** que las versiones release sean inmutables: una versión publicada nunca se re-sube ni se sobrescribe; se corrige con una nueva.
 - **MUST** que `-SNAPSHOT` exista solo en ramas de desarrollo; **MUST NOT** desplegar ni referenciar SNAPSHOT en un release ni en una imagen de producción.
 - **MUST NOT** depender de un SNAPSHOT de terceros en `main`.
-- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta (comprobar compatibilidad con la versión de Maven elegida).
+- **SHOULD** usar CI-friendly versions (`${revision}`) con `flatten-maven-plugin` para que el POM publicado lleve la versión resuelta.
 - **SHOULD** derivar la versión de un tag git `vX.Y.Z` en el pipeline de release (ver `release-automation`).
 - **SHOULD** que todos los módulos de un reactor compartan la misma versión.
 - **MUST NOT** usar `versions:set` manual con commits "bump version" a mano si hay automatización.
@@ -65,5 +65,6 @@ Un SNAPSHOT cambia bajo los pies: el mismo `1.2.0-SNAPSHOT` compilado hoy y mañ
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `release-automation`, `reproducible-builds`, `bom-management`, `api-versioning-deprecation`.
-- Fuentes: Semantic Versioning 2.0.0 (semver.org); Apache Maven, "Maven CI Friendly Versions" (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Semantic Versioning 2.0.0 (semver.org); Apache Maven, "Maven CI Friendly Versions".
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

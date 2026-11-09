@@ -27,7 +27,7 @@ metadata:
 - **SHOULD** elegir CronJob de Kubernetes para jobs largos aislados y ShedLock para tareas cortas dentro del servicio.
 
 ## Por qué
-Con N réplicas, un `@Scheduled` corre N veces: cobros duplicados, correos repetidos. Un job no idempotente convierte un reintento en un incidente. Versiones de ShedLock/Spring Batch: comprobar al fijar la versión.
+Con N réplicas, un `@Scheduled` corre N veces: cobros duplicados, correos repetidos. Un job no idempotente convierte un reintento en un incidente. Versiones de ShedLock/Spring Batch.
 
 ## Ejemplos
 ### Mal
@@ -60,4 +60,5 @@ public void closeDay() {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `scheduling-and-batch`, `batching-and-bulk-ops`, `idempotency-and-deduplication`, `import-export-and-bulk-data`.
 - Fuentes: ShedLock README, Spring Batch reference (2026-11-07). Local: Kubernetes local; no se reproduce EventBridge Scheduler de AWS.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -25,7 +25,7 @@ metadata:
 - **SHOULD** limitar la paralelización al número de tareas realmente independientes (ver `cost-control`).
 
 ## Por qué
-Dos sesiones sobre el mismo árbol se pisan: una lee un fichero a medias, la otra lo reescribe. Un worktree es un checkout separado con su propia rama y evita eso sin clonar el repositorio. Claude Code lo soporta con `claude --worktree <nombre>` (verificado 2026-11-07, https://code.claude.com/docs/en/common-workflows; requiere al menos un commit; detalles de limpieza y `.worktreeinclude` en https://code.claude.com/docs/en/worktrees.md). Hoy este directorio de la fábrica no es un repositorio git, así que el aislamiento por worktree solo aplica a proyectos generados con git; aquí la separación se logra por propiedad de carpetas. Comprobar la opción de aislamiento por worktree en la definición de subagentes.
+Dos sesiones sobre el mismo árbol se pisan: una lee un fichero a medias, la otra lo reescribe. Un worktree es un checkout separado con su propia rama y evita eso sin clonar el repositorio. Claude Code lo soporta con `claude --worktree <nombre>` (verificado 2026-11-07, https://code.claude.com/docs/en/common-workflows; requiere al menos un commit; detalles de limpieza y `.worktreeinclude` en https://code.claude.com/docs/en/worktrees.md). Hoy este directorio de la fábrica no es un repositorio git, así que el aislamiento por worktree solo aplica a proyectos generados con git; aquí la separación se logra por propiedad de carpetas.
 
 ## Ejemplos
 ### Mal
@@ -65,4 +65,5 @@ integrador (humano o tech-lead) -> catalog/skills-inventory.yaml, docs/skills-in
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `handoff-artifacts-between-agents`, `cost-control`, `gate-protocol`.
 - Fuentes: https://code.claude.com/docs/en/common-workflows (consultada 2026-11-07); documentación de `git worktree`.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

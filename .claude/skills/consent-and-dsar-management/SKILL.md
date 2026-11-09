@@ -21,7 +21,7 @@ metadata:
 - **MUST** guardar cada consentimiento como evento inmutable: sujeto, finalidad, versión del texto, valor (otorgado/retirado), marca temporal, canal y prueba (IP/UA solo si la finalidad lo justifica).
 - **MUST** modelar el consentimiento por finalidad, nunca un único "acepto todo" ni casillas premarcadas.
 - **MUST** hacer la retirada tan fácil como el otorgamiento y propagarla a los servicios consumidores por evento (outbox).
-- **MUST** modelar el DSAR como un caso con máquina de estados (`RECEIVED`, `IDENTITY_VERIFIED`, `IN_PROGRESS`, `COMPLETED`, `REJECTED`), fecha límite calculada y alerta previa al vencimiento (plazo base de un mes según el art. 12; comprobar prórrogas).
+- **MUST** modelar el DSAR como un caso con máquina de estados (`RECEIVED`, `IDENTITY_VERIFIED`, `IN_PROGRESS`, `COMPLETED`, `REJECTED`), fecha límite calculada y alerta previa al vencimiento (plazo base de un mes según el art. 12).
 - **MUST** verificar la identidad del solicitante antes de entregar datos.
 - **MUST** mantener un inventario de dónde vive cada dato personal (ver `pii-and-data-classification`); sin inventario no hay DSAR fiable.
 - **MUST** responder el acceso/portabilidad en formato estructurado (JSON/CSV) y entregarlo por canal seguro con enlace caducable.
@@ -77,4 +77,5 @@ CREATE TABLE dsar_case (
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `pii-and-data-classification`, `gdpr-and-immutable-events`, `gdpr-in-the-lake`, `data-privacy-in-db`, `retention-and-cleanup`, `outbox-and-cdc`.
 - Fuentes: Reglamento (UE) 2016/679 en EUR-Lex, consultado 2026-11-07 (borrador; confirmar artículos y plazos con asesoría).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

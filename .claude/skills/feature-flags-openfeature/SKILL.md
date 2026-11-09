@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** acceder a los flags a través de la API de OpenFeature (estándar abierto, SDK Java) y no del SDK de un proveedor concreto, para poder cambiar de provider sin tocar el código de negocio.
-- **MUST** elegir un provider sin licencia de pago por defecto (D16); fichero/ConfigMap o un servidor OSS compatible con OpenFeature. Comprobar provider concreto y versión.
+- **MUST** elegir un provider sin licencia de pago por defecto (D16); fichero/ConfigMap o un servidor OSS compatible con OpenFeature.
 - **MUST** pasar siempre un valor por defecto seguro en cada evaluación: si el provider cae, el sistema se comporta como "flag apagado".
 - **MUST** tipificar y nombrar los flags (`orders.new-pricing.enabled`) con propietario, fecha de creación y fecha de retirada prevista.
 - **MUST** clasificar cada flag: release (vida corta), ops/kill switch, experimento o permiso; solo los de release y experimento caducan.
@@ -54,7 +54,7 @@ class OpenFeatureToggles implements FeatureToggles {
     }
 }
 ```
-Firmas de `OpenFeatureAPI`/`ImmutableContext`: comprobar contra el SDK Java de la versión fijada.
+Firmas de `OpenFeatureAPI`/`ImmutableContext`.
 
 ## Checklist de revisión
 - [ ] Acceso por puerto y API OpenFeature, no SDK de proveedor.
@@ -73,4 +73,5 @@ Firmas de `OpenFeatureAPI`/`ImmutableContext`: comprobar contra el SDK Java de l
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `config-by-environment`, `spring-cloud-config-module`, `canary-and-traffic-splitting`, `hexagonal`.
 - Fuentes: https://openfeature.dev/docs/reference/intro (consultada 2026-11-07: providers, evaluation context, hooks, SDK Java).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

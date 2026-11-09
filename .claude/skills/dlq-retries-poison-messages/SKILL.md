@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** contener PII fuera de los logs de la DLQ; tratar la DLQ con el mismo control de acceso y retención que la fuente.
 
 ## Por qué
-Un mensaje venenoso reintentado sin límite bloquea una partición entera y propaga retraso a todo lo posterior. Un descarte silencioso pierde datos sin rastro. Una DLQ sin alerta es un cementerio. Las clases y propiedades de Spring Kafka, RabbitMQ y SQS deben contrastarse con su documentación vigente (comprobar al fijar la versión).
+Un mensaje venenoso reintentado sin límite bloquea una partición entera y propaga retraso a todo lo posterior. Un descarte silencioso pierde datos sin rastro. Una DLQ sin alerta es un cementerio. Las clases y propiedades de Spring Kafka, RabbitMQ y SQS deben contrastarse con su documentación vigente.
 
 ## Ejemplos
 ### Mal
@@ -77,5 +77,6 @@ ARN de ejemplo (`example`); la política es configuración preparada para AWS, n
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `kafka-producers-consumers`, `rabbitmq-sqs`, `delivery-semantics`, `alerting-symptom-based`.
-- Fuentes: documentación de Spring for Apache Kafka (manejo de errores y DLT) y de Amazon SQS (dead-letter queues) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de Spring for Apache Kafka (manejo de errores y DLT) y de Amazon SQS (dead-letter queues).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

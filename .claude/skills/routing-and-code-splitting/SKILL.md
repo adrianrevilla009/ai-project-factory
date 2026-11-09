@@ -27,7 +27,7 @@ metadata:
 - **MUST** que los parámetros de ruta se validen (son `string | undefined`).
 
 ## Por qué
-Sin división, el usuario descarga todo el código en la primera visita. Dividir por ruta es el corte natural: coincide con la navegación y con los límites de feature. Los guards del cliente se saltan con las DevTools; solo informan a la UI. Verificar la API exacta de la versión de React Router (data routers, `lazy`) — comprobar al fijar la versión.
+Sin división, el usuario descarga todo el código en la primera visita. Dividir por ruta es el corte natural: coincide con la navegación y con los límites de feature. Los guards del cliente se saltan con las DevTools; solo informan a la UI. Verificar la API exacta de la versión de React Router (data routers, `lazy`).
 
 ## Ejemplos
 ### Mal
@@ -80,5 +80,6 @@ Nota: el `import()` dinámico apunta a un fichero por defecto de la página; ese
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `frontend-architecture`, `frontend-performance`, `auth-and-session`, `error-handling-and-boundaries`.
-- Fuentes: documentación de React (`lazy`, `Suspense`) y React Router (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: documentación de React (`lazy`, `Suspense`) y React Router.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

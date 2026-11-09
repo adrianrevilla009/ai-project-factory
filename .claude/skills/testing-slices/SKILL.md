@@ -20,7 +20,7 @@ metadata:
 - **MUST** usar `@WebMvcTest(Controller.class)` para controladores (validación, serialización, códigos HTTP, Problem Details).
 - **MUST** usar `@DataJpaTest` con una base real vía Testcontainers (misma BD que producción) para repositorios; **MUST NOT** probar queries nativas contra H2.
 - **MUST** usar `@JsonTest` para contratos de serialización críticos.
-- **MUST** sustituir colaboradores con `@MockitoBean` (Spring Framework 6.2+; en versiones anteriores `@MockBean`, comprobar al fijar la versión) y limitar su uso: muchos mocks indican un slice mal elegido.
+- **MUST** sustituir colaboradores con `@MockitoBean` (Spring Framework 6.2+; en versiones anteriores `@MockBean`) y limitar su uso: muchos mocks indican un slice mal elegido.
 - **SHOULD** reutilizar contenedores entre tests (singleton / `@ServiceConnection`, Boot 3.1+) para no multiplicar el tiempo.
 - **MUST NOT** usar `@DirtiesContext` salvo causa documentada: destruye la caché de contextos.
 - **MUST** que los tests no dependan del orden ni de datos de otros tests.
@@ -85,5 +85,6 @@ class OrderRepositoryTest {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `controllers-and-validation`, `integration-testing-testcontainers`, `unit-testing-java`.
-- Fuentes: Spring Boot Reference (Testing, test slices, Testcontainers) (por nombre; URL y versión se fijan al adoptarlas en el proyecto).
+- Fuentes: Spring Boot Reference (Testing, test slices, Testcontainers).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

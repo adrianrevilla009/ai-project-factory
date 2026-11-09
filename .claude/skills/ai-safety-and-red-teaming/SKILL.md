@@ -69,5 +69,6 @@ report_to: security-lead@example.com
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-security`, `llm-evals`, `guardrails-and-pii-redaction`, `model-risk-and-ai-act-mapping`, `human-in-the-loop`.
-- Fuentes: OWASP Top 10 for LLM Applications (https://genai.owasp.org, edición 2025); NIST AI RMF (comprobar URL). Normativa aplicable: borrador por confirmar con fuente oficial.
+- Fuentes: OWASP Top 10 for LLM Applications (https://genai.owasp.org, edición 2025); NIST AI RMF. Normativa aplicable: borrador por confirmar con fuente oficial.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

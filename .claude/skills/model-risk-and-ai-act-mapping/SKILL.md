@@ -15,7 +15,7 @@ metadata:
 
 ## Cuándo aplicar y cuándo no
 - Aplica al inicio de cualquier feature con modelos de IA (propios o de terceros) y al cambiar su finalidad, datos o modelo.
-- No aplica a herramientas internas de desarrollo sin impacto en usuarios finales (aun así, revisar obligaciones de alfabetización en IA, comprobar al fijar la versión).
+- No aplica a herramientas internas de desarrollo sin impacto en usuarios finales (aun así, revisar obligaciones de alfabetización en IA).
 
 ## Reglas
 - **MUST** mantener un registro de sistemas de IA (`ai-system-register`): finalidad, modelo y proveedor, datos usados, usuarios afectados, rol (proveedor / desplegador), propietario.
@@ -43,9 +43,9 @@ El AI Act entró en vigor el 1 de agosto de 2024; las prácticas prohibidas se a
 - name: cv-screening
   purpose: "Ordenar candidaturas por adecuación al puesto"
   role: deployer
-  model: "third-party-llm, version pinned (comprobar contrato)"
+  model: "third-party-llm, version pinned"
   data: ["CV (datos personales)", "oferta de empleo"]
-  preliminary_class: high-risk-candidate   # empleo: Anexo III, comprobar con legal
+  preliminary_class: high-risk-candidate   # empleo: Anexo III
   legal_review: pending
   human_oversight: "ver human-in-the-loop; decisión final humana"
   risks:
@@ -69,5 +69,6 @@ El AI Act entró en vigor el 1 de agosto de 2024; las prácticas prohibidas se a
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `human-in-the-loop`, `ai-safety-and-red-teaming`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `chatbot-design`.
-- Fuentes: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07). Texto legal: Reglamento (UE) 2024/1689 en EUR-Lex, comprobar artículos y anexos.
+- Fuentes: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07). Texto legal: Reglamento (UE) 2024/1689 en EUR-Lex.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

@@ -34,7 +34,7 @@
 ## chatbot-design
 
 - **MUST** declarar un alcance explícito (temas permitidos, acciones permitidas, fuera de alcance) en el system prompt versionado y en la documentación del producto.
-- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act; comprobar artículo y fecha con legal).
+- **MUST** informar al usuario de que habla con una IA desde el primer mensaje (obligación de transparencia prevista en el AI Act).
 - **MUST** ofrecer escalado a un humano en cualquier momento y automáticamente tras N fallos, baja confianza o temas sensibles (queja formal, salud, legal).
 - **MUST** limitar la memoria: ventana de turnos acotada, resumen en lugar de historial completo, TTL y borrado a petición (ver `pii-and-data-classification`).
 - **MUST** responder "no lo sé" con enlace a fuentes cuando la recuperación no encuentra evidencia, y citar fuentes en respuestas factuales.
@@ -54,7 +54,7 @@
 - **MUST** monitorizar en servicio: latencia, errores, distribución de entradas (deriva de datos) y, cuando lleguen etiquetas, calidad real (deriva de rendimiento).
 - **MUST** poder volver a la versión anterior sin reentrenar (rollback) y desplegar de forma gradual (sombra o canario).
 - **SHOULD** evaluar sesgo entre grupos relevantes y documentar uso previsto y límites en una ficha del modelo (ver `model-risk-and-ai-act-mapping`).
-- **SHOULD** servir modelos ligeros en proceso (p. ej. formato ONNX, comprobar runtime Java) o como servicio separado con contrato versionado.
+- **SHOULD** servir modelos ligeros en proceso (p. ej. formato ONNX) o como servicio separado con contrato versionado.
 - **SHOULD** orquestar el reentrenamiento con el orquestador de datos del proyecto (ver bloque de datos) y no con scripts manuales.
 - **MUST NOT** cargar modelos serializados con `pickle` de origen no confiable: ejecuta código arbitrario al deserializar.
 - **MUST NOT** entrenar con datos personales sin base legal y minimización (ver `pii-and-data-classification`).
@@ -171,7 +171,7 @@
 - **MUST** registrar motor y versión por documento (trazabilidad).
 - **MUST** evaluar privacidad antes de enviar documentos a un servicio externo: clasificación de datos, región, retención y acuerdo con el proveedor (ver `pii-and-data-classification`).
 - **MUST** preprocesar de forma explícita (rotación, deskew, resolución ~300 dpi) y medir su efecto; no asumirlo.
-- **SHOULD** usar Tesseract (licencia Apache 2.0, ejecución local, sin coste por página) como opción por defecto de la fábrica para texto impreso limpio; comprobar versión y paquetes de idioma al fijar el proyecto.
+- **SHOULD** usar Tesseract (licencia Apache 2.0, ejecución local, sin coste por página) como opción por defecto de la fábrica para texto impreso limpio.
 - **SHOULD** valorar un servicio gestionado (p. ej. Amazon Textract, preparado para AWS, no verificado en real) o un modelo de visión cuando haya tablas, formularios o manuscrito y los datos lo permitan.
 - **SHOULD** limitar páginas por documento, tamaño y tiempo por página; procesar en cola asíncrona.
 - **MUST NOT** tratar la confianza del motor como probabilidad calibrada sin comprobarlo.
@@ -219,7 +219,7 @@
 
 - **MUST** elegir UN framework por servicio y registrar la decisión en un ADR del proyecto (criterios: integración Spring Boot, madurez de la API, cobertura de proveedores y vector stores necesarios).
 - **SHOULD** preferir Spring AI en servicios Spring Boot (autoconfiguración, `ChatClient`, advisors, observabilidad Micrometer); LangChain4j si se necesita `AiServices` declarativo o cobertura que Spring AI no tenga.
-- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores (comprobar versión vigente al arrancar el proyecto).
+- **MUST** fijar la versión del BOM del framework en `dependencyManagement`; ambos evolucionan rápido y sus APIs cambian entre versiones menores.
 - **MUST** encapsular el framework tras un puerto propio (`interface AnswerGenerator`) en la capa de aplicación; el dominio no importa `org.springframework.ai` ni `dev.langchain4j`.
 - **MUST** configurar timeouts, reintentos acotados y modelo/temperatura por propiedades, no en código.
 - **MUST** leer claves del proveedor desde el gestor de secretos (ver `secrets-management`), nunca de `application.yml`.
@@ -263,7 +263,7 @@
 - **MUST** respetar señales de exclusión del origen (términos de uso, `robots.txt`, avisos de reserva de derechos) y no hacer scraping de fuentes que lo prohíban.
 - **MUST** versionar el dataset con hash e identificar qué versión entrenó cada modelo (ver `classical-mlops`).
 - **MUST** poder retirar datos: si un titular ejerce sus derechos o caduca una licencia, saber qué modelos e índices se ven afectados y planificar reindexado o reentrenamiento.
-- **SHOULD** preferir datos propios, de licencia abierta compatible (CC0, CC-BY, Apache-2.0 según el caso) o sintéticos generados con modelos cuyas condiciones permitan ese uso (comprobar por proveedor).
+- **SHOULD** preferir datos propios, de licencia abierta compatible (CC0, CC-BY, Apache-2.0 según el caso) o sintéticos generados con modelos cuyas condiciones permitan ese uso.
 - **SHOULD** mantener la lista de licencias aceptadas y rechazadas por el proyecto y una revisión legal para las dudosas.
 - **SHOULD** revisar el dato sintético: puede heredar restricciones del modelo generador y sesgos.
 - **MUST NOT** mezclar sin etiquetar datos con licencias incompatibles en un mismo conjunto.
@@ -277,7 +277,7 @@
 - **MUST** guardar con cada vector: id de la fuente, versión del modelo de embeddings, dimensión y tenant; un cambio de modelo exige reindexar todo.
 - **MUST** aplicar filtros de autorización (tenant, permisos del documento) en la propia consulta vectorial, no después de recuperar.
 - **MUST** elegir la métrica de distancia que corresponde al modelo (coseno, producto interno o L2) y usar el mismo operador que el índice.
-- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción; comprobar versión de pgvector instalada.
+- **SHOULD** usar índice HNSW en pgvector para consultas con buena relación velocidad/recall (más memoria y build lento) e IVFFlat si importa más el tiempo de construcción.
 - **SHOULD** valorar OpenSearch (k-NN) cuando ya se opera para búsqueda de texto y se necesita búsqueda híbrida (léxica + vectorial) o escala horizontal; preparado para AWS, no verificado en real.
 - **SHOULD** medir recall tras cambios de parámetros del índice (`ef_search`, `lists`/`probes`).
 - **MUST NOT** adoptar un servicio gestionado de pago por defecto (D16) sin ADR con coste.

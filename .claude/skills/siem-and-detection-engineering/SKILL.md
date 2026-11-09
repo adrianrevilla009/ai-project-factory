@@ -50,7 +50,7 @@ falsepositives: ["Shared NAT egress for office"]
 fields: [user.name, source.ip]
 # runbook: docs/runbooks/auth-failures.md
 ```
-Sintaxis Sigma exacta: comprobar contra la especificación vigente (github.com/SigmaHQ/sigma-specification).
+Sintaxis Sigma exacta.
 
 ## Checklist de revisión
 - [ ] Cada regla enlaza amenaza/técnica, dueño y runbook.
@@ -68,5 +68,6 @@ Sintaxis Sigma exacta: comprobar contra la especificación vigente (github.com/S
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `audit-trail-and-security-logging`, `log-archive-and-audit-account`, `incident-management-and-postmortems`, `alert-routing-and-oncall`, `ids-ips-waf-edr`.
-- Fuentes (2026-11-07, comprobar URLs): MITRE ATT&CK; especificación Sigma; documentación de Wazuh.
+- Fuentes (2026-11-07): MITRE ATT&CK; especificación Sigma; documentación de Wazuh.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

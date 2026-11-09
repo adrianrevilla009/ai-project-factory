@@ -26,7 +26,7 @@ metadata:
 - **SHOULD** revisar el consumo tras cada oleada de trabajo y anotar las causas de picos.
 
 ## Por qué
-El coste crece con el contexto acumulado y con el número de turnos, no con el valor entregado. Un bucle sin tope o un `cat` de un log de 20 000 líneas cuestan igual que trabajo útil. Los límites deben ser explícitos y estar fuera del criterio del propio agente. Cifras y planes de precios cambian: consultar la documentación oficial vigente (comprobar al fijar la versión, no se citan importes).
+El coste crece con el contexto acumulado y con el número de turnos, no con el valor entregado. Un bucle sin tope o un `cat` de un log de 20 000 líneas cuestan igual que trabajo útil. Los límites deben ser explícitos y estar fuera del criterio del propio agente. Cifras y planes de precios cambian: consultar la documentación oficial vigente.
 
 ## Ejemplos
 ### Mal
@@ -70,4 +70,5 @@ tools: Read, Grep, Glob
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parallel-work-and-worktrees`, `handoff-artifacts-between-agents`, `context-budgeting`, `finops`.
 - Fuentes: https://code.claude.com/docs/en/common-workflows (delegar en subagentes, consultada 2026-11-07).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1

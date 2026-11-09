@@ -22,7 +22,7 @@ metadata:
 - **MUST** registrar motor y versión por documento (trazabilidad).
 - **MUST** evaluar privacidad antes de enviar documentos a un servicio externo: clasificación de datos, región, retención y acuerdo con el proveedor (ver `pii-and-data-classification`).
 - **MUST** preprocesar de forma explícita (rotación, deskew, resolución ~300 dpi) y medir su efecto; no asumirlo.
-- **SHOULD** usar Tesseract (licencia Apache 2.0, ejecución local, sin coste por página) como opción por defecto de la fábrica para texto impreso limpio; comprobar versión y paquetes de idioma al fijar el proyecto.
+- **SHOULD** usar Tesseract (licencia Apache 2.0, ejecución local, sin coste por página) como opción por defecto de la fábrica para texto impreso limpio.
 - **SHOULD** valorar un servicio gestionado (p. ej. Amazon Textract, preparado para AWS, no verificado en real) o un modelo de visión cuando haya tablas, formularios o manuscrito y los datos lo permitan.
 - **SHOULD** limitar páginas por documento, tamaño y tiempo por página; procesar en cola asíncrona.
 - **MUST NOT** tratar la confianza del motor como probabilidad calibrada sin comprobarlo.
@@ -34,7 +34,7 @@ La calidad del OCR condiciona todo lo posterior: un error en un dígito del impo
 ## Ejemplos
 ### Mal
 ```java
-String text = new Tesseract().doOCR(file);   // sin comprobar capa de texto, sin versión, sin confianza
+String text = new Tesseract.doOCR(file);   // sin comprobar capa de texto, sin versión, sin confianza
 ```
 ### Bien
 ```java
@@ -72,6 +72,7 @@ servicio X   ...   ...         ...      ...              si
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `intelligent-document-processing`, `document-management`, `llm-evals`, `pii-and-data-classification`, `file-upload-security`.
-- Fuentes: https://github.com/tesseract-ocr/tesseract (licencia Apache 2.0, consultada 2026-11-07); documentación oficial de Amazon Textract (comprobar precios y regiones).
+- Fuentes: https://github.com/tesseract-ocr/tesseract (licencia Apache 2.0, consultada 2026-11-07); documentación oficial de Amazon Textract.
 - En local no se reproduce Textract; se usa Tesseract como sustituto funcional, con calidad distinta.
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2

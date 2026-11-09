@@ -76,5 +76,6 @@ CREATE POLICY tenant_isolation ON invoice
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `multi-tenant-architecture`, `multi-tenancy`, `multi-tenant-observability`, `rate-limiting-quotas`, `feature-flags-openfeature`, `namespaces-quotas-multitenancy`, `payments-and-billing`.
-- Fuentes: documentación de PostgreSQL (Row Security Policies) y de Keycloak (organizaciones/realms) — comprobar versiones y disponibilidad de Organizations.
+- Fuentes: documentación de PostgreSQL (Row Security Policies) y de Keycloak (organizaciones/realms).
+- Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
 - Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
