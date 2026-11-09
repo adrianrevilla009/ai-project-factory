@@ -5,7 +5,7 @@ Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versiona
 ## [0.4.0] - 2026-11-09
 ### Añadido
 - MCP: `catalog/mcp-servers.yaml` (11 servidores revisados, validado por `make validate`) y `docs/architecture/mcp.md`.
-- Hooks `UserPromptSubmit` (secretos en prompts), `SubagentStop` (evidencia), `PreCompact` (estado) y `SessionEnd` (auditoría): 19 hooks en total.
+- Hooks `UserPromptSubmit` (secretos en prompts), `SubagentStop` (evidencia), `PreCompact` (estado) y `SessionEnd` (auditoría): 18 hooks en total.
 - `knowledge/`: catálogo de patrones, de antipatrones e índice de decisiones, con enlaces validados.
 - `docs/onboarding.md` y `docs/architecture/overview.md`.
 - Skills `codeql-sast`, `sonarqube-quality-gate` y `gatling-load-testing` (490 en total).

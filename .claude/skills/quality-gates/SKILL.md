@@ -70,7 +70,7 @@ Un gate que se puede saltar o relajar sin revisión deja de ser gate. El código
 | Regla Semgrep contra `Thread.sleep` en tests | 1 | `policies/semgrep/java-sleep-in-tests.yaml` |
 | Reglas ArchUnit de ejemplo | 1 | `policies/archunit/` |
 | Regla Rego: sin `continue-on-error` ni `-DskipTests` en workflows | 1 | pendiente |
-| Hook de tests en verde al parar | 2 | `.claude/hooks/stop/` (según Oleada) |
+| Hook de tests en verde al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Branch protection con checks requeridos | 4 | revisión humana |
 
 ## Relacionados, fuentes y mantenimiento

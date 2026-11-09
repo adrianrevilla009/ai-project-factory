@@ -1,4 +1,4 @@
-# AI Project Factory — Makefile (Oleada 0)
+# AI Project Factory — Makefile 
 PY ?= python3
 
 .PHONY: help setup validate test check index policy-test

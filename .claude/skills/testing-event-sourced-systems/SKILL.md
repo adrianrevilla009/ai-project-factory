@@ -69,7 +69,7 @@ void upcastsLegacyOrderPlacedV1() throws Exception {
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
 | Tests en CI del proyecto generado | 1 | pipeline del proyecto (la fábrica no los ejecuta) |
-| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/` (Oleada 1) |
+| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Revisión de cobertura de upcasters y concurrencia | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

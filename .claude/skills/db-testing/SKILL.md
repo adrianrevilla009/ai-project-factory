@@ -79,7 +79,7 @@ spring:
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
 | Regla Semgrep/dependencias: prohibir H2 en el `pom.xml` de módulos con persistencia | 1 | pendiente (`policies/semgrep/`) |
-| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/` (Oleada 1, pendiente) |
+| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Revisión de cobertura de persistencia | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento

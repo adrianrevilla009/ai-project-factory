@@ -76,7 +76,7 @@ void ordersAtOrBelow100Eur_getNoDiscount() {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| Hook que exige tests verdes al parar | 2 | `.claude/hooks/stop/` (pendiente, Oleada 1) |
+| Hook que exige tests verdes al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Mutation testing detecta tests que no verifican nada | 2 | skill `mutation-testing` (pendiente de escribir) |
 | Revisión de que el test precede al código | 4 | revisión humana / `code-reviewer` |
 

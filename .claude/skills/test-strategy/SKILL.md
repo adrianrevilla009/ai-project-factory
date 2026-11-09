@@ -71,7 +71,7 @@ E2E          -> 5-10 recorridos críticos, solo en release
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
 | Regla Semgrep contra `Thread.sleep` en tests | 1 | `policies/semgrep/java-sleep-in-tests.yaml` |
-| Hook que exige tests verdes al parar | 2 | `.claude/hooks/stop/` (pendiente, Oleada 1) |
+| Hook que exige tests verdes al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Revisión de proporción y capa de los tests | 3 | agente `code-reviewer` / revisión humana |
 
 ## Relacionados, fuentes y mantenimiento

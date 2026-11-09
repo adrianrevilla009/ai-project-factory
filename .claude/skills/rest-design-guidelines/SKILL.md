@@ -65,7 +65,7 @@ ProblemDetail notFound(OrderNotFoundException ex) {
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde |
 |---|---|---|
 | Ruleset Spectral sobre el OpenAPI (nombres, códigos, problem+json) | 1 | pendiente: `policies/` (no existe aún) |
-| Revisión de controladores por el agente `code-reviewer` | 3 | `.claude/agents/` (según Oleada) |
+| Revisión de controladores por el agente `code-reviewer` | 3 | `.claude/agents/governance/code-reviewer.md` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `openapi-contract-first`, `pagination-filter-sort`, `idempotency-keys`, `api-versioning-deprecation`.

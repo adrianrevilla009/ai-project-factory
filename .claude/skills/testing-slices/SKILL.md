@@ -80,7 +80,7 @@ class OrderRepositoryTest {
 |---|---|---|
 | Regla Semgrep: `@SpringBootTest` + `@AutoConfigureMockMvc` sin justificación y `@DirtiesContext` | 1 | pendiente |
 | Dependencia H2 prohibida en el POM (enforcer/OPA) | 1 | pendiente (`policies/opa-conftest/`) |
-| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/` (pendiente) |
+| Hook `require-green-tests` al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Revisión de tests nuevos | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
