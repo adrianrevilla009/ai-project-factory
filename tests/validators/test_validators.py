@@ -172,3 +172,34 @@ def test_block_can_opt_out():
     text = "<!-- code-block: ignore -->\n```json\n{bad\n```\n"
     assert code_blocks.validate_text(text, "x.md") == []
     assert code_blocks.validate_text(text.replace("<!-- code-block: ignore -->", "texto"), "x.md")
+
+
+# ----------------------------------------------------------------- mcp catalog
+def test_repo_mcp_catalog_is_valid():
+    assert schemas_and_adrs.validate_mcp_catalog(ROOT) == []
+
+
+def test_mcp_catalog_rejects_latest_and_literal_secrets(tmp_path):
+    (tmp_path / ".claude" / "agents" / "x").mkdir(parents=True)
+    (tmp_path / ".claude" / "agents" / "x" / "dba.md").write_text("x")
+    (tmp_path / ".claude" / "skills" / "git-workflow").mkdir(parents=True)
+    (tmp_path / ".claude" / "skills" / "git-workflow" / "SKILL.md").write_text("x")
+    (tmp_path / "catalog").mkdir()
+    base = {"id": "s", "purpose": "p", "transport": "stdio", "registry": {}, "access": "read-only",
+            "credentials": "none", "data_leaves_machine": False, "roles": ["dba"], "default": False}
+    bad = dict(base, launch={"command": "npx", "args": ["pkg@latest"], "env": {"API_TOKEN": "abc123"}}, roles=["ghost"], skills=["nope"])
+    (tmp_path / "catalog" / "mcp-servers.yaml").write_text(__import__("yaml").safe_dump({"servers": [bad]}))
+    msgs = " ".join(f.message for f in schemas_and_adrs.validate_mcp_catalog(tmp_path))
+    for needle in ("latest", "${VAR}", "unknown agent role", "unknown skill"):
+        assert needle in msgs, needle
+    good = dict(base, launch={"command": "npx", "args": ["pkg@1.0.0"], "env": {"API_TOKEN": "${TOKEN}"}}, skills=["git-workflow"])
+    (tmp_path / "catalog" / "mcp-servers.yaml").write_text(__import__("yaml").safe_dump({"servers": [good]}))
+    assert schemas_and_adrs.validate_mcp_catalog(tmp_path) == []
+
+
+def test_cloud_credentials_cannot_be_default(tmp_path):
+    (tmp_path / "catalog").mkdir()
+    s = {"id": "s", "purpose": "p", "transport": "stdio", "launch": {}, "registry": {}, "access": "read-only",
+         "credentials": "cloud", "data_leaves_machine": False, "roles": [], "default": True}
+    (tmp_path / "catalog" / "mcp-servers.yaml").write_text(__import__("yaml").safe_dump({"servers": [s]}))
+    assert any("cloud credentials" in f.message for f in schemas_and_adrs.validate_mcp_catalog(tmp_path))

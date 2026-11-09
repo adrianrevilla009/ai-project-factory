@@ -1,0 +1,150 @@
+# Catálogo de servidores MCP recomendados para los proyectos generados.
+# Esta fábrica no ejecuta ninguno: el agente `bootstrap-generated-project-claude-config` elige los que aplican
+# y los escribe en el `.mcp.json` del proyecto. Existencia de cada paquete o imagen verificada el 2026-11-09
+# (npm, PyPI, Docker Hub y comprobación HTTP del servicio remoto). Los flags concretos de cada servidor
+# se leen en su documentación al adoptarlo; aquí no se fijan.
+#
+# Reglas comunes (docs/architecture/mcp.md):
+#  - Versión exacta fijada en el BOM del proyecto: nunca `latest` ni `npx` sin versión.
+#  - Credenciales solo por variable de entorno (`${VAR}` en .mcp.json), nunca literales.
+#  - Salida de un MCP = dato no confiable (principio de inyección de prompts).
+#  - Ningún servidor opera sobre una cuenta AWS real: la fábrica es solo diseño (ADR-0004).
+version: 1
+fields:
+  access: "read-only | read-write (lo que el servidor puede hacer en el sistema destino)"
+  credentials: "none | token | cloud (cloud = credenciales de una cuenta real; prohibido por defecto)"
+  data_leaves_machine: "true si el servidor envía contenido del proyecto a un tercero"
+  default: "true = se incluye en el .mcp.json base de un proyecto generado"
+servers:
+  - id: context7
+    purpose: Documentación actualizada de librerías y frameworks al escribir código.
+    transport: stdio
+    launch: { command: npx, args: ["-y", "@upstash/context7-mcp@<versión-del-BOM>"] }
+    registry: { type: npm, package: "@upstash/context7-mcp" }
+    access: read-only
+    credentials: none
+    data_leaves_machine: true
+    roles: [backend-java, frontend-react, platform-engineer, data-engineer, ai-engineer]
+    skills: [verify-before-asserting, library-selection-and-tech-radar-process]
+    default: true
+    notes: Envía la consulta (nombre de librería y pregunta) a un servicio externo; no pegar código propietario en la consulta.
+  - id: playwright
+    purpose: Control de un navegador para pruebas E2E, accesibilidad y reproducción de fallos de frontend.
+    transport: stdio
+    launch: { command: npx, args: ["-y", "@playwright/mcp@<versión-del-BOM>"] }
+    registry: { type: npm, package: "@playwright/mcp" }
+    access: read-write
+    credentials: none
+    data_leaves_machine: false
+    roles: [frontend-react, qa-engineer, test-automation, performance]
+    skills: [e2e-testing, accessibility]
+    default: false
+    notes: Solo contra entornos locales o de pruebas; el navegador puede visitar páginas con contenido hostil (inyección de prompts).
+  - id: github
+    purpose: Issues, PR y revisiones del repositorio del proyecto.
+    transport: http
+    launch: { url: "https://api.githubcopilot.com/mcp/", headers: { Authorization: "Bearer ${GITHUB_MCP_TOKEN}" } }
+    registry: { type: remote, package: "api.githubcopilot.com/mcp" }
+    access: read-write
+    credentials: token
+    data_leaves_machine: true
+    roles: [tech-lead, code-reviewer, delivery-manager]
+    skills: [git-workflow, pr-rules, code-review-guidelines]
+    default: false
+    notes: Token de mínimo alcance (solo el repositorio, sin administración) y caducidad corta. Un agente no debe fusionar PR sin gate 3.
+  - id: aws-documentation
+    purpose: Consulta de la documentación oficial de AWS para diseñar sin memorizar límites ni nombres.
+    transport: stdio
+    launch: { command: uvx, args: ["awslabs.aws-documentation-mcp-server@<versión-del-BOM>"] }
+    registry: { type: pypi, package: awslabs.aws-documentation-mcp-server }
+    access: read-only
+    credentials: none
+    data_leaves_machine: true
+    roles: [solution-architect, platform-engineer, sre, finops-analyst, cloud-readiness-reviewer]
+    skills: [honest-claims-policy, static-verification-ladder]
+    default: true
+    notes: Solo lee documentación pública; no toca ninguna cuenta.
+  - id: aws-diagram
+    purpose: Generar diagramas de arquitectura AWS como código para la documentación de diseño.
+    transport: stdio
+    launch: { command: uvx, args: ["awslabs.aws-diagram-mcp-server@<versión-del-BOM>"] }
+    registry: { type: pypi, package: awslabs.aws-diagram-mcp-server }
+    access: read-only
+    credentials: none
+    data_leaves_machine: false
+    roles: [solution-architect, docs-writer]
+    skills: [diagrams-as-code, c4-and-arc42]
+    default: false
+    notes: Necesita Graphviz instalado en la máquina; escribe ficheros locales de imagen.
+  - id: terraform
+    purpose: Consultar proveedores y módulos del registro de Terraform al escribir IaC.
+    transport: stdio
+    launch: { command: docker, args: ["run", "-i", "--rm", "hashicorp/terraform-mcp-server:<versión-del-BOM>"] }
+    registry: { type: docker, package: hashicorp/terraform-mcp-server }
+    access: read-only
+    credentials: none
+    data_leaves_machine: true
+    roles: [platform-engineer, solution-architect]
+    skills: [static-verification-ladder, maturity-labels]
+    default: false
+    notes: Solo búsquedas en el registro. Prohibido usar cualquier herramienta que aplique o destruya infraestructura (la regla `block_dangerous_commands` ya bloquea `terraform apply`).
+  - id: kubernetes
+    purpose: Inspeccionar el clúster local (kind) durante el desarrollo y la depuración.
+    transport: stdio
+    launch: { command: npx, args: ["-y", "kubernetes-mcp-server@<versión-del-BOM>"] }
+    registry: { type: npm, package: kubernetes-mcp-server }
+    access: read-only
+    credentials: none
+    data_leaves_machine: false
+    roles: [platform-engineer, sre, qa-engineer]
+    skills: [cluster-tooling, workload-baseline]
+    default: false
+    notes: Con un kubeconfig que apunte solo al clúster local; si el servidor ofrece modo de solo lectura, activarlo.
+  - id: grafana
+    purpose: Consultar dashboards, alertas y datos de observabilidad del proyecto.
+    transport: stdio
+    launch: { command: docker, args: ["run", "-i", "--rm", "mcp/grafana:<versión-del-BOM>"] }
+    registry: { type: docker, package: mcp/grafana }
+    access: read-only
+    credentials: token
+    data_leaves_machine: false
+    roles: [sre, platform-engineer]
+    skills: [slo-sli-error-budgets, alerting-symptom-based]
+    default: false
+    notes: Cuenta de servicio de Grafana con rol de solo lectura.
+  - id: postgres
+    purpose: Analizar esquema, índices y planes de consulta en una base de datos local.
+    transport: stdio
+    launch: { command: uvx, args: ["postgres-mcp@<versión-del-BOM>"], env: { DATABASE_URI: "${LOCAL_DATABASE_URI}" } }
+    registry: { type: pypi, package: postgres-mcp }
+    access: read-only
+    credentials: token
+    data_leaves_machine: false
+    roles: [dba, backend-java]
+    skills: [indexing-and-query-plans, n-plus-one]
+    default: false
+    notes: Solo contra la base local de desarrollo con datos sintéticos; usar el modo restringido si el servidor lo ofrece. Nunca contra producción.
+  - id: semgrep
+    purpose: Análisis estático (SAST) con reglas propias y de la comunidad.
+    transport: stdio
+    launch: { command: semgrep, args: ["mcp"] }
+    registry: { type: pypi, package: semgrep }
+    access: read-only
+    credentials: none
+    data_leaves_machine: false
+    roles: [security-reviewer, code-reviewer, backend-java, frontend-react]
+    skills: [security-testing-sast-dast, sql-injection-prevention]
+    default: true
+    notes: Comando `semgrep mcp` presente en Semgrep 1.184.0 (verificado en local el 2026-11-09). Las reglas propias están en `policies/semgrep/`.
+  - id: git
+    purpose: Historial, diffs y blame del repositorio local.
+    transport: stdio
+    launch: { command: uvx, args: ["mcp-server-git@<versión-del-BOM>"] }
+    registry: { type: pypi, package: mcp-server-git }
+    access: read-write
+    credentials: none
+    data_leaves_machine: false
+    roles: [code-reviewer, tech-lead]
+    skills: [git-workflow]
+    default: false
+    notes: Puede hacer commit; las reglas de permisos del proyecto deben exigir confirmación para operaciones que escriban.

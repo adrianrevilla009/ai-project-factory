@@ -1,7 +1,28 @@
 {
   "test_command": "python3 -m pytest tests/hooks tests/validators -q -x",
-  "test_trigger_globs": [".claude/hooks/*", ".claude/hooks/**", "factory/*", "factory/**", "tests/*", "tests/**"],
+  "test_trigger_globs": [
+    ".claude/hooks/*",
+    ".claude/hooks/**",
+    "factory/*",
+    "factory/**",
+    "tests/*",
+    "tests/**"
+  ],
   "format": {},
   "lint": {},
-  "source_globs": ["*.py"]
+  "source_globs": [
+    "*.py"
+  ],
+  "subagent_evidence": {
+    "agents": [
+      "code-reviewer",
+      "security-reviewer",
+      "architecture-guardian",
+      "cloud-readiness-reviewer",
+      "qa-engineer",
+      "performance",
+      "chaos",
+      "eval-engineer"
+    ]
+  }
 }

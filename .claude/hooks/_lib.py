@@ -8,6 +8,7 @@ Hooks fail CLOSED on malformed input for security-relevant events.
 """
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -81,3 +82,25 @@ def emit_context(event_name: str, text: str) -> None:
 def glob_match(rel: str, globs) -> bool:
     from fnmatch import fnmatch
     return any(fnmatch(rel, g) or fnmatch(rel, g.replace("**/", "")) for g in globs)
+
+
+SECRET_PATTERNS = {
+    "AWS access key id": re.compile(r"\b(AKIA|ASIA)[0-9A-Z]{16}\b"),
+    "private key block": re.compile(r"-----BEGIN (RSA |EC |OPENSSH |DSA |PGP )?PRIVATE KEY"),
+    "GitHub token": re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b"),
+    "Slack token": re.compile(r"\bxox[abprs]-[A-Za-z0-9-]{10,}\b"),
+    "Anthropic/OpenAI style key": re.compile(r"\bsk-[A-Za-z0-9_-]{20,}\b"),
+    "hardcoded credential": re.compile(
+        r"""(?ix)\b(password|passwd|secret|api[_-]?key|token)\b\s*[:=]\s*["'][^"'\s${}]{8,}["']"""),
+}
+# Well-known documentation placeholders are not secrets.
+ALLOWED_VALUES = ("AKIAIOSFODNN7EXAMPLE", "changeme", "example", "placeholder", "<redacted>")
+
+
+def find_secret(text: str) -> str | None:
+    """Label of the first secret-looking value in text, or None."""
+    for label, rx in SECRET_PATTERNS.items():
+        for m in rx.finditer(text):
+            if not any(a.lower() in m.group(0).lower() for a in ALLOWED_VALUES):
+                return label
+    return None

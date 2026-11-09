@@ -11,7 +11,7 @@ Configuración de Claude Code **de la fábrica**: lo que usan los agentes cuando
 | `hooks/` | Scripts Python deterministas. Detalle abajo. |
 
 ## Hooks
-Cada hook lee el evento JSON por stdin; el código de salida 2 bloquea la acción. Configuración en `hooks/hooks-config.json`, utilidades comunes en `hooks/_lib.py`. Tests en `tests/hooks/`.
+Cada hook lee el evento JSON por stdin; el código de salida 2 bloquea la acción (en `UserPromptSubmit` se bloquea con `{"decision":"block"}`, y `SessionEnd` no puede bloquear). Configuración en `hooks/hooks-config.json`, utilidades comunes en `hooks/_lib.py`. Tests en `tests/hooks/`.
 
 | Evento | Hook | Qué hace |
 |---|---|---|
@@ -26,6 +26,10 @@ Cada hook lee el evento JSON por stdin; el código de salida 2 bloquea la acció
 | PostToolUse | `update_docs` | Anota qué código cambió para exigir documentación al parar. |
 | PostToolUse | `prompt_injection_guard` | Avisa cuando un resultado externo contiene instrucciones sospechosas. |
 | PostToolUse | `audit/log_actions` | Añade cada acción, con secretos redactados, a `.claude/audit/actions.jsonl`. |
+| UserPromptSubmit | `block_secrets_in_prompt` | Rechaza un prompt que contiene un secreto antes de que llegue al modelo. |
+| SubagentStop | `require_evidence` | Los agentes revisores y de pruebas no pueden cerrar sin una sección de evidencia (`fichero:línea`, comandos y resultados). |
+| PreCompact | `preserve_state` | Indica al resumen de compactación que conserve fase, gates, decisiones y bloqueantes. |
+| SessionEnd | `log_session_end` | Añade el cierre de sesión al registro de auditoría (no puede bloquear). |
 | SessionStart | `load_context` | Inyecta fase, tier y módulos activos desde `.factory/state.json`. |
 | Stop | `require_docs_updated` | No deja terminar si se tocó código sin tocar `docs/`. |
 | Stop | `require_green_tests` | No deja terminar si el `test_command` configurado falla. |

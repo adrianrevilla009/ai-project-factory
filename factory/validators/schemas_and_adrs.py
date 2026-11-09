@@ -60,3 +60,42 @@ if __name__ == "__main__":
     for f in findings:
         print(f)
     sys.exit(1 if findings else 0)
+
+
+def validate_mcp_catalog(root: Path = REPO_ROOT) -> list[Finding]:
+    """catalog/mcp-servers.yaml: known roles and skills, pinned versions, no literal secrets, no cloud credentials by default."""
+    path = root / "catalog" / "mcp-servers.yaml"
+    if not path.exists():
+        return []
+    name = rel(root, path)
+    data = yaml.safe_load(path.read_text()) or {}
+    agents = {p.stem for p in (root / ".claude" / "agents").glob("*/*.md")}
+    skills = {p.parent.name for p in (root / ".claude" / "skills").glob("*/SKILL.md")}
+    findings, seen = [], set()
+    for s in data.get("servers", []):
+        sid = s.get("id", "?")
+        if sid in seen:
+            findings.append(Finding(name, f"{sid}: duplicate id"))
+        seen.add(sid)
+        for key in ("purpose", "transport", "launch", "registry", "access", "credentials", "data_leaves_machine", "roles", "default"):
+            if key not in s:
+                findings.append(Finding(name, f"{sid}: missing '{key}'"))
+        if s.get("access") not in ("read-only", "read-write"):
+            findings.append(Finding(name, f"{sid}: access must be read-only or read-write"))
+        if s.get("credentials") not in ("none", "token", "cloud"):
+            findings.append(Finding(name, f"{sid}: credentials must be none, token or cloud"))
+        if s.get("credentials") == "cloud" and s.get("default"):
+            findings.append(Finding(name, f"{sid}: cloud credentials cannot be a default server (ADR-0004)"))
+        launch = json.dumps(s.get("launch", {}))
+        if re.search(r"@latest|:latest", launch):
+            findings.append(Finding(name, f"{sid}: never use 'latest'; pin the version in the project BOM"))
+        for value in re.findall(r'"(?:Authorization|[A-Z_]*(?:TOKEN|KEY|SECRET|URI))": "([^"]*)"', launch):
+            if value and "${" not in value:
+                findings.append(Finding(name, f"{sid}: credential values must be ${{VAR}} references"))
+        for r in s.get("roles", []):
+            if r not in agents:
+                findings.append(Finding(name, f"{sid}: unknown agent role '{r}'"))
+        for sk in s.get("skills", []):
+            if sk not in skills:
+                findings.append(Finding(name, f"{sid}: unknown skill '{sk}'"))
+    return findings

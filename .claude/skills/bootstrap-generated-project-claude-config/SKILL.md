@@ -16,7 +16,7 @@ metadata:
 - No aplica a la propia fábrica, que ya tiene su `.claude/`.
 
 ## Reglas
-- **MUST** copiar los hooks de `.claude/hooks/` de la fábrica al proyecto (`pre-tool-use`, `post-tool-use`, `stop`, `session-start`, `audit`, `_lib.py`) y registrar el mismo bloque `hooks` en `<target>/.claude/settings.json`, sin rebajar ninguna regla.
+- **MUST** copiar los hooks de `.claude/hooks/` de la fábrica al proyecto (`pre-tool-use`, `post-tool-use`, `stop`, `session-start`, `user-prompt-submit`, `subagent-stop`, `pre-compact`, `session-end`, `audit`, `_lib.py`) y registrar el mismo bloque `hooks` en `<target>/.claude/settings.json`, sin rebajar ninguna regla.
 - **MUST** crear `<target>/.claude/hooks/hooks-config.json` con `test_command` real del proyecto, `test_trigger_globs`, y los formateadores/linters verificados (`format_and_lint`).
 - **MUST** crear `<target>/CLAUDE.md` corto (skill `claude-md-authoring`): rol del proyecto, comandos reales, reglas no negociables, enlace a perfil de dominio y a los skills activos.
 - **MUST** copiar solo los skills T1 y los T2 activados por la entrevista (`active_modules`) a `<target>/.claude/skills/`, y registrar en `<target>/docs/active-skills.md` su origen y la versión de la fábrica.
@@ -24,7 +24,8 @@ metadata:
 - **MUST** pedir a un humano que cree `<target>/.factory/state.json` (fase `intake`) y la carpeta `approvals/`; los agentes no pueden escribirlos (hook).
 - **MUST NOT** incluir secretos, credenciales cloud ni permisos amplios (`Bash(*)`) en `settings.json`.
 - **SHOULD** añadir `deny` para `.env*` y `approvals/**` en `permissions`.
-- **SHOULD** limitar los MCP del proyecto a los imprescindibles, con permisos mínimos (`mcp-governance`).
+- **MUST** generar `<target>/.mcp.json` solo con los servidores de `catalog/mcp-servers.yaml` marcados `default: true` más los que pida la entrevista, con la versión exacta fijada en el BOM y las credenciales como `${VAR}`; el resto de servidores no se añade sin ADR (`mcp-governance`).
+- **SHOULD** limitar los MCP del proyecto a los imprescindibles, con permisos mínimos por herramienta (`mcp__<server>__<tool>`) y asignarlos solo a los roles que el catálogo indica.
 
 ## Por qué
 Un proyecto generado debe ser tan seguro como la fábrica: sin los mismos hooks, un agente podría escribir secretos, saltarse un gate o hacer afirmaciones deshonestas sobre AWS. Copiar solo los skills activos reduce el contexto cargado.
