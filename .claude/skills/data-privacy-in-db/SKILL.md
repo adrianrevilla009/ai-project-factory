@@ -59,6 +59,19 @@ GRANT SELECT ON support_customer_v TO support_ro;
 log.info("Created customer id={}", customer.getId());
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clasifica los datos personales por columna y decide para cada una cifrado, seudonimización, plazo de conservación y quién puede leerla.
+- Para supresión real, diseña desde el inicio dónde viven los datos personales (no dispersos por todo el esquema).
+### Trampas frecuentes
+- Datos personales en registros, copias de seguridad y entornos de prueba sin control.
+- Cifrar la base de datos entera y creer que eso resuelve la privacidad.
+- Claves de cifrado junto a los datos.
+- Campos de texto libre con datos personales sin clasificar.
+- Purgas que no alcanzan las réplicas y las copias.
+### Evidencia
+- Un inventario de datos personales por columna y una prueba de supresión de extremo a extremo.
+
 ## Checklist de revisión
 - [ ] Columnas PII clasificadas, con propósito y retención.
 - [ ] Sin copias innecesarias de PII (informes, cachés, logs, test).

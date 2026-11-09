@@ -62,6 +62,19 @@ void samePaymentKey_concurrent_createsOnePayment() throws Exception {
 await().atMost(Duration.ofSeconds(5)).untilAsserted(() -> assertThat(outbox.pending()).isZero());
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prueba el protocolo, no el azar: sincroniza con latches o esperas por condición en lugar de pausas fijas.
+- Para código sin bloqueos o con requisitos del modelo de memoria, una herramienta específica de pruebas de concurrencia; para el resto, pruebas con varios hilos y repeticiones.
+### Trampas frecuentes
+- `Thread.sleep` para «dar tiempo».
+- Una prueba que pasa 999 de 1.000 veces y se ignora.
+- Probar con pocos hilos y pocas repeticiones.
+- Asumir que una prueba verde demuestra ausencia de carreras.
+- Ejecutar solo en una máquina con muchos núcleos.
+### Evidencia
+- Las pruebas de concurrencia fallan de forma determinista cuando se elimina la sincronización a propósito.
+
 ## Checklist de revisión
 - [ ] Sin `Thread.sleep` para sincronizar.
 - [ ] Latch de arranque simultáneo; excepciones propagadas.

@@ -55,6 +55,20 @@ try (var in = Files.newInputStream(path)) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Excepción comprobada solo cuando el llamante puede y debe reaccionar; para fallos de programación o de infraestructura, no comprobada.
+- Traduce en las fronteras (adaptador, controlador): el dominio lanza excepciones de dominio, no las de la base de datos ni del cliente HTTP.
+- Registra una vez, donde se gestiona; no en cada capa por la que pasa.
+### Trampas frecuentes
+- Capturar `Exception` o `Throwable` para seguir como si nada.
+- Perder la causa original al envolver.
+- Registrar y relanzar: la misma traza aparece diez veces.
+- Usar excepciones para controlar el flujo normal.
+- Mensajes con datos personales o secretos.
+### Evidencia
+- Cada excepción de dominio tiene un código de error estable y una prueba que lo verifica.
+
 ## Checklist de revisión
 - [ ] Cada `catch` es específico y conserva la causa.
 - [ ] No hay `catch` vacíos ni de `Throwable`.

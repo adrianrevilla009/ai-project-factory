@@ -64,6 +64,19 @@ resilience4j:
 ```
 Los valores son ilustrativos; calibrar con métricas reales. Nombres de propiedades.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Combina solo lo necesario: tiempo máximo, reintento acotado, cortacircuitos y aislamiento, en un orden coherente.
+- Cada política se configura con métricas reales y se prueba.
+### Trampas frecuentes
+- Reintentos en varias capas que se multiplican.
+- Cortacircuitos sin métricas ni alerta.
+- Valores copiados de un ejemplo.
+- Políticas que enmascaran un fallo permanente.
+- Alternativas de degradación nunca probadas.
+### Evidencia
+- Pruebas que provocan el fallo y comprueban el comportamiento de cada política.
+
 ## Checklist de revisión
 - [ ] Hay timeout antes que retry/breaker.
 - [ ] Retry solo sobre operaciones idempotentes, con backoff y tope.

@@ -50,6 +50,19 @@ public void sendReminders() {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Con varias réplicas, una tarea programada necesita ejecución única: un bloqueo, una elección de líder o un trabajo de Kubernetes.
+- Procesos por lotes grandes: trozos pequeños con reinicio desde el último punto confirmado.
+### Trampas frecuentes
+- `@Scheduled` sin control de ejecución única: se ejecuta en cada réplica.
+- Lotes que, si fallan a mitad, no se pueden reanudar ni repetir.
+- Tareas que dependen de la hora actual en vez del intervalo de datos.
+- Sin límite de tiempo ni de recursos.
+- Falta de alerta cuando la tarea no se ejecuta.
+### Evidencia
+- Una alerta salta si la tarea no se ha ejecutado en su ventana y la repetición no duplica efectos.
+
 ## Checklist de revisión
 - [ ] Ejecución única en clúster resuelta.
 - [ ] Job idempotente, por lotes y reanudable.

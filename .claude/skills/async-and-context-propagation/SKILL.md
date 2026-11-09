@@ -63,6 +63,19 @@ class AsyncConfig {
 public CompletableFuture<Void> notifyCustomer(Long orderId) { /* carga por id */ }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Al pasar trabajo a otro hilo, propaga explícitamente el contexto necesario (traza, identidad, tenant) con un decorador de tareas o una API de contexto.
+- Datos del contexto de solo lectura y mínimos.
+### Trampas frecuentes
+- Perder el identificador de traza al cambiar de hilo: los registros quedan huérfanos.
+- Perder la identidad del usuario y ejecutar con permisos de otro contexto.
+- Fugas de contexto entre peticiones al reutilizar hilos de un pool.
+- Pasar objetos pesados como contexto.
+- Suponer que el contexto sigue ahí en tareas diferidas.
+### Evidencia
+- Una prueba comprueba que traza e identidad llegan a una tarea asíncrona y no se quedan en el hilo después.
+
 ## Checklist de revisión
 - [ ] Executor propio para `@Async`, con `@EnableAsync`.
 - [ ] MDC, seguridad y tenant propagados y limpiados.

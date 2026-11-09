@@ -65,6 +65,19 @@ spring:
         order_updates: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Procesa en lotes con tamaño medido; para volúmenes muy grandes, operaciones masivas a nivel de SQL o herramientas de carga.
+- Cada lote es una transacción propia y reanudable.
+### Trampas frecuentes
+- Un único lote gigante que bloquea tablas y agota memoria.
+- Operaciones masivas que se saltan auditoría y versionado sin decirlo.
+- Generador de identificadores que impide agrupar inserciones.
+- Sin control de fallos parciales.
+- Elegir el tamaño de lote copiándolo de internet.
+### Evidencia
+- Una medición de tiempo y memoria con volumen real justifica el tamaño elegido.
+
 ## Checklist de revisión
 - [ ] `batch_size` y `order_*` configurados y el id usa `SEQUENCE`.
 - [ ] Cargas grandes en chunks con `flush()`/`clear()`.

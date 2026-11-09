@@ -68,6 +68,19 @@ void listOrders_executesSingleQuery() {
 ```
 Requiere `hibernate.generate_statistics=true` en el perfil de test.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una consulta con unión y carga anticipada para un caso concreto, una proyección, o carga por lotes: elige según el tamaño del resultado.
+- Detecta el problema en pruebas, no en producción: cuenta las consultas por operación.
+### Trampas frecuentes
+- Corregir un caso y dejar otros iguales.
+- Fetch join con colecciones y paginación (en memoria o con producto cartesiano).
+- Ocultar el problema con caché.
+- Medir solo con pocos datos de prueba.
+- Ignorar el N+1 en listados de administración «porque lo usa poca gente».
+### Evidencia
+- Pruebas de repositorio que cuentan consultas con un volumen de datos representativo.
+
 ## Checklist de revisión
 - [ ] Ninguna asociación `ToOne` es EAGER.
 - [ ] Cada listado carga sus relaciones con fetch join, entity graph o DTO.

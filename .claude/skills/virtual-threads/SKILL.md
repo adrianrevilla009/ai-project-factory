@@ -52,6 +52,19 @@ try (var exec = Executors.newVirtualThreadPerTaskExecutor()) {
 spring.threads.virtual.enabled=true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Hilos virtuales para trabajo con mucha E/S bloqueante y muchas tareas concurrentes; para cálculo intensivo no aportan nada.
+- Con hilos virtuales el límite de concurrencia ya no lo da el pool: usa semáforos o límites en el recurso escaso (conexiones, llamadas a un tercero).
+### Trampas frecuentes
+- Meter un pool de hilos virtuales (no se reutilizan).
+- `synchronized` alrededor de E/S bloqueante, que fija el hilo portador en ciertas versiones.
+- Variables locales de hilo pesadas, que se multiplican por millones de hilos.
+- Creer que el rendimiento mejora sin cambiar los límites de la base de datos o del servicio remoto.
+- No medir antes y después.
+### Evidencia
+- Una prueba de carga con y sin hilos virtuales y los límites de recurso configurados explícitamente.
+
 ## Checklist de revisión
 - [ ] Versión de Java >= 21 confirmada.
 - [ ] Sin pools de virtual threads; un hilo por tarea.

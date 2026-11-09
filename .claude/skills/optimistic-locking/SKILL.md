@@ -56,6 +56,19 @@ ProblemDetail onConflict(ObjectOptimisticLockingFailureException ex) {
 ALTER TABLE document ADD COLUMN version BIGINT NOT NULL DEFAULT 0;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Bloqueo optimista cuando los conflictos son raros; informa al usuario o reintenta con la versión nueva.
+- Para entidades con mucha contención, un diseño que evite el conflicto (actualización atómica o cola) es mejor que reintentar.
+### Trampas frecuentes
+- Ignorar la excepción de conflicto y devolver un error genérico.
+- Reintentar sin volver a leer el estado.
+- Campos de versión actualizados a mano.
+- Actualizaciones masivas que saltan el control de versión.
+- Exponer la versión interna sin tratarla como parte del contrato.
+### Evidencia
+- Una prueba con dos escrituras concurrentes comprueba que una falla de forma controlada.
+
 ## Checklist de revisión
 - [ ] Entidades mutables compartidas con `@Version`.
 - [ ] Conflicto mapeado a 409 o a reintento acotado.

@@ -54,6 +54,19 @@ public class OrderService {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sustituye la generación de código por records, constructores explícitos y, para objetos grandes, un constructor con patrón builder escrito a mano o generado por el IDE.
+- Si se hereda código con Lombok, migra por módulos con pruebas, no en un solo paso.
+### Trampas frecuentes
+- Dejar Lombok «solo en pruebas» y que se extienda.
+- Reemplazar `@Data` por una clase mutable con todos los setters.
+- Perder validaciones al sustituir el constructor generado.
+- Mantener el procesador de anotaciones en la compilación «por si acaso».
+- Migración sin pruebas de igualdad y de serialización.
+### Evidencia
+- El analizador de dependencias y la regla de Semgrep no encuentran ninguna importación de Lombok.
+
 ## Checklist de revisión
 - [ ] Ningún `import lombok.` ni dependencia Lombok en `pom.xml`.
 - [ ] Datos inmutables como `record`; loggers y constructores explícitos.

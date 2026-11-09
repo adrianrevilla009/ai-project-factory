@@ -58,6 +58,19 @@ public void reserve(Long itemId, int qty) {
 ALTER TABLE items ADD CONSTRAINT stock_non_negative CHECK (stock >= 0);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Parte del nivel por defecto del motor y razona qué anomalías (lectura sucia, no repetible, fantasma, escritura sesgada) importan en cada caso.
+- Sube el nivel o usa bloqueos explícitos solo donde una invariante lo exige.
+### Trampas frecuentes
+- Asumir que «serializable» está activado.
+- Creer que dos lecturas seguidas dan lo mismo.
+- Invariantes entre filas protegidas solo por el nivel de aislamiento por defecto.
+- Subir el aislamiento de todo el sistema por miedo.
+- No reintentar los fallos de serialización.
+### Evidencia
+- Una prueba concurrente reproduce la anomalía que se teme y demuestra que está evitada.
+
 ## Checklist de revisión
 - [ ] Se sabe el nivel real del motor y la versión.
 - [ ] Cada read-modify-write está protegido (UPDATE atómico, versión, lock o constraint).

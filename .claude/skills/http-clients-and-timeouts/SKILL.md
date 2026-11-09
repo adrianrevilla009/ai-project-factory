@@ -64,6 +64,19 @@ clients:
     read-timeout: 2s
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada llamada saliente con tiempo máximo de conexión y de lectura, y reintentos solo para operaciones idempotentes.
+- El tiempo total de una petición es un presupuesto repartido entre sus dependencias.
+### Trampas frecuentes
+- Clientes sin tiempo máximo.
+- Reintentos inmediatos sin retroceso ni aleatoriedad.
+- Reintentar operaciones no idempotentes.
+- Un cliente por llamada en vez de reutilizar conexiones.
+- Tiempos máximos mayores que el de la petición entrante.
+### Evidencia
+- Una prueba con un servicio lento demuestra que se corta en el tiempo esperado.
+
 ## Checklist de revisión
 - [ ] Cada cliente tiene connect y read timeout configurables.
 - [ ] No hay `new RestTemplate()` ni clientes JDK sin configurar.

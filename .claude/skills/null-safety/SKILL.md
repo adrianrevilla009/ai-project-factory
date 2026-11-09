@@ -51,6 +51,19 @@ public User load(String id) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Decide la ausencia en el contrato: un valor opcional se devuelve como `Optional` (solo en retornos), uno obligatorio nunca es nulo y se valida en la frontera.
+- Anotaciones de nulabilidad a nivel de paquete para que el compilador y el IDE ayuden, no una por parámetro.
+### Trampas frecuentes
+- `Optional` como campo, parámetro o elemento de colección.
+- `Optional.get()` sin comprobar o `orElse(null)`.
+- Devolver `null` en colecciones en lugar de una colección vacía.
+- Mezclar `Optional` y nulo en la misma API.
+- Comprobaciones de nulo repartidas por todas partes en vez de en la frontera.
+### Evidencia
+- Las APIs públicas documentan qué puede ser nulo y las pruebas cubren la ausencia.
+
 ## Checklist de revisión
 - [ ] Los parámetros obligatorios se validan en el borde.
 - [ ] Ningún método devuelve `null` en lugar de vacío u `Optional`.

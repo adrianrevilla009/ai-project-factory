@@ -56,6 +56,19 @@ static String describe(Shape shape) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa una característica moderna (records, `switch` con patrones, bloques de texto) cuando simplifica el código y toda la plataforma ya está en esa versión de Java; no por novedad.
+- Una característica en vista previa no entra en código de producción sin una decisión explícita y una vía de salida.
+### Trampas frecuentes
+- Reescribir código estable solo para «modernizarlo» y llenar el PR de ruido.
+- Abusar de `var` donde el tipo deja de ser evidente.
+- Streams para todo, incluso donde un bucle es más claro.
+- Patrones de `switch` anidados difíciles de leer.
+- Depender de una característica que el JDK de producción aún no tiene.
+### Evidencia
+- El proyecto declara su versión de Java en un único sitio y CI compila con ella.
+
 ## Checklist de revisión
 - [ ] Los portadores de datos son `record`, no clases con getters/setters.
 - [ ] Los `switch` sobre tipos cerrados son exhaustivos y sin `default` espurio.

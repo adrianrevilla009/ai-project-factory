@@ -52,6 +52,19 @@ ThreadPoolTaskExecutor emailExecutor() {
 ```
 `CallerRunsPolicy` frena al productor; si el productor es un hilo de petición, valorar `AbortPolicy` y responder 503.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un pool acotado por tipo de trabajo: CPU (tantos hilos como núcleos) frente a E/S bloqueante (más, o hilos virtuales).
+- Nombra los hilos y expón métricas del pool (tamaño, cola, rechazos).
+### Trampas frecuentes
+- Pools sin límite o con cola sin límite: la memoria se agota bajo carga.
+- Un único pool compartido por trabajos lentos y rápidos: los lentos bloquean a los rápidos.
+- Crear hilos a mano en el código.
+- No cerrar los ejecutores al apagar.
+- Política de rechazo que descarta trabajo sin avisar.
+### Evidencia
+- Métricas del pool visibles y una prueba de carga que muestra cómo se comporta al saturarse.
+
 ## Checklist de revisión
 - [ ] Ningún `new Thread` ni `Executors.newCachedThreadPool/newFixedThreadPool`.
 - [ ] Cola acotada y política de rechazo elegida a propósito.

@@ -49,6 +49,20 @@ public static <T> void copy(List<? extends T> src, List<? super T> dst) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Diseña la API para quien la usa: pocos tipos, nombres claros, sin parámetros booleanos ambiguos.
+- Genéricos acotados (`? extends`, `? super`) solo cuando aportan seguridad real al llamante; si complican la firma, simplifica.
+- Una interfaz pública es un compromiso: añade con cuidado y retira con un plazo.
+### Trampas frecuentes
+- Firmas con comodines anidados ilegibles.
+- Tipos crudos (`List` sin parámetro).
+- Devolver tipos concretos de implementación (`ArrayList`).
+- Métodos con más de cuatro parámetros del mismo tipo.
+- Exponer tipos de una librería de terceros en tu API pública.
+### Evidencia
+- Un ejemplo de uso de cada API pública compila como parte de las pruebas.
+
 ## Checklist de revisión
 - [ ] Solo lo necesario es `public`.
 - [ ] Sin tipos crudos ni `unchecked` sin justificar.

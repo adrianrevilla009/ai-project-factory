@@ -48,6 +48,19 @@ CompletableFuture<Stock> stock = CompletableFuture
 return price.thenCombine(stock, Offer::new).join();
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Para componer llamadas asíncronas independientes, `CompletableFuture`; para flujos con muchos pasos secuenciales, hilos virtuales con código bloqueante suele ser más legible.
+- Pasa siempre el ejecutor explícito en las operaciones asíncronas.
+### Trampas frecuentes
+- Usar el pool común por defecto para E/S bloqueante.
+- Olvidar manejar la excepción y dejar el error perdido.
+- `join()` o `get()` dentro de otra tarea del mismo pool: bloqueo.
+- Sin tiempo máximo en las esperas.
+- Encadenar decenas de pasos sin nombres que expliquen la intención.
+### Evidencia
+- Cada composición tiene un tiempo máximo y una prueba de fallo de uno de sus pasos.
+
 ## Checklist de revisión
 - [ ] Todo `*Async` lleva executor propio.
 - [ ] Timeout en cada llamada externa.

@@ -51,6 +51,19 @@ jcmd <pid> JFR.start duration=60s filename=/tmp/rec.jfr
 jcmd <pid> GC.heap_dump /tmp/heap-1.hprof
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide primero con una herramienta de perfilado de bajo impacto en el entorno que reproduce el problema; después optimiza.
+- Para fugas: compara volcados de montón en el tiempo y busca quién retiene los objetos, no solo cuántos hay.
+### Trampas frecuentes
+- Optimizar a ojo sin medir.
+- Perfilar en un entorno que no se parece a producción.
+- Dejar activadas herramientas de alto coste en producción.
+- Culpar al recolector de basura cuando la causa es una retención.
+- Volcados de memoria con datos personales guardados sin control.
+### Evidencia
+- Un informe antes y después con la métrica concreta que mejoró.
+
 ## Checklist de revisión
 - [ ] Hay métrica base y comparación antes/después.
 - [ ] Se distinguió fuga de uso alto con heap post-GC.

@@ -48,6 +48,19 @@ boolean valid = ORDER_ID.matcher(normalized).matches();
 String price = NumberFormat.getCurrencyInstance(userLocale).format(amount);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Fija siempre la codificación (UTF-8) y la configuración regional en las operaciones que dependen de ellas, en vez de confiar en el valor por defecto de la máquina.
+- Para comparar o buscar de forma insensible a mayúsculas en distintos idiomas, usa las clases de `Collator` o `Locale.ROOT` según el caso.
+### Trampas frecuentes
+- `getBytes()` o `new String(bytes)` sin juego de caracteres.
+- `toLowerCase()` sin `Locale`: en turco la `I` da resultados inesperados.
+- Concatenar en bucles en vez de `StringBuilder`.
+- Comparar con `==`.
+- Asumir que un carácter equivale a un punto de código.
+### Evidencia
+- Una prueba con entrada no latina y con la configuración regional de la máquina cambiada.
+
 ## Checklist de revisión
 - [ ] Todas las conversiones bytes/texto indican `StandardCharsets.UTF_8`.
 - [ ] `toLowerCase/toUpperCase/format` técnicos usan `Locale.ROOT`.

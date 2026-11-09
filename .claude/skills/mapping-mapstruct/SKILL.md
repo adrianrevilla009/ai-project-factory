@@ -51,6 +51,19 @@ interface CustomerMapper {
 
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un generador de mapeos en tiempo de compilación para evitar código repetitivo y errores de campos; mapeos manuales para lo que tiene lógica.
+- Falla la compilación si queda un campo sin mapear.
+### Trampas frecuentes
+- Mapeos que ocultan una conversión con efectos o consultas.
+- Reglas de negocio dentro del mapeador.
+- Campos sin mapear que se ignoran en silencio.
+- Un mapeador por pares de clases sin necesidad.
+- Sin pruebas de los mapeos con lógica.
+### Evidencia
+- El build falla ante campos sin mapear y hay pruebas de los mapeos no triviales.
+
 ## Checklist de revisión
 - [ ] `componentModel = "spring"` y `unmappedTargetPolicy = ERROR`.
 - [ ] Sin Lombok, sin ModelMapper/Dozer.

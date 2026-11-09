@@ -58,6 +58,19 @@ class InvoiceService {
 var service = new InvoiceService(fakeRepository, fakeMailer);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Inyección por constructor siempre; los campos finales dejan claro lo que la clase necesita.
+- Si un constructor recibe demasiadas dependencias, la clase hace demasiado.
+### Trampas frecuentes
+- Inyección por campo: dependencias ocultas y pruebas que necesitan el contenedor.
+- Dependencias circulares «resueltas» con inyección perezosa.
+- Servicios con estado mutable compartido entre peticiones.
+- Localizadores de servicios estáticos.
+- `@Autowired` por costumbre en constructores únicos.
+### Evidencia
+- Las clases se pueden instanciar en una prueba unitaria sin Spring.
+
 ## Checklist de revisión
 - [ ] Ningún `@Autowired` en campos o setters.
 - [ ] Campos `final`, constructor explícito, sin Lombok.

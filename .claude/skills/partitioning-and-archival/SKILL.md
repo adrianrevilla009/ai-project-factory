@@ -53,6 +53,19 @@ ALTER TABLE audit_event DETACH PARTITION audit_event_2024_11;
 ```
 El `DROP` va solo en migraciones/jobs revisados, nunca ejecutado desde un agente.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Particiona por la clave que usan las consultas y las purgas (normalmente el tiempo); archiva con un plazo definido por el negocio y la norma.
+- Un archivo debe poder restaurarse y consultarse.
+### Trampas frecuentes
+- Particionar sin que las consultas incluyan la clave: se escanean todas las particiones.
+- Demasiadas particiones pequeñas.
+- Archivar sin probar la restauración.
+- Purgas que bloquean la tabla.
+- Conservar datos personales más tiempo del permitido.
+### Evidencia
+- Una restauración de un archivo ensayada y un informe de tamaño por partición.
+
 ## Checklist de revisión
 - [ ] ADR con el problema medido y la clave elegida.
 - [ ] Las consultas habituales filtran por la clave (poda comprobada).

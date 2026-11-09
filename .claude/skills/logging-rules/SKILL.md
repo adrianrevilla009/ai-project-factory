@@ -55,6 +55,19 @@ try {
 log.info("login succeeded for user {}", user.id());
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Nivel según quién actúa: `ERROR` si alguien debe intervenir, `WARN` si algo anómalo se ha gestionado, `INFO` para hechos de negocio relevantes, `DEBUG` para diagnóstico.
+- Registro estructurado con identificador de correlación; el mensaje sirve a una persona y los campos, a las herramientas.
+### Trampas frecuentes
+- Registrar datos personales, tokens o cuerpos completos de peticiones.
+- Concatenar cadenas en vez de usar marcadores.
+- Registrar y relanzar la misma excepción en cada capa.
+- `ERROR` para errores de validación del usuario.
+- Volúmenes de log que cuestan más que el servicio.
+### Evidencia
+- Una prueba o revisión confirma que los registros de un flujo real no contienen datos sensibles.
+
 ## Checklist de revisión
 - [ ] Sin `System.out`, `printStackTrace` ni concatenación en logs.
 - [ ] Excepciones pasadas como último argumento y registradas una sola vez.

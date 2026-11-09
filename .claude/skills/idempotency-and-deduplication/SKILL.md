@@ -62,6 +62,19 @@ public Payment pay(String key, PayRequest r) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Idempotencia por clave natural o clave de idempotencia guardada con el resultado; deduplicación por identificador de mensaje en el consumidor.
+- Decide el tiempo de retención de las claves según cuánto tiempo pueden llegar reintentos.
+### Trampas frecuentes
+- Guardar la clave y ejecutar la operación en dos pasos no atómicos.
+- Claves que caducan antes que los reintentos.
+- Deduplicar por contenido cuando dos peticiones legítimas pueden ser iguales.
+- Devolver errores distintos en el reintento de una operación que ya triunfó.
+- Efectos secundarios (correos, cobros) fuera de la deduplicación.
+### Evidencia
+- Una prueba envía la misma petición dos veces y comprueba que el efecto ocurre una sola vez.
+
 ## Checklist de revisión
 - [ ] Cada POST con efecto exige clave.
 - [ ] Reserva con `UNIQUE` en la misma transacción que el efecto.

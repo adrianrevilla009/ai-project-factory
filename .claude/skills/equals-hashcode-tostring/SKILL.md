@@ -61,6 +61,19 @@ public class Account {
 ```
 Nota: `char[]` en record usa igualdad por referencia; preferir un tipo con `equals` propio.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Para tipos de valor, deja que `record` genere `equals` y `hashCode`; para entidades, compara por identidad estable y no por todos los campos.
+- En entidades JPA, la igualdad no debe depender de campos que cambian ni de colecciones perezosas.
+### Trampas frecuentes
+- `equals` sin `hashCode` (o al revés): rompe los mapas y los conjuntos.
+- Usar un id generado por la base de datos antes de persistir.
+- `toString` con datos sensibles o colecciones perezosas que disparan consultas.
+- `compareTo` incoherente con `equals`.
+- Herencia que rompe la simetría de `equals`.
+### Evidencia
+- Hay pruebas del contrato de igualdad (por ejemplo, con una librería de verificación de `equals`).
+
 ## Checklist de revisión
 - [ ] `equals` y `hashCode` usan los mismos campos.
 - [ ] Las entidades JPA no incluyen asociaciones ni mutables en `hashCode`.

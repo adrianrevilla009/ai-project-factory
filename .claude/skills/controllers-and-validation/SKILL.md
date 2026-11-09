@@ -63,6 +63,19 @@ class CustomerController {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El controlador traduce HTTP a casos de uso y nada más; la lógica vive en la capa de aplicación.
+- Valida la forma en el borde con anotaciones y las reglas de negocio en el dominio.
+### Trampas frecuentes
+- Lógica de negocio en el controlador.
+- Aceptar entidades de persistencia como cuerpo de la petición.
+- Validar solo en el cliente.
+- Mensajes de validación que revelan detalles internos.
+- Controladores que devuelven distintos formatos de error.
+### Evidencia
+- Pruebas de la capa web por cada caso de validación y de autorización.
+
 ## Checklist de revisión
 - [ ] Sin entidades JPA ni `Map` en firmas del controlador.
 - [ ] `@Valid` en cada `@RequestBody`; restricciones en path/query.

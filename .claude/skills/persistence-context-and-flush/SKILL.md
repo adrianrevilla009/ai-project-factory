@@ -59,6 +59,19 @@ public void archiveOld(List<Long> ids) {
 int cancelExpired(Instant now);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Entiende cuándo se escribe: el vaciado ocurre antes de una consulta y al confirmar, no cuando llamas a `save`.
+- En operaciones masivas, limpia el contexto periódicamente.
+### Trampas frecuentes
+- Contexto de persistencia que crece sin límite en un proceso por lotes.
+- Depender del orden de las escrituras sin forzarlo.
+- Modificar una entidad gestionada y no esperar que se guarde.
+- `flush` manual por todas partes.
+- Compartir entidades entre transacciones.
+### Evidencia
+- Pruebas que verifican qué se escribe y cuándo, con el registro de SQL activado.
+
 ## Checklist de revisión
 - [ ] Sin `save()` redundantes sobre entidades gestionadas.
 - [ ] Procesos grandes con `flush()`/`clear()` por lote.

@@ -50,6 +50,19 @@ interface OrderRepository extends JpaRepository<Order, Long> {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Proyección o DTO para lecturas; entidad solo cuando vas a modificar y persistir.
+- Un DTO por caso de uso, no uno genérico compartido por todos.
+### Trampas frecuentes
+- Devolver entidades por la API y exponer campos internos.
+- DTO con la misma forma que la entidad (la duplican sin valor).
+- Proyecciones de interfaz anidadas que cargan la entidad completa.
+- Mapeo manual sin pruebas.
+- Reutilizar un DTO de lectura para escritura.
+### Evidencia
+- Cada endpoint declara su DTO y una prueba comprueba que no se filtran campos internos.
+
 ## Checklist de revisión
 - [ ] Los GET de listado devuelven DTOs, no entidades.
 - [ ] La consulta selecciona solo las columnas necesarias.

@@ -50,6 +50,19 @@ List<OrderSummary> nextPage(Instant ts, Long id, Pageable limit); // PageRequest
 CREATE INDEX idx_orders_created_id ON orders (created_at, id);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Paginación por desplazamiento solo para listas pequeñas; por claves (keyset) para tablas grandes o con inserciones continuas.
+- El orden de la paginación debe ser estable y único (añade el identificador como desempate).
+### Trampas frecuentes
+- `OFFSET` profundo en tablas grandes.
+- Orden sin desempate: filas repetidas o perdidas entre páginas.
+- Recuento total en cada página sobre tablas enormes.
+- Límite de tamaño de página sin tope.
+- Cursores que revelan datos internos.
+### Evidencia
+- Una prueba con datos que cambian entre páginas confirma que no se repiten ni se pierden filas.
+
 ## Checklist de revisión
 - [ ] Tamaño máximo de página validado.
 - [ ] Orden total con desempate por id.

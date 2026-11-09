@@ -61,6 +61,19 @@ DataSource dataSource(DataSource primary, DataSource replica) {
 public List<OrderSummary> list() { /* a replica */ }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dirige a réplicas solo lecturas que toleran retraso; las lecturas que siguen a una escritura propia van a la primaria.
+- Mide el retraso de replicación y decide qué hacer si se supera.
+### Trampas frecuentes
+- Leer de la réplica justo después de escribir y no ver lo escrito.
+- Transacciones que mezclan lecturas y escrituras en nodos distintos.
+- Enrutado implícito que nadie entiende.
+- Réplicas sin supervisión del retraso.
+- Contar con la réplica como respaldo (no lo es).
+### Evidencia
+- Una prueba con retraso artificial comprueba que la aplicación lo tolera.
+
 ## Checklist de revisión
 - [ ] Solo `readOnly = true` va a réplica; el resto al primario.
 - [ ] Los flujos read-your-writes usan el primario.

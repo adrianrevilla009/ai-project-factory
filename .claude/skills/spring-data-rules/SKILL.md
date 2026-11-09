@@ -73,6 +73,19 @@ spring:
         max-page-size: 100
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Repositorio por agregado, con consultas expresadas en el lenguaje del dominio.
+- Para lecturas complejas, consultas específicas o proyecciones, no métodos derivados larguísimos.
+### Trampas frecuentes
+- Un repositorio por tabla que expone todo.
+- Exponer repositorios directamente en controladores.
+- `findAll` sin paginación.
+- Métodos derivados con cinco condiciones.
+- Mezclar acceso a distintos agregados en un repositorio.
+### Evidencia
+- Pruebas de repositorio con base real y recuento de consultas.
+
 ## Checklist de revisión
 - [ ] `@Transactional` solo en servicios; lecturas `readOnly`.
 - [ ] `open-in-view: false` y tamaño máximo de página.

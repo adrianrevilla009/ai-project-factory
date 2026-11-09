@@ -50,6 +50,19 @@ ORDER BY created_at DESC LIMIT 20;
 ```
 `EXPLAIN ANALYZE` ejecuta la consulta: no usarlo con sentencias de escritura sin `BEGIN ... ROLLBACK`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Crea índices a partir de consultas reales y su plan de ejecución, no por intuición.
+- Un índice compuesto sigue el orden de uso (igualdad primero, rango después).
+### Trampas frecuentes
+- Indexar todas las columnas: cuesta en cada escritura.
+- Un índice que el plan no usa.
+- Funciones sobre la columna que impiden usar el índice.
+- Revisar el plan con tablas casi vacías.
+- No revisar los índices cuando cambian las consultas.
+### Evidencia
+- El plan de las consultas críticas con volumen realista y un informe de índices sin uso.
+
 ## Checklist de revisión
 - [ ] Toda FK usada en joins tiene índice.
 - [ ] El orden de columnas responde a la consulta real.

@@ -50,6 +50,19 @@ spring:
 ```
 Cálculo documentado en el servicio: 6 instancias x 10 = 60 conexiones, de un `max_connections` de 200 compartido con 3 servicios.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un pool pequeño y medido suele rendir más que uno grande: dimensiona por el número de consultas concurrentes que la base soporta, no por el de hilos.
+- Una petición debe poder esperar poco por una conexión y fallar rápido si no hay.
+### Trampas frecuentes
+- Pool enorme que satura la base de datos.
+- Tiempo de espera de conexión infinito.
+- Transacciones largas que acaparan conexiones.
+- Cada réplica con un pool que, multiplicado, supera el máximo de la base.
+- No exponer métricas del pool.
+### Evidencia
+- Métricas de uso y espera del pool y la suma de conexiones de todas las réplicas por debajo del límite de la base.
+
 ## Checklist de revisión
 - [ ] `maximum-pool-size` explícito y justificado con instancias x pool.
 - [ ] `connection-timeout` y `max-lifetime` fijados.

@@ -54,6 +54,19 @@ repo.findAll(Specification.where(hasStatus(status)).and(totalAbove(min)), pageab
 ```
 `Specification` requiere que el repositorio extienda `JpaSpecificationExecutor`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Consulta derivada del nombre para lo simple, `@Query` explícita para lo que importa, y SQL nativo o una librería de consultas cuando el modelo de objetos estorba.
+- Las consultas críticas se escriben, se miden y tienen prueba.
+### Trampas frecuentes
+- Nombres de método derivados de una línea que nadie entiende.
+- JPQL dinámico por concatenación (inyección).
+- SQL nativo disperso sin pruebas.
+- Criterios dinámicos sin límite de resultados.
+- Consultas sin índice que sirva.
+### Evidencia
+- Cada consulta crítica tiene una prueba y su plan revisado.
+
 ## Checklist de revisión
 - [ ] La herramienta elegida es la más simple posible.
 - [ ] Sin filtrado en memoria.

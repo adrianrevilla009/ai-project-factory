@@ -58,6 +58,19 @@ void transfer(Account a, Account b, long amt) {
 counters.merge(key, 1L, Long::sum);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Primero evita compartir (inmutabilidad, confinamiento); después, estructuras concurrentes; y solo entonces bloqueos.
+- Bloqueos de grano fino y con tiempo máximo (`tryLock`) cuando hay riesgo de interbloqueo.
+### Trampas frecuentes
+- Tomar varios bloqueos en órdenes distintos: interbloqueo.
+- Llamar a código ajeno (callbacks) con un bloqueo tomado.
+- Bloquear sobre objetos públicos o cadenas internadas.
+- Bloqueos durante E/S.
+- `synchronized` en métodos enteros por costumbre.
+### Evidencia
+- El orden de los bloqueos está documentado y hay una prueba o un volcado de hilos automático ante un bloqueo.
+
 ## Checklist de revisión
 - [ ] Cada campo compartido indica qué lo protege.
 - [ ] `unlock` en `finally`; `tryLock` si procede.

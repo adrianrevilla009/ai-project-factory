@@ -55,6 +55,19 @@ class CacheWarmer {
 ./mvnw -Pnative native:compile
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Optimiza el arranque por pasos baratos (carga perezosa, menos autoconfiguración) antes de una imagen nativa.
+- Una imagen nativa compensa en funciones de arranque muy frecuente o recursos muy limitados, a cambio de compilaciones más lentas y restricciones de reflexión.
+### Trampas frecuentes
+- Elegir nativo y descubrir que una librería clave no lo soporta.
+- Compilaciones nativas de 20 minutos en cada PR.
+- Perfiles de reflexión mantenidos a mano.
+- Comparar arranque sin comparar el rendimiento sostenido.
+- No probar la imagen nativa en CI.
+### Evidencia
+- Una comparación de arranque, memoria y rendimiento sostenido entre ambas opciones.
+
 ## Checklist de revisión
 - [ ] Existe línea base medida de arranque y memoria.
 - [ ] Hay ADR si se usa nativo.

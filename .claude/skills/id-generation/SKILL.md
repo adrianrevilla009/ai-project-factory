@@ -51,6 +51,19 @@ CREATE SEQUENCE order_seq START WITH 1 INCREMENT BY 50;
 ```
 `UUID.randomUUID` genera v4; para v7 hace falta librería o generador propio.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- UUID cuando necesitas generar identificadores sin coordinar con la base de datos; secuencia cuando el orden y el tamaño del índice importan.
+- Los UUID aleatorios fragmentan los índices; si el volumen es alto, valora identificadores ordenables en el tiempo.
+### Trampas frecuentes
+- Exponer identificadores secuenciales en la API cuando revelan volumen o permiten enumerar.
+- Generar el id en la base de datos y necesitarlo antes de persistir.
+- UUID como texto en la columna en lugar del tipo nativo.
+- Identificadores con significado de negocio que cambian.
+- Mezclar estrategias de generación en el mismo modelo.
+### Evidencia
+- El tipo de columna, el tamaño del índice y la estrategia están documentados en el ADR del modelo.
+
 ## Checklist de revisión
 - [ ] Estrategia explícita (no `AUTO`).
 - [ ] `allocationSize` = `INCREMENT BY` de la secuencia.

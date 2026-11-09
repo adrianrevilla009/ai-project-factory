@@ -66,6 +66,19 @@ spring:
       max-request-size: 12MB
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sube y descarga en streaming; para archivos grandes, subida directa a almacenamiento mediante URL firmada en vez de pasar por la aplicación.
+- Valida tipo, tamaño y contenido en el servidor, no por la extensión.
+### Trampas frecuentes
+- Cargar el archivo entero en memoria.
+- Confiar en el nombre o el tipo declarado por el cliente.
+- Guardar archivos con el nombre original en una ruta controlada por el usuario.
+- Sin análisis de malware cuando procede.
+- URL firmadas de larga duración.
+### Evidencia
+- Una prueba con archivos grandes y maliciosos comprueba los límites.
+
 ## Checklist de revisión
 - [ ] Límites de tamaño configurados en app y en proxy.
 - [ ] Sin `getBytes()` ni `findAll()` en rutas de fichero.

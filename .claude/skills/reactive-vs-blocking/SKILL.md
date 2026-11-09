@@ -51,6 +51,19 @@ OrderDto get(@PathVariable UUID id) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Bloqueante con hilos virtuales como punto de partida; reactivo solo cuando hay flujos de datos con contrapresión o integración con un ecosistema reactivo.
+- No mezcles ambos modelos en el mismo servicio sin una frontera clara.
+### Trampas frecuentes
+- Elegir reactivo por rendimiento sin medir.
+- Llamadas bloqueantes dentro de un flujo reactivo.
+- Depuración y pruebas más difíciles que no se contabilizan.
+- Librerías de acceso a datos bloqueantes en un servicio reactivo.
+- Equipos sin experiencia en el modelo elegido.
+### Evidencia
+- Una medición con la carga real y un ADR con el motivo.
+
 ## Checklist de revisión
 - [ ] Hay justificación escrita si se usa WebFlux.
 - [ ] No hay JPA/JDBC dentro de pipelines reactivos.

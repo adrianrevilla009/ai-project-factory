@@ -62,6 +62,19 @@ public record Order(CustomerId customerId, List<String> items) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Objeto de valor inmutable (record o clase final) para todo lo que se identifica por su contenido: importes, rangos, identificadores.
+- Entidad mutable solo cuando tiene identidad y ciclo de vida; limita sus setters a operaciones con nombre de negocio.
+### Trampas frecuentes
+- Colecciones expuestas directamente, que el llamante puede modificar.
+- Un record con un campo mutable dentro: la inmutabilidad es solo aparente.
+- Copias defensivas olvidadas en el constructor.
+- Validación fuera del constructor, que permite crear valores inválidos.
+- Records como entidades JPA sin entender sus límites.
+### Evidencia
+- Los tipos de valor validan en el constructor y no tienen métodos que los modifiquen.
+
 ## Checklist de revisión
 - [ ] Campos `final`, sin setters en objetos de valor.
 - [ ] Colecciones copiadas al entrar y no expuestas mutables al salir.

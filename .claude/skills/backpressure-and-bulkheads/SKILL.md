@@ -57,6 +57,19 @@ String partnerFallback(String id, BulkheadFullException e) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cola acotada con rechazo explícito antes que cola infinita: un sistema que no puede rechazar acaba cayendo.
+- Aísla recursos por dependencia (bulkhead) para que una lenta no consuma todo el sistema.
+### Trampas frecuentes
+- Colas sin límite que ocultan la saturación hasta que es tarde.
+- Un único pool de conexiones para todas las dependencias.
+- Reintentos que multiplican la carga sobre un servicio ya saturado.
+- Rechazar sin informar al cliente de cuándo reintentar.
+- Límites copiados sin medir.
+### Evidencia
+- Una prueba de carga que satura una dependencia y muestra que el resto del sistema sigue respondiendo.
+
 ## Checklist de revisión
 - [ ] Colas y pools acotados.
 - [ ] Bulkhead y timeout por dependencia.

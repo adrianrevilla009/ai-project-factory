@@ -58,6 +58,20 @@ class TokenService {
 // test: Clock.fixed(Instant.parse("2026-01-01T00:00:00Z"), ZoneOffset.UTC)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dinero: `BigDecimal` con escala y modo de redondeo explícitos, o una clase de dinero que incluya la moneda; nunca `double`.
+- Tiempo: `Instant` para momentos, `LocalDate` para fechas de calendario sin hora, `ZonedDateTime` solo para mostrar o planificar con zona.
+- El reloj se inyecta (`Clock`) para poder probar.
+### Trampas frecuentes
+- Sumar importes de distintas monedas sin conversión explícita.
+- Redondear en cada paso en lugar de al final del cálculo.
+- `LocalDateTime` para almacenar momentos: pierde la zona.
+- Fechas como texto con formato local.
+- Prorrateos que no suman el total por céntimos perdidos.
+### Evidencia
+- Pruebas con casos límite: cambio de hora, fin de mes, redondeo y reparto de céntimos.
+
 ## Checklist de revisión
 - [ ] Solo `java.time`; instantes en UTC.
 - [ ] `Clock` inyectado; ningún `now()` en dominio.

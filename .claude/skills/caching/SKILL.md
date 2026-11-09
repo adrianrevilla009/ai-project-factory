@@ -53,6 +53,19 @@ public void rename(RenameProduct cmd) { /* ... */ }
 Caffeine.newBuilder().maximumSize(10_000).expireAfterWrite(Duration.ofMinutes(10)).recordStats();
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cachea solo lo que se lee mucho, cambia poco y tolera cierta obsolescencia; define explícitamente cuánta.
+- Una caché necesita una estrategia de invalidación o de caducidad desde el primer día.
+### Trampas frecuentes
+- Cachear para tapar una consulta lenta que habría que arreglar.
+- Caché sin límite de tamaño.
+- Datos por usuario o por tenant sin incluir la clave en la caché.
+- Datos sensibles en una caché compartida.
+- No medir la tasa de aciertos.
+### Evidencia
+- Métricas de aciertos, expulsiones y tamaño, y una prueba de que la caché no mezcla tenants.
+
 ## Checklist de revisión
 - [ ] Hay evidencia de que la consulta es el cuello de botella.
 - [ ] Cada caché declara TTL, tamaño y política de invalidación.

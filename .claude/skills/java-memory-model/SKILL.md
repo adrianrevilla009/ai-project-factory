@@ -63,6 +63,19 @@ class Config {
 private final LongAdder requests = new LongAdder();   // en vez de volatile long + ++
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Compartir estado entre hilos exige una relación de «ocurre-antes»: bloqueo, `volatile`, variables atómicas o publicación segura; si no, no hay garantías.
+- Prefiere estructuras inmutables y confinadas a un hilo antes que razonar sobre visibilidad.
+### Trampas frecuentes
+- Creer que una variable no `volatile` se ve inmediatamente en otro hilo.
+- Doble comprobación de bloqueo mal escrita.
+- Publicar un objeto antes de terminar de construirlo (fuga de `this`).
+- Suponer que un `int` o un `long` se leen de forma atómica en todos los casos.
+- Confiar en que «funciona en mi máquina» como prueba.
+### Evidencia
+- Las pruebas de concurrencia usan herramientas pensadas para el modelo de memoria, no solo repeticiones.
+
 ## Checklist de revisión
 - [ ] Cada campo mutable compartido tiene una sincronización identificable.
 - [ ] Sin `volatile` en operaciones compuestas.

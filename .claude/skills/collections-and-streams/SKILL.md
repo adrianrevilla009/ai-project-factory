@@ -54,6 +54,20 @@ Map<String, User> byEmail = users.stream()
     .collect(Collectors.toMap(User::email, u -> u, (a, b) -> a));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un bucle cuando hay efectos laterales o estado; un stream cuando transformas y filtras sin efectos.
+- Elige la colección por su coste de acceso y su semántica (orden, unicidad), no por costumbre.
+- Devuelve vistas inmutables o copias, no tus estructuras internas.
+### Trampas frecuentes
+- Streams paralelos sin medir: suelen empeorar el rendimiento con pocas tareas o tareas pequeñas.
+- Efectos laterales dentro de `map` o `filter`.
+- Modificar una colección mientras se recorre.
+- Un stream que se consume dos veces.
+- Pipelines de diez etapas que nadie puede depurar.
+### Evidencia
+- Las operaciones sobre colecciones grandes tienen una medición que justifica la elección.
+
 ## Checklist de revisión
 - [ ] Las APIs devuelven interfaces e inmutables.
 - [ ] Los streams no mutan estado externo.

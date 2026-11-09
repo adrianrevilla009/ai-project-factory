@@ -60,6 +60,19 @@ class CheckoutService {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- La transacción cubre una unidad de trabajo de negocio y se abre en la capa de aplicación; lo más corta posible.
+- Fuera de la transacción: llamadas remotas, envío de correos, trabajo largo.
+### Trampas frecuentes
+- Una transacción abierta durante una llamada HTTP: agota el pool de conexiones.
+- `@Transactional` en métodos privados o en llamadas internas que no pasan por el proxy.
+- Capturar la excepción dentro y que la transacción se confirme igualmente.
+- Transacciones de solo lectura sin marcarlas como tales.
+- Efectos externos antes de confirmar.
+### Evidencia
+- Una prueba comprueba que un fallo a mitad deja los datos como antes.
+
 ## Checklist de revisión
 - [ ] `@Transactional` solo en servicios, con `readOnly` donde corresponde.
 - [ ] Sin I/O externo dentro de la transacción.

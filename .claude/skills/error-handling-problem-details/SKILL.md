@@ -61,6 +61,19 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un único manejador central que traduce excepciones a respuestas estándar de detalles de problema, con un código estable.
+- Distingue errores del cliente (4xx) de fallos del servidor (5xx) y registra los segundos.
+### Trampas frecuentes
+- Respuestas con trazas o mensajes internos.
+- `200 OK` con el error en el cuerpo.
+- Códigos de error que cambian entre versiones.
+- Capturar y esconder excepciones inesperadas.
+- Formatos distintos en cada controlador.
+### Evidencia
+- Una prueba por tipo de error comprueba estado, tipo y ausencia de datos internos.
+
 ## Checklist de revisión
 - [ ] Un único advice; respuestas `application/problem+json`.
 - [ ] Ningún 5xx expone detalle interno; hay correlationId en respuesta y log.

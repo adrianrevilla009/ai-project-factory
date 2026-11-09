@@ -59,6 +59,19 @@ void tenantB_cannotReadTenantA_order() {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Fila con identificador de tenant (barato, riesgo de fugas), esquema por tenant (aislamiento medio) o base por tenant (máximo aislamiento, más operación): decide por aislamiento, escala y requisitos regulatorios.
+- Si es fila, impón el filtro en una capa que no se pueda olvidar (restricciones de la base o filtros del ORM).
+### Trampas frecuentes
+- Un filtro de tenant escrito a mano en cada consulta.
+- Caché o tareas asíncronas sin contexto de tenant.
+- Identificadores predecibles que permiten enumerar entre tenants.
+- Migraciones que no consideran el número de esquemas.
+- Mismos límites para el tenant pequeño y el grande.
+### Evidencia
+- Una prueba intenta leer datos de otro tenant por todas las vías (API, consulta, caché) y falla.
+
 ## Checklist de revisión
 - [ ] ADR con el modelo elegido y su porqué.
 - [ ] Tenant derivado del token, nunca del cliente.

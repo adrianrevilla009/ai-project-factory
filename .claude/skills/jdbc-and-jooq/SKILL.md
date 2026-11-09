@@ -55,6 +55,19 @@ return dsl.select(CUSTOMER.ID, CUSTOMER.NAME)
           .fetch(r -> new CustomerRow(r.get(CUSTOMER.ID), r.get(CUSTOMER.NAME)));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- JPA para escritura de agregados; SQL tipado (jOOQ) o JDBC para consultas complejas, informes y operaciones masivas.
+- Mezclar ambos en un mismo módulo exige reglas claras sobre quién escribe qué.
+### Trampas frecuentes
+- Escribir con SQL algo que el ORM tiene en memoria sin vaciar el contexto.
+- SQL tipado generado desde un esquema que no es el real.
+- Resultados mapeados a mano sin pruebas.
+- Licencias de pago de la librería sin decisión.
+- Dos formas de acceder a las mismas tablas sin reglas.
+### Evidencia
+- El código generado sale de las migraciones reales en el build.
+
 ## Checklist de revisión
 - [ ] Ninguna concatenación de entrada en SQL.
 - [ ] La consulta está en una clase de persistencia y devuelve DTOs.

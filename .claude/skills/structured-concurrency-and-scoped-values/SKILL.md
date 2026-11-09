@@ -54,6 +54,19 @@ static final ScopedValue<String> TRACE_ID = ScopedValue.newInstance();
 ScopedValue.where(TRACE_ID, traceId).run(() -> handler.handle(req));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa concurrencia estructurada cuando varias subtareas forman una unidad que debe fallar o cancelarse junta; es más segura que lanzar tareas sueltas.
+- Valores con ámbito para pasar contexto de solo lectura a las subtareas en lugar de variables locales de hilo.
+### Trampas frecuentes
+- Depender de una API en vista previa sin plan de salida.
+- Lanzar subtareas que sobreviven a la operación que las inició.
+- Usar valores con ámbito como almacén mutable.
+- Ignorar la cancelación y las excepciones de las subtareas.
+- Mezclar el modelo estructurado con ejecutores globales.
+### Evidencia
+- El código documenta qué ocurre con las subtareas cuando una falla y hay una prueba que lo cubre.
+
 ## Checklist de revisión
 - [ ] Estado del JEP verificado para el JDK del proyecto.
 - [ ] Sin preview no declarado.

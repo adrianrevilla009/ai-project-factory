@@ -69,6 +69,19 @@ class OrderRepositoryTest {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un fragmento de contexto (web, datos) por tipo de prueba en lugar de arrancar toda la aplicación.
+- La prueba de contexto completo, pocas y para integración real.
+### Trampas frecuentes
+- Arrancar todo el contexto en cada prueba.
+- Sustituir con dobles lo que el fragmento debería probar.
+- Fragmentos que cargan más de lo necesario por configuración global.
+- Contextos que se recrean por pequeñas diferencias de configuración.
+- Pruebas web sin seguridad activada.
+### Evidencia
+- El tiempo de la suite y el número de contextos distintos están medidos.
+
 ## Checklist de revisión
 - [ ] Cada test usa el slice más pequeño posible.
 - [ ] Repositorios probados contra el motor real (Testcontainers), no H2.

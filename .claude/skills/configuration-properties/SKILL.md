@@ -52,6 +52,19 @@ payments:
 # la clave llega por variable de entorno PAYMENTS_API_KEY (valor local: changeme)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Agrupa la configuración en clases tipadas y validadas, con valores por defecto seguros; no leas propiedades sueltas por todo el código.
+- Falla al arrancar si falta una propiedad obligatoria.
+### Trampas frecuentes
+- `@Value` disperso con cadenas mágicas.
+- Valores por defecto inseguros (por ejemplo, desactivar TLS).
+- Secretos en ficheros de propiedades.
+- Propiedades que cambian el comportamiento sin documentarse.
+- Configuración distinta por entorno que nadie prueba.
+### Evidencia
+- Una prueba de arranque comprueba que la configuración inválida impide arrancar.
+
 ## Checklist de revisión
 - [ ] Propiedades propias en un `record` con prefijo y `@Validated`.
 - [ ] Unidades explícitas (`Duration`, `DataSize`).

@@ -60,6 +60,19 @@ Claim de cola (SQL nativo, PostgreSQL):
 SELECT id FROM jobs WHERE status = 'PENDING' ORDER BY id LIMIT 10 FOR UPDATE SKIP LOCKED;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Bloqueo pesimista cuando la contención es alta y reintentar sería caro; con tiempo máximo siempre.
+- Para colas de trabajo, bloqueo que omite las filas ya tomadas en lugar de esperar.
+### Trampas frecuentes
+- Bloqueos sin tiempo máximo.
+- Bloquear durante una llamada remota.
+- Orden distinto de bloqueo entre operaciones: interbloqueo.
+- Bloquear más filas de las necesarias.
+- Asumir que todos los motores soportan las mismas variantes.
+### Evidencia
+- Un volcado de bloqueos de la base de datos bajo carga no muestra esperas largas.
+
 ## Checklist de revisión
 - [ ] Justificado frente a bloqueo optimista.
 - [ ] Timeout de bloqueo configurado.

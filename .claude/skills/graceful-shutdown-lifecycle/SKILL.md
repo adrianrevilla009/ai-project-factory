@@ -62,6 +62,19 @@ ThreadPoolTaskExecutor reportExecutor() {
 terminationGracePeriodSeconds: 40   # > 25s de Spring + preStop
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Al apagar: deja de aceptar tráfico, termina lo que hay en curso con un plazo y cierra recursos; el plazo del orquestador debe ser mayor que el de la aplicación.
+- Los consumidores de mensajes terminan el mensaje actual antes de parar.
+### Trampas frecuentes
+- Plazo de terminación del orquestador menor que el tiempo de peticiones largas.
+- Seguir aceptando tráfico mientras se apaga.
+- Perder mensajes en curso.
+- Tareas en segundo plano sin parar.
+- No probar el apagado bajo carga.
+### Evidencia
+- Una prueba de despliegue continuo bajo carga sin errores visibles para el cliente.
+
 ## Checklist de revisión
 - [ ] `server.shutdown: graceful` y timeout de fase definido.
 - [ ] Timeout de Spring < periodo de gracia del orquestador.

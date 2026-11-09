@@ -51,6 +51,19 @@ private final BlockingQueue<Job> queue = new ArrayBlockingQueue<>(1_000);
 boolean submit(Job j) { return queue.offer(j); }       // false = rechazar, no bloquear
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa las operaciones atómicas de la colección (`computeIfAbsent`, `merge`) en vez de comprobar y luego actuar.
+- Si el acceso es raro, una colección normal con sincronización puede ser más simple; mide antes de optimizar.
+### Trampas frecuentes
+- Comprobar con `containsKey` y luego `put`: condición de carrera.
+- Iterar sobre una colección concurrente esperando una instantánea exacta.
+- Modificar el valor mutable que guarda el mapa fuera de las operaciones atómicas.
+- Elegir una colección concurrente sin entender su semántica de consistencia.
+- Cargas costosas dentro de `computeIfAbsent` que bloquean el mapa.
+### Evidencia
+- La regla de análisis estático de «comprobar y luego actuar» no encuentra casos y hay una prueba con varios hilos.
+
 ## Checklist de revisión
 - [ ] Ninguna colección no concurrente compartida con escrituras.
 - [ ] Sin check-then-act; operaciones atómicas.

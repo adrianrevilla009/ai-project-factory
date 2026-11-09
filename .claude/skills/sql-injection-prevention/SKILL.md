@@ -48,6 +48,19 @@ public List<User> search(String name, String sortKey) {
 ```
 El único fragmento concatenado procede de constantes propias, nunca de la entrada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Parámetros enlazados siempre; lo que no se puede enlazar (nombres de columnas, orden) se valida contra una lista permitida.
+- La defensa es la parametrización, no el saneamiento de cadenas.
+### Trampas frecuentes
+- Concatenar o formatear texto en una consulta, incluso «solo para ordenar».
+- Confiar en que el ORM lo protege cuando se usan fragmentos de SQL.
+- Escapar a mano.
+- Mensajes de error con el SQL completo hacia el cliente.
+- Usuarios de base de datos con más permisos de los necesarios.
+### Evidencia
+- Una regla de análisis estático prohíbe la concatenación y una prueba intenta una inyección conocida.
+
 ## Checklist de revisión
 - [ ] Cero concatenación de valores externos en consultas.
 - [ ] Ordenación y columnas dinámicas desde lista blanca.

@@ -60,6 +60,19 @@ Plan de subida (en el PR):
 4. Registrar el cambio en el CHANGELOG del proyecto.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Actualiza con frecuencia y en pasos pequeños: cada versión menor es más barata que un salto grande.
+- Prioriza parches de seguridad con un plazo; las versiones con soporte vencido tienen fecha de salida.
+### Trampas frecuentes
+- Congelar versiones durante años y enfrentarse a una migración enorme.
+- Actualizar sin pruebas automáticas fiables.
+- Mezclar actualización de plataforma y cambios funcionales en el mismo PR.
+- Ignorar los avisos de deprecación.
+- Sin calendario de fin de soporte.
+### Evidencia
+- Un calendario de versiones con fechas de soporte y el historial de actualizaciones.
+
 ## Checklist de revisión
 - [ ] La línea de Boot tiene soporte vigente (fecha comprobada).
 - [ ] Una sola subida por PR, sin saltos de línea.

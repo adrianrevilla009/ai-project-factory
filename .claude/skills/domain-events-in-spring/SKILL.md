@@ -63,6 +63,19 @@ class BillingOnOrderPlaced {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Eventos de dominio dentro del proceso para desacoplar módulos; para garantía entre procesos, publicación fiable (outbox).
+- Decide si el oyente participa en la transacción o reacciona después de confirmar.
+### Trampas frecuentes
+- Publicar a un broker desde un oyente que escribe en otra base: doble escritura.
+- Oyentes que lanzan excepciones y rompen la operación sin que se entienda.
+- Eventos con todo el estado interno de la entidad.
+- Dependencias circulares disfrazadas de eventos.
+- Asumir orden de oyentes.
+### Evidencia
+- Una prueba comprueba qué ocurre si un oyente falla.
+
 ## Checklist de revisión
 - [ ] Eventos son records inmutables con nombre en pasado.
 - [ ] No viajan entidades JPA.

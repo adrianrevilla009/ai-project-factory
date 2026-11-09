@@ -46,6 +46,19 @@ List<Order> findWithLinesByIdIn(Collection<Long> ids);
 List<Order> findWithPaymentsByIdIn(Collection<Long> ids);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Unión interna cuando la relación es obligatoria, externa cuando puede faltar; decide con el modelo de datos, no con el resultado que sale.
+- Una sola colección en un `fetch join` por consulta; para más, varias consultas.
+### Trampas frecuentes
+- Múltiples `fetch join` de colecciones: producto cartesiano.
+- Paginar con un `fetch join` de colección.
+- Duplicados en el resultado sin `distinct` o sin entender por qué aparecen.
+- Uniones que traen columnas que no se usan.
+- Un `fetch join` por costumbre en todas las consultas.
+### Evidencia
+- El plan de ejecución de las consultas más frecuentes está revisado con volumen realista.
+
 ## Checklist de revisión
 - [ ] Como máximo una colección por fetch join.
 - [ ] Ningún `JOIN FETCH` de colección con paginación.

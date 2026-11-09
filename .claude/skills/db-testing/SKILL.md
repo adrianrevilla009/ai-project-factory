@@ -68,6 +68,19 @@ spring:
   flyway.enabled: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pruebas contra el mismo motor que producción (contenedor), con las migraciones reales.
+- Pruebas de repositorio para consultas y restricciones; pruebas de integración para flujos.
+### Trampas frecuentes
+- Una base en memoria de otro motor: pasa en pruebas y falla en producción.
+- Datos compartidos entre pruebas.
+- No probar las restricciones (unicidad, claves).
+- Pruebas que dependen del orden de ejecución.
+- Esquema generado por el ORM en lugar de las migraciones.
+### Evidencia
+- CI ejecuta las migraciones y las pruebas de repositorio con el motor real.
+
 ## Checklist de revisión
 - [ ] Motor y versión mayor iguales a producción; sin H2.
 - [ ] Esquema creado por Flyway.

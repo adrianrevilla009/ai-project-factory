@@ -66,6 +66,19 @@ livenessProbe:  { httpGet: { path: /actuator/health/liveness,  port: 9091 } }
 readinessProbe: { httpGet: { path: /actuator/health/readiness, port: 9091 } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Separa vivacidad (¿el proceso funciona?) de disponibilidad (¿puede recibir tráfico?); una dependencia caída no debería reiniciar el pod.
+- Expón solo lo necesario y por un puerto o red de gestión.
+### Trampas frecuentes
+- Una comprobación de salud que depende de todas las dependencias y reinicia en cascada.
+- Endpoints de gestión públicos.
+- Detalles de salud con información sensible.
+- Sonda de arranque ausente en aplicaciones lentas de arrancar.
+- Métricas de alta cardinalidad.
+### Evidencia
+- Una prueba comprueba el comportamiento de las sondas cuando una dependencia falla.
+
 ## Checklist de revisión
 - [ ] Lista explícita de endpoints expuestos, sin `*`.
 - [ ] Probes habilitadas; liveness sin dependencias externas.

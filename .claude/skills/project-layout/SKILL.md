@@ -55,6 +55,19 @@ class ModularityTests {
 ```
 Requiere la dependencia `spring-modulith-core`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Organiza por capacidad de negocio (paquetes por funcionalidad) y dentro de cada una, la separación entre dominio, aplicación e infraestructura que fije la arquitectura.
+- Un módulo Maven por límite que realmente quieres hacer cumplir; más módulos no es mejor.
+### Trampas frecuentes
+- Paquetes por tipo técnico (`controllers`, `services`) que dispersan una funcionalidad.
+- Dependencias cíclicas entre paquetes.
+- Un módulo «common» que lo acoge todo.
+- Mover paquetes sin pruebas de arquitectura.
+- Clases públicas que deberían ser internas.
+### Evidencia
+- Pruebas de arquitectura que fallan ante dependencias prohibidas.
+
 ## Checklist de revisión
 - [ ] Paquetes de primer nivel = módulos de negocio.
 - [ ] Nada fuera de la API del módulo es accesible desde otros módulos.

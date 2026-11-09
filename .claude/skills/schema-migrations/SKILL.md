@@ -57,6 +57,19 @@ spring:
     enabled: true
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Expand/contract: añade lo nuevo, migra los datos, cambia el código, y solo después elimina lo antiguo, en despliegues separados.
+- Cambios que bloquean (índices, reescrituras) se planifican y se hacen de forma no bloqueante.
+### Trampas frecuentes
+- Soltar o renombrar una columna en el mismo despliegue que el código nuevo.
+- Editar una migración ya aplicada.
+- Migraciones sin probar contra datos reales de volumen.
+- Un usuario con permisos de DDL en tiempo de ejecución.
+- Cambios de datos y de esquema mezclados sin posibilidad de reintentar.
+### Evidencia
+- Cada migración se probó en CI contra una base real y es compatible con la versión anterior del código.
+
 ## Checklist de revisión
 - [ ] Solo migraciones Flyway; `ddl-auto` es `none`/`validate`.
 - [ ] Ninguna migración aplicada fue modificada.

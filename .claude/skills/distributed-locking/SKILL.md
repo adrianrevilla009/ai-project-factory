@@ -49,6 +49,19 @@ UPDATE ledger SET balance = :b, last_token = :token
  WHERE id = :id AND last_token < :token;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Si basta una restricción de unicidad o un bloqueo en la base de datos, úsalo antes que un bloqueo distribuido.
+- Un bloqueo distribuido sin un mecanismo de «fencing» no garantiza exclusión: un proceso pausado puede seguir escribiendo.
+### Trampas frecuentes
+- Tratar un bloqueo con caducidad como una garantía fuerte.
+- Bloqueos sin caducidad que dejan el sistema atascado si el dueño muere.
+- Asumir relojes sincronizados.
+- Bloquear durante operaciones largas.
+- Usar un almacén de caché como si fuera un servicio de consenso.
+### Evidencia
+- Cada bloqueo distribuido documenta qué pasa si el dueño se pausa o muere y cómo se evita la doble escritura.
+
 ## Checklist de revisión
 - [ ] Se descartó restricción única/optimista/cola.
 - [ ] Lock con TTL y dueño verificable.

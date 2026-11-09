@@ -63,6 +63,19 @@ public class InvoiceService {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un formateador automático decide el estilo y se ejecuta en CI; las discusiones de estilo se acaban ahí.
+- Los nombres describen intención de negocio; si necesitas un comentario para entender un nombre, cámbialo.
+### Trampas frecuentes
+- Comentarios que repiten el código o que mienten porque nadie los actualizó.
+- Abreviaturas internas que solo conoce un equipo.
+- Métodos de cien líneas que mezclan niveles de abstracción.
+- Un estilo personal en cada fichero.
+- Mezclar idiomas en los identificadores (los identificadores van en inglés).
+### Evidencia
+- El formateador y el analizador de estilo fallan el build si el código no cumple.
+
 ## Checklist de revisión
 - [ ] Nombres de dominio en inglés y convención Java.
 - [ ] Sin `I...`/`...Impl` innecesarios, sin imports `*`, sin código comentado.

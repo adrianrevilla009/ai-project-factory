@@ -61,6 +61,19 @@ CREATE UNIQUE INDEX uq_customer_email_active ON customer (email) WHERE deleted_a
 ```
 Requiere `@EnableJpaAuditing` y un `AuditorAware<String>` que lea el sujeto autenticado.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Borrado lógico cuando hay que recuperar o auditar; borrado físico cuando una norma exige suprimir.
+- Historial con tablas de auditoría o versiones temporales, según el volumen y las consultas que necesitas.
+### Trampas frecuentes
+- Borrado lógico sin filtrar en todas las lecturas.
+- Índices únicos que no excluyen las filas borradas.
+- Guardar datos personales «borrados» indefinidamente.
+- Historial que no registra quién, cuándo ni por qué.
+- Auditoría editable por la misma aplicación que audita.
+### Evidencia
+- Una prueba confirma que lo borrado no aparece en consultas, y hay una purga con plazo.
+
 ## Checklist de revisión
 - [ ] Auditoría vía listener/`@EnableJpaAuditing`, con `AuditorAware`.
 - [ ] Borrado lógico justificado, filtrado centralmente y con índices únicos parciales.

@@ -59,6 +59,19 @@ CREATE TABLE customer_order (
 CREATE INDEX idx_order_customer ON customer_order (customer_id);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Convenciones de nombres, tipos y restricciones escritas y comprobadas: el esquema es un contrato.
+- Restricciones en la base de datos (claves, unicidad, no nulo) además de en el código.
+### Trampas frecuentes
+- Tipos genéricos (todo texto) que impiden validar.
+- Sin claves foráneas «por rendimiento» y con datos huérfanos.
+- Marcas de tiempo sin zona o en zonas distintas.
+- Nombres inconsistentes entre tablas.
+- Columnas reutilizadas para varios significados.
+### Evidencia
+- Una revisión del esquema contra las convenciones y migraciones que las respetan.
+
 ## Checklist de revisión
 - [ ] Nombres `snake_case` y constraints nombrados.
 - [ ] PK, FKs, UNIQUE y CHECK definidos en la BD.

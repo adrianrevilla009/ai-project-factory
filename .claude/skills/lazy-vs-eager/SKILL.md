@@ -49,6 +49,19 @@ Optional<Order> findWithCustomerById(Long id);
 spring.jpa.open-in-view=false
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Carga perezosa por defecto; la carga anticipada se decide por consulta, con la forma explícita de traer lo necesario.
+- Una pantalla que necesita un subgrafo concreto usa una consulta o un grafo de entidades para ese caso.
+### Trampas frecuentes
+- Relaciones a-uno `EAGER` que traen grafos enteros siempre.
+- Acceder a una relación perezosa fuera de la transacción.
+- Abrir la sesión durante toda la petición para esconder el problema.
+- Resolver `LazyInitializationException` cambiando a `EAGER` globalmente.
+- No saber cuántas consultas dispara una operación.
+### Evidencia
+- Un test que cuenta consultas por operación y falla si superan un tope.
+
 ## Checklist de revisión
 - [ ] Ninguna asociación EAGER.
 - [ ] Cada caso de uso carga explícitamente lo que necesita.

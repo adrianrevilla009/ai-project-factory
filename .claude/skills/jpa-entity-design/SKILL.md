@@ -68,6 +68,19 @@ class Invoice {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una entidad modela un agregado con su invariante; si solo necesitas leer datos para una pantalla, usa una proyección, no una entidad.
+- Relaciones: a-muchos solo si realmente navegas desde el padre; a menudo basta guardar el identificador del otro agregado.
+### Trampas frecuentes
+- Entidades anémicas con setters para todo y la lógica fuera.
+- Relaciones bidireccionales que no se mantienen sincronizadas.
+- `CascadeType.ALL` y borrado en cascada sobre colecciones grandes.
+- Usar la entidad como DTO de la API.
+- Claves naturales mutables como identificador.
+### Evidencia
+- Las pruebas de repositorio cubren la persistencia y la lectura de cada agregado con las migraciones reales.
+
 ## Checklist de revisión
 - [ ] Sin Lombok; constructor protegido sin argumentos.
 - [ ] Enums en `STRING`.

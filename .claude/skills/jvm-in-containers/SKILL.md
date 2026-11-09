@@ -56,6 +56,19 @@ containers:
     securityContext: { runAsNonRoot: true, readOnlyRootFilesystem: true }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dimensiona la memoria de la JVM como un porcentaje del límite del contenedor y deja margen para memoria fuera del montón.
+- Fija solicitudes y límites de CPU y memoria coherentes con lo que mide la aplicación; mide antes de ajustar.
+### Trampas frecuentes
+- Límites de memoria iguales a los del montón: el proceso muere por falta de memoria nativa.
+- Límite de CPU demasiado bajo que provoca estrangulamiento y latencias altas.
+- Copiar parámetros de ajuste de la JVM de otro proyecto sin medir.
+- Imágenes con el JDK completo en producción.
+- Ignorar el comportamiento del recolector de basura bajo límites pequeños.
+### Evidencia
+- Un informe de arranque y de consumo bajo carga con los valores elegidos.
+
 ## Checklist de revisión
 - [ ] Requests y limits de memoria definidos y coherentes.
 - [ ] Heap por porcentaje, no `-Xmx` absoluto.
