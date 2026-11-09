@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -63,4 +63,4 @@ public void checkout(Cart c) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sagas-and-process-managers`, `outbox-and-cdc`, `idempotency-keys`, `consistency-and-cap-tradeoffs`, `transactions`.
 - Fuentes (verificadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ sha256sum evidence/access-log-2026-11-07.json >> evidence/CHAIN.txt
 - Relacionados: `vulnerability-sla-and-incident-response`, `incident-management-and-postmortems`, `secret-scanning-and-leak-response`, `status-page-and-comms`, `audit-trail-and-security-logging`, `ransomware-resilience`.
 - Fuentes (verificado 2026-11-07): NIST SP 800-61 Rev. 3, https://csrc.nist.gov/pubs/sp/800/61/r3/final. Normativa de notificación: borrador por confirmar con fuente oficial.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

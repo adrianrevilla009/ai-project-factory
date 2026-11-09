@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -84,4 +84,4 @@ inhibit_rules:
 - Skills relacionados: `dashboards-and-slos-as-code`, `metrics-store-ha-retention`, `status-page-and-comms`, `observability-of-the-platform-itself`.
 - Fuentes oficiales: https://prometheus.io/docs/alerting/latest/configuration/ (verificado 2026-11-07: campos de route, defaults 30s/5m/4h, `inhibit_rules`). Umbral 14.4 de burn rate: método de ventanas múltiples del libro SRE de Google.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

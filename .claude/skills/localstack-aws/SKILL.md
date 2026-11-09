@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -85,4 +85,4 @@ Limitaciones documentadas: sin IAM real, sin KMS real, sin VPC; verificación pe
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `integration-testing-testcontainers`, `cloud-iam-least-privilege`, `verify-before-asserting`.
 - Fuentes: documentación de LocalStack y AWS SDK for Java v2 — https://blog.localstack.cloud/the-road-ahead-for-localstack/ (fin de la edición Community, 2026-03-23); la cobertura de servicios se comprueba en la documentación de la edición contratada.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

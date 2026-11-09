@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -78,4 +78,4 @@ if __name__ == "__main__":
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-observability`, `llm-security`, `intelligent-document-processing`, `token-and-cost-budgets`, `human-in-the-loop`.
 - Fuentes: guías de evaluación de proveedores de modelos (p. ej. https://platform.claude.com/docs/en/test-and-evaluate/develop-tests.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

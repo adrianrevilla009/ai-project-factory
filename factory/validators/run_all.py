@@ -16,6 +16,7 @@ def main() -> int:
     findings += schemas_and_adrs.validate_schemas(REPO_ROOT) + schemas_and_adrs.validate_adrs(REPO_ROOT)
     findings += schemas_and_adrs.validate_mcp_catalog(REPO_ROOT)
     findings += schemas_and_adrs.validate_knowledge_links(REPO_ROOT)
+    findings += schemas_and_adrs.validate_modules_map(REPO_ROOT)
     for f in findings:
         print(f)
     errors = [f for f in findings if f.severity == "error"]

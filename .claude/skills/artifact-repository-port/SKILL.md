@@ -5,7 +5,7 @@ metadata:
   block: "15-artifacts-and-registry"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -73,4 +73,4 @@ runtime_pull:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `promotion-between-environments`, `retention-and-cleanup`, `sbom`, `image-signing-and-provenance`, `supply-chain`.
 - Fuentes: Harbor https://goharbor.io/docs/ ; ECR replication https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication.html (verificado 2026-11-07). Contrato `repository-port.yaml`: diseño propio de la fábrica, no es un estándar.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

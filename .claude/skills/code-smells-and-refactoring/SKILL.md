@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -65,4 +65,4 @@ Money total(Order order, PricingContext ctx) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `solid`, `tech-debt-management`, `static-analysis`, `tdd`.
 - Fuentes: Martin Fowler, "Refactoring", 2ª ed. (2018); catálogo en refactoring.com.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

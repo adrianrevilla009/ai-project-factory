@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -89,4 +89,4 @@ resource "aws_vpc_security_group_ingress_rule" "db_from_app" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cidr-planning-and-ipam`, `private-endpoints-and-egress-control`, `zero-trust`, `cloud-iam-least-privilege`.
 - Fuentes: documentación oficial de Amazon VPC y buenas prácticas de seguridad de VPC.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

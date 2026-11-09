@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ metadata:
 - Relacionados: `mtls-strict-and-peer-auth`, `istio-upgrades-and-ops`, `multi-cluster-mesh`.
 - Fuentes: ADR-0032 (`catalog/adr/0032-istio-sidecar-vs-ambient.md`); istio.io/latest/docs/ambient/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

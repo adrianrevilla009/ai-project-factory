@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -75,4 +75,4 @@ DORA calculado a mano en una hoja cada trimestre; "fallo" = lo que recuerde el e
 - Relacionados: `rollback-strategy`, `dashboards-and-slos-as-code`, `incident-management-and-postmortems`, `change-and-release-management`.
 - Fuentes: DORA (https://dora.dev/guides/dora-metrics/).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

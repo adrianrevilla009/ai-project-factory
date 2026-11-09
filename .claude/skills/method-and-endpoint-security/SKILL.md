@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -79,4 +79,4 @@ void anonymousCannotListOrders() throws Exception {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authz-rbac-abac-rebac`, `authn-oidc-oauth2`, `security-headers-cors-csrf`, `audit-trail-and-security-logging`.
 - Fuentes: documentación de Spring Security (authorize HTTP requests, method security) y de Spring Boot Actuator.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -1,10 +1,10 @@
 # ADR-0037: `terraform plan` contra una cuenta AWS vacía
 
-- **Estado:** aceptado (por defecto; revisable por el dueño)
+- **Estado:** aceptado
 - **Fecha:** 2026-11-07
 
 ## Contexto
-Decisión abierta del brief (§3). No se inventa una respuesta; requiere confirmación humana.
+Decisión que el brief dejaba abierta (§3). El dueño la cerró el 2026-11-09 aceptando la opción indicada en «Decisión».
 
 ## Opciones
 - No (por defecto): coherente con D4.

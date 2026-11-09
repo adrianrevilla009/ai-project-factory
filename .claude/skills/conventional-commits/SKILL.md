@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ Validación local de ejemplo (expresión regular de cabecera):
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `git-workflow`, `pr-rules`, `changelog-release-notes`, `release-versioning-changelog`.
 - Fuentes: https://www.conventionalcommits.org/en/v1.0.0/ (2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

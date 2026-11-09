@@ -5,7 +5,7 @@ metadata:
   block: "14-secrets-and-config"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,4 +66,4 @@ public interface DataKeyService {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transit-encryption`, `crypto-tls-mtls-key-rotation`, `data-privacy-in-db`, `vault-and-keycloak-dr`, `multi-region-patterns`.
 - Fuentes: https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html (consultada 2026-11-07); ADR-0010.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

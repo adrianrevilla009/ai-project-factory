@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -75,4 +75,4 @@ Tras 30 min sin mejora: guardia de plataforma.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `on-call-and-runbook-links`, `alert-routing-and-oncall`, `failover-and-failback-runbooks`, `dr-tabletop-exercises`, `lessons-learned-and-retro`.
 - Fuentes: práctica interna; Google SRE Book, cap. "Being On-Call".
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

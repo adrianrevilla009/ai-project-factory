@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -80,4 +80,4 @@ slos:
 - Skills relacionados: `alert-routing-and-oncall`, `tempo-and-service-graphs`, `cardinality-and-cost-governance`, `slo-error-budget-policy` (bloque 19).
 - Fuentes oficiales: Grafana, provisioning de dashboards (https://grafana.com/docs/grafana/latest/administration/provisioning/; no verificada en esta sesión. Herramientas SLO: documentación de Sloth/Pyrra.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

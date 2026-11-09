@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -71,4 +71,4 @@ El AI Act entró en vigor el 1 de agosto de 2024; las prácticas prohibidas se a
 - Relacionados: `human-in-the-loop`, `ai-safety-and-red-teaming`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `chatbot-design`.
 - Fuentes: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07). Texto legal: Reglamento (UE) 2024/1689 en EUR-Lex.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

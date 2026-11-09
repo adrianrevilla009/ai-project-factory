@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -84,4 +84,4 @@ nit: renombrar `tmp` a `pendingItems`.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `static-analysis`, `code-smells-and-refactoring`, `test-strategy`, `verify-before-asserting`.
 - Fuentes: guía de revisión de Google Engineering Practices (https://google.github.io/eng-practices/review/, consultada 2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

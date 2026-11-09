@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -71,4 +71,4 @@ Fuente de las categorías y del formato de fecha: https://keepachangelog.com/en/
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `release-versioning-changelog`, `versioning-semver-snapshots`, `api-versioning-deprecation`, `conventional-commits`.
 - Fuentes: https://keepachangelog.com/en/1.1.0/ (2026-11-07); SemVer en https://semver.org/.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

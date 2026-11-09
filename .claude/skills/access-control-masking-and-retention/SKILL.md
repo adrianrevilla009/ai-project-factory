@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -74,4 +74,4 @@ Nota: `md5` sin sal es reversible por diccionario; usar HMAC con secreto de Vaul
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-governance-and-classification`, `gdpr-in-the-lake`, `retention-and-cleanup`, `data-privacy-in-db`, `secrets-management`.
 - Fuentes: documentación de Trino (control de acceso).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -5,7 +5,7 @@ metadata:
   block: "28-local-kubernetes"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -75,4 +75,4 @@ deploy:
 - Relacionados: `cluster-tooling`, `local-profiles`, `docker-multistage`, `kustomize-overlays`, `devcontainer-integration`.
 - Fuentes: documentación de Tilt (https://docs.tilt.dev) y Skaffold (https://skaffold.dev/docs).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

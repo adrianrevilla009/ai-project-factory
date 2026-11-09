@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -74,4 +74,4 @@ ResponseEntity<Void> upload(@RequestParam MultipartFile f, Principal p) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `batching-and-bulk-ops`, `document-and-report-generation`, `idempotency-keys`, `audit-trail-and-activity-log`.
 - Fuentes: Spring Batch reference (2026-11-07); límites de subida y antivirus. Preparado para AWS (S3), no verificado en real.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

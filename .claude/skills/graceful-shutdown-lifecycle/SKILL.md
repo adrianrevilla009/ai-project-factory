@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -81,4 +81,4 @@ Local: se puede comprobar con `docker stop` o `kill -TERM`; no se reproduce el d
 - Skills relacionados: `actuator-and-health`, `resilience`, `delivery-semantics`, `startup-and-native`.
 - Fuentes oficiales: Spring Boot Reference "Graceful Shutdown", consultada 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

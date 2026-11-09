@@ -1,7 +1,7 @@
 ---
 name: docs-writer
 description: Usar para escribir README, ADRs, runbooks y documentación viva del proyecto.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # docs-writer

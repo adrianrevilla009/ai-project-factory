@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -85,4 +85,4 @@ pact-broker can-i-deploy --pacticipant billing-service --version $GIT_SHA --to-e
 - Relacionados: `contract-testing`, `openapi-contract-first`, `backward-compatibility-rules`, `api-testing`.
 - Fuentes: documentación de Pact (docs.pact.io: consumer tests, provider verification, can-i-deploy, pending pacts), consultada 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

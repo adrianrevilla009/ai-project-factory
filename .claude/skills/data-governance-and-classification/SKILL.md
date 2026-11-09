@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -71,4 +71,4 @@ models:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pii-and-data-classification`, `data-contracts-and-lineage`, `access-control-masking-and-retention`, `gdpr-in-the-lake`.
 - Fuentes: documentación de DataHub/OpenMetadata. Normativa: borrador por confirmar con fuente oficial.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -93,4 +93,4 @@ void onOrder(OrderCreated event) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `dlq-retries-poison-messages`, `schema-registry-and-evolution`, `asyncapi-event-contracts`.
 - Fuentes: documentación de Apache Kafka (configuración de producer/consumer) y de Spring for Apache Kafka.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

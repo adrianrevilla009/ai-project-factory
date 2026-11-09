@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -88,4 +88,4 @@ spec:
 - Relacionados: `argo-cd`, `argo-rollouts`, `environment-promotion`, `container-and-k8s-security`.
 - Fuentes (2026-11-07): https://argo-workflows.readthedocs.io/en/stable/ (describe el motor como CRD que orquesta jobs paralelos en Kubernetes). Detalles de CRDs y de Argo Events (Sensor/EventSource).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

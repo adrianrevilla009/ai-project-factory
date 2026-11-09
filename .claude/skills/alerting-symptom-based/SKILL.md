@@ -5,7 +5,7 @@ metadata:
   block: "10-observability-app"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ Factor 14.4 y SLO 99.9 % son ilustrativos; calcular según el SLO real.
 - Skills relacionados: `slo-sli-error-budgets`, `golden-signals-red-use`, `on-call-and-runbook-links`, `jvm-observability`.
 - Fuentes: documentación de Prometheus Alertmanager y The Site Reliability Workbook (alerting on SLOs), consultados 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

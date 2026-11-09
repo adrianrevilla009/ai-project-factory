@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -69,4 +69,4 @@ public User load(String id) {
 - Relacionados: `exceptions-and-error-handling`, `immutability-and-value-objects`, `generics-and-api-design`.
 - Fuentes: Javadoc de `java.util.Optional` y `java.util.Objects` (oracle/openjdk); JSpecify (jspecify.dev); no verificado en línea.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

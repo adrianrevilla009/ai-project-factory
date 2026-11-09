@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ final class LegacyCrmTranslator {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `ddd-strategic`, `strangler-fig-migration`, `soap-legacy-integration`.
 - Fuentes: Eric Evans, "Domain-Driven Design" (2003), patrón Anticorruption Layer; Microsoft Azure Architecture Center, "Anti-corruption layer pattern".
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

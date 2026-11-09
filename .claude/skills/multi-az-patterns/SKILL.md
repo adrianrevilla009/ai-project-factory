@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -81,4 +81,4 @@ spec:
 - Relacionados: `static-stability-and-cell-architecture`, `tier-model-and-rpo-rto`, `multi-region-patterns`.
 - Fuentes: Kubernetes, Pod Topology Spread Constraints y PDB (kubernetes.io/docs); AWS Aurora/MSK Multi-AZ.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

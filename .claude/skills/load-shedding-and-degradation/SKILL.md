@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -74,4 +74,4 @@ if (!bulkhead.tryAcquire()) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backpressure-and-bulkheads`, `resilience`, `capacity-and-load-modeling`, `dependency-mapping-and-blast-radius`, `static-stability-and-cell-architecture`.
 - Fuentes: Amazon Builders' Library "Using load shedding to avoid overload".
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

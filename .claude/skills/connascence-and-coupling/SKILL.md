@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -66,4 +66,4 @@ Criterio práctico: fuerte y cercano = OK; fuerte y lejano = rediseñar o ADR.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `solid`, `ddd-strategic`, `hexagonal`, `evolutionary-architecture-fitness-functions`.
 - Fuentes: Page-Jones, "What Every Programmer Should Know About OO Design" (1995); connascence.io..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

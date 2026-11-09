@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -82,4 +82,4 @@ release:
 - Relacionados: `pipeline-architecture`, `supply-chain`, `api-versioning-deprecation`, `change-and-release-management`.
 - Fuentes: https://semver.org/ y https://www.conventionalcommits.org/ (consultar 2026-11-07); regla 9 de `CLAUDE.md`.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -75,4 +75,4 @@ var service = new InvoiceService(fakeRepository, fakeMailer);
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `project-layout`, `domain-events-in-spring`, `solid`, `testing-slices`.
 - Fuentes oficiales: Spring Framework Reference, "Dependency Injection" (docs.spring.io).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

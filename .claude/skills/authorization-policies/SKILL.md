@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -77,4 +77,4 @@ spec:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mtls-strict-and-peer-auth`, `zero-trust`, `authz-rbac-abac-rebac`, `rbac-and-service-accounts`.
 - Fuentes: istio.io/latest/docs/reference/config/security/authorization-policy/.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

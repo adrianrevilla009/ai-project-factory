@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -72,4 +72,4 @@ create table event_store (
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cqrs`, `event-driven`, `ddd-tactical`, `consistency-and-cap-tradeoffs`.
 - Fuentes: Fowler, "Event Sourcing" (martinfowler.com); Young, "Versioning in an Event Sourced System" (2017)..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -107,4 +107,4 @@ resource "aws_wafv2_web_acl" "edge" {
 - Relacionados: `alb-nlb-and-tls-termination`, `dos-and-rate-limiting`, `security-headers-cors-csrf`, `owasp-top10-and-api-top10`.
 - Fuentes: documentación oficial de AWS WAF, AWS Shield y CloudFront (origin access control, prefix list gestionada).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

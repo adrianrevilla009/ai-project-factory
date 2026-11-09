@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,4 +66,4 @@ Validador automático de documento DR: pendiente.
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `cluster-topology`, `backup-and-restore`, `multi-cluster-mesh`, `istio-multicluster-tradeoffs`, `eks-multi-region-and-argo-cd-multicluster`.
 - Fuentes: documentación de Kubernetes y guías de resiliencia/DR de AWS (Well-Architected, Reliability Pillar).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

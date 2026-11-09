@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -63,11 +63,11 @@ void applyBatch(String projection, List<StoredEvent> batch) {
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| Test de reconstrucción "vista viva == vista reconstruida" | 3 | tests del proyecto generado (pendiente de plantilla en la fábrica; ver `testing-event-sourced-systems`) |
+| Test de reconstrucción "vista viva == vista reconstruida" | 3 | tests del proyecto generado (se implementa en el proyecto generado; ver `testing-event-sourced-systems`) |
 | Revisión de handlers de proyección | 3 | agente `code-reviewer` |
 | Regla Semgrep contra `Instant.now()` en proyectores | pendiente | `policies/semgrep/` (no existe aún) |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `projections-and-read-models`, `snapshots`, `event-versioning-and-upcasting`, `idempotency-and-deduplication`.
 - Fuentes: DynamoDB Streams retiene registros hasta 24 h — https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html (verificado 2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -75,4 +75,4 @@ public void approve(ProposalId id, String approverId) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `agents-and-tool-calling`, `llm-security`, `audit-trail-and-security-logging`, `model-risk-and-ai-act-mapping`, `llm-evals`.
 - Fuentes: Comisión Europea, marco regulatorio de IA, https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (consultado 2026-11-07; texto del art. 14 comprobar en EUR-Lex).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

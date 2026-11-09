@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,4 +66,4 @@ OpenSearch gestionado en AWS: preparado para AWS, no verificado en real. En loca
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cqrs`, `outbox-and-cdc`, `projections-and-read-models`, `search-and-discovery`, `data-sync-pitfalls`.
 - Fuentes: documentación de OpenSearch.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ El filtro por `source_id` debe construirse con valores validados, no con texto l
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rag-architecture`, `pii-and-data-classification`, `gdpr-in-the-lake`, `ocr-options` (pendiente), `llm-security`.
 - Fuentes: RGPD arts. 17 y 25 (borrador por confirmar con fuente oficial, EUR-Lex).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

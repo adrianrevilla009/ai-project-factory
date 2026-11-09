@@ -14,10 +14,10 @@ Esta fábrica no contiene plantillas (ADR-0038): los comandos guían a los agent
 | plan | `/project-plan` → `/project-plan-review` → `/project-plan-test` | Gate 1 |
 | implementation | `/project-implement` → `/implement-review` → `/implement-test` | Gate 2 |
 | pull-request | `/pr-create` → `/pr-review` → `/pr-fix` → `/pr-merge-ready` | Gate 3 |
-| release | `/release-prepare` → `/release-verify` | Gate 4 |
+| release | `/release-prepare` → `/rollback-plan` → `/release-verify` | Gate 4 |
 | cloud-readiness | `/cloud-readiness-check` → `/cost-estimate` → `/dr-tabletop` | Gate 5 |
 | close | `/project-retro` → `/lessons-capture` | — |
-| mantenimiento | `/add-service` `/add-capability` `/audit-project` `/upgrade-project` `/dependency-update` `/skill-review` | según caso |
+| mantenimiento | `/add-service` `/add-capability` `/audit-project` `/upgrade-project` `/dependency-update` `/skill-review` `/security-review` `/incident-response` | según caso |
 
 ## Reglas
 1. Cada comando termina **parando** y presentando evidencia contra el checklist del gate (`gate-protocol`).

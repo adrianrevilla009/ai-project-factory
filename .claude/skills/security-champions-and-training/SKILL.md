@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ safe_reporting: blameless
 - Relacionados: `secure-sdlc-nist-ssdf`, `owasp-top10-and-api-top10`, `asvs-mapping`, `incident-management-and-postmortems`, `code-review-guidelines`, `threat-modeling-stride`.
 - Fuentes: OWASP Security Champions Guide y SAMM; NIST SSDF (SP 800-218) para prácticas de formación.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

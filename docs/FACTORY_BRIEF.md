@@ -1,5 +1,8 @@
 # AI Project Factory — Brief de contexto para Claude Code
 
+> **Nota de vigencia (2026-11-09).** Este brief es el documento de partida. Desde entonces el alcance cambió: la fábrica es solo de guías, sin plantillas, CLI, orquestador ni servidores MCP propios (ADR-0038); las skills están en estructura plana (ADR-0028); las decisiones abiertas del §3 están cerradas en los ADR 0032–0037; y la antigua marca de «pendiente de verificar» ya no existe: lo no comprobable se declara «no comprobado». Para el estado real, ver `README.md`, `catalog/adr/` y `CHANGELOG.md`.
+
+
 > Documento de traspaso. Resume las decisiones tomadas en la fase de planificación con el usuario.
 > **Objetivo:** montar el repositorio "fábrica" que, a partir de un dominio y unos requisitos, permita generar proyectos corporativos de gran escala, de calidad profesional, con agentes, skills, hooks, plantillas y gates humanos.
 > **Estado actual:** solo planificación. No existe nada creado todavía.

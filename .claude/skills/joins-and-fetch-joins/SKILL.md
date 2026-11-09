@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -64,4 +64,4 @@ List<Order> findWithPaymentsByIdIn(Collection<Long> ids);
 - Relacionados: `n-plus-one`, `lazy-vs-eager`, `pagination`, `projections-and-dtos`.
 - Fuentes: guía de usuario de Hibernate ORM (HQL, fetching).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

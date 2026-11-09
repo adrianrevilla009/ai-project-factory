@@ -13,4 +13,4 @@ Seis puntos de control humano. El agente prepara la evidencia y se detiene; una 
 
 Cada gate aprobado deja `approvals/gate-N.json`, validado contra `approval-record.schema.json` (aprobador, rol, fecha, decisión, referencia al checklist; el gate 0 añade quién validó dominio y normativa). El hook `enforce_gate_approval` bloquea editar código si faltan registros válidos, y las reglas de `settings.json` impiden que un agente escriba en `approvals/`.
 
-Los aprobadores de cada gate están en [`docs/operating-model/RACI.md`](../docs/operating-model/RACI.md) como propuesta pendiente de confirmar.
+Los aprobadores de cada gate están en [`docs/operating-model/RACI.md`](../docs/operating-model/RACI.md).

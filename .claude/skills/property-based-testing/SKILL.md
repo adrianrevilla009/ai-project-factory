@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -86,4 +86,4 @@ Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM.
 - Relacionados: `unit-testing-java`, `mutation-testing`, `time-and-money`, `test-data-management`.
 - Fuentes: https://jqwik.net/docs/current/user-guide.html.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

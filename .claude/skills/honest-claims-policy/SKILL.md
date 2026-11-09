@@ -5,7 +5,7 @@ metadata:
   block: "29-cloud-readiness"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -59,4 +59,4 @@ Prohibido afirmar que el despliegue está probado en AWS real.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `maturity-labels`, `static-verification-ladder`, `verify-before-asserting`, `local-parity-matrix`.
 - Fuentes: `CLAUDE.md` (regla 2), `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

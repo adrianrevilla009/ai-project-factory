@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ class FeeCalculator {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `solid`, `code-smells-and-refactoring`, `domain-events-in-spring`, `hexagonal`.
 - Fuentes: Gamma, Helm, Johnson, Vlissides, "Design Patterns" (1994).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

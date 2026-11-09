@@ -7,8 +7,8 @@ Qué contiene:
 | Pieza | Dónde | Cuántas |
 |---|---|---|
 | Skills (estándares con ejemplos, checklist y enforcement) | `.claude/skills/` | 490 en 31 bloques, ver [índice](docs/skills-index.md) |
-| Agentes por rol | `.claude/agents/` | 25 |
-| Comandos por fase del proyecto | `.claude/commands/` | 26 |
+| Agentes por rol | `.claude/agents/` | 28 |
+| Comandos por fase del proyecto | `.claude/commands/` | 29 |
 | Hooks que bloquean acciones inseguras o fuera de proceso | `.claude/hooks/` | 18, con tests |
 | Gates de aprobación humana | `gates/` | 6 (0–5) |
 | Decisiones de arquitectura | `catalog/adr/` | 38 |
@@ -37,4 +37,4 @@ Nada de lo que produce esta fábrica se despliega en AWS (ADR-0004). La infraest
 - **Políticas:** las 46 reglas de Semgrep están probadas (`make policy-test`); Rego, Kyverno, ArchUnit y frontend son ejemplos escritos sin ejecutar ([detalle](policies/README.md)).
 - **Dev container y firewall:** sin probar en un contenedor real.
 - **Texto legal y de cumplimiento:** borrador que debe confirmar una persona.
-- **Decisiones 0032–0037:** aceptadas por defecto, pendientes de tu revisión.
+- **Decisiones y gates:** los ADR 0032–0037 y el RACI de gates están aceptados por el dueño (2026-11-09).

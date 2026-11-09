@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -73,4 +73,4 @@ create table projection_checkpoint (stream_id text primary key, last_version big
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `cqrs`, `cqrs-read-models-and-search`, `rebuilds-and-replays`, `idempotency-and-deduplication`, `delivery-semantics`.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

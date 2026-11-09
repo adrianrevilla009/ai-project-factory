@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -74,4 +74,4 @@ exporters:
 - Fuentes oficiales: Grafana Loki y Tempo, secciones de multi-tenancy (https://grafana.com/docs/loki/latest/operations/multi-tenancy/ ; no verificada la redacción.
 - Preparado para AWS, no verificado en real. En local suele usarse un único tenant; el aislamiento real no se reproduce.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

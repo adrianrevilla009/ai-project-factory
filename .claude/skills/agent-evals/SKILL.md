@@ -5,7 +5,7 @@ metadata:
   block: "31-agentic-engineering"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -71,4 +71,4 @@ min_pass_rate: 1.0
 - Relacionados: `mcp-governance`, `cost-control`, `verify-before-asserting`, `handoff-artifacts-between-agents`.
 - Fuentes: `tests/README.md`, `.claude/agents/quality/eval-engineer.md`; salida de hooks (exit 2) según `docs/architecture/claude-code-formats.md`.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

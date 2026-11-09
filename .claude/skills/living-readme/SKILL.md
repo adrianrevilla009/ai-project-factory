@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ IAM real, ALB/NLB y KMS gestionado. Infra: preparado para AWS, no verificado en 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `c4-and-arc42`, `runbooks`, `api-docs`, `pr-rules`, `honest-claims-policy`.
 - Fuentes: práctica interna; sin fuente oficial externa.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

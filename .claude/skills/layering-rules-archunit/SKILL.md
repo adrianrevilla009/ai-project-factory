@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ class LayeringRules {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `modular-monolith`, `architecture-testing-archunit`, `evolutionary-architecture-fitness-functions`.
 - Fuentes: ArchUnit User Guide, https://www.archunit.org/userguide/html/000_Index.html.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

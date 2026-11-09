@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -72,4 +72,4 @@ spec:
 - Relacionados: `encryption-standards`, `crypto-tls-mtls-key-rotation`, `mtls-strict-and-peer-auth`, `ingress-and-egress-gateways`.
 - Fuentes (2026-11-07): calendario SC-081v3 según fuentes secundarias (encryptionconsulting.com, sslinsights.com), pendiente de confirmar en cabforum.org; documentación de cert-manager.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -5,7 +5,7 @@ metadata:
   block: "20-internal-developer-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -103,4 +103,4 @@ Nota: el ejemplo omite el paso `publish` (`id: publish`) por brevedad; la acció
 - Relacionados: `backstage`, `golden-paths-governance`, `docker-multistage`, `sbom`.
 - Fuentes (verificado 2026-11-07): https://backstage.io/docs/features/software-templates/writing-templates (apiVersion `scaffolder.backstage.io/v1beta3`, steps con id/name/action/input, `fetch:template`, `publish:github`, `OwnerPicker`).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

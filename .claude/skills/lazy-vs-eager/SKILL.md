@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -65,4 +65,4 @@ spring.jpa.open-in-view=false
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `n-plus-one`, `joins-and-fetch-joins`, `projections-and-dtos`, `persistence-context-and-flush`.
 - Fuentes: guía de usuario de Hibernate ORM (fetching) y referencia de Spring Boot (`spring.jpa.open-in-view`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

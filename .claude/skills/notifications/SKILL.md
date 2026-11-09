@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ public void on(OrderPlaced e) {
 - Relacionados: `outbox-and-cdc`, `idempotency-keys`, `dlq-retries-poison-messages`, `consent-and-dsar-management`, `i18n-and-localization`.
 - Fuentes: documentación del proveedor elegido. Preparado para AWS, no verificado en real.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

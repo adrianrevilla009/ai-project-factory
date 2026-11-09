@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ Argumentos del recurso `aws_route53_health_check` con `RECOVERY_CONTROL`: los re
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `failover-and-failback-runbooks`, `multi-az-patterns`, `static-stability-and-cell-architecture`.
 - Fuentes: https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html y whitepaper DR (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html), 2026-11-07. Regiones de los endpoints del clúster ARC.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

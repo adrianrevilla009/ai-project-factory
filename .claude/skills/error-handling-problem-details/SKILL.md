@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -77,4 +77,4 @@ class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `controllers-and-validation`, `rest-design-guidelines`, `structured-logging`, `testing-slices`.
 - Fuentes oficiales: RFC 9457 (rfc-editor.org/rfc/rfc9457) y Spring Framework Reference "Error Responses", consultadas 2026-11-07.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

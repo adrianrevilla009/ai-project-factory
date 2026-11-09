@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -57,4 +57,4 @@ Si JSONB no basta (medido): ADR con comparación, fuente de verdad única (Mongo
 - Relacionados: `datastore-selection-guide`, `polyglot-operations-cost`, `dynamodb-data-modeling`, `license-policy`.
 - Fuentes: documentación oficial de MongoDB y de Amazon DocumentDB — no consultadas en esta revisión.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

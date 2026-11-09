@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -69,4 +69,4 @@ def run(ctx):
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-quality`, `data-contracts-and-lineage`, `batch-orchestration`, `alert-routing-and-oncall`, `slo-error-budget-policy`.
 - Fuentes: especificación OpenLineage (openlineage.io).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

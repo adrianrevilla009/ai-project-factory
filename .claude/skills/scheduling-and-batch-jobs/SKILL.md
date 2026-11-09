@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -61,4 +61,4 @@ public void closeDay() {
 - Relacionados: `scheduling-and-batch`, `batching-and-bulk-ops`, `idempotency-and-deduplication`, `import-export-and-bulk-data`.
 - Fuentes: ShedLock README, Spring Batch reference (2026-11-07). Local: Kubernetes local; no se reproduce EventBridge Scheduler de AWS.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

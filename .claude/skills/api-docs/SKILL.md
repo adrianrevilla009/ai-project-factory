@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -79,4 +79,4 @@ Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fue
 - Relacionados: `openapi-contract-first`, `asyncapi-event-contracts`, `api-versioning-deprecation`, `contract-testing`, `changelog-release-notes`.
 - Fuentes: https://springdoc.org/ (2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

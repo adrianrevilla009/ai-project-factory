@@ -142,11 +142,42 @@
     ]
   },
   "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git show *)",
+      "Bash(make validate)",
+      "Bash(make test)",
+      "Bash(make check)",
+      "Bash(make index)",
+      "Bash(ls *)"
+    ],
+    "ask": [
+      "Bash(git push *)",
+      "Bash(git commit *)",
+      "Bash(git rebase *)",
+      "Bash(git merge *)",
+      "Bash(terraform *)",
+      "Bash(kubectl apply *)",
+      "Bash(kubectl delete *)",
+      "Bash(docker push *)",
+      "Bash(aws *)",
+      "Bash(rm -rf *)",
+      "WebFetch"
+    ],
     "deny": [
       "Read(./.env)",
       "Read(./.env.*)",
+      "Read(~/.aws/**)",
+      "Read(~/.ssh/**)",
       "Edit(./approvals/**)",
-      "Write(./approvals/**)"
+      "Write(./approvals/**)",
+      "Edit(./.factory/state.json)",
+      "Write(./.factory/state.json)",
+      "Bash(git push --force *)",
+      "Bash(terraform apply *)",
+      "Bash(terraform destroy *)"
     ]
   }
 }

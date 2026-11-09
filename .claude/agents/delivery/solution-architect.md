@@ -1,7 +1,7 @@
 ---
 name: solution-architect
 description: Usar para decidir arquitectura, estilos, límites de servicios y registrar ADRs.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # solution-architect

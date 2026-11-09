@@ -5,7 +5,7 @@ metadata:
   block: "21-on-prem-hybrid"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -54,4 +54,4 @@ allow tcp/443 from 10.10.5.0/24 to 10.20.8.0/24
 - Relacionados: `zero-trust`, `authn-oidc-oauth2`, `identity-center-sso`, `kubernetes-on-prem`.
 - Fuentes y del proveedor de VPN.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

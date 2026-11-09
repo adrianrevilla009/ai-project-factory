@@ -58,7 +58,7 @@ def test_missing_sections_detected(tmp_path):
 
 
 def test_bad_tier_and_date(tmp_path):
-    text = GOOD_SKILL.replace("name: n-plus-one", "name: demo").replace("tier: T1", "tier: T9").replace('last_reviewed: "2026-11-06"', 'last_reviewed: "ayer"')
+    text = GOOD_SKILL.replace("name: n-plus-one", "name: demo").replace("tier: T1", "tier: T9").replace('last_reviewed: "2026-11-09"', 'last_reviewed: "ayer"')
     msgs = [x.message for x in skill_structure.validate_skill(make_skill(tmp_path, text), tmp_path)]
     assert any("tier" in m for m in msgs) and any("last_reviewed" in m for m in msgs)
 
@@ -235,3 +235,20 @@ def test_unknown_cross_reference_and_missing_path_detected(tmp_path):
     msgs = [f.message for f in references.validate_text(text, "x.md", tmp_path, known)]
     assert msgs == ["cross-reference to unknown skill 'ghost-skill'", "path does not exist: policies/nope.yaml",
                     "cross-reference to unknown skill 'otro-fantasma'"]
+
+
+# ---------------------------------------------------------------- modules map
+def test_repo_modules_map_is_valid():
+    assert schemas_and_adrs.validate_modules_map(ROOT) == []
+
+
+def test_modules_map_detects_missing_module_and_unknown_skill(tmp_path):
+    for d in ("capabilities", "catalog", ".claude/skills/real"):
+        (tmp_path / d).mkdir(parents=True)
+    (tmp_path / ".claude/skills/real/SKILL.md").write_text("x")
+    (tmp_path / "catalog/skills-inventory.yaml").write_text("blocks: [{block: 01-a, skills: []}]")
+    (tmp_path / "capabilities/capabilities.yaml").write_text("always_on: [core]\nquestions: [{id: q, activates_when_true: [extra]}]")
+    (tmp_path / "capabilities/modules-map.yaml").write_text("modules: {core: {skills: [ghost], blocks: [99-x], policies: [nope.yaml]}}")
+    msgs = " ".join(f.message for f in schemas_and_adrs.validate_modules_map(tmp_path))
+    for needle in ("'extra' is activated", "unknown skill or path 'ghost'", "unknown block '99-x'", "policy does not exist"):
+        assert needle in msgs, needle

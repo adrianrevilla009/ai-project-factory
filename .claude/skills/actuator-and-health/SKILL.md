@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -84,4 +84,4 @@ Local: las sondas se pueden probar con Docker Compose o kind; no se reproduce ni
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `graceful-shutdown-lifecycle`, `resilience`, `configuration-properties`, `startup-and-native`.
 - Fuentes oficiales: Spring Boot Reference "Actuator" y "Kubernetes Probes", consultadas 2026-11-07; verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08; las propiedades citadas existen.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

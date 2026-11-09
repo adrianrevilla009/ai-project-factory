@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -64,4 +64,4 @@ Local: PostgreSQL, DuckDB, ClickHouse o Trino en contenedores. No se reproducen 
 - Relacionados: `datastore-selection-guide`, `etl-vs-elt-and-dbt`, `data-platform-cost`, `bi-and-reporting`.
 - Fuentes: pendientes comprobar (documentación oficial de cada motor).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

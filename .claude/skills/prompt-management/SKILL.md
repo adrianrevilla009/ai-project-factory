@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -77,4 +77,4 @@ void template_keeps_user_text_inside_data_block() {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `prompt-injection-defense-for-agents`, `llm-security`, `llm-observability`, `structured-outputs-and-streaming` (pendiente), `llm-evals` (pendiente).
 - Fuentes: Spring AI Reference, PromptTemplate/ChatClient (docs.spring.io/spring-ai/reference/api/chatclient.html, 2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

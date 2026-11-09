@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ CREATE INDEX idx_orders_created_id ON orders (created_at, id);
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pagination-filter-sort`, `joins-and-fetch-joins`, `indexing-and-query-plans`, `projections-and-dtos`.
 - Fuentes: Spring Data commons reference (paging, `Slice`, scrolling).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

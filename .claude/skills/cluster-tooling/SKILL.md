@@ -5,7 +5,7 @@ metadata:
   block: "28-local-kubernetes"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ El registro local sigue el script oficial de kind (contenedor `registry:2` en el
 - Relacionados: `dev-loop`, `local-profiles`, `local-parity-matrix`, `resource-budgets`, `devcontainer-integration`.
 - Fuentes: kind, "Local Registry" https://kind.sigs.k8s.io/docs/user/local-registry/ (verificado 2026-11-07; el parche de containerd es opcional desde kind v0.27.0 según esa página).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

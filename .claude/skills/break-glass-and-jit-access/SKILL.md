@@ -5,7 +5,7 @@ metadata:
   block: "11-aws-governance"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -71,4 +71,4 @@ resource "aws_cloudwatch_event_target" "page_oncall" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `identity-center-sso`, `scp-guardrails`, `org-cloudtrail-config-securityhub-guardduty`, `on-call-and-runbook-links`.
 - Fuentes: AWS IAM Best Practices y guía de emergency access de AWS (2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

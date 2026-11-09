@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ customer.nationalId: { level: RESTRICTED,  retention: "per legal basis, TBD", lo
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `audit-trail-and-security-logging`, `crypto-tls-mtls-key-rotation`, `llm-security`, `structured-logging`.
 - Fuentes: OWASP Logging Cheat Sheet; texto legal aplicable (RGPD) por confirmar en fuente oficial EUR-Lex.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

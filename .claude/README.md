@@ -5,8 +5,8 @@ Configuración de Claude Code **de la fábrica**: lo que usan los agentes cuando
 | Ruta | Contenido |
 |---|---|
 | `settings.json` | Registro de hooks y permisos. Deniega lectura/escritura de `.env*` y escritura en `approvals/**`. |
-| `agents/` | 25 subagentes en 5 áreas: `business`, `delivery`, `engineering`, `quality`, `governance`. Los de governance son de solo lectura. |
-| `commands/` | 26 comandos agrupados por fase: `00-intake` … `06-close`, más `maintenance`. |
+| `agents/` | 28 subagentes en 5 áreas: `business`, `delivery`, `engineering`, `quality`, `governance`. Los de governance son de solo lectura. |
+| `commands/` | 29 comandos agrupados por fase: `00-intake` … `06-close`, más `maintenance`. |
 | `skills/` | 490 skills, una carpeta por skill con su `SKILL.md`, más `_template/` con la plantilla. Índice navegable en [`docs/skills-index.md`](../docs/skills-index.md). |
 | `hooks/` | Scripts Python deterministas. Detalle abajo. |
 

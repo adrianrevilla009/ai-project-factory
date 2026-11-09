@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ Alerta automática de backup fallido: pendiente.
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `operators`, `multi-cluster-and-dr`, `backup-vault-immutability-and-restore-tests`, `failover-and-failback-runbooks`.
 - Fuentes: documentación de Velero.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

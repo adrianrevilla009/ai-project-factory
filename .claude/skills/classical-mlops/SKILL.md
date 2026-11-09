@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -76,4 +76,4 @@ El PSI 0.2 es un umbral habitual de la práctica; calibrar con datos propios.
 - Skills relacionados: `model-risk-and-ai-act-mapping`, `llm-evals`, `pii-and-data-classification`, `training-data-licensing-and-provenance`, `feature-store-and-ml-data`.
 - Fuentes: documentación de scikit-learn sobre persistencia de modelos y riesgos de pickle; MLflow, si se usa (licencia y versión).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

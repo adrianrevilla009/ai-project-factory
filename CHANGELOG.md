@@ -2,6 +2,15 @@
 
 Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versionado SemVer.
 
+## [0.5.0] - 2026-11-09
+### Añadido
+- Agentes `cloud-architect`, `devsecops-engineer` y `release-manager` (28) y comandos `/incident-response`, `/rollback-plan` y `/security-review` (29).
+- Línea base de permisos en `.claude/settings.json` (allow, ask y deny) con la sintaxis verificada en la documentación de Claude Code.
+### Cambiado
+- Herramientas por rol: los agentes de negocio, arquitectura, documentación y gestión ya no tienen `Bash`; los revisores siguen siendo de solo lectura.
+- ADR 0032–0037 y RACI de gates aceptados por el dueño.
+- `last_reviewed` actualizado y nota de vigencia en el brief.
+
 ## [0.4.0] - 2026-11-09
 ### Añadido
 - MCP: `catalog/mcp-servers.yaml` (11 servidores revisados, validado por `make validate`) y `docs/architecture/mcp.md`.

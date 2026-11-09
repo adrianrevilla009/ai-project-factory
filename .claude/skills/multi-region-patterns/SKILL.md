@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -88,4 +88,4 @@ resource "aws_kms_key" "shared_data" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-replication-matrix`, `failover-and-failback-runbooks`, `eks-multi-region-and-argo-cd-multicluster`, `static-stability-and-cell-architecture`.
 - Fuentes: AWS DR whitepaper (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html, 2026-11-07); ECR replicación y KMS multi-región.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

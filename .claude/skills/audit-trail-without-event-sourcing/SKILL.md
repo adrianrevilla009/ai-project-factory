@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ public void changeStatus(UUID id, OrderStatus next, String actor) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `when-to-use-and-when-not`, `auditing-soft-delete-history`, `audit-trail-and-security-logging`, `outbox-and-cdc`.
 - Fuentes: documentación de Hibernate Envers.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "29-cloud-readiness"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -57,4 +57,4 @@ Hallazgo H2: runbook de promoción de Aurora sin responsable de decisión.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backup-and-restore`, `application-recovery-controller-and-health-checks`, `chaos-engineering`, `local-parity-matrix`.
 - Fuentes: `catalog/resilience-tiers.yaml`, `catalog/parity-matrix.yaml`; disponibilidad de servicios en ambas regiones.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

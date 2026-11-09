@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -72,4 +72,4 @@ owner: data-steward@example.com
 - Skills relacionados: `pii-and-data-classification`, `classical-mlops`, `model-risk-and-ai-act-mapping`, `intelligent-document-processing`, `vector-store-selection`.
 - Fuentes: texto oficial del RGPD y del Reglamento de IA de la UE en EUR-Lex; textos de licencias en https://creativecommons.org y https://www.apache.org/licenses/ (consulta 2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

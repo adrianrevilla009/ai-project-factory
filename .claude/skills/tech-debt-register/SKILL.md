@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -69,4 +69,4 @@ public List<Order> listOpenOrders() { /* ... */ }
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `code-smells-and-refactoring`, `risk-register`, `definition-of-ready-and-done`, `pr-rules`.
 - Fuentes: concepto de "technical debt" de Ward Cunningham.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

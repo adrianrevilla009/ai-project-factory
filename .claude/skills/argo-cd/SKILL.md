@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -110,4 +110,4 @@ metadata:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `repo-strategy`, `drift-and-self-heal-policy`, `environment-promotion`, `eks-multi-region-and-argo-cd-multicluster`.
 - Fuentes (verificadas 2026-11-07): https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/ · .../user-guide/projects/ · .../operator-manual/rbac/ · .../operator-manual/notifications/ · .../user-guide/application-set/. Progressive Syncs de ApplicationSet: la documentación lo describe como función experimental que hay que activar de forma explícita (`--enable-progressive-syncs`); revisar la página «Feature Maturity» de la versión instalada antes de apoyarse en ella (consultado el 2026-11-08).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

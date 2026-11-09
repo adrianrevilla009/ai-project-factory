@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -66,7 +66,7 @@ new ProcessBuilder("/usr/bin/convert", safeFile.toString(), "out.png").start();
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
 | Regla Semgrep: concatenación en SQL | 1 | `policies/semgrep/sql-string-concat.yaml` |
-| Test de integración con payloads de inyección (`' OR '1'='1`) | 1 | tests del proyecto generado (pendiente de plantilla) |
+| Test de integración con payloads de inyección (`' OR '1'='1`) | 1 | tests del proyecto generado (se implementa en el proyecto generado) |
 | Revisión de seguridad de consultas dinámicas | 3 | agente `code-reviewer` |
 
 > Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
@@ -75,4 +75,4 @@ new ProcessBuilder("/usr/bin/convert", safeFile.toString(), "out.png").start();
 - Relacionados: `input-validation-output-encoding`, `owasp-top10-and-api-top10`, `deserialization-xxe-ssrf-traversal`, `n-plus-one`.
 - Fuentes: OWASP Cheat Sheet Series (Injection Prevention, Query Parameterization, OS Command Injection).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

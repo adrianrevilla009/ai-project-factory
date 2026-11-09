@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ args:
 - Fuentes oficiales: https://prometheus.io/docs/prometheus/latest/storage/ (verificado 2026-11-07: flags de retención, defecto 15d, `remote_write`). Afirmaciones sobre NFS y HA: de la misma página.
 - Preparado para AWS, no verificado en real. En local (kind) no se reproducen volúmenes EBS ni el backend de largo plazo real.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

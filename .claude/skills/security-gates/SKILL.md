@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -74,4 +74,4 @@ Cada herramienta tiene puntos ciegos; la cobertura redundante (D17) los reduce. 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `supply-chain`, `dependency-security`, `container-and-k8s-security`, `quality-gates`, `secrets-management`.
 - Fuentes: ADR-0017 (`catalog/adr/0017-escaneo-y-sbom.md`); docs oficiales de Trivy, Grype, CycloneDX.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

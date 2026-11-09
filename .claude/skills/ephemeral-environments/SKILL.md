@@ -5,7 +5,7 @@ metadata:
   block: "20-internal-developer-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -80,4 +80,4 @@ spec:
 - Relacionados: `promotion-between-environments`, `test-data-management`, `finops`, `container-and-k8s-security`.
 - Fuentes: Argo CD ApplicationSet, generador Pull Request.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

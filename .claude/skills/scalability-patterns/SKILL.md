@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -70,4 +70,4 @@ Objetivo: 300 RPS pico, p95 < 300 ms, 50 GB de datos a 12 meses -> réplicas sta
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `consistency-and-cap-tradeoffs`, `twelve-factor`, `cell-based-architecture`, `n-plus-one`.
 - Fuentes: Kleppmann, "Designing Data-Intensive Applications" (2017); Google SRE Book, cap. "Handling Overload"..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -64,4 +64,4 @@ Agregado: Order (estado + notificar a otros) -> Postgres + outbox
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `outbox-and-cdc`, `audit-trail-without-event-sourcing`, `cqrs`, `datastore-selection-guide`.
 - Decisiones: ADR-0014; brief 4.5.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

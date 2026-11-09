@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -84,4 +84,4 @@ service:
 - Fuentes oficiales: https://opentelemetry.io/docs/collector/configuration/ (verificado 2026-11-07; confirma pipelines en `service.pipelines`, orden de processors y extensiones). Valores de `memory_limiter`.
 - Preparado para AWS, no verificado en real; en local se usa un único Collector sin la capa agente/gateway completa.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

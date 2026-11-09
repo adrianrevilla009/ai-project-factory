@@ -5,7 +5,7 @@ metadata:
   block: "02-concurrency"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -79,4 +79,4 @@ private final LongAdder requests = new LongAdder();   // en vez de volatile long
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `locks-and-synchronization`, `concurrent-collections`, `concurrency-testing`.
 - Fuentes: JLS capítulo 17 (docs.oracle.com/javase/specs).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

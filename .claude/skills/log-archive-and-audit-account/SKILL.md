@@ -5,7 +5,7 @@ metadata:
   block: "11-aws-governance"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -74,4 +74,4 @@ resource "aws_s3_bucket_public_access_block" "org_logs" {
 - Relacionados: `org-cloudtrail-config-securityhub-guardduty`, `kms-multi-region-keys`, `regions-and-data-residency`.
 - Fuentes: S3 User Guide (Object Lock) y CloudTrail User Guide (2026-11-07); retención legal: borrador por confirmar.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

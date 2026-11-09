@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -118,4 +118,4 @@ El rol y la región son ejemplo; preparado para AWS, no verificado en real. En l
 - Relacionados: `pipeline-architecture`, `supply-chain`, `cloud-iam-least-privilege`, `secrets-management`.
 - Fuentes (2026-11-07): https://docs.github.com/en/actions/reference/workflows-and-actions/reusable-workflows ; https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect (nota: GitHub anuncia un formato de `sub` inmutable con IDs.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

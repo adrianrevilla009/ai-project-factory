@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -70,4 +70,4 @@ Ambas escrituras del consumidor deben ir en la misma transacción.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sagas-and-process-managers`, `cqrs`, `event-sourcing`, `consistency-and-cap-tradeoffs`.
 - Fuentes: microservices.io, "Transactional outbox" (Richardson); Hohpe y Woolf, "Enterprise Integration Patterns"..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "27-frontend-react"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -82,4 +82,4 @@ Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar
 - Relacionados: `auth-and-session`, `supply-chain-npm`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `build-and-deploy`.
 - Fuentes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP (2026-11-07); OWASP XSS Prevention Cheat Sheet.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

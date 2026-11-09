@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -70,4 +70,4 @@ approved_by: security-lead
 - Fuentes (verificadas 2026-11-07): https://github.com/prowler-cloud/prowler (Apache-2.0, `prowler <provider>`, `--list-compliance`); https://github.com/kubescape/kubescape (Apache-2.0, CNCF incubating, `kubescape scan`, frameworks NSA/MITRE/CIS). Nombres exactos de frameworks.
 - Cloud: preparado para AWS, no verificado en real; la fábrica nunca despliega ni escanea cuentas reales (ADR-0004). En local solo Kubescape sobre el clúster local; no se reproduce Security Hub.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

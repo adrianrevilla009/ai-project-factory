@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -60,4 +60,4 @@ review: "Estimación de configuración; el RTO real se mide en game day"
 - Relacionados: `tier-model-and-rpo-rto`, `fault-injection-and-game-days`, `dependency-mapping-and-blast-radius`, `finops-of-resilience`.
 - Fuente: DR whitepaper (https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html, 2026-11-07). Detalles de la política y fuentes de importación.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

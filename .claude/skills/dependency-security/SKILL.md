@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -78,4 +78,4 @@ La mayor parte del código en ejecución es de terceros. Una CVE publicada se ex
 - Relacionados: `supply-chain`, `dependency-hygiene`, `renovate-dependabot-policy`, `license-compliance`, `vulnerability-sla-and-incident-response`.
 - Fuentes: documentación de OWASP Dependency-Check y OSV-Scanner; versiones y parámetros.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

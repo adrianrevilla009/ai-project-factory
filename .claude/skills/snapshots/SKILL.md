@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -71,4 +71,4 @@ void snapshotPlusTailEqualsFullReplay() {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `dynamodb-event-store`, `rebuilds-and-replays`, `aggregates-and-event-design`, `caching`.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

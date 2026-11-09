@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -63,10 +63,10 @@ for e in dev staging prod; do kustomize build overlays/$e | kubeconform -strict 
 ## Enforcement
 | Mecanismo | Nivel (1 policy · 2 hook · 3 revisor · 4 humano) | Dónde está |
 |---|---|---|
-| `kustomize build` + kubeconform por entorno en CI | 1 | pipeline del proyecto generado (pendiente de plantilla en la fábrica) |
+| `kustomize build` + kubeconform por entorno en CI | 1 | pipeline del proyecto generado (se implementa en el proyecto generado) |
 | Revisión de overlays | 3 | agente revisor de manifiestos |
 
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `helm-standards`, `workload-baseline`, `config-by-environment`, `cluster-addons-baseline`.
 - Fuentes: documentación de Kustomize / kubectl.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

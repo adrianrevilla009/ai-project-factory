@@ -1,7 +1,7 @@
 ---
 name: business-analyst
 description: Usar para refinar requisitos funcionales y no funcionales, casos de uso y criterios de aceptación en Gherkin.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # business-analyst

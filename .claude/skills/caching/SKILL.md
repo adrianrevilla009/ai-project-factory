@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -69,4 +69,4 @@ Caffeine.newBuilder().maximumSize(10_000).expireAfterWrite(Duration.ofMinutes(10
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-tenancy`, `n-plus-one`, `data-privacy-in-db`, `read-replicas-and-routing`.
 - Fuentes: Spring Framework Reference (Cache Abstraction), Hibernate ORM User Guide (caching).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

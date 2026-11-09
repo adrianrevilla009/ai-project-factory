@@ -5,7 +5,7 @@ metadata:
   block: "14-secrets-and-config"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -71,4 +71,4 @@ spring:
 - Relacionados: `config-by-environment`, `feature-flags-openfeature`, `secrets-management`, `actuator-and-health`.
 - Fuentes: ADR-0011; documentación de Spring Cloud Config. Diseño preparado para AWS, no verificado en real.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

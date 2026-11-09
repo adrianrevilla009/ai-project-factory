@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,4 +83,4 @@ class SoapCustomerDirectory implements CustomerDirectory {   // adaptador
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `wiremock-and-stubbing`, `contract-testing-pact`, `connascence-and-coupling`.
 - Fuentes: OWASP XML External Entity Prevention Cheat Sheet; documentación de Spring Web Services.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

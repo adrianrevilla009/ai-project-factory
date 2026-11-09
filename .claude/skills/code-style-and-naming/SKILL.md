@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -81,4 +81,4 @@ public class InvoiceService {
 - Relacionados: `modern-java-idioms`, `generics-and-api-design`, `code-smells-and-refactoring`, `solid`, `no-lombok`.
 - Fuentes: Oracle "Code Conventions for the Java Programming Language" y Google Java Style Guide; no consultado en línea.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

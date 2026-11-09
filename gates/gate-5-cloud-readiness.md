@@ -2,7 +2,7 @@
 
 **Propósito:** Revisar la preparación para cloud. NO implica desplegar.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Platform engineer; SRE; FinOps; responsable de seguridad
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Platform engineer; SRE; FinOps; responsable de seguridad
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`).

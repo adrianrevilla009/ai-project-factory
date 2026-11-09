@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -63,4 +63,4 @@ Plan: 2 semanas en DetectionOnly, revisión de falsos positivos, paso a bloqueo 
 - Relacionados: `siem-and-detection-engineering`, `container-and-k8s-security`, `dos-and-rate-limiting`, `vulnerability-management-program`.
 - Fuentes (2026-11-07): OWASP Core Rule Set; documentación de Suricata, Falco, Coraza y Wazuh.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

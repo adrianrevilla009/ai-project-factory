@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -71,4 +71,4 @@ return dsl.select(CUSTOMER.ID, CUSTOMER.NAME)
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `query-strategy`, `sql-injection-prevention`, `projections-and-dtos`, `batching-and-bulk-ops`.
 - Fuentes: Spring Framework Reference (Data Access, JDBC) y manual de jOOQ.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

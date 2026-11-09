@@ -1,7 +1,7 @@
 ---
 name: product-owner
 description: Usar para fijar visión, alcance, historias priorizadas y criterios de aceptación de negocio de un proyecto nuevo.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # product-owner

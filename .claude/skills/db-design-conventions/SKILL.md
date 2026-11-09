@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -75,4 +75,4 @@ CREATE INDEX idx_order_customer ON customer_order (customer_id);
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `schema-migrations`, `id-generation`, `indexing-and-query-plans`, `jpa-entity-design`.
 - Fuentes: documentación de PostgreSQL (Data Types, Constraints).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

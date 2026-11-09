@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -77,4 +77,4 @@ Nota: el clúster local por defecto no tiene Secret y no lo selecciona el genera
 - Relacionados: `multi-region-patterns`, `failover-and-failback-runbooks`, `istio-multicluster-tradeoffs`, `dependency-mapping-and-blast-radius`.
 - Fuentes (verificado 2026-11-07): https://argo-cd.readthedocs.io/en/stable/operator-manual/applicationset/Generators-Cluster/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

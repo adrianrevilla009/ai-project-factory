@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -76,4 +76,4 @@ Un despliegue "verde" en Kubernetes solo significa que los manifiestos se aplica
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `rollback-strategy`, `actuator-and-health`, `argo-rollouts`, `database-migration-step`.
 - Fuentes: https://kubernetes.io/docs/reference/kubectl/generated/kubectl_rollout/kubectl_rollout_status/.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

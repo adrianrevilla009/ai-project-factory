@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -81,7 +81,7 @@ void coverageBooster() {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| `jacoco:check` falla el build `verify` | 1 | `pom.xml` del proyecto generado (pendiente de plantilla, ADR-0038) |
+| `jacoco:check` falla el build `verify` | 1 | `pom.xml` del proyecto generado (se implementa en el proyecto generado, ADR-0038) |
 | Hook que exige tests en verde al parar | 2 | `.claude/hooks/stop/require_green_tests.py` |
 | Gate de cobertura del diff en CI | 2 | pendiente (depende del analizador del proyecto) |
 
@@ -89,4 +89,4 @@ void coverageBooster() {
 - Relacionados: `mutation-testing`, `test-strategy`, `static-analysis`, `unit-testing-java`.
 - Fuentes: https://www.jacoco.org/jacoco/trunk/doc/check-mojo.html.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

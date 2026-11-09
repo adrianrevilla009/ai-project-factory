@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -59,4 +59,4 @@ exit_criteria: "0 peticiones al legado durante 30 días -> apagar"
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `anti-corruption-layer`, `microservices-decision-guide`, `bff-and-api-gateway`, `evolutionary-architecture-fitness-functions`.
 - Fuentes: Martin Fowler, "StranglerFigApplication" (martinfowler.com).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

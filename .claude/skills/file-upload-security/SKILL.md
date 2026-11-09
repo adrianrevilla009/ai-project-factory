@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -69,7 +69,7 @@ UploadResponse upload(@RequestParam MultipartFile file) throws IOException {
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
 | Semgrep: nombre original/rutas desde request | 1 | `policies/semgrep/java-path-from-user-input.yaml` |
-| Test con ficheros maliciosos (doble extensión, MIME falso, zip slip) | 1 | tests del proyecto generado (pendiente de plantilla) |
+| Test con ficheros maliciosos (doble extensión, MIME falso, zip slip) | 1 | tests del proyecto generado (se implementa en el proyecto generado) |
 | Revisión humana del flujo de subida | 4 | PR |
 
 > Estado: reglas probadas con `semgrep --test` (casos en `tests/semgrep/`); detectan patrones sintácticos, no flujos de datos.
@@ -77,4 +77,4 @@ UploadResponse upload(@RequestParam MultipartFile file) throws IOException {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `deserialization-xxe-ssrf-traversal`, `security-headers-cors-csrf`, `input-validation-output-encoding`, `authz-rbac-abac-rebac`.
 - Fuentes: OWASP File Upload Cheat Sheet, consultado 2026-11-07; propiedades `spring.servlet.multipart.*` (verificado en el apéndice de propiedades de Spring Boot 4.x el 2026-11-08).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

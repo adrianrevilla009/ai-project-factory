@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -66,4 +66,4 @@ class InvoiceService {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `microservices-decision-guide`, `layering-rules-archunit`, `domain-events-in-spring`, `ddd-strategic`.
 - Fuentes: documentación de Spring Modulith (spring.io/projects/spring-modulith).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

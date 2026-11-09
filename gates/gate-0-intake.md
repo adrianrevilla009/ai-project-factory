@@ -2,7 +2,7 @@
 
 **Propósito:** Validar requisitos, perfil de dominio y matriz de normativa antes de planificar.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Experto de negocio (dominio); legal/cumplimiento (normativa); product owner (alcance)
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Experto de negocio (dominio); legal/cumplimiento (normativa); product owner (alcance)
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`) — no aplica, es el primer gate.

@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -74,4 +74,4 @@ El nombre `traces_service_graph_request_total` es el habitual. Prometheus necesi
 - Skills relacionados: `logs-and-traces-stores`, `collector-pipelines`, `cardinality-and-cost-governance`, `dashboards-and-slos-as-code`.
 - Fuentes oficiales: https://grafana.com/docs/tempo/latest/metrics-from-traces/metrics-generator/ (verificado 2026-11-07: procesadores service graphs, span metrics y host info; los nombres de métricas y la sintaxis de overrides no aparecieron en esa página. https://prometheus.io/docs/prometheus/latest/storage/ (receptor de remote write).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

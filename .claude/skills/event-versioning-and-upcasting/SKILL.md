@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -68,4 +68,4 @@ void upcastsFrozenV1Fixture() throws Exception {
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `aggregates-and-event-design`, `schema-registry-and-evolution`, `backward-compatibility-rules`, `testing-event-sourced-systems`.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

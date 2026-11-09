@@ -5,7 +5,7 @@ metadata:
   block: "11-aws-governance"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -74,4 +74,4 @@ deny contains msg if {
 - Relacionados: `scp-guardrails`, `org-cloudtrail-config-securityhub-guardduty`, `tagging-cost-allocation-budgets`, `verify-before-asserting`.
 - Fuentes: documentación de Checkov, OPA/Conftest y AWS Config conformance packs (2026-11-07); marcos normativos: borrador por confirmar.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

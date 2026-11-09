@@ -5,7 +5,7 @@ metadata:
   block: "27-frontend-react"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -80,4 +80,4 @@ export async function loadMessages(locale: string) {
 - Relacionados: `i18n-and-localization`, `strings-encoding-locale`, `time-and-money`, `accessibility`, `routing-and-code-splitting`.
 - Fuentes: MDN `Intl` (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) solo a nivel de existencia de API; librerías.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "14-secrets-and-config"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -63,4 +63,4 @@ vault operator raft snapshot restore /backup/raft-example.snap   # solo en el en
 - Relacionados: `deployment-ha`, `audit-and-break-glass`, `tier-model-and-rpo-rto`, `failover-and-failback-runbooks`, `envelope-encryption-and-kms`.
 - Fuentes: ADR-0010 y ADR-0031; documentación de Vault (operator raft snapshot) y de Keycloak (export/import). Diseño preparado para AWS, no verificado en real.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

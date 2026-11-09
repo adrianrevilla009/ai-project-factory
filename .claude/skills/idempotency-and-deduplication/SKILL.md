@@ -5,7 +5,7 @@ metadata:
   block: "02-concurrency"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -78,4 +78,4 @@ public Payment pay(String key, PayRequest r) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `distributed-locking`, `concurrency-testing`, `event-driven`, `sagas-and-process-managers`.
 - Fuentes: borrador IETF "Idempotency-Key HTTP Header Field" — estado verificado el 2026-11-08 en datatracker.ietf.org (versión 08, en la cola del RFC Editor).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

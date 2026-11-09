@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -78,4 +78,4 @@ Anotaciones y propiedades comprobadas en la documentación de Spring AI el 2026-
 - Relacionados: `agents-and-tool-calling`, `llm-security`, `prompt-injection-defense-for-agents`, `owasp-top10-and-api-top10`, `rate-limiting-quotas`.
 - Fuentes: Spring AI Reference, MCP Server Boot Starter (docs.spring.io/spring-ai/reference/api/mcp/mcp-server-boot-starter-docs.html, 2026-11-07); especificación MCP (modelcontextprotocol.io).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

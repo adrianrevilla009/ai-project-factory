@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -93,4 +93,4 @@ class OrderControllerTest {
 - Relacionados: `controllers-and-validation`, `error-handling-problem-details`, `testing-slices`, `openapi-contract-first`, `method-and-endpoint-security`.
 - Fuentes: documentación de Spring Framework (MockMvc) y Spring Security Test.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -76,4 +76,4 @@ ElastiCache en AWS: preparado para AWS, no verificado en real; en local se usa R
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `caching`, `resilience`, `data-sync-pitfalls`, `read-replicas-and-routing`, `multi-tenancy`.
 - Fuentes (verificadas 2026-11-07): https://redis.io/docs/latest/develop/reference/eviction/
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

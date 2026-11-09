@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -68,4 +68,4 @@ QueryRequest q = QueryRequest.builder()
 - Relacionados: `dynamodb-event-store`, `global-tables-and-write-region-rules`, `local-vs-aws-dynamodb-testing`, `datastore-selection-guide`.
 - Fuentes (consultadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ServiceQuotas.html (20 GSI por tabla por defecto; 5 LSI). El límite de 400 KB por ítem y el de ítems por transacción.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

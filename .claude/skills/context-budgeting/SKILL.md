@@ -5,7 +5,7 @@ metadata:
   block: "31-agentic-engineering"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -68,4 +68,4 @@ print("".join(lines[:100]))
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `claude-md-authoring`, `subagent-design`, `cost-control`, `handoff-artifacts-between-agents`.
 - Fuentes: https://code.claude.com/docs/en/costs (consultado 2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

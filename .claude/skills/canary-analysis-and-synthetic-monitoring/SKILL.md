@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -88,4 +88,4 @@ synthetic:
 - Relacionados: `canary-and-traffic-splitting`, `slo-sli-error-budgets`, `alerting-symptom-based`, `performance-testing`, `golden-signals-red-use`.
 - Fuentes: Argo Rollouts (https://argo-rollouts.readthedocs.io/) y Flagger (https://docs.flagger.app/).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

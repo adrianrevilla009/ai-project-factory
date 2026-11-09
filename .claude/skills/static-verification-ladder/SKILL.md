@@ -5,7 +5,7 @@ metadata:
   block: "29-cloud-readiness"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -68,4 +68,4 @@ Resultado: peldaños 1-5 superados. Madurez: validada estáticamente; preparado 
 - Relacionados: `maturity-labels`, `cost-estimation`, `honest-claims-policy`, `compliance-as-code`.
 - Fuentes: `catalog/adr/0004-no-desplegar-nunca-en-aws.md`, `catalog/adr/0037-terraform-plan-contra-una-cuenta-aws-vacia.md`; documentación de Terraform, tflint, Checkov, Trivy y Conftest.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

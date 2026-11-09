@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -68,4 +68,4 @@ buf breaking --against '.git#branch=main'   # Protobuf
 - Relacionados: `api-versioning-deprecation`, `openapi-contract-first`, `grpc-protobuf`, `asyncapi-event-contracts`, `schema-registry-and-evolution`, `contract-testing-pact`.
 - Fuentes: patrón Tolerant Reader (Fowler), documentación de buf y de herramientas de diff OpenAPI.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

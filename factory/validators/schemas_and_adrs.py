@@ -115,3 +115,34 @@ def validate_knowledge_links(root: Path = REPO_ROOT) -> list[Finding]:
             if num not in adrs:
                 findings.append(Finding(rel(root, f), f"unknown ADR-{num}"))
     return findings
+
+
+def validate_modules_map(root: Path = REPO_ROOT) -> list[Finding]:
+    """capabilities/modules-map.yaml: every module activated by capabilities.yaml exists; skills, blocks, policies and tests exist."""
+    path = root / "capabilities" / "modules-map.yaml"
+    caps_path = root / "capabilities" / "capabilities.yaml"
+    if not path.exists() or not caps_path.exists():
+        return []
+    name = rel(root, path)
+    modules = (yaml.safe_load(path.read_text()) or {}).get("modules", {})
+    caps = yaml.safe_load(caps_path.read_text()) or {}
+    wanted = set(caps.get("always_on", []))
+    for q in caps.get("questions", []):
+        wanted |= set(q.get("activates_when_true", [])) | set(q.get("activates_when_false", [])) | set(q.get("triggers", []))
+    skills = {p.parent.name for p in (root / ".claude" / "skills").glob("*/SKILL.md")}
+    inv = yaml.safe_load((root / "catalog" / "skills-inventory.yaml").read_text())
+    blocks = {b["block"] for b in inv["blocks"]}
+    findings = [Finding(name, f"module '{m}' is activated by capabilities.yaml but missing") for m in sorted(wanted - set(modules))]
+    for m, d in modules.items():
+        for s in d.get("skills", []) + d.get("tests", []):
+            if s not in skills and not (root / s).exists():
+                findings.append(Finding(name, f"{m}: unknown skill or path '{s}'"))
+        for b in d.get("blocks", []):
+            if b not in blocks:
+                findings.append(Finding(name, f"{m}: unknown block '{b}'"))
+        for p in d.get("policies", []):
+            if not (root / p).exists():
+                findings.append(Finding(name, f"{m}: policy does not exist: {p}"))
+        if not (d.get("skills") or d.get("blocks")):
+            findings.append(Finding(name, f"{m}: has no skills or blocks"))
+    return findings

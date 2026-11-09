@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -69,4 +69,4 @@ void write(OutputStream out, Principal owner) {
 - Relacionados: `import-export-and-bulk-data`, `scheduling-and-batch-jobs`, `pii-and-data-classification`.
 - Fuentes: OWASP CSV Injection. Preparado para AWS (S3 + URL firmada), no verificado en real; en local se usa un emulador/MinIO.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

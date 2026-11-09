@@ -5,7 +5,7 @@ metadata:
   block: "31-agentic-engineering"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-06"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -51,4 +51,4 @@ Los agentes aceleran pero no asumen responsabilidad. Si la aprobación es un pá
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `handoff-artifacts-between-agents`, `verify-before-asserting`.
 - Fuentes: brief §6; `docs/operating-model/RACI.md`.
-- Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

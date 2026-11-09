@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -72,4 +72,4 @@ Los valores de burn rate son un punto de partida.
 - Relacionados: `tier-model-and-rpo-rto`, `dashboards-and-slos-as-code`, `change-and-release-management`, `incident-management-and-postmortems`.
 - Fuentes (verificado 2026-11-07): https://sre.google/workbook/error-budget-policy/ .
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

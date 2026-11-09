@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -74,4 +74,4 @@ data_write_region: per-aggregate   # ver data-replication-matrix
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `multi-az-patterns`, `multi-region-patterns`, `finops-of-resilience`, `fault-injection-and-game-days`.
 - Fuente: AWS Whitepaper "Disaster Recovery of Workloads on AWS", https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html (verificado 2026-11-07). Los RPO/RTO numéricos son de la fábrica, por confirmar con negocio.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

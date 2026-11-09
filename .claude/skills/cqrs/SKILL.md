@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -73,4 +73,4 @@ void on(OrderPlaced e) { summaries.upsert(e.orderId(), e.total()); }
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `event-sourcing`, `event-driven`, `consistency-and-cap-tradeoffs`, `ddd-tactical`.
 - Fuentes: Fowler, "CQRS" (martinfowler.com); Young, "CQRS Documents" (2010)..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

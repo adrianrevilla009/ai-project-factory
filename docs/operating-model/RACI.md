@@ -1,6 +1,6 @@
 # Modelo operativo y RACI de los gates
 
-> Propuesta inicial a confirmar por el dueño de la fábrica. R = ejecuta, A = aprueba (único), C = consultado, I = informado.
+> Aprobado por el dueño de la fábrica el 2026-11-09. R = ejecuta, A = aprueba (único), C = consultado, I = informado.
 
 | Gate | Agentes (R) | Aprueba (A) | Consultados (C) | Informados (I) |
 |---|---|---|---|---|

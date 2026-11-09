@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -62,4 +62,4 @@ En local no se reproduce un gateway gestionado de AWS (p. ej. API Gateway); se u
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `microservices-decision-guide`, `rate-limiting-quotas`, `api-versioning-deprecation`, `strangler-fig-migration`.
 - Fuentes: Sam Newman, "Backends For Frontends" (samnewman.io/patterns/architectural/bff).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

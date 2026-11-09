@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -66,4 +66,4 @@ Un riesgo visible se gestiona; uno implícito se descubre en producción. El reg
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `production-readiness-review`, `tech-debt-register`, `adr`, `lessons-learned-and-retro`.
 - Fuentes: ISO 31000 (borrador por confirmar con fuente oficial); sin otra fuente externa.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

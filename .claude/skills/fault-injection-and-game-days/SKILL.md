@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -64,4 +64,4 @@ actions_due: 2026-12-15
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `failover-and-failback-runbooks`, `resilience-hub-assessments`, `incident-management-and-postmortems`, `tier-model-and-rpo-rto`.
 - Fuentes: DynamoDB global tables y FIS (https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html, 2026-11-07); resto.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

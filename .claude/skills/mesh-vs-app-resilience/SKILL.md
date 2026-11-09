@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ public Order get(String id) { return client.get(id); }
 - Relacionados: `resilience`, `traffic-management`, `http-clients-and-timeouts`, `idempotency-keys`, `backpressure-and-bulkheads`.
 - Fuentes: istio.io/latest/docs/concepts/traffic-management/#retries; documentación de Resilience4j; 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

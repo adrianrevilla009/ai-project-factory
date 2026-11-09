@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ class CheckoutService {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `isolation-levels-and-anomalies`, `persistence-context-and-flush`, `domain-events-in-spring`, `connection-pooling`.
 - Fuentes: Spring Framework reference (Transaction Management, declarative).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

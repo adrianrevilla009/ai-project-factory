@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -77,4 +77,4 @@ Sintaxis base verificada en https://docs.pact.io/pact_broker/can_i_deploy (2026-
 - Relacionados: `contract-testing-pact`, `pipeline-architecture`, `backward-compatibility-rules`, `environment-promotion`.
 - Fuentes: https://docs.pact.io/pact_broker/can_i_deploy (2026-11-07); ADR-0019.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

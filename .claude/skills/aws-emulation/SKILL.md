@@ -5,7 +5,7 @@ metadata:
   block: "28-local-kubernetes"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -69,4 +69,4 @@ not_reproduced:
 - Relacionados: `local-parity-matrix`, `local-profiles`, `cluster-tooling`, `honest-claims-policy`.
 - Fuentes: `catalog/parity-matrix.yaml`; documentación de LocalStack (2026-11-07); imagen oficial DynamoDB Local.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

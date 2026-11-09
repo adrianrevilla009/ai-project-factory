@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un fil
 - Fuentes: README de pgvector (HNSW, IVFFlat, `vector_cosine_ops`) vía https://pgxn.org/dist/vector/; documentación de OpenSearch k-NN.
 - En local OpenSearch/pgvector corren en contenedor; no se reproduce el dimensionado ni el aislamiento de un servicio gestionado en AWS.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

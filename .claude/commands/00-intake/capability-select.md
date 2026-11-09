@@ -10,7 +10,7 @@ Argumentos: `$ARGUMENTS`
 Agente(s) responsable(s): **product-owner**. Contexto: `docs/operating-model/project-lifecycle.md`.
 
 ## Pasos
-1. Mapea respuestas → módulos con `capabilities/capabilities.yaml` y `modules-map.yaml`.
+1. Mapea respuestas → módulos con `capabilities/capabilities.yaml` y carga las skills, políticas y pruebas de cada módulo desde `capabilities/modules-map.yaml` y `modules-map.yaml`.
 2. Escribe `active_modules` y el tier (defecto 1) propuestos en `<target>/docs/capabilities.yaml`.
 3. Presenta la evidencia contra `gates/checklists/gate-0.md` y **detente**: se necesita `approvals/gate-0.json` firmado por humanos (negocio y cumplimiento).
 

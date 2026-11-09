@@ -5,7 +5,7 @@ metadata:
   block: "10-observability-app"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ Con 99,9 % en 30 días el presupuesto es unos 43 minutos de indisponibilidad tot
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alerting-symptom-based`, `golden-signals-red-use`, `quality-attributes-atam`, `on-call-and-runbook-links`.
 - Fuentes: Google SRE Book y Workbook (SLOs, error budgets), consultados 2026-11-07. Los SLAs contractuales son borrador por confirmar con fuente oficial y revisión legal. Los SLO son objetivos de diseño, no resultados medidos: preparado para AWS, no verificado en real.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

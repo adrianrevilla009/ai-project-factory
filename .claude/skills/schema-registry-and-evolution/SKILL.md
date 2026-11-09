@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -81,4 +81,4 @@ message OrderCreated {
 - Relacionados: `asyncapi-event-contracts`, `backward-compatibility-rules`, `kafka-producers-consumers`.
 - Fuentes: documentación de Apicurio Registry y de Confluent Schema Registry (compatibilidad), Avro y Protobuf (reglas de evolución).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

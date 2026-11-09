@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ public class OrderService {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `modern-java-idioms`, `immutability-and-value-objects`, `logging-rules`, `dependency-injection-rules`.
 - Fuentes: `catalog/adr/0027-lombok-prohibido.md`; Maven Enforcer Plugin (maven.apache.org).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

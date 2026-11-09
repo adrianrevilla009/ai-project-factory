@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -62,4 +62,4 @@ Criterio de decisión: interés alto + zona que cambia a menudo = pagar ya; inte
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `code-smells-and-refactoring`, `evolutionary-architecture-fitness-functions`, `quality-attributes-atam`.
 - Fuentes: Cunningham, "The WyCash Portfolio Management System" (1992); Fowler, "Technical Debt Quadrant" (martinfowler.com)..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "10-observability-app"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ try (var scope = span.makeCurrent()) {
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `llm-security`, `pii-and-data-classification`, `tracing`, `metrics-micrometer`, `http-clients-and-timeouts`.
 - Fuentes: OpenTelemetry (semantic conventions for GenAI, estado Development en el registro de atributos de opentelemetry.io, verificado el 2026-11-08); fijar la versión de semconv y revisar los nombres al actualizar.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

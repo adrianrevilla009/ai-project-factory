@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -80,4 +80,4 @@ Ante una CVE nueva (p. ej. una librería de logging) la pregunta es "¿dónde la
 - Relacionados: `license-compliance`, `container-images`, `parent-pom`, `reproducible-builds`, `supply-chain`.
 - Fuentes: cyclonedx.org (especificación) y documentación del plugin cyclonedx-maven-plugin; consultadas 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

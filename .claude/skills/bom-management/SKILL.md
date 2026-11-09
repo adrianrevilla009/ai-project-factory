@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -79,4 +79,4 @@ Override justificado:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `dependency-hygiene`, `renovate-dependabot-policy`, `license-compliance`, `versioning-semver-snapshots`.
 - Fuentes: Apache Maven, "Introduction to the Dependency Mechanism" (dependency management, import scope).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

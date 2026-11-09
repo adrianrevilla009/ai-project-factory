@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -67,4 +67,4 @@ leaver_sla: same-business-day
 - Fuentes: NIST SP 800-53 familia AC (control de acceso); cadencias de recertificación son recomendación de la fábrica, a confirmar con la política de la organización.
 - Cloud: preparado para AWS, no verificado en real. En local no se reproduce IAM de AWS; Keycloak solo cubre identidad de aplicación.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

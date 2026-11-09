@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,4 +83,4 @@ spec:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `environment-promotion`, `secrets-in-gitops`, `drift-and-self-heal-policy`.
 - Fuentes: Argo CD docs (https://argo-cd.readthedocs.io/en/stable/) · ADR-0011, ADR-0021 · verificado 2026-11-07. Estrategia de repos: criterio de la fábrica, no norma oficial.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

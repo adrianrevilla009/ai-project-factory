@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -113,4 +113,4 @@ Local: kind/k3d (ADR-0034) permite probar Rollouts; la integración con Istio y 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `argo-cd`, `environment-promotion`, `drift-and-self-heal-policy`, `slo-error-budget-policy`.
 - Fuentes (verificadas 2026-11-07): https://argo-rollouts.readthedocs.io/en/stable/features/canary/ · .../features/analysis/. `trafficRouting.istio` y `prePromotionAnalysis` existen en la documentación estable (consultado el 2026-11-08); los campos exactos se contrastan con la versión instalada.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

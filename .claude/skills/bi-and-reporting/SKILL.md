@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ GRANT SELECT ON ALL TABLES IN SCHEMA gold TO bi_reader;
 - Relacionados: `data-modeling`, `warehouse-options`, `data-governance-and-classification`, `access-control-masking-and-retention`.
 - Fuentes: documentación oficial de Superset/Metabase.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

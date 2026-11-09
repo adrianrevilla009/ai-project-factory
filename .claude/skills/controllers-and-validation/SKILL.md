@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -79,4 +79,4 @@ class CustomerController {
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `error-handling-problem-details`, `mapping-mapstruct`, `testing-slices`, `rest-design-guidelines`.
 - Fuentes oficiales: Spring Framework Reference (Web MVC, Validation) y Jakarta Bean Validation.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

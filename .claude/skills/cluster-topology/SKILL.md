@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -59,4 +59,4 @@ local: kind (1 clúster, sin AZ; no reproduce LB, IAM ni multi-AZ)
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `multi-cluster-and-dr`, `multi-cluster-mesh`, `cell-based-architecture`, `eks-networking`.
 - Fuentes: documentación de Kubernetes (cluster architecture) y guías de EKS best practices.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

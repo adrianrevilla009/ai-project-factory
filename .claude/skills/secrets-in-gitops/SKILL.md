@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,4 +83,4 @@ Local: kind/k3d no reproduce Vault gestionado ni KMS de AWS; se usa Vault OSS en
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `dynamic-database-credentials`, `repo-strategy`, `argo-cd`.
 - Fuentes (verificadas 2026-11-07): https://argo-cd.readthedocs.io/en/stable/operator-manual/secret-management/ · ADR-0010, ADR-0011.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

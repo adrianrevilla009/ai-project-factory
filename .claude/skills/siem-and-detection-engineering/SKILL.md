@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -70,4 +70,4 @@ Sintaxis Sigma exacta.
 - Relacionados: `audit-trail-and-security-logging`, `log-archive-and-audit-account`, `incident-management-and-postmortems`, `alert-routing-and-oncall`, `ids-ips-waf-edr`.
 - Fuentes (2026-11-07): MITRE ATT&CK; especificación Sigma; documentación de Wazuh.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

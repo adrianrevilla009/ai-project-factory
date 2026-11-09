@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ log.info("login succeeded for user {}", user.id());
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `exceptions-and-error-handling`, `no-lombok`, `equals-hashcode-tostring`, `data-privacy-in-db`.
 - Fuentes: documentación de SLF4J (slf4j.org, API de logging parametrizado) — no verificado en línea.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

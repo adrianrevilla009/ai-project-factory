@@ -5,7 +5,7 @@ metadata:
   block: "10-observability-app"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ service:
 - Skills relacionados: `otel-java-agent-vs-sdk`, `metrics-micrometer`, `tracing`, `structured-logging`, `pii-and-data-classification`.
 - Fuentes: documentación oficial de OpenTelemetry (opentelemetry.io: semantic conventions, Collector); versiones. En local se reproduce el stack OSS; no se reproducen servicios gestionados de AWS.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

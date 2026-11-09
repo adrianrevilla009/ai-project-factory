@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -85,4 +85,4 @@ Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(.)`, advisors) compr
 - Relacionados: `llm-gateway`, `rag-architecture`, `agents-and-tool-calling`, `llm-security`, `secrets-management`.
 - Fuentes: Spring AI Reference, ChatClient API (docs.spring.io/spring-ai/reference/api/chatclient.html, 2026-11-07); LangChain4j, AI Services (docs.langchain4j.dev/tutorials/ai-services, 2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

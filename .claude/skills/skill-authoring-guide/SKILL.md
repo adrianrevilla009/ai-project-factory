@@ -5,7 +5,7 @@ metadata:
   block: "31-agentic-engineering"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-06"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -55,4 +55,4 @@ description: Usar al diseñar o revisar consultas JPA para evitar el problema N+
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `verify-before-asserting`, `claude-md-authoring`, `n-plus-one` (ejemplo completo).
 - Fuentes: https://code.claude.com/docs/en/skills.md (verificado 2026-11-06).
-- Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

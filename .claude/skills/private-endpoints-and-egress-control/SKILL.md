@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -82,4 +82,4 @@ resource "aws_vpc_endpoint" "sts" {
 - Relacionados: `vpc-multi-az-layers`, `dns-route53-private-and-hybrid`, `cloud-iam-least-privilege`, `zero-trust`, `ssrf` (ver `deserialization-xxe-ssrf-traversal`).
 - Fuentes: documentación oficial de AWS PrivateLink / VPC endpoints y de AWS Network Firewall.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

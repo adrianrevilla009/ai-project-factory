@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -88,4 +88,4 @@ class CustomerClient {
 - Relacionados: `openapi-contract-first`, `api-versioning-deprecation`, `versioning-semver-snapshots`, `contract-testing-pact`.
 - Fuentes: documentación de OpenAPI Generator (plugin Maven, generador `java`, `.openapi-generator-ignore`).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

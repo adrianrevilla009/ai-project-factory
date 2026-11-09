@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,7 +83,7 @@ void vipCustomerGetsTenPercentAtExactlyThreshold() {
 ## Enforcement
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
-| `mutationThreshold` en el pom del proyecto generado (falla el build) | 1 | `pom.xml` del proyecto generado (pendiente de plantilla; la fábrica no contiene plantillas, ADR-0038) |
+| `mutationThreshold` en el pom del proyecto generado (falla el build) | 1 | `pom.xml` del proyecto generado (se implementa en el proyecto generado, ADR-0038) |
 | Job CI nocturno de PIT | 2 | pipeline del proyecto generado (pendiente) |
 | Revisión de supervivientes | 3 | agente `test-automation` |
 
@@ -91,4 +91,4 @@ void vipCustomerGetsTenPercentAtExactlyThreshold() {
 - Relacionados: `coverage-policy`, `unit-testing-java`, `property-based-testing`, `test-strategy`.
 - Fuentes: https://pitest.org/quickstart/maven/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

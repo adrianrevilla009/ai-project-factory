@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -84,4 +84,4 @@ resource "aws_ec2_transit_gateway_route" "to_euc1" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cidr-planning-and-ipam`, `cross-region-connectivity-and-cost`, `flow-logs-and-network-observability`, `zero-trust`.
 - Fuentes: documentación oficial de AWS Transit Gateway (tablas de rutas, peering, appliance mode).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

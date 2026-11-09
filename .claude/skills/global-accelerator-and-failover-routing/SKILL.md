@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -91,4 +91,4 @@ resource "aws_route53_record" "api_secondary" {
 - Relacionados: `dns-route53-private-and-hybrid`, `alb-nlb-and-tls-termination`, `cross-region-connectivity-and-cost`, `regions-and-data-residency`, `multi-cluster-and-dr`.
 - Fuentes: documentación oficial de Route 53 (failover, health checks) y AWS Global Accelerator.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

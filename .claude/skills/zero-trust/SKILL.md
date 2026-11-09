@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -79,4 +79,4 @@ Versión de API de Istio y campos.
 - Relacionados: `authn-oidc-oauth2`, `container-and-k8s-security`, `cloud-iam-least-privilege`, `crypto-tls-mtls-key-rotation`, `threat-modeling-stride`.
 - Fuentes: NIST SP 800-207 (Zero Trust Architecture); documentación de Istio (PeerAuthentication, AuthorizationPolicy).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

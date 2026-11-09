@@ -2,7 +2,7 @@
 
 **Propósito:** Aprobar el PR para merge.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Revisor humano de código; security champion
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Revisor humano de código; security champion
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`).

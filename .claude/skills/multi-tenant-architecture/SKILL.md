@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "review"
 ---
 
@@ -71,4 +71,4 @@ jdbc.queryForObject("select set_config('app.tenant_id', ?, true)", String.class,
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `cell-based-architecture`, `scalability-patterns`, `ddd-strategic`.
 - Fuentes: PostgreSQL docs, "Row Security Policies"; AWS Well-Architected SaaS Lens (leer como referencia; no verificado en real)..
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

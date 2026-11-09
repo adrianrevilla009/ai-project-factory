@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -81,4 +81,4 @@ resource "aws_route53_resolver_rule" "corp" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `private-endpoints-and-egress-control`, `global-accelerator-and-failover-routing`, `transit-gateway-hub-and-spoke`.
 - Fuentes: documentación oficial de Route 53 (zonas privadas) y Route 53 Resolver.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

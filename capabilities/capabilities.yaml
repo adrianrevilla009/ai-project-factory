@@ -1,5 +1,5 @@
 # Matriz de capacidades: qué respuesta de la entrevista activa qué módulo.
-# Estado: `modules-map.yaml` aún no enlaza los módulos con sus skills (listas vacías).
+# Cada módulo activado se enlaza con sus skills, políticas y pruebas en `modules-map.yaml` (validado por `make validate`).
 version: 1
 questions:
   - id: multi_tenant

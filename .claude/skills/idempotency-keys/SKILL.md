@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,4 +66,4 @@ public PaymentResponse pay(String tenant, String key, PayRequest r) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `rest-design-guidelines`, `dlq-retries-poison-messages`, `rate-limiting-quotas`.
 - Fuentes: borrador IETF HTTPAPI "The Idempotency-Key HTTP Header Field" — estado y número verificados el 2026-11-08 en datatracker.ietf.org.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

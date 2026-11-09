@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -78,4 +78,4 @@ Las regex de ejemplo no cubren todos los formatos; validar con un corpus propio.
 - Relacionados: `pii-and-data-classification`, `llm-security`, `llm-gateway`, `structured-logging`, `model-risk-and-ai-act-mapping`, `prompt-injection-defense-for-agents`.
 - Fuentes: OWASP Top 10 for LLM Applications (sensitive information disclosure, improper output handling); RGPD en EUR-Lex — borrador por confirmar.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

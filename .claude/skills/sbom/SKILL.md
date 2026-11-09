@@ -5,7 +5,7 @@ metadata:
   block: "15-artifacts-and-registry"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -68,4 +68,4 @@ Flag `--format cyclonedx` verificado en https://trivy.dev/latest/docs/references
 - Relacionados: `supply-chain`, `image-scanning`, `license-policy`, `dependency-security`.
 - Fuentes: CycloneDX https://cyclonedx.org/; Dependency-Track https://docs.dependencytrack.org/; Trivy (2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

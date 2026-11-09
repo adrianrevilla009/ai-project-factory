@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -79,4 +79,4 @@ SELECT id FROM jobs WHERE status = 'PENDING' ORDER BY id LIMIT 10 FOR UPDATE SKI
 - Relacionados: `optimistic-locking`, `isolation-levels-and-anomalies`, `distributed-locking`, `connection-pooling`.
 - Fuentes: Jakarta Persistence (`LockModeType`) y documentación del motor (`SELECT ... FOR UPDATE`, `SKIP LOCKED`).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

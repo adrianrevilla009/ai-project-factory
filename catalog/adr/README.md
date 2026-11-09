@@ -1,6 +1,6 @@
 # ADRs de la fábrica
 
-ADR-0001…0027 son las decisiones D1–D27 del brief. 0028–0031 y 0038 son decisiones tomadas durante la construcción de la fábrica. 0032–0037 eran decisiones abiertas del brief: se aceptaron con la opción por defecto indicada en cada ADR, sin revisión humana todavía; cámbialas si no te convencen.
+ADR-0001…0027 son las decisiones D1–D27 del brief. 0028–0031 y 0038 son decisiones tomadas durante la construcción de la fábrica. 0032–0037 eran decisiones abiertas del brief; el dueño las cerró el 2026-11-09 aceptando la opción indicada en cada ADR.
 
 Un ADR nuevo copia la estructura de los existentes (Estado, Fecha, Contexto, Opciones, Decisión, Consecuencias) y se añade a esta tabla. `make validate` comprueba que existan 0001–0027.
 
@@ -37,10 +37,10 @@ Un ADR nuevo copia la estructura de los existentes (Estado, Fecha, Contexto, Opc
 | [0029](0029-python-3-para-hooks-y-validadores.md) | Python 3 para hooks y validadores | aceptado |
 | [0030](0030-acceso-a-docker-en-el-dev-container.md) | Acceso a Docker en el dev container | aceptado |
 | [0031](0031-licencia-de-vault-busl-y-alternativa-openbao.md) | Licencia de Vault (BUSL) y alternativa OpenBao | aceptado |
-| [0032](0032-istio-sidecar-vs-ambient.md) | Istio: sidecar vs ambient | aceptado (defecto) |
-| [0033](0033-cni-en-eks-vpc-cni-vs-cilium.md) | CNI en EKS: VPC CNI vs Cilium | aceptado (defecto) |
-| [0034](0034-kubernetes-local-kind-vs-k3d.md) | Kubernetes local: kind vs k3d | aceptado (defecto) |
-| [0035](0035-repositorio-maven-npm-gratuito.md) | Repositorio Maven/npm gratuito | aceptado (defecto) |
-| [0036](0036-react-por-defecto-spa-vite-vs-ssr-next-js.md) | React por defecto: SPA (Vite) vs SSR (Next.js) | aceptado (defecto) |
-| [0037](0037-terraform-plan-contra-una-cuenta-aws-vacia.md) | `terraform plan` contra una cuenta AWS vacía | aceptado (defecto) |
+| [0032](0032-istio-sidecar-vs-ambient.md) | Istio: sidecar vs ambient | aceptado |
+| [0033](0033-cni-en-eks-vpc-cni-vs-cilium.md) | CNI en EKS: VPC CNI vs Cilium | aceptado |
+| [0034](0034-kubernetes-local-kind-vs-k3d.md) | Kubernetes local: kind vs k3d | aceptado |
+| [0035](0035-repositorio-maven-npm-gratuito.md) | Repositorio Maven/npm gratuito | aceptado |
+| [0036](0036-react-por-defecto-spa-vite-vs-ssr-next-js.md) | React por defecto: SPA (Vite) vs SSR (Next.js) | aceptado |
+| [0037](0037-terraform-plan-contra-una-cuenta-aws-vacia.md) | `terraform plan` contra una cuenta AWS vacía | aceptado |
 | [0038](0038-alcance-solo-guias-sin-plantillas.md) | Alcance del repositorio: solo guías, sin plantillas ni app de referencia | aceptado |

@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -73,4 +73,4 @@ ALTER TABLE document ADD COLUMN version BIGINT NOT NULL DEFAULT 0;
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `pessimistic-locking`, `isolation-levels-and-anomalies`, `jpa-entity-design`, `error-handling-problem-details`.
 - Fuentes: Jakarta Persistence (`@Version`) y Spring Framework (excepción de bloqueo optimista).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

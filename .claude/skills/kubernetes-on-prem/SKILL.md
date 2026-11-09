@@ -5,7 +5,7 @@ metadata:
   block: "21-on-prem-hybrid"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -51,4 +51,4 @@ Los flags `--control-plane-endpoint` y `--upload-certs` figuran en la guía ofic
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `storage-and-load-balancing`, `container-and-k8s-security`, `hybrid-identity-and-networking`.
 - Fuentes (verificado 2026-11-07): https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/high-availability/
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

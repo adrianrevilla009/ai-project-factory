@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -64,4 +64,4 @@ public void onChange(ProductEvent e) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `outbox-and-cdc`, `cqrs-read-models-and-search`, `cache-strategies`, `idempotency-and-deduplication`, `consistency-and-sagas`.
 - Fuentes (verificadas 2026-11-07): https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/streamsmain.html · https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

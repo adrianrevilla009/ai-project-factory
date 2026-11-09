@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -75,4 +75,4 @@ public OrderStatus orderStatus(String orderId, @AuthenticatedCustomer CustomerId
 - Relacionados: `rag-architecture`, `guardrails-and-pii-redaction`, `human-in-the-loop`, `llm-security`, `model-risk-and-ai-act-mapping`.
 - Fuentes: https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai (transparencia, consultado 2026-11-07). Borrador legal por confirmar.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

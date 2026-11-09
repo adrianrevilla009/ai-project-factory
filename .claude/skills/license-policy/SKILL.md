@@ -5,7 +5,7 @@ metadata:
   block: "15-artifacts-and-registry"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -70,4 +70,4 @@ trivy fs --scanners license --severity HIGH,CRITICAL .
 - Relacionados: `sbom`, `third-party-risk`, `dependency-security`, `supply-chain`.
 - Fuentes: SPDX license list https://spdx.org/licenses/ ; Trivy https://trivy.dev/latest/docs/ (2026-11-07). Normativa/legal: borrador por confirmar.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

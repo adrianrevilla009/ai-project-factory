@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -73,4 +73,4 @@ Nombres de jobs verificados en la documentación del Automation Framework (zapro
 - Relacionados: `penetration-testing-program`, `vulnerability-management-program`, `ephemeral-environments`, `asvs-mapping`.
 - Fuentes: ZAP Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

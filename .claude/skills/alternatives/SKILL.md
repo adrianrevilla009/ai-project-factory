@@ -5,7 +5,7 @@ metadata:
   block: "16-ci-cd"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -73,4 +73,4 @@ runner efímero              runner autoescalado/K8s      agente pod efímero
 - Relacionados: `github-actions`, `pipeline-architecture`, `security-gates`.
 - Fuentes: ADR-0020; https://docs.gitlab.com/ci/ y https://www.jenkins.io/doc/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

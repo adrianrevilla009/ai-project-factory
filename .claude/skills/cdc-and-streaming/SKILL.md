@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -76,4 +76,4 @@ En local se reproduce con Postgres + Kafka + Kafka Connect en contenedores. No s
 - Relacionados: `kafka-producers-consumers`, `asyncapi-event-contracts`, `data-contracts-and-lineage`, `gdpr-in-the-lake`.
 - Fuentes: documentación Debezium (URL arriba, 2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

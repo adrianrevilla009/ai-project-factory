@@ -5,7 +5,7 @@ metadata:
   block: "22-polyglot-persistence"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ No se reproduce en local: la semántica de Streams y su retención de 24 h solo 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `idempotency-and-deduplication`, `delivery-semantics`, `domain-events-in-spring`, `kafka-producers-consumers`, `consistency-and-sagas`.
 - Fuentes (verificadas 2026-11-07): Debezium Outbox Event Router https://debezium.io/documentation/reference/stable/transformations/outbox-event-router.html · DynamoDB Streams https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html · Transacciones https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

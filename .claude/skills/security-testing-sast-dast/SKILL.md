@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,4 +83,4 @@ void tamperedToken_isRejected() throws Exception {
 - Relacionados: `secure-sdlc-nist-ssdf`, `dependency-security`, `secrets-management`, `static-analysis`, `injection-families`.
 - Fuentes: documentación de Semgrep OSS y OWASP ZAP; OWASP Web Security Testing Guide.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

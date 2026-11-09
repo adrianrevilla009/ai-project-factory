@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -68,4 +68,4 @@ OrderDto get(@PathVariable UUID id) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `http-clients-and-timeouts`, `spring-data-rules`, `testing-slices`.
 - Fuentes: Spring Framework Reference (Web MVC / WebFlux), Spring Boot Reference (hilos virtuales).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

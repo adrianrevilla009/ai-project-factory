@@ -5,7 +5,7 @@ metadata:
   block: "05-architecture"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -67,4 +67,4 @@ public final class CancelOrder {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `hexagonal`, `layering-rules-archunit`, `solid`, `ddd-tactical`.
 - Fuentes: Robert C. Martin, "The Clean Architecture" (blog.cleancoder.com, 2012).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -81,4 +81,4 @@ public final class BudgetGuard {
 - Skills relacionados: `llm-gateway`, `llm-observability`, `llm-evals`, `finops`, `rate-limiting-quotas`.
 - Fuentes: documentación de precios y conteo de tokens del proveedor elegido (p. ej. https://platform.claude.com/docs/en/about-claude/pricing, consultada 2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

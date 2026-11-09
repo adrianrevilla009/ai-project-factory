@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -63,4 +63,4 @@ La clave `key` procede de KMS/Vault (ver `envelope-encryption-and-kms`).
 - Relacionados: `crypto-tls-mtls-key-rotation`, `envelope-encryption-and-kms`, `kms-multi-region-keys`, `pki-and-certificate-lifecycle`, `data-privacy-in-db`.
 - Fuentes (2026-11-07): NIST SP 800-57, 800-131A Rev. 2, 800-52 Rev. 2; NIST FIPS 203/204/205 (csrc.nist.gov); OWASP Cryptographic Storage Cheat Sheet.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

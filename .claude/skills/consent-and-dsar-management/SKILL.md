@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -78,4 +78,4 @@ CREATE TABLE dsar_case (
 - Skills relacionados: `pii-and-data-classification`, `gdpr-and-immutable-events`, `gdpr-in-the-lake`, `data-privacy-in-db`, `retention-and-cleanup`, `outbox-and-cdc`.
 - Fuentes: Reglamento (UE) 2016/679 en EUR-Lex, consultado 2026-11-07 (borrador; confirmar artículos y plazos con asesoría).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

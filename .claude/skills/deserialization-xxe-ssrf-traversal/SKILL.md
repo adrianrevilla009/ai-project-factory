@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -76,4 +76,4 @@ Nota: validar la IP y luego conectar abre una ventana de DNS rebinding; conectar
 - Relacionados: `injection-families`, `file-upload-security`, `cloud-iam-least-privilege`, `owasp-top10-and-api-top10`.
 - Fuentes: OWASP Cheat Sheet Series (Deserialization, XXE Prevention, SSRF Prevention, Input Validation).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

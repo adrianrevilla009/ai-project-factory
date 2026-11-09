@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ public void handle(OrderSyncPayload p) {
 - Skills relacionados: `anti-corruption-layer`, `outbox-and-cdc`, `idempotency-keys`, `webhooks`, `backpressure-and-bulkheads`, `batch-file-sftp-integration`, `soap-legacy-integration`.
 - Fuentes: documentación oficial de cada proveedor (límites, autenticación); no se asumen valores.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

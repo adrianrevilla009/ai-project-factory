@@ -5,7 +5,7 @@ metadata:
   block: "02-concurrency"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -69,4 +69,4 @@ spring.threads.virtual.enabled=true
 - Relacionados: `threads-executors-and-pools`, `structured-concurrency-and-scoped-values`, `connection-pooling`.
 - Fuentes: JEP 444 y JEP 491 (openjdk.org/jeps); documentación de Spring Boot sobre virtual threads.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

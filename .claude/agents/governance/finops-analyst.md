@@ -1,7 +1,7 @@
 ---
 name: finops-analyst
 description: Usar para estimar coste por tier sin desplegar y proponer optimizaciones.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Write, Bash, WebFetch
 ---
 
 # finops-analyst

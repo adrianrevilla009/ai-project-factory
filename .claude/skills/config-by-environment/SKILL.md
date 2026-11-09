@@ -5,7 +5,7 @@ metadata:
   block: "14-secrets-and-config"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -76,4 +76,4 @@ DB_PASSWORD=changeme
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secrets-management`, `configuration-properties`, `injection-patterns`, `twelve-factor`, `secrets-in-gitops`, `spring-cloud-config-module`.
 - Fuentes: ADR-0011; Spring Boot reference, Externalized Configuration. Diseño preparado para AWS, no verificado en real.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

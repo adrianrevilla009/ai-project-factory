@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -73,4 +73,4 @@ resource "aws_ec2_transit_gateway_peering_attachment" "euw1_euc1" {
 - Relacionados: `transit-gateway-hub-and-spoke`, `private-endpoints-and-egress-control`, `global-accelerator-and-failover-routing`, `regions-and-data-residency`, `tagging-cost-allocation-budgets`.
 - Fuentes: páginas oficiales de precios de AWS (transferencia de datos, NAT Gateway, Transit Gateway) y documentación de peering de TGW, consulta 2026-11-07.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

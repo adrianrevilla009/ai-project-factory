@@ -5,7 +5,7 @@ metadata:
   block: "18-observability-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ limits_config:
 - Fuentes oficiales: https://grafana.com/docs/loki/latest/operations/storage/retention/ (verificado 2026-11-07: claves del compactor, índice 24h, `retention_stream`). Config de retención de Tempo.
 - Preparado para AWS, no verificado en real. En local MinIO sustituye a S3: no se reproducen políticas de bucket, KMS ni lifecycle de S3.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

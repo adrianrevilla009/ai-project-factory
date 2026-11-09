@@ -1,6 +1,6 @@
 # Índice de decisiones
 
-«Tengo que decidir X»: dónde está el criterio. Las decisiones ya cerradas están en los ADR (`catalog/adr/`); las que dependen del proyecto, en la skill indicada. Si un ADR tiene estado «aceptado (defecto)», conviene revisarlo.
+«Tengo que decidir X»: dónde está el criterio. Las decisiones ya cerradas están en los ADR (`catalog/adr/`); las que dependen del proyecto, en la skill indicada.
 
 ## Arquitectura
 | Decisión | Dónde decidir |

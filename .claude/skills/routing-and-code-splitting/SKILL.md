@@ -5,7 +5,7 @@ metadata:
   block: "27-frontend-react"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -82,4 +82,4 @@ Nota: el `import()` dinámico apunta a un fichero por defecto de la página; ese
 - Relacionados: `frontend-architecture`, `frontend-performance`, `auth-and-session`, `error-handling-and-boundaries`.
 - Fuentes: documentación de React (`lazy`, `Suspense`) y React Router.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

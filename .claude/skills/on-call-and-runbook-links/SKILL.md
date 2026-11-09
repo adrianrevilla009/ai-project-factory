@@ -5,7 +5,7 @@ metadata:
   block: "10-observability-app"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ Atención: no truncar tablas ni reiniciar la BD sin aprobación humana.
 ## Relacionados, fuentes y mantenimiento
 - Skills relacionados: `alerting-symptom-based`, `slo-sli-error-budgets`, `golden-signals-red-use`, `vulnerability-sla-and-incident-response`.
 - Fuentes: Google SRE Book (on-call, postmortem culture), consultado 2026-11-07. La fábrica no despliega ni opera: los runbooks son guía para el proyecto generado.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

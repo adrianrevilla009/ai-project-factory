@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -62,4 +62,4 @@ Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 91
 - Relacionados: `vulnerability-management-program`, `incident-management-and-postmortems`, `penetration-testing-program`.
 - Fuentes: RFC 9116 (rfc-editor.org/rfc/rfc9116); ISO/IEC 29147 y 30111.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

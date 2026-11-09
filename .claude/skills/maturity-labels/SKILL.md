@@ -5,7 +5,7 @@ metadata:
   block: "29-cloud-readiness"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -58,4 +58,4 @@ No reproducido en local: WAF, Shield, CloudFront, multi-región (ver parity-matr
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `static-verification-ladder`, `honest-claims-policy`, `local-parity-matrix`, `cost-estimation`.
 - Fuentes: ADR-0004 y ADR-0037 en `catalog/adr/`. Los tres niveles son convención de la fábrica, revisables por el dueño.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -63,4 +63,4 @@ var query = bool().filter(term("tenantId", ctx.tenantId())).must(match("name", t
 - Relacionados: `outbox-and-cdc`, `multi-tenancy`, `pii-and-data-classification`.
 - Fuentes: PostgreSQL docs (Full Text Search). OpenSearch docs (https://docs.opensearch.org/docs/latest/, 2026-11-07; no confirma licencia en la página).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

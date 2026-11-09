@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -74,4 +74,4 @@ components:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `schema-registry-and-evolution`, `kafka-producers-consumers`, `delivery-semantics`, `dlq-retries-poison-messages`, `backward-compatibility-rules`.
 - Fuentes: asyncapi.com (especificación 3.0), cloudevents.io.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

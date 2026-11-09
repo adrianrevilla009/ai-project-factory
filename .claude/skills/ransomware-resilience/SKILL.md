@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -72,4 +72,4 @@ registrar RTO medido vs objetivo.
 - Fuentes: documentación de AWS Backup Vault Lock; guías de CISA sobre ransomware.
 - Cloud: preparado para AWS, no verificado en real. En local no se reproduce Vault Lock ni aislamiento por cuentas; solo se ensaya el procedimiento de restauración.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

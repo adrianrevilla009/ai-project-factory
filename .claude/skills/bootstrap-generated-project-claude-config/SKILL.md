@@ -5,7 +5,7 @@ metadata:
   block: "31-agentic-engineering"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -70,4 +70,4 @@ Un proyecto generado debe ser tan seguro como la fábrica: sin los mismos hooks,
 - Relacionados: `claude-md-authoring`, `gate-protocol`, `mcp-governance`, `skill-authoring-guide`.
 - Fuentes: `docs/architecture/claude-code-formats.md` (verificado 2026-11-06), hooks y permisos en https://code.claude.com/docs/en/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

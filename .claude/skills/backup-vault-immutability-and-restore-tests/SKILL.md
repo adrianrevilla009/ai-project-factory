@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -69,4 +69,4 @@ ejecutar consulta de negocio de control, anotar duración, destruir el clúster.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `data-replication-matrix`, `finops-of-resilience`, `tier-model-and-rpo-rto`.
 - Fuentes: AWS Backup Vault Lock, https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html y DR whitepaper (2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

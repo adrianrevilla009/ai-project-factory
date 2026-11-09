@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -83,4 +83,4 @@ sftp.password=changeme-example
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `delivery-semantics`, `file-upload-security`, `pii-and-data-classification`, `secrets-management`.
 - Fuentes: documentación de Spring Batch (chunk, restart, skip) y de Spring Integration SFTP.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

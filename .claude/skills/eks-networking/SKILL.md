@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -93,4 +93,4 @@ spec:
 - Relacionados: `cidr-planning-and-ipam`, `alb-nlb-and-tls-termination`, `container-and-k8s-security`, `cluster-topology`, `mtls-strict-and-peer-auth`.
 - Fuentes: guía oficial de buenas prácticas de redes de Amazon EKS y documentación del VPC CNI.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

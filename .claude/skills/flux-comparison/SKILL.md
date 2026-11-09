@@ -5,7 +5,7 @@ metadata:
   block: "17-gitops-progressive-delivery"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -75,4 +75,4 @@ Revisión humana (decisión de arquitectura en ADR). Sin artefacto automático.
 - Relacionados: `argo-cd`, `argo-rollouts`, `spinnaker-comparison`, `repo-strategy`.
 - Fuentes (2026-11-07): https://fluxcd.io/flux/concepts/ · ADR-0021.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

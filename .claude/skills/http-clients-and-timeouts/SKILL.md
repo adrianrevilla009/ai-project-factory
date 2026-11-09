@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -83,4 +83,4 @@ clients:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `resilience`, `configuration-properties`, `graceful-shutdown-lifecycle`, `reactive-vs-blocking`.
 - Fuentes: Spring Framework Reference (REST Clients) y Spring Boot Reference (HTTP clients).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

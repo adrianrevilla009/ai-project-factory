@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ terraform plan -detailed-exitcode   # exit 2 = drift -> abrir issue
 - Skills relacionados: `istio-upgrades-and-ops`, `cluster-addons-baseline`, `drift-and-self-heal-policy`, `change-and-release-management`.
 - Fuentes: Kubernetes (version skew policy, deprecation guide) y EKS (versiones y upgrades).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

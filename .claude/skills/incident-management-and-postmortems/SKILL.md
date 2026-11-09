@@ -5,7 +5,7 @@ metadata:
   block: "19-resilience-dr-finops"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -63,4 +63,4 @@ Postmortem: "Error humano de Juan al desplegar. Acción: tener más cuidado."
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `slo-error-budget-policy`, `alert-routing-and-oncall`, `status-page-and-comms`, `fault-injection-and-game-days`, `failover-and-failback-runbooks`.
 - Fuentes: Google SRE Book/Workbook (postmortem culture e incident response).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

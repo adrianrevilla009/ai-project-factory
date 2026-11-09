@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -65,4 +65,4 @@ public static <T> void copy(List<? extends T> src, List<? super T> dst) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `null-safety`, `immutability-and-value-objects`, `backward-compatibility-rules`, `solid`, `code-style-and-naming`.
 - Fuentes: Effective Java (Bloch), ítems de genéricos y diseño de métodos (libro); Java Tutorials "Generics" — no verificado en línea.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

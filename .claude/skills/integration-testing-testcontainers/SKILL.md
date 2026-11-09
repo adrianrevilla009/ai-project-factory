@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -90,4 +90,4 @@ El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno.
 - Relacionados: `db-testing`, `testing-slices`, `schema-migrations`, `kafka-producers-consumers`, `test-data-management`.
 - Fuentes: documentación de Testcontainers for Java y de Spring Boot (Testcontainers support).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

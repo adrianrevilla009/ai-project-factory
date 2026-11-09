@@ -5,7 +5,7 @@ metadata:
   block: "11-aws-governance"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -70,4 +70,4 @@ Una SCP errónea en la raíz puede dejar a toda la organización sin acceso. El 
 - Relacionados: `organization-and-ou-design`, `regions-and-data-residency`, `kms-multi-region-keys`, `org-cloudtrail-config-securityhub-guardduty`.
 - Fuentes: AWS Organizations User Guide, sección SCP (2026-11-07).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

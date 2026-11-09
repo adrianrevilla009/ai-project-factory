@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ order.notFound=El pedido {0} no existe
 - Skills relacionados: `frontend-i18n-and-formatting`, `api-docs`, `openapi-contract-first`, `document-and-report-generation`.
 - Fuentes: documentación de Spring Framework (MessageSource, LocaleResolver, ProblemDetail); BCP 47 (RFC 5646); ISO 4217.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

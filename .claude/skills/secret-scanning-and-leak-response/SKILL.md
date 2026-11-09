@@ -5,7 +5,7 @@ metadata:
   block: "14-secrets-and-config"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "hook"
 ---
 
@@ -75,4 +75,4 @@ Sintaxis de `.gitleaks.toml`.
 - Relacionados: `secrets-management`, `rotation-and-leases`, `audit-and-break-glass`, `supply-chain`, `vulnerability-sla-and-incident-response`.
 - Fuentes: https://github.com/gitleaks/gitleaks (consultada 2026-11-07: licencia MIT, comandos `git`/`dir`/`stdin`, `.gitleaks.toml`, pre-commit).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

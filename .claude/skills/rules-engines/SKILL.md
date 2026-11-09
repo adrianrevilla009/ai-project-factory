@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -65,4 +65,4 @@ void discountByTier(String tier, BigDecimal total, BigDecimal expected) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `workflow-bpm`, `audit-trail-and-activity-log`, `testing-slices`.
 - Fuentes: documentación oficial de Drools/DMN.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

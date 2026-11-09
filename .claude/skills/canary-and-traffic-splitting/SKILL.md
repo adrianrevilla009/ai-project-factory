@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,4 +66,4 @@ spec:
 - Relacionados: `traffic-management`, `gateway-api`, `mesh-observability`, `backward-compatibility-rules`.
 - Fuentes: istio.io/latest/docs/tasks/traffic-management/traffic-shifting/ y gateway-api.sigs.k8s.io.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

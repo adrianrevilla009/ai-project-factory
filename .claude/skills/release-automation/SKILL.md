@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -73,4 +73,4 @@ feat(api)!: remove v1 order payload          -> major
 - Relacionados: `versioning-semver-snapshots`, `sbom-generation`, `reproducible-builds`, `container-images`, `license-compliance`.
 - Fuentes: conventionalcommits.org, semver.org, documentación de maven-release-plugin y flatten-maven-plugin.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

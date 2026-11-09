@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -77,4 +77,4 @@ El nombre de cabecera `Stripe-Signature` es de Stripe; adaptarlo al PSP elegido.
 - Relacionados: `time-and-money`, `idempotency-keys`, `webhooks`, `sagas-and-process-managers`, `outbox-and-cdc`, `pii-and-data-classification`.
 - Fuentes: Stripe, Idempotent requests, https://docs.stripe.com/api/idempotent_requests y Webhooks, https://docs.stripe.com/webhooks (verificado 2026-11-07). PCI DSS y facturación electrónica.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

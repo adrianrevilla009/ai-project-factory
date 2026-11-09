@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -78,4 +78,4 @@ Build parcial: `./mvnw -pl orders-boot -am verify` compila el módulo y lo que n
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `parent-pom`, `bom-management`, `enforcer-rules`, `clean-architecture`, `connascence-and-coupling`.
 - Fuentes: Apache Maven, "Guide to Working with Multiple Modules" (maven.apache.org) — consultar vigente.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

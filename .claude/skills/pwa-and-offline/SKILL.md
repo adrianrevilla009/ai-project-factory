@@ -5,7 +5,7 @@ metadata:
   block: "27-frontend-react"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -83,4 +83,4 @@ self.addEventListener("activate", async () => {
 - Relacionados: `build-and-deploy`, `security-frontend`, `frontend-performance`, `idempotency-keys`, `state-management`.
 - Fuentes: MDN (Service Worker API, PWA) y documentación de Workbox.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

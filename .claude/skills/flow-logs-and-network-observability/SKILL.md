@@ -5,7 +5,7 @@ metadata:
   block: "12-aws-networking"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -71,4 +71,4 @@ resource "aws_flow_log" "main" {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `log-archive-and-audit-account`, `transit-gateway-hub-and-spoke`, `waf-shield-and-cloudfront`, `audit-trail-and-security-logging`, `pii-and-data-classification`.
 - Fuentes: documentación oficial de VPC Flow Logs (campos y formato personalizado) y Reachability Analyzer.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

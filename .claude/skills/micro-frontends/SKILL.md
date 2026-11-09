@@ -5,7 +5,7 @@ metadata:
   block: "27-frontend-react"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -80,4 +80,4 @@ window.dispatchEvent(new CustomEvent<CartChangedV1>("cart.changed.v1", { detail:
 - Relacionados: `architecture`, `adr`, `design-system-and-tokens`, `build-and-deploy`, `contract-testing`.
 - Fuentes: documentación de Module Federation y de la herramienta de build elegida.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

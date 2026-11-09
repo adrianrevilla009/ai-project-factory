@@ -5,7 +5,7 @@ metadata:
   block: "24-ai-engineering"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ Las firmas exactas de `SearchRequest` y filtros dependen de la versión de Sprin
 - Relacionados: `rag-over-enterprise-docs`, `vector-store-selection` (pendiente), `llm-security`, `llm-observability`, `pii-and-data-classification`.
 - Fuentes: Spring AI Reference, RAG y VectorStore (docs.spring.io/spring-ai/reference); OWASP Top 10 for LLM Applications.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -5,7 +5,7 @@ metadata:
   block: "26-enterprise-capabilities"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -68,4 +68,4 @@ ON CONFLICT (identity_subject) DO NOTHING;
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `authn-oidc-oauth2`, `pii-and-data-classification`, `consent-and-dsar-management`, `multi-tenancy`.
 - Fuentes: documentación Keycloak Server Administration (2026-11-07). Local: Keycloak en contenedor; no se reproduce la HA/DR de AWS (ver `vault-and-keycloak-dr`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -1,7 +1,7 @@
 ---
 name: domain-analyst
 description: Usar para construir y mantener el perfil de dominio del proyecto (glosario, contextos, eventos, reglas); único agente de dominio, adaptativo.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # domain-analyst

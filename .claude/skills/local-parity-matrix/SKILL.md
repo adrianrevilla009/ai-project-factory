@@ -5,7 +5,7 @@ metadata:
   block: "28-local-kubernetes"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -56,4 +56,4 @@ Probamos el failover de base de datos en local, así que la recuperación está 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `aws-emulation`, `local-profiles`, `parity-matrix-maintenance`, `maturity-labels`.
 - Fuentes: `catalog/parity-matrix.yaml`, `catalog/adr/0034-kubernetes-local-kind-vs-k3d.md`.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

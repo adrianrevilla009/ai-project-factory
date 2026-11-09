@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ Nota: `char[]` en record usa igualdad por referencia; preferir un tipo con `equa
 - Relacionados: `immutability-and-value-objects`, `jpa-entity-design`, `logging-rules`, `data-privacy-in-db`.
 - Fuentes: Javadoc de `java.lang.Object#equals` y `#hashCode`; Effective Java (Bloch) — no verificado en línea.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

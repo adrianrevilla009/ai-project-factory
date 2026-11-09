@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ public List<OrderSummary> list() { /* a replica */ }
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `transactions`, `connection-pooling`, `caching`, `consistency-and-cap-tradeoffs`.
 - Fuentes: Spring Framework API (`AbstractRoutingDataSource`, `LazyConnectionDataSourceProxy`), documentación de PostgreSQL (replicación).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

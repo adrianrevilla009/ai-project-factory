@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -71,4 +71,4 @@ ProblemDetail notFound(OrderNotFoundException ex) {
 - Relacionados: `openapi-contract-first`, `pagination-filter-sort`, `idempotency-keys`, `api-versioning-deprecation`.
 - Fuentes (verificadas 2026-11-07 solo por nombre de RFC): RFC 9110 (HTTP Semantics), RFC 9457 (Problem Details); `ProblemDetail` de Spring Framework 6+.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

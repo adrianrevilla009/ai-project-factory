@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -60,4 +60,4 @@ Decisión: pendiente de aprobación humana (gate).
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `risk-register`, `runbooks`, `backup-and-restore`, `alerting-symptom-based`, `change-and-release-management`, `honest-claims-policy`.
 - Fuentes: Google SRE Book/Workbook, "Production Readiness Review".
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -72,4 +72,4 @@ containers:
 - Relacionados: `profiling-and-leaks`, `graceful-shutdown-lifecycle`, `startup-and-native`, `threads-executors-and-pools`.
 - Fuentes: documentación del comando `java` de OpenJDK/Oracle (opciones `MaxRAMPercentage`, `ExitOnOutOfMemoryError`) y Kubernetes "Resource Management"; no consultado en línea.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

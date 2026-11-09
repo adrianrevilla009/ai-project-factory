@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -75,4 +75,4 @@ OrderServiceGrpc.OrderServiceBlockingStub stub =
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backward-compatibility-rules`, `schema-registry-and-evolution`, `sdk-generation`, `contract-testing-pact`.
 - Fuentes: protobuf.dev (guía de estilo y de actualización de mensajes), grpc.io (deadlines, status codes), buf.build docs.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

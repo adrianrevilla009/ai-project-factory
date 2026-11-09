@@ -5,7 +5,7 @@ metadata:
   block: "02-concurrency"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -67,4 +67,4 @@ boolean submit(Job j) { return queue.offer(j); }       // false = rechazar, no b
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `java-memory-model`, `locks-and-synchronization`, `backpressure-and-bulkheads`, `caching`.
 - Fuentes: Javadoc de `java.util.concurrent`.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

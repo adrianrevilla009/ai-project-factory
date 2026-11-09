@@ -2,7 +2,7 @@
 
 **Propósito:** Aprobar plan, arquitectura inicial y módulos antes de implementar.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Tech lead; arquitecto de solución; product owner
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Tech lead; arquitecto de solución; product owner
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`).

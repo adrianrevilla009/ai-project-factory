@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -67,4 +67,4 @@ Versión `1-xx` es un marcador; sintaxis exacta de etiquetas y charts.
 - Relacionados: `cluster-upgrades-and-drift`, `sidecar-vs-ambient-decision`, `multi-cluster-mesh`, `upgrade-policy`.
 - Fuentes: istio.io/latest/docs/setup/upgrade/canary/ y tabla de soporte de versiones.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

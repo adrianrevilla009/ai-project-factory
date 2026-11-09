@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -85,4 +85,4 @@ El orden test-primero no es comprobable por script de forma fiable: es revisión
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `unit-testing-java`, `bdd`, `mutation-testing`, `code-smells-and-refactoring`.
 - Fuentes: Kent Beck, *Test-Driven Development: By Example* (libro; sin URL verificada).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "04-spring-platform"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -82,4 +82,4 @@ spring:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `file-upload-security`, `controllers-and-validation`, `spring-data-rules`.
 - Fuentes: Spring Framework Reference (Multipart, Asynchronous Requests / StreamingResponseBody) y Spring Boot Reference (propiedades multipart).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

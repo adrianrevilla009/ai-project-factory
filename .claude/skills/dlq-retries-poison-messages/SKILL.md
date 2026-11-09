@@ -5,7 +5,7 @@ metadata:
   block: "06-api-and-integration"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -79,4 +79,4 @@ ARN de ejemplo (`example`); la política es configuración preparada para AWS, n
 - Relacionados: `kafka-producers-consumers`, `rabbitmq-sqs`, `delivery-semantics`, `alerting-symptom-based`.
 - Fuentes: documentación de Spring for Apache Kafka (manejo de errores y DLT) y de Amazon SQS (dead-letter queues).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

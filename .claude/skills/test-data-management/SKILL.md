@@ -5,7 +5,7 @@ metadata:
   block: "08-testing-quality"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -85,4 +85,4 @@ Dominios `example.test` / `example.com` para correos falsos.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `db-testing`, `pii-and-data-classification`, `data-privacy-in-db`, `flaky-test-management`, `integration-testing-testcontainers`.
 - Fuentes: patrón Object Mother / Test Data Builder (Fowler, https://martinfowler.com/bliki/ObjectMother.html, consultada 2026-11-07).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

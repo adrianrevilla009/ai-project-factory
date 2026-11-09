@@ -5,7 +5,7 @@ metadata:
   block: "01-java-language"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -77,4 +77,4 @@ public record Order(CustomerId customerId, List<String> items) {
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `modern-java-idioms`, `equals-hashcode-tostring`, `time-and-money`, `jpa-entity-design`.
 - Fuentes: Effective Java (Bloch), ítem sobre inmutabilidad (libro, no verificado en línea); JEP 395.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

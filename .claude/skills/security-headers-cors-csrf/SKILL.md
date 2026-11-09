@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -86,4 +86,4 @@ Referrer-Policy: strict-origin-when-cross-origin
 - Relacionados: `jwt-and-sessions`, `input-validation-output-encoding`, `method-and-endpoint-security`.
 - Fuentes: OWASP HTTP Headers Cheat Sheet, CSRF Prevention Cheat Sheet; MDN sobre CSP y CORS; Spring Security (CORS, CSRF).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

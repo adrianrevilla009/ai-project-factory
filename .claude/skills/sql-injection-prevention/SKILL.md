@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -67,4 +67,4 @@ El único fragmento concatenado procede de constantes propias, nunca de la entra
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `query-strategy`, `owasp-top10-and-api-top10`, `jdbc-and-jooq`, `secure-sdlc-nist-ssdf`.
 - Fuentes: OWASP SQL Injection Prevention Cheat Sheet.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

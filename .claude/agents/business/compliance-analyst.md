@@ -1,7 +1,7 @@
 ---
 name: compliance-analyst
 description: Usar para preparar la matriz de normativa aplicable de un proyecto; prepara, nunca dictamina.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write, WebFetch, WebSearch
 ---
 
 # compliance-analyst

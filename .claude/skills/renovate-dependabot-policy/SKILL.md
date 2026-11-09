@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -75,4 +75,4 @@ updates:
 - Relacionados: `bom-management`, `dependency-hygiene`, `dependency-security`, `container-images`, `release-automation`.
 - Fuentes: documentación de GitHub Dependabot y de Renovate (docs.renovatebot.com).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

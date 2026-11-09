@@ -2,7 +2,7 @@
 
 **Propósito:** Aprobar el código implementado antes de abrir PR.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Tech lead; architecture-guardian (revisión)
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Tech lead; architecture-guardian (revisión)
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`).

@@ -5,7 +5,7 @@ metadata:
   block: "13-kubernetes-and-istio"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -80,4 +80,4 @@ spec:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `mesh-vs-app-resilience`, `resilience`, `http-clients-and-timeouts`, `canary-and-traffic-splitting`.
 - Fuentes: istio.io/latest/docs/concepts/traffic-management/.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

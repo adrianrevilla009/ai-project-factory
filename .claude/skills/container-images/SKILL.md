@@ -5,7 +5,7 @@ metadata:
   block: "09-build-supply-chain"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -80,4 +80,4 @@ ENTRYPOINT ["java", "-jar", "application.jar"]
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `sbom-generation`, `build-caching-and-speed`, `jdk-distribution-and-upgrade-cadence`, `supply-chain`, `renovate-dependabot-policy`.
 - Fuentes: docs.docker.com (best practices for Dockerfile, multi-stage), documentación de Spring Boot (container images); consultadas 2026-11-07; el comando `-Djarmode=tools extract --layers` se verificó el 2026-11-08 en https://docs.spring.io/spring-boot/reference/packaging/container-images/dockerfiles.html.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

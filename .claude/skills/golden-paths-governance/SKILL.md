@@ -5,7 +5,7 @@ metadata:
   block: "20-internal-developer-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -70,4 +70,4 @@ exceptions:
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `backstage`, `software-templates`, `developer-experience-metrics`, `tech-debt-management`.
 - Fuentes: ninguna oficial única; criterio de ingeniería de plataforma. Comprobar si se cita CNCF Platforms White Paper (https://tag-app-delivery.cncf.io/whitepapers/platforms/).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

@@ -1,7 +1,7 @@
 ---
 name: delivery-manager
 description: Usar para planificar releases, riesgos, dependencias y seguimiento de calidad de entrega.
-tools: Read, Grep, Glob, Edit, Write, Bash
+tools: Read, Grep, Glob, Edit, Write
 ---
 
 # delivery-manager

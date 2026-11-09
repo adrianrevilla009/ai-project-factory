@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "gate"
 ---
 
@@ -65,4 +65,4 @@ Scenario: acceso a un pedido de otro tenant
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `secure-sdlc-nist-ssdf`, `owasp-top10-and-api-top10`, `authz-rbac-abac-rebac`, `input-validation-output-encoding`.
 - Fuentes: proyecto OWASP ASVS (owasp.org/www-project-application-security-verification-standard) — versión 5.0.0 (2025-05-30), verificada el 2026-11-08.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

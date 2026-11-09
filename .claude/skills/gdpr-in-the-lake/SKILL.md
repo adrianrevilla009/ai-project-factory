@@ -5,7 +5,7 @@ metadata:
   block: "23-data-platform"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -70,4 +70,4 @@ completed_at: "2026-11-07"
 - Relacionados: `data-governance-and-classification`, `access-control-masking-and-retention`, `pii-and-data-classification`, `consent-and-dsar-management`.
 - Fuentes: art. 17 RGPD (URL arriba); documentación de Iceberg. Plazos (art. 12(3)).
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

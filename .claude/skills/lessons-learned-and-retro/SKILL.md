@@ -5,7 +5,7 @@ metadata:
   block: "30-engineering-process"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -66,4 +66,4 @@ Causa: Juan desplegó sin mirar. Acción: tener más cuidado.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `runbooks`, `production-readiness-review`, `risk-register`, `chaos-engineering`, `alert-routing-and-oncall`.
 - Fuentes: Google SRE Book, "Postmortem Culture: Learning from Failure".
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

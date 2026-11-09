@@ -5,7 +5,7 @@ metadata:
   block: "21-on-prem-hybrid"
   tier: T3
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "human"
 ---
 
@@ -59,4 +59,4 @@ volumeBindingMode: WaitForFirstConsumer
 - Relacionados: `kubernetes-on-prem`, `gateway-api`, `container-and-k8s-security`.
 - Fuentes: https://kubernetes.io/docs/concepts/storage/storage-classes/.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T3
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T3

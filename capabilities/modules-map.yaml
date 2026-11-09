@@ -1,76 +1,382 @@
-# módulo -> skills + policies + tests + dashboards que guían su implementación
-# Esta fábrica solo contiene guías; no hay plantillas (ADR-0038). Se rellena por oleada.
-version: 1
+# módulo -> bloques, skills, políticas, pruebas y tableros que guían su implementación.
+# Los módulos «siempre activos» (always_on en capabilities.yaml) llevan bloques enteros; los activables, skills concretas.
+# Esta fábrica solo contiene guías (ADR-0038). `make validate` comprueba que cada skill, bloque y política citados existan.
+# `tests` nombra skills que definen la prueba; `dashboards` describe los tableros que el proyecto debe tener.
+version: 2
 modules:
   backend-java-spring:
+    description: 'Siempre activo: servicio Java con Spring Boot.'
+    blocks:
+    - 01-java-language
+    - 02-concurrency
+    - 03-persistence-sql
+    - 04-spring-platform
+    - 05-architecture
+    - 06-api-and-integration
+    skills: []
+    policies:
+    - policies/semgrep/java-no-lombok.yaml
+    - policies/semgrep/java-language-pitfalls.yaml
+    - policies/semgrep/java-logging.yaml
+    - policies/semgrep/jpa-eager-toone.yaml
+    - policies/semgrep/sql-string-concat.yaml
+    - policies/archunit/HexagonalArchitectureRules.java
+    - policies/maven-enforcer/banned-dependencies.example.xml
+    tests:
+    - unit-testing-java
+    - integration-testing-testcontainers
+    - architecture-testing-archunit
+    - api-testing
+    dashboards:
+    - golden signals por servicio (tasa, errores, latencia)
+    - pool de conexiones y GC de la JVM
+  local-k8s:
+    description: 'Siempre activo: entorno local en Kubernetes (kind).'
+    blocks:
+    - 28-local-kubernetes
+    skills: []
+    policies: []
+    tests: []
+    dashboards:
+    - presupuesto de recursos del clúster local
+  observability:
+    description: Siempre activo.
+    blocks:
+    - 10-observability-app
+    - 18-observability-platform
+    skills: []
+    policies: []
+    tests: []
+    dashboards:
+    - SLO y presupuesto de error
+    - trazas y mapa de servicios
+  ci-cd:
+    description: Siempre activo.
+    blocks:
+    - 16-ci-cd
+    - 17-gitops-progressive-delivery
+    - 15-artifacts-and-registry
+    - 09-build-supply-chain
+    skills: []
+    policies:
+    - policies/opa-conftest/github-actions-pinning.rego
+    - policies/opa-conftest/argocd-gitops.rego
+    - policies/opa-conftest/dockerfile.rego
+    tests: []
+    dashboards:
+    - métricas DORA
+  security:
+    description: Siempre activo.
+    blocks:
+    - 07-appsec
+    - 14-secrets-and-config
+    skills: []
+    policies:
+    - policies/semgrep/java-weak-crypto.yaml
+    - policies/semgrep/spring-security-misconfig.yaml
+    - policies/semgrep/java-unsafe-deserialization.yaml
+    - policies/kyverno/workload-baseline.yaml
+    - policies/kyverno/verify-image-signatures.yaml
+    tests:
+    - security-testing-sast-dast
+    - api-testing
+    dashboards:
+    - vulnerabilidades abiertas por severidad y plazo
+  testing:
+    description: Siempre activo.
+    blocks:
+    - 08-testing-quality
+    skills: []
+    policies: []
+    tests:
+    - test-strategy
+    - mutation-testing
+    - contract-testing-pact
+    - performance-testing
+    - chaos-engineering
+    - e2e-testing
+    dashboards:
+    - cobertura y mutación
+    - tests inestables
+  claude-config:
+    description: 'Siempre activo: CLAUDE.md, hooks, agentes y MCP del proyecto.'
+    blocks:
+    - 31-agentic-engineering
+    skills:
+    - bootstrap-generated-project-claude-config
+    policies: []
+    tests: []
+    dashboards: []
+  devcontainer:
+    description: Siempre activo.
+    blocks: []
+    skills:
+    - devcontainer-integration
+    - local-profiles
+    policies: []
+    tests: []
+    dashboards: []
+  docs:
+    description: 'Siempre activo: ADR, C4, runbooks y README vivo.'
+    blocks:
+    - 30-engineering-process
     skills: []
     policies: []
     tests: []
     dashboards: []
-    wave: 1
   frontend-react:
+    blocks:
+    - 27-frontend-react
     skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 4
+    policies:
+    - policies/frontend-boundaries/eslint.boundaries.example.mjs
+    - policies/frontend-boundaries/eslint.typescript-strict.example.mjs
+    - policies/frontend-boundaries/dependency-cruiser.example.cjs
+    - policies/semgrep/frontend-token-in-web-storage.yaml
+    - policies/semgrep/frontend-dangerously-set-inner-html.yaml
+    tests:
+    - testing
+    - e2e-testing
+    - accessibility
+    dashboards:
+    - Web Vitals por ruta (LCP, INP, CLS)
+    - errores de frontend por versión
   event-sourcing:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 4
+    blocks: []
+    skills:
+    - event-sourcing
+    - when-to-use-and-when-not
+    - aggregates-and-event-design
+    - event-versioning-and-upcasting
+    - snapshots
+    - projections-and-read-models
+    - rebuilds-and-replays
+    - gdpr-and-immutable-events
+    - testing-event-sourced-systems
+    - dynamodb-event-store
+    - global-tables-and-write-region-rules
+    - cqrs
+    - cqrs-read-models-and-search
+    policies:
+    - policies/semgrep/dynamodb-put-without-condition.yaml
+    - policies/semgrep/dynamodb-scan-forbidden.yaml
+    tests:
+    - testing-event-sourced-systems
+    - rebuilds-and-replays
+    dashboards:
+    - retraso de proyecciones
+    - tamaño y edad de los flujos de eventos
   outbox:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 4
+    blocks: []
+    skills:
+    - outbox-and-cdc
+    - delivery-semantics
+    - idempotency-and-deduplication
+    - dlq-retries-poison-messages
+    - kafka-producers-consumers
+    - schema-registry-and-evolution
+    - cdc-and-streaming
+    - data-sync-pitfalls
+    - consistency-and-sagas
+    policies:
+    - policies/semgrep/kafka-auto-commit.yaml
+    tests:
+    - integration-testing-testcontainers
+    - contract-testing-pact
+    dashboards:
+    - mensajes pendientes en el outbox
+    - retraso de consumidores
+    - mensajes en DLQ
   multi-tenant:
-    skills: []
+    blocks: []
+    skills:
+    - multi-tenancy
+    - multi-tenant-architecture
+    - multi-tenancy-saas-features
+    - multi-tenant-observability
+    - namespaces-quotas-multitenancy
+    - authz-rbac-abac-rebac
+    - identity-and-customer-management
     policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    tests:
+    - api-testing
+    - db-testing
+    dashboards:
+    - uso y errores por tenant
   search:
-    skills: []
+    blocks: []
+    skills:
+    - search-and-discovery
+    - cqrs-read-models-and-search
+    - pagination-filter-sort
+    - caching
     policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    tests:
+    - integration-testing-testcontainers
+    - performance-testing
+    dashboards:
+    - latencia y errores de búsqueda
+    - retraso de indexación
   rag:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    blocks: []
+    skills:
+    - rag-architecture
+    - rag-over-enterprise-docs
+    - vector-store-selection
+    - llm-gateway
+    - guardrails-and-pii-redaction
+    - llm-evals
+    - llm-observability
+    - llm-security
+    - prompt-management
+    - token-and-cost-budgets
+    - structured-outputs-and-streaming
+    - model-risk-and-ai-act-mapping
+    - ai-safety-and-red-teaming
+    policies:
+    - policies/semgrep/llm-direct-provider-url.yaml
+    - policies/semgrep/llm-log-raw-prompt.yaml
+    - policies/semgrep/llm-prompt-concatenation.yaml
+    tests:
+    - llm-evals
+    - agent-evals
+    dashboards:
+    - coste y tokens por petición
+    - calidad de respuesta (evaluaciones)
+    - bloqueos de guardarraíles
   agents:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    blocks: []
+    skills:
+    - agents-and-tool-calling
+    - mcp-servers-in-java
+    - human-in-the-loop
+    - ai-safety-and-red-teaming
+    - spring-ai-and-langchain4j
+    - llm-gateway
+    - llm-evals
+    - chatbot-design
+    - token-and-cost-budgets
+    policies:
+    - policies/semgrep/llm-direct-provider-url.yaml
+    tests:
+    - llm-evals
+    - agent-evals
+    dashboards:
+    - llamadas a herramientas y errores
+    - intervenciones humanas
   idp-documents:
-    skills: []
+    blocks: []
+    skills:
+    - intelligent-document-processing
+    - ocr-options
+    - document-management
+    - document-and-report-generation
+    - file-upload-and-streaming
+    - file-upload-security
+    - data-privacy-in-db
     policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    tests:
+    - integration-testing-testcontainers
+    - test-data-management
+    dashboards:
+    - documentos procesados y errores
+    - confianza media de extracción
   workflow:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    blocks: []
+    skills:
+    - workflow-bpm
+    - rules-engines
+    - sagas-and-process-managers
+    - scheduling-and-batch-jobs
+    - notifications
+    policies:
+    - policies/semgrep/java-scheduled-without-lock.yaml
+    tests:
+    - integration-testing-testcontainers
+    dashboards:
+    - instancias de proceso por estado
+    - tareas vencidas
   notifications:
-    skills: []
-    policies: []
-    tests: []
-    dashboards: []
-    wave: 5
+    blocks: []
+    skills:
+    - notifications
+    - webhooks
+    - dlq-retries-poison-messages
+    - i18n-and-localization
+    - consent-and-dsar-management
+    policies:
+    - policies/semgrep/webhook-signature-equals.yaml
+    tests:
+    - wiremock-and-stubbing
+    dashboards:
+    - envíos, fallos y rebotes
   data-platform:
+    blocks:
+    - 23-data-platform
     skills: []
+    policies:
+    - policies/semgrep/airflow-catchup-true.yaml
+    - policies/semgrep/dbt-select-star-source.yaml
+    tests:
+    - data-quality
+    - data-contracts-and-lineage
+    dashboards:
+    - frescura y calidad de datos
+    - coste de la plataforma de datos
+  payments:
+    blocks: []
+    skills:
+    - payments-and-billing
+    - idempotency-keys
+    - audit-trail-and-activity-log
+    - pii-and-data-classification
+    - webhooks
+    - consistency-and-sagas
+    - time-and-money
+    policies:
+    - policies/semgrep/java-money-floating-point.yaml
+    tests:
+    - api-testing
+    - property-based-testing
+    dashboards:
+    - conciliación y pagos fallidos
+  realtime:
+    blocks: []
+    skills:
+    - realtime
+    - backpressure-and-bulkheads
+    - load-shedding-and-degradation
+    - frontend-performance
+    policies:
+    - policies/semgrep/frontend-realtime-token-in-url.yaml
+    tests:
+    - performance-testing
+    - resilience-testing
+    dashboards:
+    - conexiones activas y reconexiones
+  back-office:
+    blocks: []
+    skills:
+    - back-office-admin-console
+    - break-glass-and-jit-access
+    - audit-trail-and-activity-log
+    - authz-rbac-abac-rebac
+    - iam-governance-and-pam
+    policies: []
+    tests:
+    - api-testing
+    dashboards:
+    - acciones administrativas auditadas
+  compliance-review:
+    description: Se activa al tratar datos de categorías especiales; lo valida una persona de legal o cumplimiento en el Gate 0.
+    blocks: []
+    skills:
+    - consent-and-dsar-management
+    - data-privacy-in-db
+    - pii-and-data-classification
+    - gdpr-and-immutable-events
+    - audit-trail-and-activity-log
+    - model-risk-and-ai-act-mapping
     policies: []
     tests: []
     dashboards: []
-    wave: 5

@@ -5,7 +5,7 @@ metadata:
   block: "07-appsec"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -66,10 +66,10 @@ Usar `logger` con `addKeyValue` requiere SLF4J 2.x.
 | Mecanismo | Nivel | Dónde |
 |---|---|---|
 | Reglas Semgrep de logging (stack trace, concatenación) | 1 | `policies/semgrep/java-logging.yaml` |
-| Test que verifica evento de auditoría en acciones sensibles | 1 | tests del proyecto generado (pendiente de plantilla) |
+| Test que verifica evento de auditoría en acciones sensibles | 1 | tests del proyecto generado (se implementa en el proyecto generado) |
 | Revisión de cobertura de eventos | 3 | agente `code-reviewer` |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `structured-logging`, `pii-and-data-classification`, `org-cloudtrail-config-securityhub-guardduty`, `vulnerability-sla-and-incident-response`.
 - Fuentes: OWASP Logging Cheat Sheet y Logging Vocabulary.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

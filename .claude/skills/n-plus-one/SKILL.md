@@ -5,7 +5,7 @@ metadata:
   block: "03-persistence-sql"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-06"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -88,4 +88,4 @@ Requiere `hibernate.generate_statistics=true` en el perfil de test.
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `lazy-vs-eager`, `projections-and-dtos`, `joins-and-fetch-joins`, `testing-slices`.
 - Fuentes: documentación de Hibernate ORM (guía de usuario, fetching).
-- Dueño: factory-owner · Última revisión: 2026-11-06 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

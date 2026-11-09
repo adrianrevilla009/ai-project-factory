@@ -5,7 +5,7 @@ metadata:
   block: "11-aws-governance"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -80,4 +80,4 @@ resource "aws_s3_bucket_replication_configuration" "orders_docs" {
 - Relacionados: `scp-guardrails`, `kms-multi-region-keys`, `log-archive-and-audit-account`, `cross-region-connectivity-and-cost`.
 - Fuentes: ADR-0006 (`catalog/adr/0006-regiones-aws.md`); AWS Regional Services List (2026-11-07); RGPD: borrador por confirmar con fuente oficial.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1

@@ -5,7 +5,7 @@ metadata:
   block: "25-security-operations"
   tier: T2
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "reviewer"
 ---
 
@@ -72,4 +72,4 @@ Triage semanal: CISA KEV -> ¿usamos el producto? -> sí: ticket con SLA ; no: a
 - Relacionados: `threat-modeling-stride`, `vulnerability-sla-and-incident-response`, `cspm-and-posture`, `third-party-risk`, `compliance-as-code`.
 - Fuentes: catálogo CISA KEV (https://www.cisa.gov/known-exploited-vulnerabilities-catalog); NIST SP 800-30 y ISO/IEC 27005 para metodología de riesgo.
 - Nombres, flags, versiones y sintaxis de herramientas de terceros: se fijan en el BOM del proyecto y se contrastan con la documentación de la versión adoptada (`bom-management`).
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T2
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T2

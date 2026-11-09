@@ -2,7 +2,7 @@
 
 **Propósito:** Aprobar la versión candidata.
 
-**Aprobadores (propuesta, ver `docs/operating-model/RACI.md`):** Tech lead; SRE; responsable de seguridad
+**Aprobadores (ver `docs/operating-model/RACI.md`):** Tech lead; SRE; responsable de seguridad
 
 ## Condiciones de entrada
 - El gate anterior tiene un registro de aprobación válido (`approval-record.schema.json`).

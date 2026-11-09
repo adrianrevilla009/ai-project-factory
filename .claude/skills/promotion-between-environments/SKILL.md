@@ -5,7 +5,7 @@ metadata:
   block: "15-artifacts-and-registry"
   tier: T1
   owner: "factory-owner"
-  last_reviewed: "2026-11-07"
+  last_reviewed: "2026-11-09"
   enforcement: "policy"
 ---
 
@@ -63,4 +63,4 @@ crane copy registry.example.com/shop-staging/orders@$DIGEST \
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `artifact-repository-port`, `image-scanning`, `admission-verification`, `environment-promotion`.
 - Fuentes: ECR replication https://docs.aws.amazon.com/AmazonECR/latest/userguide/replication.html (2026-11-07): solo replica contenido subido tras configurarla; usar backfill para lo previo.
-- Dueño: factory-owner · Última revisión: 2026-11-07 · Nivel: T1
+- Dueño: factory-owner · Última revisión: 2026-11-09 · Nivel: T1
