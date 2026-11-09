@@ -17,6 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** copiar los hooks de `.claude/hooks/` de la fábrica al proyecto (`pre-tool-use`, `post-tool-use`, `stop`, `session-start`, `user-prompt-submit`, `subagent-stop`, `pre-compact`, `session-end`, `audit`, `_lib.py`) y registrar el mismo bloque `hooks` en `<target>/.claude/settings.json`, sin rebajar ninguna regla.
+- **MUST** copiar los agentes de `.claude/agents/` y los comandos de `.claude/commands/` al proyecto, para que la sesión abierta en `<target>` pueda continuar el flujo (`/project-discover` en adelante) con los mismos roles y con los hooks de gates activos.
 - **MUST** crear `<target>/.claude/hooks/hooks-config.json` con `test_command` real del proyecto, `test_trigger_globs`, y los formateadores/linters verificados (`format_and_lint`).
 - **MUST** crear `<target>/CLAUDE.md` corto (skill `claude-md-authoring`): rol del proyecto, comandos reales, reglas no negociables, enlace a perfil de dominio y a los skills activos.
 - **MUST** copiar solo los skills T1 y los T2 activados por la entrevista (`active_modules`) a `<target>/.claude/skills/`, y registrar en `<target>/docs/active-skills.md` su origen y la versión de la fábrica.

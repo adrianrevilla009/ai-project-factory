@@ -203,3 +203,19 @@ def test_cloud_credentials_cannot_be_default(tmp_path):
          "credentials": "cloud", "data_leaves_machine": False, "roles": [], "default": True}
     (tmp_path / "catalog" / "mcp-servers.yaml").write_text(__import__("yaml").safe_dump({"servers": [s]}))
     assert any("cloud credentials" in f.message for f in schemas_and_adrs.validate_mcp_catalog(tmp_path))
+
+
+# ------------------------------------------------------------- knowledge links
+def test_repo_knowledge_links_are_valid():
+    assert schemas_and_adrs.validate_knowledge_links(ROOT) == []
+
+
+def test_knowledge_link_to_missing_skill_or_adr_detected(tmp_path):
+    (tmp_path / ".claude" / "skills" / "real-skill").mkdir(parents=True)
+    (tmp_path / ".claude" / "skills" / "real-skill" / "SKILL.md").write_text("x")
+    (tmp_path / "catalog" / "adr").mkdir(parents=True)
+    (tmp_path / "catalog" / "adr" / "0001-a.md").write_text("x")
+    (tmp_path / "knowledge").mkdir()
+    (tmp_path / "knowledge" / "a.md").write_text("`real-skill` `ghost-skill` ADR-0001 ADR-0999")
+    msgs = [f.message for f in schemas_and_adrs.validate_knowledge_links(tmp_path)]
+    assert msgs == ["unknown skill 'ghost-skill'", "unknown ADR-0999"]
