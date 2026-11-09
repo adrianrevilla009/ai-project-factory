@@ -53,6 +53,20 @@ resource "aws_cloudfront_origin_access_control" "spa" {
 ```
 Local: no se reproduce CloudFront ni OAC; se usa `vite preview` o nginx para probar el build y el fallback SPA.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Construye una vez y promociona el mismo artefacto; la configuración de entorno se inyecta en ejecución.
+- Los ficheros con hash en el nombre se cachean para siempre; `index.html` se sirve sin caché fuerte.
+- Sube primero los ficheros con hash y por último `index.html` para no dejar enlaces rotos.
+### Trampas frecuentes
+- Una compilación por entorno con variables embebidas.
+- Caché larga en `index.html`: los usuarios no ven la versión nueva.
+- Borrar los ficheros antiguos de golpe: quienes tienen la página abierta fallan al cargar un fragmento.
+- Despliegues sin forma de volver atrás.
+- Fuentes de mapas públicas con código interno.
+### Evidencia
+- Un rollback probado que reapunta `index.html` a la versión anterior.
+
 ## Checklist de revisión
 - [ ] Node/pnpm fijados; instalación con lockfile congelado.
 - [ ] Un solo build promocionado; config de entorno en runtime.

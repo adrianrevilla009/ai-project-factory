@@ -52,6 +52,20 @@ export const api = createClient<paths>({ baseUrl: import.meta.env.VITE_API_BASE_
 ```
 Comandos y API de las librerías: comprobar contra su documentación.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El contrato manda: se cambia y se regenera; nunca se edita a mano lo generado.
+- Genera tipos y un cliente delgado; la lógica de caché y reintento vive en la capa de datos, no en el código generado.
+- Si el backend aún no tiene contrato, primero el contrato.
+### Trampas frecuentes
+- Tipos escritos a mano que divergen del servidor sin que nadie se entere.
+- Código generado mezclado con el manual.
+- No regenerar en CI y detectar la desviación tarde.
+- Un cliente que oculta los errores del servidor.
+- Importar el cliente completo en cada pantalla y engordar el paquete.
+### Evidencia
+- El CI regenera el cliente y falla si hay diferencias sin confirmar.
+
 ## Checklist de revisión
 - [ ] Tipos y cliente generados del OpenAPI vigente.
 - [ ] `api:check` en CI sin drift.

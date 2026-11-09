@@ -52,6 +52,20 @@ pnpm install --frozen-lockfile && pnpm audit --prod
 ```
 (`x.y.z` y versiones: placeholders; fijar las reales del proyecto.)
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Instalación reproducible a partir del fichero de bloqueo y scripts de instalación desactivados por defecto.
+- Para cada dependencia nueva: mantenimiento, licencia, tamaño y dependencias transitivas.
+- Espera unos días antes de adoptar versiones recién publicadas.
+### Trampas frecuentes
+- Rangos abiertos sin fichero de bloqueo.
+- Instalar un paquete con un nombre parecido al que querías (typosquatting).
+- Ejecutar scripts de dependencias con acceso a secretos del CI.
+- Dependencias abandonadas sin plan.
+- Mezclar registros públicos y privados sin reservar el ámbito propio (confusión de dependencias).
+### Evidencia
+- Auditoría y SBOM del frontend en CI y una política escrita sobre qué se adopta.
+
 ## Checklist de revisión
 - [ ] Lockfile versionado e instalación congelada en CI.
 - [ ] Scripts de instalación bloqueados salvo lista explícita.

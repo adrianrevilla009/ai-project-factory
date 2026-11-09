@@ -53,6 +53,19 @@ const router = createBrowserRouter([
 ```
 Nota: el `import()` dinámico apunta a un fichero por defecto de la página; ese módulo es el único acceso permitido fuera del `index.ts` y debe documentarse como excepción en la config de límites.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Divide por ruta primero: es donde el usuario espera una pausa; divide por componente solo para piezas pesadas y poco usadas (editores, gráficos).
+- Precarga la ruta probable al pasar el ratón o al ser visible para ocultar la latencia.
+### Trampas frecuentes
+- Hacer perezoso cada componente pequeño: el coste de la petición supera el ahorro.
+- Una cascada de cargas (ruta, luego datos, luego componentes) que alarga la espera.
+- Rutas sin página 404 ni límite de error.
+- Barriles que arrastran todo el código a un único paquete.
+- Perder el foco y el título de la página al cambiar de ruta (accesibilidad).
+### Evidencia
+- El informe del analizador de paquetes con tamaño por ruta y un presupuesto que falla el CI.
+
 ## Checklist de revisión
 - [ ] Cada ruta de página es lazy; el bundle inicial solo trae el shell.
 - [ ] Hay 404 y `errorElement`.

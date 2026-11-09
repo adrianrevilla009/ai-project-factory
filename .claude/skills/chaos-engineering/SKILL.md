@@ -60,6 +60,19 @@ spec:
   selector: { labelSelectors: { app: orders } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Chaos Monkey para fallos a nivel de aplicación (latencia, excepciones); Chaos Mesh para infraestructura Kubernetes; Toxiproxy para red en tests; game day para procesos y personas.
+- Empieza en local y en pruebas, con un fallo a la vez.
+### Trampas frecuentes
+- Experimentos sin hipótesis medible.
+- Sin observabilidad activa durante la prueba.
+- Radio de explosión ilimitado y sin condición de aborto.
+- Ir a producción antes de dominarlo en pruebas.
+- Descubrir una debilidad y no arreglarla.
+### Evidencia
+- Un informe hipótesis → resultado → acción, con responsable y fecha.
+
 ## Checklist de revisión
 - [ ] Hipótesis medible y condición de aborto escritas.
 - [ ] Radio de explosión acotado; entorno no productivo.

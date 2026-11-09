@@ -58,6 +58,20 @@ class OrderRepositoryIT {
 ```
 El tag `postgres:16-alpine` es ilustrativo: alinear con la versión del entorno (comprobar al fijar la versión).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reutiliza el contenedor entre clases (singleton) por velocidad y aísla con esquema o limpieza por test.
+- Mismo motor y misma versión mayor que producción; H2 nunca sustituye a PostgreSQL.
+- Aplica las migraciones reales; el esquema generado por el ORM no prueba lo que se despliega.
+### Trampas frecuentes
+- Un contenedor nuevo por test: la suite tarda horas.
+- Estado residual entre tests y dependencia del orden.
+- Puertos fijos que chocan en paralelo.
+- `@Disabled` cuando no hay Docker: el CI queda en verde sin probar nada.
+- Imágenes `latest` o datos de producción.
+### Evidencia
+- Las migraciones se ejecutan en el IT y el tiempo de arranque del contenedor está medido.
+
 ## Checklist de revisión
 - [ ] Imagen con tag fijo y misma tecnología que producción.
 - [ ] Migraciones reales aplicadas en el test.

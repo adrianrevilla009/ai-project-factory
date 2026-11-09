@@ -17,7 +17,7 @@ metadata:
 
 ## Reglas
 - **MUST** limitar la suite e2e a flujos críticos (orientativo: decenas, no cientos) y mantener cada test independiente.
-- **MUST** ejecutar contra un entorno efímero y reproducible (Docker Compose o Kubernetes local con Testcontainers/kind), con datos creados por el propio test.
+- **MUST** ejecutar contra un entorno efímero y reproducible (Kubernetes local con kind, ADR-0005), con datos creados por el propio test.
 - **MUST** usar selectores estables (`data-testid` o roles accesibles), no XPath frágil ni textos que cambian.
 - **MUST** esperar condiciones (auto-wait del framework o Awaitility), nunca sleeps fijos.
 - **MUST NOT** depender de servicios de terceros reales; sustituirlos por dobles (WireMock).
@@ -48,6 +48,20 @@ test('customer places an order', async ({ page, request }) => {
 });
 ```
 El endpoint `test-support` solo existe en el perfil de test, nunca en producción.
+
+## Criterios de decisión y trampas
+### Cómo decidir
+- ¿E2E de UI o de API? De API para flujos de negocio encadenados; de UI solo para los recorridos críticos del usuario.
+- Entorno efímero en Kubernetes local (kind, ADR-0005) con datos propios; selectores por rol o `data-testid`.
+### Trampas frecuentes
+- Suites con cientos de tests que repiten lo que cubren las capas bajas.
+- Depender de servicios de terceros reales.
+- Datos compartidos entre tests.
+- `sleep` fijos en lugar de esperas por condición.
+- No guardar traza ni vídeo cuando falla.
+- Tolerar fallos intermitentes.
+### Evidencia
+- Una lista de los flujos críticos con el test E2E que cubre cada uno.
 
 ## Checklist de revisión
 - [ ] El flujo es crítico y no es cubrible a nivel inferior.

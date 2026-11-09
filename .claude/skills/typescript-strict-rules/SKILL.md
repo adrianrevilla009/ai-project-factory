@@ -57,6 +57,20 @@ if (first === undefined) return null;
 { "compilerOptions": { "strict": true, "noUncheckedIndexedAccess": true, "noEmit": true } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- `strict` desde el primer commit; migrar después sale siempre más caro.
+- Cuando el dato viene de fuera (red, almacenamiento), valídalo en el borde con un esquema y confía en el tipo solo dentro.
+- Prefiere uniones discriminadas a banderas booleanas combinadas.
+### Trampas frecuentes
+- `as` y `!` para silenciar un error: mueven el fallo a tiempo de ejecución.
+- Tipos de la API escritos a mano que divergen del contrato.
+- `enum` numéricos con valores implícitos que cambian al reordenar.
+- Desactivar una regla del linter en un fichero entero.
+- Confundir que compile con que los datos sean correctos.
+### Evidencia
+- `tsc --noEmit` y el linter sin errores en CI, y cero `any` explícitos fuera de código generado.
+
 ## Checklist de revisión
 - [ ] `strict: true` y `tsc --noEmit` en CI.
 - [ ] Sin `any`, `!`, `as` injustificados ni `@ts-ignore`.

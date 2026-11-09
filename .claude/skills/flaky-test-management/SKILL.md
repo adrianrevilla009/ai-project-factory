@@ -53,6 +53,19 @@ void legacyScenario() { /* ... */ }
 ```
 Reloj controlado: `Clock.fixed(Instant.parse("2026-01-01T00:00:00Z"), ZoneOffset.UTC)` inyectado en el servicio.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Si un test inestable bloquea al equipo, ponlo en cuarentena con dueño y fecha y arregla la causa; no lo borres ni lo ignores.
+- Las causas se repiten: tiempo, orden, estado compartido, concurrencia y red. Empieza por ahí.
+### Trampas frecuentes
+- Reintentos globales que esconden defectos reales.
+- `sleep` para «esperar a que esté listo».
+- Tests flaky sin dueño ni plazo.
+- Medir solo la tasa global y no por test.
+- Atribuirlo al «CI inestable» sin investigar.
+### Evidencia
+- Un panel con la tasa de fallos intermitentes por test y el tiempo que lleva en cuarentena.
+
 ## Checklist de revisión
 - [ ] Sin `Thread.sleep` en tests.
 - [ ] Reloj y aleatoriedad inyectados.

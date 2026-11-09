@@ -52,6 +52,19 @@ public record OrderView(List<Line> lines) { }
 ```
 Error Prone se integra vía `maven-compiler-plugin` con `-XDcompilePolicy=simple` y `-Xplugin:ErrorProne`; los flags exactos y la compatibilidad con la versión de JDK se confirman en la documentación oficial (comprobar al fijar la versión).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada herramienta con su función: Checkstyle estilo, PMD malas prácticas, SpotBugs defectos, Error Prone en compilación.
+- Empieza por reglas de alto valor y sube el nivel: activarlas todas a la vez genera ruido que se aprende a ignorar.
+- Código nuevo estricto y la deuda anterior en un baseline con plan.
+### Trampas frecuentes
+- Supresiones sin justificación.
+- Bajar un umbral para que pase un PR.
+- Reglas duplicadas entre herramientas.
+- Configuración que no está versionada o no es la misma en el IDE y en CI.
+### Evidencia
+- El baseline tiene fecha de revisión y las supresiones están listadas con motivo.
+
 ## Checklist de revisión
 - [ ] Las cuatro herramientas están en el parent POM y fallan el build.
 - [ ] Reglas y baseline versionados en el repo.

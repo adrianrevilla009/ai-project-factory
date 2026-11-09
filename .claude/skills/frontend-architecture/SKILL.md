@@ -53,6 +53,20 @@ import { OrderList } from '@/features/orders';
 import { InvoiceList } from '@/features/invoices';
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Organiza por funcionalidad (feature), no por tipo de fichero: añadir una funcionalidad toca una carpeta, no ocho.
+- Si dos features comparten algo, súbelo a `shared` solo cuando haya un segundo uso real; duplicar dos veces es más barato que una abstracción prematura.
+- Cuando la aplicación crece, el límite entre features se hace cumplir con reglas de dependencias, no con convenciones.
+### Trampas frecuentes
+- Una carpeta `utils` o `common` que acaba conteniendo todo.
+- Importaciones entre features por rutas internas.
+- Un `shared` que depende de una feature (inversión de la dirección).
+- Carpetas por tipo (`components`, `hooks`, `services`) que dispersan una misma funcionalidad.
+- Barriles de reexportación que rompen la carga diferida y crean ciclos.
+### Evidencia
+- Reglas de límites ejecutadas en CI (dependency-cruiser o ESLint) y cero ciclos.
+
 ## Checklist de revisión
 - [ ] Ninguna feature importa de otra ni de `app`.
 - [ ] `shared` no importa de `features` ni `app`.

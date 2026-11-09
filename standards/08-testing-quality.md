@@ -98,7 +98,7 @@
 ## e2e-testing
 
 - **MUST** limitar la suite e2e a flujos críticos (orientativo: decenas, no cientos) y mantener cada test independiente.
-- **MUST** ejecutar contra un entorno efímero y reproducible (Docker Compose o Kubernetes local con Testcontainers/kind), con datos creados por el propio test.
+- **MUST** ejecutar contra un entorno efímero y reproducible (Kubernetes local con kind, ADR-0005), con datos creados por el propio test.
 - **MUST** usar selectores estables (`data-testid` o roles accesibles), no XPath frágil ni textos que cambian.
 - **MUST** esperar condiciones (auto-wait del framework o Awaitility), nunca sleeps fijos.
 - **MUST NOT** depender de servicios de terceros reales; sustituirlos por dobles (WireMock).

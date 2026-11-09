@@ -56,6 +56,20 @@ const create = useMutation({
 });
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clasifica cada dato: servidor (caché y revalidación), URL (lo enlazable), formulario, estado local de UI y estado global de cliente. Cada clase tiene su herramienta.
+- Lo que se puede derivar no se guarda: se calcula.
+- Un almacén global solo para lo que de verdad comparte la aplicación entera (sesión, preferencias).
+### Trampas frecuentes
+- Copiar datos del servidor a un almacén global y sincronizarlos a mano.
+- Estado duplicado que se desincroniza.
+- `useEffect` para derivar estado de otro estado.
+- Poner en el estado lo que debería estar en la URL, y que recargar pierda la vista.
+- Contextos con valores que cambian a menudo y re-renderizan todo el árbol.
+### Evidencia
+- Cada dato tiene una clase asignada y un dueño; las recargas conservan filtros y página.
+
 ## Checklist de revisión
 - [ ] Cada dato clasificado; server-state en TanStack Query.
 - [ ] Filtros/paginación en la URL.

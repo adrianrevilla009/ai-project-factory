@@ -63,6 +63,19 @@ class OrderControllerTest {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Slice web (`@WebMvcTest`) para validación, serialización y seguridad; `@SpringBootTest` con puerto aleatorio cuando intervienen filtros o transporte.
+- Valida el contrato OpenAPI en CI además de las aserciones por endpoint.
+### Trampas frecuentes
+- Solo el camino feliz.
+- Comparar cuerpos como texto en vez de rutas JSON.
+- No probar la autorización cruzada (acceso al recurso de otro usuario o tenant).
+- Respuestas de error con trazas o detalles internos.
+- Depender de datos del entorno.
+### Evidencia
+- Una matriz endpoint × caso (200, 400, 401, 403, 404, 409) con cada celda cubierta o justificada.
+
 ## Checklist de revisión
 - [ ] Cada endpoint cubre feliz, validación, 404/409 y 401/403.
 - [ ] Errores en `problem+json` sin datos internos.

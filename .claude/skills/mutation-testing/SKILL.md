@@ -61,6 +61,19 @@ void vipCustomerGetsTenPercentAtExactlyThreshold() {
 </plugin>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sobre dominio y reglas, no sobre DTOs, configuración ni código generado.
+- Incremental en el PR sobre las clases modificadas y completo de forma programada.
+- Umbral progresivo por módulo.
+### Trampas frecuentes
+- Perseguir el 100 %: los mutantes equivalentes existen.
+- Ejecutarlo sobre todo el repositorio en cada commit.
+- Ignorar los supervivientes en código crítico.
+- Confundirlo con la cobertura: mide si los tests detectan cambios, no si ejecutan líneas.
+### Evidencia
+- Un informe con los mutantes supervivientes revisados: test que falta o código muerto.
+
 ## Checklist de revisión
 - [ ] PIT limitado a paquetes de dominio.
 - [ ] `mutationThreshold` definido y no reducido sin ADR.

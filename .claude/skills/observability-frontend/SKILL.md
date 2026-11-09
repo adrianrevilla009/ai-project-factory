@@ -48,6 +48,20 @@ onLCP(send); onINP(send); onCLS(send);
 new FetchInstrumentation({ propagateTraceHeaderCorsUrls: [/^https:\/\/api\.example\.com\//] });
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide experiencia real (Web Vitals, errores, trazas de las llamadas) y envíala a un colector propio.
+- Muestrea: la telemetría del navegador es voluminosa; define tasas por tipo.
+- La traza se propaga solo a orígenes propios.
+### Trampas frecuentes
+- Enviar datos personales o contenido de formularios en la telemetría.
+- Propagar cabeceras de traza a terceros.
+- Capturar todo sin muestreo y pagar el coste.
+- Errores sin versión del código ni mapa de fuentes.
+- Ignorar el consentimiento cuando la normativa lo exige.
+### Evidencia
+- Cada error en producción se vincula a una versión y, si procede, a una traza del servidor.
+
 ## Checklist de revisión
 - [ ] Web Vitals en campo con release y ruta plantilla.
 - [ ] `traceparent` solo hacia orígenes propios.

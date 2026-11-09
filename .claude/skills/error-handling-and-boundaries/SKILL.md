@@ -57,6 +57,20 @@ if (isError) return <ErrorState problem={toProblem(error)} onRetry={refetch} />;
 if (data.length === 0) return <EmptyState />;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un límite global para no dejar la pantalla en blanco y límites locales alrededor de piezas independientes.
+- Distingue errores esperados (validación, 404, sin permisos) de inesperados (bugs): los primeros son parte de la interfaz.
+- Todo error recuperable ofrece una acción: reintentar o volver.
+### Trampas frecuentes
+- Mostrar mensajes técnicos o trazas al usuario.
+- Tragar el error en un `catch` vacío.
+- Un solo límite en la raíz que tumba toda la página por un widget.
+- Reintentos automáticos de operaciones no idempotentes.
+- No registrar el error con contexto suficiente para reproducirlo.
+### Evidencia
+- Cada consulta y mutación tiene visibles sus estados de carga, vacío y error.
+
 ## Checklist de revisión
 - [ ] Boundary global y por zona con recuperación.
 - [ ] Carga/vacío/error contemplados en cada consulta.

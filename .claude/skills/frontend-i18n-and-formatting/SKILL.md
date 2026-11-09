@@ -48,6 +48,20 @@ export async function loadMessages(locale: string) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Claves estables y mensajes completos con marcadores; nunca concatenes frases.
+- Fechas y números con `Intl` según la configuración regional; el servidor y el almacenamiento en ISO 8601 UTC.
+- Pensar en i18n desde el primer componente es barato; añadirlo después, caro.
+### Trampas frecuentes
+- Plurales con `if (n === 1)`: otros idiomas tienen más formas.
+- Traducir cadenas partidas que pierden el contexto.
+- Suponer que el texto traducido mide lo mismo (alemán, finés) y romper el diseño.
+- Hardcodear el formato de moneda.
+- Olvidar los idiomas de derecha a izquierda.
+### Evidencia
+- Una pseudo-localización en CI detecta textos sin externalizar y desbordamientos.
+
 ## Checklist de revisión
 - [ ] Ningún literal visible fuera de los catálogos.
 - [ ] Plurales y fechas pasan por ICU/`Intl`.

@@ -57,6 +57,20 @@ function Page({ items }: { items: Order[] }) {
 function useDebouncedValue<T>(value: T, ms: number): T { /* hook reutilizable */ }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Composición antes que herencia o cascadas de props booleanas; subcomponentes (`Tabs.Panel`) cuando las partes están coordinadas.
+- Extrae un hook cuando la misma lógica con estado se repite, no antes.
+- Componente controlado cuando el padre debe saber el valor; no controlado cuando basta leerlo al enviar.
+### Trampas frecuentes
+- Props en cascada (prop drilling) de varios niveles en vez de composición o contexto acotado.
+- Componentes de cientos de líneas con lógica, datos y presentación mezclados.
+- `key` por índice en listas que cambian.
+- `useEffect` para lo que se resuelve durante el render.
+- Memoizar todo por si acaso, sin medir.
+### Evidencia
+- Los componentes son testeables por comportamiento sin conocer su implementación interna.
+
 ## Checklist de revisión
 - [ ] Sin componentes definidos dentro de componentes.
 - [ ] Sin `useEffect` para estado derivable; `key` estable.

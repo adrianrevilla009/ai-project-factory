@@ -56,6 +56,20 @@ synthetic:
     credentialsFrom: secret/synthetic-probe   # nunca en el repositorio
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Canary con análisis automático cuando hay tráfico suficiente; sondas sintéticas cuando no.
+- Compara siempre contra la línea base estable con la misma ventana, no contra valores absolutos.
+- Porcentaje y duración según el riesgo del cambio.
+### Trampas frecuentes
+- Decidir con poco tráfico: es ruido.
+- Métricas que tardan en reflejar el problema.
+- Un rollback que nunca se ha ejercitado.
+- Sondas sintéticas con cuentas reales y permisos amplios.
+- Olvidar una métrica de negocio, no solo técnica.
+### Evidencia
+- El rollback automático se ha ejercitado en preproducción.
+
 ## Checklist de revisión
 - [ ] Métricas y umbrales definidos antes del release, relativos a la línea base.
 - [ ] Tráfico y duración mínimos por paso.

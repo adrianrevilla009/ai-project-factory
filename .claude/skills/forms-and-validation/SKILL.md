@@ -60,6 +60,20 @@ const onSubmit = handleSubmit(async (values) => {
 </form>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un esquema como fuente de verdad del formulario y del tipo; el servidor valida siempre y el cliente solo mejora la experiencia.
+- Validación al enviar y al salir del campo; evita validar en cada pulsación salvo ayuda explícita (fortaleza de contraseña).
+- Formularios largos: guarda el progreso o divídelos en pasos con su propia validación.
+### Trampas frecuentes
+- Duplicar reglas a mano entre cliente y servidor hasta que divergen.
+- Errores solo en rojo, sin texto ni asociación con el campo.
+- Deshabilitar el botón sin explicar por qué.
+- Permitir doble envío.
+- Perder lo escrito al fallar el envío.
+### Evidencia
+- El formulario se puede completar solo con teclado y los errores los anuncia un lector de pantalla.
+
 ## Checklist de revisión
 - [ ] Esquema Zod + `zodResolver`; tipos inferidos.
 - [ ] Errores accesibles y foco al primer error.

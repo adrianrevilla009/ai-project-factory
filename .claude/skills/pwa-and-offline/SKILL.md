@@ -51,6 +51,20 @@ self.addEventListener("activate", async () => {
 });
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define qué debe funcionar sin red antes de empezar; «offline» sin requisito es coste sin beneficio.
+- Precachea solo la carcasa con hash; datos con estrategias explícitas y caducidad.
+- Planifica la sincronización y los conflictos si hay escritura sin conexión.
+### Trampas frecuentes
+- Cachear respuestas autenticadas o con datos personales.
+- Un service worker sin forma de actualizarse (usuarios atrapados en una versión vieja).
+- Servir datos obsoletos sin avisar.
+- Cola de escrituras sin resolución de conflictos.
+- No probar la instalación en los navegadores y plataformas objetivo.
+### Evidencia
+- Un flujo de actualización probado y una lista de lo que se guarda en el dispositivo y cuánto tiempo.
+
 ## Checklist de revisión
 - [ ] Requisito offline documentado.
 - [ ] Sin cachear datos autenticados/personales; limpieza al cerrar sesión.

@@ -56,6 +56,19 @@ void blockedCustomerCannotOrder() {
 ```
 Dominios `example.test` / `example.com` para correos falsos.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Builders u object mothers para unitarios; el mínimo de datos por test en integración; datos sintéticos generados antes que copiados.
+- Si hay que usar datos reales, anonimización irreversible, revisión de cuasi-identificadores y aprobación del responsable de datos.
+### Trampas frecuentes
+- Un dataset global mutable.
+- Datos personales reales fuera de producción.
+- Identificadores fijos que impiden ejecutar en paralelo.
+- Fixtures enormes que nadie entiende.
+- Anonimizar quitando solo el nombre: la reidentificación sigue siendo posible.
+### Evidencia
+- Ningún dato personal real fuera de producción y los tests se ejecutan en paralelo sin colisiones.
+
 ## Checklist de revisión
 - [ ] Ningún dato personal real en el repositorio ni en fixtures.
 - [ ] Builders con defaults válidos; el test solo fija lo relevante.

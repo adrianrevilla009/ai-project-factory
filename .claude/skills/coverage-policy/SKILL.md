@@ -60,6 +60,18 @@ void coverageBooster() {
 </plugin>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Umbral por capa: alto en dominio, bajo en configuración; añade cobertura de ramas y cobertura del diff para código nuevo.
+- Excluye código generado con justificación explícita.
+### Trampas frecuentes
+- Convertir el número en el objetivo: acaba produciendo tests sin aserciones.
+- Excluir lo difícil de probar.
+- Mismo umbral para todo el repositorio.
+- Creer que un 100 % de líneas prueba el comportamiento: combínalo con mutación en el dominio.
+### Evidencia
+- El informe de cobertura publicado en el PR y, para el dominio, el de mutación.
+
 ## Checklist de revisión
 - [ ] `jacoco:check` activo con umbrales definidos.
 - [ ] Exclusiones justificadas y centralizadas.

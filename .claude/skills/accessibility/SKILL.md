@@ -52,6 +52,20 @@ it("form has no a11y violations", async () => {
 });
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elemento nativo primero: `button`, `a`, `label`, `table`; ARIA solo para lo que el HTML no cubre.
+- El foco se gestiona en cada cambio de vista, diálogo o error; no se deja a la suerte.
+- Prueba con teclado y con un lector de pantalla además de las herramientas automáticas.
+### Trampas frecuentes
+- `div` con `onClick` en vez de un botón.
+- Quitar el contorno del foco sin sustituirlo.
+- Información solo por color.
+- `aria-label` que contradice el texto visible.
+- Creer que pasar una herramienta automática equivale a ser accesible (solo detectan una parte de los problemas).
+### Evidencia
+- Una pasada con teclado y lector de pantalla por cada flujo crítico, y pruebas automáticas en CI.
+
 ## Checklist de revisión
 - [ ] Todo se puede usar solo con teclado y el foco es visible.
 - [ ] Controles nativos o primitivas accesibles; sin `div` clicable.

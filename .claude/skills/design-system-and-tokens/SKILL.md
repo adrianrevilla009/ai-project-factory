@@ -51,6 +51,20 @@ export default { title: 'shared/Button', component: Button };
 export const Disabled = { args: { children: 'Guardar', disabled: true } };
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Tokens primitivos (paleta) separados de semánticos (uso): los temas redefinen los semánticos y nada más.
+- Construye un componente base cuando haya tres usos; antes, copia.
+- Versiona el sistema de diseño y documenta cada cambio incompatible.
+### Trampas frecuentes
+- Valores literales (colores, píxeles) en componentes de feature.
+- Componentes base con lógica de negocio.
+- Variantes por props booleanas que se multiplican.
+- Un tema oscuro que solo invierte colores y rompe el contraste.
+- Documentación en un sitio que nadie actualiza.
+### Evidencia
+- Un linter que prohíbe valores literales y una revisión de contraste de los pares de tokens.
+
 ## Checklist de revisión
 - [ ] Sin colores ni medidas literales en features.
 - [ ] Tokens primitivos y semánticos separados; tema oscuro cubierto.

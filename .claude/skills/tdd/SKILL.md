@@ -53,6 +53,20 @@ void ordersAtOrBelow100Eur_getNoDiscount() {
 // 2) VERDE: implementación mínima  3) REFACTOR con tests en verde
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- TDD estricto en lógica de dominio y reglas con casos límite, donde el diseño se beneficia del ciclo.
+- En exploración o spikes, escribe primero el código y tíralo; luego rehazlo con tests.
+- En código muy dependiente del framework (controladores, configuración), prueba el comportamiento en la capa de aplicación en vez de forzar TDD sobre el pegamento.
+### Trampas frecuentes
+- Tests acoplados a la implementación (mocks de colaboradores internos) que impiden refactorizar.
+- Pasos demasiado grandes: un test que exige media funcionalidad.
+- No ver fallar el test, o verlo fallar por una razón equivocada.
+- Refactorizar con tests en rojo.
+- Confundir TDD con alta cobertura.
+### Evidencia
+- Todo bug corregido trae un test que falla en el commit anterior y pasa en el del arreglo.
+
 ## Checklist de revisión
 - [ ] Los tests nuevos fallaron antes de la implementación (evidencia en la sesión o el historial).
 - [ ] Cada bug corregido trae su test de regresión.

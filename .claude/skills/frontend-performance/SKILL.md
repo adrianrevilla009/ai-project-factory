@@ -50,6 +50,20 @@ const Chart = lazy(() => import("./Chart")); // solo en la ruta que lo usa
 pnpm build && pnpm exec size-limit   # size-limit: comprobar herramienta elegida
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mide con datos de campo (usuarios reales) y de laboratorio; el laboratorio guía, el campo decide.
+- Lo más barato primero: menos JavaScript, imágenes bien dimensionadas, caché correcta; después, optimizaciones de render.
+- Presupuesto de rendimiento por ruta, con CI que falla al superarlo.
+### Trampas frecuentes
+- Optimizar sin medir.
+- Memoizar por defecto.
+- Cargar bibliotecas enteras por una función.
+- Imágenes sin dimensiones (saltos de diseño).
+- Medir solo en una máquina potente y una red rápida.
+### Evidencia
+- Un tablero de métricas de campo con el percentil 75 de LCP, INP y CLS por ruta.
+
 ## Checklist de revisión
 - [ ] El bundle inicial por ruta está dentro del presupuesto.
 - [ ] Imágenes con dimensiones; la imagen LCP no es lazy.

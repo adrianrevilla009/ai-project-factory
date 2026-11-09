@@ -49,6 +49,20 @@ Content-Security-Policy: script-src 'nonce-{RANDOM}' 'strict-dynamic'; object-sr
 ```
 Un hosting 100 % estático (S3 + CloudFront) no genera nonce por petición: usar hashes en build o una función de borde. Comprobar enfoque. No reproducible en local: cabeceras de CloudFront.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Trata todo lo que viene de fuera como no confiable, incluida la URL, el almacenamiento y los mensajes entre ventanas.
+- CSP en modo informe primero, luego en bloqueo; los nonces evitan el `unsafe-inline`.
+- Para HTML de usuario, saneador mantenido y revisión explícita.
+### Trampas frecuentes
+- `dangerouslySetInnerHTML` o `innerHTML` con datos externos.
+- URLs construidas con entrada de usuario sin validar el esquema.
+- Secretos o claves de API en el código del cliente.
+- Dependencias con scripts de instalación sin revisar.
+- Ocultar en la UI lo que el servidor no protege.
+### Evidencia
+- Una CSP desplegada y monitorizada, y análisis estático de las construcciones peligrosas en CI.
+
 ## Checklist de revisión
 - [ ] Sin `dangerouslySetInnerHTML`/`innerHTML` sin sanear.
 - [ ] CSP sin `unsafe-inline`/`unsafe-eval`, con informes.

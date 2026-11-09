@@ -49,6 +49,20 @@ export function Checkout() {
 checkout.new-flow | owner: team-checkout | expira: 2027-01-31 | retirar: TICKET-123 (example)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El flag controla la visibilidad; la autorización real la decide el servidor.
+- Valor por defecto seguro (apagado) si el proveedor falla o tarda.
+- Retira los flags de vida corta cuando se despliega la funcionalidad.
+### Trampas frecuentes
+- Flags que viven años y acumulan combinaciones sin probar.
+- Parpadeo de interfaz al resolver el flag tarde.
+- Usar un flag como control de seguridad.
+- Lógica de flags repartida por todos los componentes.
+- No registrar qué usuarios vieron qué variante, lo que impide analizar errores.
+### Evidencia
+- Cada flag tiene dueño y fecha de retirada.
+
 ## Checklist de revisión
 - [ ] Acceso por abstracción y valor por defecto seguro.
 - [ ] Sin flicker en la carga inicial.

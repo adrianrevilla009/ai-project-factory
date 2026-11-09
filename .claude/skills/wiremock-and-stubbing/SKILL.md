@@ -62,6 +62,18 @@ void retriesOnce_whenGatewayReturns503() {
 ```
 Coordenadas y versión de WireMock: comprobar al fijar la versión.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- WireMock para clientes HTTP de terceros; para servicios internos con contrato, genera los stubs desde el contrato en vez de escribirlos a mano.
+- El modo de grabación sirve para arrancar; revisa y limpia lo grabado.
+### Trampas frecuentes
+- Stubs permisivos (`anyUrl`) que aceptan peticiones incorrectas.
+- Probar solo el camino feliz.
+- Puertos fijos y estado compartido entre tests.
+- Stubs que divergen del proveedor real porque nadie los contrasta con un contrato.
+### Evidencia
+- Hay tests de timeout, 5xx y cuerpo malformado, y `verify` sobre la petición enviada.
+
 ## Checklist de revisión
 - [ ] Stubs específicos, sin catch-all.
 - [ ] Cubiertos error, timeout y respuesta lenta.

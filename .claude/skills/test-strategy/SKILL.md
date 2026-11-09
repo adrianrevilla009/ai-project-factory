@@ -48,6 +48,19 @@ E2E          -> 5-10 recorridos críticos, solo en release
 <plugin><artifactId>maven-failsafe-plugin</artifactId></plugin>
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pirámide o trofeo: con lógica de negocio densa, más unitarios; con un servicio que sobre todo orquesta base de datos y colas, más integración con dependencias reales y menos mocks. Decide por dónde se rompe de verdad, no por el dibujo.
+- Un E2E solo para un riesgo que ninguna capa inferior puede detectar.
+- Separa por velocidad: rápidos en cada push, de integración en el PR, pesados (carga, mutación, caos) de forma programada.
+### Trampas frecuentes
+- Cono de helado: mucho E2E manual o de UI y poco unitario; lento, frágil y caro de mantener.
+- Repetir la misma aserción en tres capas.
+- Medir la estrategia por número de tests en vez de por riesgos cubiertos.
+- Un único conjunto que tarda 40 minutos y que nadie ejecuta en local.
+### Evidencia
+- Una tabla riesgo → capa que lo cubre en el README de pruebas, y el tiempo del pipeline desglosado por capa.
+
 ## Checklist de revisión
 - [ ] Cada cambio de comportamiento tiene test en la capa más barata posible.
 - [ ] Unit e IT se separan por convención de nombre y fase.

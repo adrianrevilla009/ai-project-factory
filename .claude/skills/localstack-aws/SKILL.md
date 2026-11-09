@@ -58,6 +58,18 @@ class DocumentStorageIT {
 ```
 Limitaciones documentadas: sin IAM real, sin KMS real, sin VPC; verificación pendiente en AWS real.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Para DynamoDB, el emulador oficial o un contenedor de DynamoDB Local suele bastar y no exige cuenta; usa un emulador generalista solo si el servicio no tiene alternativa (ver `aws-emulation` por la licencia).
+- Pruebas de adaptador contra el emulador; comportamiento de IAM, cuotas y consistencia se declara «no verificado».
+### Trampas frecuentes
+- Concluir que funciona en AWS porque pasa en el emulador (permisos, consistencia, cuotas, latencias y mensajes de error difieren).
+- Ramas `if (local)` en el código de producción.
+- Credenciales reales en un contenedor de pruebas.
+- Fijar la imagen sin tag y que el CI cambie de comportamiento un día.
+### Evidencia
+- Un apartado del README que lista qué servicios se emulan y qué no se reproduce.
+
 ## Checklist de revisión
 - [ ] El endpoint de LocalStack solo existe en configuración de test.
 - [ ] Se enumera lo que no se reproduce.

@@ -48,6 +48,19 @@ es.addEventListener("order-updated", (e) => {
 // EventSource reconecta solo y reenvia Last-Event-ID; el servidor reanuda desde ese id.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- SSE para flujos solo del servidor al cliente; WebSocket cuando hace falta comunicación bidireccional; sondeo si la frecuencia es baja y la simplicidad pesa más.
+- Diseña con reconexión y reanudación desde el último evento.
+### Trampas frecuentes
+- Tokens de larga vida en la URL del socket (acaban en registros).
+- No validar el `Origin` en el servidor.
+- Reconexión inmediata en bucle que satura el servidor.
+- Asumir entrega única: puede haber duplicados y huecos.
+- Sin límite de conexiones ni de tamaño de mensaje.
+### Evidencia
+- Pruebas con corte de red y reconexión, y una política de límites por usuario.
+
 ## Checklist de revisión
 - [ ] Justificado frente a polling; SSE salvo necesidad bidireccional.
 - [ ] Autenticación por cookie o ticket; sin token en URL; `Origin` validado.

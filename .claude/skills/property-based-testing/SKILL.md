@@ -57,6 +57,19 @@ class MoneyProperties {
 ```
 Dependencia `net.jqwik:jqwik` en scope test, versión en el BOM (comprobar versión y compatibilidad con la versión de JUnit Platform).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Propiedades para parsers, serialización, invariantes de dominio y algoritmos; ejemplos concretos para las reglas de negocio conocidas.
+- Si no sabes formular una invariante, probablemente no es un buen candidato.
+### Trampas frecuentes
+- Reimplementar la función dentro del test.
+- Generadores demasiado amplios que producen entradas inválidas, o filtros que descartan casi todo.
+- No conservar la semilla de un fallo.
+- Propiedades triviales que siempre se cumplen.
+- Número de intentos sin acotar en CI.
+### Evidencia
+- Cada contraejemplo encontrado se convierte en un test por ejemplo permanente.
+
 ## Checklist de revisión
 - [ ] La propiedad expresa un invariante, no copia la implementación.
 - [ ] Generadores acotados al dominio; sin abuso de `assume`.

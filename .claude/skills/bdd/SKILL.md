@@ -54,6 +54,20 @@ void priceIsCalculated() {
 ```
 Librería y versión (p. ej. Cucumber-JVM con JUnit Platform): comprobar al fijar la versión.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- BDD cuando una persona de negocio lee y valida los escenarios; es una herramienta de conversación, no de testing.
+- Si solo los escriben desarrolladores, un test unitario con buen nombre es más barato.
+- Los escenarios se ejecutan contra la capa de aplicación o la API; la UI solo para recorridos críticos.
+### Trampas frecuentes
+- Escenarios con detalles de interfaz («hago clic en el botón») o de SQL.
+- Pasos reutilizados con estado oculto entre ellos.
+- Gherkin usado como lenguaje de scripting.
+- Cientos de escenarios lentos y sin dueño del código de pegamento.
+- `Scenario Outline` para casos que son reglas distintas.
+### Evidencia
+- Un escenario que la persona de negocio ha leído y aprobado, con su nombre y fecha.
+
 ## Checklist de revisión
 - [ ] Un lector de negocio entiende el escenario sin ver código.
 - [ ] Sin detalles técnicos (selectores, URLs, SQL) en el `.feature`.

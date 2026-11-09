@@ -55,6 +55,19 @@ interfaces:
     verification: schema-compat
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Consumer-driven (Pact) cuando hay pocos consumidores conocidos; contrato del proveedor (OpenAPI) y validación cuando los consumidores son muchos o desconocidos; esquemas con reglas de compatibilidad para eventos.
+- `can-i-deploy` o equivalente como puerta antes de desplegar.
+### Trampas frecuentes
+- Contratos que copian toda la respuesta real y rompen con cualquier cambio.
+- Verificación del proveedor que stubbea la lógica que debería probar.
+- No publicar los resultados de verificación al broker.
+- Contratos sin versionar.
+- Mezclar contrato con pruebas funcionales.
+### Evidencia
+- El pipeline del proveedor falla ante un cambio incompatible antes de desplegar.
+
 ## Checklist de revisión
 - [ ] Cada interfaz entre servicios tiene contrato versionado.
 - [ ] El pipeline del proveedor ejecuta la verificación de contratos.

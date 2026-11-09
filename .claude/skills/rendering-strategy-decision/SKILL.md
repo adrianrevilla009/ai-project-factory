@@ -41,6 +41,19 @@ coste asumido: contenedor Node, caché, métricas; revisar a los 6 meses.
 ```
 Árbol rápido: ¿contenido público que debe indexarse o compartirse con metadatos por URL? No -> SPA. Sí -> ¿basta prerender estático? Sí -> SPA + prerender. No -> SSR.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Parte de SPA con Vite (ADR-0036). SSR solo con un requisito medible: contenido público que debe indexarse, previsualizaciones sociales o primera carga crítica en redes lentas.
+- Para una aplicación detrás de login, SSR casi nunca compensa su complejidad operativa.
+- Si solo unas pocas páginas públicas necesitan SEO, considera generarlas de forma estática en lugar de renderizar toda la app en servidor.
+### Trampas frecuentes
+- Elegir SSR por moda o «por si acaso».
+- Mezclar SSR con estado global sin cuidar la hidratación (discrepancias entre servidor y cliente).
+- Olvidar que SSR añade un servidor que operar, escalar y monitorizar.
+- Decidir sin medir la primera carga con datos reales.
+### Evidencia
+- Un ADR que nombra el requisito concreto (métrica o SEO) que justifica salir del defecto.
+
 ## Checklist de revisión
 - [ ] La decisión está en un ADR con requisito medible.
 - [ ] Las apps autenticadas internas son SPA.

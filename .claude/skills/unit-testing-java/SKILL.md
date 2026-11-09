@@ -67,6 +67,20 @@ class OrderServiceTest {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dobles solo en las fronteras (puertos, reloj, red); fakes en memoria para repositorios del dominio; objetos reales para el resto.
+- Mockito en modo estricto para detectar stubs sin usar.
+- Un comportamiento por test; si necesitas tres `act`, son tres tests.
+### Trampas frecuentes
+- Verificar llamadas internas en vez del resultado observable.
+- Mockear tipos de valor o el propio objeto bajo prueba.
+- `any()` que oculta argumentos erróneos.
+- Datos mutables compartidos entre tests o dependencia del orden.
+- Probar getters y setters para subir cobertura.
+### Evidencia
+- Los unitarios corren en segundos, sin Spring, sin red y sin `sleep`.
+
 ## Checklist de revisión
 - [ ] Un comportamiento por test, nombre descriptivo, AAA visible.
 - [ ] Sin reloj, azar, red, disco ni `sleep` reales.

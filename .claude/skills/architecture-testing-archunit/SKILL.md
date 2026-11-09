@@ -53,6 +53,19 @@ class ArchitectureTest {
 ```
 Reglas reales reutilizables: `policies/archunit/DomainIsolationRules.java`, `HexagonalArchitectureRules.java`, `ModuleBoundaryRules.java`. Versión de ArchUnit: comprobar al fijar la versión.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una regla ArchUnit para todo lo que se rompe con un `import`; lo que no se puede comprobar estáticamente va a revisión o a un ADR.
+- En un monolito modular, reglas por módulo (slices) además de por capa.
+### Trampas frecuentes
+- Reglas tan generales que nunca fallan, sin un caso que demuestre que fallarían.
+- Reglas que pasan porque no encuentran clases (conjunto vacío).
+- Congelar violaciones sin un plan para reducirlas.
+- Importar también las clases de test.
+- Mensajes sin `because` que no explican el porqué.
+### Evidencia
+- Cada regla tiene un ejemplo que debe fallar y enlaza al ADR o a la skill que la justifica.
+
 ## Checklist de revisión
 - [ ] Cada regla de arquitectura documentada tiene su test.
 - [ ] Los tests ignoran clases de test y llevan `.because(...)`.

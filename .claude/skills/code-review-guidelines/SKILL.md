@@ -53,6 +53,20 @@ nit: renombrar `tmp` a `pendingItems`.
 ## Checklist: tests, docs, ADR si hay decisión nueva
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cambios de diseño o de alto riesgo: revisión síncrona o con la persona que mejor conoce la zona; el resto, PR pequeño y asíncrono.
+- Automatiza lo mecánico (formato, estilo) para que el revisor humano mire corrección, seguridad y diseño.
+### Trampas frecuentes
+- PRs gigantes que se aprueban sin leerse.
+- Revisar solo el estilo.
+- Bloquear por preferencias personales sin riesgo concreto.
+- Aprobar sin leer los tests.
+- Un único revisor posible para una zona (punto único de fallo).
+- Revisiones lentas, que empujan a PRs aún mayores.
+### Evidencia
+- El tiempo hasta la primera respuesta y el tamaño mediano de los PR, medidos.
+
 ## Checklist de revisión
 - [ ] PR con un único propósito y descripción con el porqué.
 - [ ] CI verde; tests nuevos que cubren el comportamiento.

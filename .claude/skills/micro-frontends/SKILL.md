@@ -48,6 +48,20 @@ type CartChangedV1 = { type: "cart.changed.v1"; items: number };
 window.dispatchEvent(new CustomEvent<CartChangedV1>("cart.changed.v1", { detail: { type: "cart.changed.v1", items: 3 } }));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Solo para un problema de organización (equipos que despliegan de forma independiente), no técnico; un monorepo con límites suele bastar.
+- Contratos explícitos y versionados entre la aplicación anfitriona y los módulos remotos.
+- Comparte lo imprescindible (framework, router) como singleton con rangos de versión acordados.
+### Trampas frecuentes
+- Adoptarlos por moda con un solo equipo.
+- Cada módulo con un framework y un sistema de diseño distintos.
+- Duplicar dependencias grandes y engordar la carga.
+- Sin sesión ni política de seguridad unificadas.
+- Pruebas E2E que no cubren la integración entre módulos.
+### Evidencia
+- Un ADR que justifica el coste y una prueba de integración del conjunto en CI.
+
 ## Checklist de revisión
 - [ ] ADR con el problema y alternativas descartadas.
 - [ ] Contratos versionados y probados.

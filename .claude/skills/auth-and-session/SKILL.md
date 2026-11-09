@@ -50,6 +50,20 @@ function RequireAuth({ children }: { children: ReactNode }) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Con un servidor intermedio (BFF), la sesión es una cookie HttpOnly y el navegador nunca ve los tokens; es la opción por defecto.
+- Sin BFF (SPA pura), el token de acceso solo en memoria, con caducidad corta, y el riesgo documentado en un ADR.
+- Cierra la sesión de verdad: revoca en el servidor, no solo borra en el cliente.
+### Trampas frecuentes
+- Tokens en `localStorage`: cualquier XSS los lee.
+- Renovar tokens de forma silenciosa sin límite de vida.
+- Confiar en la UI para autorizar: ocultar un botón no es control de acceso.
+- No protegerse contra CSRF cuando se usa cookie.
+- Redirecciones tras el login a destinos sin validar.
+### Evidencia
+- Una revisión del flujo donde se comprueba que ningún token es accesible desde JavaScript.
+
 ## Checklist de revisión
 - [ ] PKCE; sin tokens en almacenamiento web.
 - [ ] Cookie `HttpOnly; Secure; SameSite` y protección CSRF si hay BFF.

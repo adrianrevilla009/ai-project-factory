@@ -49,6 +49,20 @@ slo:
   throughput_rps_min: 150
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada tipo responde a una pregunta: baseline (referencia), load (carga esperada), stress (límite), soak (fugas y degradación), spike (picos).
+- En CI, un smoke de rendimiento que compare contra el baseline; las pruebas completas, en un entorno dedicado.
+- Modelo de carga abierto (llegadas por segundo) cuando los usuarios reales no esperan a los demás.
+### Trampas frecuentes
+- Entorno con otra topología o volumen de datos que producción.
+- Un generador de carga saturado que mide su propio límite.
+- No descartar el calentamiento y reportar medias en vez de percentiles.
+- Datos de prueba que caben todos en caché.
+- Pruebas sin criterios de aceptación derivados del SLO.
+### Evidencia
+- Resultados versionados con commit, entorno y configuración, comparados con el baseline anterior.
+
 ## Checklist de revisión
 - [ ] Criterios de aceptación definidos antes de ejecutar.
 - [ ] Tipo de prueba explícito (baseline/load/soak/spike/stress).

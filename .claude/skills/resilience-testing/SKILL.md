@@ -60,6 +60,19 @@ void opensCircuitAfterRepeatedFailures() {
 ```
 Clases de Resilience4j y WireMock: comprobar contra la versión usada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Test determinista de cada política (timeout, reintento, breaker, bulkhead) en integración con fallos simulados.
+- El comportamiento emergente bajo carga se prueba aparte, con pruebas de carga y fallos en un entorno de pruebas.
+### Trampas frecuentes
+- Mocks que no reproducen el fallo real.
+- Timeouts de test más cortos que los de producción.
+- Reintentos sin idempotencia.
+- `sleep` para esperar al breaker en vez de un reloj controlable.
+- Comprobar que el breaker abre y olvidar que debe cerrar.
+### Evidencia
+- Hay al menos un test por cada política de resiliencia declarada.
+
 ## Checklist de revisión
 - [ ] Un test por política declarada (timeout, retry, breaker, fallback).
 - [ ] Fallos simulados de forma determinista, sin sleeps.

@@ -53,6 +53,21 @@ it("shows an error when the API fails", async () => {
 test: { environment: "jsdom", setupFiles: ["./src/test/setup.ts"], coverage: { provider: "v8" } }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prueba lo que ve y hace el usuario (rol, texto, etiqueta), no el estado interno ni los nombres de clases.
+- Red simulada a nivel de petición para que el cliente real se ejecute en las pruebas.
+- Pocos E2E sobre flujos críticos; el resto, pruebas de componentes y de integración.
+- Pruebas visuales solo para componentes del sistema de diseño.
+### Trampas frecuentes
+- Probar detalles de implementación (estado interno, llamadas a funciones privadas).
+- Instantáneas gigantes que se aprueban sin leer.
+- `fireEvent` en lugar de interacciones de usuario realistas.
+- Esperas fijas.
+- Mockear el módulo de red en vez de la petición.
+### Evidencia
+- Las consultas por rol o etiqueta pasan, y si cambia la estructura sin cambiar el comportamiento, las pruebas no se rompen.
+
 ## Checklist de revisión
 - [ ] Consultas por rol/label; sin selectores CSS.
 - [ ] Red simulada con MSW, handlers por escenario.
