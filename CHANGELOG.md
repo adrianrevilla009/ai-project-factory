@@ -12,7 +12,7 @@ Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versiona
 - Sección «Criterios de decisión y trampas» en las 67 skills de QA, frontend, CI/CD y GitOps.
 - Validadores de referencias cruzadas entre skills y de enlaces de `knowledge/`; `policies/iac-checks/` como especificación de los checks pendientes.
 ### Cambiado
-- La convención `TODO-VERIFY` desaparece: lo que no se puede comprobar se declara «no comprobado». Eliminadas las frases «comprobar…» de las skills; los datos de herramientas de terceros se fijan en el BOM de cada proyecto.
+- Desaparece la antigua marca de «pendiente de verificar»: lo que no se puede comprobar se declara «no comprobado». Eliminadas las frases «comprobar…» de las skills; los datos de herramientas de terceros se fijan en el BOM de cada proyecto.
 - El bootstrap copia también agentes y comandos al proyecto generado.
 - Ejemplos de Docker Compose sustituidos por el clúster kind (ADR-0005).
 
