@@ -57,6 +57,19 @@ train, test = df[df.date < "2026-09-01"], df[df.date >= "2026-09-01"]
 ```
 El PSI 0.2 es un umbral habitual de la práctica; calibrar con datos propios.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Versiona datos, código y modelo juntos; despliega con evaluación previa, monitorización de deriva y capacidad de revertir.
+- Un modelo ligero puede servirse en proceso.
+### Trampas frecuentes
+- Modelos sin trazabilidad del entrenamiento.
+- Despliegue sin evaluación ni vuelta atrás.
+- Sin monitorización de deriva.
+- Serialización insegura de modelos.
+- Entrenar con datos que no puedes usar.
+### Evidencia
+- Cada modelo desplegado enlaza a sus datos, código, métricas y plan de reversión.
+
 ## Checklist de revisión
 - [ ] Entrenamiento reproducible y dataset versionado.
 - [ ] Modelo registrado y servicio fijado a una versión.

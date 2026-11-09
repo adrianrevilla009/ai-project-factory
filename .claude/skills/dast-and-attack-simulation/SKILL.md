@@ -55,6 +55,19 @@ jobs:
 ```
 Nombres de jobs verificados en la documentación del Automation Framework (zaproxy.org/docs/automate/automation-framework/, 2026-11-07); los parámetros exactos de cada job.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pruebas dinámicas contra un entorno de pruebas y simulaciones de ataque controladas con alcance y reglas acordados; complementan el análisis estático.
+- Ajusta el ruido para que se lean.
+### Trampas frecuentes
+- Ejecutarlas contra producción sin permiso.
+- Resultados sin triaje.
+- Credenciales reales en el escáner.
+- Una sola ejecución antes del lanzamiento.
+- Sin repetir tras cambios.
+### Evidencia
+- Un informe por ejecución con hallazgos triados y dueño.
+
 ## Checklist de revisión
 - [ ] El objetivo está en un plan versionado con exclusiones.
 - [ ] El escaneo activo solo apunta a entornos propios y sintéticos.

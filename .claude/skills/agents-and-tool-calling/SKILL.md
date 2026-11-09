@@ -59,6 +59,19 @@ var answer = chat.prompt().user(question).tools(new OrderTools(queries, pending)
 ```
 El límite de iteraciones y la confirmación se implementan en el bucle del framework o en un wrapper propio: la propiedad concreta se comprueba según versión.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un agente cuando la tarea necesita decidir pasos con herramientas; si el flujo es fijo, un flujo programado es más fiable y barato.
+- Cada herramienta con el mínimo permiso y confirmación para acciones con efecto.
+### Trampas frecuentes
+- Dar al agente herramientas con permisos amplios.
+- Bucles sin límite de pasos o de coste.
+- Acciones irreversibles sin confirmación humana.
+- Sin registro de qué herramienta se llamó y con qué.
+- Confiar en lo que devuelve una herramienta como instrucción.
+### Evidencia
+- Límites de pasos, tiempo y coste, y registro completo de las llamadas.
+
 ## Checklist de revisión
 - [ ] Justificado por qué no basta un workflow.
 - [ ] Tools con permisos del usuario final y argumentos validados.

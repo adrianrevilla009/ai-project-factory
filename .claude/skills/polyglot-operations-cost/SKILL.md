@@ -48,6 +48,19 @@ team_training: "2 sesiones + guía de relevancia"
 decision_review_date: 2027-05-07
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cuenta el coste total de cada almacén adicional: copias, actualizaciones, seguridad, monitorización, formación y guardia.
+- Limita el número de tecnologías que el equipo soporta.
+### Trampas frecuentes
+- Contar solo el coste de la licencia o la instancia.
+- Un almacén que solo conoce una persona.
+- Sin automatizar copias y restauración de cada almacén.
+- Observabilidad desigual entre almacenes.
+- Sin plan para retirar una tecnología.
+### Evidencia
+- Una tabla de almacenes con dueño, copia probada y coste mensual.
+
 ## Checklist de revisión
 - [ ] Existe ficha de coste por cada almacén no-Postgres.
 - [ ] Hay dueño, runbook y plan de restauración.

@@ -54,6 +54,19 @@ public void placeOrder(Order o) {
 ¿Lectura repetida cara, dato reconstruible?     -> caché Redis (cache-strategies)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Parte del patrón de acceso y de las garantías que exige el dato (transacciones, consistencia, latencia, volumen), no de la tecnología; relacional por defecto y otra cosa cuando una necesidad concreta lo justifica.
+- Cada almacén extra se paga en operación, copias, seguridad y conocimiento del equipo.
+### Trampas frecuentes
+- Un almacén por moda.
+- Elegir por rendimiento teórico sin medir con tu carga.
+- Un único almacén para necesidades incompatibles.
+- Cambiar de almacén sin plan de migración de datos.
+- Ignorar el coste de operar varios.
+### Evidencia
+- Un ADR por almacén con patrón de acceso, garantías, alternativas y coste operativo.
+
 ## Checklist de revisión
 - [ ] Cada agregado tiene una sola fuente de verdad documentada.
 - [ ] Cada almacén extra tiene justificación y coste operativo anotados.

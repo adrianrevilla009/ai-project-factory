@@ -54,6 +54,19 @@ Se bloquean IPs de un tuit sin validarlas y se corta un proveedor legítimo.
 Triage semanal: CISA KEV -> ¿usamos el producto? -> sí: ticket con SLA ; no: anotar "no aplica".
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un registro de riesgos con dueño, probabilidad, impacto, tratamiento y fecha de revisión, alimentado por inteligencia de amenazas relevante para tu sector.
+- Convierte la inteligencia en acciones concretas.
+### Trampas frecuentes
+- Un registro que nadie revisa.
+- Riesgos sin dueño ni tratamiento.
+- Inteligencia genérica sin acción.
+- Aceptar riesgos sin decisión explícita.
+- Puntuaciones sin criterio común.
+### Evidencia
+- Un registro revisado con riesgos priorizados y acciones con responsable.
+
 ## Checklist de revisión
 - [ ] Fuentes definidas y con responsable de triaje.
 - [ ] Todo riesgo tiene propietario de negocio, tratamiento y fecha de revisión.

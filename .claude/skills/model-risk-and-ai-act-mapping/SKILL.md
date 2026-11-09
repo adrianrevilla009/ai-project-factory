@@ -53,6 +53,19 @@ El AI Act entró en vigor el 1 de agosto de 2024; las prácticas prohibidas se a
     - {id: R2, type: pii-leak, mitigation: "redacción previa", owner: "sec-lead"}
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clasifica el sistema según su uso y mapea obligaciones a controles; la clasificación y su interpretación las valida una persona de legal.
+- Documenta datos, evaluación, supervisión humana y límites.
+### Trampas frecuentes
+- Clasificar por lo que parece y no por el uso.
+- Documentación hecha al final.
+- Ignorar a los proveedores del modelo.
+- Sin evaluación del sesgo ni de robustez.
+- Tratar la norma como una lista de casillas.
+### Evidencia
+- Un expediente por sistema con clasificación, controles y validación humana registrada.
+
 ## Checklist de revisión
 - [ ] El sistema está en el registro con rol y propietario.
 - [ ] Hay clasificación preliminar y estado de revisión legal.

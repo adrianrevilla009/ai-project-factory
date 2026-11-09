@@ -52,6 +52,19 @@ fields: [user.name, source.ip]
 ```
 Sintaxis Sigma exacta.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Detecciones como código, con casos de prueba, dueño y ajuste continuo; empieza por las fuentes y los casos de uso más valiosos.
+- Mide la calidad de las detecciones.
+### Trampas frecuentes
+- Recoger todo y no detectar nada.
+- Reglas sin pruebas.
+- Alertas sin procedimiento.
+- Retención sin criterio.
+- Un equipo que no ajusta el ruido.
+### Evidencia
+- Cada detección tiene prueba, dueño, procedimiento y una tasa de falsos positivos medida.
+
 ## Checklist de revisión
 - [ ] Cada regla enlaza amenaza/técnica, dueño y runbook.
 - [ ] Tests con eventos positivos y negativos pasan en CI.

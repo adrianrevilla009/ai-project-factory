@@ -56,6 +56,19 @@ on conflict (id) do update set status = excluded.status, source_lsn = excluded.s
 where lake.orders.source_lsn < excluded.source_lsn;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Captura de cambios desde el registro de la base de datos cuando necesitas propagar cambios con baja latencia y sin tocar el código de la aplicación; gestiona esquemas y reinicios.
+- El flujo es al menos una vez: los consumidores toleran duplicados.
+### Trampas frecuentes
+- Capturar cambios de tablas internas como si fueran contrato.
+- Sin gestión de la evolución del esquema.
+- Registros de replicación que crecen sin control.
+- Reiniciar sin saber desde dónde reanudar.
+- Datos personales en el flujo sin control.
+### Evidencia
+- Una prueba de cambio de esquema y de reinicio del conector sin pérdida ni duplicados.
+
 ## Checklist de revisión
 - [ ] Tablas y columnas incluidas son una lista explícita; PII excluida o enmascarada.
 - [ ] Clave del topic = PK; compatibilidad de esquema configurada.

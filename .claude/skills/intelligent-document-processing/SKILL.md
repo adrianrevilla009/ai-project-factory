@@ -57,6 +57,19 @@ ValidationResult validate(InvoiceExtraction e) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Combina extracción automática con validación humana por confianza; los umbrales salen de datos reales.
+- Conserva el documento original y la trazabilidad.
+### Trampas frecuentes
+- Aceptar toda extracción sin confianza.
+- Umbrales copiados.
+- Perder el documento original.
+- Sin medir precisión por campo.
+- Datos personales sin control.
+### Evidencia
+- Precisión por campo con una muestra etiquetada y una cola de revisión humana.
+
 ## Checklist de revisión
 - [ ] Estados por documento y etapas idempotentes.
 - [ ] Original inmutable con hash; campos con origen y confianza.

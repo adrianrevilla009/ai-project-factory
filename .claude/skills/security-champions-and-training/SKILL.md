@@ -53,6 +53,19 @@ metrics:
 safe_reporting: blameless
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una persona de referencia en cada equipo con tiempo asignado y formación práctica basada en los fallos reales de la organización.
+- Mide el efecto en los hallazgos y en el tiempo de corrección.
+### Trampas frecuentes
+- Formación anual genérica que se olvida.
+- Un campeón sin tiempo ni apoyo.
+- Medir solo asistencia.
+- Sin conexión con los incidentes reales.
+- Seguridad como tarea de un equipo aparte.
+### Evidencia
+- Una tendencia de hallazgos por equipo y la participación de los campeones.
+
 ## Checklist de revisión
 - [ ] Cada equipo tiene champion con tiempo asignado.
 - [ ] La formación es por rol y stack, con práctica.

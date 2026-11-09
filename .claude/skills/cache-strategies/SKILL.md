@@ -58,6 +58,19 @@ maxmemory 512mb
 maxmemory-policy allkeys-lru
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el patrón por tolerancia a obsolescencia: lectura con caché lateral, escritura simultánea o invalidación por eventos; decide la caducidad y el comportamiento si la caché cae.
+- La caché nunca es la fuente de verdad.
+### Trampas frecuentes
+- Caché sin caducidad ni invalidación.
+- Estampida cuando caduca una clave popular.
+- Datos de distintos usuarios mezclados.
+- Depender de la caché para que el sistema funcione.
+- Sin medir aciertos.
+### Evidencia
+- Una prueba con la caché caída demuestra que el sistema sigue funcionando, más lento.
+
 ## Checklist de revisión
 - [ ] Toda clave tiene TTL (con jitter en las calientes).
 - [ ] `maxmemory` y política de evicción configuradas.

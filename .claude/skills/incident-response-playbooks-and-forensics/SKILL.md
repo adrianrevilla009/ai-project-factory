@@ -54,6 +54,19 @@ evidence_store: write-once-bucket   # ver backup-vault-immutability-and-restore-
 sha256sum evidence/access-log-2026-11-07.json >> evidence/CHAIN.txt
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Guías por tipo de incidente con roles, decisiones y comunicaciones; conserva la evidencia desde el primer momento.
+- Ensáyalas.
+### Trampas frecuentes
+- Playbooks nunca ejecutados.
+- Destruir evidencia al contener.
+- Comunicar causas no comprobadas.
+- Sin responsable único.
+- Ignorar los plazos de notificación que fije la normativa (los valida legal).
+### Evidencia
+- Un simulacro por trimestre con lecciones registradas.
+
 ## Checklist de revisión
 - [ ] Existe playbook para cada escenario prioritario.
 - [ ] Roles y contactos fuera de banda definidos.

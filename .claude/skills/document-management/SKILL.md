@@ -55,6 +55,19 @@ CREATE TABLE document_version (
   created_at timestamptz NOT NULL, PRIMARY KEY (document_id, version));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Almacena con versión, metadatos, permisos y retención; sirve descargas con comprobación de autorización por documento.
+- Separa contenido y metadatos.
+### Trampas frecuentes
+- Enlaces permanentes públicos.
+- Permisos solo por carpeta.
+- Sin versionado ni retención.
+- Nombres de archivo del usuario como ruta.
+- Sin registro de acceso.
+### Evidencia
+- Una prueba comprueba que un usuario no puede acceder al documento de otro.
+
 ## Checklist de revisión
 - [ ] Binario en objeto, metadatos en una sola base.
 - [ ] Hash, versión y tenant por documento.

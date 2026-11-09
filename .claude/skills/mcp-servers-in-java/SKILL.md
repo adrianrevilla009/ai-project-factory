@@ -60,6 +60,19 @@ class OrderMcpTools {
 ```
 Anotaciones y propiedades comprobadas en la documentación de Spring AI el 2026-11-07; cabeceras de autenticación exactas del transporte. En local se prueba con Keycloak (ADR de identidad); no se reproduce ninguna integración AWS.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Construye un servidor MCP cuando varios agentes necesitan acceder a una capacidad con permisos controlados; expón pocas herramientas y bien definidas.
+- Autenticación y autorización como en cualquier API.
+### Trampas frecuentes
+- Exponer toda tu API como herramientas.
+- Sin autenticación o con permisos amplios.
+- Herramientas con efectos sin confirmación.
+- Descripciones ambiguas que confunden al modelo.
+- Sin límites de uso ni registro.
+### Evidencia
+- Cada herramienta tiene su permiso, su esquema de entrada validado y pruebas de abuso.
+
 ## Checklist de revisión
 - [ ] Transporte adecuado; HTTP con OIDC y TLS.
 - [ ] Tools mínimas, tipadas, autorizadas por usuario.

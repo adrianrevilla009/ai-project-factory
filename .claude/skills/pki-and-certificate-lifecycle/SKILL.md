@@ -54,6 +54,19 @@ spec:
   issuerRef: {name: internal-ca, kind: ClusterIssuer}
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Inventario y renovación automática de certificados con duración corta, alertas de caducidad y revocación probada.
+- Una jerarquía con la raíz protegida.
+### Trampas frecuentes
+- Certificados que caducan sin aviso.
+- Raíces en línea.
+- Gestión manual en hojas de cálculo.
+- Claves exportables.
+- Sin plan de rotación de la raíz.
+### Evidencia
+- Un inventario con fechas y alertas, y una renovación automática probada.
+
 ## Checklist de revisión
 - [ ] Emisión y renovación automáticas con alerta si falla.
 - [ ] Inventario con dueño y caducidad.

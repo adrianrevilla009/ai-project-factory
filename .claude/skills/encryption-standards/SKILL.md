@@ -45,6 +45,19 @@ byte[] digest = MessageDigest.getInstance("SHA-256").digest(data);
 ```
 La clave `key` procede de KMS/Vault (ver `envelope-encryption-and-kms`).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Estándares aprobados para algoritmos, longitudes y modos, con una lista corta, revisada y actualizada; cifrado en tránsito y en reposo por defecto.
+- Planifica la agilidad criptográfica.
+### Trampas frecuentes
+- Algoritmos obsoletos por compatibilidad.
+- Cada equipo elige el suyo.
+- Claves sin gestión central.
+- Cifrado en reposo sin controles de acceso.
+- Ignorar el plan de migración hacia nuevos algoritmos.
+### Evidencia
+- Un catálogo de algoritmos aprobados y un análisis automático que detecta los prohibidos.
+
 ## Checklist de revisión
 - [ ] Solo algoritmos del catálogo; sin modos ECB ni hashes débiles.
 - [ ] TLS >= 1.2 configurado explícitamente.

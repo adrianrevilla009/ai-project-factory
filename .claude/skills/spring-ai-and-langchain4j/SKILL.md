@@ -68,6 +68,19 @@ spring:
 ```
 Nombres de API (`ChatClient`, `defaultSystem`, `prompt.user(.)`, advisors) comprobados contra la documentación de Spring AI el 2026-11-07; propiedades por proveedor.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un framework de integración cuando te ahorra código de conexión, plantillas y abstracción de proveedor; si solo haces una llamada, el cliente del proveedor puede bastar.
+- Aísla el framework tras un puerto para poder cambiarlo.
+### Trampas frecuentes
+- Acoplar el dominio a las clases del framework.
+- Depender de funciones experimentales sin plan de salida.
+- Abstracciones que ocultan límites o costes del proveedor.
+- Versiones del framework sin fijar.
+- Prompts repartidos por el código.
+### Evidencia
+- El código de negocio no importa clases del framework y hay pruebas con un modelo simulado.
+
 ## Checklist de revisión
 - [ ] Un solo framework y ADR de la decisión.
 - [ ] Dominio sin imports del framework.

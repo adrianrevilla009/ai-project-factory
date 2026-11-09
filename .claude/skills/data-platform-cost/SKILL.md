@@ -53,6 +53,19 @@ SELECT event_id, customer_id FROM gold.events WHERE event_date = DATE '2026-11-0
   owner: "team-sales-data"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Atribuye el coste a equipos y productos de datos, mide por consulta y por tarea y optimiza con datos: particionado, formatos, caducidad de datos calientes.
+- Las cifras de precio vienen de la fuente oficial con fecha.
+### Trampas frecuentes
+- Consultas sin límite que disparan la factura.
+- Datos calientes para siempre.
+- Sin atribución por equipo.
+- Optimizar sin medir.
+- Cifras de precio de memoria.
+### Evidencia
+- Un informe de coste por equipo y producto de datos con acciones.
+
 ## Checklist de revisión
 - [ ] Recursos y consultas etiquetados por dominio.
 - [ ] Parquet/Iceberg con particionado acorde al filtro principal.

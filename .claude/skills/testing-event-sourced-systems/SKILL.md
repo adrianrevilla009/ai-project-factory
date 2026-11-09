@@ -58,6 +58,19 @@ void upcastsLegacyOrderPlacedV1() throws Exception {
 ```
 `AggregateFixture` es un helper del proyecto generado (no una librería concreta); si se usa Axon u otra, ver su documentación.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prueba con el formato dado-cuando-entonces: eventos previos, comando, eventos resultantes; y prueba aparte las proyecciones y la reconstrucción.
+- Incluye casos con eventos antiguos.
+### Trampas frecuentes
+- Probar solo el estado final sin mirar los eventos.
+- Eventos de prueba que no se parecen a los reales.
+- Proyecciones sin pruebas de reprocesado.
+- Sin pruebas de concurrencia en la escritura.
+- Pruebas que dependen de la fecha actual.
+### Evidencia
+- La suite cubre comandos, conversores de versión, proyecciones y reconstrucción.
+
 ## Checklist de revisión
 - [ ] Tests given-when-then sin base de datos.
 - [ ] Reloj e identificadores inyectados.

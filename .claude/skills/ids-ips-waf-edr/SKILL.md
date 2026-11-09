@@ -45,6 +45,19 @@ SecRule REQUEST_URI "@beginsWith /search" \
 ```
 Plan: 2 semanas en DetectionOnly, revisión de falsos positivos, paso a bloqueo por aplicación.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Combina controles de red, aplicación y equipo con reglas ajustadas a tu tráfico; empieza en modo detección y pasa a bloqueo cuando entiendes el ruido.
+- Integra las señales con la respuesta a incidentes.
+### Trampas frecuentes
+- Bloqueo desde el primer día con reglas por defecto.
+- Controles sin responsable.
+- Alertas que nadie atiende.
+- Sin pruebas de que detectan.
+- Superponer herramientas sin integrarlas.
+### Evidencia
+- Una simulación de ataque conocido genera la alerta esperada y se atiende.
+
 ## Checklist de revisión
 - [ ] Control en modo detección antes de bloquear; criterio de salida definido.
 - [ ] Eventos llegan al SIEM.

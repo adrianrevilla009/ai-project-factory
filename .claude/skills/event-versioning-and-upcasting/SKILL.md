@@ -53,6 +53,19 @@ void upcastsFrozenV1Fixture() throws Exception {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Los eventos publicados no cambian: evoluciona con versiones y conversores (upcasters) que traducen eventos antiguos al formato actual al leer.
+- Cambios compatibles (añadir opcionales) sin versión nueva.
+### Trampas frecuentes
+- Modificar eventos ya guardados.
+- Conversores sin pruebas con eventos reales antiguos.
+- Eliminar la versión antigua del código.
+- Cambiar el significado sin cambiar de tipo.
+- Una cadena de conversores tan larga que nadie la entiende.
+### Evidencia
+- Pruebas que leen eventos de cada versión histórica y producen el estado correcto.
+
 ## Checklist de revisión
 - [ ] Cada evento persistido lleva `schemaVersion`.
 - [ ] Cambio compatible o upcaster con test sobre fixture antiguo.

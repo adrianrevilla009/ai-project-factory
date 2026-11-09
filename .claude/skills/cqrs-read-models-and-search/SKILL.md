@@ -48,6 +48,19 @@ public void on(ProductRenamed e) {
 ```
 Los métodos exactos del cliente Java de OpenSearch se comprueban contra la versión usada.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Modelos de lectura en un motor de búsqueda o en tablas desnormalizadas cuando las consultas lo exigen; alimentados por eventos y reconstruibles.
+- Decide qué retraso tolera cada pantalla.
+### Trampas frecuentes
+- Usar el índice de búsqueda como fuente de verdad.
+- Sin forma de reindexar.
+- Lecturas que exigen el último dato.
+- Ignorar el tamaño y la relación de fragmentos del índice.
+- Permisos de lectura distintos entre fuente e índice.
+### Evidencia
+- Una reindexación completa ensayada y el retraso del índice monitorizado.
+
 ## Checklist de revisión
 - [ ] Una sola fuente de verdad; el índice se alimenta de eventos/CDC.
 - [ ] Indexador idempotente y con versión.

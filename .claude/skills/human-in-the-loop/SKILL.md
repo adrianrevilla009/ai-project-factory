@@ -57,6 +57,19 @@ public void approve(ProposalId id, String approverId) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una persona decide cuando la acción es irreversible, de alto impacto o la confianza es baja; diseña la revisión para que sea rápida y con el contexto necesario.
+- Mide cuánto se corrige.
+### Trampas frecuentes
+- Una confirmación tan frecuente que se aprueba sin leer.
+- Sin información para decidir.
+- Revisión posterior de lo ya ejecutado.
+- No registrar las correcciones para mejorar.
+- Delegar la responsabilidad en el modelo.
+### Evidencia
+- Un registro de decisiones humanas con tiempo de revisión y tasa de corrección.
+
 ## Checklist de revisión
 - [ ] Cada herramienta del agente tiene clase de impacto documentada.
 - [ ] Las acciones irreversibles pasan por propuesta + aprobación.

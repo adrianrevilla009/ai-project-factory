@@ -59,6 +59,19 @@ models:
 ```
 La forma `arguments:` depende de la versión de dbt.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- ELT cuando el almacén es potente y quieres transformar con SQL versionado y probado; ETL cuando hay que transformar antes de cargar (privacidad, volumen).
+- Transformaciones como código con pruebas.
+### Trampas frecuentes
+- Transformaciones sin pruebas.
+- Modelos que se leen de fuentes crudas por todas partes.
+- Sin documentación de linaje.
+- Tareas que mezclan carga y negocio.
+- Ejecuciones completas siempre en vez de incrementales.
+### Evidencia
+- Pruebas de calidad de datos y de modelos en CI.
+
 ## Checklist de revisión
 - [ ] Capas respetadas; marts sin `source()` directo.
 - [ ] Tests de PK/FK en cada modelo expuesto.

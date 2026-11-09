@@ -45,6 +45,19 @@ Preferred-Languages: es, en
 ```
 Campos `Contact`, `Expires`, `Policy`, `Preferred-Languages` definidos en RFC 9116.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un canal de divulgación responsable con política clara, plazos de respuesta y un proceso interno; un programa con recompensas solo cuando puedes triar y corregir con rapidez.
+- Publica cómo contactar.
+### Trampas frecuentes
+- Un programa de recompensas sin capacidad de respuesta.
+- Sin política ni canal de contacto.
+- Represalias o falta de respuesta a quien informa.
+- Alcance ambiguo.
+- No reconocer ni comunicar el arreglo.
+### Evidencia
+- Una política publicada, un canal probado y un tiempo de respuesta medido.
+
 ## Checklist de revisión
 - [ ] security.txt publicado, no caducado y servido por HTTPS.
 - [ ] Política con alcance, exclusiones y safe harbor revisado por legal.

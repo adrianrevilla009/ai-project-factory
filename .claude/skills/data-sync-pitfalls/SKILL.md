@@ -47,6 +47,19 @@ public void onChange(ProductEvent e) {
 // Job nocturno: compara count y hash por rango de ids entre fuente e indice; reindexa discrepancias.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sincroniza con un mecanismo fiable y un identificador de versión; define qué sistema es la fuente de cada dato.
+- Detecta y repara divergencias de forma periódica.
+### Trampas frecuentes
+- Dos sistemas que se actualizan mutuamente en bucle.
+- Sin fuente de verdad única.
+- Sincronización a base de reintentos sin idempotencia.
+- Retrasos no medidos.
+- Conflictos resueltos por «el último gana» sin análisis.
+### Evidencia
+- Un proceso de conciliación periódico que mide y repara divergencias.
+
 ## Checklist de revisión
 - [ ] Dueño único del dato identificado.
 - [ ] Handlers idempotentes con versión; borrados propagados.

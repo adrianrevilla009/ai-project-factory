@@ -55,6 +55,19 @@ models:
 ```
 Forma de `arguments`/`config` según la versión de dbt.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pruebas automáticas de calidad en los puntos de entrada y en las transformaciones (nulos, unicidad, rangos, integridad), con alertas y dueño.
+- Una prueba que falla debe parar o aislar los datos.
+### Trampas frecuentes
+- Controles solo al final.
+- Tantas pruebas que nadie las lee.
+- Fallos que no detienen la carga.
+- Sin dueño de cada conjunto de datos.
+- Umbrales que se relajan hasta que no sirven.
+### Evidencia
+- Un informe de calidad por conjunto de datos con tendencia y responsable.
+
 ## Checklist de revisión
 - [ ] Cada dataset tiene tests de PK, FKs y valores aceptados.
 - [ ] Severidades y umbrales documentados; fallo `error` bloquea publicación.

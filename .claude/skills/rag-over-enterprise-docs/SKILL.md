@@ -55,6 +55,19 @@ void ingest(SourceDoc d) {
 ```
 El filtro por `source_id` debe construirse con valores validados, no con texto libre del usuario.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Respeta los permisos de cada documento al recuperar; el modelo solo ve lo que el usuario podría ver.
+- Mantén el índice sincronizado con las fuentes, incluidos los borrados.
+### Trampas frecuentes
+- Un índice único con todo y permisos aplicados después.
+- Documentos borrados que siguen en el índice.
+- Datos personales indexados sin clasificar.
+- Sin trazabilidad de qué fuente respondió.
+- Mezclar tenants.
+### Evidencia
+- Una prueba verifica que un usuario sin permiso no obtiene contenido restringido.
+
 ## Checklist de revisión
 - [ ] ACL capturada, sincronizada y filtrada en consulta con la identidad del usuario.
 - [ ] Borrado en la fuente propaga al índice (probado).

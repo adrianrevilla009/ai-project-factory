@@ -58,6 +58,19 @@ static AccountState evolve(AccountState s, AccountEvent e) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Los eventos son hechos pasados con nombre de negocio y datos suficientes para entenderlos sin consultar otra cosa; el agregado es el límite de consistencia.
+- Pocos tipos de evento, estables.
+### Trampas frecuentes
+- Eventos «actualizado» sin significado.
+- Eventos que dependen del estado actual de otro agregado.
+- Datos derivados dentro del evento.
+- Agregados enormes.
+- Reloj del sistema dentro de la reconstrucción en vez de en el evento.
+### Evidencia
+- Cada evento tiene su descripción de negocio, su esquema y su versión.
+
 ## Checklist de revisión
 - [ ] Un stream por agregado y límite de consistencia claro.
 - [ ] Eventos en pasado, inmutables, con metadatos completos.

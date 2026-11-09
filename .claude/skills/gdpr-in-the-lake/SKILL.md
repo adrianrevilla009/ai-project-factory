@@ -53,6 +53,19 @@ completed_layers: [raw, silver, gold, features]
 completed_at: "2026-11-07"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Diseña la supresión desde el inicio: dónde están los datos personales, cómo se localizan y cómo se eliminan de tablas, copias y derivados; la norma exacta la valida una persona de legal.
+- Seudonimiza lo que sea posible.
+### Trampas frecuentes
+- Datos personales dispersos sin inventario.
+- Borrados que no alcanzan copias ni tablas derivadas.
+- Formatos sin operaciones de borrado eficientes.
+- Sin prueba del proceso.
+- Retención infinita.
+### Evidencia
+- Una prueba de supresión de un sujeto en todas las zonas y derivados con evidencia.
+
 ## Checklist de revisión
 - [ ] Inventario de datos personales actualizado.
 - [ ] Flujo de supresión cubre todas las capas y copias derivadas.

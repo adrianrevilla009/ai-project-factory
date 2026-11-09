@@ -53,6 +53,19 @@ docker run -p 8000:8000 amazon/dynamodb-local -jar DynamoDBLocal.jar -inMemory -
 ```
 El nombre de la imagen y los flags `-inMemory` y `-sharedDb` figuran en la guía de AWS; confirmar el tag de imagen vigente. Ejemplo en bloque de texto, no ejecutado.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prueba la lógica con el emulador oficial en local, y declara qué no se reproduce (consistencia, límites, capacidad, flujos); lo demás es «no comprobado en AWS».
+- Las pruebas contra servicios reales no son parte de la fábrica.
+### Trampas frecuentes
+- Afirmar que algo funciona en AWS porque pasa en el emulador.
+- Código que se comporta distinto en local y en producción.
+- Ignorar la limitación de ítems y de transacciones.
+- Pruebas de rendimiento con el emulador.
+- Credenciales reales en las pruebas.
+### Evidencia
+- Una lista de lo que el emulador no reproduce incluida en la documentación de pruebas.
+
 ## Checklist de revisión
 - [ ] Endpoint y credenciales de emulador solo en perfil local/test.
 - [ ] README lista los límites del emulador.

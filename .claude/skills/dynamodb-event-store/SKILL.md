@@ -54,6 +54,19 @@ try {
 // La publicación la hace un consumidor de DynamoDB Streams, idempotente por pk+sk.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada flujo con clave de partición por agregado y orden por versión; las escrituras con condición evitan conflictos y huecos.
+- Varios eventos de un mismo comando se escriben en una única transacción.
+### Trampas frecuentes
+- Escrituras sin condición que permiten sobrescribir un evento.
+- Un flujo que crece sin límite y sin plan de instantáneas.
+- Orden asumido sin versión.
+- Leer por escaneo.
+- Confiar en el flujo de cambios como única fuente de verdad.
+### Evidencia
+- Una prueba concurrente con dos escrituras sobre la misma versión demuestra que solo una gana.
+
 ## Checklist de revisión
 - [ ] Clave `(pk, sk=versión)` y append condicional.
 - [ ] Ningún `UpdateItem`/`DeleteItem` sobre eventos; IAM lo impide.

@@ -52,6 +52,19 @@ expires: "2026-12-31"
 approved_by: security-lead
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Evalúa continuamente la configuración de la nube frente a líneas base, prioriza por exposición y vincula los hallazgos a un dueño.
+- Corrige en el código de infraestructura, no solo en la consola.
+### Trampas frecuentes
+- Corregir a mano y que reaparezca.
+- Miles de hallazgos sin priorizar.
+- Sin dueño por recurso.
+- Evaluar solo una vez.
+- Ignorar los falsos positivos recurrentes.
+### Evidencia
+- Una tendencia de hallazgos críticos abiertos y su tiempo de corrección.
+
 ## Checklist de revisión
 - [ ] Hay escaneo en CI y escaneo periódico del estado vivo.
 - [ ] Cada hallazgo tiene propietario, severidad y SLA.

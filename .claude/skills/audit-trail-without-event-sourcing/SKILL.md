@@ -54,6 +54,19 @@ public void changeStatus(UUID id, OrderStatus next, String actor) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Para auditar basta un registro inmutable de quién hizo qué y cuándo, separado del modelo de negocio.
+- Usa event sourcing solo si además necesitas reconstruir el estado.
+### Trampas frecuentes
+- Auditoría editable por la misma aplicación.
+- Registrar solo el resultado y no la intención.
+- Sin sincronización de relojes.
+- Datos sensibles sin protección en el registro.
+- Retención sin criterio.
+### Evidencia
+- Cada acción sensible deja un registro inmutable con actor, acción, objeto y hora.
+
 ## Checklist de revisión
 - [ ] La auditoría está en la misma transacción o proviene del WAL (CDC).
 - [ ] Incluye actor, instante, entidad, antes/después.

@@ -49,6 +49,19 @@ return generator.answerWithCitations(question, docs); // contexto delimitado y c
 ```
 Las firmas exactas de `SearchRequest` y filtros dependen de la versión de Spring AI.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- RAG cuando el modelo necesita datos propios y actuales que no están en su entrenamiento; decide el troceado, la recuperación y la evaluación con datos reales.
+- Mide la calidad de la recuperación aparte de la de la generación.
+### Trampas frecuentes
+- Evaluar solo la respuesta final.
+- Trozos demasiado grandes o pequeños elegidos al azar.
+- Recuperar sin respetar los permisos del usuario.
+- Documentos desactualizados sin proceso de refresco.
+- Sin citas ni forma de verificar.
+### Evidencia
+- Un conjunto de preguntas con respuestas y fuentes esperadas y métricas de recuperación y de respuesta.
+
 ## Checklist de revisión
 - [ ] Ingesta idempotente y separada de consulta.
 - [ ] Metadatos de ACL/tenant y filtro previo.

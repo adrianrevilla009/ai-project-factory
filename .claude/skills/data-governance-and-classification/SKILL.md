@@ -53,6 +53,19 @@ models:
         meta: { classification: internal }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Clasifica los datos, asigna propietarios y deriva de la clasificación los controles (acceso, retención, enmascarado); el gobierno es un proceso con dueños, no un documento.
+- Empieza con lo más sensible.
+### Trampas frecuentes
+- Clasificación que no se refleja en controles.
+- Un comité sin capacidad de decisión.
+- Catálogo de datos desactualizado.
+- Excepciones sin registro.
+- Pretender gobernar todo a la vez.
+### Evidencia
+- Un catálogo con clasificación, propietario y controles aplicados por conjunto.
+
 ## Checklist de revisión
 - [ ] Todo dataset nuevo tiene `owner`, `steward` y `classification`.
 - [ ] Cada columna personal lleva `pii: true`.

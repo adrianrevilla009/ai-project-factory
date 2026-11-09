@@ -51,6 +51,19 @@ GRANT SELECT ON ALL TABLES IN SCHEMA gold TO bi_reader;
 -- password: changeme-example (en producción, desde Vault; nunca en el repo)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una capa semántica con definiciones únicas de métricas; los informes consumen esa capa y no tablas sueltas.
+- Elige herramientas de código abierto por defecto y revisa la licencia.
+### Trampas frecuentes
+- La misma métrica con tres definiciones.
+- Informes sobre tablas operacionales directamente.
+- Permisos amplios en los informes.
+- Cuadros de mando que nadie usa.
+- Datos sensibles exportados sin control.
+### Evidencia
+- Cada métrica clave tiene una definición única y un propietario.
+
 ## Checklist de revisión
 - [ ] Cada métrica tiene definición única y dueño.
 - [ ] El BI lee solo gold con rol de solo lectura.

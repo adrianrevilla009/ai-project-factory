@@ -57,6 +57,19 @@ tesseract    ...   ...         ...      0                no
 servicio X   ...   ...         ...      ...              si
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una opción abierta para texto impreso limpio y un servicio gestionado para casos difíciles (manuscrito, tablas, formularios), evaluado con tus documentos.
+- Revisa dónde se procesan los datos.
+### Trampas frecuentes
+- Elegir por una demostración.
+- Enviar documentos sensibles a un servicio sin revisar las condiciones.
+- Ignorar el preprocesado de imagen.
+- Sin medir la precisión.
+- Sin capa de texto cuando ya existe.
+### Evidencia
+- Una comparación sobre una muestra real con precisión y coste.
+
 ## Checklist de revisión
 - [ ] Se usa texto embebido cuando existe.
 - [ ] Decisión basada en muestra etiquetada propia.

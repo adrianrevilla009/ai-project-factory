@@ -63,6 +63,19 @@ public final class BudgetGuard {
 // agente: for (int i = 0; i < MAX_STEPS && budget.remaining() > 0; i++) { ... }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Presupuestos por equipo, por funcionalidad y por petición, con límites de contexto y de salida; elige el modelo más pequeño que cumpla la calidad medida.
+- Cachea lo repetible.
+### Trampas frecuentes
+- Contexto enorme por defecto.
+- Un solo modelo caro para todo.
+- Sin límites por equipo.
+- Descubrir el coste al final del mes.
+- Cifras de precio de memoria.
+### Evidencia
+- Un panel de coste por petición y por equipo y alertas por desvío.
+
 ## Checklist de revisión
 - [ ] Toda llamada define `max_tokens` y tope de entrada.
 - [ ] Gasto etiquetado por tenant/feature/modelo.

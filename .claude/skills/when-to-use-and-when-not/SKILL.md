@@ -49,6 +49,19 @@ Agregado: Order (estado + notificar a otros) -> Postgres + outbox
 ¿Solo trazabilidad de cambios?                              si -> audit trail
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Event sourcing cuando el historial es el negocio y necesitas reconstruir, auditar o analizar en el tiempo; un registro de auditoría cuando solo quieres saber qué pasó.
+- Considera el coste: versionado, proyecciones, supresión de datos personales.
+### Trampas frecuentes
+- Event sourcing por defecto en todo.
+- Sin plan de supresión para datos personales.
+- Eventos que no tienen significado de negocio.
+- Proyecciones que no se pueden reconstruir.
+- Subestimar la curva de aprendizaje.
+### Evidencia
+- Una decisión escrita por agregado que explica por qué sí o por qué no.
+
 ## Checklist de revisión
 - [ ] ADR con respuesta a las tres necesidades.
 - [ ] Alternativas (audit trail, outbox) descartadas con motivo.

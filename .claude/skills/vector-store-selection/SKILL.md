@@ -52,6 +52,19 @@ LIMIT 10;
 ```
 La dimensión (1024) es un ejemplo; debe coincidir con el modelo elegido. Un filtro selectivo con índice aproximado puede devolver menos de k resultados: probar `hnsw.iterative_scan` si la versión lo soporta.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige por escala, filtros, consistencia, operación y licencia; para volúmenes moderados, la extensión vectorial de tu base relacional suele bastar.
+- Evalúa con tus datos y consultas.
+### Trampas frecuentes
+- Un almacén especializado para pocos miles de vectores.
+- Sin filtros por permisos o tenant.
+- Reindexar sin plan.
+- Cambiar el modelo de incrustación sin recalcular.
+- Licencia o servicio sin revisar.
+### Evidencia
+- Una comparación de latencia, recuperación y coste con una muestra real.
+
 ## Checklist de revisión
 - [ ] Opción más simple evaluada primero, con recall y latencia medidos.
 - [ ] Vector tratado como derivado; sin doble escritura.

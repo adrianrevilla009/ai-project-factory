@@ -56,6 +56,19 @@ void snapshotPlusTailEqualsFullReplay() {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Instantáneas cuando reconstruir un agregado es lento; el criterio es el tiempo de carga medido, no un número fijo de eventos.
+- Una instantánea es una optimización: se puede descartar y regenerar.
+### Trampas frecuentes
+- Instantáneas desde el principio sin necesidad.
+- Instantáneas que no se pueden regenerar.
+- Versionado de la instantánea ignorado.
+- Perder eventos al confiar en la instantánea.
+- Instantáneas con datos personales sin política de supresión.
+### Evidencia
+- Una prueba confirma que el estado desde la instantánea es igual al reconstruido desde cero.
+
 ## Checklist de revisión
 - [ ] Hay medición que justifica el snapshot.
 - [ ] Se puede borrar todo snapshot sin pérdida.

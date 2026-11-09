@@ -42,6 +42,19 @@ select id from product where attributes @> '{"color":"red"}';
 Si JSONB no basta (medido): ADR con comparación, fuente de verdad única (Mongo), proyección a OpenSearch derivada, ficha de coste y plan de salida.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un almacén de documentos cuando el modelo se ajusta a documentos con acceso por agregado y esquema que evoluciona; no como sustituto de lo relacional con muchas relaciones.
+- Revisa licencia y operación antes de adoptarlo.
+### Trampas frecuentes
+- Usarlo por «no tener esquema» y acabar con datos inconsistentes.
+- Transacciones entre colecciones como regla.
+- Documentos que crecen sin límite.
+- Sin validación de esquema.
+- Licencia no revisada.
+### Evidencia
+- Un ADR con coste, licencia y salida, y validación de esquema activada.
+
 ## Checklist de revisión
 - [ ] JSONB en Postgres evaluado y descartado con datos.
 - [ ] ADR con coste, licencia (SSPL, revisión legal) y salida.

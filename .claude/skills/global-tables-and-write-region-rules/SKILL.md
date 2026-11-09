@@ -50,6 +50,19 @@ aggregates:
 ```
 La condición es ilustrativa (cuenta de ejemplo); adaptar y validar con el simulador de políticas de IAM.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una región de escritura por agregado: evita conflictos y mantiene el orden de los eventos; la otra región lee y asume al conmutar.
+- Conoce las garantías de consistencia de tu modo de replicación.
+### Trampas frecuentes
+- Escribir en ambas regiones el mismo agregado.
+- Asumir consistencia fuerte entre regiones.
+- Resolución de conflictos «el último gana» sin entender su efecto.
+- Sin regla de conmutación de la región de escritura.
+- Olvidar el coste de la replicación.
+### Evidencia
+- Un ensayo de conmutación de región de escritura con comprobación de consistencia de los datos.
+
 ## Checklist de revisión
 - [ ] Modo MREC/MRSC decidido y justificado.
 - [ ] Región de escritura por agregado/tenant documentada y forzada por IAM o enrutado.

@@ -54,6 +54,19 @@ Runbook trimestral: restaurar "orders-db" en entorno aislado, validar checksums 
 registrar RTO medido vs objetivo.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Copias inmutables y aisladas con restauración probada, segmentación para limitar la propagación y accesos privilegiados controlados; define el orden de recuperación.
+- Prepara la decisión sobre rescates con legal y dirección, antes.
+### Trampas frecuentes
+- Copias accesibles con las mismas credenciales que los sistemas.
+- Restauraciones no ensayadas.
+- Red plana.
+- Sin orden de recuperación de servicios.
+- Decidir en caliente sin un marco previo.
+### Evidencia
+- Un ensayo de restauración desde copias aisladas con el tiempo real medido.
+
 ## Checklist de revisión
 - [ ] Existe copia inmutable en dominio de administración separado.
 - [ ] Borrar o acortar retención exige MFA y doble aprobación.

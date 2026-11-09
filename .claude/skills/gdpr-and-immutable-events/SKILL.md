@@ -47,6 +47,19 @@ void forgetSubject(String subjectId) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reconcilia inmutabilidad y supresión con datos personales fuera del evento (referencias) o cifrados por sujeto cuyas claves se destruyen; la norma exacta la valida una persona de legal.
+- Decide el enfoque en el diseño, no al recibir la primera solicitud.
+### Trampas frecuentes
+- Datos personales en claro dentro de eventos inmutables.
+- Borrar eventos y romper la reconstrucción.
+- Claves compartidas por muchos sujetos.
+- Copias y proyecciones que no se alcanzan con la supresión.
+- Suponer que cifrar basta sin gestionar las claves.
+### Evidencia
+- Una prueba de supresión de extremo a extremo: eventos, proyecciones, copias y registros.
+
 ## Checklist de revisión
 - [ ] Cada evento tiene sus campos clasificados; ninguno lleva PII sin cifrar o referenciar.
 - [ ] Existe procedimiento y prueba de "olvidar sujeto" extremo a extremo (store, vistas, búsqueda, caché).

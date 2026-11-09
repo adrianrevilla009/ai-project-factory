@@ -55,6 +55,19 @@ trained_models: [ticket-classifier:3]
 owner: data-steward@example.com
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra el origen, la licencia y la base legal de cada conjunto de datos de entrenamiento; prefiere datos propios, de licencia abierta compatible o sintéticos con condiciones claras.
+- La base legal la valida una persona de legal.
+### Trampas frecuentes
+- Datos de origen desconocido.
+- Suponer que lo público es utilizable.
+- Sin registro de licencias.
+- Mezclar datos con restricciones incompatibles.
+- Sin plan de retirada si se revoca el permiso.
+### Evidencia
+- Un registro de procedencia por conjunto de datos con licencia, base legal y validación.
+
 ## Checklist de revisión
 - [ ] Cada dataset tiene ficha de procedencia con licencia/base legal.
 - [ ] Uso previsto cubierto por licencia o contrato.

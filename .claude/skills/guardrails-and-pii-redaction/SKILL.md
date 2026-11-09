@@ -60,6 +60,19 @@ Answer answer(String userText) {
 ```
 Las regex de ejemplo no cubren todos los formatos; validar con un corpus propio. Detectores NER concretos (por ejemplo Presidio):.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Filtra y redacta datos personales antes de enviarlos al modelo y valida la salida; combina reglas, clasificadores y revisión humana según el riesgo.
+- Mide falsos positivos y negativos.
+### Trampas frecuentes
+- Confiar solo en el filtro del proveedor.
+- Redactar solo la entrada y no la salida.
+- Guardarraíles sin evaluación.
+- Bloquear tanto que el sistema no sirve.
+- Registros con el contenido original.
+### Evidencia
+- Un conjunto de pruebas de fuga de datos y de salida inapropiada ejecutado en CI.
+
 ## Checklist de revisión
 - [ ] PII redactada antes de enviar y antes de registrar.
 - [ ] Guardarraíl de salida y validación de esquema.

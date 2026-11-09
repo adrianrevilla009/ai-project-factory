@@ -46,6 +46,19 @@ Local: mismo motor. AWS: RDS/Aurora preparado, no verificado en real.
 select date_trunc('month', sold_at) m, sum(amount) from marts.fct_sales group by 1;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige por el volumen, la concurrencia y el modelo de coste: separación de cómputo y almacenamiento frente a coste fijo; considera licencias.
+- Mide con consultas reales.
+### Trampas frecuentes
+- Decidir por una demostración.
+- Sin control de coste por consulta o por equipo.
+- Copiar el modelo operacional sin diseñar para análisis.
+- Dependencia sin plan de salida.
+- Licencias no revisadas.
+### Evidencia
+- Una comparación con tus consultas y el coste estimado.
+
 ## Checklist de revisión
 - [ ] ADR con volumen, concurrencia, latencia, coste y licencia.
 - [ ] Opción mínima evaluada primero; excepción de licencia justificada.

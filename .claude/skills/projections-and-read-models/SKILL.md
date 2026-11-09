@@ -57,6 +57,19 @@ create table order_view (
 create table projection_checkpoint (stream_id text primary key, last_version bigint not null);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Proyecciones para necesidades de lectura concretas, idempotentes y reconstruibles desde los eventos; mide su retraso.
+- Una proyección por caso de uso, no una gigante.
+### Trampas frecuentes
+- Proyecciones que no toleran el reprocesado de eventos.
+- Lecturas que exigen datos recién escritos sin diseñar el retraso.
+- Lógica de negocio en la proyección.
+- Sin forma de reconstruir.
+- Esquema de proyección sin versionar.
+### Evidencia
+- Una reconstrucción completa de la proyección produce el mismo resultado y su retraso se monitoriza.
+
 ## Checklist de revisión
 - [ ] Solo el consumidor escribe la proyección.
 - [ ] Idempotencia y checkpoint transaccional.

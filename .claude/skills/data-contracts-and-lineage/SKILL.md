@@ -51,6 +51,19 @@ schema:
 CI: compara contracts/orders.v1.yaml con el esquema real; falla si falta una columna o cambia un tipo sin subir major.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un contrato entre productor y consumidor con esquema, semántica, frescura y propietario; el linaje muestra de dónde viene cada dato.
+- Los cambios incompatibles requieren aviso y versión.
+### Trampas frecuentes
+- Consumir tablas internas del productor como contrato.
+- Contratos sin validar automáticamente.
+- Linaje dibujado a mano.
+- Cambios sin aviso.
+- Sin propietario del dato.
+### Evidencia
+- Un contrato validado en CI y un linaje generado automáticamente.
+
 ## Checklist de revisión
 - [ ] Cada dataset publicado tiene contrato versionado con dueño y SLA.
 - [ ] CI valida esquema real vs. contrato; cambios incompatibles suben versión mayor.

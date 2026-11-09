@@ -47,6 +47,19 @@ public void checkout(Cart c) {
 // OrderSaga: StockReserved -> confirm(); StockRejected -> cancel() (compensacion); timeout 5 min -> cancel().
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cuando la operación cruza almacenes o servicios, usa sagas con compensaciones o diseña para que no cruce; define el estado intermedio visible.
+- Cada paso es idempotente.
+### Trampas frecuentes
+- Transacciones distribuidas por costumbre.
+- Compensaciones que no se ensayan.
+- Estados intermedios no visibles ni controlados.
+- Sin tiempo máximo en pasos largos.
+- Asumir que todos los fallos se compensan.
+### Evidencia
+- Pruebas que provocan fallo en cada paso y comprueban el estado final.
+
 ## Checklist de revisión
 - [ ] Se intentó mantener el invariante en un solo aggregate/datastore.
 - [ ] Cada paso es idempotente y tiene compensación o justificación.

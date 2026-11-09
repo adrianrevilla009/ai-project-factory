@@ -48,6 +48,19 @@ emergency_contacts: ["soc-oncall@example.com"]
 deliverables: [executive_summary, technical_findings, retest_report]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Pruebas de intrusión con alcance, reglas de compromiso y autorización escritas, sobre sistemas propios y entornos acordados; los hallazgos se gestionan como cualquier vulnerabilidad.
+- Repite tras cambios importantes.
+### Trampas frecuentes
+- Pruebas sin autorización o sin alcance.
+- Un informe que se archiva.
+- Pruebas contra producción sin ventana.
+- No verificar las correcciones.
+- Pruebas solo de red y no de lógica de negocio.
+### Evidencia
+- Un acta de alcance y de reglas de compromiso y un seguimiento de los hallazgos hasta su cierre.
+
 ## Checklist de revisión
 - [ ] RoE firmadas y vigentes en la ventana de la prueba.
 - [ ] Alcance e exclusiones explícitos; titularidad confirmada.

@@ -53,6 +53,19 @@ void applyBatch(String projection, List<StoredEvent> batch) {
 // Al terminar: lecturas apuntan a orders_summary_v2; v1 se elimina tras ventana de rollback.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Reconstruir y reproducir deben ser operaciones habituales y ensayadas, con el sistema en marcha y sin efectos externos duplicados.
+- Distingue reproducir para reconstruir de reproducir para reenviar.
+### Trampas frecuentes
+- Reproducir eventos y repetir correos o cobros.
+- Una reconstrucción que nunca se ha hecho con volumen real.
+- Sin medir el tiempo.
+- Bloquear el servicio durante la reconstrucción.
+- Sin comprobación de que el resultado coincide.
+### Evidencia
+- Un ensayo de reconstrucción completa con el tiempo medido y una comparación contra la vista viva.
+
 ## Checklist de revisión
 - [ ] La proyección se reconstruye en una versión nueva y se conmuta al final.
 - [ ] Checkpoint y efecto comparten transacción.

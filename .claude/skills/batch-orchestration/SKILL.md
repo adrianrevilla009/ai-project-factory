@@ -51,6 +51,19 @@ sales_daily()
 ```
 El contexto de Airflow expone `data_interval_start`; úsalo en lugar de la hora actual para que los reintentos sean reproducibles.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un orquestador cuando hay dependencias entre tareas, reintentos y calendarios; cada tarea es idempotente y se parametriza por intervalo de datos.
+- Las reposiciones de histórico son una operación normal.
+### Trampas frecuentes
+- Tareas que usan la hora actual en vez del intervalo.
+- Reintentos que duplican datos.
+- Reposición automática de histórico sin control.
+- Dependencias implícitas.
+- Sin alertas por tareas que no se ejecutan.
+### Evidencia
+- Una repetición de un intervalo produce el mismo resultado y las tareas tienen alertas.
+
 ## Checklist de revisión
 - [ ] Cada tarea es idempotente y recibe el intervalo, no la hora actual.
 - [ ] `catchup=False`; backfill documentado con rango.

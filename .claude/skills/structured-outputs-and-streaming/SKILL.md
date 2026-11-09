@@ -61,6 +61,19 @@ Classification classify(String text) {
 ```
 Streaming: `SseEmitter emitter = new SseEmitter(60_000L); emitter.onTimeout(stream::cancel); emitter.onError(e -> stream.cancel());`
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Salida estructurada con esquema cuando otro sistema la consume; valida siempre el resultado aunque el proveedor ofrezca garantías.
+- Streaming para mejorar la latencia percibida, con manejo de cortes.
+### Trampas frecuentes
+- Analizar texto libre con expresiones regulares.
+- Confiar en el formato sin validar.
+- Streaming sin tratar los fallos a mitad.
+- Esquemas demasiado complejos que degradan la calidad.
+- Mostrar al usuario contenido sin validar.
+### Evidencia
+- Pruebas con respuestas truncadas y con formato inválido.
+
 ## Checklist de revisión
 - [ ] Esquema definido y validado en el borde.
 - [ ] Manejo de truncado, rechazo y reintento acotado.

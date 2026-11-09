@@ -51,6 +51,19 @@ QueryRequest q = QueryRequest.builder()
     .build();
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Modela desde los patrones de acceso: define primero las consultas y diseña claves e índices para servirlas; una tabla por servicio suele bastar.
+- Elige modo bajo demanda o aprovisionado según la previsibilidad de la carga.
+### Trampas frecuentes
+- Diseñar como si fuera relacional.
+- Claves que concentran el tráfico en una partición.
+- Escaneos completos como patrón de lectura.
+- Índices secundarios por cada consulta imaginable.
+- Ítems enormes en vez de referencias a almacenamiento de objetos.
+### Evidencia
+- Cada patrón de acceso tiene su consulta, su clave y una prueba con datos realistas.
+
 ## Checklist de revisión
 - [ ] Hay tabla de patrones de acceso en el ADR o README del módulo.
 - [ ] Ninguna ruta de negocio usa `Scan`.

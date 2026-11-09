@@ -49,6 +49,19 @@ create table fct_order_line (
   primary key (order_id, line_no));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el modelo por el uso: estrella para análisis, bóveda para historial e integración, tablas anchas para simplicidad y velocidad; documenta el grano de cada tabla.
+- El lenguaje de negocio guía los nombres.
+### Trampas frecuentes
+- Tablas sin grano definido.
+- Mezclar niveles de detalle en la misma tabla.
+- Claves naturales mutables.
+- Dimensiones sin historial cuando se necesita.
+- Modelos que nadie entiende fuera del equipo.
+### Evidencia
+- Cada tabla documenta su grano, su clave y su fuente.
+
 ## Checklist de revisión
 - [ ] Granularidad escrita y única por hecho.
 - [ ] Claves surrogate y SCD2 donde hay historia.

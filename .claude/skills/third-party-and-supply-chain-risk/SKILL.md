@@ -50,6 +50,19 @@ logo de "Seguro" en la web. Sin contrato de encargado, sin plan de salida.
   next_review: "2027-11-01"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Evalúa proveedores por criticidad y datos compartidos, exige controles proporcionales y vigila cambios; define el plan de salida.
+- Incluye librerías y servicios en la evaluación.
+### Trampas frecuentes
+- Evaluar una vez al contratar.
+- Cuestionarios sin verificación.
+- Datos compartidos sin acuerdo.
+- Sin plan de salida.
+- Ignorar a los proveedores de tus proveedores.
+### Evidencia
+- Un registro de terceros con criticidad, datos, controles y revisión.
+
 ## Checklist de revisión
 - [ ] El tercero está en el inventario con criticidad y propietario.
 - [ ] Se validó alcance y fecha de las certificaciones.

@@ -56,6 +56,19 @@ public OrderStatus orderStatus(String orderId, @AuthenticatedCustomer CustomerId
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define el alcance y lo que no hará; avisa al usuario de que habla con una IA, ofrece una salida a una persona y conserva el contexto mínimo.
+- Mide resolución, no solo uso.
+### Trampas frecuentes
+- Un chatbot que pretende saberlo todo.
+- Sin traspaso a una persona.
+- Guardar conversaciones con datos personales sin política.
+- Respuestas sin fuente en temas sensibles.
+- Medir solo número de mensajes.
+### Evidencia
+- Tasa de resolución, de traspaso y de satisfacción con revisión de conversaciones.
+
 ## Checklist de revisión
 - [ ] Alcance y fuera de alcance documentados y versionados.
 - [ ] Aviso de interacción con IA visible.

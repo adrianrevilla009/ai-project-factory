@@ -60,6 +60,19 @@ void template_keeps_user_text_inside_data_block() {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Los prompts son código: versionados, revisados, probados y con propietario; separa plantilla, datos y configuración del modelo.
+- Cada cambio se evalúa antes de desplegarse.
+### Trampas frecuentes
+- Prompts editados en producción sin versión.
+- Cambios sin evaluación.
+- Datos del usuario concatenados en la instrucción.
+- Prompts duplicados en varios servicios.
+- Secretos o datos personales dentro del prompt.
+### Evidencia
+- Cada prompt tiene versión, dueño y un conjunto de evaluación.
+
 ## Checklist de revisión
 - [ ] Prompts en ficheros versionados, revisados en PR.
 - [ ] Sin concatenación de entrada no confiable en el sistema.

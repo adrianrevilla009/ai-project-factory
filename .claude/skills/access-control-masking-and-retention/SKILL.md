@@ -58,6 +58,19 @@ GRANT SELECT ON gold.customers_masked TO analyst;
 ```
 Nota: `md5` sin sal es reversible por diccionario; usar HMAC con secreto de Vault en producción.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Acceso por rol y por finalidad, enmascarado de columnas sensibles y retención con borrado automatizado; los datos de pruebas, enmascarados o sintéticos.
+- Los registros de acceso se revisan.
+### Trampas frecuentes
+- Acceso por defecto amplio.
+- Enmascarado solo en la herramienta de BI y no en el almacén.
+- Retención sin borrado efectivo.
+- Copias fuera de las reglas.
+- Sin revisión de accesos.
+### Evidencia
+- Una revisión trimestral de accesos y una prueba de enmascarado y de borrado por plazo.
+
 ## Checklist de revisión
 - [ ] Los permisos van a roles, no a personas.
 - [ ] Gold no expone columnas `pii` en claro por defecto.

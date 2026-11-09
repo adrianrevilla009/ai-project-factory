@@ -58,6 +58,19 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 Etiqueta de imagen; fijar por digest en el proyecto real.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Líneas base de configuración segura por tipo de sistema, basadas en referencias reconocidas y aplicadas como código con verificación continua.
+- Documenta las desviaciones.
+### Trampas frecuentes
+- Aplicar una referencia entera sin entender su efecto.
+- Hardening manual.
+- Sin verificación continua.
+- Desviaciones sin registro.
+- Líneas base que rompen la aplicación por no probarlas.
+### Evidencia
+- Un informe de conformidad con la línea base y las excepciones justificadas.
+
 ## Checklist de revisión
 - [ ] Benchmark, versión y perfil registrados.
 - [ ] La línea base es código versionado.

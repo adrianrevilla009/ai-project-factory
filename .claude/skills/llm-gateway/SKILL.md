@@ -55,6 +55,19 @@ consumers:
 ```
 Los nombres de propiedades de Spring AI se comprueban por proveedor y versión.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una pasarela interna centraliza claves, límites, registro, redacción de datos, enrutado entre modelos y coste; las aplicaciones no llaman directamente a los proveedores.
+- Decide qué se registra con cuidado.
+### Trampas frecuentes
+- Cada servicio con su clave del proveedor.
+- Registrar prompts completos con datos personales.
+- Sin límites por equipo.
+- Un único proveedor sin alternativa.
+- Pasarela sin alta disponibilidad.
+### Evidencia
+- Todas las llamadas pasan por la pasarela y hay un informe de coste por equipo.
+
 ## Checklist de revisión
 - [ ] Un único punto de salida a proveedores; sin claves de proveedor en servicios.
 - [ ] Identidad, cuotas y atribución de coste por consumidor.

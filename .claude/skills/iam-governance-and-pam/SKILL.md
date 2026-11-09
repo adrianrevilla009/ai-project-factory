@@ -49,6 +49,19 @@ session_audit: true
 leaver_sla: same-business-day
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Ciclo de vida de identidades (alta, cambio, baja), revisión periódica de accesos y acceso privilegiado temporal, registrado y con aprobación.
+- Separa cuentas de uso diario y de administración.
+### Trampas frecuentes
+- Accesos que nunca se retiran.
+- Cuentas privilegiadas permanentes.
+- Revisiones de formalidad.
+- Cuentas compartidas.
+- Sin registro de acciones privilegiadas.
+### Evidencia
+- Una revisión de accesos con retirada efectiva y un registro de sesiones privilegiadas.
+
 ## Checklist de revisión
 - [ ] Existe un proceso JML con SLA de baja medido.
 - [ ] Hay calendario de recertificación con responsables y evidencias guardadas.

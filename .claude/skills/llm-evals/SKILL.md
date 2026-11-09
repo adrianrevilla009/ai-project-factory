@@ -62,6 +62,19 @@ if __name__ == "__main__":
     sys.exit(1 if failed else 0)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un conjunto de casos representativo con criterios claros, ejecutado antes de cada cambio de modelo, prompt o datos; combina métricas automáticas y revisión humana por muestreo.
+- Las evaluaciones evolucionan con los fallos reales.
+### Trampas frecuentes
+- Evaluar con unos pocos ejemplos favorables.
+- Un modelo que juzga a otro sin contrastar con personas.
+- Cambios sin ejecutar la evaluación.
+- Casos que se filtran al entrenamiento o a los prompts.
+- Métricas que no reflejan lo que importa al usuario.
+### Evidencia
+- Un informe de evaluación comparable entre versiones y registrado con cada despliegue.
+
 ## Checklist de revisión
 - [ ] Dataset versionado, con holdout y casos adversos.
 - [ ] Umbrales numéricos definidos antes de iterar.

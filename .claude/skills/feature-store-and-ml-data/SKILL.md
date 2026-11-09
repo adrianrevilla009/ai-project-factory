@@ -51,6 +51,19 @@ orders_30d = FeatureView(
 # entrenamiento: get_historical_features(entity_df con event_timestamp, ...)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un almacén de características cuando varios modelos comparten características y necesitas coherencia entre entrenamiento y servicio; si no, una tabla versionada basta.
+- Versiona los datos de entrenamiento.
+### Trampas frecuentes
+- Cálculos distintos de la misma característica en entrenamiento y en producción.
+- Fugas de información del futuro en el entrenamiento.
+- Sin versión de los datos de cada modelo.
+- Complejidad de un almacén sin necesidad.
+- Datos personales sin control.
+### Evidencia
+- Cada modelo registra la versión exacta de los datos y las características con las que se entrenó.
+
 ## Checklist de revisión
 - [ ] Entrenamiento usa joins point-in-time.
 - [ ] Una definición por feature para offline y online.

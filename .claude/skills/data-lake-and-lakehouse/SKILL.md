@@ -53,6 +53,19 @@ resource "aws_s3_bucket_public_access_block" "lake" {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un formato de tabla con transacciones y evolución de esquema sobre almacenamiento de objetos cuando necesitas fiabilidad y análisis; define zonas (cruda, limpia, curada).
+- El catálogo y el control de acceso son parte de la solución.
+### Trampas frecuentes
+- Un lago sin catálogo ni dueños.
+- Formatos sin transacciones y con ficheros pequeños.
+- Datos personales sin control en la zona cruda.
+- Sin mantenimiento (compactación, limpieza).
+- Acceso al almacenamiento sin pasar por el control de permisos.
+### Evidencia
+- Un inventario de tablas con dueño, esquema y retención, y mantenimiento programado.
+
 ## Checklist de revisión
 - [ ] Zonas separadas con permisos distintos y raw inmutable.
 - [ ] Formato de tabla abierto + catálogo; sin ficheros sueltos en curated.

@@ -53,6 +53,19 @@ def run(ctx):
   runbook: "runbooks/fct-orders-late.md"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Vigila frescura, volumen, esquema y distribución con alertas útiles y dueños; detecta el problema antes que el consumidor.
+- Prioriza los conjuntos más críticos.
+### Trampas frecuentes
+- Alertas por todo que se ignoran.
+- Sin medir frescura frente a lo acordado.
+- Cambios de esquema que rompen sin aviso.
+- Sin dueño por conjunto.
+- Descubrir los problemas por un informe equivocado.
+### Evidencia
+- Una alerta de frescura y de volumen en los conjuntos críticos con responsable.
+
 ## Checklist de revisión
 - [ ] Cada dataset crítico tiene SLO, dueño y runbook.
 - [ ] Hay chequeo de frescura y volumen que falla el pipeline o alerta.

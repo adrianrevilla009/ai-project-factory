@@ -53,6 +53,19 @@ create table outbox (
 ```
 Con Debezium el `EventRouter` lee por defecto las columnas `id`, `aggregatetype`, `aggregateid`, `payload` (nombres configurables; en el esquema de arriba habría que mapear los nombres con snake_case) y filtra los `DELETE` del outbox.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Escribe el evento en la misma transacción que el cambio de estado y publícalo después con un proceso fiable (sondeo o captura de cambios); así evitas la escritura doble.
+- El consumidor debe ser idempotente.
+### Trampas frecuentes
+- Publicar al broker dentro de la transacción de negocio.
+- Un outbox que crece sin limpieza.
+- Sin orden por agregado.
+- Un publicador único sin recuperación.
+- Captura de cambios sin gestionar el esquema de los eventos.
+### Evidencia
+- Una prueba mata el publicador a mitad y comprueba que no se pierden ni duplican efectos.
+
 ## Checklist de revisión
 - [ ] Estado y outbox en la misma transacción.
 - [ ] Consumidores idempotentes por `id` de evento.
