@@ -8,4 +8,5 @@
 
 Cada hook se prueba como en producción: se lanza como subproceso con un evento JSON por stdin y se comprueba el código de salida. Los secretos de prueba se construyen en tiempo de ejecución para que ningún fichero del repo contenga uno literal.
 
-Aún no existen evaluaciones de comportamiento de los agentes (la skill `agent-evals` describe el formato propuesto).
+- `agent-evals/` — evaluaciones de comportamiento de los agentes. Los 21 casos de hook ejecutan el hook real con un evento (gates, secretos, comandos peligrosos, honestidad AWS, inyección de prompts, evidencia). Los 10 casos con modelo describen un escenario y una rúbrica; aquí solo se valida su estructura y que lo citado exista, porque evaluarlos necesita un modelo.
+- `semgrep/` — casos positivos y negativos de las reglas de `policies/semgrep/` (`make policy-test`).

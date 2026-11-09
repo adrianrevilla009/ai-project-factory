@@ -63,7 +63,7 @@ Inyecta un aviso de seguridad en el contexto tras `WebFetch|WebSearch|Read|Bash|
 | Bloqueo de escritura de secretos | 1 | `.claude/hooks/pre-tool-use/block_secrets.py` |
 | Bloqueo de comandos peligrosos (`curl ... \| sh`, force push, mutaciones AWS) | 1 | `.claude/hooks/pre-tool-use/block_dangerous_commands.py` |
 | Gates como fichero, no como texto | 1 | `.claude/hooks/pre-tool-use/enforce_gate_approval.py` |
-| Evals de inyección contra agentes | 3 | pendiente (`tests/agent-evals/`, ver `agent-evals`) |
+| Evals de inyección contra agentes | 3 | `tests/agent-evals/cases/` (caso con modelo y casos de hook; ver `agent-evals`) |
 
 ## Relacionados, fuentes y mantenimiento
 - Relacionados: `gate-protocol`, `mcp-governance`, `subagent-design`, `agent-evals`, `llm-security`.

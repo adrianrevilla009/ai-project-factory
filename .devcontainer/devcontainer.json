@@ -1,15 +1,33 @@
 {
   "name": "ai-project-factory",
-  "build": { "dockerfile": "Dockerfile" },
-  "runArgs": ["--cap-add=NET_ADMIN", "--cap-add=NET_RAW"],
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "runArgs": [
+    "--cap-add=NET_ADMIN",
+    "--cap-add=NET_RAW"
+  ],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
   "remoteUser": "vscode",
   "postCreateCommand": "bash .devcontainer/post-create.sh",
   "postStartCommand": "sudo /opt/firewall/init-firewall.sh",
-  "containerEnv": { "FACTORY_DEVCONTAINER": "1" },
+  "containerEnv": {
+    "FACTORY_DEVCONTAINER": "1"
+  },
   "customizations": {
-    "vscode": { "extensions": ["ms-python.python", "redhat.vscode-yaml", "anthropic.claude-code"] }
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "anthropic.claude-code"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "22"
+    }
   }
 }

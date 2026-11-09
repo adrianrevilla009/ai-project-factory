@@ -12,7 +12,7 @@ metadata:
 # Evals de agentes
 
 ## Cuándo aplicar y cuándo no
-- Aplica al cambiar un agente de `.claude/agents/`, un skill, un hook o un prompt, y al añadir casos a `tests/agent-evals` (pendiente: esa carpeta aún no existe).
+- Aplica al cambiar un agente de `.claude/agents/`, un skill, un hook o un prompt, y al añadir casos a `tests/agent-evals`.
 - No aplica a tests unitarios de código Java del proyecto generado (ver skills de testing) ni a evaluar calidad de modelos en general.
 
 ## Reglas
@@ -41,7 +41,7 @@ def test_agents_cannot_write_approvals(tmp_path):
                       tool="Write", path="approvals/gate-1.json", cwd=tmp_path)
     assert result.returncode == 2   # exit 2 = bloqueo
 ```
-Caso con LLM (formato propuesto, pendiente de implementar en `tests/agent-evals/`):
+Caso con modelo (formato real, ver `tests/agent-evals/cases/scenarios.yaml`):
 ```yaml
 id: backend-java-respects-no-lombok
 agent: backend-java
@@ -64,7 +64,8 @@ min_pass_rate: 1.0
 |---|---|---|
 | Tests de hooks (bloqueo, fail-closed, gates) | 1 | `tests/hooks/test_hooks.py`, `tests/hooks/test_hooks_extra.py` |
 | Hook de parada: no terminar con tests rojos | 2 | `.claude/hooks/stop/require_green_tests.py` (comando en `.claude/hooks/hooks-config.json`) |
-| Casos de agentes con LLM | 3 | `tests/agent-evals/` (estructura creada, contenido pendiente) |
+| Casos de hooks: se ejecuta el hook real y se comprueba su respuesta | 2 | `tests/agent-evals/cases/hooks.yaml` (21 casos, `make test`) |
+| Casos con modelo: escenario y rúbrica | 3 | `tests/agent-evals/cases/scenarios.yaml` (10 casos; los revisa una persona o un evaluador) |
 | Diseño y revisión de evals | 3 | agente `eval-engineer` |
 
 ## Relacionados, fuentes y mantenimiento
