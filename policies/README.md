@@ -1,14 +1,25 @@
 # policies
 
-Reglas ejecutables que respaldan filas «policy» o «hook» de las tablas de Enforcement de las skills. Las reglas **Semgrep** (46) están validadas y probadas con `make policy-test` (semgrep 1.184.0, casos positivos y negativos en `tests/semgrep/`). El resto son ejemplos escritos a mano que **aún no se han ejecutado** con su herramienta; cada fila de la tabla lo indica.
+Reglas **ejecutables** que respaldan las filas de nivel «política» (1) y «hook» (2) de las tablas de Enforcement de las skills: convierten una norma escrita en algo que una herramienta puede comprobar de forma automática.
 
-| Carpeta | Herramienta | Contenido | Cómo se usa |
-|---|---|---|---|
-| `semgrep/` | Semgrep | 36 ficheros (46 reglas): Java (Lombok, concurrencia, criptografía débil, deserialización), JPA, Spring, Kafka, SQL, LLM, frontend, dbt/Airflow, DynamoDB | `semgrep --config policies/semgrep <ruta>`; pruebas con `make policy-test` |
-| `opa-conftest/` | Conftest (Rego) | Pinning de GitHub Actions, Dockerfile, IAM sin comodín de admin, tags obligatorios, Argo CD, secretos en GitOps, Istio, AWS Backup Vault Lock, etiquetas de madurez | `conftest test <fichero> -p policies/opa-conftest` |
-| `kyverno/` | Kyverno | `workload-baseline` (requests/limits, probes, seccomp) y `verify-image-signatures` | `kubectl apply` en modo Audit primero |
-| `archunit/` | ArchUnit (Java) | Aislamiento del dominio, arquitectura hexagonal y límites entre módulos | Se copian al proyecto generado como tests JUnit |
-| `frontend-boundaries/` | ESLint, dependency-cruiser | Fronteras entre `app`/`features`/`shared` y TypeScript estricto | Se copian a la raíz del proyecto generado |
-| `maven-enforcer/` | Maven Enforcer | Lista de dependencias prohibidas | Se integra en el `pom.xml` del proyecto generado |
+Son ejemplos para copiar al proyecto generado, no un sistema en funcionamiento de esta fábrica (ADR-0038): cada proyecto adopta las que le apliquen, las adapta a su paquete base y a su versión de la herramienta y las ejecuta en su CI.
 
-Qué falta, de forma explícita: ejecutar y probar las políticas de Rego, Kyverno, ArchUnit y frontend; y las comprobaciones de IaC (Checkov) que varias skills marcan como «pendiente». Una regla Semgrep que pasa sus tests demuestra que detecta ese patrón sintáctico, no que el código esté libre del problema.
+## Contenido y estado
+| Carpeta | Herramienta | Qué contiene | Estado | Cómo se usa |
+|---|---|---|---|---|
+| [`semgrep/`](semgrep/README.md) | Semgrep | 46 reglas en 36 ficheros: Java, JPA, Spring, Kafka, SQL, LLM, frontend, datos y DynamoDB | **Probadas** con casos positivos y negativos (`make policy-test`) | `semgrep --config policies/semgrep <ruta>` |
+| [`opa-conftest/`](opa-conftest/README.md) | Conftest (Rego) | 9 políticas sobre manifiestos, Dockerfiles, flujos de CI, Terraform y registros de madurez | Escritas, **sin ejecutar** | `conftest test <fichero> -p policies/opa-conftest` |
+| [`kyverno/`](kyverno/README.md) | Kyverno | Línea base de cargas y verificación de firmas de imágenes | Escritas, **sin ejecutar** | Aplicar en modo auditoría primero |
+| [`archunit/`](archunit/README.md) | ArchUnit (Java) | Aislamiento del dominio, arquitectura hexagonal y límites entre módulos | Escritas, **sin ejecutar** | Copiar al proyecto como pruebas JUnit |
+| [`frontend-boundaries/`](frontend-boundaries/README.md) | ESLint y dependency-cruiser | Fronteras entre `app`, `features` y `shared`, y TypeScript estricto | Escritas, **sin ejecutar** | Copiar a la raíz del proyecto |
+| [`maven-enforcer/`](maven-enforcer/README.md) | Maven Enforcer | Dependencias prohibidas, derivadas del catálogo | Escrita, **sin ejecutar** | Integrar en el `pom` padre |
+| [`iac-checks/`](iac-checks/README.md) | Checkov, Conftest | **Especificación** de 28 comprobaciones de infraestructura que piden las skills | Sin escribir | Cada proyecto las implementa |
+
+## Qué demuestra una política y qué no
+Una regla que pasa sus pruebas demuestra que **detecta ese patrón**, no que el código esté libre del problema: Semgrep busca patrones sintácticos, no flujos de datos. Por eso las políticas son una capa más de defensa y conviven con los hooks, los revisores y los gates.
+
+## Cómo añadir o cambiar una política
+1. Escribe la regla y refiérela desde la tabla de Enforcement de la skill que la motiva.
+2. Si es de Semgrep, añade su caso positivo (`ruleid`) y negativo (`ok`) en `tests/semgrep/` y ejecuta `make policy-test`.
+3. Indica en la política la skill de la que sale y a qué proyecto se debe adaptar.
+4. Anota el cambio en el `CHANGELOG`.

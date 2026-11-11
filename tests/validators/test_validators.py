@@ -53,7 +53,7 @@ def test_long_description_rejected(tmp_path):
 def test_missing_sections_detected(tmp_path):
     text = "---\nname: demo\ndescription: algo\nmetadata:\n  block: b\n  tier: T1\n  owner: o\n  last_reviewed: 2026-01-01\n  enforcement: hook\n---\n# Demo\n\n## Reglas\n- x\n```java\n```\n"
     msgs = [x.message for x in skill_structure.validate_skill(make_skill(tmp_path, text), tmp_path)]
-    for s in ("cuándo aplicar", "por qué", "checklist de revisión", "enforcement", "relacionados/fuentes"):
+    for s in ("cuándo aplicar", "por qué", "criterios de decisión y trampas", "checklist de revisión", "enforcement", "relacionados/fuentes"):
         assert any(s in m for m in msgs), s
 
 
@@ -252,3 +252,27 @@ def test_modules_map_detects_missing_module_and_unknown_skill(tmp_path):
     msgs = " ".join(f.message for f in schemas_and_adrs.validate_modules_map(tmp_path))
     for needle in ("'extra' is activated", "unknown skill or path 'ghost'", "unknown block '99-x'", "policy does not exist"):
         assert needle in msgs, needle
+
+
+# --------------------------------------------------------------------- readmes
+import readmes  # noqa: E402
+
+
+def test_repo_readmes_are_valid():
+    assert readmes.validate_all(ROOT) == []
+
+
+def test_readme_validator_detects_missing_placeholder_counts_and_links(tmp_path):
+    for d in (".claude/skills/a", ".claude/agents/x", ".claude/commands/x", ".claude/hooks/pre", "catalog/adr", "gates"):
+        (tmp_path / d).mkdir(parents=True)
+    (tmp_path / ".claude/skills/a/SKILL.md").write_text("x")
+    (tmp_path / ".claude/agents/x/ag.md").write_text("x")
+    (tmp_path / ".claude/commands/x/cm.md").write_text("x")
+    (tmp_path / ".claude/hooks/pre/h.py").write_text("x")
+    (tmp_path / "catalog/adr/0001-a.md").write_text("x")
+    (tmp_path / "gates/gate-0-intake.md").write_text("x")
+    (tmp_path / "README.md").write_text("Hay 5 skills y 1 agentes. Ver [roto](no-existe.md). Contenido pendiente.\n")
+    msgs = " ".join(f.message for f in readmes.validate_all(tmp_path))
+    assert "README.md missing" in msgs
+    assert "states 5 skills, but there are 1" in msgs
+    assert "broken link: no-existe.md" in msgs

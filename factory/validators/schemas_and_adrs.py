@@ -102,11 +102,14 @@ def validate_mcp_catalog(root: Path = REPO_ROOT) -> list[Finding]:
 
 
 def validate_knowledge_links(root: Path = REPO_ROOT) -> list[Finding]:
-    """knowledge/*.md: every backticked kebab-case token must be an existing skill; ADR-NNNN mentions must exist."""
+    """knowledge/*.md and the golden paths: every backticked kebab-case token must be an existing skill; ADR-NNNN mentions must exist."""
     skills = {p.parent.name for p in (root / ".claude" / "skills").glob("*/SKILL.md")}
     adrs = {m.group(1) for p in (root / "catalog" / "adr").glob("[0-9]*.md") if (m := re.match(r"(\d{4})", p.name))}
     findings = []
-    for f in sorted((root / "knowledge").glob("*.md")):
+    docs = sorted((root / "knowledge").glob("*.md")) + [root / "catalog" / "golden-paths" / "README.md"]
+    for f in docs:
+        if not f.exists():
+            continue
         text = f.read_text()
         for token in sorted(set(re.findall(r"`([a-z0-9]+(?:-[a-z0-9]+)+)`", text))):
             if token not in skills:

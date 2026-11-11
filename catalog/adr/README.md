@@ -1,9 +1,22 @@
 # ADRs de la fábrica
 
-ADR-0001…0027 son las decisiones D1–D27 del brief. 0028–0031 y 0038 son decisiones tomadas durante la construcción de la fábrica. 0032–0037 eran decisiones abiertas del brief; el dueño las cerró el 2026-11-09 aceptando la opción indicada en cada ADR.
+Las decisiones de arquitectura de la propia fábrica, una por fichero. Un ADR (*Architecture Decision Record*) deja por escrito qué se decidió, entre qué opciones y por qué, para que nadie tenga que reconstruirlo después.
 
-Un ADR nuevo copia la estructura de los existentes (Estado, Fecha, Contexto, Opciones, Decisión, Consecuencias) y se añade a esta tabla. `make validate` comprueba que existan 0001–0027.
+## Cómo leerlos
+- **0001–0027:** las decisiones D1–D27 del brief (lenguaje, nube, IaC, malla, secretos, persistencia, CI/CD, observabilidad, políticas…).
+- **0028–0031 y 0038:** decisiones tomadas durante la construcción: estructura plana de skills, Python para hooks y validadores, acceso a Docker en el dev container, licencia de Vault y alcance «solo guías».
+- **0032–0037:** decisiones que el brief dejaba abiertas (Istio sidecar o ambient, CNI de EKS, kind o k3d, repositorio Maven y npm, SPA o SSR, `terraform plan` contra una cuenta vacía). El dueño las cerró el 2026-11-09 aceptando la opción indicada en cada ADR.
 
+## Estructura de un ADR
+Estado, fecha, contexto, opciones, decisión y consecuencias. Un ADR aceptado no se edita para cambiar de opinión: se escribe uno nuevo que lo sustituye y el antiguo pasa a «sustituido».
+
+## Cómo añadir uno
+1. Copia la estructura de un ADR existente con el siguiente número libre y un nombre en minúsculas con guiones.
+2. Añádelo a la tabla de abajo.
+3. Si sustituye a otro, cámbiale el estado.
+4. Ejecuta `make validate`, que comprueba que existen los ADR 0001–0027.
+
+## Índice
 | ADR | Título | Estado |
 |---|---|---|
 | [0001](0001-lenguaje-de-la-primera-version.md) | Lenguaje de la primera versión | aceptado |

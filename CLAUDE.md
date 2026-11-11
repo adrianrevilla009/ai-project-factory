@@ -15,8 +15,9 @@ Repositorio "fábrica" de **guías**: estándares, skills, agentes, comandos, ho
 10. **Verifica antes de afirmar** (skill `verify-before-asserting`).
 
 ## Comandos
-- `make validate` — validadores de la fábrica (estructura de skills, afirmaciones honestas, esquemas).
-- `make test` — tests de hooks y validadores (pytest).
+- `make validate` — validadores de la fábrica (skills, afirmaciones honestas, esquemas, catálogo MCP, mapa de módulos, enlaces, README y bloques de código).
+- `make test` — pruebas de hooks, validadores y agentes (pytest). `make check` ejecuta ambos.
+- `make index` — regenera el índice y los estándares tras tocar una skill. `make policy-test` — reglas de Semgrep.
 
 ## Dónde está cada cosa
-Skills `.claude/skills/` · hooks `.claude/hooks/` · gates `gates/` · validadores `factory/validators/` · ADRs `catalog/adr/`.
+Skills, agentes, comandos y hooks `.claude/` · gates `gates/` · catálogo y ADR `catalog/` · políticas `policies/` · conocimiento `knowledge/` · validadores `factory/validators/` · pruebas `tests/` · documentación `docs/` (empieza por `README.md`).

@@ -1,13 +1,22 @@
 # .devcontainer
 
-Entorno aislado para trabajar con agentes sobre la fábrica (ADR-0030, D26).
+Un entorno de trabajo aislado y reproducible para ejecutar agentes de IA sobre la fábrica (ADR-0030, D26). La idea: el agente trabaja dentro de un contenedor con la salida de red restringida, de modo que un error o una inyección de instrucciones tenga un radio de daño limitado.
 
-- `Dockerfile` — parte de `mcr.microsoft.com/devcontainers/python:3.12` fijada por digest y añade `make`, `jq`, `git`, `curl`, `iptables`, `ipset`, `dig` y `docker.io`. El usuario `vscode` solo puede ejecutar como root el script del firewall.
-- `devcontainer.json` — instala Node 22 con una feature de dev container (el CLI de Claude Code lo necesita), añade `NET_ADMIN`/`NET_RAW` (necesarios para el firewall), monta `/var/run/docker.sock` y ejecuta `post-create.sh` (dependencias de Python y el CLI de Claude Code con versión fija) y `firewall/init-firewall.sh`.
-- `firewall/init-firewall.sh` — resuelve los dominios de `firewall/allowlist.txt` a un `ipset` y rechaza el resto del tráfico saliente.
+## Contenido
+| Fichero | Qué hace |
+|---|---|
+| `Dockerfile` | Parte de `mcr.microsoft.com/devcontainers/python:3.12`, fijada por digest, y añade `make`, `jq`, `git`, `curl`, `iptables`, `ipset`, `dig` y `docker.io`. El usuario `vscode` solo puede ejecutar como administrador el script del firewall |
+| `devcontainer.json` | Instala Node 22 con una feature (el CLI de Claude Code lo necesita), añade las capacidades `NET_ADMIN` y `NET_RAW` (necesarias para el firewall), monta el socket de Docker y ejecuta `post-create.sh` y el firewall al arrancar |
+| `post-create.sh` | Instala las dependencias de Python y el CLI de Claude Code con **versión fija** |
+| `firewall/init-firewall.sh` | Resuelve los dominios de `allowlist.txt` a un `ipset` y rechaza el resto del tráfico saliente |
+| `firewall/allowlist.txt` | Los dominios permitidos: GitHub, PyPI, npm, Maven Central y los de Anthropic |
+
+## Cómo se usa
+Abre la carpeta del repositorio con un cliente compatible con dev containers (VS Code, por ejemplo) y elige «Reabrir en contenedor». Después, `make check` valida todo.
 
 ## Límites que debes conocer
-- **El firewall no se ha ejecutado en un contenedor real.** Trátalo como borrador hasta probarlo (`curl` a un dominio fuera de la allowlist debe fallar).
-- Resuelve IPs una sola vez al arrancar: dominios con IPs rotativas (CDN) pueden quedar bloqueados o desactualizados.
-- Montar el socket de Docker equivale a dar root sobre el host. No montes credenciales cloud en este contenedor.
+- **El firewall no se ha ejecutado en un contenedor real.** Trátalo como un borrador hasta probarlo: una petición a un dominio fuera de la allowlist debe fallar.
+- Resuelve las direcciones IP **una sola vez** al arrancar: los dominios con IP rotativas (CDN) pueden quedar bloqueados o desactualizados.
+- La allowlist no incluye los registros de imágenes de contenedores, así que `kind` no puede descargar imágenes dentro del contenedor hasta que se añadan.
+- **Montar el socket de Docker equivale a dar administrador sobre el equipo anfitrión.** No montes credenciales de nube en este contenedor.
 - Para ampliar la allowlist, añade el dominio a `allowlist.txt` y justifícalo en el PR.

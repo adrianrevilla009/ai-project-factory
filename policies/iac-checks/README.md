@@ -1,8 +1,13 @@
 # iac-checks
 
-Especificación de las comprobaciones de infraestructura como código (Checkov, Trivy en modo `config`, OPA/Conftest sobre Terraform) que las skills piden y que **todavía no están implementadas**. Esta fábrica solo guía: cada proyecto generado implementa las que le apliquen, con la herramienta que adopte.
+La **especificación** de las comprobaciones de infraestructura como código que piden las skills y que todavía no están implementadas: qué debe detectar cada una y de qué skill sale. Esta fábrica solo guía, así que cada proyecto generado implementa las que le apliquen, con la herramienta que adopte (Checkov, Trivy en modo configuración u OPA/Conftest).
 
-Regla de uso (skills `compliance-as-code`, `static-verification-ladder`): primero los checks nativos de la herramienta; solo se escribe uno propio cuando el nativo no cubre la regla. Cada check propio lleva su skill de origen, un caso que debe fallar y otro que debe pasar.
+## Cómo usar esta lista
+1. **Primero lo nativo:** antes de escribir un check propio, comprueba si la herramienta ya lo cubre (por ejemplo, Checkov trae comprobaciones de rotación de claves KMS o de cifrado de CloudTrail).
+2. **Solo lo que falte:** un check propio se justifica cuando el nativo no cubre la regla de la skill.
+3. **Con pruebas:** cada check lleva un caso que debe fallar y otro que debe pasar.
+
+Skills relacionadas: `compliance-as-code` y `static-verification-ladder`.
 
 ## Checks solicitados por las skills
 | Skill | Qué debe detectar |

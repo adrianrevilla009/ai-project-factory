@@ -4,6 +4,8 @@ Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versiona
 
 ## [0.5.0] - 2026-11-09
 ### Añadido
+- README reescritos y completos en todas las carpetas principales (35), con el validador `readmes.py` que comprueba su existencia, sus cifras y sus enlaces.
+- La sección «Criterios de decisión y trampas» pasa a ser obligatoria en el validador de skills.
 - Sección «Criterios de decisión y trampas» en las 490 skills (antes solo en 70).
 - `capabilities/modules-map.yaml` enlazado con skills, políticas y pruebas reales y validado (`make validate`).
 - `tests/agent-evals/`: 21 casos que ejecutan los hooks reales y 10 escenarios con rúbrica.

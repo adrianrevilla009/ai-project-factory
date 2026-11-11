@@ -1,12 +1,25 @@
 # tests
 
-`make test` ejecuta `pytest tests`. Cubre la maquinaria de la fábrica, no el contenido de las skills.
+Las pruebas de la **maquinaria** de la fábrica: hooks, validadores, reglas de Semgrep y comportamiento de los agentes. No prueban el contenido de las skills (eso lo comprueban los validadores); prueban que las herramientas que lo hacen cumplir funcionan.
 
-- `hooks/test_hooks.py` — hooks PreToolUse: secretos, comandos peligrosos y registros de aprobación de gates.
-- `hooks/test_hooks_extra.py` — hooks de SessionStart, PostToolUse, Stop y auditoría.
-- `validators/test_validators.py` — validadores de skills y de claims sobre AWS, esquemas, ADRs y frescura del índice generado.
+## Contenido
+| Carpeta | Qué prueba | Cómo se ejecuta |
+|---|---|---|
+| [`hooks/`](hooks/README.md) | Cada hook, lanzado como en producción con un evento JSON | `make test` |
+| [`validators/`](validators/README.md) | Los validadores y la definición de agentes y comandos | `make test` |
+| [`agent-evals/`](agent-evals/README.md) | El comportamiento esperado de los agentes: casos de hook ejecutables y escenarios con rúbrica | `make test` (los escenarios con modelo solo se validan por estructura) |
+| [`semgrep/`](semgrep/README.md) | Las reglas de `policies/semgrep/` con casos positivos y negativos | `make policy-test` (requiere Semgrep) |
 
-Cada hook se prueba como en producción: se lanza como subproceso con un evento JSON por stdin y se comprueba el código de salida. Los secretos de prueba se construyen en tiempo de ejecución para que ningún fichero del repo contenga uno literal.
+## Comandos
+```bash
+make test          # pytest tests: hooks, validadores y agent-evals
+make check         # make validate + make test
+make policy-test   # semgrep --test sobre policies/semgrep y tests/semgrep
+python3 -m pytest tests/hooks -q      # solo una carpeta
+```
 
-- `agent-evals/` — evaluaciones de comportamiento de los agentes. Los 21 casos de hook ejecutan el hook real con un evento (gates, secretos, comandos peligrosos, honestidad AWS, inyección de prompts, evidencia). Los 10 casos con modelo describen un escenario y una rúbrica; aquí solo se valida su estructura y que lo citado exista, porque evaluarlos necesita un modelo.
-- `semgrep/` — casos positivos y negativos de las reglas de `policies/semgrep/` (`make policy-test`).
+## Convenciones
+- **Sin secretos literales:** los valores de prueba que parecen credenciales se construyen en tiempo de ejecución, para que ningún fichero del repo contenga uno.
+- **Cada regla, con su caso negativo:** una prueba que solo comprueba que algo se bloquea no basta; hay que comprobar también lo que debe pasar.
+- **Aisladas:** cada prueba usa una carpeta temporal y no depende del orden ni del estado del repo.
+- **Qué no hay:** pruebas de código de proyectos generados (la fábrica no tiene ninguno) ni evaluación automática de respuestas de un modelo.

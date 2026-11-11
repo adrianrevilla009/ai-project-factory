@@ -13,6 +13,7 @@ REQUIRED_SECTIONS = [
     ("reglas", r"reglas"),
     ("por qué", r"por qu[eé]"),
     ("ejemplos", r"ejemplos"),
+    ("criterios de decisión y trampas", r"criterios de decisi[oó]n"),
     ("checklist de revisión", r"checklist"),
     ("enforcement", r"enforcement"),
     ("relacionados/fuentes", r"relacionados|fuentes"),

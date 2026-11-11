@@ -1,6 +1,6 @@
 # knowledge
 
-Conocimiento transversal de la fábrica, en dos capas.
+Conocimiento transversal de la fábrica, en dos capas: unos catálogos escritos que ayudan a encontrar y aplicar las skills, y una memoria que se rellena al cerrar proyectos.
 
 ## Catálogos (escritos, revisables)
 Capa de navegación sobre las 490 skills. No sustituyen a las skills: te llevan a ellas desde un problema.
