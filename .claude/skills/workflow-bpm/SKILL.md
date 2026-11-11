@@ -50,6 +50,19 @@ public void execute(String businessKey) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un motor de procesos cuando el flujo es largo, con esperas, tareas humanas y trazabilidad; si son pocos pasos, el código con una máquina de estados basta.
+- Decide por licencia y mantenimiento antes de adoptar.
+### Trampas frecuentes
+- Un motor para flujos de dos pasos.
+- Lógica de negocio escondida en el diagrama.
+- Procesos sin versionado de definiciones.
+- Sin plan para instancias en curso al cambiar el proceso.
+- Licencia de pago asumida.
+### Evidencia
+- Un ADR que justifica el motor y una prueba de migración de instancias entre versiones.
+
 ## Checklist de revisión
 - [ ] Licencia del motor revisada y aceptada.
 - [ ] Dominio aislado del motor por un puerto.

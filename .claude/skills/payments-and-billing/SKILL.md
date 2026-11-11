@@ -58,6 +58,19 @@ ResponseEntity<Void> hook(@RequestBody byte[] raw, @RequestHeader("Stripe-Signat
 ```
 El nombre de cabecera `Stripe-Signature` es de Stripe; adaptarlo al PSP elegido.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Delega la captura de tarjetas en un proveedor certificado para salir del alcance de los datos de tarjeta; guarda solo referencias.
+- Idempotencia en cada operación y conciliación periódica.
+### Trampas frecuentes
+- Guardar datos de tarjeta.
+- Cobros sin clave de idempotencia.
+- Confiar solo en la respuesta síncrona: usa las notificaciones firmadas del proveedor.
+- Importes en coma flotante.
+- Sin conciliación con el proveedor.
+### Evidencia
+- Pruebas de cobro duplicado, de notificación repetida y una conciliación automática.
+
 ## Checklist de revisión
 - [ ] Sin `double`/`float` en importes; moneda explícita.
 - [ ] Idempotencia en cobros y reembolsos.

@@ -57,6 +57,19 @@ public void handle(OrderSyncPayload p) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Integra por contratos explícitos con una capa anticorrupción, colas y reintentos idempotentes; respeta los límites del sistema externo.
+- Documenta quién es la fuente de cada dato.
+### Trampas frecuentes
+- Acoplarte al modelo del sistema externo.
+- Llamadas síncronas a un sistema lento.
+- Sin límites de uso ni reintentos con retroceso.
+- Dos sistemas que se actualizan entre sí sin fuente de verdad.
+- Credenciales de integración compartidas.
+### Evidencia
+- Pruebas con respuestas grabadas del sistema real y un proceso de conciliación.
+
 ## Checklist de revisión
 - [ ] Puerto y adaptador; el dominio no importa tipos del ERP.
 - [ ] Fuente de verdad por entidad documentada.

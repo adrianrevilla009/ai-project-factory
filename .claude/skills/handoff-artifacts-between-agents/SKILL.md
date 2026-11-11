@@ -45,6 +45,19 @@ Fichero `docs/handoffs/2026-11-07-orders-backend-to-qa.md` (ruta ilustrativa; ca
 - No verificado: comportamiento en AWS (preparado para AWS, no verificado en real).
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Entre agentes se pasa un artefacto escrito (ficheros, resumen con evidencia), no un recuerdo de la conversación; cada afirmación se marca como verificada o supuesta.
+- El receptor puede actuar solo con el artefacto.
+### Trampas frecuentes
+- Traspasos que dependen de contexto no escrito.
+- Mezclar hechos y suposiciones.
+- Artefactos sin rutas ni comandos reproducibles.
+- Resultados enormes sin resumen.
+- Sin criterio de aceptación del traspaso.
+### Evidencia
+- El artefacto de traspaso contiene objetivo, evidencia, supuestos y siguiente paso.
+
 ## Checklist de revisión
 - [ ] El traspaso es un fichero versionado con ruta conocida.
 - [ ] Contiene objetivo, decisiones, ficheros, evidencias, pendientes y riesgos.

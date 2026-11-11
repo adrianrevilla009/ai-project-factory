@@ -48,6 +48,19 @@ public void on(OrderPlaced e) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Desacopla el origen del envío: el caso de uso emite un evento y un consumidor envía por el canal adecuado con plantillas, preferencias y límites.
+- Respeta el consentimiento y las preferencias del usuario.
+### Trampas frecuentes
+- Enviar desde la transacción de negocio.
+- Sin deduplicación: correos repetidos en reintentos.
+- Plantillas con datos personales innecesarios.
+- Sin límites por usuario.
+- Ignorar los rebotes y las bajas.
+### Evidencia
+- Una prueba de reintento comprueba que el usuario recibe un solo mensaje y respeta sus preferencias.
+
 ## Checklist de revisión
 - [ ] Envío fuera de la transacción de negocio.
 - [ ] Clave de idempotencia única.

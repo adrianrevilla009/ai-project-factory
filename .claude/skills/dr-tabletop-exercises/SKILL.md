@@ -42,6 +42,19 @@ Hallazgo H1: el runner de CI depende de la región caída. Dueño: plataforma. R
 Hallazgo H2: runbook de promoción de Aurora sin responsable de decisión.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un ejercicio de mesa con un escenario realista, roles asignados y las decisiones que habría que tomar; el resultado son huecos del plan y acciones.
+- Repite con escenarios distintos.
+### Trampas frecuentes
+- Un ejercicio de cortesía en el que todo sale bien.
+- Sin las personas que de verdad actuarían.
+- Sin registro de decisiones ni de huecos.
+- Acciones sin dueño.
+- Un único escenario repetido.
+### Evidencia
+- Un acta con el escenario, las decisiones, los huecos encontrados y las acciones con responsable.
+
 ## Checklist de revisión
 - [ ] Escenario, tier, roles y criterios de éxito definidos.
 - [ ] Recorrido por todos los componentes de `resilience-tiers.yaml`.

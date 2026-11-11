@@ -64,6 +64,19 @@ Un servidor MCP amplía la superficie de ataque: ejecuta código con los permiso
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada servidor MCP se aprueba por revisión, con versión fija, permisos mínimos por herramienta y credenciales por variable; el catálogo de la fábrica es el punto de partida.
+- Revisa periódicamente los que no se usan.
+### Trampas frecuentes
+- Servidores sin versión fijada.
+- Permisos para el servidor entero.
+- Tokens en el fichero de configuración.
+- Servidores que envían código a terceros sin decisión.
+- Salida del servidor tratada como instrucciones.
+### Evidencia
+- Cada servidor figura en el catálogo con versión, permisos, datos y roles.
+
 ## Checklist de revisión
 - [ ] El servidor tiene propietario, finalidad y alcance de datos documentados en el PR.
 - [ ] Sin secretos literales en `.mcp.json`; solo `${VAR}`.

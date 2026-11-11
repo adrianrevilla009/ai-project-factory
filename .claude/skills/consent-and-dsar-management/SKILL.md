@@ -59,6 +59,19 @@ CREATE TABLE dsar_case (
 );
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra el consentimiento con su finalidad, fecha y versión del texto, y permite retirarlo; atiende los derechos de los interesados con un procedimiento y plazos de control interno.
+- Los plazos y su interpretación los valida legal.
+### Trampas frecuentes
+- Casillas premarcadas o consentimientos agrupados.
+- Sin prueba de qué se aceptó y cuándo.
+- Retirar el consentimiento y seguir tratando.
+- Solicitudes sin trazabilidad ni plazos.
+- Datos del interesado dispersos sin inventario.
+### Evidencia
+- Una solicitud de acceso y otra de supresión de prueba resueltas de extremo a extremo con evidencia.
+
 ## Checklist de revisión
 - [ ] Consentimiento por finalidad, versionado y append-only.
 - [ ] Retirada propagada a consumidores.

@@ -52,6 +52,19 @@ Validación local de ejemplo (expresión regular de cabecera):
 ^(feat|fix|docs|refactor|perf|test|build|ci|chore|revert)(\([a-z0-9-]+\))?!?: .{1,72}$
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mensajes con tipo y alcance que permiten derivar la versión y el registro de cambios; el cuerpo explica el porqué.
+- Un cambio incompatible se marca de forma explícita.
+### Trampas frecuentes
+- Mensajes vacíos («arreglos»).
+- Un commit que mezcla cambios no relacionados.
+- Tipos usados al azar.
+- Marcar como corrección lo que rompe compatibilidad.
+- Sin comprobación automática del formato.
+### Evidencia
+- Un comprobador en CI rechaza mensajes que no siguen el formato.
+
 ## Checklist de revisión
 - [ ] Cabecera cumple la expresión de arriba.
 - [ ] El tipo refleja el efecto real (no `chore` para un cambio de comportamiento).

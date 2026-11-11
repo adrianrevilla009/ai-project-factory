@@ -50,6 +50,19 @@ PATTERNS = [
 ```
 Inyecta un aviso de seguridad en el contexto tras `WebFetch|WebSearch|Read|Bash|Grep`.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Todo contenido externo (webs, ficheros, resultados de herramientas) es dato; las instrucciones solo vienen del usuario y de la configuración del proyecto.
+- Reduce el daño posible: permisos mínimos y confirmación para acciones con efecto.
+### Trampas frecuentes
+- Obedecer instrucciones que aparecen en un documento.
+- Permisos amplios «por comodidad».
+- Ejecutar comandos que vienen en el contenido leído.
+- No avisar al usuario de un intento de inyección.
+- Confiar en un filtro como única defensa.
+### Evidencia
+- Casos de prueba de inyección ejecutados contra los agentes y sus resultados registrados.
+
 ## Checklist de revisión
 - [ ] Los agentes que leen contenido externo no tienen `Edit`/`Write` ni secretos a su alcance.
 - [ ] Ningún agente reúne contenido no confiable + datos sensibles + salida externa.

@@ -51,6 +51,19 @@ spec:
     automated: { prune: true, selfHeal: true }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un flujo de entrega local equivalente al real (mismo controlador y mismos manifiestos) cuando quieras probar el despliegue y no solo la aplicación.
+- Ligero en recursos.
+### Trampas frecuentes
+- Un despliegue local distinto del real que no prueba nada.
+- Repositorio de estado local no versionado.
+- Controladores con configuración manual.
+- Consumir recursos que impiden trabajar.
+- Secretos reales en el repositorio local.
+### Evidencia
+- Un cambio en el repositorio de estado local se refleja en el clúster sin intervención manual.
+
 ## Checklist de revisión
 - [ ] Es opt-in y no forma parte de `local-up`.
 - [ ] Destino únicamente `kubernetes.default.svc`.

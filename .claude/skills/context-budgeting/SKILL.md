@@ -51,6 +51,19 @@ lines = [l for l in sys.stdin if re.search(r"ERROR|FAIL", l)]
 print("".join(lines[:100]))
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- El contexto es un recurso: carga lo necesario bajo demanda, resume lo que termina y delega lo voluminoso a subagentes.
+- Mantén las instrucciones permanentes cortas.
+### Trampas frecuentes
+- Cargar todas las skills por si acaso.
+- Pegar ficheros enteros cuando basta un fragmento.
+- Conversaciones larguísimas sin resumen.
+- Resultados de herramientas voluminosos sin filtrar.
+- Reglas importantes enterradas en un texto largo.
+### Evidencia
+- Las sesiones largas conservan las decisiones y las reglas tras compactar.
+
 ## Checklist de revisión
 - [ ] `CLAUDE.md` <= 80 líneas; el detalle está en skills.
 - [ ] Las lecturas pesadas se delegaron y volvió un resumen.

@@ -40,6 +40,19 @@ Probamos el failover de base de datos en local, así que la recuperación está 
 | Multi-región y DR | (ninguno) | Solo simulacro documental (tabletop) |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Mantén una matriz de qué componente local sustituye a cada servicio de AWS y qué diferencias tiene; es la base de lo que se declara «no verificado en real».
+- Actualízala cuando cambie un emulador o un servicio.
+### Trampas frecuentes
+- Una matriz que se escribió una vez.
+- Diferencias no documentadas.
+- Asumir paridad de comportamiento y de límites.
+- Sin responsable de mantenerla.
+- Usarla como prueba de que funciona en la nube.
+### Evidencia
+- Cada fila de la matriz tiene fecha de revisión y la fuente de sus afirmaciones.
+
 ## Checklist de revisión
 - [ ] Hay tabla de paridad en el README y coincide con la matriz de la fábrica.
 - [ ] Cada servicio AWS del diseño tiene fila, incluidos los sin equivalente local.

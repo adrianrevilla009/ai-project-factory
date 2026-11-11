@@ -44,6 +44,19 @@ PRR orders-service: todo ok, se puede lanzar.
 Decisión: pendiente de aprobación humana (gate).
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una revisión antes de la salida con una lista fija (observabilidad, alertas, runbooks, capacidad, seguridad, recuperación) y evidencia por punto; no es una aprobación de formalidad.
+- El resultado son acciones con dueño.
+### Trampas frecuentes
+- Una lista que siempre se marca como cumplida.
+- Revisar tarde, cuando ya no se puede cambiar.
+- Sin evidencia.
+- Acciones sin responsable.
+- Pasar la revisión una vez y no repetir ante cambios grandes.
+### Evidencia
+- Una revisión con evidencia enlazada por punto y acciones abiertas con responsable.
+
 ## Checklist de revisión
 - [ ] Cada ítem tiene estado y evidencia enlazada.
 - [ ] Los "No cumple" críticos tienen riesgo aceptado con dueño y fecha.

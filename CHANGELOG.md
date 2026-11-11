@@ -4,6 +4,10 @@ Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) · Versiona
 
 ## [0.5.0] - 2026-11-09
 ### Añadido
+- Sección «Criterios de decisión y trampas» en las 490 skills (antes solo en 70).
+- `capabilities/modules-map.yaml` enlazado con skills, políticas y pruebas reales y validado (`make validate`).
+- `tests/agent-evals/`: 21 casos que ejecutan los hooks reales y 10 escenarios con rúbrica.
+- Pruebas estáticas de agentes y comandos; trabajo `policies` en el CI; devcontainer con imagen fijada por digest y CLI de Claude Code con versión fija.
 - Agentes `cloud-architect`, `devsecops-engineer` y `release-manager` (28) y comandos `/incident-response`, `/rollback-plan` y `/security-review` (29).
 - Línea base de permisos en `.claude/settings.json` (allow, ask y deny) con la sintaxis verificada en la documentación de Claude Code.
 ### Cambiado

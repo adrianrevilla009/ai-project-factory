@@ -51,6 +51,19 @@ VALUES (gen_random_uuid(), :sub, :email)
 ON CONFLICT (identity_subject) DO NOTHING;
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Usa un proveedor de identidad estándar para clientes (OIDC) y separa identidad (quién eres) de perfil de negocio (qué sabemos de ti).
+- Decide el modelo de organizaciones o cuentas de empresa desde el principio.
+### Trampas frecuentes
+- Construir tu propio almacén de contraseñas.
+- Mezclar identidad y datos de negocio en la misma tabla.
+- Sin recuperación de cuenta segura.
+- Federación sin control de qué atributos se aceptan.
+- Cuentas compartidas entre personas de un cliente.
+### Evidencia
+- Pruebas de registro, recuperación, bloqueo y federación, y un inventario de atributos de identidad.
+
 ## Checklist de revisión
 - [ ] Ninguna tabla de negocio guarda credenciales.
 - [ ] `identity_subject` único y no nulo.

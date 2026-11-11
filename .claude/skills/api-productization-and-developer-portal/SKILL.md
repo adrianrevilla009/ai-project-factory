@@ -66,6 +66,19 @@ paths:
 oasdiff breaking openapi-prev.yaml openapi.yaml --fail-on ERR
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Trata la API como un producto: documentación, ejemplos, entorno de pruebas, versionado, límites y soporte; mide el uso.
+- Un portal cuando hay consumidores externos o muchos internos.
+### Trampas frecuentes
+- Documentación desactualizada.
+- Sin entorno de pruebas para los consumidores.
+- Cambios sin aviso ni versión.
+- Sin métricas de uso ni de errores por cliente.
+- Claves compartidas entre consumidores.
+### Evidencia
+- Tiempo hasta la primera llamada correcta de un nuevo consumidor y métricas por cliente.
+
 ## Checklist de revisión
 - [ ] Ciclo de vida, changelog y política de deprecación publicados.
 - [ ] Docs generadas del OpenAPI; sandbox con datos ficticios.

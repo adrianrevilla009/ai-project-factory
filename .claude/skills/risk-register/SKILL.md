@@ -49,6 +49,19 @@ Un riesgo visible se gestiona; uno implícito se descubre en producción. El reg
   status: open
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un registro vivo con riesgo, probabilidad, impacto, tratamiento, dueño y fecha de revisión; los riesgos aceptados lo son por una persona con autoridad.
+- Revisión periódica.
+### Trampas frecuentes
+- Un registro que se rellena y se olvida.
+- Riesgos sin dueño.
+- Aceptar sin decisión explícita.
+- Puntuaciones sin criterio.
+- Mezclar riesgos con tareas pendientes.
+### Evidencia
+- Cada riesgo abierto tiene dueño, tratamiento y fecha de revisión.
+
 ## Checklist de revisión
 - [ ] Cada riesgo tiene dueño, puntuación y fecha de revisión.
 - [ ] Los riesgos aceptados tienen aprobación humana y caducidad.

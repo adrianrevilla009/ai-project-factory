@@ -55,6 +55,19 @@ if (refund.requestedBy().equals(approverId)) {
 auditLog.record(AuditEvent.of("REFUND_APPROVED", approverId, refund.id(), reason));
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una consola con permisos por función, doble aprobación para acciones de alto riesgo y registro completo; el acceso se concede de forma temporal.
+- Tratada como un producto, no como un conjunto de atajos.
+### Trampas frecuentes
+- Permisos de administrador para todos.
+- Acciones irreversibles sin confirmación.
+- Sin registro de quién cambió qué.
+- Acceso a datos personales sin necesidad.
+- Una consola sin pruebas de autorización.
+### Evidencia
+- Una prueba de autorización por rol y una revisión de las acciones administrativas de un periodo.
+
 ## Checklist de revisión
 - [ ] Cliente OIDC, host y roles de admin separados de los públicos.
 - [ ] Permisos granulares por endpoint, probados con test de acceso denegado.

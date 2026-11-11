@@ -61,6 +61,19 @@ public void approve(OrderId id, Actor actor) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un registro de actividad inmutable de acciones de negocio relevantes (quién, qué, cuándo, sobre qué) que se puede consultar por objeto y por actor.
+- Separa el registro de actividad visible al usuario del de seguridad.
+### Trampas frecuentes
+- Registro editable por la aplicación.
+- Registrar datos sensibles en claro.
+- Sin forma de consultar por objeto.
+- Relojes sin sincronizar.
+- Retención sin criterio.
+### Evidencia
+- Cada acción sensible deja un registro y se puede consultar el historial de un objeto.
+
 ## Checklist de revisión
 - [ ] Evento con actor, tenant, acción, recurso, resultado y correlación.
 - [ ] Misma transacción u outbox; tabla append-only.

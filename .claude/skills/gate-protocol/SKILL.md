@@ -36,6 +36,19 @@ Los agentes aceleran pero no asumen responsabilidad. Si la aprobación es un pá
 "Plan listo. Evidencia vs `gate-1.md`: 5/6 cumplidos; falta estimación de recursos (riesgo: perfil completo > 16 GB). Necesito el registro `approvals/gate-1.json` para continuar."
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- En cada gate, prepara la evidencia contra el checklist y detente; solo una persona aprueba y deja el registro.
+- Si el checklist no se cumple, dilo y propone qué falta.
+### Trampas frecuentes
+- Continuar «porque es obvio que se aprobará».
+- Crear o editar un registro de aprobación.
+- Una evidencia que no se corresponde con el checklist.
+- Aprobaciones verbales sin registro.
+- Saltarse un gate por urgencia.
+### Evidencia
+- El registro de aprobación existe, es válido y lo firma una persona.
+
 ## Checklist de revisión
 - [ ] El agente se detuvo y no continuó.
 - [ ] Evidencia enlazada punto a punto al checklist.

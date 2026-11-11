@@ -56,6 +56,19 @@ Lag < 1000 durante 10 min en el dashboard "Orders / Consumers".
 Tras 30 min sin mejora: guardia de plataforma.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un runbook por alerta o procedimiento con comprobaciones, pasos y escalado, escrito para quien está de guardia a las tres de la madrugada.
+- Se prueban y se actualizan tras cada incidente.
+### Trampas frecuentes
+- Pasos que asumen conocimiento tácito.
+- Runbooks que nunca se han ejecutado.
+- Sin criterio de escalado.
+- Comandos destructivos sin advertencia.
+- Enlaces rotos.
+### Evidencia
+- Cada runbook se ha ejecutado en un simulacro y tiene fecha de revisión.
+
 ## Checklist de revisión
 - [ ] Cada alerta que pagina enlaza su runbook.
 - [ ] Diagnóstico de solo lectura antes de mitigar.

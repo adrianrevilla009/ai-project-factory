@@ -58,6 +58,19 @@ CREATE POLICY tenant_isolation ON invoice
   USING (tenant_id = current_setting('app.tenant_id')::uuid);
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Por tenant: configuración, límites, marca y características activables, con aislamiento de datos y de rendimiento verificado.
+- Decide cómo se incorpora y se da de baja un tenant.
+### Trampas frecuentes
+- Configuración por tenant sin control que se multiplica.
+- Un tenant que degrada a los demás.
+- Datos de un tenant accesibles por un fallo de filtro.
+- Sin proceso de baja y borrado de datos.
+- Facturación sin medir uso.
+### Evidencia
+- Un proceso de alta y baja automatizado y una prueba de aislamiento.
+
 ## Checklist de revisión
 - [ ] `tenantId` solo desde el token; contexto único.
 - [ ] Ciclo de vida del tenant con estados y transiciones idempotentes.

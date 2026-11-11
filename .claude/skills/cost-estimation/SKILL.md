@@ -46,6 +46,19 @@ Sobrecoste tier 0 frente a tier 1: aprox. 2x en componentes replicados.
 infracost breakdown --path infra/
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Estima el coste a partir del diseño con precios de la fuente oficial y fecha, por nivel de resiliencia y con supuestos explícitos (horas, volumen, transferencia).
+- Presenta rangos y lo que no incluye.
+### Trampas frecuentes
+- Cifras de memoria sin fuente.
+- Olvidar la transferencia, los registros y las copias.
+- Una única cifra precisa que aparenta certeza.
+- Estimar solo la opción elegida.
+- No actualizar con el uso real.
+### Evidencia
+- Una hoja de supuestos con fuente y fecha de cada precio y los costes que no incluye.
+
 ## Checklist de revisión
 - [ ] Marcado como estimación con supuestos y fecha.
 - [ ] Precios con fuente oficial y fecha; sin fuente no se pone cifra.

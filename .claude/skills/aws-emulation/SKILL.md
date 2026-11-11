@@ -52,6 +52,19 @@ not_reproduced:
   s3: [cross-region-replication, full-object-lock]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Prefiere emuladores oficiales o abiertos sin cuenta para cada servicio; usa un emulador generalista solo con decisión documentada por su licencia.
+- Declara lo que el emulador no reproduce.
+### Trampas frecuentes
+- Basar el entorno local en un producto con restricciones de licencia sin decisión.
+- Concluir que algo funciona en una cuenta real porque pasa en el emulador.
+- Credenciales reales en local.
+- Ramas de código según el entorno.
+- Ignorar diferencias de errores y de límites.
+### Evidencia
+- Una lista de servicios emulados y de lo que no se reproduce, revisada con cada cambio.
+
 ## Checklist de revisión
 - [ ] Cada emulador figura en `catalog/parity-matrix.yaml` con su `not_reproduced`.
 - [ ] Endpoints y credenciales de ejemplo solo en el perfil local.

@@ -47,6 +47,19 @@ agente 2 -> .claude/skills/agent-evals/**
 integrador (humano o tech-lead) -> catalog/skills-inventory.yaml, docs/skills-index.md
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Paraleliza tareas independientes con copias de trabajo separadas para que no se pisen; fusiona con revisión y comprobaciones.
+- Si las tareas dependen entre sí, no las paralelices.
+### Trampas frecuentes
+- Agentes editando los mismos ficheros a la vez.
+- Fusiones sin revisión.
+- Tareas dependientes lanzadas en paralelo.
+- Más paralelismo que capacidad de revisar.
+- Sin límite de agentes simultáneos.
+### Evidencia
+- Cada tarea paralela tiene su rama y su revisión, y no hay conflictos sin resolver.
+
 ## Checklist de revisión
 - [ ] Cada trabajador de escritura tiene rama y worktree propios, o carpeta exclusiva.
 - [ ] No hay ficheros editados por más de un agente.

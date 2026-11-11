@@ -56,6 +56,19 @@ resources:
   - observability/
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Dos perfiles: uno ligero para el día a día y otro completo para integración (mensajería, malla, secretos); el equipo elige coste frente a fidelidad.
+- Declara qué no reproduce cada perfil.
+### Trampas frecuentes
+- Un solo perfil pesado que nadie levanta.
+- Un perfil ligero que oculta problemas de integración.
+- Perfiles que divergen sin que nadie lo vea.
+- Sin documentar qué falta.
+- Datos y secretos reales en local.
+### Evidencia
+- Cada perfil documenta lo que incluye y lo que no, y se levanta con un comando.
+
 ## Checklist de revisión
 - [ ] Existen overlays `local-minimal` y `local-full`; `minimal` es el defecto.
 - [ ] `minimal` arranca solo con servicio + Postgres + DynamoDB Local.

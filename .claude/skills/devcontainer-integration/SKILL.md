@@ -52,6 +52,19 @@ La mayor fuente de "en mi máquina funciona" en Kubernetes local son las version
 ```
 Las features y su opción `minikube: none` se comprueban al fijar la versión; kind se instala en `make tools-install` con versión y checksum fijos.
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un entorno de desarrollo definido como código con versiones fijadas y herramientas necesarias; el acceso a Docker y a la red están restringidos y documentados.
+- Las mismas versiones que en CI.
+### Trampas frecuentes
+- Instalar herramientas a mano.
+- Versiones sin fijar.
+- Montar credenciales de nube en el contenedor.
+- Acceso de red sin lista permitida.
+- Diferencias entre el contenedor y CI.
+### Evidencia
+- Un contenedor limpio ejecuta la validación completa sin pasos manuales.
+
 ## Checklist de revisión
 - [ ] Versiones fijadas, sin `latest` en herramientas.
 - [ ] `make local-up` funciona tras abrir el devcontainer.

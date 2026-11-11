@@ -36,6 +36,19 @@ Sin despliegue real (D4), Terraform puede validar y fallar al aplicar. La honest
 "El módulo EKS está definido y validado estáticamente (nivel 2). Preparado para AWS, no verificado en real."
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Antes de afirmar una versión, un flag, una API o que algo funciona, compruébalo en la fuente o ejecútalo; si no puedes, dilo.
+- Cita la fuente y la fecha.
+### Trampas frecuentes
+- Afirmar de memoria un dato que cambia.
+- Presentar como comprobado lo que solo se supone.
+- Ocultar que la comprobación no fue posible.
+- Fuentes sin fecha.
+- Confiar en una única búsqueda.
+### Evidencia
+- Cada afirmación concreta tiene fuente y fecha, o está declarada como no comprobada.
+
 ## Checklist de revisión
 - [ ] Cada versión o flag tiene fuente, o está declarado «no comprobado».
 - [ ] Ninguna frase prohibida sobre AWS.

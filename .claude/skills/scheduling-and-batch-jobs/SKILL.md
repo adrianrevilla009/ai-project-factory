@@ -44,6 +44,19 @@ public void closeDay() {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una tarea programada con ejecución única entre réplicas, reintentos idempotentes y alerta si no se ejecuta; para volúmenes grandes, un orquestador.
+- Registra ejecución, duración y resultado.
+### Trampas frecuentes
+- Tareas que se ejecutan en cada réplica.
+- Reintentos que duplican efectos.
+- Sin alerta de tarea no ejecutada.
+- Tareas sin límite de tiempo.
+- Dependencia de la hora local sin zona.
+### Evidencia
+- Una alerta salta si la tarea no se ejecuta en su ventana y repetirla no duplica efectos.
+
 ## Checklist de revisión
 - [ ] Todo `@Scheduled` tiene `@SchedulerLock` o es un CronJob con `Forbid`.
 - [ ] Idempotencia y reanudación probadas.

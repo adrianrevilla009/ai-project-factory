@@ -52,6 +52,19 @@ runs: 5
 min_pass_rate: 1.0
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Evalúa el comportamiento del agente con casos deterministas para los hooks y casos con rúbrica para lo que depende del modelo; repite al cambiar prompts, skills o modelo.
+- Los fallos reales se convierten en casos.
+### Trampas frecuentes
+- Probar solo con unos pocos ejemplos favorables.
+- Cambiar de modelo sin evaluar.
+- Rúbricas vagas.
+- Casos que se filtran al contenido de las instrucciones.
+- Un informe que no se compara entre versiones.
+### Evidencia
+- Un informe de evaluación comparable entre versiones y un caso por cada fallo real.
+
 ## Checklist de revisión
 - [ ] Cada regla dura tiene test en `tests/hooks` antes que eval con LLM.
 - [ ] Hay casos negativos y al menos uno por gate afectado.

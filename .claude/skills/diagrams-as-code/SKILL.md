@@ -66,6 +66,19 @@ workspace {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Diagramas como texto versionado y renderizados automáticamente; elige una herramienta de licencia abierta que el equipo ya entienda.
+- Mantén los diagramas pequeños y con un propósito.
+### Trampas frecuentes
+- Imágenes exportadas sin fuente.
+- Diagramas editados a mano que divergen.
+- Una herramienta distinta por equipo.
+- Diagramas gigantes.
+- Licencias sin revisar.
+### Evidencia
+- Cada diagrama tiene su fuente en el repositorio y se genera en CI.
+
 ## Checklist de revisión
 - [ ] Existe la fuente en texto junto a la doc.
 - [ ] Una sola herramienta por tipo de diagrama.

@@ -54,6 +54,19 @@ Gestiona el ciclo de vida de pedidos. Equipo: orders. Contrato: `docs/api/openap
 IAM real, ALB/NLB y KMS gestionado. Infra: preparado para AWS, no verificado en real.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un README que cualquiera puede seguir en una máquina limpia: qué es, cómo arrancar, cómo probar y dónde está lo demás; se ejecuta como parte de la comprobación.
+- Se actualiza con el código.
+### Trampas frecuentes
+- Un README que describe una versión antigua.
+- Pasos que nadie ha probado.
+- Todo en un documento enorme.
+- Datos de contacto obsoletos.
+- Sin enlace a las decisiones ni a la operación.
+### Evidencia
+- Una persona nueva arranca el proyecto solo con el README.
+
 ## Checklist de revisión
 - [ ] Un clon limpio llega a "servicio arriba" solo con los comandos del README.
 - [ ] Versiones de requisitos coinciden con el build.

@@ -43,6 +43,19 @@ No se ha desplegado ni ejecutado plan contra ninguna cuenta (ADR-0004, ADR-0037)
 Prohibido afirmar que el despliegue está probado en AWS real.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Redacta las afirmaciones sobre AWS con la fórmula «preparado para AWS, no verificado en real» y describe lo que sí se ha comprobado; la validación automática lo hace cumplir.
+- Si dudas, escribe menos.
+### Trampas frecuentes
+- «Listo para producción» sin haber desplegado.
+- Confundir validación estática con prueba real.
+- Esconder el riesgo del primer `apply`.
+- Afirmaciones en la documentación que contradicen las etiquetas.
+- Excepciones sin justificar.
+### Evidencia
+- El validador de afirmaciones pasa y cada afirmación enlaza a su evidencia.
+
 ## Checklist de revisión
 - [ ] Ninguna frase afirma verificación o despliegue real en AWS.
 - [ ] Aparece la fórmula de honestidad en el estado de infraestructura.

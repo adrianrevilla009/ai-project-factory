@@ -50,6 +50,19 @@ Causa: Juan desplegó sin mirar. Acción: tener más cuidado.
 | Añadir ítem a la checklist de PRR | tech-lead | 2026-11-12 | ORD-232 |
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una retrospectiva con hechos, causas y acciones pequeñas y concretas; las lecciones se guardan donde la próxima persona las encuentre.
+- Revisa si las acciones anteriores se cumplieron.
+### Trampas frecuentes
+- Retros de queja sin acciones.
+- Acciones sin dueño.
+- Las mismas lecciones cada vez.
+- Lecciones que se pierden en una wiki.
+- Culpar en vez de analizar el sistema.
+### Evidencia
+- Un porcentaje de acciones cerradas y lecciones enlazadas a las skills o procesos que cambian.
+
 ## Checklist de revisión
 - [ ] El postmortem no señala a personas.
 - [ ] Hay impacto, línea temporal y causas contribuyentes.

@@ -52,6 +52,19 @@ pd.setProperty("code", "ORDER_NOT_FOUND");
 order.notFound=El pedido {0} no existe
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Textos externalizados desde el inicio, formatos según la configuración regional y soporte de idiomas de derecha a izquierda cuando proceda.
+- Traducciones con contexto y revisión.
+### Trampas frecuentes
+- Concatenar frases traducidas.
+- Suponer longitudes iguales entre idiomas.
+- Fechas y números con formato fijo.
+- Traducciones sin contexto.
+- Dejarlo para el final.
+### Evidencia
+- Una prueba con pseudolocalización y con un idioma de derecha a izquierda.
+
 ## Checklist de revisión
 - [ ] Un `LocaleResolver` y un locale por defecto explícitos.
 - [ ] Errores con `code` estable más texto traducido.

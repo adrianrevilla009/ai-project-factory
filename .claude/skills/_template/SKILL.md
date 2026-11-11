@@ -33,6 +33,14 @@ Razonamiento detrás de cada regla, para poder discutirla.
 // código real que la cumple
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cuándo elegir una opción frente a otra y con qué criterio medible.
+### Trampas frecuentes
+- Los fallos habituales al aplicar la regla y cómo se detectan.
+### Evidencia
+- Qué prueba, medición o registro demuestra que se aplicó bien.
+
 ## Checklist de revisión
 - [ ] …
 

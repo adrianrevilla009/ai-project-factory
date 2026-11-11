@@ -56,6 +56,19 @@ Detrás del flag features.refunds.enabled (apagado por defecto). Rollback: apaga
 - [x] Docs/ADR actualizados  - [x] Changelog  - [x] Sin secretos
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un PR con un solo propósito, una descripción con el porqué y enlace al requisito, y pruebas; el tamaño pequeño es la mejor ayuda para el revisor.
+- Las comprobaciones automáticas pasan antes de pedir revisión.
+### Trampas frecuentes
+- PRs de miles de líneas.
+- Sin descripción ni contexto.
+- Mezclar refactor y funcionalidad.
+- Pedir revisión con CI en rojo.
+- Fusionar sin aprobación por prisa.
+### Evidencia
+- Tamaño mediano de PR y tiempo hasta la primera revisión medidos.
+
 ## Checklist de revisión
 - [ ] Título convencional y descripción completa.
 - [ ] Tamaño razonable y un solo propósito.

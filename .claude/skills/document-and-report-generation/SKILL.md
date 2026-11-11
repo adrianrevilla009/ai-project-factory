@@ -50,6 +50,19 @@ void write(OutputStream out, Principal owner) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Genera documentos de forma asíncrona con plantillas versionadas y almacena el resultado con control de acceso; elige la librería por licencia.
+- Limita tamaño y tiempo.
+### Trampas frecuentes
+- Generación síncrona de informes pesados.
+- Plantillas con lógica de negocio.
+- Descargas sin autorización por documento.
+- Librerías con licencia no revisada.
+- Datos personales en documentos que se conservan indefinidamente.
+### Evidencia
+- Una prueba de documentos grandes con límites de tiempo y de acceso.
+
 ## Checklist de revisión
 - [ ] Generación asíncrona con estado y TTL.
 - [ ] Streaming, sin colecciones completas en memoria.

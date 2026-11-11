@@ -56,6 +56,19 @@ glossary:
   Refund: "Devolución parcial o total de un pago ya capturado (contexto Billing)."
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Descubre el dominio con las personas que lo conocen: glosario, procesos y eventos; registra los supuestos y valídalos con una persona experta.
+- No inventes lo que no te han contado.
+### Trampas frecuentes
+- Deducir reglas de negocio del código existente sin confirmarlas.
+- Un glosario que cambia sin avisar.
+- Supuestos presentados como hechos.
+- Entrevistar solo a una persona.
+- No volver al negocio con lo aprendido.
+### Evidencia
+- Un registro de supuestos con impacto y responsable, y un glosario validado.
+
 ## Checklist de revisión
 - [ ] Línea temporal de eventos en pasado, validada con expertos.
 - [ ] Hotspots listados con dueño y fecha.

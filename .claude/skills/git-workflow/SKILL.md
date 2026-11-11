@@ -53,6 +53,19 @@ Trabajo inacabado detrás de flag (propiedad de Spring Boot):
 class RefundController { /* ... */ }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Desarrollo sobre la rama principal con ramas de vida corta y cambios pequeños; ramas de versión solo si mantienes varias versiones a la vez.
+- Protege la rama principal: revisión obligatoria y comprobaciones en verde.
+### Trampas frecuentes
+- Ramas que viven semanas.
+- Reescribir el historial de ramas compartidas.
+- Fusiones gigantes que nadie revisa.
+- Empujar directamente a la rama principal.
+- Un historial que no explica el porqué de los cambios.
+### Evidencia
+- La rama principal está protegida y el tiempo medio de vida de una rama es de días.
+
 ## Checklist de revisión
 - [ ] La rama tiene menos de ~2 días y un solo propósito.
 - [ ] Nombre de rama con tipo, ticket y slug.

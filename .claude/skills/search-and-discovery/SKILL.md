@@ -46,6 +46,19 @@ CREATE INDEX product_search_idx ON product USING GIN (search);
 var query = bool().filter(term("tenantId", ctx.tenantId())).must(match("name", text)).build();
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un motor de búsqueda cuando necesitas texto libre, facetas y relevancia; la base de datos relacional con índices basta para búsquedas exactas y filtros simples.
+- El índice se alimenta desde la fuente de verdad y se puede reconstruir.
+### Trampas frecuentes
+- Usar el índice como fuente de verdad.
+- Sin forma de reindexar.
+- Permisos de lectura ignorados en la búsqueda.
+- Relevancia ajustada sin conjunto de evaluación.
+- Un índice con todo el contenido por si acaso.
+### Evidencia
+- Una reindexación completa ensayada y un conjunto de consultas de referencia con resultados esperados.
+
 ## Checklist de revisión
 - [ ] Justificado el motor dedicado frente a Postgres.
 - [ ] Índice alimentado por outbox/CDC; reindexado documentado.

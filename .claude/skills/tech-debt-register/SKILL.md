@@ -51,6 +51,19 @@ public List<Order> listOpenOrders() { /* ... */ }
   status: open
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Registra la deuda con su coste y el riesgo de no pagarla, y reserva capacidad estable; decide por interés, no por incomodidad.
+- Revisa y retira lo obsoleto.
+### Trampas frecuentes
+- Una lista que solo crece.
+- Sin coste estimado.
+- Pagar solo cuando sobra tiempo.
+- Deuda sin dueño.
+- Etiquetar cualquier cosa como deuda.
+### Evidencia
+- Un registro con coste, dueño y tendencia, y una capacidad reservada en cada ciclo.
+
 ## Checklist de revisión
 - [ ] Todo atajo del PR tiene entrada en el registro.
 - [ ] Los `TODO` apuntan a un id válido.

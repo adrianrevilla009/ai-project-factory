@@ -53,6 +53,19 @@ El changelog es el contrato humano de cambios: permite decidir si actualizar y q
 ```
 Fuente de las categorías y del formato de fecha: https://keepachangelog.com/en/1.1.0/ (consultado 2026-11-07).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un registro de cambios para quien consume el software, agrupado por tipo y con avisos de incompatibilidades; las notas de versión explican el efecto, no los commits.
+- Se genera de los commits convencionales y se revisa.
+### Trampas frecuentes
+- Copiar la lista de commits.
+- Omitir cambios incompatibles.
+- Notas para el equipo y no para el usuario.
+- Sin enlace a guías de migración.
+- Registro distinto de lo publicado.
+### Evidencia
+- Cada versión publicada tiene notas con incompatibilidades y migración.
+
 ## Checklist de revisión
 - [ ] Existe `Unreleased` y la versión nueva tiene fecha ISO.
 - [ ] Cada entrada está en su categoría y redactada para el consumidor.

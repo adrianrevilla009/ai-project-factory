@@ -52,6 +52,19 @@ memory=8GB
 processors=4
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Define un presupuesto de CPU y memoria por perfil y por componente, y haz que las herramientas lo respeten; lo que no cabe en una máquina de desarrollo no se usa en local.
+- Mide el consumo real.
+### Trampas frecuentes
+- Un entorno local que necesita una máquina de servidor.
+- Límites inexistentes.
+- Componentes pesados siempre activos.
+- Sin saber cuánto consume cada pieza.
+- Presupuestos que no se actualizan.
+### Evidencia
+- Una medición de consumo por perfil y el límite aceptado documentado.
+
 ## Checklist de revisión
 - [ ] Tabla RAM/CPU por perfil, con la nota de que son valores a medir.
 - [ ] Todos los pods locales con requests y limits.

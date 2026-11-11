@@ -56,6 +56,19 @@ ResponseEntity<Void> upload(@RequestParam MultipartFile f, Principal p) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Importaciones asíncronas con validación previa, informe de errores por fila y posibilidad de reintento; exportaciones con límites y control de acceso.
+- Define el formato como contrato.
+### Trampas frecuentes
+- Importar sin validar y dejar datos a medias.
+- Sin informe de errores.
+- Exportaciones sin límite que tumban el sistema.
+- Ficheros con datos personales sin control de acceso.
+- Formatos sin documentar.
+### Evidencia
+- Una importación con filas inválidas produce un informe claro y no deja datos parciales.
+
 ## Checklist de revisión
 - [ ] Procesado asíncrono con estado consultable.
 - [ ] Límites de tamaño/filas y validación de tipo real.

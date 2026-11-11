@@ -50,6 +50,19 @@ docs/architecture/
 Billing API [Spring Boot] --"publica PaymentCaptured (Kafka)"--> Orders Service [Spring Boot]
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Diagramas C4 por nivel (contexto, contenedores, componentes) y una plantilla de documentación de arquitectura; los diagramas se generan o se versionan junto al código.
+- Documenta lo que no se deduce del código.
+### Trampas frecuentes
+- Diagramas que nadie actualiza.
+- Un diagrama con todo mezclado.
+- Documentación enorme que nadie lee.
+- Diagramas en herramientas sin control de versiones.
+- Detalle de código en el nivel de contexto.
+### Evidencia
+- Los diagramas están en el repositorio y se revisan con los cambios de arquitectura.
+
 ## Checklist de revisión
 - [ ] Existen niveles 1 y 2 y reflejan el código actual.
 - [ ] Cada elemento y relación está etiquetado (tecnología, verbo, protocolo).

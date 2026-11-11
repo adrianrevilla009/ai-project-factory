@@ -50,6 +50,19 @@ verify-iac:
 Resultado: peldaños 1-5 superados. Madurez: validada estáticamente; preparado para AWS, no verificado en real.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Sube por peldaños: formato y sintaxis, validación, análisis de seguridad y políticas, plan simulado; cada peldaño aporta evidencia y ninguno equivale a un despliegue real.
+- Declara hasta qué peldaño has llegado.
+### Trampas frecuentes
+- Presentar un peldaño bajo como si fuera el más alto.
+- Saltar peldaños baratos.
+- Políticas que nadie ejecuta.
+- Planes simulados con proveedores que ocultan errores reales.
+- Olvidar el riesgo del primer `apply`.
+### Evidencia
+- Un informe que lista los peldaños ejecutados con su resultado y el riesgo restante.
+
 ## Checklist de revisión
 - [ ] El pipeline no tiene credenciales AWS ni `plan`/`apply` reales.
 - [ ] Los cinco peldaños están, o falta uno con motivo escrito.

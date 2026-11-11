@@ -56,6 +56,19 @@ spec:
             - { name: DB_PASSWORD, value: changeme-local }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Datos de demostración sintéticos, reproducibles y suficientes para ejercitar los casos clave; se cargan con un comando y no contienen datos reales.
+- Distingue datos de demostración de datos de prueba.
+### Trampas frecuentes
+- Copiar datos de producción.
+- Datos que solo funcionan en una máquina.
+- Semilla que depende del orden o de la fecha.
+- Volumen irreal que oculta problemas.
+- Datos de demostración con personas reales.
+### Evidencia
+- Un clon limpio carga los datos de demostración y el sistema muestra los casos clave.
+
 ## Checklist de revisión
 - [ ] Datos sintéticos, dominios `example.com`.
 - [ ] Reejecutar `make local-seed` dos veces no cambia el resultado.

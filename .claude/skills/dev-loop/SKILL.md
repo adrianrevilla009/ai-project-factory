@@ -57,6 +57,19 @@ deploy:
   kubectl: {}
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un ciclo rápido de cambio y comprobación: reconstrucción incremental y despliegue automático al clúster local; mide el tiempo de iteración y reduce lo que más pesa.
+- Depurar y observar localmente como en el clúster.
+### Trampas frecuentes
+- Un ciclo de varios minutos que lleva a saltarse el clúster.
+- Sincronización de ficheros para código compilado que requiere reconstruir.
+- Diferencias grandes entre local y entorno real.
+- Sin depuración remota.
+- Configuración manual por persona.
+### Evidencia
+- Tiempo medio desde guardar un cambio hasta verlo funcionando, medido y vigilado.
+
 ## Checklist de revisión
 - [ ] Una sola herramienta; `make dev` documentado.
 - [ ] Reutiliza el overlay `local` de los manifiestos reales.

@@ -57,6 +57,19 @@ B acopla disponibilidad; C añade dependencia no cubierta por la matriz local.
 + Desacople temporal. - Consumidores idempotentes obligatorios.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un ADR por decisión con contexto, opciones, decisión y consecuencias; se escribe cuando se decide, no después.
+- Una decisión revocada se sustituye por otra, no se borra.
+### Trampas frecuentes
+- ADRs escritos meses después.
+- Decisiones sin alternativas consideradas.
+- Borrar ADRs antiguos.
+- ADRs que describen la solución y no el porqué.
+- Decisiones importantes que no están en ningún ADR.
+### Evidencia
+- Cada decisión de arquitectura relevante tiene un ADR enlazado desde la documentación.
+
 ## Checklist de revisión
 - [ ] Número nuevo, nombre en kebab-case, sin huecos ni duplicados.
 - [ ] Estado válido y fecha presente.

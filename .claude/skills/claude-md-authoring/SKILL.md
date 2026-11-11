@@ -36,6 +36,19 @@ Un CLAUDE.md de 600 líneas con guía completa de JPA.
 Diez reglas, tabla de comandos y enlaces a `.claude/skills/`.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un `CLAUDE.md` corto con las reglas no negociables, los comandos reales y enlaces a las skills; todo lo detallado vive en las skills, que se cargan bajo demanda.
+- Revísalo cuando el proyecto cambie.
+### Trampas frecuentes
+- Un fichero enorme que el agente acaba ignorando.
+- Reglas contradictorias con las de las skills.
+- Comandos que ya no existen.
+- Secretos o datos del cliente.
+- Duplicar lo que ya dicen las skills.
+### Evidencia
+- El fichero cabe en pocas decenas de líneas y sus comandos se han ejecutado.
+
 ## Checklist de revisión
 - [ ] < 80 líneas.
 - [ ] Cada comando documentado funciona.

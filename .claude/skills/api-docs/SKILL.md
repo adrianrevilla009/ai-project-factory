@@ -60,6 +60,19 @@ paths:
 ```
 Si se usa springdoc-openapi, el spec se sirve por defecto en `/v3/api-docs` (fuente: https://springdoc.org/, consultado 2026-11-07).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- La documentación sale del contrato y se publica con cada versión, con ejemplos ejecutables y una guía de inicio.
+- Describe errores y límites, no solo el camino feliz.
+### Trampas frecuentes
+- Documentación escrita a mano que diverge.
+- Sin ejemplos.
+- Sin documentar errores ni límites.
+- Documentación de una versión que ya no existe.
+- Sin forma de probar desde el portal.
+### Evidencia
+- Los ejemplos de la documentación se ejecutan en CI.
+
 ## Checklist de revisión
 - [ ] El spec está versionado y el PR muestra su diff.
 - [ ] Toda operación tiene ejemplo y errores documentados.

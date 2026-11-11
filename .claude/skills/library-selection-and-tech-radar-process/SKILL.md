@@ -52,6 +52,19 @@ Radar:  Adopt  | Trial       | Assess | Hold
         Spring | Resilience4j| ...    | Lombok (prohibido, D27)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Antes de elegir, comprueba si lo ya aprobado cubre la necesidad; evalúa mantenimiento, licencia, seguridad, integración y salida, y registra la decisión.
+- El radar de tecnología se revisa periódicamente.
+### Trampas frecuentes
+- Elegir por moda o por lo que conoce una persona.
+- Licencias no revisadas.
+- Una librería abandonada sin plan.
+- Sin registro de por qué se eligió.
+- Un radar que nadie actualiza.
+### Evidencia
+- Un ADR por tecnología nueva con criterios, alternativas y plan de salida.
+
 ## Checklist de revisión
 - [ ] Se comprobó que el stack aprobado no cubre la necesidad.
 - [ ] Licencia, mantenimiento y seguridad evaluados con evidencia.

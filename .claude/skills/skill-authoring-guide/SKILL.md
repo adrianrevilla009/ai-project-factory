@@ -39,6 +39,19 @@ description: Este skill contiene todo lo que hay que saber sobre bases de datos,
 description: Usar al diseñar o revisar consultas JPA para evitar el problema N+1.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una skill por tema con una regla verificable, ejemplos correctos e incorrectos y un mecanismo de cumplimiento explícito; si la regla no se puede comprobar, di cómo la revisa una persona.
+- Descripciones cortas que dicen cuándo cargarla.
+### Trampas frecuentes
+- Skills enormes que mezclan temas.
+- Reglas sin ejemplos ni cómo se comprueban.
+- Descripciones que no dicen cuándo usarla.
+- Datos concretos de herramientas sin fuente.
+- Copiar texto de fuentes externas.
+### Evidencia
+- La skill pasa el validador de estructura y cada regla tiene su mecanismo de cumplimiento.
+
 ## Checklist de revisión
 - [ ] Las 7 secciones existen y no son relleno.
 - [ ] `description` corta y accionable.

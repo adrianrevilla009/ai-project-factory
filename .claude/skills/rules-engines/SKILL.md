@@ -49,6 +49,19 @@ void discountByTier(String tier, BigDecimal total, BigDecimal expected) {
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un motor de reglas cuando las reglas cambian a menudo y las mantiene el negocio con trazabilidad; si son estables y pocas, código con pruebas es más simple.
+- Las reglas se versionan y se prueban.
+### Trampas frecuentes
+- Reglas que nadie entiende ni prueba.
+- Un motor para unas pocas condiciones.
+- Cambios de reglas sin revisión ni versión.
+- Dependencia de un producto sin plan de salida.
+- Sin explicación de por qué se tomó una decisión.
+### Evidencia
+- Cada regla tiene casos de prueba y una versión y se puede explicar una decisión concreta.
+
 ## Checklist de revisión
 - [ ] Justificación de usar motor frente a código.
 - [ ] Licencia verificada.

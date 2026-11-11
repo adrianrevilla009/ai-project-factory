@@ -42,6 +42,19 @@ Preparado para AWS, no verificado en real. No se ha ejecutado plan ni apply.
 No reproducido en local: WAF, Shield, CloudFront, multi-región (ver parity-matrix).
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Cada componente de infraestructura lleva una etiqueta de madurez que dice exactamente qué se ha hecho (documentado, diseñado, validado estáticamente, ejercitado en local); nunca insinúa verificación real.
+- La etiqueta se actualiza con la evidencia.
+### Trampas frecuentes
+- Etiquetas optimistas que no reflejan la evidencia.
+- Una etiqueta global para todo el sistema.
+- Etiquetas que nadie actualiza.
+- Mezclar «diseñado» con «probado».
+- Sin enlace a la evidencia.
+### Evidencia
+- Un registro de madurez con la evidencia enlazada para cada componente.
+
 ## Checklist de revisión
 - [ ] Todo directorio `.tf` tiene README con etiqueta.
 - [ ] El nivel es uno de los tres definidos y coincide con lo ejecutado.

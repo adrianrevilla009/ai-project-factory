@@ -43,6 +43,19 @@ La matriz es la fuente única de qué no se prueba en local. Si deriva de los sk
 Cambio: nueva fila SQS. Actualizar también aws-emulation y local-parity-matrix, y last_reviewed.
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Revisa la matriz con una frecuencia fija y ante cambios en un emulador o servicio; cada fila cita su fuente.
+- Declara «no comprobado» lo que no esté contrastado.
+### Trampas frecuentes
+- Una matriz que envejece.
+- Filas sin fuente.
+- Cambios sin revisión.
+- Presentar la matriz como evidencia de funcionamiento real.
+- Sin dueño.
+### Evidencia
+- Cada fila tiene fecha y fuente y hay un responsable de la revisión periódica.
+
 ## Checklist de revisión
 - [ ] Todas las filas con `not_reproduced` no vacío.
 - [ ] Skills afectados actualizados en el mismo cambio.

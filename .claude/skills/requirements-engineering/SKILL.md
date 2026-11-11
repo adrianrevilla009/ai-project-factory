@@ -57,6 +57,19 @@ nfr:
     measured_by: "prueba de carga JMeter en CI"
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Requisitos con criterios de aceptación medibles, separados en funcionales y de calidad; los de calidad se expresan como escenarios.
+- Trazabilidad entre requisito, diseño y prueba.
+### Trampas frecuentes
+- Requisitos vagos («rápido», «seguro»).
+- Soluciones disfrazadas de requisitos.
+- Cambios sin registro.
+- Sin dueño que decida prioridades.
+- Requisitos que nadie valida con el negocio.
+### Evidencia
+- Cada requisito tiene criterio de aceptación, dueño y prueba asociada.
+
 ## Checklist de revisión
 - [ ] Historia con rol, capacidad y beneficio; cumple INVEST.
 - [ ] Escenarios Gherkin con camino feliz y error/borde.

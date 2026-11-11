@@ -53,6 +53,19 @@ tools: Read, Grep, Glob
 ---
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Elige el modelo por tarea (los mecánicos con modelo más pequeño), limita el contexto y delega solo lo que compensa; mide el coste por tarea.
+- Las cifras de precio vienen de la fuente oficial con fecha.
+### Trampas frecuentes
+- Usar siempre el modelo más caro.
+- Contexto sin límite.
+- Muchos subagentes en paralelo sin necesidad.
+- Sin medir el coste por tarea.
+- Cifras de precio de memoria.
+### Evidencia
+- Un informe de coste por tipo de tarea y límites de presupuesto por sesión.
+
 ## Checklist de revisión
 - [ ] Todo bucle automático tiene tope de iteraciones y condición de parada.
 - [ ] Las exploraciones grandes van a subagentes con resumen acotado.

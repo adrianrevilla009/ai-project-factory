@@ -60,6 +60,19 @@ local-up:
 ```
 El registro local sigue el script oficial de kind (contenedor `registry:2` en el puerto 5001 conectado a la red `kind`).
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Un clúster local ligero y reproducible con una versión de Kubernetes alineada con la de destino; si las pruebas necesitan funciones concretas de red o de balanceo, elígelo en consecuencia.
+- Crear y destruir el clúster debe ser un único comando.
+### Trampas frecuentes
+- Un clúster local que nadie sabe recrear.
+- Versión muy distinta a la de producción.
+- Dependencias del equipo del desarrollador (certificados, configuración manual).
+- Aplicar manifiestos al contexto equivocado.
+- Un clúster que consume tanto que nadie lo enciende.
+### Evidencia
+- Un clon limpio levanta el clúster y la aplicación con un solo comando y en un tiempo conocido.
+
 ## Checklist de revisión
 - [ ] Existe `kind-config.yaml` versionado con nombre y versión de nodo fijados.
 - [ ] Hay registro local y el bucle de desarrollo no usa `kind load` manual.

@@ -48,6 +48,19 @@ DoD: [x] tests verdes  [x] PR aprobado  [x] OpenAPI actualizado  [x] runbook rev
      [x] CHANGELOG  [x] deuda diferida registrada (TD-014)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- La definición de «listo» evita empezar lo que no se entiende; la de «hecho» incluye pruebas, documentación, observabilidad y criterios de aceptación cumplidos.
+- Se acuerdan con el equipo y se revisan.
+### Trampas frecuentes
+- Una lista tan larga que nadie la cumple.
+- Trabajo «hecho» sin pruebas.
+- Criterios que cambian a mitad.
+- Usar la lista como arma contra el equipo.
+- Sin revisión tras los incidentes.
+### Evidencia
+- Cada tarea cerrada cumple la definición de hecho y se puede comprobar.
+
 ## Checklist de revisión
 - [ ] La historia cumple DoR antes de entrar en la iteración.
 - [ ] Cada criterio de aceptación tiene un test que lo ejecuta.

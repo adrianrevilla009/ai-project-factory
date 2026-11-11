@@ -51,6 +51,19 @@ Un proyecto generado debe ser tan seguro como la fábrica: sin los mismos hooks,
 }
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Crea la configuración del proyecto sin rebajar ninguna regla: hooks, permisos, agentes, comandos, skills activas, MCP del catálogo y un `CLAUDE.md` corto.
+- Registra de dónde viene cada pieza y qué versión de la fábrica.
+### Trampas frecuentes
+- Copiar solo una parte de los hooks.
+- Permisos amplios en la configuración del proyecto.
+- Servidores MCP no revisados.
+- Copiar todas las skills.
+- Sin registro de la versión de la fábrica.
+### Evidencia
+- El proyecto generado pasa los mismos hooks y sus comprobaciones de arranque.
+
 ## Checklist de revisión
 - [ ] Los 3 hooks de seguridad y los de post/stop están registrados.
 - [ ] `hooks-config.json` tiene `test_command` que funciona.

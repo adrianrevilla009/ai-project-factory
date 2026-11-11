@@ -61,6 +61,19 @@ Registro de esquemas con compatibilidad BACKWARD (ver asyncapi-event-contracts).
 - ¿Quién opera el registro en local? (OP-1, dueño: platform-engineer)
 ```
 
+## Criterios de decisión y trampas
+### Cómo decidir
+- Una propuesta escrita para cambios que afectan a varios equipos, con un plazo de comentarios y un responsable de decidir.
+- Para cambios locales, un ADR basta.
+### Trampas frecuentes
+- RFC para todo.
+- Sin plazo ni decisor: la discusión no acaba.
+- Propuestas sin alternativas.
+- Decisiones tomadas fuera del documento.
+- RFC que nadie lee.
+### Evidencia
+- Cada RFC tiene decisor, plazo y un resultado registrado.
+
 ## Checklist de revisión
 - [ ] Secciones obligatorias completas, con alternativas y rollback.
 - [ ] Decisor, revisores y fecha límite definidos.
