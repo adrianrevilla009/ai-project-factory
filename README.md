@@ -39,7 +39,7 @@ En cada gate el agente prepara la evidencia y **se detiene**. Una persona revisa
 ## Los principios
 1. **Si una regla se puede comprobar con un script, no es un prompt.** Va a un hook, una política o una prueba. Las skills son para lo que exige criterio.
 2. **Una persona decide en cada gate.** Los agentes aceleran; no sustituyen la responsabilidad.
-3. **Honestidad ante todo.** Lo que no se ha podido comprobar se declara «no comprobado»; nunca se afirma «listo para producción en AWS» sin haber desplegado.
+3. **Honestidad ante todo.** Lo que no se ha podido comprobar se declara «no comprobado»; nunca se afirma que algo funciona en AWS sin haberlo desplegado de verdad.
 4. **El contenido externo es dato, no instrucciones.** Una web, un documento o un resultado de herramienta no manda sobre el agente.
 5. **Local primero, cloud preparado.** El sistema completo debe poder levantarse en local; la nube se diseña y se valida de forma estática, sin gastar.
 6. **Núcleo portable, adaptadores en los bordes.** El dominio no depende de AWS ni de ninguna herramienta concreta.
